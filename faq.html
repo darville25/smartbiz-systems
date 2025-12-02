@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Questions & Honest Answers</title>
+    <meta name="description" content="Frequently asked questions about Digital Marketing costs, ROI, and Automation in Kenya.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',       
+                            card: '#161E2E',       
+                            neon: '#2DD4BF',       
+                            neonhover: '#14B8A6',
+                            purple: '#A78BFA',     
+                            text: '#F3F4F6',       
+                            muted: '#9CA3AF'       
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(45, 212, 191, 0.3)',
+                        'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0F19; color: #F3F4F6; }
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #2DD4BF, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Smooth Accordion */
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-content {
+            max-height: 500px; /* Arbitrary large number */
+            transition: max-height 0.5s ease-in;
+        }
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        .fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="text-2xl font-bold tracking-tight text-white">
+                        SmartBiz<span class="text-brand-neon">Systems</span>
+                    </span>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Home</a>
+                    <a href="services.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Services</a>
+                    <a href="smartbiztool.html" class="text-sm font-bold text-brand-purple hover:text-white transition-colors">AI Tools</a>
+                    <a href="https://tally.so/r/EkqoQN" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all">
+                        Get a Free Audit
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white"><i class="fa-solid fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-20 bg-brand-dark overflow-hidden text-center">
+        <!-- Background Glow -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-neon/5 rounded-full blur-[120px]"></div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto px-4">
+            <div class="inline-flex items-center px-4 py-1 rounded-full border border-gray-700 bg-gray-800/50 mb-6">
+                <span class="text-xs font-bold tracking-wide uppercase text-gray-300">Transparency First</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-6 text-white leading-tight">
+                You Have Questions. <br>
+                <span class="text-gradient">We Have Honest Answers.</span>
+            </h1>
+            <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+                Investing in digital growth can be scary. Will it work? Is it expensive? Here is the truth about how we operate, how we charge, and how we guarantee value.
+            </p>
+        </div>
+    </header>
+
+    <!-- FAQ SECTION -->
+    <section class="py-16 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- CATEGORY: MONEY & VALUE (The Logical Brain) -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-brand-neon pl-4">Pricing & Value</h2>
+                <div class="space-y-4">
+                    
+                    <!-- Item 1 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">Is digital marketing expensive for a small Kenyan business?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-neon"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                <p>It depends on how you view it. If you spend KES 50,000 and get nothing back, it's expensive. If you spend KES 50,000 and generate KES 200,000 in sales, it's an <strong>investment</strong>.</p>
+                                <p class="mt-2">We tailor our packages to your budget, starting with high-impact/low-cost strategies (like SEO and Automation) before moving to paid ads.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">Do you guarantee results?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-neon"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                <p><strong>Honesty Alert:</strong> No agency can guarantee specific sales numbers because we don't control the market or your sales team.</p>
+                                <p class="mt-2">However, we <strong>DO guarantee our deliverables:</strong> traffic increases, higher ranking on Google, and automated lead capture systems. If we don't hit our agreed KPIs, we work for free until we do.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">Can I pay via M-Pesa?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-neon"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                Absolutely. We are a Kenyan-first company. We accept M-Pesa (Buy Goods/Paybill), Bank Transfer, and Cheques for corporate clients.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORY: FEAR & TRUST (The Emotional Brain) -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-brand-purple pl-4">Trust & Process</h2>
+                <div class="space-y-4">
+                    
+                    <!-- Item 4 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">Will automation replace my current staff?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-purple"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                <p>No. Automation is not about firing people; it's about <strong>freeing them</strong>.</p>
+                                <p class="mt-2">Instead of your best salesperson answering "How much is this?" on WhatsApp 50 times a day, our bots handle that. Your staff can then focus on closing deals and building relationships. It removes the burnout, not the human.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">I've been burned by agencies before. Why you?</span>
+                            <i class="fa-solid fa-chevron-down text-brand-purple"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                <p>We hear this a lot. The "copy-paste" agencies give everyone the same strategy. We are <strong>Data Engineers</strong> first, marketers second.</p>
+                                <p class="mt-2">We build custom systems. Plus, we operate on complete transparency—you see the same dashboard we see. No hidden fees, no "magic black box."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CATEGORY: LOCAL CONTEXT (Ask The Public) -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-blue-500 pl-4">Common Questions</h2>
+                <div class="space-y-4">
+                    
+                    <!-- Item 6 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">Does this work for "Jua Kali" or informal businesses?</span>
+                            <i class="fa-solid fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                <p>Yes. In fact, it works <em>better</em>. If you sell furniture along Ngong Road or run a hardware store in Industrial Area, your customers are already searching for you on Google Maps.</p>
+                                <p class="mt-2">We help you appear on their phones exactly when they are looking to buy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="faq-item bg-brand-card border border-gray-700 rounded-xl overflow-hidden hover:border-gray-500 transition-colors">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none" onclick="toggleFaq(this)">
+                            <span class="font-bold text-white text-lg">How long until I see results?</span>
+                            <i class="fa-solid fa-chevron-down text-blue-500"></i>
+                        </button>
+                        <div class="faq-content bg-gray-800/50">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Paid Ads:</strong> Instant (24-48 hours).</li>
+                                    <li><strong>Automation:</strong> Instant (As soon as we switch it on).</li>
+                                    <li><strong>SEO:</strong> Long term (3-6 months for domination).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FINAL EMOTIONAL CTA -->
+    <section class="py-24 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-0"></div>
+        <div class="relative z-10 text-center max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-6">Still on the fence?</h2>
+            <p class="text-xl text-gray-300 mb-10">
+                It costs you nothing to chat with us. Let's look at your business, identify the bottlenecks, and see if we are a good fit.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://tally.so/r/EkqoQN" class="px-8 py-4 bg-brand-neon text-brand-dark font-bold rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">
+                    Book a Free Strategy Call
+                </a>
+                <a href="smartbiztool.html" class="px-8 py-4 border border-gray-600 text-white font-bold rounded-lg hover:bg-gray-800 transition-all">
+                    Try Our Free AI Tool
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-gray-900 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-2xl font-bold tracking-tight text-white block mb-4">
+                SmartBiz<span class="text-brand-neon">Systems</span>
+            </span>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-400 text-sm">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="services.html" class="hover:text-white">Services</a>
+                <a href="smartbiztool.html" class="hover:text-white">Tools</a>
+                <a href="faq.html" class="text-white font-bold">FAQ</a>
+            </div>
+            <p class="text-gray-600 text-sm">&copy; 2023 SmartBizSystems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR ACCORDION -->
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const content = button.nextElementSibling;
+            
+            // Close others (Optional - remove this block if you want multiple open at once)
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Toggle current
+            item.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
