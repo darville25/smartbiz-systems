@@ -77,7 +77,7 @@
         .hidden-view { display: none !important; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hiddenstyle="display:none;">
 
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 glass-panel">
@@ -480,10 +480,21 @@
         let selectedGoal = "Direct";
         let clerkInstance = null;
 
+       // ============================================
+        // SECURITY CHECK: PROTECT THIS PAGE
+        // ============================================
         window.addEventListener("load", async function () {
             await Clerk.load();
             clerkInstance = Clerk;
-            if (Clerk.user) { updateUIForUser(Clerk.user); } else { updateUIForGuest(); }
+
+            if (Clerk.user) {
+                // User is Logged In: ALLOW ACCESS
+                document.body.style.display = "block"; // Reveal the page
+                updateUIForUser(Clerk.user);
+            } else {
+                // User is Guest: DENY ACCESS & REDIRECT
+                window.location.href = "login.html"; 
+            }
         });
 
         function updateUIForUser(user) {
