@@ -1,7 +1,7 @@
-import { OpenAI } from 'openai';
+import OpenAI from 'openai';
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // We will set this in Vercel later
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export default async function handler(req, res) {
@@ -9,50 +9,92 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { product, audience, tone, goal } = req.body;
+  const { product, audience, goal, mode, tone } = req.body;
 
-  // This is the "Kenyan Context" Secret Sauce
-  const systemPrompt = `
-    You are an expert Kenyan Digital Marketer named "SmartBiz Commander".
-    Your goal is to write high-converting marketing copy specifically for the Nairobi/Kenyan market.
-    
-    RULES:
-    1. Use local context (e.g., mention M-Pesa, specific Nairobi locations like Westlands/Kilimani if relevant).
-    2. Tone: ${tone} (Adjust based on user input).
-    3. If the tone is "Persuasive", use subtle urgency.
-    4. If the goal is "WhatsApp", keep it short, punchy, and avoid "Read More" truncation.
-    5. Occasionally mix in accepted Kenyan English/Sheng phrases if the tone is "Casual" (e.g., "Mambo vipi", "Form ni gani").
-    
-    OUTPUT FORMAT:
-    Return JSON with 3 variations:
-    {
-      "variationA": "Headline + Body text...",
-      "variationB": "Headline + Body text...",
-      "variationC": "Headline + Body text..."
-    }
-  `;
+  // 1. Define the System Personality (Kenyan Context)
+  const systemPrompt = `You are "SmartBiz Commander", an elite Kenyan Business Consultant. 
+  Your writing style is professional but localized for Nairobi.
+  - Currency: KES.
+  - Locations: Westlands, CBD, Industrial Area, Mombasa.
+  - Context: You understand M-Pesa, 'Biashara', and corporate etiquette in Kenya.
+  - Output: Return JSON with two keys: "variationA" and "variationB".`;
 
-  const userPrompt = `
-    Product: ${product}
-    Audience: ${audience}
-    Goal: ${goal}
-  `;
+  // 2. Construct the Prompt based on the selected Tool
+  let userPrompt = "";
+
+  if (mode === 'Cold Call Script') {
+    userPrompt = `Write 2 Cold Call Scripts.
+    Target: "${product}" (Website/Profile).
+    My Offer: "${audience}".
+    Variation A: A researched, warm opener referencing their website.
+    Variation B: A direct, CEO-to-CEO approach.`;
+  } 
+  else if (mode === 'Debt Collection') {
+    userPrompt = `Write 2 Debt Collection messages.
+    Client Name: "${product}".
+    Debt Details: "${audience}".
+    Variation A: A polite, professional reminder (WhatsApp friendly).
+    Variation B: A firm final notice mentioning CRB listing consequences.`;
+  } 
+  else if (mode === 'Brand Pitch Email') {
+    userPrompt = `Write 2 Influencer Brand Pitch Emails.
+    Brand Name: "${product}".
+    My Stats/Value: "${audience}".
+    Variation A: Proposing a specific campaign idea.
+    Variation B: Requesting a media kit review/meeting.`;
+  }
+  else if (mode === 'CV Bullet Points') {
+    userPrompt = `Rewrite these CV tasks into high-impact achievements.
+    Job Role: "${product}".
+    Raw Tasks: "${audience}".
+    Variation A: Focus on leadership and management.
+    Variation B: Focus on hard numbers and efficiency.`;
+  }
+  else if (mode === 'Tender Proposal') {
+    userPrompt = `Write sections for a Tender Proposal.
+    Client: "${product}".
+    Service: "${audience}".
+    Variation A: Executive Summary tailored to Kenyan corporate standards.
+    Variation B: Methodology section highlighting efficiency.`;
+  }
+  else if (mode === 'Viral Hooks') {
+    userPrompt = `Write Viral TikTok/Reels Hooks.
+    Topic: "${product}".
+    Niche: "${audience}".
+    Variation A: 3 Controversial/Shocking Hooks.
+    Variation B: 3 "Educational/Secret" Hooks.`;
+  }
+  else {
+    // Default: Ads, WhatsApp Scripts, Blogs
+    userPrompt = `Write content for: ${mode}.
+    Product/Topic: "${product}".
+    Target Audience: "${audience}".
+    Goal: "${goal}".
+    Tone: "${tone}".
+    Variation A: Primary option.
+    Variation B: Alternative angle.
+    Make it punchy and formatted with HTML tags (<br>, <strong>) for readability.`;
+  }
 
   try {
+    // 3. Call OpenAI
     const completion = await openai.chat.completions.create({
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
       ],
-      model: "gpt-3.5-turbo", // Or "gpt-4" if you want to pay more for better results
-      response_format: { type: "json_object" },
+      model: "gpt-3.5-turbo",
+      response_format: { type: "json_object" }, // Forces JSON structure
     });
 
     const aiResponse = JSON.parse(completion.choices[0].message.content);
     res.status(200).json(aiResponse);
 
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'AI generation failed' });
+    console.error("OpenAI Error:", error);
+    res.status(500).json({ 
+        variationA: "Error generating content. Please try again.", 
+        variationB: "System is currently overloaded." 
+    });
   }
 }

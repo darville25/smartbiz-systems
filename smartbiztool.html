@@ -583,49 +583,59 @@
             selectedGoal = btn.innerText;
         }
 
+       // MAIN GENERATION FUNCTION (REAL API CONNECTION)
         async function generateCampaign() {
             const i1 = document.getElementById('productInput').value;
             const i2 = document.getElementById('audienceInput').value;
             const btn = document.getElementById('generateBtn');
             const originalText = btn.innerHTML;
             const mode = document.getElementById('currentMode').innerText;
+            
+            // Get Tone/Goal values if they exist in current DOM
+            const toneInput = document.getElementById('toneInput');
+            const toneVal = toneInput ? toneInput.value : 50;
+            let toneText = toneVal > 60 ? "Aggressive" : (toneVal < 40 ? "Soft" : "Balanced");
 
             if (!i1) { alert("Please fill in the first field."); return; }
 
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> THINKING...';
+            // 1. Show Loading State
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> CONNECTING TO AI...';
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
-            setTimeout(() => {
-                let mockA = ""; let mockB = "";
+            try {
+                // 2. Call the Vercel API
+                // Note: This URL works when deployed. On localhost, ensure 'api' folder is served correctly.
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        product: i1, 
+                        audience: i2, 
+                        mode: mode,
+                        goal: selectedGoal,
+                        tone: toneText
+                    })
+                });
+
+                const data = await response.json();
+                
+                // 3. Display Real Results
                 const userMsg = Clerk.user ? "" : "<br><br>🔒 <em>Login to remove watermarks.</em>";
+                
+                document.getElementById('outputA').innerHTML = data.variationA + userMsg;
+                document.getElementById('outputB').innerHTML = data.variationB + userMsg;
 
-                if (mode === "Cold Call Script") {
-                    let prospectName = "there"; let targetUrl = i1;
-                    if (i1.includes("-")) { const parts = i1.split("-"); prospectName = parts[0].trim(); targetUrl = parts[1].trim(); }
-                    
-                    const domain = targetUrl.replace('https://', '').split('/')[0];
-                    mockA = `<div class="space-y-3"><span class="text-xs font-bold text-gray-500 uppercase">Strategy: The Researched Opener</span><p><strong>You:</strong> "Hi ${prospectName}, is this a bad time?"</p><p><strong>You:</strong> "I'm calling because I was reviewing <strong>${domain}</strong> this morning..."</p><p><strong>You:</strong> "Usually, companies like yours struggle with ${i2}."</p></div>`;
-                    mockB = `<div class="space-y-3"><span class="text-xs font-bold text-gray-500 uppercase">Strategy: Direct</span><p><strong>You:</strong> "Hello ${prospectName}. I'll be brief. I see you are prioritizing efficiency."</p></div>`;
-                } else if (mode === "Viral Hooks") {
-                    mockA = `1. "Stop scrolling if you live in Nairobi. This changes everything about ${i1}."<br>2. "I wish I knew this about ${i1} sooner..."<br>3. "The one secret ${i2} don't want you to know."`;
-                    mockB = `1. "3 Reasons why ${i1} is the best investment in 2025."<br>2. "This is how I scaled ${i1} in 30 days."`;
-                } else if (mode === "Tender Proposal") {
-                    mockA = `<strong>Executive Summary:</strong><br>We understand that ${i1} is seeking to optimize ${i2}. Our firm proposes a robust framework that aligns with Kenyan regulatory standards...`;
-                    mockB = `<strong>Methodology:</strong><br>Our approach to ${i2} involves a 3-phase rollout designed to minimize downtime for ${i1}.`;
-                } else {
-                    mockA = `(Draft 1 for ${i1})<br><br>🔥 <strong>${i1}</strong> is trending in Nairobi!<br>Get yours today.${userMsg}`;
-                    mockB = `(Draft 2)<br><br>Stop scrolling. <strong>${i1}</strong> is the solution you need.`;
-                }
-
-                document.getElementById('outputA').innerHTML = mockA;
-                document.getElementById('outputB').innerHTML = mockB;
+            } catch (error) {
+                console.error(error);
+                alert("Error: Could not connect to AI. Make sure the site is deployed.");
+            } finally {
+                // 4. Reset Button
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 btn.classList.remove('opacity-75', 'cursor-not-allowed');
-            }, 1500);
+            }
         }
-
         // WHATSAPP CONNECT SIMULATION
         function connectWhatsApp() {
             const btn = document.getElementById('connectWaBtn');
