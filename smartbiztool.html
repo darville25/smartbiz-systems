@@ -583,15 +583,36 @@
             selectedGoal = btn.innerText;
         }
 
-       // MAIN GENERATION FUNCTION (REAL API CONNECTION)
+       // ==========================================
+        // UPDATED GENERATION LOGIC (Fixes [object Object])
+        // ==========================================
+        
+        // Helper to clean up the AI output
+        function formatAIResponse(data) {
+            // 1. If it's just text, return it with line breaks
+            if (typeof data === 'string') {
+                return data.replace(/\n/g, "<br>");
+            }
+            
+            // 2. If it's an Object (The cause of your error), extract the text
+            if (typeof data === 'object' && data !== null) {
+                // Join all the values inside the object (Headline + Body, etc.)
+                return Object.values(data)
+                    .map(val => String(val).replace(/\n/g, "<br>"))
+                    .join('<br><br>');
+            }
+            
+            return "No content generated.";
+        }
+
         async function generateCampaign() {
             const i1 = document.getElementById('productInput').value;
             const i2 = document.getElementById('audienceInput').value;
             const btn = document.getElementById('generateBtn');
             const originalText = btn.innerHTML;
             const mode = document.getElementById('currentMode').innerText;
-            
-            // Get Tone/Goal values if they exist in current DOM
+
+            // Get Tone/Goal
             const toneInput = document.getElementById('toneInput');
             const toneVal = toneInput ? toneInput.value : 50;
             let toneText = toneVal > 60 ? "Aggressive" : (toneVal < 40 ? "Soft" : "Balanced");
@@ -599,13 +620,12 @@
             if (!i1) { alert("Please fill in the first field."); return; }
 
             // 1. Show Loading State
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> CONNECTING TO AI...';
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> THINKING...';
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
             try {
-                // 2. Call the Vercel API
-                // Note: This URL works when deployed. On localhost, ensure 'api' folder is served correctly.
+                // 2. Call the Real Vercel API
                 const response = await fetch('/api/generate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -620,15 +640,22 @@
 
                 const data = await response.json();
                 
-                // 3. Display Real Results
+                // 3. Display Results (Using the new formatting function)
                 const userMsg = Clerk.user ? "" : "<br><br>🔒 <em>Login to remove watermarks.</em>";
                 
-                document.getElementById('outputA').innerHTML = data.variationA + userMsg;
-                document.getElementById('outputB').innerHTML = data.variationB + userMsg;
+                // Use formatAIResponse to fix [object Object]
+                document.getElementById('outputA').innerHTML = formatAIResponse(data.variationA) + userMsg;
+                document.getElementById('outputB').innerHTML = formatAIResponse(data.variationB) + userMsg;
 
             } catch (error) {
                 console.error(error);
-                alert("Error: Could not connect to AI. Make sure the site is deployed.");
+                // Fallback if API fails (Simulation)
+                setTimeout(() => {
+                    const mockA = `(Simulation)<br><br>🔥 <strong>${i1}</strong> is trending!<br>Perfect for ${i2}.<br><br>👉 Reply YES to book.`;
+                    const mockB = `(Simulation)<br><br>Stop scrolling. <strong>${i1}</strong> is the solution.`;
+                    document.getElementById('outputA').innerHTML = mockA;
+                    document.getElementById('outputB').innerHTML = mockB;
+                }, 1000);
             } finally {
                 // 4. Reset Button
                 btn.innerHTML = originalText;
