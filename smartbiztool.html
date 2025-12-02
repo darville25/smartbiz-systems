@@ -79,30 +79,101 @@
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 glass-panel">
+    <!-- ================================================================= -->
+    <!-- UNIFIED TOOL NAVIGATION (Matches Main Site + Clerk Auth)          -->
+    <!-- ================================================================= -->
+    <nav class="fixed w-full z-50 glass-panel transition-all duration-300 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
+                
+                <!-- LOGO -->
                 <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
                     <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
                         SmartBiz<span class="text-brand-neon group-hover:text-white transition">Tool</span>
                     </span>
                     <span class="ml-2 text-xs bg-brand-purple/20 text-brand-purple border border-brand-purple/50 px-2 py-0.5 rounded font-bold uppercase tracking-wide">Beta</span>
                 </a>
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#features" class="text-sm font-bold text-gray-200 hover:text-white transition-colors">Features</a>
-                    <a href="#pricing" class="text-sm font-bold text-gray-200 hover:text-white transition-colors">Pricing</a>
-                    <a href="index.html" class="text-sm font-bold text-gray-200 hover:text-brand-neon transition-colors">Back to Agency</a>
+                
+                <!-- DESKTOP MENU (Hidden on Mobile) -->
+                <div class="hidden lg:flex space-x-6 items-center">
+                    
+                    <!-- Dropdown: Solutions -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Solutions <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition"><i class="fa-solid fa-layer-group w-5 text-brand-neon"></i> All Services</a>
+                                <a href="automation.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition"><i class="fa-solid fa-robot w-5 text-brand-neon"></i> Automation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internal Page Links -->
+                    <a href="#features" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Features</a>
+                    <a href="#pricing" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Pricing</a>
+
+                    <!-- Dropdown: Company -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Company <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="about.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition"><i class="fa-solid fa-building w-5 text-purple-400"></i> About Us</a>
+                                <a href="careers.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition"><i class="fa-solid fa-briefcase w-5 text-purple-400"></i> Careers</a>
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition"><i class="fa-solid fa-newspaper w-5 text-purple-400"></i> Blog</a>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="h-6 w-px bg-gray-700 mx-2"></div>
 
-                    <button onclick="Clerk.openSignIn()" class="px-5 py-2.5 text-sm font-bold text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-all">Login</button>
-                    <button onclick="Clerk.openSignUp()" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">Start for Free</button>
+                    <!-- CLERK AUTH BUTTONS -->
+                    <button onclick="Clerk.openSignIn()" class="px-5 py-2.5 text-sm font-bold text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-all">
+                        Login
+                    </button>
+                    
+                    <button onclick="Clerk.openSignUp()" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">
+                        Start for Free
+                    </button>
                 </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none p-2 border border-gray-800 rounded-lg">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto pb-20">
+            <div class="px-4 pt-4 space-y-1">
+                
+                <p class="px-3 pt-4 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Navigation</p>
+                <a href="#features" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">Features</a>
+                <a href="#pricing" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">Pricing</a>
+                <a href="index.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">Back to Main Site</a>
+
+                <div class="h-px bg-gray-800 my-4"></div>
+                
+                <!-- Mobile Auth Buttons -->
+                <button onclick="Clerk.openSignIn()" class="block w-full text-center px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800 border border-gray-700 mb-3">
+                    Login
+                </button>
+                
+                <button onclick="Clerk.openSignUp()" class="block w-full text-center px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover transition">
+                    Start for Free
+                </button>
+                <div class="pb-10"></div>
             </div>
         </div>
     </nav>
 
+    
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-12 lg:pt-40 overflow-hidden">
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -179,7 +250,7 @@
                                         <i class="fa-solid fa-file-contract w-5 text-center text-brand-orange"></i> Tender/Proposal
                                     </button>
                                 </div>
-                            </div>
+                            </div>                                                            
 
                             <!-- Category 3: Influencers -->
                             <div>
@@ -423,7 +494,7 @@
     </footer>
 
     <!-- CLERK SDK -->
-    <script async crossorigin="anonymous" data-clerk-publishable-key="pk_test_YOUR_KEY_HERE" src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" type="text/javascript"></script>
+    <script async crossorigin="anonymous" data-clerk-publishable-key="pk_test_c3F1YXJlLWRvZ2Zpc2gtOTUuY2xlcmsuYWNjb3VudHMuZGV2JA" src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" type="text/javascript"></script>
 
     <!-- APP LOGIC -->
     <script>
@@ -583,6 +654,23 @@
             const blob = new Blob([`SMARTBIZ COMMANDER\nTopic: ${i1}\n\n${contentA}\n\n${contentB}`], { type: "text/plain" });
             const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `${i1.replace(/\s+/g, '_')}_Content.txt`;
             document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        }
+    </script>
+
+    <!-- MOBILE MENU SCRIPT (Place at bottom of body if not already there) -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
         }
     </script>
 </body>
