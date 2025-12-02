@@ -45,7 +45,6 @@
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'spin-slow': 'spin 3s linear infinite',
                     },
                     keyframes: {
                         float: {
@@ -105,14 +104,14 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 lg:pt-40 overflow-hidden">
+    <section class="relative pt-32 pb-12 lg:pt-40 overflow-hidden">
         <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
             <div class="inline-flex items-center px-4 py-2 rounded-full border border-gray-600 bg-gray-900 mb-8 animate-float shadow-lg">
                 <span class="w-2 h-2 rounded-full bg-brand-neon mr-2 animate-pulse"></span>
-                <span class="text-sm font-bold text-gray-100">Now Solving: Debt Collection & WhatsApp Agents</span>
+                <span class="text-sm font-bold text-gray-100">Now Solving: Debt Collection & Brand Pitches</span>
             </div>
             
             <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white leading-tight">
@@ -121,7 +120,7 @@
             </h1>
             
             <p class="text-lg text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
-                Not just Ads. Configure intelligent WhatsApp Agents, generate Cold Call Scripts, and manage Debt Collection tailored for the Nairobi market.
+                Not just Ads. Generate <strong>Cold Call Scripts</strong>, <strong>Debt Collection Texts</strong>, and <strong>Influencer Brand Pitches</strong> tailored for the Nairobi market.
             </p>
 
             <!-- APP INTERFACE -->
@@ -130,7 +129,7 @@
                 
                 <div class="relative bg-brand-dark border border-gray-600 rounded-xl shadow-app overflow-hidden flex flex-col md:flex-row min-h-[750px]">
                     
-                    <!-- SIDEBAR -->
+                    <!-- SIDEBAR (Scrollable) -->
                     <div class="w-full md:w-72 bg-gray-900 border-r border-gray-700 flex flex-col">
                         <div class="p-4 border-b border-gray-800">
                             <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Select A Tool</span>
@@ -138,7 +137,7 @@
                         
                         <div class="flex-1 overflow-y-auto app-scroll p-3 space-y-6">
                             
-                            <!-- Category 0: AI Agents (NEW) -->
+                            <!-- Category 0: AI Agents -->
                             <div>
                                 <h3 class="text-xs font-bold text-green-400 mb-2 px-2 uppercase flex items-center">
                                     <i class="fa-solid fa-robot mr-2"></i> AI Agents (Beta)
@@ -150,15 +149,15 @@
                                 </div>
                             </div>
 
-                            <!-- Category 1: Marketing & Sales -->
+                            <!-- Category 1: Marketing -->
                             <div>
                                 <h3 class="text-xs font-bold text-brand-neon mb-2 px-2 uppercase">Marketing & Sales</h3>
                                 <div class="space-y-1">
-                                    <button onclick="switchMode(this, 'Ads Generator')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-brand-neon bg-gray-800 rounded-lg border border-brand-neon/40 shadow-sm transition-all">
+                                    <button onclick="switchMode(this, 'FB & IG Ads')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-brand-neon bg-gray-800 rounded-lg border border-brand-neon/40 shadow-sm transition-all">
                                         <i class="fa-brands fa-facebook w-5 text-center"></i> Ads Generator
                                     </button>
                                     <button onclick="switchMode(this, 'Cold Call Script')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
-                                        <i class="fa-solid fa-phone-volume w-5 text-center"></i> Cold Call Script
+                                        <i class="fa-solid fa-phone-volume w-5 text-center text-brand-neon"></i> Cold Call Script
                                     </button>
                                     <button onclick="switchMode(this, 'WhatsApp Script')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-brands fa-whatsapp w-5 text-center"></i> WhatsApp Scripts
@@ -169,19 +168,19 @@
                                 </div>
                             </div>
 
-                            <!-- Category 2: Business Ops (SME) -->
+                            <!-- Category 2: Business Ops -->
                             <div>
                                 <h3 class="text-xs font-bold text-brand-orange mb-2 px-2 uppercase">Business Ops (SME)</h3>
                                 <div class="space-y-1">
                                     <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-solid fa-hand-holding-dollar w-5 text-center text-brand-orange"></i> Debt Collection
                                     </button>
-                                    <button onclick="switchMode(this, 'Tender Proposal')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
+                                    <button onclick="switchMode(this, 'Proposal Intro')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-solid fa-file-contract w-5 text-center text-brand-orange"></i> Tender/Proposal
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <!-- Category 3: Influencers -->
                             <div>
                                 <h3 class="text-xs font-bold text-brand-pink mb-2 px-2 uppercase">Influencers</h3>
@@ -189,20 +188,20 @@
                                     <button onclick="switchMode(this, 'Brand Pitch Email')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-solid fa-paper-plane w-5 text-center text-brand-pink"></i> Brand Pitch
                                     </button>
-                                    <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
+                                    <button onclick="switchMode(this, 'Viral Hook')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-brands fa-tiktok w-5 text-center text-brand-pink"></i> Viral Hooks
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Category 4: Careers / Jobs -->
+                            <!-- Category 4: Careers -->
                             <div>
                                 <h3 class="text-xs font-bold text-white mb-2 px-2 uppercase">Careers / Jobs</h3>
                                 <div class="space-y-1">
                                     <button onclick="switchMode(this, 'LinkedIn Cold DM')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-brands fa-linkedin w-5 text-center"></i> LinkedIn Cold DM
                                     </button>
-                                    <button onclick="switchMode(this, 'CV Polisher')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
+                                    <button onclick="switchMode(this, 'CV Bullet Points')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all">
                                         <i class="fa-solid fa-list-check w-5 text-center"></i> CV Polisher
                                     </button>
                                 </div>
@@ -220,12 +219,12 @@
                     </div>
 
                     <!-- MAIN APP AREA -->
-                    <div class="flex-1 flex flex-col bg-gray-900">
+                    <div class="flex-1 flex flex-col bg-gray-900" id="mainAppArea">
                         <!-- Top Bar -->
                         <div class="h-16 border-b border-gray-700 flex items-center justify-between px-6 bg-gray-800">
                             <h2 class="text-base font-bold text-white flex items-center">
                                 <i class="fa-solid fa-wand-magic-sparkles text-brand-neon mr-3"></i> 
-                                <span id="currentMode">Ads Generator</span>
+                                <span id="currentMode">FB & IG Ads</span>
                             </h2>
                             <div class="flex items-center space-x-4">
                                 <div id="authActionArea">
@@ -241,7 +240,7 @@
                             </div>
                         </div>
 
-                        <!-- 1. STANDARD WORKSPACE (Marketing, Ops, Careers) -->
+                        <!-- 1. STANDARD WORKSPACE -->
                         <div id="standardWorkspace" class="flex-1 p-6 grid lg:grid-cols-2 gap-6 overflow-hidden">
                             <!-- Input Column -->
                             <div class="space-y-6 app-scroll overflow-y-auto pr-2 pb-10">
@@ -280,84 +279,89 @@
                             </div>
                         </div>
 
-                        <!-- 2. WHATSAPP AGENT DASHBOARD (Knowledge Base Added) -->
+                        <!-- 2. WHATSAPP AGENT DASHBOARD -->
                         <div id="agentDashboard" class="flex-1 p-6 grid lg:grid-cols-2 gap-8 overflow-hidden hidden-view">
-                            
-                            <!-- Left: Config -->
                             <div class="space-y-6 app-scroll overflow-y-auto pr-2">
                                 <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
                                     <h3 class="text-green-400 font-bold mb-1"><i class="fa-solid fa-robot mr-2"></i>Agent Configuration</h3>
                                     <p class="text-xs text-gray-400">Train your bot to answer like you.</p>
                                 </div>
-
                                 <div>
                                     <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Business Name</label>
                                     <input type="text" value="SmartBiz Electronics" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm text-white focus:border-green-500 outline-none">
                                 </div>
-
                                 <div>
                                     <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Welcome Message</label>
-                                    <textarea class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm text-white focus:border-green-500 h-20">Habari! 👋 Welcome to SmartBiz Electronics. How can I help you today?</textarea>
+                                    <textarea class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm text-white focus:border-green-500 h-20">Habari! 👋 Welcome to SmartBiz. How can I help you?</textarea>
                                 </div>
-
-                                <!-- KNOWLEDGE BASE UPLOAD -->
+                                <!-- KNOWLEDGE BASE -->
                                 <div>
                                     <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Knowledge Base (PDF/Text)</label>
                                     <div class="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-green-500 transition cursor-pointer bg-gray-800/50 group" onclick="document.getElementById('fileUpload').click()">
                                         <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-500 mb-2 group-hover:text-green-400 transition"></i>
-                                        <p class="text-xs text-gray-400">Click to upload Price List or FAQ</p>
-                                        <p class="text-[10px] text-gray-500 mt-1">.pdf, .txt, .docx (Max 5MB)</p>
+                                        <p class="text-xs text-gray-400">Drag & Drop Price List or FAQ</p>
+                                        <p class="text-[10px] text-gray-500 mt-1">.pdf, .txt (Max 5MB)</p>
                                         <input type="file" id="fileUpload" class="hidden" onchange="alert('File uploaded to Knowledge Base (Simulation)')">
                                     </div>
                                 </div>
-
                                 <button id="connectWaBtn" onclick="connectWhatsApp()" class="w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg transition-all shadow-lg flex justify-center items-center">
                                     <i class="fa-brands fa-whatsapp mr-2"></i> Connect WhatsApp Number
                                 </button>
                             </div>
-
-                            <!-- Right: Preview -->
+                            <!-- PHONE PREVIEW -->
                             <div class="flex justify-center items-center bg-gray-800/30 rounded-xl border border-gray-700 p-4">
-                                <!-- Phone Frame -->
-                                <div class="relative border-gray-900 bg-gray-900 border-[10px] rounded-[2rem] h-[500px] w-[280px] shadow-2xl flex flex-col overflow-hidden">
-                                    
-                                    <!-- Screen Content (Switchable via JS) -->
-                                    <div id="phoneScreen" class="bg-[#0b141a] flex-1 flex flex-col font-sans h-full">
-                                        <!-- WA Header -->
-                                        <div class="bg-[#202c33] p-3 flex items-center text-white border-b border-gray-700">
-                                            <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-xs font-bold">SB</div>
-                                            <div class="ml-2 text-xs">SmartBiz Bot<br><span class="text-[10px] text-gray-400">online</span></div>
-                                        </div>
-                                        <!-- WA Chat -->
-                                        <div class="flex-1 p-3 space-y-3 overflow-y-auto text-xs">
-                                            <div class="self-start bg-[#202c33] text-white p-2 rounded-lg rounded-tl-none max-w-[85%]">
-                                                Do you have iPhone 15?
-                                                <span class="text-[9px] text-gray-400 block text-right mt-1">10:00</span>
-                                            </div>
-                                            <div class="self-end bg-[#005c4b] text-white p-2 rounded-lg rounded-tr-none max-w-[85%] ml-auto">
-                                                Yes! We have the iPhone 15 (128GB) for KES 120,000. Available in Black and Blue.
-                                                <span class="text-[9px] text-gray-300 block text-right mt-1">10:00</span>
-                                            </div>
-                                        </div>
-                                        <!-- WA Input -->
-                                        <div class="p-2 bg-[#202c33] flex items-center">
-                                            <div class="h-8 w-full bg-[#2a3942] rounded-full"></div>
-                                        </div>
+                                <div class="relative border-gray-900 bg-gray-900 border-[8px] rounded-[2rem] h-[450px] w-[250px] shadow-2xl flex flex-col overflow-hidden">
+                                    <div class="bg-[#202c33] p-3 text-white text-xs font-bold flex items-center border-b border-gray-700">
+                                        <div class="w-6 h-6 bg-green-500 rounded-full mr-2"></div> Bot Preview
                                     </div>
-
+                                    <div class="flex-1 bg-[#0b141a] p-3 space-y-2">
+                                        <div class="bg-[#202c33] text-white text-[10px] p-2 rounded-lg max-w-[80%]">Do you have stock?</div>
+                                        <div class="bg-[#005c4b] text-white text-[10px] p-2 rounded-lg max-w-[80%] self-end ml-auto">Yes! We have full stock available.</div>
+                                    </div>
                                     <!-- QR Code Overlay (Hidden by Default) -->
                                     <div id="qrLoader" class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center text-center p-4 hidden-view z-10">
                                         <i class="fa-solid fa-spinner fa-spin text-4xl text-green-500 mb-4"></i>
                                         <p class="text-white text-xs mb-2">Generating QR Code...</p>
                                         <p class="text-gray-400 text-[10px]">Please wait while we connect to WhatsApp servers.</p>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Why Kenyan Marketers Love Commander -->
+    <section class="py-24 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Why Kenyan Marketers Love <span class="text-brand-neon">Commander</span></h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
+                    We didn't just wrap ChatGPT. We fine-tuned our models on <span class="text-brand-purple">successful Kenyan campaigns</span>.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-brand-neon hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-neon group-hover:text-brand-dark transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-solid fa-map-location-dot text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Local Context Aware</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">It knows that "Westlands" implies corporate and "Eastleigh" implies wholesale. It adjusts the copy tone automatically.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-brand-purple hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-purple group-hover:text-white transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-brands fa-whatsapp text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">WhatsApp First</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Generates punchy scripts designed for Broadcast lists, explicitly avoiding the "Read More" truncation.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-solid fa-layer-group text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Proven Frameworks</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Built on proven marketing frameworks like AIDA and PAS to drive psychological action.</p>
                 </div>
             </div>
         </div>
@@ -419,7 +423,7 @@
     </footer>
 
     <!-- CLERK SDK -->
-    <script async crossorigin="anonymous" data-clerk-publishable-key="pk_test_c3F1YXJlLWRvZ2Zpc2gtOTUuY2xlcmsuYWNjb3VudHMuZGV2JA" src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" type="text/javascript"></script>
+    <script async crossorigin="anonymous" data-clerk-publishable-key="pk_test_YOUR_KEY_HERE" src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" type="text/javascript"></script>
 
     <!-- APP LOGIC -->
     <script>
@@ -452,6 +456,10 @@
             if (modeName === 'WhatsApp Agent') {
                 standardView.classList.add('hidden-view');
                 agentView.classList.remove('hidden-view');
+                // Scroll to Agent Dashboard on Mobile
+                if (window.innerWidth < 768) {
+                    setTimeout(() => agentView.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+                }
             } else {
                 standardView.classList.remove('hidden-view');
                 agentView.classList.add('hidden-view');
@@ -482,9 +490,14 @@
                     l1.innerText = "Product / Topic"; i1.placeholder = "e.g. Selling Plots";
                     l2.innerText = "Target Audience"; i2.placeholder = "e.g. Investors";
                 }
+
+                // Scroll to Standard Workspace on Mobile
+                if (window.innerWidth < 768) {
+                    setTimeout(() => standardView.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+                }
             }
 
-            // Update Buttons Style
+            // Update Buttons
             document.querySelectorAll('.sidebar-btn').forEach(b => {
                 b.className = b.innerText.includes("Configure Bot") ? 
                     'sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-green-400 bg-green-400/10 rounded-lg border border-green-400/30 shadow-sm transition-all hover:bg-green-400/20' : 
