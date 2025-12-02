@@ -69,38 +69,126 @@
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+   <!-- ================================================================= -->
+    <!-- MASTER NAVIGATION BAR (Paste this into ALL pages)                 -->
+    <!-- ================================================================= -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <span class="text-2xl font-bold tracking-tight text-white">
-                        SmartBiz<span class="text-brand-neon">Systems</span>
+                
+                <!-- LOGO -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+                        SmartBiz<span class="text-brand-neon group-hover:text-white transition">Systems</span>
                     </span>
                 </a>
                 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Home</a>
-                    <a href="services.html" class="text-sm font-bold text-brand-neon transition-colors">Services</a>
-                    <a href="process.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Process</a>
-                    <a href="faq.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">FAQ</a>
-                    <a href="https://tally.so/r/EkqoQN" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all duration-300 transform hover:-translate-y-0.5">
+                <!-- DESKTOP MENU (Hidden on Mobile) -->
+                <div class="hidden lg:flex space-x-6 items-center">
+                    
+                    <!-- Dropdown: Solutions -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Solutions <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-layer-group w-5 text-brand-neon"></i> All Services
+                                </a>
+                                <a href="automation.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-robot w-5 text-brand-neon"></i> Automation
+                                </a>
+                                <a href="process.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-list-check w-5 text-brand-neon"></i> Our Process
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Link: Results -->
+                    <a href="results.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Results</a>
+
+                    <!-- Dropdown: Company -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Company <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="about.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-building w-5 text-purple-400"></i> About Us
+                                </a>
+                                <a href="careers.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-briefcase w-5 text-purple-400"></i> Careers <span class="ml-2 text-[10px] bg-purple-500/20 text-purple-300 px-1.5 rounded">Hiring</span>
+                                </a>
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-newspaper w-5 text-purple-400"></i> Blog & Insights
+                                </a>
+                                <a href="faq.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-circle-question w-5 text-purple-400"></i> FAQ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Tool Link (Highlighted) -->
+                    <a href="smartbiztool.html" class="group relative inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-full border border-gray-700 hover:border-brand-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all">
+                        <i class="fa-solid fa-microchip mr-2 text-brand-purple group-hover:animate-pulse"></i> AI Commander
+                    </a>
+
+                    <!-- CTA -->
+                    <a href="index.html#contact" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all transform hover:-translate-y-0.5">
                         Get a Free Audit
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button class="text-gray-300 hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                <!-- MOBILE MENU BUTTON -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none p-2 border border-gray-800 rounded-lg">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
+
+        <!-- MOBILE MENU DROPDOWN (Full Screen Overlay Style) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto pb-20">
+            <div class="px-4 pt-4 space-y-1">
+                
+                <!-- Mobile Links -->
+                <p class="px-3 pt-4 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Solutions</p>
+                <a href="services.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-layer-group w-6 text-brand-neon"></i> All Services</a>
+                <a href="automation.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-robot w-6 text-brand-neon"></i> Automation</a>
+                <a href="process.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-list-check w-6 text-brand-neon"></i> Our Process</a>
+                
+                <div class="h-px bg-gray-800 my-2"></div>
+
+                <p class="px-3 pt-2 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Company</p>
+                <a href="results.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-trophy w-6 text-purple-400"></i> Results & Cases</a>
+                <a href="about.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-building w-6 text-purple-400"></i> About Us</a>
+                <a href="careers.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-briefcase w-6 text-purple-400"></i> Careers</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-newspaper w-6 text-purple-400"></i> Blog</a>
+                <a href="faq.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-circle-question w-6 text-purple-400"></i> FAQ</a>
+
+                <div class="h-px bg-gray-800 my-4"></div>
+                
+                <!-- Mobile Actions -->
+                <a href="smartbiztool.html" class="block w-full text-center px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800 border border-gray-700 mb-3">
+                    <i class="fa-solid fa-microchip mr-2 text-brand-purple"></i> Launch AI Commander
+                </a>
+                
+                <a href="index.html#contact" class="block w-full text-center px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover transition">
+                    Get a Free Audit
+                </a>
+                <div class="pb-10"></div> <!-- Spacer -->
+            </div>
+        </div>
     </nav>
 
+    
     <!-- HERO SECTION -->
     <header class="relative pt-32 pb-20 overflow-hidden bg-brand-dark">
         <!-- Background Grid -->
@@ -466,6 +554,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+    </script>
 
 </body>
 </html>
