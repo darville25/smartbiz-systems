@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Strategies | SmartBizSystems Blog</title>
+    <meta name="description" content="Expert insights on Digital Marketing, AI Automation, and Business Growth strategies for the Kenyan market.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',       
+                            card: '#161E2E',       
+                            neon: '#2DD4BF',       
+                            neonhover: '#14B8A6',
+                            purple: '#A78BFA',     
+                            text: '#F3F4F6',       
+                            muted: '#9CA3AF'       
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(45, 212, 191, 0.3)',
+                        'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0F19; color: #F3F4F6; }
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #2DD4BF, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+
+   <!-- ================================================================= -->
+    <!-- MASTER NAVIGATION BAR (Paste this into ALL pages)                 -->
+    <!-- ================================================================= -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- LOGO -->
+                <a href="../index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+                        SmartBiz<span class="text-brand-neon group-hover:text-white transition">Systems</span>
+                    </span>
+                </a>
+                
+                <!-- DESKTOP MENU (Hidden on Mobile) -->
+                <div class="hidden lg:flex space-x-6 items-center">
+                    
+                    <!-- Dropdown: Solutions -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Solutions <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="services.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-layer-group w-5 text-brand-neon"></i> All Services
+                                </a>
+                                <a href="automation.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-robot w-5 text-brand-neon"></i> Automation
+                                </a>
+                                <a href="process.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-list-check w-5 text-brand-neon"></i> Our Process
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Link: Results -->
+                    <a href="results.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Results</a>
+
+                    <!-- Dropdown: Company -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Company <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <!-- Dropdown Menu -->
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="about.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-building w-5 text-purple-400"></i> About Us
+                                </a>
+                                <a href="careers.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-briefcase w-5 text-purple-400"></i> Careers <span class="ml-2 text-[10px] bg-purple-500/20 text-purple-300 px-1.5 rounded">Hiring</span>
+                                </a>
+                                <a href="blog.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-newspaper w-5 text-purple-400"></i> Blog & Insights
+                                </a>
+                                <a href="faq.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-circle-question w-5 text-purple-400"></i> FAQ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Tool Link (Highlighted) -->
+                    <a href="smartbiztool.html" class="group relative inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-full border border-gray-700 hover:border-brand-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all">
+                        <i class="fa-solid fa-microchip mr-2 text-brand-purple group-hover:animate-pulse"></i> AI Commander
+                    </a>
+
+                    <!-- CTA -->
+                    <a href="index.html#contact" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all transform hover:-translate-y-0.5">
+                        Get a Free Audit
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none p-2 border border-gray-800 rounded-lg">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU DROPDOWN (Full Screen Overlay Style) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto pb-20">
+            <div class="px-4 pt-4 space-y-1">
+                
+                <!-- Mobile Links -->
+                <p class="px-3 pt-4 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Solutions</p>
+                <a href="services.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-layer-group w-6 text-brand-neon"></i> All Services</a>
+                <a href="automation.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-robot w-6 text-brand-neon"></i> Automation</a>
+                <a href="process.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-list-check w-6 text-brand-neon"></i> Our Process</a>
+                
+                <div class="h-px bg-gray-800 my-2"></div>
+
+                <p class="px-3 pt-2 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Company</p>
+                <a href="results.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-trophy w-6 text-purple-400"></i> Results & Cases</a>
+                <a href="about.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-building w-6 text-purple-400"></i> About Us</a>
+                <a href="careers.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-briefcase w-6 text-purple-400"></i> Careers</a>
+                <a href="blog.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-newspaper w-6 text-purple-400"></i> Blog</a>
+                <a href="faq.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-circle-question w-6 text-purple-400"></i> FAQ</a>
+
+                <div class="h-px bg-gray-800 my-4"></div>
+                
+                <!-- Mobile Actions -->
+                <a href="smartbiztool.html" class="block w-full text-center px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800 border border-gray-700 mb-3">
+                    <i class="fa-solid fa-microchip mr-2 text-brand-purple"></i> Launch AI Commander
+                </a>
+                
+                <a href="index.html#contact" class="block w-full text-center px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover transition">
+                    Get a Free Audit
+                </a>
+                <div class="pb-10"></div> <!-- Spacer -->
+            </div>
+        </div>
+    </nav>
+
+   
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-16 bg-brand-dark overflow-hidden border-b border-gray-800">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 opacity-20">
+            <div class="absolute top-20 right-20 w-96 h-96 bg-brand-purple rounded-full filter blur-[120px]"></div>
+            <div class="absolute bottom-0 left-20 w-72 h-72 bg-brand-neon rounded-full filter blur-[120px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+            <span class="text-brand-neon font-bold tracking-wider uppercase text-sm mb-4 block">Knowledge Hub</span>
+            <h1 class="text-4xl lg:text-6xl font-extrabold text-white mb-6">
+                Insights for the <br>
+                <span class="text-gradient">Modern Kenyan Entrepreneur.</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
+                Actionable strategies on Automation, SEO, and Digital Growth. No fluff, just what works in Nairobi today.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="max-w-xl mx-auto relative">
+                <input type="text" id="searchInput" placeholder="Search for 'WhatsApp', 'SEO', or 'Sales'..." class="w-full bg-gray-900 border border-gray-700 rounded-full py-4 px-6 pl-12 text-white focus:border-brand-neon focus:ring-1 focus:ring-brand-neon outline-none transition shadow-lg">
+                <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-500"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- CATEGORY FILTER -->
+    <section class="py-8 bg-gray-900/50 sticky top-20 z-40 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 overflow-x-auto">
+            <div class="flex space-x-2 md:justify-center min-w-max" id="categoryContainer">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-bold bg-brand-neon text-brand-dark" onclick="filterPosts('All', this)">All Posts</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition" onclick="filterPosts('Automation', this)">Automation</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition" onclick="filterPosts('Marketing', this)">Marketing</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition" onclick="filterPosts('SEO', this)">SEO & Web</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition" onclick="filterPosts('AI Tools', this)">AI Tools</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition" onclick="filterPosts('Case Studies', this)">Case Studies</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG GRID SECTION -->
+    <section class="py-16 bg-brand-dark min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Grid Container -->
+            <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will inject 50+ posts here -->
+            </div>
+
+            <!-- Pagination (Visual) -->
+            <div class="mt-16 text-center">
+                <button class="px-8 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white hover:bg-gray-700 hover:border-brand-neon transition-all" onclick="loadMore()">
+                    <i class="fa-solid fa-spinner mr-2"></i> Load More Articles
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEWSLETTER CTA -->
+    <section class="py-20 bg-gradient-to-r from-gray-900 to-black border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i class="fa-regular fa-paper-plane text-4xl text-brand-neon mb-4"></i>
+            <h2 class="text-3xl font-bold text-white mb-4">Join 5,000+ Nairobi CEOs</h2>
+            <p class="text-gray-400 mb-8">Get our weekly "Growth Hacking Kenya" email. Zero spam, just high-value tactics sent every Tuesday.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your business email" class="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-6 py-3 text-white focus:border-brand-neon outline-none">
+                <button type="button" class="px-8 py-3 bg-brand-neon text-brand-dark font-bold rounded-lg hover:bg-brand-neonhover transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-gray-900 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-2xl font-bold tracking-tight text-white block mb-4">
+                SmartBiz<span class="text-brand-neon">Systems</span>
+            </span>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="smartbiztool.html" class="hover:text-white">AI Tools</a>
+                <a href="privacy.html" class="hover:text-white">Privacy</a>
+                <a href="terms.html" class="hover:text-white">Terms</a>
+            </div>
+            <p class="text-gray-600 text-sm">&copy; 2023 SmartBizSystems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT TO GENERATE 50+ BLOG POSTS -->
+    <script>
+        // Data Arrays for Random Generation
+        const categories = ["Automation", "Marketing", "SEO", "AI Tools", "Case Studies"];
+        const topics = [
+            "WhatsApp Automation", "Google Ads", "Local SEO", "Facebook Ads", "Email Marketing", 
+            "CRM Integration", "Cold Calling", "Web Design", "M-Pesa Integration", "Influencer Marketing"
+        ];
+        const audiences = [
+            "Real Estate Agents", "Nairobi Hotels", "SMEs in Kenya", "Law Firms", "Car Dealerships", 
+            "E-commerce Shops", "Restaurants", "Tech Startups", "Consultants", "Hardware Stores"
+        ];
+        const actions = [
+            "Scale Fast", "Double Revenue", "Save 20 Hours/Week", "Automate Follow-ups", "Rank #1 on Google", 
+            "Increase Leads", "Reduce Costs", "Hire Smarter", "Viral Content Strategies", "Fix Your Funnel"
+        ];
+
+        // Generator Function
+        function generatePosts(count) {
+            let posts = [];
+            for (let i = 0; i < count; i++) {
+                const cat = categories[Math.floor(Math.random() * categories.length)];
+                const topic = topics[Math.floor(Math.random() * topics.length)];
+                const audience = audiences[Math.floor(Math.random() * audiences.length)];
+                const action = actions[Math.floor(Math.random() * actions.length)];
+                
+                // Color Logic for Tags
+                let tagColor = "text-brand-neon bg-brand-neon/10 border-brand-neon/20";
+                if(cat === "Marketing") tagColor = "text-blue-400 bg-blue-400/10 border-blue-400/20";
+                if(cat === "AI Tools") tagColor = "text-brand-purple bg-brand-purple/10 border-brand-purple/20";
+                if(cat === "Case Studies") tagColor = "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
+
+                posts.push({
+                    id: i,
+                    category: cat,
+                    title: `${action}: The Ultimate Guide for ${audience} in Kenya`,
+                    date: `Dec ${Math.floor(Math.random() * 30) + 1}, 2025`,
+                    readTime: `${Math.floor(Math.random() * 10) + 3} min read`,
+                    excerpt: `Discover how ${topic} is transforming the landscape for ${audience}. We break down the exact steps to implement this strategy today.`,
+                    tagClass: tagColor
+                });
+            }
+            // Add some specific fixed titles for realism
+            posts[0].title = "Why Every Kenyan Business Needs WhatsApp Automation in 2025";
+            posts[1].title = "M-Pesa vs. Card: Optimizing Checkout for Local E-commerce";
+            posts[2].title = "How SmartBiz AI Commander Writes Better Ads Than You";
+            
+            return posts;
+        }
+
+        // Generate 50 Posts
+        const allPosts = generatePosts(51);
+
+        // Render Function
+        function renderPosts(filter = "All") {
+            const grid = document.getElementById('blogGrid');
+            grid.innerHTML = ""; // Clear current
+
+            let filteredPosts = allPosts;
+            if (filter !== "All") {
+                filteredPosts = allPosts.filter(post => post.category === filter);
+            }
+
+            filteredPosts.forEach(post => {
+                const card = `
+                    <article class="flex flex-col bg-brand-card border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 hover:-translate-y-2 transition-all duration-300 shadow-card group">
+                        <!-- Image Placeholder -->
+                        <div class="h-48 bg-gray-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent z-10"></div>
+                            <div class="w-full h-full bg-gray-700 group-hover:scale-105 transition-transform duration-700 flex items-center justify-center text-gray-600">
+                                <i class="fa-solid fa-image text-4xl opacity-20"></i>
+                            </div>
+                            <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-xs font-bold border ${post.tagClass}">
+                                ${post.category}
+                            </span>
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex items-center text-xs text-gray-500 mb-3 space-x-2">
+                                <span><i class="fa-regular fa-calendar mr-1"></i> ${post.date}</span>
+                                <span>•</span>
+                                <span><i class="fa-regular fa-clock mr-1"></i> ${post.readTime}</span>
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-neon transition-colors leading-tight">
+                                <a href="#">${post.title}</a>
+                            </h3>
+                            
+                            <p class="text-gray-400 text-sm line-clamp-2 mb-6 flex-1">
+                                ${post.excerpt}
+                            </p>
+                            
+                            <a href="#" class="inline-flex items-center text-sm font-bold text-white hover:text-brand-neon transition">
+                                Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </article>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Filter Logic
+        function filterPosts(category, btn) {
+            // Update Active Button Style
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition";
+            });
+            btn.className = "filter-btn active px-4 py-2 rounded-full text-sm font-bold bg-brand-neon text-brand-dark shadow-neon";
+            
+            renderPosts(category);
+        }
+
+        // Search Logic
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            const term = e.target.value.toLowerCase();
+            const grid = document.getElementById('blogGrid');
+            const matches = allPosts.filter(post => 
+                post.title.toLowerCase().includes(term) || 
+                post.excerpt.toLowerCase().includes(term)
+            );
+            
+            grid.innerHTML = "";
+            if(matches.length === 0) {
+                grid.innerHTML = `<div class="col-span-3 text-center py-20 text-gray-500">No articles found for "${term}".</div>`;
+            } else {
+                // Re-use logic to render specific matches (Simplified for search)
+                matches.forEach(post => {
+                    grid.innerHTML += `
+                    <article class="flex flex-col bg-brand-card border border-gray-800 rounded-xl overflow-hidden hover:border-gray-600 transition shadow-card">
+                        <div class="p-6">
+                            <span class="text-xs font-bold ${post.tagClass} px-2 py-1 rounded mb-2 inline-block">${post.category}</span>
+                            <h3 class="text-xl font-bold text-white mb-2"><a href="#">${post.title}</a></h3>
+                            <p class="text-gray-400 text-sm">${post.excerpt}</p>
+                        </div>
+                    </article>`;
+                });
+            }
+        });
+
+        // Simulating "Load More"
+        function loadMore() {
+            const btn = document.querySelector('button[onclick="loadMore()"]');
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> Loading...';
+            setTimeout(() => {
+                // In a real app, this would fetch from API. 
+                // Here we just generate 10 more random ones.
+                const newPosts = generatePosts(10);
+                allPosts.push(...newPosts);
+                renderPosts("All"); // Refresh grid
+                btn.innerHTML = 'Load More Articles';
+            }, 1000);
+        }
+
+        // Initial Load
+        renderPosts();
+
+    </script>
+
+ <!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+    </script>
+
+
+</body>
+</html>

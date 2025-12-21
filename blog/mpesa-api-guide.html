@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Pesa Daraja API Guide 2025: STK Push Integration for Kenya | SmartBizSystems</title>
+    <meta name="description" content="The complete guide to M-Pesa API integration in Kenya. Learn about STK Push, Paybill vs Buy Goods automation, Daraja Portal registration, and costs.">
+    <meta name="keywords" content="M-Pesa API integration Kenya, Daraja API tutorial, STK Push Kenya, Lipa na M-Pesa online, Safaricom developer portal, M-Pesa integration charges">
+    <meta name="author" content="SmartBizSystems Team">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Connecting M-Pesa Daraja API to Your Website: The Ultimate Guide">
+    <meta property="og:description" content="Stop asking customers to 'Send and forward message'. Automate payments today.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80">
+    <meta property="og:url" content="https://smartbizsystems.co.ke/blog/mpesa-api-guide.html">
+    <meta property="og:type" content="article">
+
+    <!-- SCHEMA MARKUP (Article + FAQ) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Connecting M-Pesa Daraja API to Your Website: A Non-Tech Guide",
+          "image": "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80",
+          "author": { "@type": "Organization", "name": "SmartBizSystems" },
+          "datePublished": "2026-01-05",
+          "description": "A comprehensive guide to automating M-Pesa payments for Kenyan businesses."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "How much does M-Pesa API integration cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Daraja API itself is free to use from Safaricom. However, you may need to pay a developer or purchase a plugin (KES 3,000 - 10,000) to connect it to your site."
+            }
+          }, {
+            "@type": "Question",
+            "name": "Can I use my personal number for M-Pesa API?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. You must have a registered Lipa na M-Pesa Till Number (Buy Goods) or Paybill Number linked to a business bank account."
+            }
+          }]
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', purple: '#A78BFA', text: '#F3F4F6' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0F19; color: #F3F4F6; }
+        .glass-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .blog-content h2 { font-size: 1.8rem; font-weight: 700; color: white; margin-top: 3rem; margin-bottom: 1rem; }
+        .blog-content h3 { font-size: 1.4rem; font-weight: 600; color: #2DD4BF; margin-top: 2rem; margin-bottom: 0.8rem; }
+        .blog-content p { font-size: 1.1rem; line-height: 1.8; color: #D1D5DB; margin-bottom: 1.5rem; }
+        .blog-content ul, .blog-content ol { list-style-position: outside; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #D1D5DB; }
+        .blog-content ul { list-style-type: disc; }
+        .blog-content ol { list-style-type: decimal; }
+        .blog-content li { margin-bottom: 0.8rem; line-height: 1.7; }
+        .highlight-box { background: rgba(45, 212, 191, 0.05); border: 1px solid rgba(45, 212, 191, 0.2); padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
+        .tech-term { color: #A78BFA; font-weight: bold; background: rgba(167, 139, 250, 0.1); padding: 2px 6px; rounded: 4px; }
+        .alert-box { border-left: 4px solid #EF4444; background: rgba(239, 68, 68, 0.1); padding: 1rem; margin: 1.5rem 0; color: #FCA5A5; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="../index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+                        SmartBiz<span class="text-brand-neon group-hover:text-white transition">Systems</span>
+                    </span>
+                </a>
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="../services.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Services</a>
+                    <a href="../automation.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Automation</a>
+                    <a href="../blog.html" class="text-sm font-bold text-brand-neon transition-colors">Blog</a>
+                    <a href="../smartbiztool.html" class="group relative inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-full border border-gray-700 hover:border-brand-purple transition-all">
+                        <i class="fa-solid fa-microchip mr-2 text-brand-purple"></i> AI Commander
+                    </a>
+                    <a href="../index.html#contact" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all">Get a Free Audit</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="relative pt-32 pb-12 bg-brand-dark overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-purple/10 rounded-full blur-[120px]"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <a href="../blog.html" class="text-brand-neon text-sm font-bold hover:underline mb-6 inline-block"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Insights</a>
+            <div class="flex items-center space-x-4 mb-6">
+                <span class="px-3 py-1 bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-xs font-bold rounded-full uppercase">Technical Guide</span>
+                <span class="text-gray-500 text-sm"><i class="fa-regular fa-clock mr-1"></i> 10 min read</span>
+                <span class="text-gray-500 text-sm"><i class="fa-regular fa-calendar mr-1"></i> Jan 05, 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-8">Connecting M-Pesa Daraja API to Your Website: A Non-Tech Guide</h1>
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold text-lg">SB</div>
+                <div class="ml-4"><p class="text-white font-bold text-sm">SmartBiz Tech Team</p></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="py-12 bg-brand-dark">
+        <div class="max-w-4xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <div class="lg:col-span-2 blog-content">
+                <p>If you run an online business in Kenya, the "manual payment dance" is the biggest killer of your sales conversion rate. It goes like this:</p>
+                <p>You tell the customer the price. You give them the Paybill number. They exit your website. They open the M-Pesa app. They try to remember the number. They get distracted by a WhatsApp message. <strong>You lose the sale.</strong></p>
+                <p>The solution is the <strong>M-Pesa Daraja API</strong>. Specifically, a feature called <span class="tech-term">STK Push</span> (Sim Tool Kit).</p>
+
+                <h2>What is STK Push?</h2>
+                <p>STK Push is the technology that forces a pop-up on your customer's phone screen asking for their PIN.</p>
+                <div class="highlight-box">
+                    <p class="mb-0 text-white"><strong>The Magic Moment:</strong> Instead of asking a customer to "Send Money," they click "Pay Now" on your website. Instantly, their phone lights up: <em>"Do you want to pay KES 1,000 to SmartBiz? Enter PIN."</em></p>
+                </div>
+                <p>They enter the PIN. The payment is done. Your website automatically updates to say "Order Confirmed." No screenshots needed. No fake transaction codes.</p>
+
+                <h2>Step 1: Prerequisites (Before You Code)</h2>
+                <p>You don't need to know how to code to start the process, but you do need the right paperwork. Safaricom is strict about security.</p>
+                <ol>
+                    <li><strong>Business Sim/Line:</strong> You cannot use a personal line.</li>
+                    <li><strong>Lipa Na M-Pesa Till or Paybill:</strong> This must be registered under a company name or a Business Name (BN).</li>
+                    <li><strong>Daraja Portal Account:</strong> Go to <a href="#" class="text-brand-neon underline">developer.safaricom.co.ke</a> and sign up.</li>
+                </ol>
+                <div class="alert-box">
+                    <strong>Important:</strong> Ensure your Paybill is "API Enabled." You might need to send an email to Safaricom business support to request this activation.
+                </div>
+
+                <h2>Step 2: Paybill vs. Buy Goods (Till Number)</h2>
+                <p>This is a common confusion point.</p>
+                <ul>
+                    <li><strong>Paybill (Shortcode):</strong> Best for high-volume transactions. It allows for easier integration with accounting software.</li>
+                    <li><strong>Buy Goods (Till Number):</strong> Easier for customers (no account number needed), but slightly harder to integrate because Safaricom technically links Tills to a "Store Number" backend.</li>
+                </ul>
+                <p><strong>Recommendation:</strong> For website automation, a Paybill is generally more robust, but STK Push works for both.</p>
+
+                <h2>Step 3: How the Integration Works</h2>
+                <p>Here is the non-technical flow of data:</p>
+                <ol>
+                    <li><strong>Initiation:</strong> Customer clicks "Pay" on your site.</li>
+                    <li><strong>API Call:</strong> Your website sends a signal to Safaricom's server saying "Ask phone number 07XX... for KES 1,000".</li>
+                    <li><strong>The Push:</strong> Safaricom wakes up the user's phone screen.</li>
+                    <li><strong>The Callback:</strong> Once the user enters the PIN, Safaricom sends a secret message (Callback) to your website server confirming success or failure (e.g., "Insufficient Funds").</li>
+                </ol>
+
+                <h2>Step 4: Implementation Options</h2>
+                <h3>Option A: WordPress/WooCommerce (No Code)</h3>
+                <p>If you use WordPress, you are in luck. You do not need to write code. Install a plugin like "M-Pesa for WooCommerce" or "IntaSend."</p>
+                <p>You simply copy the <strong>Consumer Key</strong> and <strong>Consumer Secret</strong> from the Daraja Portal and paste them into the plugin settings.</p>
+
+                <h3>Option B: Custom Code (Node.js / Python)</h3>
+                <p>If you have a custom-built website (React, Laravel, etc.), you need a developer. They will need to:</p>
+                <ul>
+                    <li>Generate an OAuth Token.</li>
+                    <li>Handle the `LipaNaMpesaOnline` endpoint.</li>
+                    <li>Set up a secure `Callback URL` to receive payment notifications.</li>
+                </ul>
+
+                <h2>Cost of M-Pesa Integration</h2>
+                <p>Many business owners fear hidden costs. Here is the breakdown:</p>
+                <ul>
+                    <li><strong>Safaricom Daraja API:</strong> FREE. Safaricom does not charge you to access the API.</li>
+                    <li><strong>Transaction Fees:</strong> Standard M-Pesa business charges apply (just like a normal Paybill).</li>
+                    <li><strong>Developer Fee:</strong> If hiring an expert, expect to pay between KES 10,000 to KES 30,000 for a secure integration.</li>
+                </ul>
+
+                <h2>Common Pitfalls</h2>
+                <ul>
+                    <li><strong>Handling Failed Payments:</strong> 20% of transactions fail (user cancels, low balance). Your website must handle this gracefully and ask them to try again.</li>
+                    <li><strong>Security:</strong> Never expose your `Consumer Secret` key in your frontend HTML code. It must stay on the server.</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Automating M-Pesa is the single highest ROI investment you can make for your Kenyan e-commerce business. It builds trust, reduces friction, and makes you look like a serious brand.</p>
+                
+                <!-- FAQ SCHEMA SECTION FOR GOOGLE -->
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <h3 class="text-white text-xl mb-4">Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-brand-neon font-bold">Q: Can I use my personal number?</p>
+                            <p class="text-sm">No, automation requires a registered business line.</p>
+                        </div>
+                        <div>
+                            <p class="text-brand-neon font-bold">Q: How long does it take?</p>
+                            <p class="text-sm">With a plugin, 1 hour. Custom development takes 2-5 days.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="lg:col-span-1 space-y-8">
+                <div class="bg-gray-900 border border-gray-700 p-6 rounded-xl text-center sticky top-24 shadow-2xl">
+                    <div class="w-16 h-16 bg-brand-purple/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-purple border border-brand-purple">
+                        <i class="fa-solid fa-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Need an Integration?</h3>
+                    <p class="text-gray-400 text-sm mb-6">Our team can integrate M-Pesa STK Push into your website securely in under 48 hours.</p>
+                    <a href="../index.html#contact" class="block w-full py-4 bg-brand-neon text-brand-dark font-bold rounded-lg hover:bg-brand-neonhover transition shadow-neon">Request Integration</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-gray-900 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-2xl font-bold tracking-tight text-white block mb-4">SmartBiz<span class="text-brand-neon">Systems</span></span>
+            <p class="text-gray-600 text-sm">&copy; 2023 SmartBizSystems. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
