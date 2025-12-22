@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBiz AI Commander | The Marketing OS for Kenya</title>
     <meta name="description" content="The ultimate AI tool for Kenyan Business, Influencers, and Job Seekers.">
-    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -625,64 +625,121 @@
             return "No content generated.";
         }
 
-        async function generateCampaign() {
-            const i1 = document.getElementById('productInput').value;
-            const i2 = document.getElementById('audienceInput').value;
-            const btn = document.getElementById('generateBtn');
-            const originalText = btn.innerHTML;
-            const mode = document.getElementById('currentMode').innerText;
+       <script>
+    let selectedGoal = "Direct";
+    let clerkInstance = null;
+    const PAYSTACK_PUBLIC_KEY = 'pk_test_c3F1YXJlLWRvZ2Zpc2gtOTUuY2xlcmsuYWNjb3VudHMuZGV2JA'; // PASTE YOUR KEY
 
-            // Get Tone/Goal
-            const toneInput = document.getElementById('toneInput');
-            const toneVal = toneInput ? toneInput.value : 50;
-            let toneText = toneVal > 60 ? "Aggressive" : (toneVal < 40 ? "Soft" : "Balanced");
+    // 1. INITIALIZE CLERK
+    window.addEventListener("load", async function () {
+        await Clerk.load();
+        clerkInstance = Clerk;
+        if (Clerk.user) {
+            updateUIForUser(Clerk.user);
+        } else {
+            updateUIForGuest();
+        }
+    });
 
-            if (!i1) { alert("Please fill in the first field."); return; }
+    function updateUIForUser(user) {
+        // Check if they are a PRO user
+        const isPro = user.publicMetadata.isPro === true;
+        const planName = isPro ? '<span class="text-brand-neon">PRO PLAN</span>' : 'Free Tier';
 
-            // 1. Show Loading State
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> THINKING...';
-            btn.disabled = true;
-            btn.classList.add('opacity-75', 'cursor-not-allowed');
+        document.getElementById('userProfileArea').innerHTML = `
+            <div class="flex items-center">
+                <img src="${user.imageUrl}" class="w-8 h-8 rounded-full border border-brand-neon">
+                <div class="ml-3">
+                    <p class="text-xs font-bold text-white">${user.firstName}</p>
+                    <p class="text-[10px] font-medium text-gray-400">${planName}</p>
+                </div>
+            </div>
+        `;
+    }
 
-            try {
-                // 2. Call the Real Vercel API
-                const response = await fetch('/api/generate', {
+    // ... (Keep switchMode and selectGoal functions same as before) ...
+
+    // 2. THE PAYWALL CHECKER
+    async function generateCampaign() {
+        if (!Clerk.user) {
+            Clerk.openSignIn();
+            return;
+        }
+
+        // CHECK PAYMENT STATUS
+        const isPro = Clerk.user.publicMetadata.isPro === true;
+
+        if (!isPro) {
+            // TRIGGER PAYMENT
+            payWithPaystack(Clerk.user);
+            return;
+        }
+
+        // IF PAID, PROCEED TO GENERATE...
+        const i1 = document.getElementById('productInput').value;
+        const i2 = document.getElementById('audienceInput').value;
+        const btn = document.getElementById('generateBtn');
+        const originalText = btn.innerHTML;
+
+        if (!i1) { alert("Please fill in the first field."); return; }
+
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> THINKING...';
+        btn.disabled = true;
+
+        try {
+            const response = await fetch('/api/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    product: i1, 
+                    audience: i2, 
+                    mode: document.getElementById('currentMode').innerText
+                })
+            });
+            const data = await response.json();
+            document.getElementById('outputA').innerHTML = data.variationA.replace(/\n/g, "<br>");
+            document.getElementById('outputB').innerHTML = data.variationB.replace(/\n/g, "<br>");
+        } catch (e) {
+            alert("Error generating. Please try again.");
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    }
+
+    // 3. PAYSTACK POPUP LOGIC
+    function payWithPaystack(user) {
+        let handler = PaystackPop.setup({
+            key: PAYSTACK_PUBLIC_KEY, 
+            email: user.primaryEmailAddress.emailAddress,
+            amount: 2500 * 100, // KES 2,500 (in cents)
+            currency: 'KES',
+            ref: ''+Math.floor((Math.random() * 1000000000) + 1),
+            metadata: {
+                custom_fields: [
+                    { display_name: "Mobile Number", variable_name: "mobile_number", value: "" }
+                ]
+            },
+            callback: function(response) {
+                // PAYMENT SUCCESSFUL
+                alert('Payment received! Upgrading your account...');
+                
+                // Call our backend to mark user as PRO
+                fetch('/api/upgrade-user', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
-                        product: i1, 
-                        audience: i2, 
-                        mode: mode,
-                        goal: selectedGoal,
-                        tone: toneText
-                    })
+                    body: JSON.stringify({ userId: user.id, reference: response.reference })
+                }).then(() => {
+                    window.location.reload(); // Reload to refresh permissions
                 });
-
-                const data = await response.json();
-                
-                // 3. Display Results (Using the new formatting function)
-                const userMsg = Clerk.user ? "" : "<br><br>🔒 <em>Login to remove watermarks.</em>";
-                
-                // Use formatAIResponse to fix [object Object]
-                document.getElementById('outputA').innerHTML = formatAIResponse(data.variationA) + userMsg;
-                document.getElementById('outputB').innerHTML = formatAIResponse(data.variationB) + userMsg;
-
-            } catch (error) {
-                console.error(error);
-                // Fallback if API fails (Simulation)
-                setTimeout(() => {
-                    const mockA = `(Simulation)<br><br>🔥 <strong>${i1}</strong> is trending!<br>Perfect for ${i2}.<br><br>👉 Reply YES to book.`;
-                    const mockB = `(Simulation)<br><br>Stop scrolling. <strong>${i1}</strong> is the solution.`;
-                    document.getElementById('outputA').innerHTML = mockA;
-                    document.getElementById('outputB').innerHTML = mockB;
-                }, 1000);
-            } finally {
-                // 4. Reset Button
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            },
+            onClose: function() {
+                alert('Transaction was not completed.');
             }
-        }
+        });
+        handler.openIframe();
+    }
+</script>
         // WHATSAPP CONNECT SIMULATION
         function connectWhatsApp() {
             const btn = document.getElementById('connectWaBtn');
