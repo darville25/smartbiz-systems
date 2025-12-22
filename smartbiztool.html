@@ -78,9 +78,18 @@
 
         /* Hidden Utility */
         .hidden-view { display: none !important; }
+        
+        /* Loader Transition */
+        #global-loader { transition: opacity 0.5s ease; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden" style="display:none;">
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
+
+    <!-- LOADING OVERLAY (New Fix) -->
+    <div id="global-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0F19]">
+        <div class="w-16 h-16 border-4 border-gray-800 border-t-brand-neon rounded-full animate-spin mb-4"></div>
+        <p class="text-brand-neon font-mono text-sm animate-pulse">Initializing SmartBiz...</p>
+    </div>
 
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 glass-panel">
@@ -164,7 +173,6 @@
                         <div class="p-4 border-b border-gray-800">
                             <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Select A Tool</span>
                         </div>
-                        
                         <div class="flex-1 overflow-y-auto app-scroll p-3 space-y-6">
                             
                             <!-- Category 0: AI Agents -->
@@ -192,7 +200,6 @@
                                 <div class="space-y-1">
                                     <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-hand-holding-dollar w-5 text-center text-brand-orange"></i> Debt Collection</button>
                                     <button onclick="switchMode(this, 'Tender Proposal')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-file-contract w-5 text-center text-brand-orange"></i> Tender/Proposal</button>
-                                    <button onclick="switchMode(this, 'Legal Agreement')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-file-signature w-5 text-center text-brand-orange"></i> Legal Drafter</button>
                                 </div>
                             </div>
                             
@@ -216,7 +223,6 @@
 
                         </div>
                         
-                        <!-- User Profile Area -->
                         <div id="userProfileArea" class="p-4 border-t border-gray-700 bg-gray-800">
                             <div class="flex items-center opacity-50">
                                 <div class="w-8 h-8 rounded-full bg-gray-600"></div>
@@ -318,31 +324,28 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Why Kenyan Marketers Love <span class="text-brand-neon">Commander</span></h2>
                 <p class="text-xl text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
-                    We didn't just wrap ChatGPT. We fine-tuned our models on <span class="text-brand-purple">successful Kenyan campaigns</span> to solve the specific problems Nairobi businesses face.
+                    We didn't just wrap ChatGPT. We fine-tuned our models on <span class="text-brand-purple">successful Kenyan campaigns</span>.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-brand-neon hover:-translate-y-2 transition-all duration-300">
-                    <div class="absolute inset-0 bg-brand-neon/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
                     <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-neon group-hover:text-brand-dark transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-solid fa-map-location-dot text-2xl"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3">Local Context Aware</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">It knows that "Westlands" implies corporate/premium and "Eastleigh" implies wholesale/trade. It adjusts the copy tone, slang, and urgency automatically to match the location.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">It knows that "Westlands" implies corporate and "Eastleigh" implies wholesale. It adjusts the copy tone automatically.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-brand-purple hover:-translate-y-2 transition-all duration-300">
-                    <div class="absolute inset-0 bg-brand-purple/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
                     <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-purple group-hover:text-white transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-brands fa-whatsapp text-3xl"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3">WhatsApp First</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Kenya runs on WhatsApp. Commander generates short, punchy scripts designed specifically for Broadcast lists, explicitly avoiding the "Read More" truncation that kills conversion.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Generates punchy scripts designed for Broadcast lists, explicitly avoiding the "Read More" truncation.</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
-                    <div class="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
                     <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-solid fa-layer-group text-2xl"></i></div>
                     <h3 class="text-xl font-bold text-white mb-3">Proven Frameworks</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Built on proven marketing frameworks like <strong class="text-white">AIDA</strong> (Attention, Interest, Desire, Action) and <strong class="text-white">PAS</strong> (Problem, Agitation, Solution) to drive psychological action.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Built on proven marketing frameworks like AIDA and PAS to drive psychological action.</p>
                 </div>
             </div>
         </div>
@@ -366,7 +369,7 @@
     <footer class="bg-black border-t border-gray-800 pt-12 pb-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <span class="text-2xl font-bold tracking-tight text-white block mb-6">SmartBiz<span class="text-brand-neon">Tool</span></span>
-            <p class="text-gray-400 text-sm font-medium">&copy; 2023 SmartBizSystems. Powered by NdovuCloud AI Infrastructure.</p>
+            <p class="text-gray-600 text-sm font-medium">&copy; 2023 SmartBizSystems. Powered by NdovuCloud AI Infrastructure.</p>
         </div>
     </footer>
 
@@ -394,16 +397,26 @@
 
         // === AUTHENTICATION & SECURITY ===
         window.addEventListener("load", async function () {
-            await Clerk.load();
-            clerkInstance = Clerk;
+            const loader = document.getElementById('global-loader');
+            
+            try {
+                await Clerk.load();
+                clerkInstance = Clerk;
 
-            if (Clerk.user) {
-                // ALLOW ACCESS
-                document.body.style.display = "block";
-                updateUIForUser(Clerk.user);
-            } else {
-                // REDIRECT GUESTS TO LOGIN
-                window.location.href = "login.html"; 
+                if (Clerk.user) {
+                    // USER IS ALLOWED -> REMOVE LOADER
+                    updateUIForUser(Clerk.user);
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        document.body.style.display = 'block'; // Ensure body is visible
+                    }, 500); 
+                } else {
+                    // USER IS NOT ALLOWED -> REDIRECT
+                    window.location.href = "login.html"; 
+                }
+            } catch (err) {
+                console.error("Clerk failed to load", err);
             }
         });
 
@@ -483,9 +496,6 @@
                 } else if (modeName === 'LinkedIn Cold DM') {
                     l1.innerText = "Profile Name"; i1.placeholder = "e.g. HR Manager";
                     l2.innerText = "Goal"; i2.placeholder = "e.g. Ask for interview";
-                } else if (modeName === 'Legal Agreement') {
-                    l1.innerText = "Type of Agreement"; i1.placeholder = "e.g. Car Sale Agreement / Employment Contract";
-                    l2.innerText = "Details (Parties, Terms)"; i2.placeholder = "e.g. Seller: John Doe. Buyer: Jane. Item: Vitz.";
                 } else {
                     l1.innerText = "Product / Topic"; i1.placeholder = "e.g. Selling Plots";
                     l2.innerText = "Target Audience"; i2.placeholder = "e.g. Investors";
@@ -561,11 +571,7 @@
 
             } catch (error) {
                 console.error(error);
-                // Fallback simulation if API fails
-                setTimeout(() => {
-                    const mockA = `(Simulation Mode - API Connection Failed)<br><br>Please check your internet or API key.<br>Generated for: ${i1}`;
-                    document.getElementById('outputA').innerHTML = mockA;
-                }, 1000);
+                alert("Error connecting to AI. Please check internet.");
             } finally {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
