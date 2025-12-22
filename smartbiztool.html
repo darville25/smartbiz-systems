@@ -156,6 +156,7 @@
             <!-- APP INTERFACE -->
             <div class="relative max-w-7xl mx-auto text-left">
                 <div class="absolute -inset-1 bg-gradient-to-r from-brand-neon to-brand-purple rounded-xl blur opacity-30"></div>
+                
                 <div class="relative bg-brand-dark border border-gray-600 rounded-xl shadow-app overflow-hidden flex flex-col md:flex-row min-h-[750px]">
                     
                     <!-- SIDEBAR -->
@@ -163,9 +164,10 @@
                         <div class="p-4 border-b border-gray-800">
                             <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Select A Tool</span>
                         </div>
+                        
                         <div class="flex-1 overflow-y-auto app-scroll p-3 space-y-6">
                             
-                            <!-- AI Agents -->
+                            <!-- Category 0: AI Agents -->
                             <div>
                                 <h3 class="text-xs font-bold text-green-400 mb-2 px-2 uppercase flex items-center"><i class="fa-solid fa-robot mr-2"></i> AI Agents (Beta)</h3>
                                 <div class="space-y-1">
@@ -173,7 +175,7 @@
                                 </div>
                             </div>
 
-                            <!-- Marketing -->
+                            <!-- Category 1: Marketing -->
                             <div>
                                 <h3 class="text-xs font-bold text-brand-neon mb-2 px-2 uppercase">Marketing & Sales</h3>
                                 <div class="space-y-1">
@@ -184,16 +186,17 @@
                                 </div>
                             </div>
 
-                            <!-- Ops -->
+                            <!-- Category 2: Ops -->
                             <div>
                                 <h3 class="text-xs font-bold text-brand-orange mb-2 px-2 uppercase">Business Ops</h3>
                                 <div class="space-y-1">
                                     <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-hand-holding-dollar w-5 text-center text-brand-orange"></i> Debt Collection</button>
                                     <button onclick="switchMode(this, 'Tender Proposal')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-file-contract w-5 text-center text-brand-orange"></i> Tender/Proposal</button>
+                                    <button onclick="switchMode(this, 'Legal Agreement')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-file-signature w-5 text-center text-brand-orange"></i> Legal Drafter</button>
                                 </div>
                             </div>
                             
-                            <!-- Influencers -->
+                            <!-- Category 3: Influencers -->
                             <div>
                                 <h3 class="text-xs font-bold text-brand-pink mb-2 px-2 uppercase">Influencers</h3>
                                 <div class="space-y-1">
@@ -202,7 +205,7 @@
                                 </div>
                             </div>
 
-                            <!-- Careers -->
+                            <!-- Category 4: Careers -->
                             <div>
                                 <h3 class="text-xs font-bold text-white mb-2 px-2 uppercase">Careers</h3>
                                 <div class="space-y-1">
@@ -210,8 +213,10 @@
                                     <button onclick="switchMode(this, 'CV Polisher')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-list-check w-5 text-center"></i> CV Polisher</button>
                                 </div>
                             </div>
+
                         </div>
                         
+                        <!-- User Profile Area -->
                         <div id="userProfileArea" class="p-4 border-t border-gray-700 bg-gray-800">
                             <div class="flex items-center opacity-50">
                                 <div class="w-8 h-8 rounded-full bg-gray-600"></div>
@@ -307,6 +312,42 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: Why Kenyan Marketers Love Commander -->
+    <section class="py-24 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Why Kenyan Marketers Love <span class="text-brand-neon">Commander</span></h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-medium leading-relaxed">
+                    We didn't just wrap ChatGPT. We fine-tuned our models on <span class="text-brand-purple">successful Kenyan campaigns</span> to solve the specific problems Nairobi businesses face.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-brand-neon hover:-translate-y-2 transition-all duration-300">
+                    <div class="absolute inset-0 bg-brand-neon/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-neon group-hover:text-brand-dark transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-solid fa-map-location-dot text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Local Context Aware</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">It knows that "Westlands" implies corporate/premium and "Eastleigh" implies wholesale/trade. It adjusts the copy tone, slang, and urgency automatically to match the location.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-brand-purple hover:-translate-y-2 transition-all duration-300">
+                    <div class="absolute inset-0 bg-brand-purple/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-purple group-hover:text-white transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-brands fa-whatsapp text-3xl"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">WhatsApp First</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Kenya runs on WhatsApp. Commander generates short, punchy scripts designed specifically for Broadcast lists, explicitly avoiding the "Read More" truncation that kills conversion.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="group relative p-8 bg-brand-card border border-gray-700 rounded-2xl shadow-card-hover hover:border-blue-500 hover:-translate-y-2 transition-all duration-300">
+                    <div class="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity"></div>
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors text-white border border-gray-600 shadow-lg"><i class="fa-solid fa-layer-group text-2xl"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-3">Proven Frameworks</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Built on proven marketing frameworks like <strong class="text-white">AIDA</strong> (Attention, Interest, Desire, Action) and <strong class="text-white">PAS</strong> (Problem, Agitation, Solution) to drive psychological action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PRICING SECTION -->
     <section id="pricing" class="py-24 bg-gray-900 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -322,7 +363,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-black border-t border-gray-800 pt-12 pb-10">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <span class="text-2xl font-bold tracking-tight text-white block mb-6">SmartBiz<span class="text-brand-neon">Tool</span></span>
@@ -431,6 +471,9 @@
                 } else if (modeName === 'Debt Collection') {
                     l1.innerText = "Client Name"; i1.placeholder = "e.g. John Kamau";
                     l2.innerText = "Details"; i2.placeholder = "e.g. Owes KES 50k";
+                } else if (modeName === 'Tender Proposal') {
+                    l1.innerText = "Company Name"; i1.placeholder = "e.g. Kenya Power";
+                    l2.innerText = "Service"; i2.placeholder = "e.g. Electrical Maintenance";
                 } else if (modeName === 'Viral Hooks') {
                     l1.innerText = "Topic"; i1.placeholder = "e.g. Real Estate in Nairobi";
                     l2.innerText = "Niche"; i2.placeholder = "e.g. First time home buyers";
@@ -440,6 +483,9 @@
                 } else if (modeName === 'LinkedIn Cold DM') {
                     l1.innerText = "Profile Name"; i1.placeholder = "e.g. HR Manager";
                     l2.innerText = "Goal"; i2.placeholder = "e.g. Ask for interview";
+                } else if (modeName === 'Legal Agreement') {
+                    l1.innerText = "Type of Agreement"; i1.placeholder = "e.g. Car Sale Agreement / Employment Contract";
+                    l2.innerText = "Details (Parties, Terms)"; i2.placeholder = "e.g. Seller: John Doe. Buyer: Jane. Item: Vitz.";
                 } else {
                     l1.innerText = "Product / Topic"; i1.placeholder = "e.g. Selling Plots";
                     l2.innerText = "Target Audience"; i2.placeholder = "e.g. Investors";
@@ -515,7 +561,11 @@
 
             } catch (error) {
                 console.error(error);
-                alert("Error connecting to AI. Please check internet.");
+                // Fallback simulation if API fails
+                setTimeout(() => {
+                    const mockA = `(Simulation Mode - API Connection Failed)<br><br>Please check your internet or API key.<br>Generated for: ${i1}`;
+                    document.getElementById('outputA').innerHTML = mockA;
+                }, 1000);
             } finally {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
