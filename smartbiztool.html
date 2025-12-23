@@ -159,46 +159,55 @@
         }, 600);
     });
 
-    // 2. TOOL SWITCHER
     function switchMode(btn, mode) {
-        currentMode = mode;
-        document.getElementById('currentModeTitle').innerText = mode;
-        if (window.innerWidth < 768) { document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth' }); }
+    currentMode = mode;
+    document.getElementById('currentModeTitle').innerText = mode;
+    
+    // NEW: Clear all inputs and outputs when switching modes
+    document.getElementById('mainInput').value = "";
+    document.getElementById('subInput').value = "";
+    document.getElementById('outputArea').innerHTML = `
+        <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
+            <i class="fa-solid fa-terminal text-2xl"></i>
+            <p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p>
+        </div>`;
+    
+    // Hide M-Pesa specific summary badges
+    const summaryBadge = document.getElementById('summaryBadge');
+    if (summaryBadge) summaryBadge.classList.add('hidden-view');
 
-        document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
-        const toggleGrp = document.getElementById('toggleGroup');
-        const summary = document.getElementById('summaryBadge');
-        const outArea = document.getElementById('outputArea');
+    // Auto-scroll for Mobile
+    if (window.innerWidth < 768) {
+        document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
+    // Update Sidebar highlighting logic
+    document.querySelectorAll('.sidebar-btn').forEach(b => {
+        b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all';
+    });
+    
+    // Setup labels based on the selected tool
+    const label1 = document.getElementById('label1');
+    const label2 = document.getElementById('label2');
+    const toggleGrp = document.getElementById('toggleGroup');
+
+    if (mode === "M-Pesa Auditor") {
+        btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
+        label1.innerText = "Paste M-Pesa SMS Messages";
+        label2.innerText = "Filters (Optional)";
         toggleGrp.classList.add('hidden-view');
-        summary.classList.add('hidden-view');
-        outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20"><i class="fa-solid fa-terminal text-2xl"></i><p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p></div>`;
-
-        if (mode === "M-Pesa Auditor") {
-            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-            document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
-            document.getElementById('label2').innerText = "Filters (Optional)";
-        } else if (mode === "Debt Collection") {
-            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-            document.getElementById('label1').innerText = "Client Name & Phone";
-            document.getElementById('label2').innerText = "Amount & Due Date";
-            toggleGrp.classList.remove('hidden-view');
-        } else {
-            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
-            document.getElementById('label1').innerText = "Product / Service Name";
-            document.getElementById('label2').innerText = "Target Audience Details";
-        }
+    } else if (mode === "Debt Collection") {
+        btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
+        label1.innerText = "Client Name & Debt Info";
+        label2.innerText = "Amount & Due Date";
+        toggleGrp.classList.remove('hidden-view');
+    } else {
+        btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
+        label1.innerText = mode === "Viral Hooks" ? "Product Name" : "Business Details";
+        label2.innerText = "Target Audience";
+        toggleGrp.classList.add('hidden-view');
     }
-
-    function setTone(btn, tone) {
-        activeTone = tone;
-        document.querySelectorAll('.tone-btn').forEach(b => {
-            b.classList.remove('bg-brand-neon', 'text-brand-dark');
-            b.classList.add('text-gray-400');
-        });
-        btn.classList.remove('text-gray-400');
-        btn.classList.add('bg-brand-neon', 'text-brand-dark');
-    }
+}
 
     // 3. MAIN AI PROCESSOR
     async function runProcessor() {
