@@ -1,425 +1,624 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBizSystems | Digital Marketing & Automation for Kenyan SMEs</title>
+    <meta name="description" content="Scale your Kenyan business with intelligent automation, SEO, and our custom AI Marketing Tools.">
     
-    <!-- SEO Optimization -->
-    <title>Thrive360Connect | African Youth Mentorship & Career Coaching</title>
-    <meta name="description" content="Unlock your potential with Thrive360Connect. The premier mentorship platform for African youth, women, and entrepreneurs founded by Coach Irene Nyaga.">
-    <meta name="keywords" content="Mentorship Africa, Coach Irene Nyaga, Youth Empowerment, Career Coaching Kenya, TVET Training, Business Development">
-    
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Fonts: Adding Playfair Display for "Framing" -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- 1. PRELOAD CRITICAL ASSETS (Fixes FCP/LCP) -->
+    <link rel="preload" as="image" href="images/hero-poster.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Page Specific CSS (Enhancements) -->
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/x-icon" href="images/favico.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- 2. OPTIMIZED FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 3. TAILWIND (Note: For Production, use a compiled CSS file instead of this script) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 4. FONT AWESOME (Moved to non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF',
+                            neonhover: '#14B8A6', purple: '#A78BFA', text: '#F3F4F6', muted: '#9CA3AF'
+                        }
+                    },
+                    boxShadow: { 'neon': '0 0 20px rgba(45, 212, 191, 0.3)', 'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)' },
+                    animation: { 'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* Typography Upgrade */
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        
-        /* Hero with Clear Image */
-.hero {
-    position: relative;
-    /* Removed the heavy linear-gradient overlay */
-    background: url('images/banner.webp'); 
-    background-size: cover;
-    background-position: center;
-    height: 600px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    /* Added a very subtle text shadow to the whole container for legibility */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
-
-/* Optional: Adding a light "vignette" to ensure text doesn't get lost if image is very bright */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.2); /* Very thin 20% dark tint */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Keeps text above the vignette */
-}
-
-        /* Stats Authority Bar */
-        .stats-bar {
-            background: white;
-            padding: 40px 0;
-            margin-top: -60px; /* Overlap effect */
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 3px solid var(--brand-orange);
-        }
-        .stat-item h3 { font-size: 36px; color: var(--brand-blue); margin-bottom: 5px; }
-        .stat-item p { font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Testimonials Section */
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            text-align: left;
-            border-left: 4px solid var(--brand-orange);
-        }
-        .quote-icon { font-size: 30px; color: var(--brand-cyan); opacity: 0.3; margin-bottom: 15px; }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .hero { clip-path: none; height: 500px; }
-            .hero-btn-group { flex-direction: column; gap: 10px; }
-            .stats-bar { margin-top: 0; }
-        }
+        body { background-color: #0B0F19; color: #F3F4F6; }
+        .text-gradient { background: linear-gradient(to right, #2DD4BF, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Critical CSS for Hero */
+        .hero-vignette { background: rgba(11, 15, 25, 0.7); }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
- <!-- Updated Navigation: Resources & Gallery moved to Footer -->
-<nav class="navbar">
-    <div class="container nav-container" style="max-width: 1300px;">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/apple-touch-icon.png" alt="Thrive360" class="nav-icon" style="height: 45px; width: auto;">
-            </a>
+<!-- ================================================================= -->
+    <!-- BLOG POST NAVIGATION (With ../ to go back to root)                -->
+    <!-- ================================================================= -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- LOGO -->
+                <a href="../index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+                        SmartBiz<span class="text-brand-neon group-hover:text-white transition">Systems</span>
+                    </span>
+                </a>
+                
+                <!-- DESKTOP MENU -->
+                <div class="hidden lg:flex space-x-6 items-center">
+                    
+                    <!-- Dropdown: Solutions -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Solutions <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="../services.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-layer-group w-5 text-brand-neon"></i> All Services
+                                </a>
+                                <a href="../automation.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-robot w-5 text-brand-neon"></i> Automation
+                                </a>
+                                <a href="../process.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-list-check w-5 text-brand-neon"></i> Our Process
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Single Link: Results -->
+                    <a href="../results.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Results</a>
+
+                    <!-- Dropdown: Company -->
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+                            Company <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+                            <div class="py-2">
+                                <a href="../about.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-building w-5 text-purple-400"></i> About Us
+                                </a>
+                                <a href="../careers.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-briefcase w-5 text-purple-400"></i> Careers
+                                </a>
+                                <a href="../blog.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-newspaper w-5 text-purple-400"></i> Blog
+                                </a>
+                                <a href="../faq.html" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                                    <i class="fa-solid fa-circle-question w-5 text-purple-400"></i> FAQ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Tool Link -->
+                    <a href="../smartbiztool.html" class="group relative inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-full border border-gray-700 hover:border-brand-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all">
+                        <i class="fa-solid fa-microchip mr-2 text-brand-purple group-hover:animate-pulse"></i> AI Commander
+                    </a>
+
+                    <!-- CTA -->
+                    <a href="../index.html#contact" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all">
+                        Get a Free Audit
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none p-2 border border-gray-800 rounded-lg">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- Mobile Toggle -->
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <!-- MOBILE MENU DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto pb-20">
+            <div class="px-4 pt-4 space-y-1">
+                
+                <p class="px-3 pt-4 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Solutions</p>
+                <a href="../services.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-layer-group w-6 text-brand-neon"></i> All Services</a>
+                <a href="../automation.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-robot w-6 text-brand-neon"></i> Automation</a>
+                <a href="../process.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-list-check w-6 text-brand-neon"></i> Our Process</a>
+                
+                <div class="h-px bg-gray-800 my-2"></div>
+
+                <p class="px-3 pt-2 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Company</p>
+                <a href="../results.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-trophy w-6 text-purple-400"></i> Results</a>
+                <a href="../about.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-building w-6 text-purple-400"></i> About Us</a>
+                <a href="../blog.html" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition"><i class="fa-solid fa-newspaper w-6 text-purple-400"></i> Blog</a>
+                
+                <div class="h-px bg-gray-800 my-4"></div>
+                
+                <a href="../smartbiztool.html" class="block w-full text-center px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800 border border-gray-700 mb-3">
+                    <i class="fa-solid fa-microchip mr-2 text-brand-purple"></i> Launch AI Commander
+                </a>
+                
+                <a href="../index.html#contact" class="block w-full text-center px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover transition">
+                    Get a Free Audit
+                </a>
+                <div class="pb-10"></div>
+            </div>
         </div>
+    </nav>
 
-        <ul class="nav-links">
-            <!-- The Only Dropdown -->
-            <li class="dropdown">
-                <a href="#" style="color: var(--brand-orange);">Home <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-content">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                </ul>
-            </li>
-
-            <!-- Independent Links -->
-            <li><a href="women-coaching.html">Women Coaching</a></li>
-            <li><a href="youth-mentorship.html">Teens Mentorship</a></li>
-            <li><a href="youth-mentorship.html">Youth Mentorship</a></li>
-            <li><a href="coaches.html">Coaches & Mentors</a></li>
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
             
-            <li><a href="index.html#contact" class="btn-nav-contact">Contact Us</a></li>
-        </ul>
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+    </script>
+
+   
+
+    <!-- HERO SECTION WITH BACKGROUND VIDEO -->
+<header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-dark">
+    
+    <!-- VIDEO BACKGROUND CONTAINER -->
+    <div class="absolute inset-0 z-0">
+        <video autoplay loop muted playsinline 
+               poster="images/hero-poster.webp" 
+               class="w-full h-full object-cover opacity-100 filter brightness-110 contrast-105">
+            <source src="images/hero-video.webm.webm" type="video/webm">
+            <source src="image/hero-video.mp4" type="video/mp4">
+            <img src="images/hero-poster.webp" alt="SmartBiz Background" class="w-full h-full object-cover">
+        </video>
+        
+        <!-- NEW TRANSPARENCY STRATEGY -->
+        <!-- We use a 'linear-gradient' that is very dark on the left (to make text pop) 
+             but fades to almost nothing on the right (to make the video clear) -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/40 to-transparent"></div>
+        
+        <!-- Subtler Bottom Fade -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-60"></div>
     </div>
-</nav>
 
-    <!-- SEO Optimized Hero Section -->
-<header class="hero">
-    <div class="container hero-content">
-        <!-- Tagline (Optimized as H1 for SEO) -->
-        <h1 style="font-size: 42px; line-height: 1.2; margin-bottom: 20px; text-shadow: 3px 3px 15px rgba(0,0,0,0.9);">
-            Holistic Thriving Ladies; <br>
-            <span style="color: var(--brand-orange);">Purposeful Youths & Teens</span>, <br>
-            Equipped Mentors & Coaches.
-        </h1>
+    <!-- Background Decor (Grid) - Reduced Opacity to show video better -->
+    <div class="absolute inset-0 bg-grid opacity-5 pointer-events-none z-0"></div>
 
-        <!-- Sub-Line (Service Keywords for SEO) -->
-        <p style="font-size: 19px; font-weight: 500; max-width: 900px; margin: 0 auto 35px auto; text-shadow: 2px 2px 10px rgba(0,0,0,1); line-height: 1.6;">
-            Holistic Wellness Coaching for Women | Mentorship for Youth & Teens | 
-            Coaching for Emerging Mentors & Coaches
-        </p>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Hero Copy -->
+        <div class="z-20">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-neon/30 bg-brand-dark/80 backdrop-blur-sm mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-neon mr-2 animate-pulse"></span>
+                <span class="text-[10px] font-bold tracking-widest uppercase text-brand-neon">Kenyan Business Intelligence</span>
+            </div>
+            
+            <!-- Font Colors: Using 'text-white' for high contrast, and your Brand Neon for the 'Punch' -->
+            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-white drop-shadow-xl">
+                Turn Your Business <br class="hidden lg:block">
+                Into A <span class="text-gradient">Growth Machine.</span>
+            </h1>
+            
+            <p class="text-lg text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-md">
+                Stop relying on guesswork. We combine data-driven digital marketing with custom AI tools to help Kenyan SMEs scale faster and increase ROI.
+            </p>
+            
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="https://tally.so/r/EkqoQN" class="px-8 py-4 text-sm font-black text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all duration-300 uppercase tracking-widest">
+                    Request Free Audit
+                </a>
+                <a href="smartbiztool.html" class="px-8 py-4 text-sm font-black text-white border border-white/20 bg-white/5 backdrop-blur-md rounded-lg hover:border-brand-neon hover:text-brand-neon transition-all duration-300 flex items-center justify-center uppercase tracking-widest">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Try AI Commander
+                </a>
+            </div>
+        </div>
 
-        <!-- Action Buttons -->
-        <div class="hero-btn-group">
-            <a href="#contact" class="btn btn-orange">Join Our Community</a>
-            <a href="about.html" class="btn" style="background: rgba(0,0,0,0.4); border: 2px solid white; color: white; backdrop-filter: blur(4px);">
-                Learn Our Story
-            </a>
+        <!-- Metrics Card: Made it more "Glassy" so you can see the video through it -->
+        <div class="relative z-20">
+            <div class="absolute inset-0 bg-brand-neon/10 rounded-3xl blur-3xl opacity-20"></div>
+            
+            <div class="relative bg-brand-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fa-solid fa-arrow-trend-up text-brand-neon"></i>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Revenue Lift</span>
+                        </div>
+                        <p class="text-4xl font-black text-white">+300%</p>
+                    </div>
+                    <div class="p-5 bg-white/5 rounded-2xl border border-white/5">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fa-solid fa-users text-brand-purple"></i>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Brands Scaled</span>
+                        </div>
+                        <p class="text-4xl font-black text-white">175+</p>
+                    </div>
+                    <div class="p-5 bg-white/5 rounded-2xl border border-white/5 sm:col-span-2">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-clock text-blue-400"></i>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Automation Impact</span>
+                            </div>
+                            <span class="text-[10px] font-bold text-brand-neon bg-brand-neon/10 px-2 py-1 rounded">Monthly</span>
+                        </div>
+                        <p class="text-4xl font-black text-white">40+ Hours Saved</p>
+                    </div>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <p class="text-sm text-slate-300 italic font-medium">"SmartBiz changed how we acquire customers in Nairobi."</p>
+                </div>
+            </div>
         </div>
     </div>
 </header>
-
-    <!-- Stats Authority Bar (New) -->
-    <section class="stats-bar">
-        <div class="container">
-            <div class="grid-2" style="grid-template-columns: repeat(4, 1fr); text-align: center;">
-                <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat-item">
-                    <h3>1,000+</h3>
-                    <p>Lives Impacted</p>
-                </div>
-                <div class="stat-item">
-                    <h3>4</h3>
-                    <p>Core Programs</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Certified Trainers</p>
-                </div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Everything You Need to <span class="text-brand-neon">Dominate</span></h2>
+                <p class="text-brand-muted max-w-2xl mx-auto">We don't just "do marketing." We build ecosystems that attract, nurture, and convert customers automatically.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- About Section (Refined) -->
-    <section class="section about">
-        <div class="container grid-2">
-            <div class="text-content">
-                <span class="tag">Who We Are</span>
-                <h2 style="color: var(--brand-blue);">Bridging the Gap</h2>
-                <p>Thrive360Connect is more than a platform; it is a movement. Led by the philosophy of <strong>Coach Irene Nyaga</strong>, we recognize a critical disconnect: brilliant young minds graduating with degrees but lacking the soft skills and networks to succeed.</p>
-                <p>We provide African youth with access to invaluable resources, <strong>Competence-Based Education (CBE)</strong> principles, and international mentors.</p>
-                <a href="about.html" class="btn btn-outline" style="margin-top: 15px;">Read Our Story</a>
-            </div>
-            <div class="image-content">
-                <!-- Layered Image Effect -->
-                <div style="position: relative; padding: 15px;">
-                    <img src="images/coach-irene.png.png" alt="Coach Irene Nyaga" style="width: 100%; border-radius: 10px; position: relative; z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-                    <!-- Decorative BG Box -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 3px solid var(--brand-orange); border-radius: 10px; transform: translate(-15px, -15px); z-index: 1;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programs Overview (Improved Grid) -->
-    <section id="programs" class="section bg-light text-center">
-        <div class="container">
-            <h2>Our Core Pillars</h2>
-            <p class="subtitle">We focus on the holistic development of the individual.</p>
-            
-            <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-venus icon-lg" style="color: var(--brand-orange);"></i>
-                    <h3>Women Coaching</h3>
-                    <p>Holistic wellness and leadership strategies for the modern woman.</p>
-                    <a href="women-coaching.html" style="color: var(--brand-blue); font-weight: 600; font-size: 13px;">Learn More &rarr;</a>
-                </div>
-                <div class="card">
-                    <i class="fas fa-rocket icon-lg" style="color: var(--brand-blue);"></i>
-                    <h3>Teen Mentorship</h3>
-                    <p>Equipping teenagers with character development, academic guidance, and the life skills needed to navigate critical growth years.</p>
-                    <a href="youth-mentorship.html" style="color: var(--brand-blue); font-weight: 600; font-size: 13px;">Learn More &rarr;</a>
-                </div>
-                <div class="card">
-                    <i class="fas fa-briefcase icon-lg" style="color: var(--brand-cyan);"></i>
-                    <h3>Business Development</h3>
-                    <p>ILO-SIYB certified training for aspiring entrepreneurs.</p>
-                    <a href="coaches.html" style="color: var(--brand-blue); font-weight: 600; font-size: 13px;">Learn More &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!-- Featured Book Section (3D Effect) -->
-    <section id="books" class="section book-section">
-        <div class="container">
-            <div class="book-wrapper">
-                <div class="book-image">
-                    <!-- Ensure book-cover.png.png exists in your images folder -->
-                    <img src="images/book-cover.png.png" alt="Beyond The Grades Book">
-                    <div class="blob-bg"></div>
-                </div>
-                <div class="book-content">
-                    <span class="tag">Best Seller</span>
-                    <h2>Find Purpose Beyond Results</h2>
-                    <h3 class="book-title">Beyond The Grades</h3>
-                    <p class="author">By Coach Irene Nyaga Elijah</p>
-                    <p class="book-desc">
-                        Are you defined by your academic performance? In a world obsessed with scores, 
-                        <strong>Beyond The Grades</strong> offers a refreshing roadmap to discovering your true potential.
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1 -->
+                <a href="automation.html" class="group p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-neon transition-all duration-300 hover:shadow-card cursor-pointer block">
+                    <div class="w-14 h-14 bg-brand-neon/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-neon/20 transition-colors">
+                        <i class="fa-solid fa-robot text-2xl text-brand-neon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Marketing Automation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Email sequences, WhatsApp bots, and CRM flows that nurture leads 24/7 without you lifting a finger.
                     </p>
-                    
-                    <div class="book-actions">
-                        <!-- Option 1: Buy Soft Copy (Instant PDF via Selar) -->
-                        <!-- REPLACE '#' with your specific Selar link -->
-                        <a href=" https://selar.com/w76cb92177" target="_blank" class="btn btn-orange">
-                            <i class="fas fa-download"></i> Buy Soft Copy (KES 800)
-                        </a>
-                        
-                        <!-- Option 2: Order Hard Copy (Via WhatsApp) -->
-                        <a href="https://wa.me/254723312435?text=Hi%20Coach%20Irene,%20I%20would%20like%20to%20order%20a%20Hard%20Copy%20of%20Beyond%20The%20Grades" target="_blank" class="btn btn-outline">
-                            <i class="fas fa-truck"></i> Hard Copy (KES 1,000)
+                </a>
+
+                <!-- Service 2 -->
+                <a href="services.html" class="group p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:shadow-card cursor-pointer block">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                        <i class="fa-solid fa-magnifying-glass-chart text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">SEO & Content</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Dominate Google search results in Kenya. We target high-intent keywords that drive ready-to-buy traffic.
+                    </p>
+                </a>
+
+                <!-- Service 3 -->
+                <a href="services.html" class="group p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-purple transition-all duration-300 hover:shadow-card cursor-pointer block">
+                    <div class="w-14 h-14 bg-brand-purple/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-purple/20 transition-colors">
+                        <i class="fa-solid fa-bullseye text-2xl text-brand-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Paid Advertising</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Precision Facebook, Instagram, and Google Ads campaigns designed to lower CPA and maximize ROAS.
+                    </p>
+                </a>
+
+                <!-- Service 4 -->
+                <a href="services.html" class="group p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-pink-500 transition-all duration-300 hover:shadow-card cursor-pointer block">
+                    <div class="w-14 h-14 bg-pink-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
+                        <i class="fa-solid fa-code text-2xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Web Development</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Blazing fast, mobile-responsive websites optimized for conversion, not just aesthetics.
+                    </p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: AI TOOL TEASER SECTION (Position 3) -->
+    <section class="py-24 relative overflow-hidden bg-brand-dark border-t border-gray-800">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-gray-900 to-black border border-gray-700 rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                
+                <!-- Glow Effect -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-purple/20 rounded-full blur-[80px]"></div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Text -->
+                    <div>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-purple/50 bg-brand-purple/10 mb-6">
+                            <span class="text-xs font-bold text-brand-purple uppercase tracking-wider">New SaaS Product</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                            Don't want to hire an agency yet? <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-neon to-brand-purple">Do it yourself with AI.</span>
+                        </h2>
+                        <p class="text-gray-400 mb-8 text-lg">
+                            We built the <strong>SmartBiz AI Commander</strong>. It writes Kenyan-context ads, WhatsApp scripts, and emails in seconds.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-neon mr-3"></i> Generates Sheng & Swahili Mix</li>
+                            <li class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-neon mr-3"></i> Formatted for WhatsApp Broadcasts</li>
+                            <li class="flex items-center text-gray-300"><i class="fa-solid fa-check text-brand-neon mr-3"></i> Free to try (No Login Required)</li>
+                        </ul>
+                        <a href="smartbiztool.html" class="inline-flex items-center px-8 py-4 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-200 transition-all">
+                            Launch Commander <i class="fa-solid fa-arrow-right ml-2"></i>
                         </a>
                     </div>
 
-                    <!-- Trust Badge -->
-                    <p style="font-size: 12px; margin-top: 15px; color: #666;">
-                        <i class="fas fa-lock" style="color: #10ac84;"></i> Secure Payment via M-PESA. Instant PDF Delivery.
+                    <!-- Visual Mockup -->
+                    <div class="relative hidden lg:block">
+                        <div class="bg-gray-800 rounded-lg border border-gray-600 p-4 shadow-xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                            <div class="flex items-center space-x-2 mb-4 border-b border-gray-700 pb-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <div class="ml-2 text-xs text-gray-500 font-mono">commander.exe</div>
+                            </div>
+                            <div class="space-y-3 font-mono text-xs">
+                                <div class="text-brand-neon">> Generating Facebook Ad for "Plots in Juja"...</div>
+                                <div class="text-gray-400">Analysis: Target Audience -> Investors</div>
+                                <div class="text-gray-400">Tone: High Urgency</div>
+                                <div class="bg-black p-3 rounded border-l-2 border-brand-purple text-gray-300 mt-2 leading-relaxed">
+                                    "Juja is the new Kileleshwa! 🏙️<br>
+                                    Secure your 50x100 plot today for just 1.5M...<br>
+                                    Ready Title Deeds. No Stories."
+                                </div>
+                                <div class="text-brand-neon animate-pulse">_</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGICAL VALUE SECTION -->
+    <section class="py-20 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl font-bold mb-6 text-white">Why Kenyan SMEs Choose Us?</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-check text-green-500 text-sm"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">Focus on ROI, Not Just Vanity Metrics</h4>
+                                <p class="text-gray-400 text-sm mt-1">Likes don't pay bills. We focus on leads, sales calls, and confirmed revenue.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-check text-green-500 text-sm"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">Local Context, Global Standards</h4>
+                                <p class="text-gray-400 text-sm mt-1">We understand the Kenyan market (M-Pesa, WhatsApp, Local SEO) but execute with Silicon Valley precision.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
+                                <i class="fa-solid fa-check text-green-500 text-sm"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-white">Complete Transparency</h4>
+                                <p class="text-gray-400 text-sm mt-1">You get a live dashboard. No hidden fees, no confusing jargon.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 lg:order-2 bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700">
+                    <h3 class="text-xl font-bold text-white mb-6">Projected Growth Calculator</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Current Monthly Revenue</label>
+                            <div class="h-12 bg-gray-900 rounded-lg border border-gray-700 flex items-center px-4 text-gray-300">KES 500,000</div>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">With SmartBiz Automation (+30%)</label>
+                            <div class="h-12 bg-brand-neon/10 rounded-lg border border-brand-neon/50 flex items-center px-4 text-brand-neon font-bold">KES 650,000</div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#contact" class="block w-full text-center py-3 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition">See Your Numbers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (SOCIAL PROOF) -->
+    <section id="results" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">Trusted by Kenya's <span class="text-brand-neon">Visionaries</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-50"></i>
+                    <p class="text-gray-300 mb-6 relative z-10 pt-8">
+                        "We struggled with manual client follow-ups. SmartBiz automated our entire WhatsApp booking flow. Our conversion rate doubled in 3 months."
                     </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold text-white">BK</div>
+                        <div class="ml-3">
+                            <p class="text-white font-semibold">Brian Kamau</p>
+                            <p class="text-xs text-brand-neon">Operations Director, Logistics KE</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex text-yellow-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
                 </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative transform md:-translate-y-4 shadow-neon">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-50"></i>
+                    <p class="text-gray-300 mb-6 relative z-10 pt-8">
+                        "The website redesign was sleek, but the SEO strategy was the real game changer. We are now #1 for our main keywords in Nairobi."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center font-bold text-white">SW</div>
+                        <div class="ml-3">
+                            <p class="text-white font-semibold">Sarah Wanjiku</p>
+                            <p class="text-xs text-brand-neon">Founder, Modern Homes Interiors</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex text-yellow-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-gray-700 absolute top-6 left-6 opacity-50"></i>
+                    <p class="text-gray-300 mb-6 relative z-10 pt-8">
+                        "Professional, fast, and data-driven. They didn't just sell me ads; they built a system that generates revenue while I focus on product."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center font-bold text-white">DO</div>
+                        <div class="ml-3">
+                            <p class="text-white font-semibold">David Ochieng</p>
+                            <p class="text-xs text-brand-neon">Tech Lead, FinTech Solutions</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex text-yellow-500 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Why We Do That (Process) -->
-    <section class="section dark-bg process-section">
-        <div class="container">
-            <div class="text-center" style="margin-bottom: 50px;">
-                <h2 style="color: white;">The Thrive Journey</h2>
-                <p style="color: #ccc;">How we take you from where you are to where you want to be.</p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-item step-low">
-                    <div class="step-box color-1">01</div>
-                    <h4>Connect</h4>
-                    <p>Join our network and find your tribe.</p>
-                </div>
-                <div class="step-item step-high">
-                    <div class="step-box color-2">02</div>
-                    <h4>Learn</h4>
-                    <p>Engage in competence-based training.</p>
-                </div>
-                <div class="step-item step-low">
-                    <div class="step-box color-3">03</div>
-                    <h4>Mentor</h4>
-                    <p>Get matched with global experts.</p>
-                </div>
-                <div class="step-item step-high">
-                    <div class="step-box color-4">04</div>
-                    <h4>Thrive</h4>
-                    <p>Achieve certification and career success.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Stories (New) -->
-    <section class="section bg-light">
-        <div class="container">
-            <h2 class="text-center">Success Stories</h2>
-            <div class="grid-2">
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p><em>"Thrive360Connect changed my perspective on my career. The mentorship I received helped me transition from a confused graduate to a confident entrepreneur."</em></p>
-                    <div style="margin-top: 15px; font-weight: 700; color: var(--brand-blue);">- Sarah K., Nairobi</div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p><em>"Coach Irene's approach to holistic wellness saved me from burnout. I am now a better leader and a happier person."</em></p>
-                    <div style="margin-top: 15px; font-weight: 700; color: var(--brand-blue);">- Joyce M., Corporate Leader</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="section">
-        <div class="container contact-wrapper">
-            <div class="text-center">
-                <h2>Get Involved</h2>
-                <p>Ready to push your boundaries? Send us a message.</p>
+    <!-- AUTOMATION CTA SECTION -->
+    <section id="contact" class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-brand-dark"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-teal-900/40 to-slate-900/90 z-0"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Automate Your Success?</h2>
+            <p class="text-xl text-gray-300 mb-10">
+                Stop leaving money on the table. Book a free discovery call and let's map out a strategy to scale your business by 30% in the next 90 days.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://tally.so/r/EkqoQN" class="px-8 py-4 text-lg font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all duration-300">
+                    Book Discovery Call
+                </a>
+                <a href="mailto:hello@smartbizsystems.co.ke" class="px-8 py-4 text-lg font-bold text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-all duration-300">
+                    Email Our Team
+                </a>
             </div>
             
-            <!-- UPDATE 1: Add action="..." and method="POST" -->
-            <!-- REPLACE 'YOUR_FORMSPREE_ID' with the link you got from Step 1 -->
-            <form action="https://formspree.io/f/xwveeaep" method="POST" class="contact-form">
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <!-- UPDATE 2: Added name="firstname" -->
-                        <input type="text" name="firstname" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <!-- UPDATE 2: Added name="lastname" -->
-                        <input type="text" name="lastname" placeholder="Your surname" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <!-- UPDATE 2: Added name="email" -->
-                    <input type="email" name="email" placeholder="email@example.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Message / Inquiry</label>
-                    <!-- UPDATE 2: Added name="message" -->
-                    <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-orange" style="width: 100%;">Send Message</button>
-            </form>
+            <p class="mt-6 text-sm text-gray-500">
+                <i class="fa-solid fa-lock mr-2"></i> No commitment required. 100% Free Strategy Session.
+            </p>
         </div>
     </section>
 
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-gray-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div>
+                    <span class="text-2xl font-bold tracking-tight text-white block mb-4">
+                        SmartBiz<span class="text-brand-neon">Systems</span>
+                    </span>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Kenya's premier digital growth agency. We combine creative strategy with technical automation to build unstoppable businesses.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-brand-neon transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-neon transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-neon transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
 
-   <!-- Updated Footer with Developer Credit -->
-<footer class="footer">
-    <div class="container footer-grid">
-        <!-- Column 1: Brand & Socials -->
-        <div class="footer-col">
-            <h3>Thrive360<span>Connect</span></h3>
-            <p>Bridging the gap between education and the global workforce. We empower African youth through competence-based training.</p>
-            <div class="socials">
-                <a href="https://www.facebook.com/irene.elijah.75" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.linkedin.com/in/coach-irene-nyaga/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="services.html" class="hover:text-brand-neon transition">Marketing Automation</a></li>
+                        <li><a href="services.html" class="hover:text-brand-neon transition">SEO & Content</a></li>
+                        <li><a href="smartbiztool.html" class="hover:text-brand-neon transition text-brand-purple font-bold">AI Tools</a></li>
+                        <li><a href="services.html" class="hover:text-brand-neon transition">Web Development</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-brand-neon transition">About Us</a></li>
+                        <li><a href="results.html" class="hover:text-brand-neon transition">Case Studies</a></li>
+                        <li><a href="process.html" class="hover:text-brand-neon transition">Our Process</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center"><i class="fa-solid fa-location-dot w-6 text-brand-neon"></i> Mirage Towers, Westlands, Nairobi</li>
+                        <li class="flex items-center"><i class="fa-solid fa-phone w-6 text-brand-neon"></i> +254 734230445</li>
+                        <li class="flex items-center"><i class="fa-solid fa-envelope w-6 text-brand-neon"></i> hello@smartbizsystems.co.ke</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2023 SmartBizSystems. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-500">
+                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white">Terms of Service</a>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Column 2: Quick Links -->
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="resources.html">Resources & Library</a></li>
-                <li><a href="events.html">Events & Gallery</a></li>
-            </ul>
-        </div>
-
-        <!-- Column 3: Programs & Support -->
-        <div class="footer-col">
-            <h4>Support</h4>
-            <ul>
-                <li><a href="women-coaching.html">Women Coaching</a></li>
-                <li><a href="youth-mentorship.html">Youth Mentorship</a></li>
-                <li><a href="resources.html">Books & Manuals</a></li>
-                <li><a href="index.html#contact">Get Involved</a></li>
-            </ul>
-        </div>
-
-        <!-- Column 4: Contact -->
-        <div class="footer-col">
-            <h4>Contact Us</h4>
-            <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
-            <p><i class="fas fa-envelope"></i> info@thrive360connect.com</p>
-            <p><i class="fas fa-phone"></i> +254 723312435</p>
-        </div>
-    </div>
-    
-    <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-        <p>Copyright © 2025 Thrive360Connect.com. All rights reserved.</p>
-        <p style="font-size: 13px; margin-top: 5px; opacity: 0.8;">
-            Developed by <a href="https://www.smartbizsystems.co.ke/" target="_blank" style="color: var(--brand-orange); text-decoration: none; font-weight: 600;">SmartBiz Systems</a>
-        </p>
-    </div>
-</footer>
-
-    <!-- Mobile Menu Script -->
+     <!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
     <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
     </script>
 
 </body>
