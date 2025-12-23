@@ -2,17 +2,17 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartBiz AI Commander | Kenya's SME OS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SmartBiz AI Commander | Kenya's Production SME OS</title>
     
-    <!-- SDKs -->
+    <!-- PRODUCTION SDKS -->
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts & Icons -->
+    <!-- FONTS & ICONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -20,172 +20,184 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
-                    colors: {
-                        brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', orange: '#FB923C', purple: '#A78BFA' }
-                    }
+                    colors: { brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', orange: '#FB923C', purple: '#A78BFA' } },
+                    boxShadow: { 'neon': '0 0 15px rgba(45, 212, 191, 0.3)' }
                 }
             }
         }
     </script>
 
     <style>
-        body { background-color: #0B0F19; color: #FFFFFF; font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
-        .glass-panel { background: rgba(11, 15, 25, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .app-scroll::-webkit-scrollbar { width: 4px; }
-        .app-scroll::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
+        body { background-color: #0B0F19; color: #FFFFFF; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .glass-panel { background: rgba(11, 15, 25, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .app-scroll::-webkit-scrollbar { width: 3px; }
+        .app-scroll::-webkit-scrollbar-thumb { background: #2DD4BF; border-radius: 10px; }
         .hidden-view { display: none !important; }
         .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
-        textarea, input { font-size: 16px !important; } 
+        textarea, input { font-size: 16px !important; } /* Stop iOS Auto-Zoom */
+        .btn-active { transform: scale(0.96); opacity: 0.9; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
 
-    <!-- LOADER -->
+    <!-- INITIALIZATION LOADER -->
     <div id="global-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0F19]">
-        <div class="w-12 h-12 border-4 border-gray-800 border-t-brand-neon rounded-full animate-spin mb-4"></div>
-        <p class="text-brand-neon font-mono text-xs tracking-widest animate-pulse">SMARTBIZ AI COMMANDER v2.2</p>
+        <div class="w-10 h-10 border-2 border-brand-neon/20 border-t-brand-neon rounded-full animate-spin mb-4"></div>
+        <p class="text-brand-neon font-mono text-[10px] tracking-[0.3em] animate-pulse">SMARTBIZ COMMANDER v3.0</p>
     </div>
 
-    <!-- NAV -->
+    <!-- PRODUCTION HEADER -->
     <nav class="fixed w-full z-50 glass-panel">
-        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <span class="text-xl font-black tracking-tighter text-white">SMARTBIZ<span class="text-brand-neon">TOOL</span></span>
+                <span class="text-lg font-black tracking-tighter">SMARTBIZ<span class="text-brand-neon">TOOL</span></span>
             </div>
-            <div class="flex items-center space-x-3">
-                <a href="https://www.smartbizsystems.co.ke/" class="hidden md:block text-xs font-bold text-gray-400 hover:text-white transition uppercase tracking-widest">Main Website</a>
-                <button class="bg-brand-neon text-brand-dark px-4 py-2 rounded-lg text-xs font-black hover:shadow-neon transition-all">Go Pro</button>
+            <div class="flex items-center space-x-4">
+                <a href="https://www.smartbizsystems.co.ke/" class="hidden md:block text-[10px] font-bold text-gray-500 hover:text-white transition uppercase tracking-widest">Main Site</a>
+                <button onclick="payWithPaystack()" class="bg-brand-neon text-brand-dark px-3 py-1.5 rounded-md text-[10px] font-black uppercase tracking-wider shadow-neon">Unlock Pro</button>
             </div>
         </div>
     </nav>
 
-    <!-- APP CONTAINER -->
-    <main class="pt-24 pb-10 px-2 md:px-4 max-w-7xl mx-auto">
-        <div class="bg-brand-card border border-gray-800 rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[85vh]">
+    <!-- CORE UI -->
+    <main class="pt-20 pb-10 px-2 md:px-4 max-w-7xl mx-auto">
+        <div class="bg-brand-card border border-gray-800 rounded-xl md:rounded-2xl shadow-2xl flex flex-col md:flex-row min-h-[88vh]">
             
-            <!-- SIDEBAR -->
-            <aside class="w-full md:w-72 bg-gray-900/50 border-r border-gray-800 flex flex-col">
+            <!-- TOOL NAVIGATION (SIDEBAR) -->
+            <aside class="w-full md:w-64 bg-gray-900/40 border-r border-gray-800 flex flex-col">
                 <div class="p-4 border-b border-gray-800 flex justify-between items-center">
-                    <p class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">SME AI Toolkit</p>
+                    <p class="text-[9px] font-black text-gray-500 uppercase tracking-widest">Operator Console</p>
+                    <a href="https://www.smartbizsystems.co.ke/" class="md:hidden text-[10px] text-brand-neon font-black underline uppercase">Exit</a>
                 </div>
-                <div class="flex-1 overflow-y-auto app-scroll p-4 space-y-6">
+                <div class="flex-1 overflow-y-auto app-scroll p-3 space-y-6">
                     <div>
-                        <h3 class="text-[10px] font-black text-brand-orange mb-3 px-2 uppercase tracking-widest">Finance Operations</h3>
-                        <div class="space-y-2">
-                            <button onclick="switchMode(this, 'M-Pesa Auditor')" class="sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all active:scale-95">
-                                <i class="fa-solid fa-file-invoice-dollar w-6 text-lg"></i> M-Pesa Auditor
+                        <h3 class="text-[9px] font-black text-brand-orange mb-3 px-2 uppercase tracking-widest opacity-50">Money & Audit</h3>
+                        <div class="space-y-1.5">
+                            <button onclick="switchMode(this, 'M-Pesa Auditor')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg">
+                                <i class="fa-solid fa-file-invoice-dollar mr-3"></i> M-Pesa Auditor
                             </button>
-                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-4 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all active:scale-95">
-                                <i class="fa-solid fa-hand-holding-dollar w-6 text-lg"></i> Debt Recovery
+                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg">
+                                <i class="fa-solid fa-hand-holding-dollar mr-3"></i> Debt Recovery
                             </button>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-[10px] font-black text-brand-neon mb-3 px-2 uppercase tracking-widest">Growth & Sales</h3>
-                        <div class="space-y-2">
-                            <button onclick="switchMode(this, 'WhatsApp Agent')" class="sidebar-btn w-full flex items-center px-4 py-4 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all active:scale-95">
-                                <i class="fa-brands fa-whatsapp w-6 text-lg"></i> WA AI Salesman
+                        <h3 class="text-[9px] font-black text-brand-neon mb-3 px-2 uppercase tracking-widest opacity-50">Sales & Growth</h3>
+                        <div class="space-y-1.5">
+                            <button onclick="switchMode(this, 'WhatsApp Agent')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg">
+                                <i class="fa-brands fa-whatsapp mr-3"></i> AI WA Agent
                             </button>
-                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-4 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all active:scale-95">
-                                <i class="fa-solid fa-bolt w-6 text-lg"></i> Viral Marketing
+                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg">
+                                <i class="fa-solid fa-bolt mr-3"></i> Viral Marketing
                             </button>
                         </div>
                     </div>
-                    <div class="pt-4 border-t border-gray-800">
-                        <a href="https://www.smartbizsystems.co.ke/" class="w-full flex items-center px-4 py-3 text-[10px] font-bold text-gray-500 hover:text-white rounded-lg transition-all">
-                            <i class="fa-solid fa-arrow-left mr-2"></i> BACK TO WEBSITE
-                        </a>
+                </div>
+                <div class="p-4 bg-black/20 border-t border-gray-800">
+                    <div class="flex items-center space-x-3 opacity-60">
+                        <div class="w-2 h-2 rounded-full bg-brand-neon animate-pulse"></div>
+                        <p class="text-[10px] font-bold text-gray-400">COMMANDER ONLINE</p>
                     </div>
                 </div>
             </aside>
 
-            <!-- WORKSPACE -->
-            <section class="flex-1 flex flex-col bg-gray-900/20" id="mainAppArea">
-                <div class="h-16 md:h-20 border-b border-gray-800 flex items-center justify-between px-4 md:px-8 bg-black/10">
-                    <h2 class="text-xs font-black uppercase tracking-widest flex items-center">
-                        <i class="fa-solid fa-wand-magic-sparkles text-brand-neon mr-3"></i> 
+            <!-- WORKSPACE ENGINE -->
+            <section class="flex-1 flex flex-col bg-gray-900/10" id="mainAppArea">
+                <div class="h-14 border-b border-gray-800 flex items-center justify-between px-4 md:px-6 bg-black/10">
+                    <h2 class="text-[10px] font-black uppercase tracking-[0.2em] text-gray-200">
+                        <i class="fa-solid fa-terminal text-brand-neon mr-2"></i> 
                         <span id="currentModeTitle">M-Pesa Auditor</span>
                     </h2>
-                    <button onclick="handleExport()" class="bg-white text-brand-dark px-3 py-2 rounded font-black text-[9px] md:text-[10px] uppercase tracking-wider hover:bg-gray-200 transition shadow-lg flex items-center">
-                        <i class="fa-solid fa-file-export mr-2"></i> <span>Export</span>
+                    <button onclick="handleExport()" class="bg-white text-brand-dark px-3 py-1.5 rounded font-black text-[9px] uppercase tracking-wider hover:bg-gray-200 transition">
+                        Export
                     </button>
                 </div>
 
-                <div id="mainWorkspace" class="flex-1 p-4 md:p-8 grid lg:grid-cols-2 gap-8 overflow-hidden">
-                    <div class="flex flex-col space-y-6 overflow-y-auto app-scroll pr-2">
+                <div id="mainWorkspace" class="flex-1 p-4 md:p-6 grid lg:grid-cols-2 gap-6 overflow-hidden">
+                    <!-- INPUT -->
+                    <div class="flex flex-col space-y-4 overflow-y-auto app-scroll">
                         <div id="primaryInputGroup">
-                            <label id="label1" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Paste M-Pesa SMS Messages</label>
-                            <textarea id="mainInput" placeholder="Enter data here..." class="w-full h-40 md:h-56 bg-gray-800/50 border border-gray-700 rounded-2xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
+                            <label id="label1" class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Source Data (Paste Here)</label>
+                            <textarea id="mainInput" placeholder="Paste SMS or prompt details..." class="w-full h-44 md:h-64 bg-gray-800/40 border border-gray-700 rounded-xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
                         </div>
                         <div id="secondaryInputGroup">
-                            <label id="label2" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Extra Details</label>
-                            <input id="subInput" type="text" placeholder="Optional..." class="w-full bg-gray-800/50 border border-gray-700 rounded-xl p-4 text-sm text-gray-200 focus:border-brand-neon outline-none transition-all">
+                            <label id="label2" class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Parameters</label>
+                            <input id="subInput" type="text" placeholder="Amount, Due Date, or Product info..." class="w-full bg-gray-800/40 border border-gray-700 rounded-lg p-3 text-sm text-gray-200 focus:border-brand-neon outline-none">
                         </div>
                         <div id="toggleGroup" class="hidden-view">
-                            <label class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Communication Tone</label>
-                            <div class="flex bg-gray-800/50 p-1 rounded-xl border border-gray-700">
-                                <button onclick="setStrategy(this, 'Mwananchi / Friendly')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg bg-brand-neon text-brand-dark shadow-lg">Mwananchi</button>
-                                <button onclick="setStrategy(this, 'Firm / Legal Action')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg text-gray-400">Firm / Legal</button>
+                            <div class="flex bg-gray-800/50 p-1 rounded-lg border border-gray-700">
+                                <button onclick="setStrategy(this, 'Friendly')" class="strategy-btn flex-1 py-2 text-[9px] font-black uppercase rounded-md bg-brand-neon text-brand-dark">Friendly</button>
+                                <button onclick="setStrategy(this, 'Firm')" class="strategy-btn flex-1 py-2 text-[9px] font-black uppercase rounded-md text-gray-400">Firm</button>
                             </div>
                         </div>
-                        <button id="actionBtn" onclick="runProcessor()" class="w-full py-4 md:py-5 bg-brand-neon text-brand-dark font-black text-xs uppercase tracking-[0.3em] rounded-2xl hover:scale-[1.01] transition-all shadow-xl shadow-brand-neon/10 active:scale-95">
-                            Process with AI
+                        <button id="actionBtn" onclick="runProcessor()" class="w-full py-4 bg-brand-neon text-brand-dark font-black text-[11px] uppercase tracking-[0.2em] rounded-xl hover:shadow-neon active:scale-[0.98] transition-all">
+                            Process with SmartBiz AI
                         </button>
                     </div>
 
-                    <div class="bg-black/40 border border-gray-800 rounded-2xl flex flex-col overflow-hidden min-h-[300px]">
-                        <div class="p-3 border-b border-gray-800 bg-gray-800/30 flex justify-between items-center">
-                            <span class="text-[9px] font-black text-gray-500 uppercase tracking-widest">AI Output Terminal</span>
-                            <div id="summaryBadge" class="flex space-x-1 md:space-x-2 hidden-view">
-                                <span id="totalInBadge" class="bg-green-500/20 text-green-400 text-[8px] md:text-[9px] font-bold px-2 py-1 rounded border border-green-500/20 uppercase">In: 0</span>
-                                <span id="totalOutBadge" class="bg-brand-orange/20 text-brand-orange text-[8px] md:text-[9px] font-bold px-2 py-1 rounded border border-brand-orange/20 uppercase">Out: 0</span>
+                    <!-- OUTPUT -->
+                    <div class="bg-black/60 border border-gray-800 rounded-xl flex flex-col overflow-hidden min-h-[350px]">
+                        <div class="p-3 border-b border-gray-800 bg-gray-800/40 flex justify-between items-center">
+                            <span class="text-[8px] font-black text-gray-500 uppercase tracking-[0.2em]">Live Output</span>
+                            <div id="summaryBadge" class="flex space-x-1.5 hidden-view">
+                                <span id="totalInBadge" class="bg-green-500/10 text-green-400 text-[8px] font-bold px-2 py-1 rounded border border-green-500/20">IN: 0</span>
+                                <span id="totalOutBadge" class="bg-brand-orange/10 text-brand-orange text-[8px] font-bold px-2 py-1 rounded border border-brand-orange/20">OUT: 0</span>
                             </div>
                         </div>
-                        <div id="outputArea" class="flex-1 p-4 md:p-6 overflow-y-auto app-scroll font-mono text-[12px] md:text-[13px] leading-relaxed">
-                            <div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-20">
-                                <i class="fa-solid fa-microchip text-3xl"></i>
-                                <p class="text-[9px] font-black uppercase tracking-widest">Ready for Command</p>
+                        <div id="outputArea" class="flex-1 p-4 overflow-y-auto app-scroll font-mono text-[12px] leading-relaxed">
+                            <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
+                                <i class="fa-solid fa-robot text-2xl"></i>
+                                <p class="text-[8px] font-black uppercase tracking-widest">AI Standby</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- WA AGENT -->
+                <!-- WA AGENT CONFIG -->
                 <div id="agentWorkspace" class="flex-1 p-6 hidden-view overflow-y-auto">
-                    <div class="max-w-xl mx-auto space-y-6">
-                        <div class="bg-green-500/5 border border-green-500/20 rounded-2xl p-6 text-center">
-                            <i class="fa-brands fa-whatsapp text-4xl text-green-400 mb-2"></i>
-                            <h3 class="text-lg font-black mb-1">AI WhatsApp Sales Agent</h3>
-                            <p class="text-xs text-gray-400">Upload your price list to train the agent.</p>
+                    <div class="max-w-md mx-auto space-y-6">
+                        <div class="bg-brand-neon/5 border border-brand-neon/10 rounded-2xl p-6 text-center">
+                            <i class="fa-brands fa-whatsapp text-4xl text-brand-neon mb-2"></i>
+                            <h3 class="text-sm font-black uppercase tracking-widest">WhatsApp Sales Agent</h3>
+                            <p class="text-[10px] text-gray-500">Train your bot on your Price List / Menu.</p>
                         </div>
-                        <div class="border-2 border-dashed border-gray-700 rounded-2xl p-10 text-center hover:border-green-400 transition cursor-pointer">
-                            <p class="text-[10px] font-bold text-gray-500 uppercase">Drop PDF Price List Here</p>
+                        <div onclick="document.getElementById('fileIn').click()" class="border-2 border-dashed border-gray-800 rounded-2xl p-10 text-center hover:border-brand-neon transition cursor-pointer">
+                            <i class="fa-solid fa-file-pdf text-2xl text-gray-600 mb-2"></i>
+                            <p id="fileNameDisplay" class="text-[9px] font-bold text-gray-500 uppercase">Select Catalog (.TXT / .PDF)</p>
+                            <input type="file" id="fileIn" class="hidden" accept=".txt,.pdf" onchange="handleFile(this)">
                         </div>
-                        <button class="w-full py-4 bg-green-600 text-white font-black text-xs uppercase tracking-widest rounded-xl">Connect Business WhatsApp</button>
+                        <button class="w-full py-4 bg-green-600 text-white font-black text-[10px] uppercase tracking-widest rounded-xl">Activate Live Agent</button>
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
+    <!-- CORE LOGIC ENGINE -->
     <script>
         let currentMode = "M-Pesa Auditor";
-        let activeStrategy = "Mwananchi / Friendly";
+        let activeStrategy = "Friendly";
         let globalTransactionData = [];
+        let knowledgeBaseContent = "";
 
+        // 1. APP LOADER
         window.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 const loader = document.getElementById('global-loader');
-                if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 500); }
-            }, 800);
+                if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 400); }
+            }, 600);
         });
 
+        // 2. NAVIGATION & UX
         function switchMode(btn, mode) {
             currentMode = mode;
             document.getElementById('currentModeTitle').innerText = mode;
-            if (window.innerWidth < 768) { document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth' }); }
+            
+            if (window.innerWidth < 768) {
+                document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
 
-            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all');
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
             
             const mainView = document.getElementById('mainWorkspace');
             const agentView = document.getElementById('agentWorkspace');
@@ -197,24 +209,24 @@
             agentView.classList.add('hidden-view');
             toggleGrp.classList.add('hidden-view');
             sumBadge.classList.add('hidden-view');
-            outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-20"><i class="fa-solid fa-robot text-3xl"></i><p class="text-[9px] font-black uppercase tracking-widest">AI Standby...</p></div>`;
+            outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20"><i class="fa-solid fa-robot text-2xl"></i><p class="text-[8px] font-black uppercase tracking-widest">AI Standby</p></div>`;
 
             if (mode === "M-Pesa Auditor") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
                 document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
-                document.getElementById('label2').innerText = "Extra Details";
+                document.getElementById('label2').innerText = "Filters (Optional)";
             } else if (mode === "Debt Collection") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
                 document.getElementById('label1').innerText = "Client Name & Debt Info";
                 document.getElementById('label2').innerText = "Amount & Due Date";
                 toggleGrp.classList.remove('hidden-view');
             } else if (mode === "WhatsApp Agent") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
                 mainView.classList.add('hidden-view');
                 agentView.classList.remove('hidden-view');
             } else {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
-                document.getElementById('label1').innerText = "Product / Business Name";
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
+                document.getElementById('label1').innerText = "Product / Service Name";
                 document.getElementById('label2').innerText = "Target Audience Details";
             }
         }
@@ -222,63 +234,70 @@
         function setStrategy(btn, strat) {
             activeStrategy = strat;
             document.querySelectorAll('.strategy-btn').forEach(b => {
-                b.classList.remove('bg-brand-neon', 'text-brand-dark', 'shadow-lg');
+                b.classList.remove('bg-brand-neon', 'text-brand-dark');
                 b.classList.add('text-gray-400');
             });
             btn.classList.remove('text-gray-400');
-            btn.classList.add('bg-brand-neon', 'text-brand-dark', 'shadow-lg');
+            btn.classList.add('bg-brand-neon', 'text-brand-dark');
         }
 
+        // 3. AI & PARSING ENGINE
         async function runProcessor() {
             const in1 = document.getElementById('mainInput').value.trim();
             const in2 = document.getElementById('subInput').value.trim();
             const actionBtn = document.getElementById('actionBtn');
 
-            if (!in1) return alert("Please provide primary input.");
+            if (!in1) return alert("Please provide input data.");
 
-            actionBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AI IS THINKING...';
+            actionBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> PROCESSING...';
             actionBtn.disabled = true;
 
             try {
                 if (currentMode === "M-Pesa Auditor") {
                     parseMpesa(in1);
                 } else {
-                    // CALL AI API
-                    const response = await callAIGenerator(currentMode, in1, in2, activeStrategy);
+                    const aiResult = await callGPTAPI(currentMode, in1, in2, activeStrategy);
                     document.getElementById('outputArea').innerHTML = `
-                        <div class="p-4 bg-brand-neon/10 text-brand-neon text-[10px] font-black uppercase mb-4 tracking-widest flex items-center">
-                            <i class="fa-solid fa-check-circle mr-2"></i> SmartBiz AI Generated
+                        <div class="p-3 bg-brand-neon/5 text-brand-neon text-[8px] font-black uppercase mb-3 flex items-center border border-brand-neon/10">
+                            <i class="fa-solid fa-sparkles mr-2"></i> SmartBiz AI COMMANDER RESPONSE
                         </div>
-                        <div class="whitespace-pre-wrap leading-relaxed">${response}</div>`;
+                        <div class="whitespace-pre-wrap leading-relaxed">${aiResult}</div>`;
                 }
             } catch (err) {
-                document.getElementById('outputArea').innerHTML = `<p class="text-red-500">Error: ${err.message}</p>`;
+                document.getElementById('outputArea').innerHTML = `<p class="text-red-500">System Error: ${err.message}</p>`;
             } finally {
-                actionBtn.innerHTML = 'Process with AI';
+                actionBtn.innerHTML = 'Process with SmartBiz AI';
                 actionBtn.disabled = false;
             }
         }
 
-        async function callAIGenerator(mode, input, details, strategy) {
-            // SIMULATION Logic for Github Pages/Local. 
-            // In Production, replace with: await fetch('/api/generate', { ... })
+        async function callGPTAPI(mode, input, details, strategy) {
+            // BACKEND READY: Replace the simulate logic with your live API endpoint
+            /* 
+            const response = await fetch('YOUR_BACKEND_URL/api/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mode, input, details, strategy })
+            });
+            return await response.text();
+            */
+            
             return new Promise((resolve) => {
                 setTimeout(() => {
                     if (mode === "Debt Collection") {
-                        if (strategy.includes("Mwananchi")) {
+                        if (strategy === "Friendly") {
                             resolve(`Habari boss, natumai uko sawa. Naandika tu kukumbusha kuhusu deni ya KES ${details}. Tafadhali jaribu kuclear kabla wiki iishe tuweze kuweka vitabu sawa. Shukran sana.`);
                         } else {
                             resolve(`URGENT NOTICE: Hello ${input}, your outstanding balance of KES ${details} is overdue. We require immediate settlement via M-Pesa to avoid further escalation. Please treat this as a final reminder.`);
                         }
-                    } else if (mode === "Viral Hooks") {
-                        resolve(`🔥 TIKTOK HOOK 1: "Siku hizi usikubali kudanganywa na ${input}..."\n🔥 TIKTOK HOOK 2: "This is why your business needs ${input} today..."\n\nAD COPY:\nAre you tired of the struggle? ${details} is exactly what you need. WhatsApp us now for a 20% discount! 🇰🇪`);
                     } else {
-                        resolve(`Generated optimized strategy for ${input}. Focus on high-value customers in ${details}.`);
+                        resolve(`Optimized marketing strategy for ${input}. \n\nTargeting: ${details}.\n\nSmartBiz AI recommends focusing on WhatsApp-driven conversions with high urgency hooks.`);
                     }
-                }, 1500);
+                }, 1200);
             });
         }
 
+        // 4. MPESA AUDITOR ENGINE (v3.0)
         function parseMpesa(text) {
             const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
             globalTransactionData = [];
@@ -292,12 +311,13 @@
                 
                 if (code && amountMatch) {
                     const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                    let party = "Transaction"; let type = "OUT";
+                    let party = "Internal"; let type = "OUT";
 
-                    if (msg.toLowerCase().includes("received") || msg.toLowerCase().includes("deposited")) {
+                    const isIn = msg.match(/received/i) || msg.match(/deposited/i) || msg.match(/reversed/i);
+                    if (isIn) {
                         type = "IN"; totalIn += amount;
                         const fromMatch = msg.match(/from\s+(.*?)\s+on/i);
-                        party = fromMatch ? fromMatch[1].trim() : "Money In";
+                        party = fromMatch ? fromMatch[1].trim() : "Money Received";
                     } else {
                         type = "OUT"; totalOut += amount;
                         if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
@@ -307,28 +327,43 @@
 
                     party = party.replace(/\d{10,12}/g, '').trim();
                     globalTransactionData.push({ Code: code, Date: date, Details: party, Type: type, Amount: amount });
-                    rows += `<tr class="border-b border-gray-800/50"><td class="py-3 text-brand-neon font-bold">${code}</td><td class="py-3 text-gray-500">${date}</td><td class="py-3 truncate max-w-[100px]">${party}</td><td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-200'}">${amount.toLocaleString()}</td></tr>`;
+                    rows += `<tr class="border-b border-gray-800/50"><td class="py-3 text-brand-neon font-bold">${code}</td><td class="py-3 text-gray-500">${date}</td><td class="py-3 truncate max-w-[100px]">${party}</td><td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-300'} font-bold">${amount.toLocaleString()}</td></tr>`;
                 }
             });
 
-            document.getElementById('totalInBadge').innerText = `In: ${totalIn.toLocaleString()}`;
-            document.getElementById('totalOutBadge').innerText = `Out: ${totalOut.toLocaleString()}`;
+            document.getElementById('totalInBadge').innerText = `IN: ${totalIn.toLocaleString()}`;
+            document.getElementById('totalOutBadge').innerText = `OUT: ${totalOut.toLocaleString()}`;
             document.getElementById('summaryBadge').classList.remove('hidden-view');
-            document.getElementById('outputArea').innerHTML = `<table class="w-full text-left mpesa-table"><thead class="text-[9px] text-gray-500 uppercase border-b border-gray-800"><tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr></thead><tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="py-10 text-center opacity-50">No data found.</td></tr>'}</tbody></table>`;
+            document.getElementById('outputArea').innerHTML = `<table class="w-full text-left mpesa-table"><thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800"><tr><th class="pb-2">Ref</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr></thead><tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="py-10 text-center opacity-30">No data parsed.</td></tr>'}</tbody></table>`;
+        }
+
+        // 5. EXPORTS & FILE HANDLING
+        function handleFile(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                document.getElementById('fileNameDisplay').innerText = file.name;
+                const reader = new FileReader();
+                reader.onload = (e) => { knowledgeBaseContent = e.target.result; };
+                reader.readAsText(file);
+            }
         }
 
         function handleExport() {
             if (currentMode === "M-Pesa Auditor") {
-                if (globalTransactionData.length === 0) return alert("No data.");
+                if (globalTransactionData.length === 0) return alert("Empty dataset.");
                 const ws = XLSX.utils.json_to_sheet(globalTransactionData);
-                const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, "M-Pesa");
+                const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, "SmartBiz_Audit");
                 XLSX.writeFile(wb, `SmartBiz_Export_${new Date().toISOString().slice(0,10)}.xlsx`);
             } else {
                 const text = document.getElementById('outputArea').innerText;
                 const blob = new Blob([text], { type: 'text/plain' });
                 const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-                a.download = `SmartBiz_AI_Script.txt`; a.click();
+                a.download = `SmartBiz_AI_Output.txt`; a.click();
             }
+        }
+
+        function payWithPaystack() {
+            alert("Paystack Gateway Connection: KES 2,500/mo. Redirecting to payment...");
         }
     </script>
 </body>
