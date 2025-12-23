@@ -250,6 +250,25 @@
         }
     }
 
+    // Inside runProcessor, after getting the AI response:
+document.getElementById('outputArea').innerHTML = `
+    <div class="flex justify-between items-center mb-4">
+        <div class="p-2 bg-brand-neon/10 text-brand-neon text-[8px] font-black uppercase tracking-widest border border-brand-neon/20 rounded">
+            AI Generated Response
+        </div>
+        <button onclick="copyToClipboard()" class="text-[10px] bg-brand-neon text-brand-dark px-3 py-1 rounded font-bold hover:bg-white transition">
+            <i class="fa-solid fa-copy mr-1"></i> COPY
+        </button>
+    </div>
+    <div id="aiTextContent" class="whitespace-pre-wrap leading-relaxed">${aiResult}</div>
+`;
+
+// Add this function to your <script>:
+function copyToClipboard() {
+    const text = document.getElementById('aiTextContent').innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copied to WhatsApp! ✅");
+}
     // 4. API BRIDGE - Fixed keys to match generate.js
     async function callGPTAPI(mode, prod, aud, tone) {
         const API_URL = '/api/generate'; 
@@ -326,6 +345,21 @@ function parseMpesa(text) {
     document.getElementById('totalOut').innerText = `OUT: KES ${tout.toLocaleString()}`;
     document.getElementById('summaryBadge').classList.remove('hidden-view');
 
+    <div id="healthSummary" class="hidden grid grid-cols-3 gap-2 mb-4">
+    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
+        <p class="text-[7px] text-gray-500 uppercase">Cash flow</p>
+        <p id="flowRatio" class="text-xs font-bold text-white">0%</p>
+    </div>
+    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
+        <p class="text-[7px] text-gray-500 uppercase">Top Expense</p>
+        <p id="topExpense" class="text-[9px] font-bold text-brand-orange truncate">None</p>
+    </div>
+    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
+        <p class="text-[7px] text-gray-500 uppercase">Reliability</p>
+        <p class="text-xs font-bold text-green-400">HIGH</p>
+    </div>
+</div>
+
     // Render Table
     globalData = Array.from(uniqueTransactions.values());
     let rows = globalData.map(row => `
@@ -399,6 +433,18 @@ function parseMpesa(text) {
         ws['!cols'] = wscols;
 
         XLSX.utils.book_append_sheet(wb, ws, "Financial Audit");
+
+        // Inside handleExport before saving:
+excelRows.unshift({ 
+    "Description/Party": "SMARTBIZ FINANCIAL AUDIT REPORT", 
+    "Amount (KES)": "" 
+});
+excelRows.unshift({ 
+    "Description/Party": "Generated on: " + new Date().toLocaleString(), 
+    "Amount (KES)": "" 
+});
+excelRows.unshift({}); // Space
+
 
         // 5. Download file
         const fileName = `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`;
