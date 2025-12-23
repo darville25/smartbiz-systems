@@ -309,8 +309,9 @@
             }, 800);
         }
 
-        // 1. MPESA AUDITOR LOGIC
+        // 1. IMPROVED MPESA AUDITOR LOGIC
         function parseMpesa(text) {
+            // Split by 10-character code followed by "Confirmed"
             const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
             globalTransactionData = [];
             let totalIn = 0;
@@ -320,6 +321,7 @@
             chunks.forEach(msg => {
                 if (!msg.trim()) return;
 
+                // 1. Extract Basic Data
                 const code = msg.match(/([A-Z0-9]{10})/)?.[1];
                 const amountMatch = msg.match(/Ksh\s?([\d,]+\.\d{2})/i);
                 const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1] || "N/A";
@@ -327,38 +329,60 @@
                 if (code && amountMatch) {
                     const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
                     let party = "Other";
-                    let type = "OUT";
+                    let type = "OUT"; // Default to Outflow
 
-                    if (msg.toLowerCase().includes("received from")) {
-                        party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
+                    // 2. SMART INFLOW DETECTION (Money coming IN)
+                    // Checks for "received", "deposited", or "reversed"
+                    const isInflow = msg.match(/received/i) || msg.match(/deposited/i) || msg.match(/reversed/i);
+
+                    if (isInflow) {
                         type = "IN";
                         totalIn += amount;
-                    } else if (msg.toLowerCase().includes("sent to")) {
-                        party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
+                        
+                        // Extract Name for Inflows
+                        const fromMatch = msg.match(/from\s+(.*?)\s+on/i);
+                        party = fromMatch ? fromMatch[1].trim() : "M-Pesa Deposit/Receive";
+                    } 
+                    else {
+                        // 3. SMART OUTFLOW DETECTION (Money going OUT)
+                        type = "OUT";
                         totalOut += amount;
-                    } else if (msg.toLowerCase().includes("paid to")) {
-                        party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim() || "Merchant";
-                        totalOut += amount;
-                    } else if (msg.toLowerCase().includes("bought") && msg.toLowerCase().includes("airtime")) {
-                        party = "Airtime Purchase";
-                        totalOut += amount;
-                    } else if (msg.toLowerCase().includes("fuliza")) {
-                        party = "Fuliza Repayment";
-                        totalOut += amount;
+
+                        if (msg.match(/sent to/i)) {
+                            party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
+                        } else if (msg.match(/paid to/i)) {
+                            party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
+                        } else if (msg.match(/repayment/i) || msg.match(/fuliza/i)) {
+                            party = "Fuliza Repayment";
+                        } else if (msg.match(/bought/i) && msg.match(/airtime/i)) {
+                            party = "Airtime Purchase";
+                        } else if (msg.match(/paybill/i)) {
+                            party = "Paybill/Business Payment";
+                        }
                     }
 
-                    globalTransactionData.push({ Code: code, Date: date, Details: party, Type: type, Amount: amount });
+                    // Clean up party name (remove phone numbers if present for cleaner Excel)
+                    party = party.replace(/\d{10,12}/g, '').trim();
+
+                    globalTransactionData.push({ 
+                        Code: code, 
+                        Date: date, 
+                        Details: party, 
+                        Type: type, 
+                        Amount: amount 
+                    });
                     
+                    const colorClass = type === 'IN' ? 'text-green-400' : 'text-gray-200';
                     rows += `<tr class="border-b border-gray-800/50">
                         <td class="py-3 text-brand-neon font-bold">${code}</td>
                         <td class="py-3 text-gray-500">${date}</td>
-                        <td class="py-3 truncate max-w-[100px]">${party}</td>
-                        <td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-200'}">${amount.toLocaleString()}</td>
+                        <td class="py-3 truncate max-w-[120px]">${party}</td>
+                        <td class="py-3 text-right ${colorClass}">${type === 'IN' ? '+' : '-'}${amount.toLocaleString()}</td>
                     </tr>`;
                 }
             });
 
-            // FIXED: Using correct Badge IDs from HTML
+            // Update UI Badges
             const badgeIn = document.getElementById('totalInBadge');
             const badgeOut = document.getElementById('totalOutBadge');
             const summary = document.getElementById('summaryBadge');
