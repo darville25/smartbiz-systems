@@ -8,6 +8,8 @@
     
     <!-- Paystack SDK -->
     <script src="https://js.paystack.co/v1/inline.js"></script>
+    <!-- SheetJS for True Excel Export -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,6 +69,10 @@
         input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #4B5563; border-radius: 2px; }
         .hidden-view { display: none !important; }
         #global-loader { transition: opacity 0.5s ease; pointer-events: none; }
+        
+        /* Stripe Table Styles */
+        .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.03); }
+        .mpesa-table tr:hover { background-color: rgba(45, 212, 191, 0.05); }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
@@ -213,7 +219,7 @@
                                     </button>
                                 </div>
                                 <div class="h-6 w-px bg-gray-600 hidden md:block"></div>
-                                <button onclick="exportToTxt()" class="px-4 py-2 bg-white text-brand-dark text-xs font-bold rounded hover:bg-gray-200 transition shadow-lg flex items-center"><i class="fa-solid fa-download mr-1"></i> Export</button>
+                                <button onclick="handleExport()" class="px-4 py-2 bg-white text-brand-dark text-xs font-bold rounded hover:bg-gray-200 transition shadow-lg flex items-center"><i class="fa-solid fa-download mr-1"></i> Export</button>
                             </div>
                         </div>
 
@@ -262,7 +268,7 @@
                                     <span class="text-brand-purple font-bold block mb-2 text-xs uppercase tracking-wider" id="labelA">// Option A</span>
                                     <div id="outputA" class="leading-relaxed text-gray-100 min-h-[80px]"><span class="text-gray-500 italic">... Waiting for input ...</span></div>
                                 </div>
-                                <div>
+                                <div id="secondaryOutputContainer">
                                     <span class="text-brand-purple font-bold block mb-2 text-xs uppercase tracking-wider" id="labelB">// Option B</span>
                                     <div id="outputB" class="leading-relaxed text-gray-100 min-h-[80px]"><span class="text-gray-500 italic">... Waiting for input ...</span></div>
                                 </div>
@@ -341,6 +347,7 @@
         let selectedGoal = "Direct";
         let clerkInstance = null;
         let currentUser = null;
+        let currentMpesaData = []; // NEW: Store parsed data globally for export
 
         // 1. FORCE LOADER HIDE
         function hideLoader() {
@@ -449,10 +456,12 @@
                 const i1 = document.getElementById('productInput'); const i2 = document.getElementById('audienceInput');
                 const audienceContainer = document.getElementById('audienceContainer');
                 const controlsContainer = document.getElementById('controlsContainer');
+                const secondaryOutput = document.getElementById('secondaryOutputContainer');
 
                 // Reset Defaults
                 if(audienceContainer) audienceContainer.classList.remove('hidden-view');
                 if(controlsContainer) controlsContainer.classList.remove('hidden-view');
+                if(secondaryOutput) secondaryOutput.classList.remove('hidden-view');
                 if(i2) i2.value = "";
 
                 if (modeName === 'Cold Call Script') {
@@ -465,8 +474,10 @@
                     l1.innerText = "Paste SMS Messages"; i1.placeholder = "QL042... Confirmed. Ksh2,500.00 sent to... \nQL043... Confirmed. Ksh1,000.00 received from...";
                     if(audienceContainer) audienceContainer.classList.add('hidden-view'); 
                     if(controlsContainer) controlsContainer.classList.add('hidden-view');
+                    if(secondaryOutput) secondaryOutput.classList.add('hidden-view');
                     document.getElementById('outputA').innerHTML = ""; // Clear Previous output
                     document.getElementById('outputB').innerHTML = "";
+                    currentMpesaData = []; 
                 } else {
                     l1.innerText = "Product / Topic"; i1.placeholder = "e.g. Selling Plots";
                     l2.innerText = "Target Audience"; i2.placeholder = "e.g. Investors";
@@ -526,41 +537,108 @@
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
-            // --- LOCAL TOOLS (NO API) ---
+            // --- UPGRADED MPESA PARSER ---
             if (mode === "M-Pesa Parser") {
-                // Regex: Code, Amount, Date, Time, Party
-                // Looks for: "Confirmed. Ksh 1,500.00" OR "Ksh1500"
-                const regex = /([A-Z0-9]{10}).*?Confirmed.*?Ksh\s*([\d,]+\.?\d*).*?(?:sent to|paid to|received from|bought).*?([A-Z\s]+(?:\d+)?).*?on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at\s+(\d{1,2}:\d{2}\s?[AP]M)/gi;
+                // Transaction Splitter: Split by 10-char code anchor
+                const messages = i1.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
                 
-                let match, tableRows = "", totalAmount = 0, count = 0;
-                // Note: Regex is tricky with variations, using a robust approximation
-                // Backup simple regex if the complex one fails for manual paste
-                
-                const lines = i1.split('\n');
-                lines.forEach(line => {
-                     // Simple extraction for each line
-                     const codeMatch = line.match(/([A-Z0-9]{10})/);
-                     const amountMatch = line.match(/Ksh\s?([\d,]+\.?\d*)/i);
-                     const dateMatch = line.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/);
-                     
-                     if (codeMatch && amountMatch) {
-                         const code = codeMatch[1];
-                         const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                         const date = dateMatch ? dateMatch[1] : "N/A";
-                         
-                         totalAmount += amount;
-                         count++;
-                         tableRows += `<tr class="border-b border-gray-700"><td class="p-2 text-brand-neon font-mono text-xs">${code}</td><td class="p-2 text-white text-xs">${date}</td><td class="p-2 text-gray-300 text-xs">-</td><td class="p-2 text-green-400 font-bold text-xs text-right">${amount.toLocaleString()}</td></tr>`;
-                     }
+                currentMpesaData = [];
+                let totalIn = 0;
+                let totalOut = 0;
+                let tableRows = "";
+
+                messages.forEach(msg => {
+                    if (!msg.trim()) return;
+
+                    // UPDATED REGEX ENGINE
+                    const codeMatch = msg.match(/([A-Z0-9]{10})/);
+                    const amountMatch = msg.match(/Ksh\s?([\d,]+\.?\d*)/i);
+                    const dateMatch = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/);
+                    const timeMatch = msg.match(/at\s+(\d{1,2}:\d{2}\s?[AP]M)/i);
+                    
+                    if (codeMatch && amountMatch) {
+                        const code = codeMatch[1];
+                        const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
+                        const date = dateMatch ? dateMatch[1] : "N/A";
+                        const time = timeMatch ? timeMatch[1] : "N/A";
+                        
+                        let party = "Other";
+                        let type = "OUT";
+
+                        // PARTY IDENTIFIER & SPECIAL CASES
+                        if (msg.toLowerCase().includes("received from")) {
+                            party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
+                            type = "IN";
+                            totalIn += amount;
+                        } else if (msg.toLowerCase().includes("sent to kplc prepaid")) {
+                            party = "KPLC Prepaid";
+                            type = "OUT";
+                            totalOut += amount;
+                        } else if (msg.toLowerCase().includes("sent to")) {
+                            party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
+                            type = "OUT";
+                            totalOut += amount;
+                        } else if (msg.toLowerCase().includes("paid to")) {
+                            party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
+                            type = "OUT";
+                            totalOut += amount;
+                        } else if (msg.toLowerCase().includes("partially pay your outstanding fuliza")) {
+                            party = "Fuliza Repayment";
+                            type = "OUT";
+                            totalOut += amount;
+                        } else if (msg.toLowerCase().includes("bought") && msg.toLowerCase().includes("airtime")) {
+                            party = "Airtime Purchase";
+                            type = "OUT";
+                            totalOut += amount;
+                        } else {
+                            party = "Misc. Transaction";
+                            type = "OUT";
+                            totalOut += amount;
+                        }
+
+                        currentMpesaData.push({
+                            "Transaction Code": code,
+                            "Date": date,
+                            "Time": time,
+                            "Party/Recipient": party,
+                            "Type": type,
+                            "Amount (KES)": amount
+                        });
+
+                        const colorClass = type === "IN" ? "text-green-400" : "text-gray-300";
+                        tableRows += `
+                            <tr class="border-b border-gray-800 text-xs">
+                                <td class="p-3 text-brand-neon font-mono font-bold">${code}</td>
+                                <td class="p-3 text-gray-400">${date}<br><span class="text-[10px] opacity-60">${time}</span></td>
+                                <td class="p-3 text-white font-medium">${party}</td>
+                                <td class="p-3 text-right font-bold ${colorClass}">${type === 'IN' ? '+' : '-'}${amount.toLocaleString()}</td>
+                            </tr>`;
+                    }
                 });
 
                 setTimeout(() => {
-                    if (count === 0) {
-                        document.getElementById('outputA').innerHTML = "No M-Pesa messages detected.";
-                        document.getElementById('outputB').innerHTML = "Format: 'QL042... Confirmed...'";
+                    if (currentMpesaData.length === 0) {
+                        document.getElementById('outputA').innerHTML = "No valid M-Pesa messages detected.";
                     } else {
-                        document.getElementById('outputA').innerHTML = `<div class="overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="text-xs text-gray-500 uppercase bg-gray-800"><th class="p-2">Code</th><th class="p-2">Date</th><th class="p-2">Party</th><th class="p-2 text-right">Amount</th></tr></thead><tbody>${tableRows}</tbody><tfoot><tr class="bg-gray-800 font-bold"><td colspan="3" class="p-2 text-right text-white">TOTAL:</td><td class="p-2 text-right text-green-400">KES ${totalAmount.toLocaleString()}</td></tr></tfoot></table><p class="text-xs text-gray-500 mt-2">${count} transactions found.</p></div>`;
-                        document.getElementById('outputB').innerHTML = `<div class="space-y-4"><h3 class="text-brand-orange font-bold text-sm"><i class="fa-solid fa-file-csv mr-2"></i>Export Ready</h3></div>`;
+                        // FINANCIAL DASHBOARD (SUMMARY BAR)
+                        const summaryBar = `
+                            <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-900 border border-gray-800 rounded-lg">
+                                <div><p class="text-[10px] text-gray-500 uppercase font-bold mb-1">Total Inflow</p><p class="text-xl font-bold text-green-400">KES ${totalIn.toLocaleString()}</p></div>
+                                <div class="text-right border-l border-gray-800"><p class="text-[10px] text-gray-500 uppercase font-bold mb-1">Total Outflow</p><p class="text-xl font-bold text-brand-orange">KES ${totalOut.toLocaleString()}</p></div>
+                            </div>`;
+
+                        // UI OVERHAUL (STRIPED TABLE)
+                        document.getElementById('outputA').innerHTML = `
+                            ${summaryBar}
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left mpesa-table">
+                                    <thead class="bg-gray-800 text-gray-500 uppercase text-[10px] tracking-widest font-bold">
+                                        <tr><th class="p-3">Code</th><th class="p-3">Date</th><th class="p-3">Party</th><th class="p-3 text-right">KES</th></tr>
+                                    </thead>
+                                    <tbody>${tableRows}</tbody>
+                                </table>
+                                <p class="text-[10px] text-gray-600 mt-4 text-center">${currentMpesaData.length} transactions found.</p>
+                            </div>`;
                     }
                     resetBtn();
                 }, 500);
@@ -613,6 +691,30 @@
                 loader.classList.remove('hidden-view');
                 btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> QR Ready (Scan Now)';
             }, 2000);
+        }
+
+        // UPDATED: EXPORT HANDLER
+        function handleExport() {
+            const mode = document.getElementById('currentMode').innerText;
+            if (mode === "M-Pesa Parser") {
+                exportToExcel();
+            } else {
+                exportToTxt();
+            }
+        }
+
+        // TRUE EXCEL EXPORT (SHEETJS)
+        function exportToExcel() {
+            if (currentMpesaData.length === 0) { alert("Nothing to export. Process data first!"); return; }
+            
+            // Create worksheet from the global array
+            const worksheet = XLSX.utils.json_to_sheet(currentMpesaData);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, worksheet, "Transactions");
+
+            // Format Filename
+            const timestamp = new Date().toISOString().slice(0, 10);
+            XLSX.writeFile(workbook, `Mpesa_Report_${timestamp}.xlsx`);
         }
 
         function exportToTxt() {
