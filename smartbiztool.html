@@ -268,34 +268,85 @@
         if (!response.ok) throw new Error("API failed");
         return await response.json();
     }
+function parseMpesa(text) {
+    // 1. Split by transaction code anchors
+    const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/i);
+    
+    // Using a Map to ensure unique codes (removes duplicates)
+    const uniqueTransactions = new Map();
+    let tin = 0, tout = 0;
 
-    // 5. MPESA ENGINE (Simplified for UX)
-    function parseMpesa(text) {
-        const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
-        globalData = [];
-        let tin = 0, tout = 0, rows = "";
+    chunks.forEach(msg => {
+        if (!msg.trim()) return;
 
-        chunks.forEach(msg => {
-            if (!msg.trim()) return;
-            const code = msg.match(/([A-Z0-9]{10})/)?.[1];
-            const amountMatch = msg.match(/Ksh\s?([\d,]+\.\d{2})/i);
-            const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1] || "N/A";
+        // Extract Code (10 alphanumeric chars)
+        const code = msg.match(/([A-Z0-9]{10})/)?.[1];
+        if (!code) return;
+
+        // Amount: Look for Ksh figure specifically after transaction keywords
+        // This avoids picking up the "Balance" or "Limit" Ksh figures
+        const amountRegex = /(?:Confirmed|received|deposited|sent|paid|reversed|bought).*?Ksh\s?([\d,]+\.\d{2})/i;
+        const amountMatch = msg.match(amountRegex);
+        
+        // Date: Priority on the pattern "on dd/mm/yy at hh:mm"
+        const dateRegex = /on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at/i;
+        let date = msg.match(dateRegex)?.[1];
+        
+        // Fallback date if "at" is missing (avoiding due dates)
+        if (!date) {
+            const fallbackDate = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/i);
+            date = fallbackDate ? fallbackDate[1] : "N/A";
+        }
+
+        if (code && amountMatch) {
+            const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
             
-            if (code && amountMatch) {
-                const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                let type = msg.match(/received|deposited|reversed/i) ? "IN" : "OUT";
+            // Detect Direction
+            let type = msg.match(/received|deposited|reversed/i) ? "IN" : "OUT";
+            
+            // Extract Party (who sent or received)
+            let party = "Transaction";
+            if (msg.match(/received from/i)) party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim();
+            else if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
+            else if (msg.match(/paid to/i)) party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
+            else if (msg.match(/fuliza/i)) party = "Fuliza Repayment";
+
+            party = party.replace(/\d{10,12}/g, '').trim(); // Clean phone numbers out of names
+
+            // Only add if code is unique to fix the "math adding twice" error
+            if (!uniqueTransactions.has(code)) {
+                uniqueTransactions.set(code, { code, date, party, type, amount });
                 if (type === "IN") tin += amount; else tout += amount;
-
-                globalData.push({ Code: code, Date: date, Type: type, Amount: amount });
-                rows += `<tr class="border-b border-gray-800/50"><td class="py-3 text-brand-neon font-bold">${code}</td><td class="py-3 text-gray-500">${date}</td><td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-300'} font-bold">${amount.toLocaleString()}</td></tr>`;
             }
-        });
+        }
+    });
 
-        document.getElementById('totalIn').innerText = `IN: ${tin.toLocaleString()}`;
-        document.getElementById('totalOut').innerText = `OUT: ${tout.toLocaleString()}`;
-        document.getElementById('summaryBadge').classList.remove('hidden-view');
-        document.getElementById('outputArea').innerHTML = `<table class="w-full text-left mpesa-table"><thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800"><tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2 text-right">KES</th></tr></thead><tbody class="text-[11px]">${rows || '<tr><td colspan="3" class="py-10 text-center opacity-30">No data found.</td></tr>'}</tbody></table>`;
-    }
+    // Update Totals on UI
+    document.getElementById('totalIn').innerText = `IN: KES ${tin.toLocaleString()}`;
+    document.getElementById('totalOut').innerText = `OUT: KES ${tout.toLocaleString()}`;
+    document.getElementById('summaryBadge').classList.remove('hidden-view');
+
+    // Render Table
+    globalData = Array.from(uniqueTransactions.values());
+    let rows = globalData.map(row => `
+        <tr class="border-b border-gray-800/50">
+            <td class="py-3 text-brand-neon font-bold">${row.code}</td>
+            <td class="py-3 text-gray-500">${row.date}</td>
+            <td class="py-3 truncate max-w-[120px] text-gray-300">${row.party}</td>
+            <td class="py-3 text-right ${row.type === 'IN' ? 'text-green-400' : 'text-gray-200'} font-bold">
+                ${row.type === 'IN' ? '+' : '-'}${row.amount.toLocaleString()}
+            </td>
+        </tr>
+    `).join('');
+
+    document.getElementById('outputArea').innerHTML = `
+        <table class="w-full text-left mpesa-table">
+            <thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800">
+                <tr><th>Code</th><th>Date</th><th>Party</th><th class="text-right">Amount</th></tr>
+            </thead>
+            <tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="text-center py-10 opacity-30">No valid data found.</td></tr>'}</tbody>
+        </table>`;
+}
 
     // 6. EXPORT
     function handleExport() {
