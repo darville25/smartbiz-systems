@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Secret to Scalable Revenue | SmartBiz Systems Advertising</title>
+    <meta name="description" content="Discover why 90% of Kenyan SMEs fail at ads and how our Advertising Ecosystem turns shilllings into high-value customers.">
+    
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',
+                            card: '#161E2E',
+                            neon: '#2DD4BF',
+                            neonhover: '#14B8A6',
+                            purple: '#A78BFA',
+                            text: '#FFFFFF',
+                            muted: '#E2E8F0'
+                        }
+                    },
+                    boxShadow: {
+                        'neon': '0 0 25px rgba(45, 212, 191, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0F19; color: #FFFFFF; }
+        .text-gradient {
+            background: linear-gradient(to right, #2DD4BF, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .bg-grid {
+            background-image: linear-gradient(to right, rgba(45, 212, 191, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        p { color: #E2E8F0 !important; }
+        .logic-card { transition: all 0.3s ease; }
+        .logic-card:hover { transform: translateY(-5px); border-color: #2DD4BF; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+    
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20your%20Advertising%20Services." 
+       target="_blank" 
+       class="wa-float fixed bottom-6 right-6 z-[100] bg-brand-whatsapp text-white w-16 h-16 rounded-full flex items-center justify-center shadow-wa hover:scale-110 transition-transform active:scale-95">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Optional Tooltip for Desktop -->
+        <span class="absolute right-20 bg-brand-dark text-white text-[10px] font-black uppercase px-3 py-1.5 rounded-lg border border-white/10 whitespace-nowrap hidden md:block">Chat with us</span>
+    </a>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center group">
+                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+                        SmartBiz<span class="text-brand-neon">Systems</span>
+                    </span>
+                </a>
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="index.html" class="text-sm font-bold text-slate-200 hover:text-brand-neon transition">Home</a>
+                    <a href="automation.html" class="text-sm font-bold text-slate-200 hover:text-brand-neon transition">Automation</a>
+                    <a href="smartbiztool.html" class="inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-full border border-gray-700 hover:border-brand-purple transition-all">
+                        <i class="fa-solid fa-microchip mr-2 text-brand-purple"></i> AI Commander
+                    </a>
+                    <a href="#contact-section" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all">
+                        Get a Free Audit
+                    </a>
+                </div>
+                <div class="lg:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white p-2 border border-gray-800 rounded-lg">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto">
+            <div class="px-4 pt-4 space-y-1">
+                <a href="index.html" class="block px-3 py-3 rounded-lg text-base font-bold text-gray-300">Home</a>
+                <a href="automation.html" class="block px-3 py-3 rounded-lg text-base font-bold text-gray-300">Automation</a>
+                <a href="smartbiztool.html" class="block px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800">Launch AI Commander</a>
+                <a href="#contact-section" onclick="toggleMobileMenu()" class="block px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg mt-4">Get a Free Audit</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO: CURIOSITY FRAMING -->
+    <header class="relative pt-40 pb-20 lg:pt-56 overflow-hidden bg-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-brand-purple/30 bg-brand-purple/10 mb-6">
+                <span class="text-[10px] font-black text-brand-purple uppercase tracking-widest">Nairobi's Best Kept Business Secret</span>
+            </div>
+            <h1 class="text-5xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 text-white uppercase">
+                The Math Behind <br>
+                <span class="text-gradient">The 5% Who Scale.</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl font-medium leading-relaxed mx-auto text-center">
+                While most businesses are "guessing" with their ad spend, a small group of Kenyan SMEs are using a **system** to print revenue on demand. Do you want to see how the system works?
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#contact-section" class="px-12 py-6 bg-brand-neon text-brand-dark font-black rounded-xl hover:shadow-neon transition-all text-center uppercase tracking-widest text-sm">
+                    Show Me The System
+                </a>
+                <a href="#waste" class="px-12 py-6 border-2 border-slate-700 text-white font-bold rounded-xl hover:bg-slate-800 transition-all text-center text-sm uppercase tracking-widest">
+                    Why I'm Losing Money
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- THE PROBLEM: WHY 90% WASTE MONEY -->
+    <section id="waste" class="py-24 bg-brand-dark border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl lg:text-6xl font-black mb-8 uppercase leading-tight">Why 90% of Kenyan SMEs <br><span class="text-red-500">Waste Money</span> on Ads</h2>
+                    <p class="text-lg mb-6">Most agencies in Nairobi will take your money, click "Boost Post," and show you "Reach" and "Impressions."</p>
+                    <p class="text-lg font-bold text-white mb-8">But Reach doesn't pay rent. Sales do.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> <span><strong>The Boost Trap:</strong> Optimizing for likes instead of WhatsApp inquiries.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> <span><strong>Ghost Tracking:</strong> Not knowing exactly which shilling resulted in an M-Pesa payment.</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> <span><strong>Generic Copy:</strong> Ads that sound like robots, not like a trusted Kenyan partner.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-brand-card p-8 rounded-3xl border-2 border-red-500/20 shadow-[0_0_50px_rgba(239,68,68,0.1)]">
+                    <div class="text-center py-10">
+                        <i class="fa-solid fa-receipt text-6xl text-red-500/20 mb-6"></i>
+                        <h3 class="text-2xl font-black uppercase text-white mb-4">The "Gambling" Report</h3>
+                        <p class="text-sm text-slate-400 mb-8">Is this what your current agency sends you?</p>
+                        <div class="space-y-3 opacity-50">
+                            <div class="flex justify-between text-xs border-b border-white/10 pb-2"><span>Impressions</span><span>1.2 Million (Useless)</span></div>
+                            <div class="flex justify-between text-xs border-b border-white/10 pb-2"><span>Likes</span><span>4,000 (Useless)</span></div>
+                            <div class="flex justify-between text-xs font-black text-red-400"><span>Actual Sales</span><span>?? Unknown ??</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVERTISING ECOSYSTEM -->
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-6xl font-black mb-4 uppercase tracking-tighter">Our Advertising <span class="text-brand-neon">Ecosystem</span></h2>
+                <p class="text-lg">We don't run ads. We build machines that find, warm up, and convert your ideal clients.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="logic-card bg-brand-card p-10 rounded-3xl border border-white/5">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6 text-blue-400 text-2xl"><i class="fa-brands fa-google"></i></div>
+                    <h3 class="text-xl font-black text-white mb-4 uppercase">Google Intent Engine</h3>
+                    <p class="text-sm">We capture the customer at the exact moment they search for your service. High-intent, ready-to-pay traffic.</p>
+                </div>
+                <div class="logic-card bg-brand-card p-10 rounded-3xl border border-white/5">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 text-purple-400 text-2xl"><i class="fa-brands fa-facebook"></i></div>
+                    <h3 class="text-xl font-black text-white mb-4 uppercase">Meta Desire Machine</h3>
+                    <p class="text-sm">We use social triggers to stop the scroll and build a burning desire for your brand, even before they know they need it.</p>
+                </div>
+                <div class="logic-card bg-brand-card p-10 rounded-3xl border border-white/5">
+                    <div class="w-12 h-12 bg-brand-neon/10 rounded-xl flex items-center justify-center mb-6 text-brand-neon text-2xl"><i class="fa-solid fa-comments"></i></div>
+                    <h3 class="text-xl font-black text-white mb-4 uppercase">WhatsApp Conversion</h3>
+                    <p class="text-sm">In Kenya, sales happen in the DM. We bridge the gap from "Ad" to "WhatsApp Chat" seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SMARTBIZ EDGE -->
+    <section class="py-24 bg-brand-dark border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-6xl font-black mb-4 uppercase tracking-tighter">The SmartBiz <span class="text-brand-purple">Edge</span></h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-brand-neon/10 rounded-full flex items-center justify-center text-brand-neon font-black italic">AI</div>
+                        <div>
+                            <h4 class="text-xl font-black text-white uppercase">Localized AI Commander</h4>
+                            <p class="text-sm">We use proprietary AI models trained on Kenyan buying psychology. Our ads speak "Nairobi"—blending English and Sheng perfectly to build trust.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-brand-neon/10 rounded-full flex items-center justify-center text-brand-neon font-black italic">$$</div>
+                        <div>
+                            <h4 class="text-xl font-black text-white uppercase">M-Pesa Integrated Tracking</h4>
+                            <p class="text-sm">We don't stop at the click. We track the conversion all the way to your M-Pesa till to see your true return on ad spend (ROAS).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-brand-neon/10 rounded-full flex items-center justify-center text-brand-neon font-black italic">24/7</div>
+                        <div>
+                            <h4 class="text-xl font-black text-white uppercase">Self-Optimizing Campaigns</h4>
+                            <p class="text-sm">Our campaigns use automated rules to shift budget to whatever is making you money right now, minute by minute.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block">
+                    <img src="images/automation-guide.webp" alt="SmartBiz Edge" class="rounded-3xl border border-white/10 shadow-neon transform rotate-2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact-section" class="py-24 bg-gradient-to-b from-brand-dark to-brand-card">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-5xl font-black mb-6 uppercase leading-tight">Build Your <br><span class="text-brand-neon">Revenue Engine.</span></h2>
+                    <p class="text-lg mb-8 italic text-slate-400">"The best time to fix your ads was 6 months ago. The second best time is right now."</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-sm font-bold text-white"><i class="fa-solid fa-check text-brand-neon"></i> Instant Ad Strategy Audit</div>
+                        <div class="flex items-center gap-4 text-sm font-bold text-white"><i class="fa-solid fa-check text-brand-neon"></i> Revenue Projection Model</div>
+                    </div>
+                </div>
+                <div class="bg-brand-dark p-8 rounded-3xl border border-brand-neon shadow-neon">
+                    <form action="https://formspree.io/f/xwveeaep" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-black uppercase text-slate-400 mb-2">Your Name</label>
+                            <input type="text" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-neon outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase text-slate-400 mb-2">WhatsApp Phone Number</label>
+                            <input type="tel" name="phone" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-neon outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase text-slate-400 mb-2">Monthly Ad Budget (KES)</label>
+                            <select name="budget" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-brand-neon outline-none">
+                                <option>Below 50k</option>
+                                <option>50k - 200k</option>
+                                <option>Above 200k</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-neon text-brand-dark font-black uppercase tracking-widest rounded-xl hover:bg-white transition-all">
+                            Send My Free Audit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-white/10 text-center">
+        <span class="text-xl font-black text-white block mb-4 uppercase">SmartBiz<span class="text-brand-neon">Systems</span></span>
+        <p class="text-slate-500 font-bold text-xs uppercase tracking-widest">&copy; 2025 SmartBiz Systems. Kenya's Performance Leaders.</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (!menu.classList.contains('hidden')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
