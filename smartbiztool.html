@@ -147,158 +147,181 @@
     </main>
 
     <script>
-        let currentMode = "M-Pesa Auditor";
-        let activeTone = "Friendly";
-        let globalData = [];
+    let currentMode = "M-Pesa Auditor";
+    let activeTone = "Friendly";
+    let globalData = [];
 
-        // 1. APP LOADER
-        window.addEventListener("DOMContentLoaded", () => {
-            setTimeout(() => {
-                const loader = document.getElementById('global-loader');
-                if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 400); }
-            }, 600);
+    // 1. INITIALIZER
+    window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            const loader = document.getElementById('global-loader');
+            if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 400); }
+        }, 600);
+    });
+
+    // 2. UX: TOOL SWITCHER & SCROLL
+    function switchMode(btn, mode) {
+        currentMode = mode;
+        document.getElementById('currentModeTitle').innerText = mode;
+        
+        if (window.innerWidth < 768) {
+            document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
+        
+        const toggleGrp = document.getElementById('toggleGroup');
+        const summary = document.getElementById('summaryBadge');
+        const outArea = document.getElementById('outputArea');
+
+        toggleGrp.classList.add('hidden-view');
+        summary.classList.add('hidden-view');
+        outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20"><i class="fa-solid fa-terminal text-2xl"></i><p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p></div>`;
+
+        if (mode === "M-Pesa Auditor") {
+            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
+            document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
+            document.getElementById('label2').innerText = "Filters (Optional)";
+        } else if (mode === "Debt Collection") {
+            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
+            document.getElementById('label1').innerText = "Client Name & Phone";
+            document.getElementById('label2').innerText = "Amount & Due Date";
+            toggleGrp.classList.remove('hidden-view');
+        } else {
+            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
+            document.getElementById('label1').innerText = "Product / Service Name";
+            document.getElementById('label2').innerText = "Target Audience Details";
+        }
+    }
+
+    function setTone(btn, tone) {
+        activeTone = tone;
+        document.querySelectorAll('.tone-btn').forEach(b => {
+            b.classList.remove('bg-brand-neon', 'text-brand-dark');
+            b.classList.add('text-gray-400');
+        });
+        btn.classList.remove('text-gray-400');
+        btn.classList.add('bg-brand-neon', 'text-brand-dark');
+    }
+
+    // 3. MAIN PROCESSOR
+    async function runProcessor() {
+        const input = document.getElementById('mainInput').value.trim();
+        const subInput = document.getElementById('subInput').value.trim();
+        const btn = document.getElementById('processBtn');
+
+        if (!input) return alert("Please enter the client name or data first.");
+
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AI IS THINKING...';
+        btn.disabled = true;
+
+        try {
+            if (currentMode === "M-Pesa Auditor") {
+                parseMpesa(input);
+            } else {
+                const data = await callGPTAPI(currentMode, input, subInput, activeTone);
+                
+                // DISPLAY BOTH VARIATIONS FROM JSON
+                document.getElementById('outputArea').innerHTML = `
+                    <div class="mb-6">
+                        <div class="p-2 bg-brand-neon/10 text-brand-neon text-[9px] font-black uppercase mb-2 border-l-2 border-brand-neon">Option A</div>
+                        <div class="text-gray-200 leading-relaxed whitespace-pre-wrap">${data.variationA}</div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800">
+                        <div class="p-2 bg-brand-purple/10 text-brand-purple text-[9px] font-black uppercase mb-2 border-l-2 border-brand-purple">Option B</div>
+                        <div class="text-gray-200 leading-relaxed whitespace-pre-wrap">${data.variationB}</div>
+                    </div>
+                `;
+            }
+        } catch (err) {
+            console.error(err);
+            document.getElementById('outputArea').innerHTML = `
+                <div class="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-400 text-xs">
+                    <p class="font-bold mb-1 underline">CONNECTION ERROR</p>
+                    <p>Could not reach SmartBiz AI. Check if your Vercel URL is correct and OpenAI key is added.</p>
+                </div>`;
+        } finally {
+            btn.innerHTML = 'Process with SmartBiz AI';
+            btn.disabled = false;
+        }
+    }
+
+    // 4. THE LIVE API BRIDGE
+    async function callGPTAPI(mode, input, details, tone) {
+        // Change this to your real Vercel URL if deploying
+        // If testing locally on the same Vercel project, use '/api/generate'
+        const API_URL = '/api/generate'; 
+
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                mode: mode, 
+                product: input,  // Matches your generate.js keys
+                audience: details, 
+                strategy: tone,
+                tone: tone
+            })
         });
 
-        // 2. TOOL SWITCHER + AUTO SCROLL
-        function switchMode(btn, mode) {
-            currentMode = mode;
-            document.getElementById('currentModeTitle').innerText = mode;
+        if (!response.ok) throw new Error("API call failed");
+        return await response.json(); // Correctly parses the JSON from generate.js
+    }
+
+    // 5. MPESA ENGINE
+    function parseMpesa(text) {
+        const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
+        globalData = [];
+        let tin = 0, tout = 0, rows = "";
+
+        chunks.forEach(msg => {
+            if (!msg.trim()) return;
+            const code = msg.match(/([A-Z0-9]{10})/)?.[1];
+            const amountMatch = msg.match(/Ksh\s?([\d,]+\.\d{2})/i);
+            const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1] || "N/A";
             
-            // Auto-scroll for Mobile
-            if (window.innerWidth < 768) {
-                document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (code && amountMatch) {
+                const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
+                let party = "Transaction", type = "OUT";
 
-            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
-            const toggleGrp = document.getElementById('toggleGroup');
-            const summary = document.getElementById('summaryBadge');
-
-            toggleGrp.classList.add('hidden-view');
-            summary.classList.add('hidden-view');
-
-            if (mode === "M-Pesa Auditor") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-                document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
-                document.getElementById('label2').innerText = "Filters (Optional)";
-            } else if (mode === "Debt Collection") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-                document.getElementById('label1').innerText = "Client Name & Phone";
-                document.getElementById('label2').innerText = "Amount & Due Date";
-                toggleGrp.classList.remove('hidden-view');
-            } else {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
-                document.getElementById('label1').innerText = "Product / Service Name";
-                document.getElementById('label2').innerText = "Target Audience Details";
-            }
-        }
-
-        function setTone(btn, tone) {
-            activeTone = tone;
-            document.querySelectorAll('.tone-btn').forEach(b => {
-                b.classList.remove('bg-brand-neon', 'text-brand-dark');
-                b.classList.add('text-gray-400');
-            });
-            btn.classList.remove('text-gray-400');
-            btn.classList.add('bg-brand-neon', 'text-brand-dark');
-        }
-
-        // 3. MASTER PROCESSOR
-        async function runProcessor() {
-            const input = document.getElementById('mainInput').value.trim();
-            const subInput = document.getElementById('subInput').value.trim();
-            const btn = document.getElementById('processBtn');
-
-            if (!input) return alert("Input required.");
-
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> SMARTBIZ AI PROCESSING...';
-            btn.disabled = true;
-
-            try {
-                if (currentMode === "M-Pesa Auditor") {
-                    parseMpesa(input);
+                if (msg.match(/received|deposited|reversed/i)) {
+                    type = "IN"; tin += amount;
+                    const fromMatch = msg.match(/from\s+(.*?)\s+on/i);
+                    party = fromMatch ? fromMatch[1].trim() : "Money In";
                 } else {
-                    const result = await callGPTAPI(currentMode, input, subInput, activeTone);
-                    document.getElementById('outputArea').innerHTML = `<div class="p-3 bg-brand-neon/5 text-brand-neon text-[8px] font-black uppercase mb-3 flex items-center border border-brand-neon/10"><i class="fa-solid fa-check-circle mr-2"></i> AI Generated Response</div><div class="whitespace-pre-wrap">${result}</div>`;
+                    type = "OUT"; tout += amount;
+                    if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
+                    else if (msg.match(/paid to/i)) party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
+                    else if (msg.match(/fuliza|repayment/i)) party = "Fuliza Repayment";
                 }
-            } catch (err) {
-                document.getElementById('outputArea').innerHTML = `<p class="text-red-500">System Error: ${err.message}</p>`;
-            } finally {
-                btn.innerHTML = 'Process with SmartBiz AI';
-                btn.disabled = false;
+
+                party = party.replace(/\d{10,12}/g, '').trim();
+                globalData.push({ Code: code, Date: date, Details: party, Type: type, Amount: amount });
+                rows += `<tr class="border-b border-gray-800/50"><td class="py-3 text-brand-neon font-bold">${code}</td><td class="py-3 text-gray-500">${date}</td><td class="py-3 truncate max-w-[100px]">${party}</td><td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-300'} font-bold">${amount.toLocaleString()}</td></tr>`;
             }
+        });
+
+        document.getElementById('totalIn').innerText = `IN: ${tin.toLocaleString()}`;
+        document.getElementById('totalOut').innerText = `OUT: ${tout.toLocaleString()}`;
+        document.getElementById('summaryBadge').classList.remove('hidden-view');
+        document.getElementById('outputArea').innerHTML = `<table class="w-full text-left mpesa-table"><thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800"><tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr></thead><tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="py-10 text-center opacity-30">No data found.</td></tr>'}</tbody></table>`;
+    }
+
+    // 6. EXPORT
+    function handleExport() {
+        if (currentMode === "M-Pesa Auditor") {
+            if (!globalData.length) return alert("Nothing to export.");
+            const ws = XLSX.utils.json_to_sheet(globalData);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Audit");
+            XLSX.writeFile(wb, `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`);
+        } else {
+            const text = document.getElementById('outputArea').innerText;
+            const blob = new Blob([text], { type: 'text/plain' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+            a.download = `SmartBiz_Script.txt`; a.click();
         }
-
-        // 4. GPT API BRIDGE
-        async function callGPTAPI(mode, input, details, tone) {
-            const API_URL = 'https://www.smartbizsystems.co.ke/'; // Replace with your URL
-            
-            try {
-                const res = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ mode, input, details, strategy: tone })
-                });
-                return await res.text();
-            } catch (e) {
-                return `(SIMULATION MODE): ${tone} recovery script for ${input} regarding KES ${details}. \n\n"Habari ${input}, tafadhali kuclear balance ya KES ${details} uweze kuweka vitabu sawa. Shukran."`;
-            }
-        }
-
-        // 5. 2025 MPESA REGEX ENGINE
-        function parseMpesa(text) {
-            const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
-            globalData = [];
-            let tin = 0, tout = 0, rows = "";
-
-            chunks.forEach(msg => {
-                if (!msg.trim()) return;
-                const code = msg.match(/([A-Z0-9]{10})/)?.[1];
-                const amountMatch = msg.match(/Ksh\s?([\d,]+\.\d{2})/i);
-                const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1] || "N/A";
-                
-                if (code && amountMatch) {
-                    const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                    let party = "Transaction", type = "OUT";
-
-                    if (msg.match(/received|deposited|reversed/i)) {
-                        type = "IN"; tin += amount;
-                        const fromMatch = msg.match(/from\s+(.*?)\s+on/i);
-                        party = fromMatch ? fromMatch[1].trim() : "M-Pesa Inbound";
-                    } else {
-                        type = "OUT"; tout += amount;
-                        if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
-                        else if (msg.match(/paid to/i)) party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
-                        else if (msg.match(/fuliza|repayment/i)) party = "Fuliza Repayment";
-                        else if (msg.match(/kplc/i)) party = "KPLC Prepaid";
-                    }
-
-                    party = party.replace(/\d{10,12}/g, '').trim();
-                    globalData.push({ Code: code, Date: date, Details: party, Type: type, Amount: amount });
-                    rows += `<tr class="border-b border-gray-800/50"><td class="py-3 text-brand-neon font-bold">${code}</td><td class="py-3 text-gray-500">${date}</td><td class="py-3 truncate max-w-[100px]">${party}</td><td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-300'} font-bold">${amount.toLocaleString()}</td></tr>`;
-                }
-            });
-
-            document.getElementById('totalIn').innerText = `IN: ${tin.toLocaleString()}`;
-            document.getElementById('totalOut').innerText = `OUT: ${tout.toLocaleString()}`;
-            document.getElementById('summaryBadge').classList.remove('hidden-view');
-            document.getElementById('outputArea').innerHTML = `<table class="w-full text-left mpesa-table"><thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800"><tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr></thead><tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="py-10 text-center opacity-30">No data found.</td></tr>'}</tbody></table>`;
-        }
-
-        // 6. TRUE EXCEL EXPORT (SHEETJS)
-        function handleExport() {
-            if (currentMode === "M-Pesa Auditor") {
-                if (!globalData.length) return alert("Parse data first.");
-                const ws = XLSX.utils.json_to_sheet(globalData);
-                const wb = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(wb, ws, "Audit");
-                XLSX.writeFile(wb, `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`);
-            } else {
-                const text = document.getElementById('outputArea').innerText;
-                const blob = new Blob([text], { type: 'text/plain' });
-                const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-                a.download = `SmartBiz_Script.txt`; a.click();
-            }
-        }
-    </script>
+    }
+</script>
 </body>
 </html>
