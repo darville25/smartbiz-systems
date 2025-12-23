@@ -5,78 +5,65 @@ const openai = new OpenAI({
 });
 
 export default async function handler(req, res) {
-  // 1. Security & Method Check
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  // 2. Destructure payload from SmartBiz v3.1
-  // Frontend sends: { mode, input, details, strategy }
-  const { mode, input, details, strategy } = req.body;
+  const { mode, product, audience, strategy, tone } = req.body;
 
-  // 3. System Prompt (The "Kenyan Business Brain")
-  const systemPrompt = `You are "SmartBiz Commander", the elite AI Operations OS for Kenyan SMEs.
-  Your personality:
-  - Localized: You understand M-Pesa, 'Biashara' culture, KRA, and Nairobi corporate etiquette.
-  - Language: Professional English mixed with natural Kenyan context (and light Swahili reminders like 'Asante', 'Tafadhali' if the tone is friendly).
-  - Currency: Always use KES.
-  - Output Format: You MUST return a JSON object with two keys: "variationA" and "variationB". Use HTML tags (<strong>, <br>) for formatting.`;
+  // 1. REFINED SYSTEM PROMPT: Focus on being a Copywriter, not just a consultant.
+  const systemPrompt = `You are a world-class Kenyan Marketing Copywriter. 
+  Your goal is to write high-conversion content for the user's specific product.
+  - DO NOT talk about 'SmartBiz' or general business tips unless that is the product.
+  - FOCUS 100% on the Product: "${product}" and the Audience: "${audience}".
+  - LANGUAGE: Use 'Sheng-infused' English or professional Nairobi English depending on the product type.
+  - FORMAT: Return JSON with "variationA" and "variationB". Use HTML tags (<strong>, <br>) for formatting.`;
 
-  // 4. Logic per Tool Mode
+  // 2. TOOL SPECIFIC INSTRUCTIONS
   let userPrompt = "";
 
-  if (mode === 'Debt Collection') {
-    userPrompt = `Generate 2 debt recovery messages for a client named ${input}.
-    Debt Details: ${details}.
-    Strategy/Tone: ${strategy}.
-    - Variation A: A high-conversion message specifically for WhatsApp.
-    - Variation B: A follow-up message with a different angle.
-    If Strategy is 'Friendly', sound like a concerned partner. If 'Firm', mention consequences like CRB or legal escalation professionally.`;
-  } 
-  else if (mode === 'Viral Hooks') {
-    userPrompt = `Generate viral marketing hooks for: ${input}.
-    Target Audience: ${details}.
+  if (mode === 'Viral Hooks') {
+    userPrompt = `Write viral marketing hooks for a product called "${product}" targeting "${audience}".
     Strategy: ${strategy}.
-    - Variation A: 3 Hard-hitting TikTok/Reels hooks using Nairobi trends.
-    - Variation B: A Facebook/Instagram ad caption with a clear CTA to WhatsApp.`;
-  }
-  else if (mode === 'WhatsApp Agent') {
-    userPrompt = `You are configuring a WhatsApp Sales Agent for a business called "${input}".
-    Knowledge Base/Catalog: "${details}".
-    - Variation A: A warm, automated Welcome Message that asks a qualifying question.
-    - Variation B: A short FAQ auto-reply based on the catalog provided.`;
+    
+    Variation A (TikTok Style): Create 3 "Stop the Scroll" hooks. Reference specific Nairobi lifestyle contexts where this product fits (e.g., Sunday brunch, morning commute, office slay).
+    Variation B (Instagram/FB Style): A punchy caption that highlights the benefit of the product with localized emojis and a clear WhatsApp CTA.
+    
+    CRITICAL: The content must be about "${product}". Do NOT mention M-Pesa or 'Hustle' unless the product is financial.`;
+  } 
+  else if (mode === 'Debt Collection') {
+    userPrompt = `Write 2 debt recovery messages for ${product} who owes money.
+    Details: ${audience}.
+    Tone: ${strategy}.
+    - Variation A: Professional but firm.
+    - Variation B: Direct and urgent.
+    Use Kenyan polite/firm etiquette.`;
   }
   else {
-    // Fallback for other tools (Ads, Scripts, etc.)
-    userPrompt = `Task: ${mode}.
-    Primary Subject: ${input}.
-    Context/Details: ${details}.
-    Tone: ${strategy}.
+    userPrompt = `Write marketing content for "${product}" targeting "${audience}".
+    Tool Mode: ${mode}. Tone: ${strategy}.
     Provide two distinct, high-quality variations optimized for the Kenyan market.`;
   }
 
   try {
-    // 5. Call OpenAI with JSON Mode
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini", // Faster and cheaper for production
+      model: "gpt-4o-mini", // GPT-4o-mini is much better at following instructions
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
       ],
       response_format: { type: "json_object" }, 
-      temperature: 0.7,
+      temperature: 0.8, // Slightly higher for better creativity in marketing
     });
 
     const aiResponse = JSON.parse(completion.choices[0].message.content);
-    
-    // 6. Return response to Frontend
     res.status(200).json(aiResponse);
 
   } catch (error) {
     console.error("SmartBiz AI Error:", error);
     res.status(500).json({ 
-        variationA: "<strong>System Alert:</strong> OpenAI balance low or API error. Please check Vercel logs.", 
-        variationB: "<strong>Technical Issue:</strong> Connection to SmartBiz Commander timed out." 
+        variationA: "<strong>Error:</strong> The AI is currently over-taxed. Please try again.", 
+        variationB: "Check OpenAI balance or Vercel Logs." 
     });
   }
 }
