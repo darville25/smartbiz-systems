@@ -348,20 +348,73 @@ function parseMpesa(text) {
         </table>`;
 }
 
-    // 6. EXPORT
     function handleExport() {
-        if (currentMode === "M-Pesa Auditor") {
-            const ws = XLSX.utils.json_to_sheet(globalData);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, "Audit");
-            XLSX.writeFile(wb, `Audit_${new Date().toISOString().slice(0,10)}.xlsx`);
-        } else {
-            const text = document.getElementById('outputArea').innerText;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-            a.download = `AI_Script.txt`; a.click();
-        }
+    if (currentMode === "M-Pesa Auditor") {
+        if (!globalData.length) return alert("Nothing to export. Please parse data first.");
+
+        // 1. Prepare data for Excel and calculate totals
+        let totalIn = 0;
+        let totalOut = 0;
+
+        const excelRows = globalData.map(d => {
+            if (d.type === "IN") totalIn += d.amount;
+            else totalOut += d.amount;
+
+            return {
+                "Transaction Code": d.code,
+                "Date": d.date,
+                "Description/Party": d.party,
+                "Type": d.type,
+                "Amount (KES)": d.type === "IN" ? d.amount : -d.amount // Negative for OUT
+            };
+        });
+
+        // 2. Add a spacer and summary rows at the bottom
+        excelRows.push({}); // Empty Row
+        excelRows.push({ 
+            "Description/Party": "TOTAL MONEY IN", 
+            "Amount (KES)": totalIn 
+        });
+        excelRows.push({ 
+            "Description/Party": "TOTAL MONEY OUT", 
+            "Amount (KES)": -totalOut 
+        });
+        excelRows.push({ 
+            "Description/Party": "NET BALANCE (CASH AT HAND)", 
+            "Amount (KES)": totalIn - totalOut 
+        });
+
+        // 3. Create the Worksheet
+        const ws = XLSX.utils.json_to_sheet(excelRows);
+        const wb = XLSX.utils.book_new();
+
+        // 4. Set Column Widths (for better visibility)
+        const wscols = [
+            {wch: 15}, // Code
+            {wch: 12}, // Date
+            {wch: 30}, // Party
+            {wch: 10}, // Type
+            {wch: 15}  // Amount
+        ];
+        ws['!cols'] = wscols;
+
+        XLSX.utils.book_append_sheet(wb, ws, "Financial Audit");
+
+        // 5. Download file
+        const fileName = `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`;
+        XLSX.writeFile(wb, fileName);
+        
+    } else {
+        // Standard text export for Scripts
+        const text = document.getElementById('outputArea').innerText;
+        if(!text || text.includes("Ready for Command")) return alert("Nothing to export.");
+        const blob = new Blob([text], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `SmartBiz_AI_Script.txt`;
+        a.click();
     }
+}
 </script>
 </body>
 </html>
