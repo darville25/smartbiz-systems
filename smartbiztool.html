@@ -215,8 +215,11 @@
         // INITIALIZER
         window.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
-                document.getElementById('global-loader').style.opacity = '0';
-                setTimeout(() => document.getElementById('global-loader').remove(), 500);
+                const loader = document.getElementById('global-loader');
+                if(loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.remove(), 500);
+                }
             }, 1000);
         });
 
@@ -225,7 +228,6 @@
             currentMode = mode;
             document.getElementById('currentModeTitle').innerText = mode;
             
-            // UI Resets
             const sidebarBtns = document.querySelectorAll('.sidebar-btn');
             sidebarBtns.forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all');
             
@@ -250,8 +252,9 @@
                 btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
                 document.getElementById('label1').innerText = "Client Name & Phone";
                 document.getElementById('label2').innerText = "Debt Amount & Due Date";
-                document.querySelectorAll('.strategy-btn')[0].innerText = "Mwananchi";
-                document.querySelectorAll('.strategy-btn')[1].innerText = "Firm Legal";
+                const stratBtns = document.querySelectorAll('.strategy-btn');
+                stratBtns[0].innerText = "Mwananchi";
+                stratBtns[1].innerText = "Firm Legal";
             } else if (mode === "WhatsApp Agent") {
                 btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
                 mainView.classList.add('hidden-view');
@@ -279,7 +282,6 @@
             const in1 = document.getElementById('mainInput').value.trim();
             const in2 = document.getElementById('subInput').value.trim();
             const actionBtn = document.getElementById('actionBtn');
-            const output = document.getElementById('outputArea');
 
             if (!in1) return alert("Please provide primary input.");
 
@@ -287,18 +289,24 @@
             actionBtn.disabled = true;
 
             setTimeout(() => {
-                if (currentMode === "M-Pesa Parser") {
-                    parseMpesa(in1);
-                } else if (currentMode === "Debt Collection") {
-                    generateDebtScript(in1, in2);
-                } else if (currentMode === "Viral Hooks") {
-                    generateViralMarketing(in1, in2);
-                } else if (currentMode === "Tender Proposal") {
-                    generateTender(in1, in2);
+                try {
+                    if (currentMode === "M-Pesa Parser") {
+                        parseMpesa(in1);
+                    } else if (currentMode === "Debt Collection") {
+                        generateDebtScript(in1, in2);
+                    } else if (currentMode === "Viral Hooks") {
+                        generateViralMarketing(in1, in2);
+                    } else if (currentMode === "Tender Proposal") {
+                        generateTender(in1, in2);
+                    }
+                } catch (err) {
+                    console.error(err);
+                    document.getElementById('outputArea').innerHTML = `<p class="text-red-500">Error: ${err.message}</p>`;
+                } finally {
+                    actionBtn.innerHTML = 'Process Task';
+                    actionBtn.disabled = false;
                 }
-                actionBtn.innerHTML = 'Process Task';
-                actionBtn.disabled = false;
-            }, 1200);
+            }, 800);
         }
 
         // 1. MPESA AUDITOR LOGIC
@@ -314,7 +322,7 @@
 
                 const code = msg.match(/([A-Z0-9]{10})/)?.[1];
                 const amountMatch = msg.match(/Ksh\s?([\d,]+\.\d{2})/i);
-                const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1];
+                const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1] || "N/A";
                 
                 if (code && amountMatch) {
                     const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
@@ -322,14 +330,14 @@
                     let type = "OUT";
 
                     if (msg.toLowerCase().includes("received from")) {
-                        party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim();
+                        party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
                         type = "IN";
                         totalIn += amount;
                     } else if (msg.toLowerCase().includes("sent to")) {
-                        party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
+                        party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
                         totalOut += amount;
                     } else if (msg.toLowerCase().includes("paid to")) {
-                        party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
+                        party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim() || "Merchant";
                         totalOut += amount;
                     } else if (msg.toLowerCase().includes("bought") && msg.toLowerCase().includes("airtime")) {
                         party = "Airtime Purchase";
@@ -344,24 +352,27 @@
                     rows += `<tr class="border-b border-gray-800/50">
                         <td class="py-3 text-brand-neon font-bold">${code}</td>
                         <td class="py-3 text-gray-500">${date}</td>
-                        <td class="py-3 truncate max-w-[80px]">${party}</td>
+                        <td class="py-3 truncate max-w-[100px]">${party}</td>
                         <td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-200'}">${amount.toLocaleString()}</td>
                     </tr>`;
                 }
             });
 
-            document.getElementById('sumIn').innerText = `In: ${totalIn.toLocaleString()}`;
-            document.getElementById('sumOut').innerText = `Out: ${totalOut.toLocaleString()}`;
-            document.getElementById('summaryBadge').classList.remove('hidden-view');
-            document.getElementById('totalInBadge').innerText = `In: ${totalIn.toLocaleString()}`;
-            document.getElementById('totalOutBadge').innerText = `Out: ${totalOut.toLocaleString()}`;
+            // FIXED: Using correct Badge IDs from HTML
+            const badgeIn = document.getElementById('totalInBadge');
+            const badgeOut = document.getElementById('totalOutBadge');
+            const summary = document.getElementById('summaryBadge');
+
+            if(badgeIn) badgeIn.innerText = `In: ${totalIn.toLocaleString()}`;
+            if(badgeOut) badgeOut.innerText = `Out: ${totalOut.toLocaleString()}`;
+            if(summary) summary.classList.remove('hidden-view');
 
             document.getElementById('outputArea').innerHTML = `
                 <table class="w-full text-left mpesa-table">
                     <thead class="text-[9px] text-gray-500 uppercase border-b border-gray-800">
                         <tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr>
                     </thead>
-                    <tbody class="text-[11px]">${rows}</tbody>
+                    <tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="text-center py-10 opacity-50">No transactions found.</td></tr>'}</tbody>
                 </table>`;
         }
 
@@ -412,6 +423,7 @@
                 XLSX.writeFile(wb, `SmartBiz_Export_${new Date().toISOString().slice(0,10)}.xlsx`);
             } else {
                 const text = document.getElementById('outputArea').innerText;
+                if(!text || text.includes("Awaiting Command")) return alert("Nothing to export.");
                 const blob = new Blob([text], { type: 'text/plain' });
                 const a = document.createElement('a');
                 a.href = URL.createObjectURL(blob);
