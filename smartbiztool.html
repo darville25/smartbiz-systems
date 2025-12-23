@@ -34,7 +34,7 @@
         .app-scroll::-webkit-scrollbar-thumb { background: #2DD4BF; border-radius: 10px; }
         .hidden-view { display: none !important; }
         .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
-        textarea, input { font-size: 16px !important; } /* Prevents iOS Zoom */
+        textarea, input { font-size: 16px !important; } 
     </style>
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
@@ -42,7 +42,7 @@
     <!-- LOADER -->
     <div id="global-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0F19]">
         <div class="w-10 h-10 border-2 border-brand-neon/20 border-t-brand-neon rounded-full animate-spin mb-4"></div>
-        <p class="text-brand-neon font-mono text-[10px] tracking-[0.3em] animate-pulse">SMARTBIZ OPERATOR v3.1</p>
+        <p class="text-brand-neon font-mono text-[10px] tracking-[0.3em] animate-pulse">SMARTBIZ OPERATOR v3.2</p>
     </div>
 
     <!-- NAV -->
@@ -50,7 +50,7 @@
         <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
             <span class="text-lg font-black tracking-tighter">SMARTBIZ<span class="text-brand-neon">TOOL</span></span>
             <div class="flex items-center space-x-4">
-                <a href="https://www.smartbizsystems.co.ke/" class="hidden md:block text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest">Exit to Web</a>
+                <a href="https://www.smartbizsystems.co.ke/" class="hidden md:block text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest">Main Site</a>
                 <button class="bg-brand-neon text-brand-dark px-4 py-1.5 rounded text-[10px] font-black uppercase tracking-wider shadow-neon">Pro Plan</button>
             </div>
         </div>
@@ -72,7 +72,7 @@
                             <button onclick="switchMode(this, 'M-Pesa Auditor')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg">
                                 <i class="fa-solid fa-file-invoice-dollar mr-3"></i> M-Pesa Auditor
                             </button>
-                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg">
+                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all">
                                 <i class="fa-solid fa-hand-holding-dollar mr-3"></i> Debt Recovery
                             </button>
                         </div>
@@ -80,10 +80,7 @@
                     <div>
                         <h3 class="text-[9px] font-black text-brand-neon mb-3 px-2 uppercase tracking-widest opacity-60">Growth</h3>
                         <div class="space-y-1.5">
-                            <button onclick="switchMode(this, 'WhatsApp Agent')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg">
-                                <i class="fa-brands fa-whatsapp mr-3"></i> AI Sales Agent
-                            </button>
-                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg">
+                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all">
                                 <i class="fa-solid fa-bolt mr-3"></i> Viral Marketing
                             </button>
                         </div>
@@ -99,22 +96,24 @@
                         <span id="currentModeTitle">M-Pesa Auditor</span>
                     </h2>
                     <button onclick="handleExport()" class="bg-white text-brand-dark px-3 py-1.5 rounded font-black text-[9px] uppercase tracking-wider hover:bg-gray-200 transition">
-                        <i class="fa-solid fa-file-export mr-1"></i> Export XLSX
+                        <i class="fa-solid fa-file-export mr-1"></i> Export Data
                     </button>
                 </div>
 
                 <div id="mainWorkspace" class="flex-1 p-4 md:p-6 grid lg:grid-cols-2 gap-6 overflow-hidden">
-                    <!-- INPUT -->
+                    
+                    <!-- INPUT COLUMN -->
                     <div class="flex flex-col space-y-4 overflow-y-auto app-scroll">
-                        <div id="inputGroup">
+                        <div>
                             <label id="label1" class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Paste Messages Below</label>
-                            <textarea id="mainInput" placeholder="Copy-paste SMS here..." class="w-full h-44 md:h-64 bg-gray-800/40 border border-gray-700 rounded-xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
+                            <textarea id="mainInput" placeholder="Select all M-Pesa messages in your SMS app, copy them, and paste the whole block here..." class="w-full h-44 md:h-64 bg-gray-800/40 border border-gray-700 rounded-xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
                         </div>
-                        <div id="subInputGroup">
+                        <div>
                             <label id="label2" class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Context (Optional)</label>
                             <input id="subInput" type="text" placeholder="Amount or specific info..." class="w-full bg-gray-800/40 border border-gray-700 rounded-lg p-3 text-sm text-gray-200 focus:border-brand-neon outline-none">
                         </div>
                         <div id="toggleGroup" class="hidden-view">
+                            <label class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Strategy Tone</label>
                             <div class="flex bg-gray-800/50 p-1 rounded-lg border border-gray-700">
                                 <button onclick="setTone(this, 'Friendly')" class="tone-btn flex-1 py-2 text-[9px] font-black uppercase rounded-md bg-brand-neon text-brand-dark">Friendly</button>
                                 <button onclick="setTone(this, 'Firm')" class="tone-btn flex-1 py-2 text-[9px] font-black uppercase rounded-md text-gray-400">Firm</button>
@@ -125,342 +124,291 @@
                         </button>
                     </div>
 
-                    <!-- OUTPUT -->
+                    <!-- OUTPUT COLUMN -->
                     <div class="bg-black/60 border border-gray-800 rounded-xl flex flex-col overflow-hidden min-h-[350px]">
-                        <div class="p-3 border-b border-gray-800 bg-gray-800/40 flex justify-between items-center">
-                            <span class="text-[8px] font-black text-gray-500 uppercase tracking-widest">Financial Terminal</span>
-                            <div id="summaryBadge" class="flex space-x-1.5 hidden-view">
-                                <span id="totalIn" class="bg-green-500/10 text-green-400 text-[8px] font-bold px-2 py-1 rounded border border-green-500/20">IN: 0</span>
-                                <span id="totalOut" class="bg-brand-orange/10 text-brand-orange text-[8px] font-bold px-2 py-1 rounded border border-brand-orange/20">OUT: 0</span>
+                        
+                        <!-- Financial Headers (Toggled via JS) -->
+                        <div class="p-3 border-b border-gray-800 bg-gray-800/40">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[8px] font-black text-gray-500 uppercase tracking-widest">Financial Terminal</span>
+                                <div id="summaryBadge" class="flex space-x-1.5 hidden-view">
+                                    <span id="totalIn" class="bg-green-500/10 text-green-400 text-[8px] font-bold px-2 py-1 rounded border border-green-500/20">IN: 0</span>
+                                    <span id="totalOut" class="bg-brand-orange/10 text-brand-orange text-[8px] font-bold px-2 py-1 rounded border border-brand-orange/20">OUT: 0</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Stats Health Summary -->
+                            <div id="healthSummary" class="hidden grid grid-cols-3 gap-2 mt-2">
+                                <div class="bg-gray-800/50 p-2 rounded border border-gray-700 text-center">
+                                    <p class="text-[7px] text-gray-500 uppercase">Cash flow</p>
+                                    <p id="flowRatio" class="text-xs font-bold text-white">0%</p>
+                                </div>
+                                <div class="bg-gray-800/50 p-2 rounded border border-gray-700 text-center">
+                                    <p class="text-[7px] text-gray-500 uppercase">Top Expense</p>
+                                    <p id="topExpense" class="text-[8px] font-bold text-brand-orange truncate">None</p>
+                                </div>
+                                <div class="bg-gray-800/50 p-2 rounded border border-gray-700 text-center">
+                                    <p class="text-[7px] text-gray-500 uppercase">Reliability</p>
+                                    <p class="text-xs font-bold text-green-400">HIGH</p>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- TERMINAL CONTENT -->
                         <div id="outputArea" class="flex-1 p-4 overflow-y-auto app-scroll font-mono text-[12px] leading-relaxed">
                             <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
                                 <i class="fa-solid fa-terminal text-2xl"></i>
                                 <p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
         </div>
     </main>
 
+    <!-- SCRIPTS -->
     <script>
-    let currentMode = "M-Pesa Auditor";
-    let activeTone = "Friendly";
-    let globalData = [];
+        let currentMode = "M-Pesa Auditor";
+        let activeTone = "Friendly";
+        let globalData = [];
 
-    // 1. INITIALIZER
-    window.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-            const loader = document.getElementById('global-loader');
-            if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 400); }
-        }, 600);
-    });
+        // 1. APP LOADER
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const loader = document.getElementById('global-loader');
+                if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 400); }
+            }, 600);
+        });
 
-    function switchMode(btn, mode) {
-    currentMode = mode;
-    document.getElementById('currentModeTitle').innerText = mode;
-    
-    // NEW: Clear all inputs and outputs when switching modes
-    document.getElementById('mainInput').value = "";
-    document.getElementById('subInput').value = "";
-    document.getElementById('outputArea').innerHTML = `
-        <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
-            <i class="fa-solid fa-terminal text-2xl"></i>
-            <p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p>
-        </div>`;
-    
-    // Hide M-Pesa specific summary badges
-    const summaryBadge = document.getElementById('summaryBadge');
-    if (summaryBadge) summaryBadge.classList.add('hidden-view');
+        // 2. UX: TOOL SWITCHER
+        function switchMode(btn, mode) {
+            currentMode = mode;
+            document.getElementById('currentModeTitle').innerText = mode;
+            
+            // Clear inputs
+            document.getElementById('mainInput').value = "";
+            document.getElementById('subInput').value = "";
+            
+            // Reset Output Area
+            document.getElementById('outputArea').innerHTML = `
+                <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
+                    <i class="fa-solid fa-terminal text-2xl"></i>
+                    <p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p>
+                </div>`;
 
-    // Auto-scroll for Mobile
-    if (window.innerWidth < 768) {
-        document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+            // Reset UI Visibility
+            document.getElementById('summaryBadge').classList.add('hidden-view');
+            document.getElementById('healthSummary').classList.add('hidden');
+            document.getElementById('toggleGroup').classList.add('hidden-view');
 
-    // Update Sidebar highlighting logic
-    document.querySelectorAll('.sidebar-btn').forEach(b => {
-        b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all';
-    });
-    
-    // Setup labels based on the selected tool
-    const label1 = document.getElementById('label1');
-    const label2 = document.getElementById('label2');
-    const toggleGrp = document.getElementById('toggleGroup');
+            // Scroll for mobile
+            document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    if (mode === "M-Pesa Auditor") {
-        btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-        label1.innerText = "Paste M-Pesa SMS Messages";
-        label2.innerText = "Filters (Optional)";
-        toggleGrp.classList.add('hidden-view');
-    } else if (mode === "Debt Collection") {
-        btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-        label1.innerText = "Client Name & Debt Info";
-        label2.innerText = "Amount & Due Date";
-        toggleGrp.classList.remove('hidden-view');
-    } else {
-        btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
-        label1.innerText = mode === "Viral Hooks" ? "Product Name" : "Business Details";
-        label2.innerText = "Target Audience";
-        toggleGrp.classList.add('hidden-view');
-    }
-}
-
-    // 3. MAIN AI PROCESSOR
-    async function runProcessor() {
-        const prodInput = document.getElementById('mainInput').value.trim();
-        const audInput = document.getElementById('subInput').value.trim();
-        const btn = document.getElementById('processBtn');
-
-        if (!prodInput) return alert("Please enter the details first.");
-
-        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AI IS THINKING...';
-        btn.disabled = true;
-
-        try {
-            if (currentMode === "M-Pesa Auditor") {
-                parseMpesa(prodInput);
+            // Highlight button
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
+            
+            if (mode === "M-Pesa Auditor") {
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
+                document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
+                document.getElementById('label2').innerText = "Filters (Optional)";
+            } else if (mode === "Debt Collection") {
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
+                document.getElementById('label1').innerText = "Client Name & Phone";
+                document.getElementById('label2').innerText = "Amount & Due Date";
+                document.getElementById('toggleGroup').classList.remove('hidden-view');
             } else {
-                const data = await callGPTAPI(currentMode, prodInput, audInput, activeTone);
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
+                document.getElementById('label1').innerText = "Product / Service Name";
+                document.getElementById('label2').innerText = "Target Audience Details";
+            }
+        }
+
+        function setTone(btn, tone) {
+            activeTone = tone;
+            document.querySelectorAll('.tone-btn').forEach(b => {
+                b.classList.remove('bg-brand-neon', 'text-brand-dark');
+                b.classList.add('text-gray-400');
+            });
+            btn.classList.remove('text-gray-400');
+            btn.classList.add('bg-brand-neon', 'text-brand-dark');
+        }
+
+        // 3. MAIN PROCESSOR
+        async function runProcessor() {
+            const inputA = document.getElementById('mainInput').value.trim();
+            const inputB = document.getElementById('subInput').value.trim();
+            const btn = document.getElementById('processBtn');
+
+            if (!inputA) return alert("Please enter data first.");
+
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AI PROCESSING...';
+            btn.disabled = true;
+
+            try {
+                if (currentMode === "M-Pesa Auditor") {
+                    parseMpesa(inputA);
+                } else {
+                    const data = await callGPTAPI(currentMode, inputA, inputB, activeTone);
+                    
+                    // Display AI variations with Copy Button
+                    document.getElementById('outputArea').innerHTML = `
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="p-2 bg-brand-neon/10 text-brand-neon text-[8px] font-black uppercase border border-brand-neon/20 rounded">AI RESPONSE</div>
+                            <button onclick="copyToClipboard()" class="text-[10px] bg-brand-neon text-brand-dark px-3 py-1 rounded font-bold hover:bg-white transition">
+                                <i class="fa-solid fa-copy mr-1"></i> COPY
+                            </button>
+                        </div>
+                        <div id="aiTextContent" class="space-y-6">
+                            <div class="p-3 border-l-2 border-brand-neon bg-white/5 rounded">
+                                <p class="text-[9px] text-brand-neon uppercase font-black mb-2 tracking-widest">Variation A</p>
+                                <div class="text-gray-200 leading-relaxed">${data.variationA}</div>
+                            </div>
+                            <div class="p-3 border-l-2 border-brand-purple bg-white/5 rounded">
+                                <p class="text-[9px] text-brand-purple uppercase font-black mb-2 tracking-widest">Variation B</p>
+                                <div class="text-gray-200 leading-relaxed">${data.variationB}</div>
+                            </div>
+                        </div>`;
+                }
+            } catch (err) {
+                document.getElementById('outputArea').innerHTML = `<p class="text-red-500 text-xs">Error connecting to server.</p>`;
+            } finally {
+                btn.innerHTML = 'Process with SmartBiz AI';
+                btn.disabled = false;
+            }
+        }
+
+        // 4. API BRIDGE
+        async function callGPTAPI(mode, prod, aud, tone) {
+            const API_URL = '/api/generate'; 
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mode, product: prod, audience: aud, strategy: tone })
+            });
+            if (!response.ok) throw new Error("API Failed");
+            return await response.json();
+        }
+
+        // 5. MPESA ENGINE (PRECISION BUILD)
+        function parseMpesa(text) {
+            const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/i);
+            const uniqueTransactions = new Map();
+            let tin = 0, tout = 0;
+            let topExp = { name: "None", val: 0 };
+
+            chunks.forEach(msg => {
+                if (!msg.trim()) return;
+                const code = msg.match(/([A-Z0-9]{10})/)?.[1];
+                if (!code) return;
+
+                const amountRegex = /(?:Confirmed|received|deposited|sent|paid|reversed|bought).*?Ksh\s?([\d,]+\.\d{2})/i;
+                const amountMatch = msg.match(amountRegex);
+                const dateRegex = /on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at/i;
+                let date = msg.match(dateRegex)?.[1] || "N/A";
                 
-                // SAFETY: Convert objects to strings if AI returns a nested object
-                let varA = typeof data.variationA === 'object' ? JSON.stringify(data.variationA) : data.variationA;
-                let varB = typeof data.variationB === 'object' ? JSON.stringify(data.variationB) : data.variationB;
+                if (code && amountMatch) {
+                    const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
+                    let type = msg.match(/received|deposited|reversed/i) ? "IN" : "OUT";
+                    let party = "Other";
 
-                document.getElementById('outputArea').innerHTML = `
-                    <div class="mb-6">
-                        <div class="p-2 bg-brand-neon/10 text-brand-neon text-[9px] font-black uppercase mb-2 border-l-2 border-brand-neon">Option A</div>
-                        <div class="text-gray-200 leading-relaxed whitespace-pre-wrap">${varA}</div>
-                    </div>
-                    <div class="pt-4 border-t border-gray-800">
-                        <div class="p-2 bg-brand-purple/10 text-brand-purple text-[9px] font-black uppercase mb-2 border-l-2 border-brand-purple">Option B</div>
-                        <div class="text-gray-200 leading-relaxed whitespace-pre-wrap">${varB}</div>
-                    </div>
-                `;
-            }
-        } catch (err) {
-            console.error(err);
-            document.getElementById('outputArea').innerHTML = `<p class="text-red-500 text-xs">Error: Could not reach AI server.</p>`;
-        } finally {
-            btn.innerHTML = 'Process with SmartBiz AI';
-            btn.disabled = false;
-        }
-    }
+                    if (msg.match(/received from/i)) party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim();
+                    else if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
+                    else if (msg.match(/paid to/i)) party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
+                    else if (msg.match(/fuliza/i)) party = "Fuliza Repayment";
 
-    // Inside runProcessor, after getting the AI response:
-document.getElementById('outputArea').innerHTML = `
-    <div class="flex justify-between items-center mb-4">
-        <div class="p-2 bg-brand-neon/10 text-brand-neon text-[8px] font-black uppercase tracking-widest border border-brand-neon/20 rounded">
-            AI Generated Response
-        </div>
-        <button onclick="copyToClipboard()" class="text-[10px] bg-brand-neon text-brand-dark px-3 py-1 rounded font-bold hover:bg-white transition">
-            <i class="fa-solid fa-copy mr-1"></i> COPY
-        </button>
-    </div>
-    <div id="aiTextContent" class="whitespace-pre-wrap leading-relaxed">${aiResult}</div>
-`;
+                    party = party.replace(/\d{10,12}/g, '').trim();
 
-// Add this function to your <script>:
-function copyToClipboard() {
-    const text = document.getElementById('aiTextContent').innerText;
-    navigator.clipboard.writeText(text);
-    alert("Copied to WhatsApp! ✅");
-}
-    // 4. API BRIDGE - Fixed keys to match generate.js
-    async function callGPTAPI(mode, prod, aud, tone) {
-        const API_URL = '/api/generate'; 
+                    if (!uniqueTransactions.has(code)) {
+                        uniqueTransactions.set(code, { code, date, party, type, amount });
+                        if (type === "IN") tin += amount; else {
+                            tout += amount;
+                            if (amount > topExp.val) topExp = { name: party, val: amount };
+                        }
+                    }
+                }
+            });
 
-        const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                mode: mode, 
-                product: prod,  // Fixed key name
-                audience: aud,  // Fixed key name
-                strategy: tone
-            })
-        });
+            globalData = Array.from(uniqueTransactions.values());
 
-        if (!response.ok) throw new Error("API failed");
-        return await response.json();
-    }
-function parseMpesa(text) {
-    // 1. Split by transaction code anchors
-    const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/i);
-    
-    // Using a Map to ensure unique codes (removes duplicates)
-    const uniqueTransactions = new Map();
-    let tin = 0, tout = 0;
+            // Update UI
+            document.getElementById('totalIn').innerText = `IN: KES ${tin.toLocaleString()}`;
+            document.getElementById('totalOut').innerText = `OUT: KES ${tout.toLocaleString()}`;
+            document.getElementById('summaryBadge').classList.remove('hidden-view');
+            
+            // Health Stats
+            document.getElementById('healthSummary').classList.remove('hidden');
+            document.getElementById('flowRatio').innerText = tin > 0 ? Math.round((tout/tin)*100) + "% Burn" : "N/A";
+            document.getElementById('topExpense').innerText = topExp.name;
 
-    chunks.forEach(msg => {
-        if (!msg.trim()) return;
+            let rows = globalData.map(row => `
+                <tr class="border-b border-gray-800/50">
+                    <td class="py-3 text-brand-neon font-bold text-[10px]">${row.code}</td>
+                    <td class="py-3 text-gray-500 text-[10px]">${row.date}</td>
+                    <td class="py-3 truncate max-w-[100px] text-gray-300 text-[10px]">${row.party}</td>
+                    <td class="py-3 text-right ${row.type === 'IN' ? 'text-green-400' : 'text-gray-200'} font-bold text-[10px]">
+                        ${row.type === 'IN' ? '+' : '-'}${row.amount.toLocaleString()}
+                    </td>
+                </tr>`).join('');
 
-        // Extract Code (10 alphanumeric chars)
-        const code = msg.match(/([A-Z0-9]{10})/)?.[1];
-        if (!code) return;
-
-        // Amount: Look for Ksh figure specifically after transaction keywords
-        // This avoids picking up the "Balance" or "Limit" Ksh figures
-        const amountRegex = /(?:Confirmed|received|deposited|sent|paid|reversed|bought).*?Ksh\s?([\d,]+\.\d{2})/i;
-        const amountMatch = msg.match(amountRegex);
-        
-        // Date: Priority on the pattern "on dd/mm/yy at hh:mm"
-        const dateRegex = /on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at/i;
-        let date = msg.match(dateRegex)?.[1];
-        
-        // Fallback date if "at" is missing (avoiding due dates)
-        if (!date) {
-            const fallbackDate = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/i);
-            date = fallbackDate ? fallbackDate[1] : "N/A";
+            document.getElementById('outputArea').innerHTML = `
+                <table class="w-full text-left mpesa-table">
+                    <thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800">
+                        <tr><th class="pb-2">Ref</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr>
+                    </thead>
+                    <tbody>${rows || '<tr><td colspan="4" class="py-10 text-center opacity-30">No data found.</td></tr>'}</tbody>
+                </table>`;
         }
 
-        if (code && amountMatch) {
-            const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-            
-            // Detect Direction
-            let type = msg.match(/received|deposited|reversed/i) ? "IN" : "OUT";
-            
-            // Extract Party (who sent or received)
-            let party = "Transaction";
-            if (msg.match(/received from/i)) party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim();
-            else if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
-            else if (msg.match(/paid to/i)) party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
-            else if (msg.match(/fuliza/i)) party = "Fuliza Repayment";
+        // 6. EXCEL EXPORT (WITH SUMMARY & METADATA)
+        function handleExport() {
+            if (currentMode === "M-Pesa Auditor") {
+                if (!globalData.length) return alert("Nothing to export.");
 
-            party = party.replace(/\d{10,12}/g, '').trim(); // Clean phone numbers out of names
+                let tin = 0, tout = 0;
+                const excelRows = globalData.map(d => {
+                    if (d.type === "IN") tin += d.amount; else tout += d.amount;
+                    return {
+                        "Ref Code": d.code,
+                        "Date": d.date,
+                        "Description": d.party,
+                        "Type": d.type,
+                        "Amount": d.type === "IN" ? d.amount : -d.amount
+                    };
+                });
 
-            // Only add if code is unique to fix the "math adding twice" error
-            if (!uniqueTransactions.has(code)) {
-                uniqueTransactions.set(code, { code, date, party, type, amount });
-                if (type === "IN") tin += amount; else tout += amount;
+                // Add Summaries
+                excelRows.push({}); 
+                excelRows.push({ "Description": "TOTAL MONEY IN", "Amount": tin });
+                excelRows.push({ "Description": "TOTAL MONEY OUT", "Amount": -tout });
+                excelRows.push({ "Description": "NET BALANCE", "Amount": tin - tout });
+
+                // Add Metadata to Top
+                excelRows.unshift({}); 
+                excelRows.unshift({ "Description": "Generated on: " + new Date().toLocaleString() });
+                excelRows.unshift({ "Description": "SMARTBIZ FINANCIAL AUDIT REPORT" });
+
+                const ws = XLSX.utils.json_to_sheet(excelRows);
+                const wb = XLSX.utils.book_new();
+                ws['!cols'] = [{wch:12}, {wch:12}, {wch:35}, {wch:8}, {wch:12}];
+                XLSX.utils.book_append_sheet(wb, ws, "Audit");
+                XLSX.writeFile(wb, `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`);
+            } else {
+                const text = document.getElementById('outputArea').innerText;
+                const blob = new Blob([text], { type: 'text/plain' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = `SmartBiz_AI_Output.txt`;
+                a.click();
             }
         }
-    });
 
-    // Update Totals on UI
-    document.getElementById('totalIn').innerText = `IN: KES ${tin.toLocaleString()}`;
-    document.getElementById('totalOut').innerText = `OUT: KES ${tout.toLocaleString()}`;
-    document.getElementById('summaryBadge').classList.remove('hidden-view');
-
-    <div id="healthSummary" class="hidden grid grid-cols-3 gap-2 mb-4">
-    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
-        <p class="text-[7px] text-gray-500 uppercase">Cash flow</p>
-        <p id="flowRatio" class="text-xs font-bold text-white">0%</p>
-    </div>
-    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
-        <p class="text-[7px] text-gray-500 uppercase">Top Expense</p>
-        <p id="topExpense" class="text-[9px] font-bold text-brand-orange truncate">None</p>
-    </div>
-    <div class="bg-gray-800 p-2 rounded border border-gray-700 text-center">
-        <p class="text-[7px] text-gray-500 uppercase">Reliability</p>
-        <p class="text-xs font-bold text-green-400">HIGH</p>
-    </div>
-</div>
-
-    // Render Table
-    globalData = Array.from(uniqueTransactions.values());
-    let rows = globalData.map(row => `
-        <tr class="border-b border-gray-800/50">
-            <td class="py-3 text-brand-neon font-bold">${row.code}</td>
-            <td class="py-3 text-gray-500">${row.date}</td>
-            <td class="py-3 truncate max-w-[120px] text-gray-300">${row.party}</td>
-            <td class="py-3 text-right ${row.type === 'IN' ? 'text-green-400' : 'text-gray-200'} font-bold">
-                ${row.type === 'IN' ? '+' : '-'}${row.amount.toLocaleString()}
-            </td>
-        </tr>
-    `).join('');
-
-    document.getElementById('outputArea').innerHTML = `
-        <table class="w-full text-left mpesa-table">
-            <thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800">
-                <tr><th>Code</th><th>Date</th><th>Party</th><th class="text-right">Amount</th></tr>
-            </thead>
-            <tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="text-center py-10 opacity-30">No valid data found.</td></tr>'}</tbody>
-        </table>`;
-}
-
-    function handleExport() {
-    if (currentMode === "M-Pesa Auditor") {
-        if (!globalData.length) return alert("Nothing to export. Please parse data first.");
-
-        // 1. Prepare data for Excel and calculate totals
-        let totalIn = 0;
-        let totalOut = 0;
-
-        const excelRows = globalData.map(d => {
-            if (d.type === "IN") totalIn += d.amount;
-            else totalOut += d.amount;
-
-            return {
-                "Transaction Code": d.code,
-                "Date": d.date,
-                "Description/Party": d.party,
-                "Type": d.type,
-                "Amount (KES)": d.type === "IN" ? d.amount : -d.amount // Negative for OUT
-            };
-        });
-
-        // 2. Add a spacer and summary rows at the bottom
-        excelRows.push({}); // Empty Row
-        excelRows.push({ 
-            "Description/Party": "TOTAL MONEY IN", 
-            "Amount (KES)": totalIn 
-        });
-        excelRows.push({ 
-            "Description/Party": "TOTAL MONEY OUT", 
-            "Amount (KES)": -totalOut 
-        });
-        excelRows.push({ 
-            "Description/Party": "NET BALANCE (CASH AT HAND)", 
-            "Amount (KES)": totalIn - totalOut 
-        });
-
-        // 3. Create the Worksheet
-        const ws = XLSX.utils.json_to_sheet(excelRows);
-        const wb = XLSX.utils.book_new();
-
-        // 4. Set Column Widths (for better visibility)
-        const wscols = [
-            {wch: 15}, // Code
-            {wch: 12}, // Date
-            {wch: 30}, // Party
-            {wch: 10}, // Type
-            {wch: 15}  // Amount
-        ];
-        ws['!cols'] = wscols;
-
-        XLSX.utils.book_append_sheet(wb, ws, "Financial Audit");
-
-        // Inside handleExport before saving:
-excelRows.unshift({ 
-    "Description/Party": "SMARTBIZ FINANCIAL AUDIT REPORT", 
-    "Amount (KES)": "" 
-});
-excelRows.unshift({ 
-    "Description/Party": "Generated on: " + new Date().toLocaleString(), 
-    "Amount (KES)": "" 
-});
-excelRows.unshift({}); // Space
-
-
-        // 5. Download file
-        const fileName = `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`;
-        XLSX.writeFile(wb, fileName);
-        
-    } else {
-        // Standard text export for Scripts
-        const text = document.getElementById('outputArea').innerText;
-        if(!text || text.includes("Ready for Command")) return alert("Nothing to export.");
-        const blob = new Blob([text], { type: 'text/plain' });
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = `SmartBiz_AI_Script.txt`;
-        a.click();
-    }
-}
-</script>
+        function copyToClipboard() {
+            const text = document.getElementById('aiTextContent').innerText;
+            navigator.clipboard.writeText(text);
+            alert("Content Copied! ✅");
+        }
+    </script>
 </body>
 </html>
