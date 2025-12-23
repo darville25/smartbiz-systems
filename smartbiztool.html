@@ -373,61 +373,65 @@
         </div>
     </footer>
 
-   <!-- 2. APP LOGIC (SAFE MODE) -->
+   <!-- ============================================ -->
+    <!-- CLERK SDK (Keep this, even if bypassing)     -->
+    <!-- ============================================ -->
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="pk_live_Y2xlcmsuc21hcnRiaXpzeXN0ZW1zLmNvLmtlJA"
+      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+      type="text/javascript"
+    ></script>
+
+    <!-- 2. APP LOGIC (DEV BYPASS MODE) -->
     <script>
         let selectedGoal = "Direct";
         let clerkInstance = null;
         
         // PAYSTACK KEY
-        const PAYSTACK_PUBLIC_KEY = 'pk_test_54930101b0f5b9d21226a27616616e033d59648c'; 
+        const PAYSTACK_PUBLIC_KEY = 'pk_test_35c362971cadeaca72b9346cf082442bd644f56d'; 
 
-        // === 1. INITIALIZATION ===
-        window.addEventListener("DOMContentLoaded", async function () {
-            // FORCE UI TO LOAD IMMEDIATELY (Don't wait for Clerk)
+        // === BYPASS AUTHENTICATION LOGIC ===
+        window.addEventListener("load", async function () {
+            // We try to load Clerk, but we ignore the result for now
+            try { await Clerk.load(); } catch(e) { console.log("Clerk DNS issue ignored"); }
+
+            // FORCE "LOGGED IN" STATE
+            // We create a fake user object so the tool thinks we are authenticated
             const mockUser = {
                 firstName: "Developer",
                 imageUrl: "https://ui-avatars.com/api/?name=Dev+Admin&background=2DD4BF&color=fff",
-                publicMetadata: { isPro: true }
+                publicMetadata: { isPro: true } // Bypass Paywall
             };
-            updateUIForUser(mockUser);
 
-            // Try to load Clerk silently in background (doesn't block page)
-            try {
-                if(typeof Clerk !== 'undefined') {
-                    await Clerk.load();
-                    if(Clerk.user) updateUIForUser(Clerk.user);
-                }
-            } catch(e) { console.log("Auth skipped for Dev Mode"); }
+            // Load the UI immediately
+            updateUIForUser(mockUser);
         });
 
         function updateUIForUser(user) {
-            const planName = user.publicMetadata?.isPro ? '<span class="text-brand-neon">DEV MODE</span>' : 'Free Tier';
-            
-            const profileArea = document.getElementById('userProfileArea');
-            if(profileArea) {
-                profileArea.innerHTML = `
-                    <div class="flex items-center">
-                        <img src="${user.imageUrl}" class="w-8 h-8 rounded-full border border-brand-neon">
-                        <div class="ml-3">
-                            <p class="text-xs font-bold text-white">${user.firstName}</p>
-                            <p class="text-[10px] font-medium text-gray-400">${planName}</p>
-                        </div>
+            // Check PRO status (Mocked to TRUE)
+            const isPro = user.publicMetadata.isPro === true;
+            const planName = isPro ? '<span class="text-brand-neon">DEV MODE (UNLOCKED)</span>' : 'Free Tier';
+
+            document.getElementById('userProfileArea').innerHTML = `
+                <div class="flex items-center">
+                    <img src="${user.imageUrl}" class="w-8 h-8 rounded-full border border-brand-neon">
+                    <div class="ml-3">
+                        <p class="text-xs font-bold text-white">${user.firstName}</p>
+                        <p class="text-[10px] font-medium text-gray-400">${planName}</p>
                     </div>
-                `;
-            }
-            
-            const authArea = document.getElementById('authActionArea');
-            if(authArea) {
-                authArea.innerHTML = `
-                    <button class="hidden md:flex items-center space-x-2 text-xs font-bold text-gray-300 hover:text-green-400 transition">
-                        <i class="fa-solid fa-code"></i>
-                        <span>System Ready</span>
-                    </button>
-                `;
-            }
+                </div>
+            `;
+            document.getElementById('authActionArea').innerHTML = `
+                <button class="hidden md:flex items-center space-x-2 text-xs font-bold text-gray-300 hover:text-green-400 transition">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Dev Mode Active</span>
+                </button>
+            `;
         }
 
-        // === 2. UI HELPERS ===
+        // === UI HELPERS ===
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             const icon = document.getElementById('menu-icon');
@@ -452,16 +456,16 @@
                 const l1 = document.getElementById('label1'); const l2 = document.getElementById('label2');
                 const i1 = document.getElementById('productInput'); const i2 = document.getElementById('audienceInput');
 
-                // Toggle 2nd input visibility
-                const i2Parent = document.getElementById('audienceInput').parentElement;
-                
+                // M-Pesa Parser Logic
                 if (modeName === 'M-Pesa Parser') {
                     l1.innerText = "Paste M-Pesa SMS Messages Here";
                     i1.placeholder = "QL042... Confirmed. Ksh2,500.00 sent to... \nQL043... Confirmed. Ksh1,000.00 received from...";
-                    i2Parent.classList.add('hidden'); // Hide 2nd input
+                    document.getElementById('audienceInput').parentElement.classList.add('hidden'); // Hide 2nd input
+                    l2.innerText = ""; 
                 } 
+                // Restore Inputs for other tools
                 else {
-                    i2Parent.classList.remove('hidden'); // Show 2nd input
+                    document.getElementById('audienceInput').parentElement.classList.remove('hidden');
                     
                     if (modeName === 'Cold Call Script') {
                         l1.innerText = "Target Website OR LinkedIn URL"; i1.placeholder = "e.g. www.naivas.co.ke";
@@ -516,10 +520,11 @@
             return "No content generated.";
         }
 
-        // === 3. GENERATION LOGIC (WITH LOCALHOST FALLBACK) ===
         async function generateCampaign() {
+            // BYPASS: No Clerk Check here
+            
             const i1 = document.getElementById('productInput').value;
-            const i2 = document.getElementById('audienceInput') ? document.getElementById('audienceInput').value : "";
+            const i2 = document.getElementById('audienceInput') ? document.getElementById('audienceInput').value : ""; // Check if exists
             const btn = document.getElementById('generateBtn');
             const originalText = btn.innerHTML;
             const mode = document.getElementById('currentMode').innerText;
@@ -533,7 +538,7 @@
             btn.disabled = true;
             btn.classList.add('opacity-75', 'cursor-not-allowed');
 
-            // --- LOCAL M-PESA PARSER (No API needed) ---
+            // --- M-PESA PARSER LOGIC ---
             if (mode === "M-Pesa Parser") {
                 const rawText = i1;
                 const regex = /([A-Z0-9]{10})\s+Confirmed\.\s+Ksh([\d,]+\.?\d*)\s+(?:sent to|paid to|received from)\s+(.+?)\s+on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at\s+(\d{1,2}:\d{2}\s?[AP]M)/gi;
@@ -565,9 +570,8 @@
                 return;
             }
 
-            // --- ATTEMPT API CALL ---
+            // --- STANDARD AI LOGIC ---
             try {
-                // If on Localhost, we might fail CORS or API connection, so we catch error and simulate
                 const response = await fetch('/api/generate', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -580,29 +584,14 @@
                     })
                 });
 
-                if(!response.ok) throw new Error("API Connection Failed");
-
                 const data = await response.json();
+                
                 document.getElementById('outputA').innerHTML = formatAIResponse(data.variationA);
                 document.getElementById('outputB').innerHTML = formatAIResponse(data.variationB);
 
             } catch (error) {
-                console.log("Using Simulation Mode (API not reachable)");
-                
-                // FALLBACK SIMULATION (For Local Testing)
-                setTimeout(() => {
-                    let mockA = `(Simulation: ${mode})<br><br>🔥 <strong>${i1}</strong> is trending!<br>Perfect solution for ${i2 || 'your customers'}.<br><br>✅ Feature 1<br>✅ Feature 2<br><br>👉 Reply YES to book.`;
-                    let mockB = `(Simulation B)<br><br>Stop scrolling. <strong>${i1}</strong> is the answer.`;
-                    
-                    if(mode === "Cold Call Script") {
-                         mockA = `<p><strong>You:</strong> "Hi, I was browsing ${i1}..."</p>`;
-                         mockB = `<p><strong>You:</strong> "Hello, quick question..."</p>`;
-                    }
-
-                    document.getElementById('outputA').innerHTML = mockA;
-                    document.getElementById('outputB').innerHTML = mockB;
-                }, 1000);
-
+                console.error(error);
+                alert("Error connecting to AI. Please check internet.");
             } finally {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
@@ -622,7 +611,7 @@
         }
 
         function exportToTxt() {
-            // Bypass login check for now
+            // BYPASS: Allow export without login
             const i1 = document.getElementById('productInput').value || "Untitled";
             const contentA = document.getElementById('outputA').innerText;
             const contentB = document.getElementById('outputB').innerText;
