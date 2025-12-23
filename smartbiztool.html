@@ -3,53 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartBiz AI Commander | The Marketing OS for Kenya</title>
-    <meta name="description" content="The ultimate AI tool for Kenyan Business, Influencers, and Job Seekers.">
+    <title>SmartBiz AI Commander | Kenya's SME OS</title>
     
-    <!-- Paystack SDK -->
+    <!-- SDKs -->
     <script src="https://js.paystack.co/v1/inline.js"></script>
-    <!-- SheetJS for True Excel Export -->
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom Config -->
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: {
-                        brand: {
-                            dark: '#0B0F19',       
-                            card: '#161E2E',       
-                            neon: '#2DD4BF',       
-                            neonhover: '#14B8A6',
-                            purple: '#A78BFA',
-                            orange: '#FB923C', 
-                            pink: '#F472B6',   
-                            text: '#FFFFFF',       
-                        }
-                    },
-                    boxShadow: {
-                        'neon': '0 0 20px rgba(45, 212, 191, 0.4)',
-                        'app': '0 25px 50px -12px rgba(0, 0, 0, 0.9)',
-                        'card-hover': '0 20px 40px -5px rgba(0, 0, 0, 0.6)'
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
+                        brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', orange: '#FB923C', purple: '#A78BFA' }
                     }
                 }
             }
@@ -57,692 +29,396 @@
     </script>
 
     <style>
-        body { background-color: #0B0F19; color: #FFFFFF; }
+        body { background-color: #0B0F19; color: #FFFFFF; font-family: 'Inter', sans-serif; }
         .glass-panel { background: rgba(11, 15, 25, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
         .text-gradient { background: linear-gradient(to right, #2DD4BF, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .app-scroll::-webkit-scrollbar { width: 6px; }
-        .app-scroll::-webkit-scrollbar-track { background: #111827; }
-        .app-scroll::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
-        .app-scroll::-webkit-scrollbar-thumb:hover { background: #4B5563; }
+        .app-scroll::-webkit-scrollbar { width: 4px; }
+        .app-scroll::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
+        .hidden-view { display: none !important; }
+        .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
         input[type=range] { -webkit-appearance: none; background: transparent; }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #2DD4BF; cursor: pointer; margin-top: -6px; }
-        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; cursor: pointer; background: #4B5563; border-radius: 2px; }
-        .hidden-view { display: none !important; }
-        #global-loader { transition: opacity 0.5s ease; pointer-events: none; }
-        
-        /* Stripe Table Styles */
-        .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.03); }
-        .mpesa-table tr:hover { background-color: rgba(45, 212, 191, 0.05); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #374151; border-radius: 2px; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
-    <!-- LOADING OVERLAY -->
+    <!-- LOADER -->
     <div id="global-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0F19]">
-        <div class="w-16 h-16 border-4 border-gray-800 border-t-brand-neon rounded-full animate-spin mb-4"></div>
-        <p class="text-brand-neon font-mono text-sm animate-pulse">Initializing SmartBiz...</p>
+        <div class="w-12 h-12 border-4 border-gray-800 border-t-brand-neon rounded-full animate-spin mb-4"></div>
+        <p class="text-brand-neon font-mono text-xs tracking-widest animate-pulse">SMARTBIZ OPERATOR v2.0</p>
     </div>
 
-    <!-- NAVIGATION -->
+    <!-- NAV -->
     <nav class="fixed w-full z-50 glass-panel">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
-                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
-                        SmartBiz<span class="text-brand-neon group-hover:text-white transition">Tool</span>
-                    </span>
-                    <span class="ml-2 text-xs bg-brand-purple/20 text-brand-purple border border-brand-purple/50 px-2 py-0.5 rounded font-bold uppercase tracking-wide">Beta</span>
-                </a>
-                <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#features" class="text-sm font-bold text-gray-200 hover:text-white transition-colors">Features</a>
-                    <a href="#pricing" class="text-sm font-bold text-gray-200 hover:text-white transition-colors">Pricing</a>
-                    <a href="index.html" class="text-sm font-bold text-gray-200 hover:text-brand-neon transition-colors">Back to Agency</a>
-                    <div class="h-6 w-px bg-gray-700 mx-2"></div>
-                    <button type="button" onclick="Clerk.openSignIn()" class="px-5 py-2.5 text-sm font-bold text-white border border-gray-600 rounded-lg hover:bg-gray-800 transition-all">Login</button>
-                    <button type="button" onclick="Clerk.openSignUp()" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">Start for Free</button>
-                </div>
-                <div class="md:hidden">
-                    <button type="button" onclick="toggleMobileMenu()" class="text-white p-2 border border-gray-800 rounded-lg">
-                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-black tracking-tighter text-white">SMARTBIZ<span class="text-brand-neon">TOOL</span></span>
+                <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-400 font-bold uppercase tracking-widest border border-white/5">Kenya SME OS</span>
             </div>
-        </div>
-        <!-- MOBILE MENU -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto pb-20">
-            <div class="px-4 pt-4 space-y-1">
-                <p class="px-3 pt-4 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Navigation</p>
-                <a href="#features" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">Features</a>
-                <a href="#pricing" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">Pricing</a>
-                <a href="index.html" onclick="toggleMobileMenu()" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">Back to Main Site</a>
-                <div class="h-px bg-gray-800 my-4"></div>
-                <button type="button" onclick="Clerk.openSignIn()" class="block w-full text-center px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800 border border-gray-700 mb-3">Login</button>
-                <button type="button" onclick="Clerk.openSignUp()" class="block w-full text-center px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover transition">Start for Free</button>
-                <div class="pb-24"></div>
+            <div class="hidden md:flex items-center space-x-6">
+                <button onclick="Clerk.openSignIn()" class="text-sm font-bold text-gray-400 hover:text-white transition">Login</button>
+                <button class="bg-brand-neon text-brand-dark px-5 py-2.5 rounded-lg text-sm font-black hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] transition-all">Go Pro</button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 lg:pt-40 overflow-hidden">
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center px-4 py-2 rounded-full border border-gray-600 bg-gray-900 mb-8 animate-float shadow-lg">
-                <span class="w-2 h-2 rounded-full bg-brand-neon mr-2 animate-pulse"></span>
-                <span class="text-sm font-bold text-gray-100">Now Solving: Debt Collection & WhatsApp Agents</span>
-            </div>
-            <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white leading-tight">
-                Solve Real Kenyan Business<br><span class="text-gradient">Problems in Seconds.</span>
-            </h1>
-            <p class="text-lg text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
-                Not just Ads. Configure intelligent WhatsApp Agents, generate Cold Call Scripts, and manage Debt Collection tailored for the Nairobi market.
-            </p>
-
-            <!-- APP INTERFACE -->
-            <div class="relative max-w-7xl mx-auto text-left">
-                <div class="absolute -inset-1 bg-gradient-to-r from-brand-neon to-brand-purple rounded-xl blur opacity-30"></div>
-                <div class="relative bg-brand-dark border border-gray-600 rounded-xl shadow-app overflow-hidden flex flex-col md:flex-row min-h-[750px]">
+    <!-- APP CONTAINER -->
+    <main class="pt-32 pb-20 px-4 max-w-7xl mx-auto">
+        <div class="bg-brand-card border border-gray-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[780px]">
+            
+            <!-- SIDEBAR -->
+            <aside class="w-full md:w-72 bg-gray-900/50 border-r border-gray-800 flex flex-col">
+                <div class="p-6 border-b border-gray-800">
+                    <p class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Daily Tools</p>
+                </div>
+                <div class="flex-1 overflow-y-auto app-scroll p-4 space-y-8">
                     
-                    <!-- SIDEBAR -->
-                    <div class="w-full md:w-72 bg-gray-900 border-r border-gray-700 flex flex-col">
-                        <div class="p-4 border-b border-gray-800">
-                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Select A Tool</span>
-                        </div>
-                        <div class="flex-1 overflow-y-auto app-scroll p-3 space-y-6">
-                            
-                            <!-- AI Agents -->
-                            <div>
-                                <h3 class="text-xs font-bold text-green-400 mb-2 px-2 uppercase flex items-center"><i class="fa-solid fa-robot mr-2"></i> AI Agents (Beta)</h3>
-                                <div class="space-y-1">
-                                    <button onclick="switchMode(this, 'WhatsApp Agent')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-green-400 bg-green-400/10 rounded-lg border border-green-400/30 shadow-sm transition-all hover:bg-green-400/20"><i class="fa-brands fa-whatsapp w-5 text-center"></i> Configure Bot</button>
-                                </div>
-                            </div>
-
-                            <!-- Marketing -->
-                            <div>
-                                <h3 class="text-xs font-bold text-brand-neon mb-2 px-2 uppercase">Marketing & Sales</h3>
-                                <div class="space-y-1">
-                                    <button onclick="switchMode(this, 'FB & IG Ads')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-brand-neon bg-gray-800 rounded-lg border border-brand-neon/40 shadow-sm transition-all"><i class="fa-brands fa-facebook w-5 text-center"></i> Ads Generator</button>
-                                    <button onclick="switchMode(this, 'Cold Call Script')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-phone-volume w-5 text-center"></i> Cold Call Script</button>
-                                    <button onclick="switchMode(this, 'WhatsApp Script')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-brands fa-whatsapp w-5 text-center"></i> WhatsApp Scripts</button>
-                                    <button onclick="switchMode(this, 'SEO Blog Post')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-pen-nib w-5 text-center"></i> SEO Blogs</button>
-                                </div>
-                            </div>
-
-                            <!-- Ops -->
-                            <div>
-                                <h3 class="text-xs font-bold text-brand-orange mb-2 px-2 uppercase">Business Ops</h3>
-                                <div class="space-y-1">
-                                    <button onclick="switchMode(this, 'M-Pesa Parser')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-file-csv w-5 text-center text-brand-orange"></i> M-Pesa To Excel</button>
-                                    <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-hand-holding-dollar w-5 text-center text-brand-orange"></i> Debt Collection</button>
-                                    <button onclick="switchMode(this, 'Tender Proposal')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-file-contract w-5 text-center text-brand-orange"></i> Tender/Proposal</button>
-                                </div>
-                            </div>
-                            
-                            <!-- Influencers -->
-                            <div>
-                                <h3 class="text-xs font-bold text-brand-pink mb-2 px-2 uppercase">Influencers</h3>
-                                <div class="space-y-1">
-                                    <button onclick="switchMode(this, 'Brand Pitch Email')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-paper-plane w-5 text-center text-brand-pink"></i> Brand Pitch</button>
-                                    <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-brands fa-tiktok w-5 text-center text-brand-pink"></i> Viral Hooks</button>
-                                </div>
-                            </div>
-
-                            <!-- Careers -->
-                            <div>
-                                <h3 class="text-xs font-bold text-white mb-2 px-2 uppercase">Careers</h3>
-                                <div class="space-y-1">
-                                    <button onclick="switchMode(this, 'LinkedIn Cold DM')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-brands fa-linkedin w-5 text-center"></i> LinkedIn Cold DM</button>
-                                    <button onclick="switchMode(this, 'CV Polisher')" class="sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all"><i class="fa-solid fa-list-check w-5 text-center"></i> CV Polisher</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div id="userProfileArea" class="p-4 border-t border-gray-700 bg-gray-800">
-                            <div class="flex items-center opacity-50">
-                                <div class="w-8 h-8 rounded-full bg-gray-600"></div>
-                                <div class="ml-3"><p class="text-xs font-bold text-white">Loading...</p></div>
-                            </div>
+                    <!-- MONEY -->
+                    <div>
+                        <h3 class="text-[10px] font-black text-brand-orange mb-3 px-2 uppercase tracking-widest">Finance Operations</h3>
+                        <div class="space-y-1">
+                            <button onclick="switchMode(this, 'M-Pesa Parser')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all">
+                                <i class="fa-solid fa-file-invoice-dollar w-6"></i> M-Pesa Auditor
+                            </button>
+                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all">
+                                <i class="fa-solid fa-hand-holding-dollar w-6"></i> Debt Recovery
+                            </button>
                         </div>
                     </div>
 
-                    <!-- MAIN WORKSPACE -->
-                    <div class="flex-1 flex flex-col bg-gray-900" id="mainAppArea">
-                        <!-- Top Bar -->
-                        <div class="h-16 border-b border-gray-700 flex items-center justify-between px-6 bg-gray-800">
-                            <h2 class="text-base font-bold text-white flex items-center"><i class="fa-solid fa-wand-magic-sparkles text-brand-neon mr-3"></i> <span id="currentMode">FB & IG Ads</span></h2>
-                            <div class="flex items-center space-x-4">
-                                <div id="authActionArea">
-                                    <button onclick="Clerk.openSignIn()" class="hidden md:flex items-center space-x-2 text-xs font-bold text-gray-300 hover:text-brand-purple transition group">
-                                        <i class="fa-solid fa-lock group-hover:animate-pulse"></i>
-                                        <span>Login to Save History</span>
-                                    </button>
-                                </div>
-                                <div class="h-6 w-px bg-gray-600 hidden md:block"></div>
-                                <button onclick="handleExport()" class="px-4 py-2 bg-white text-brand-dark text-xs font-bold rounded hover:bg-gray-200 transition shadow-lg flex items-center"><i class="fa-solid fa-download mr-1"></i> Export</button>
-                            </div>
+                    <!-- CUSTOMERS -->
+                    <div>
+                        <h3 class="text-[10px] font-black text-brand-neon mb-3 px-2 uppercase tracking-widest">Growth & Sales</h3>
+                        <div class="space-y-1">
+                            <button onclick="switchMode(this, 'WhatsApp Agent')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all">
+                                <i class="fa-brands fa-whatsapp w-6"></i> WA AI Salesman
+                            </button>
+                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all">
+                                <i class="fa-solid fa-bolt w-6"></i> Viral Marketing
+                            </button>
                         </div>
+                    </div>
 
-                        <!-- 1. STANDARD WORKSPACE -->
-                        <div id="standardWorkspace" class="flex-1 p-6 grid lg:grid-cols-2 gap-6 overflow-hidden">
-                            <!-- Input Column -->
-                            <div class="space-y-6 app-scroll overflow-y-auto pr-2 pb-10">
-                                <div>
-                                    <label id="label1" class="block text-xs font-bold text-brand-neon uppercase mb-2 tracking-wide">Product / Topic / Name</label>
-                                    <textarea id="productInput" placeholder="e.g. Leather Shoes / My Online Shop" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm font-medium text-white focus:border-brand-neon focus:ring-1 focus:ring-brand-neon outline-none h-24 leading-relaxed placeholder-gray-500"></textarea>
-                                </div>
-                                
-                                <!-- Audience Container (Hidden for M-Pesa) -->
-                                <div id="audienceContainer">
-                                    <label id="label2" class="block text-xs font-bold text-brand-neon uppercase mb-2 tracking-wide">Target Audience / Details</label>
-                                    <textarea id="audienceInput" placeholder="e.g. Corporate men in Nairobi / Client owes 50k" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm font-medium text-white focus:border-brand-neon focus:ring-1 focus:ring-brand-neon outline-none h-24 leading-relaxed placeholder-gray-500"></textarea>
-                                </div>
-
-                                <!-- Controls (Goals/Tone) - Hidden for M-Pesa Parser -->
-                                <div id="controlsContainer">
-                                    <div class="mb-6">
-                                        <label class="block text-xs font-bold text-gray-300 uppercase mb-2 tracking-wide">Goal / Intent</label>
-                                        <div class="grid grid-cols-3 gap-3">
-                                            <button class="goal-btn p-3 border-2 border-brand-neon bg-brand-neon/20 text-brand-neon text-xs font-bold rounded shadow-neon transition-all" onclick="selectGoal(this)">Direct</button>
-                                            <button class="goal-btn p-3 border border-gray-600 bg-gray-800 text-gray-300 text-xs font-bold rounded hover:bg-gray-700 transition-all" onclick="selectGoal(this)">Value</button>
-                                            <button class="goal-btn p-3 border border-gray-600 bg-gray-800 text-gray-300 text-xs font-bold rounded hover:bg-gray-700 transition-all" onclick="selectGoal(this)">Urgent</button>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs font-bold text-gray-300 uppercase mb-2 tracking-wide">Tone Intensity</label>
-                                        <input type="range" id="toneInput" min="0" max="100" value="70" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-brand-neon">
-                                        <div class="flex justify-between text-[10px] font-bold text-gray-400 mt-2"><span>Soft</span><span>Balanced</span><span class="text-brand-neon">Aggressive</span></div>
-                                    </div>
-                                </div>
-
-                                <button id="generateBtn" onclick="generateCampaign()" class="w-full py-4 mt-2 bg-brand-neon text-brand-dark font-extrabold text-sm rounded-lg hover:bg-brand-neonhover shadow-lg shadow-brand-neon/30 transition-all flex justify-center items-center group">
-                                    <i class="fa-solid fa-bolt mr-2 group-hover:animate-pulse"></i> GENERATE OUTPUT
-                                </button>
-                            </div>
-
-                            <!-- Output Column -->
-                            <div class="bg-black border border-gray-700 rounded-lg p-5 font-mono text-sm text-gray-200 relative app-scroll overflow-y-auto shadow-inner">
-                                <div class="absolute top-3 right-3 flex space-x-1.5 opacity-70"><div class="w-2.5 h-2.5 rounded-full bg-red-500"></div><div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div><div class="w-2.5 h-2.5 rounded-full bg-green-500"></div></div>
-                                
-                                <div class="mb-6 pb-6 border-b border-gray-800">
-                                    <span class="text-brand-purple font-bold block mb-2 text-xs uppercase tracking-wider" id="labelA">// Option A</span>
-                                    <div id="outputA" class="leading-relaxed text-gray-100 min-h-[80px]"><span class="text-gray-500 italic">... Waiting for input ...</span></div>
-                                </div>
-                                <div id="secondaryOutputContainer">
-                                    <span class="text-brand-purple font-bold block mb-2 text-xs uppercase tracking-wider" id="labelB">// Option B</span>
-                                    <div id="outputB" class="leading-relaxed text-gray-100 min-h-[80px]"><span class="text-gray-500 italic">... Waiting for input ...</span></div>
-                                </div>
-                            </div>
+                    <!-- STRUCTURE -->
+                    <div>
+                        <h3 class="text-[10px] font-black text-brand-purple mb-3 px-2 uppercase tracking-widest">Structure</h3>
+                        <div class="space-y-1">
+                            <button onclick="switchMode(this, 'Tender Proposal')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all">
+                                <i class="fa-solid fa-file-contract w-6"></i> AGPO / Tenders
+                            </button>
                         </div>
-
-                        <!-- 2. WHATSAPP AGENT DASHBOARD -->
-                        <div id="agentDashboard" class="flex-1 p-6 grid lg:grid-cols-2 gap-8 overflow-hidden hidden-view">
-                            <div class="space-y-6 app-scroll overflow-y-auto pr-2">
-                                <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
-                                    <h3 class="text-green-400 font-bold mb-1"><i class="fa-solid fa-robot mr-2"></i>Agent Configuration</h3>
-                                    <p class="text-xs text-gray-400">Train your bot to answer like you.</p>
-                                </div>
-                                <div><label class="block text-xs font-bold text-gray-300 uppercase mb-2">Business Name</label><input type="text" value="SmartBiz Electronics" class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm text-white focus:border-green-500 outline-none"></div>
-                                <div><label class="block text-xs font-bold text-gray-300 uppercase mb-2">Welcome Message</label><textarea class="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-sm text-white focus:border-green-500 h-20">Habari! 👋 Welcome to SmartBiz. How can I help you?</textarea></div>
-                                <div>
-                                    <label class="block text-xs font-bold text-gray-300 uppercase mb-2">Knowledge Base (PDF/Text)</label>
-                                    <div class="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-green-500 transition cursor-pointer bg-gray-800/50 group" onclick="document.getElementById('fileUpload').click()"><i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-500 mb-2 group-hover:text-green-400 transition"></i><p class="text-xs text-gray-400">Drag & Drop Price List or FAQ</p><p class="text-[10px] text-gray-500 mt-1">.pdf, .txt (Max 5MB)</p><input type="file" id="fileUpload" class="hidden" onchange="alert('File uploaded to Knowledge Base (Simulation)')"></div>
-                                </div>
-                                <button id="connectWaBtn" onclick="connectWhatsApp()" class="w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-lg transition-all shadow-lg flex justify-center items-center"><i class="fa-brands fa-whatsapp mr-2"></i> Connect WhatsApp Number</button>
-                            </div>
-                            <div class="flex justify-center items-center bg-gray-800/30 rounded-xl border border-gray-700 p-4">
-                                <div class="relative border-gray-900 bg-gray-900 border-[8px] rounded-[2rem] h-[450px] w-[250px] shadow-2xl flex flex-col overflow-hidden">
-                                    <div class="bg-[#202c33] p-3 text-white text-xs font-bold flex items-center border-b border-gray-700"><div class="w-6 h-6 bg-green-500 rounded-full mr-2"></div> Bot Preview</div>
-                                    <div class="flex-1 bg-[#0b141a] p-3 space-y-2"><div class="bg-[#202c33] text-white text-[10px] p-2 rounded-lg max-w-[80%]">Do you have stock?</div><div class="bg-[#005c4b] text-white text-[10px] p-2 rounded-lg max-w-[80%] self-end ml-auto">Yes! We have full stock available.</div></div>
-                                    <div id="qrLoader" class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center text-center p-4 hidden-view z-10"><i class="fa-solid fa-spinner fa-spin-slow text-4xl text-green-500 mb-4"></i><p class="text-white text-xs mb-2">Generating QR Code...</p><p class="text-gray-400 text-[10px]">Please wait while we connect to WhatsApp servers.</p></div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="py-24 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-extrabold text-white mb-12 text-center">Invest in <span class="text-brand-neon">Growth</span></h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="p-8 border border-gray-700 rounded-2xl bg-gray-900 shadow-xl flex flex-col"><h3 class="text-lg font-bold text-gray-300 uppercase tracking-wide">Starter</h3><p class="text-4xl font-extrabold text-white mt-4 mb-6">Free</p><ul class="space-y-4 text-sm text-gray-200 mb-8 font-medium flex-1"><li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> 5 Generations / Day</li><li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Basic Ads & Socials</li></ul><button onclick="Clerk.openSignUp()" class="block w-full py-4 border-2 border-gray-500 rounded-lg text-center font-bold text-white hover:bg-gray-800 hover:border-white transition">Sign Up Free</button></div>
-                <div class="p-8 border-2 border-brand-neon rounded-2xl bg-gray-900 relative transform md:-translate-y-6 shadow-neon z-10 flex flex-col"><div class="absolute top-0 right-0 bg-brand-neon text-brand-dark text-xs font-bold px-4 py-1.5 rounded-bl-lg rounded-tr-lg tracking-wider">MOST POPULAR</div><h3 class="text-lg font-bold text-brand-neon uppercase tracking-wide">Growth</h3><p class="text-4xl font-extrabold text-white mt-4 mb-6">KES 2,500<span class="text-sm font-semibold text-gray-400">/mo</span></p><ul class="space-y-4 text-sm text-gray-100 mb-8 font-medium flex-1"><li class="flex items-center"><i class="fa-solid fa-check text-brand-neon mr-3"></i> <strong>Unlimited Generations</strong></li><li class="flex items-center"><i class="fa-solid fa-check text-brand-neon mr-3"></i> Cold Call Scripts</li><li class="flex items-center"><i class="fa-solid fa-check text-brand-neon mr-3"></i> Debt Collection Tools</li><li class="flex items-center"><i class="fa-solid fa-check text-brand-neon mr-3"></i> Save History</li></ul><a href="#" class="block w-full py-4 bg-brand-neon rounded-lg text-center font-extrabold text-brand-dark hover:bg-brand-neonhover transition shadow-lg">Start 7-Day Trial</a><p class="text-center text-xs text-gray-500 mt-3">M-Pesa Accepted</p></div>
-                <div class="p-8 border-2 border-green-500 rounded-2xl bg-gray-900 shadow-xl flex flex-col"><h3 class="text-lg font-bold text-green-400 uppercase tracking-wide">Business</h3><p class="text-4xl font-extrabold text-white mt-4 mb-6">KES 7,500<span class="text-sm font-semibold text-gray-400">/mo</span></p><ul class="space-y-4 text-sm text-gray-200 mb-8 font-medium flex-1"><li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Everything in Growth</li><li class="flex items-center"><i class="fa-solid fa-robot text-green-500 mr-3"></i> <strong>AI WhatsApp Agent</strong></li><li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> Auto-Reply to Customers</li></ul><a href="mailto:sales@smartbizsystems.co.ke" class="block w-full py-4 border-2 border-green-600 text-green-400 rounded-lg text-center font-bold hover:bg-green-900/20 hover:border-green-400 transition">Contact Sales</a></div>
-            </div>
-        </div>
-    </section>
+                <div id="profileArea" class="p-6 border-t border-gray-800 bg-black/20">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-neon to-brand-purple"></div>
+                        <div><p class="text-xs font-bold">Biz Admin</p><p class="text-[10px] text-gray-500">Free Mode</p></div>
+                    </div>
+                </div>
+            </aside>
 
-    <footer class="bg-black border-t border-gray-800 pt-12 pb-10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <span class="text-2xl font-bold tracking-tight text-white block mb-6">SmartBiz<span class="text-brand-neon">Tool</span></span>
-            <p class="text-gray-600 text-sm font-medium">&copy; 2023 SmartBizSystems. Powered by NdovuCloud AI Infrastructure.</p>
+            <!-- WORKSPACE -->
+            <section class="flex-1 flex flex-col bg-gray-900/20">
+                <!-- TOP BAR -->
+                <div class="h-20 border-b border-gray-800 flex items-center justify-between px-8 bg-black/10">
+                    <h2 class="text-sm font-black uppercase tracking-widest flex items-center">
+                        <i class="fa-solid fa-wand-magic-sparkles text-brand-neon mr-3"></i> 
+                        <span id="currentModeTitle">M-Pesa Auditor</span>
+                    </h2>
+                    <div class="flex items-center space-x-4">
+                        <button onclick="handleExport()" class="bg-white text-brand-dark px-4 py-2 rounded font-black text-[10px] uppercase tracking-wider hover:bg-gray-200 transition shadow-lg flex items-center">
+                            <i class="fa-solid fa-file-export mr-2"></i> Export Data
+                        </button>
+                    </div>
+                </div>
+
+                <!-- MAIN AREA -->
+                <div id="mainWorkspace" class="flex-1 p-8 grid lg:grid-cols-2 gap-8 overflow-hidden">
+                    
+                    <!-- INPUT COLUMN -->
+                    <div class="flex flex-col space-y-6 overflow-y-auto app-scroll pr-2">
+                        <div id="primaryInputGroup">
+                            <label id="label1" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-3 block">Paste M-Pesa SMS Messages</label>
+                            <textarea id="mainInput" placeholder="Copy-paste SMS here..." class="w-full h-48 bg-gray-800/50 border border-gray-700 rounded-2xl p-5 font-mono text-sm text-gray-200 focus:border-brand-neon focus:ring-1 focus:ring-brand-neon outline-none transition-all leading-relaxed"></textarea>
+                        </div>
+
+                        <div id="secondaryInputGroup">
+                            <label id="label2" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-3 block">Extra Details</label>
+                            <textarea id="subInput" placeholder="Optional context..." class="w-full h-24 bg-gray-800/50 border border-gray-700 rounded-2xl p-5 text-sm text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
+                        </div>
+
+                        <div id="toggleGroup">
+                            <label class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-3 block">Strategy / Tone</label>
+                            <div class="flex bg-gray-800/50 p-1 rounded-xl border border-gray-700">
+                                <button onclick="setStrategy(this, 'Strategy A')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg bg-brand-neon text-brand-dark shadow-lg">Friendly</button>
+                                <button onclick="setStrategy(this, 'Strategy B')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg text-gray-400">Firm / Legal</button>
+                            </div>
+                        </div>
+
+                        <button id="actionBtn" onclick="runProcessor()" class="w-full py-5 bg-brand-neon text-brand-dark font-black text-xs uppercase tracking-[0.3em] rounded-2xl hover:scale-[1.02] transition-all shadow-xl shadow-brand-neon/10">
+                            Process Task
+                        </button>
+                    </div>
+
+                    <!-- OUTPUT COLUMN -->
+                    <div class="bg-black/40 border border-gray-800 rounded-2xl flex flex-col overflow-hidden">
+                        <div class="p-4 border-b border-gray-800 bg-gray-800/30 flex justify-between items-center">
+                            <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest">Output Terminal</span>
+                            <div id="summaryBadge" class="flex space-x-2 hidden-view">
+                                <span id="totalInBadge" class="bg-green-500/20 text-green-400 text-[9px] font-bold px-2 py-1 rounded border border-green-500/20 uppercase tracking-tighter">In: 0.00</span>
+                                <span id="totalOutBadge" class="bg-brand-orange/20 text-brand-orange text-[9px] font-bold px-2 py-1 rounded border border-brand-orange/20 uppercase tracking-tighter">Out: 0.00</span>
+                            </div>
+                        </div>
+                        <div id="outputArea" class="flex-1 p-6 overflow-y-auto app-scroll font-mono text-[13px] leading-relaxed">
+                            <div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-30">
+                                <i class="fa-solid fa-terminal text-4xl"></i>
+                                <p class="text-[10px] font-black uppercase tracking-widest">Awaiting Command...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AGENT DASHBOARD (SPECIAL VIEW) -->
+                <div id="agentWorkspace" class="flex-1 p-8 hidden-view">
+                    <div class="max-w-xl mx-auto space-y-8">
+                        <div class="bg-green-500/5 border border-green-500/20 rounded-3xl p-8 text-center">
+                            <i class="fa-brands fa-whatsapp text-5xl text-green-400 mb-4"></i>
+                            <h3 class="text-xl font-black mb-2">Configure AI Salesman</h3>
+                            <p class="text-sm text-gray-400">Upload your PDF price list. The bot will use it to close sales on WhatsApp automatically.</p>
+                        </div>
+                        <div class="border-2 border-dashed border-gray-700 rounded-3xl p-12 text-center hover:border-green-500 transition cursor-pointer group">
+                            <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-600 group-hover:text-green-400 mb-4"></i>
+                            <p class="text-xs font-bold text-gray-500">Upload Catalog (PDF/TXT)</p>
+                            <input type="file" class="hidden">
+                        </div>
+                        <button class="w-full py-5 bg-green-600 text-white font-black text-xs uppercase tracking-widest rounded-2xl">Connect WhatsApp Number</button>
+                    </div>
+                </div>
+
+            </section>
         </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-gray-900 text-center opacity-40">
+        <p class="text-[10px] font-black uppercase tracking-[0.5em]">&copy; 2025 SmartBiz Systems | Powered by NdovuCloud</p>
     </footer>
 
-    <!-- ============================================ -->
-    <!-- SCRIPTS                                     -->
-    <!-- ============================================ -->
-
-    <!-- 1. CLERK SDK (AUTH) -->
-    <!-- REPLACE WITH YOUR LIVE KEY -->
-    <script
-      async
-      crossorigin="anonymous"
-      data-clerk-publishable-key="pk_test_YOUR_CLERK_KEY"
-      src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
-      type="text/javascript"
-    ></script>
-
-    <!-- 2. APP LOGIC -->
+    <!-- LOGIC ENGINE -->
     <script>
-        // CONFIG
-        const DEV_MODE = true; // Set to TRUE to bypass login/DNS
-        const PAYSTACK_PUBLIC_KEY = 'pk_test_54930101b0f5b9d21226a27616616e033d59648c'; 
+        let currentMode = "M-Pesa Parser";
+        let activeStrategy = "Strategy A";
+        let globalTransactionData = [];
 
-        let selectedGoal = "Direct";
-        let clerkInstance = null;
-        let currentUser = null;
-        let currentMpesaData = []; // NEW: Store parsed data globally for export
-
-        // 1. FORCE LOADER HIDE
-        function hideLoader() {
-            const loader = document.getElementById('global-loader');
-            if(loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => loader.remove(), 500);
-            }
-        }
-
-        // 2. INITIALIZATION
-        window.addEventListener("DOMContentLoaded", async function () {
-            
-            // IF DEV MODE: Bypass everything and load UI
-            if (DEV_MODE) {
-                console.log("⚠️ DEVELOPER MODE ACTIVE: Bypassing Auth & DNS Checks");
-                currentUser = {
-                    firstName: "Developer",
-                    imageUrl: "https://ui-avatars.com/api/?name=Dev+Admin&background=2DD4BF&color=fff",
-                    publicMetadata: { isPro: true }
-                };
-                updateUIForUser(currentUser);
-                hideLoader();
-                return;
-            }
-
-            // REAL MODE
-            try {
-                // Safety Timer: If Clerk takes > 3s, force open
-                const safetyTimer = setTimeout(() => {
-                    console.log("Clerk slow. Forcing guest mode.");
-                    updateUIForGuest();
-                    hideLoader();
-                }, 3000);
-
-                await Clerk.load();
-                clearTimeout(safetyTimer);
-                clerkInstance = Clerk;
-
-                if (Clerk.user) {
-                    currentUser = Clerk.user;
-                    updateUIForUser(Clerk.user);
-                } else {
-                    updateUIForGuest();
-                }
-            } catch (error) {
-                console.error("Clerk Error:", error);
-                updateUIForGuest(); // Fallback
-            } finally {
-                hideLoader();
-            }
+        // INITIALIZER
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                document.getElementById('global-loader').style.opacity = '0';
+                setTimeout(() => document.getElementById('global-loader').remove(), 500);
+            }, 1000);
         });
 
-        // 3. UI HELPERS
-        function updateUIForUser(user) {
-            const isPro = user.publicMetadata.isPro === true;
-            const planName = isPro ? '<span class="text-brand-neon">PRO UNLOCKED</span>' : 'Free Tier';
-            const profileArea = document.getElementById('userProfileArea');
-            if(profileArea) {
-                profileArea.innerHTML = `<div class="flex items-center"><img src="${user.imageUrl}" class="w-8 h-8 rounded-full border border-brand-neon"><div class="ml-3"><p class="text-xs font-bold text-white">${user.firstName}</p><p class="text-[10px] font-medium text-gray-400">${planName}</p></div></div>`;
-            }
-            const authArea = document.getElementById('authActionArea');
-            if(authArea) {
-                authArea.innerHTML = `<button onclick="Clerk.signOut()" class="hidden md:flex items-center space-x-2 text-xs font-bold text-gray-300 hover:text-red-400 transition"><i class="fa-solid fa-right-from-bracket"></i><span>Sign Out</span></button>`;
-            }
-        }
-
-        function updateUIForGuest() {
-             const profileArea = document.getElementById('userProfileArea');
-             if(profileArea) {
-                profileArea.innerHTML = `<div class="flex items-center"><div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-neon to-blue-600 border border-white/20"></div><div class="ml-3"><p class="text-xs font-bold text-white">Guest</p><p class="text-[10px] font-medium text-gray-400">Free Mode</p></div></div>`;
-             }
-             const authArea = document.getElementById('authActionArea');
-             if(authArea) {
-                authArea.innerHTML = `<button onclick="Clerk.openSignIn()" class="hidden md:flex items-center space-x-2 text-xs font-bold text-gray-300 hover:text-brand-purple transition group"><i class="fa-solid fa-lock group-hover:animate-pulse"></i><span>Login to Save History</span></button>`;
-             }
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); } 
-            else { icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark'); }
-        }
-
-        // 4. SWITCH TOOLS LOGIC
-        function switchMode(btn, modeName) {
-            document.getElementById('currentMode').innerText = modeName;
+        // SWITCH TOOLS
+        function switchMode(btn, mode) {
+            currentMode = mode;
+            document.getElementById('currentModeTitle').innerText = mode;
             
-            const standardView = document.getElementById('standardWorkspace');
-            const agentView = document.getElementById('agentDashboard');
+            // UI Resets
+            const sidebarBtns = document.querySelectorAll('.sidebar-btn');
+            sidebarBtns.forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all');
+            
+            const mainView = document.getElementById('mainWorkspace');
+            const agentView = document.getElementById('agentWorkspace');
+            const toggleGrp = document.getElementById('toggleGroup');
+            const sumBadge = document.getElementById('summaryBadge');
+            const outArea = document.getElementById('outputArea');
 
-            // View Toggle
-            if (modeName === 'WhatsApp Agent') {
-                standardView.classList.add('hidden-view');
+            mainView.classList.remove('hidden-view');
+            agentView.classList.add('hidden-view');
+            toggleGrp.classList.remove('hidden-view');
+            sumBadge.classList.add('hidden-view');
+            outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-30"><i class="fa-solid fa-terminal text-4xl"></i><p class="text-[10px] font-black uppercase tracking-widest">Awaiting Command...</p></div>`;
+
+            if (mode === "M-Pesa Parser") {
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
+                document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
+                document.getElementById('label2').innerText = "Exclude Keywords (e.g. Airtime)";
+                toggleGrp.classList.add('hidden-view');
+            } else if (mode === "Debt Collection") {
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
+                document.getElementById('label1').innerText = "Client Name & Phone";
+                document.getElementById('label2').innerText = "Debt Amount & Due Date";
+                document.querySelectorAll('.strategy-btn')[0].innerText = "Mwananchi";
+                document.querySelectorAll('.strategy-btn')[1].innerText = "Firm Legal";
+            } else if (mode === "WhatsApp Agent") {
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
+                mainView.classList.add('hidden-view');
                 agentView.classList.remove('hidden-view');
-                if (window.innerWidth < 768) setTimeout(() => agentView.scrollIntoView({ behavior: 'smooth' }), 100);
             } else {
-                standardView.classList.remove('hidden-view');
-                agentView.classList.add('hidden-view');
-                if (window.innerWidth < 768) setTimeout(() => standardView.scrollIntoView({ behavior: 'smooth' }), 100);
-
-                // Update Input Labels
-                const l1 = document.getElementById('label1'); const l2 = document.getElementById('label2');
-                const i1 = document.getElementById('productInput'); const i2 = document.getElementById('audienceInput');
-                const audienceContainer = document.getElementById('audienceContainer');
-                const controlsContainer = document.getElementById('controlsContainer');
-                const secondaryOutput = document.getElementById('secondaryOutputContainer');
-
-                // Reset Defaults
-                if(audienceContainer) audienceContainer.classList.remove('hidden-view');
-                if(controlsContainer) controlsContainer.classList.remove('hidden-view');
-                if(secondaryOutput) secondaryOutput.classList.remove('hidden-view');
-                if(i2) i2.value = "";
-
-                if (modeName === 'Cold Call Script') {
-                    l1.innerText = "Target Website OR LinkedIn URL"; i1.placeholder = "e.g. www.naivas.co.ke";
-                    l2.innerText = "Value Prop"; i2.placeholder = "e.g. POS Systems";
-                } else if (modeName === 'Debt Collection') {
-                    l1.innerText = "Client Name"; i1.placeholder = "e.g. John Kamau";
-                    l2.innerText = "Details"; i2.placeholder = "e.g. Owes KES 50k";
-                } else if (modeName === 'M-Pesa Parser') {
-                    l1.innerText = "Paste SMS Messages"; i1.placeholder = "QL042... Confirmed. Ksh2,500.00 sent to... \nQL043... Confirmed. Ksh1,000.00 received from...";
-                    if(audienceContainer) audienceContainer.classList.add('hidden-view'); 
-                    if(controlsContainer) controlsContainer.classList.add('hidden-view');
-                    if(secondaryOutput) secondaryOutput.classList.add('hidden-view');
-                    document.getElementById('outputA').innerHTML = ""; // Clear Previous output
-                    document.getElementById('outputB').innerHTML = "";
-                    currentMpesaData = []; 
-                } else {
-                    l1.innerText = "Product / Topic"; i1.placeholder = "e.g. Selling Plots";
-                    l2.innerText = "Target Audience"; i2.placeholder = "e.g. Investors";
-                }
+                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
+                document.getElementById('label1').innerText = "Product or Business Name";
+                document.getElementById('label2').innerText = "Target Audience Details";
             }
+        }
 
-            document.querySelectorAll('.sidebar-btn').forEach(b => {
-                b.className = b.innerText.includes("Configure Bot") ? 
-                    'sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-green-400 bg-green-400/10 rounded-lg border border-green-400/30 shadow-sm transition-all hover:bg-green-400/20' : 
-                    'sidebar-btn w-full flex items-center px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-all';
+        function setStrategy(btn, strat) {
+            activeStrategy = strat;
+            const btns = document.querySelectorAll('.strategy-btn');
+            btns.forEach(b => {
+                b.classList.remove('bg-brand-neon', 'text-brand-dark', 'shadow-lg');
+                b.classList.add('text-gray-400');
             });
-            
-            if (!modeName.includes("Agent")) {
-                btn.className = 'sidebar-btn w-full flex items-center px-3 py-2 text-sm font-bold text-brand-neon bg-gray-800 rounded-lg border border-brand-neon/40 shadow-sm transition-all';
-            }
+            btn.classList.remove('text-gray-400');
+            btn.classList.add('bg-brand-neon', 'text-brand-dark', 'shadow-lg');
         }
 
-        function selectGoal(btn) {
-            document.querySelectorAll('.goal-btn').forEach(b => {
-                b.classList.remove('border-2', 'border-brand-neon', 'bg-brand-neon/20', 'text-brand-neon', 'shadow-neon');
-                b.classList.add('border', 'border-gray-600', 'bg-gray-800', 'text-gray-300');
-            });
-            btn.classList.remove('border', 'border-gray-600', 'bg-gray-800', 'text-gray-300');
-            btn.classList.add('border-2', 'border-brand-neon', 'bg-brand-neon/20', 'text-brand-neon', 'shadow-neon');
-            selectedGoal = btn.innerText;
-        }
+        // MASTER PROCESSOR
+        function runProcessor() {
+            const in1 = document.getElementById('mainInput').value.trim();
+            const in2 = document.getElementById('subInput').value.trim();
+            const actionBtn = document.getElementById('actionBtn');
+            const output = document.getElementById('outputArea');
 
-        // 5. GENERATION LOGIC
-        function formatAIResponse(data) {
-            if (typeof data === 'string') return data.replace(/\n/g, "<br>");
-            if (typeof data === 'object' && data !== null) {
-                return Object.values(data).map(val => String(val).replace(/\n/g, "<br>")).join('<br><br>');
-            }
-            return "No content generated.";
-        }
+            if (!in1) return alert("Please provide primary input.");
 
-        async function generateCampaign() {
-            // AUTH CHECK
-            if (!DEV_MODE && !Clerk.user) { Clerk.openSignIn(); return; }
-            
-            // PAYWALL CHECK
-            const isPro = currentUser?.publicMetadata?.isPro === true;
-            if (!DEV_MODE && !isPro) { payWithPaystack(currentUser); return; }
+            actionBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Thinking...';
+            actionBtn.disabled = true;
 
-            const i1 = document.getElementById('productInput').value;
-            const i2 = document.getElementById('audienceInput') ? document.getElementById('audienceInput').value : "";
-            const btn = document.getElementById('generateBtn');
-            const originalText = btn.innerHTML;
-            const mode = document.getElementById('currentMode').innerText;
-            const toneInput = document.getElementById('toneInput');
-            const toneVal = toneInput ? toneInput.value : 50;
-            let toneText = toneVal > 60 ? "Aggressive" : (toneVal < 40 ? "Soft" : "Balanced");
-
-            if (!i1) { alert("Please fill in the input field."); return; }
-
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> THINKING...';
-            btn.disabled = true;
-            btn.classList.add('opacity-75', 'cursor-not-allowed');
-
-            // --- UPGRADED MPESA PARSER ---
-            if (mode === "M-Pesa Parser") {
-                // Transaction Splitter: Split by 10-char code anchor
-                const messages = i1.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
-                
-                currentMpesaData = [];
-                let totalIn = 0;
-                let totalOut = 0;
-                let tableRows = "";
-
-                messages.forEach(msg => {
-                    if (!msg.trim()) return;
-
-                    // UPDATED REGEX ENGINE
-                    const codeMatch = msg.match(/([A-Z0-9]{10})/);
-                    const amountMatch = msg.match(/Ksh\s?([\d,]+\.?\d*)/i);
-                    const dateMatch = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/);
-                    const timeMatch = msg.match(/at\s+(\d{1,2}:\d{2}\s?[AP]M)/i);
-                    
-                    if (codeMatch && amountMatch) {
-                        const code = codeMatch[1];
-                        const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                        const date = dateMatch ? dateMatch[1] : "N/A";
-                        const time = timeMatch ? timeMatch[1] : "N/A";
-                        
-                        let party = "Other";
-                        let type = "OUT";
-
-                        // PARTY IDENTIFIER & SPECIAL CASES
-                        if (msg.toLowerCase().includes("received from")) {
-                            party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
-                            type = "IN";
-                            totalIn += amount;
-                        } else if (msg.toLowerCase().includes("sent to kplc prepaid")) {
-                            party = "KPLC Prepaid";
-                            type = "OUT";
-                            totalOut += amount;
-                        } else if (msg.toLowerCase().includes("sent to")) {
-                            party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
-                            type = "OUT";
-                            totalOut += amount;
-                        } else if (msg.toLowerCase().includes("paid to")) {
-                            party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim() || "Unknown";
-                            type = "OUT";
-                            totalOut += amount;
-                        } else if (msg.toLowerCase().includes("partially pay your outstanding fuliza")) {
-                            party = "Fuliza Repayment";
-                            type = "OUT";
-                            totalOut += amount;
-                        } else if (msg.toLowerCase().includes("bought") && msg.toLowerCase().includes("airtime")) {
-                            party = "Airtime Purchase";
-                            type = "OUT";
-                            totalOut += amount;
-                        } else {
-                            party = "Misc. Transaction";
-                            type = "OUT";
-                            totalOut += amount;
-                        }
-
-                        currentMpesaData.push({
-                            "Transaction Code": code,
-                            "Date": date,
-                            "Time": time,
-                            "Party/Recipient": party,
-                            "Type": type,
-                            "Amount (KES)": amount
-                        });
-
-                        const colorClass = type === "IN" ? "text-green-400" : "text-gray-300";
-                        tableRows += `
-                            <tr class="border-b border-gray-800 text-xs">
-                                <td class="p-3 text-brand-neon font-mono font-bold">${code}</td>
-                                <td class="p-3 text-gray-400">${date}<br><span class="text-[10px] opacity-60">${time}</span></td>
-                                <td class="p-3 text-white font-medium">${party}</td>
-                                <td class="p-3 text-right font-bold ${colorClass}">${type === 'IN' ? '+' : '-'}${amount.toLocaleString()}</td>
-                            </tr>`;
-                    }
-                });
-
-                setTimeout(() => {
-                    if (currentMpesaData.length === 0) {
-                        document.getElementById('outputA').innerHTML = "No valid M-Pesa messages detected.";
-                    } else {
-                        // FINANCIAL DASHBOARD (SUMMARY BAR)
-                        const summaryBar = `
-                            <div class="grid grid-cols-2 gap-4 mb-6 p-4 bg-gray-900 border border-gray-800 rounded-lg">
-                                <div><p class="text-[10px] text-gray-500 uppercase font-bold mb-1">Total Inflow</p><p class="text-xl font-bold text-green-400">KES ${totalIn.toLocaleString()}</p></div>
-                                <div class="text-right border-l border-gray-800"><p class="text-[10px] text-gray-500 uppercase font-bold mb-1">Total Outflow</p><p class="text-xl font-bold text-brand-orange">KES ${totalOut.toLocaleString()}</p></div>
-                            </div>`;
-
-                        // UI OVERHAUL (STRIPED TABLE)
-                        document.getElementById('outputA').innerHTML = `
-                            ${summaryBar}
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left mpesa-table">
-                                    <thead class="bg-gray-800 text-gray-500 uppercase text-[10px] tracking-widest font-bold">
-                                        <tr><th class="p-3">Code</th><th class="p-3">Date</th><th class="p-3">Party</th><th class="p-3 text-right">KES</th></tr>
-                                    </thead>
-                                    <tbody>${tableRows}</tbody>
-                                </table>
-                                <p class="text-[10px] text-gray-600 mt-4 text-center">${currentMpesaData.length} transactions found.</p>
-                            </div>`;
-                    }
-                    resetBtn();
-                }, 500);
-                return;
-            }
-
-            // --- API CALL ---
-            try {
-                const response = await fetch('/api/generate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ product: i1, audience: i2, mode: mode, goal: selectedGoal, tone: toneText })
-                });
-
-                if(!response.ok) throw new Error("API Failed");
-                const data = await response.json();
-                
-                document.getElementById('outputA').innerHTML = formatAIResponse(data.variationA);
-                document.getElementById('outputB').innerHTML = formatAIResponse(data.variationB);
-
-            } catch (error) {
-                console.log("API Failed/Localhost - Using Simulation");
-                
-                setTimeout(() => {
-                    let mockA = `(Simulation: ${mode})<br><br>🔥 <strong>${i1}</strong> is trending!<br>Generated for ${currentUser.firstName}.`;
-                    let mockB = `(Simulation B)<br><br>Stop scrolling. <strong>${i1}</strong> is the solution.`;
-                    
-                    if(mode === "Cold Call Script") mockA = `<p><strong>You:</strong> "Hi, I was browsing ${i1}..."</p>`;
-                    
-                    document.getElementById('outputA').innerHTML = mockA;
-                    document.getElementById('outputB').innerHTML = mockB;
-                }, 1000);
-            } finally {
-                resetBtn();
-            }
-
-            function resetBtn() {
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                btn.classList.remove('opacity-75', 'cursor-not-allowed');
-            }
-        }
-
-        // 6. EXTRAS
-        function connectWhatsApp() {
-            const btn = document.getElementById('connectWaBtn');
-            const loader = document.getElementById('qrLoader');
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Generating QR...';
             setTimeout(() => {
-                loader.classList.remove('hidden-view');
-                btn.innerHTML = '<i class="fa-solid fa-check mr-2"></i> QR Ready (Scan Now)';
-            }, 2000);
+                if (currentMode === "M-Pesa Parser") {
+                    parseMpesa(in1);
+                } else if (currentMode === "Debt Collection") {
+                    generateDebtScript(in1, in2);
+                } else if (currentMode === "Viral Hooks") {
+                    generateViralMarketing(in1, in2);
+                } else if (currentMode === "Tender Proposal") {
+                    generateTender(in1, in2);
+                }
+                actionBtn.innerHTML = 'Process Task';
+                actionBtn.disabled = false;
+            }, 1200);
         }
 
-        // UPDATED: EXPORT HANDLER
-        function handleExport() {
-            const mode = document.getElementById('currentMode').innerText;
-            if (mode === "M-Pesa Parser") {
-                exportToExcel();
-            } else {
-                exportToTxt();
-            }
-        }
+        // 1. MPESA AUDITOR LOGIC
+        function parseMpesa(text) {
+            const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/);
+            globalTransactionData = [];
+            let totalIn = 0;
+            let totalOut = 0;
+            let rows = "";
 
-        // TRUE EXCEL EXPORT (SHEETJS)
-        function exportToExcel() {
-            if (currentMpesaData.length === 0) { alert("Nothing to export. Process data first!"); return; }
-            
-            // Create worksheet from the global array
-            const worksheet = XLSX.utils.json_to_sheet(currentMpesaData);
-            const workbook = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(workbook, worksheet, "Transactions");
+            chunks.forEach(msg => {
+                if (!msg.trim()) return;
 
-            // Format Filename
-            const timestamp = new Date().toISOString().slice(0, 10);
-            XLSX.writeFile(workbook, `Mpesa_Report_${timestamp}.xlsx`);
-        }
+                const code = msg.match(/([A-Z0-9]{10})/)?.[1];
+                const amountMatch = msg.match(/Ksh\s?([\d,]+\.\d{2})/i);
+                const date = msg.match(/on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})/)?.[1];
+                
+                if (code && amountMatch) {
+                    const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
+                    let party = "Other";
+                    let type = "OUT";
 
-        function exportToTxt() {
-            const i1 = document.getElementById('productInput').value || "Untitled";
-            const contentA = document.getElementById('outputA').innerText;
-            const contentB = document.getElementById('outputB').innerText;
-            if (contentA.includes("Waiting")) { alert("Generate content first!"); return; }
-            const blob = new Blob([`SMARTBIZ COMMANDER\nTopic: ${i1}\n\n${contentA}\n\n${contentB}`], { type: "text/plain" });
-            const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `${i1.replace(/\s+/g, '_')}_Content.txt`;
-            document.body.appendChild(a); a.click(); document.body.removeChild(a);
-        }
-        
-        function payWithPaystack(user) {
-             let handler = PaystackPop.setup({
-                key: PAYSTACK_PUBLIC_KEY, 
-                email: user.primaryEmailAddress.emailAddress,
-                amount: 2500 * 100, 
-                currency: 'KES',
-                ref: ''+Math.floor((Math.random() * 1000000000) + 1),
-                callback: function(response) {
-                    alert('Payment successful!');
-                    // Call API to upgrade user
-                },
-                onClose: function() { alert('Transaction cancelled.'); }
+                    if (msg.toLowerCase().includes("received from")) {
+                        party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim();
+                        type = "IN";
+                        totalIn += amount;
+                    } else if (msg.toLowerCase().includes("sent to")) {
+                        party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
+                        totalOut += amount;
+                    } else if (msg.toLowerCase().includes("paid to")) {
+                        party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
+                        totalOut += amount;
+                    } else if (msg.toLowerCase().includes("bought") && msg.toLowerCase().includes("airtime")) {
+                        party = "Airtime Purchase";
+                        totalOut += amount;
+                    } else if (msg.toLowerCase().includes("fuliza")) {
+                        party = "Fuliza Repayment";
+                        totalOut += amount;
+                    }
+
+                    globalTransactionData.push({ Code: code, Date: date, Details: party, Type: type, Amount: amount });
+                    
+                    rows += `<tr class="border-b border-gray-800/50">
+                        <td class="py-3 text-brand-neon font-bold">${code}</td>
+                        <td class="py-3 text-gray-500">${date}</td>
+                        <td class="py-3 truncate max-w-[80px]">${party}</td>
+                        <td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-200'}">${amount.toLocaleString()}</td>
+                    </tr>`;
+                }
             });
-            handler.openIframe();
+
+            document.getElementById('sumIn').innerText = `In: ${totalIn.toLocaleString()}`;
+            document.getElementById('sumOut').innerText = `Out: ${totalOut.toLocaleString()}`;
+            document.getElementById('summaryBadge').classList.remove('hidden-view');
+            document.getElementById('totalInBadge').innerText = `In: ${totalIn.toLocaleString()}`;
+            document.getElementById('totalOutBadge').innerText = `Out: ${totalOut.toLocaleString()}`;
+
+            document.getElementById('outputArea').innerHTML = `
+                <table class="w-full text-left mpesa-table">
+                    <thead class="text-[9px] text-gray-500 uppercase border-b border-gray-800">
+                        <tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr>
+                    </thead>
+                    <tbody class="text-[11px]">${rows}</tbody>
+                </table>`;
+        }
+
+        // 2. DEBT COMMANDER LOGIC
+        function generateDebtScript(name, details) {
+            let msg = "";
+            if (activeStrategy === "Strategy A") {
+                msg = `Habari ${name},\n\nHope you're doing well. Tafadhali, I'm just following up on the KES ${details}. We were expecting it by now. Kindly let us know when we can expect the M-Pesa so we can update our records.\n\nAsante.`;
+            } else {
+                msg = `URGENT NOTICE:\n\nHello ${name}, your outstanding balance of KES ${details} remains unpaid. We have tried reaching out multiple times without success. Please clear this by close of business today to avoid us escalating this to our legal collection team.\n\nSmartBiz Systems.`;
+            }
+            document.getElementById('outputArea').innerHTML = `<div class="p-4 bg-brand-neon/10 border border-brand-neon/20 rounded-xl mb-4 text-[11px] text-brand-neon uppercase font-black tracking-widest">WhatsApp Ready Script</div><div class="p-4 whitespace-pre-wrap">${msg}</div>`;
+        }
+
+        // 3. VIRAL MARKETING LOGIC
+        function generateViralMarketing(product, audience) {
+            document.getElementById('outputArea').innerHTML = `
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-brand-purple text-[10px] font-black uppercase mb-2 underline">TikTok Hook</p>
+                        <p>"Siku hizi usikubali kudanganywa na ${product}! Stop wasting money..."</p>
+                    </div>
+                    <div>
+                        <p class="text-brand-neon text-[10px] font-black uppercase mb-2 underline">Facebook Ad Copy</p>
+                        <p>Attention ${audience}! Are you tired of the struggle? Our ${product} is the solution Nairobi has been waiting for. WhatsApp us today for a special offer! 🇰🇪</p>
+                    </div>
+                </div>`;
+        }
+
+        // 4. TENDER LOGIC
+        function generateTender(name, requirements) {
+            document.getElementById('outputArea').innerHTML = `
+                <div class="space-y-4">
+                    <p class="text-brand-purple font-black uppercase text-[10px]">Tender Executive Summary Draft</p>
+                    <p class="italic text-gray-400">Our firm, ${name}, specializes in providing high-quality solutions aligned with the requirements specified in this bid. With our AGPO certification and proven track record in the Kenyan market, we guarantee efficiency and compliance...</p>
+                    <hr class="border-gray-800">
+                    <p class="text-gray-500 text-[10px]">Next Steps: Attach Registration Docs, Tax Compliance, and CR12.</p>
+                </div>`;
+        }
+
+        // EXPORT LOGIC
+        function handleExport() {
+            if (currentMode === "M-Pesa Parser") {
+                if (globalTransactionData.length === 0) return alert("Nothing to export.");
+                const ws = XLSX.utils.json_to_sheet(globalTransactionData);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Transactions");
+                XLSX.writeFile(wb, `SmartBiz_Export_${new Date().toISOString().slice(0,10)}.xlsx`);
+            } else {
+                const text = document.getElementById('outputArea').innerText;
+                const blob = new Blob([text], { type: 'text/plain' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = `SmartBiz_Script_${Date.now()}.txt`;
+                a.click();
+            }
         }
     </script>
-
 </body>
 </html>
