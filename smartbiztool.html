@@ -35,7 +35,7 @@
         .app-scroll::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
         .hidden-view { display: none !important; }
         .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
-        textarea, input { font-size: 16px !important; } /* Prevents iOS zoom on focus */
+        textarea, input { font-size: 16px !important; } 
     </style>
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
@@ -43,7 +43,7 @@
     <!-- LOADER -->
     <div id="global-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0F19]">
         <div class="w-12 h-12 border-4 border-gray-800 border-t-brand-neon rounded-full animate-spin mb-4"></div>
-        <p class="text-brand-neon font-mono text-xs tracking-widest animate-pulse">SMARTBIZ OPERATOR v2.1</p>
+        <p class="text-brand-neon font-mono text-xs tracking-widest animate-pulse">SMARTBIZ AI COMMANDER v2.2</p>
     </div>
 
     <!-- NAV -->
@@ -66,12 +66,9 @@
             <!-- SIDEBAR -->
             <aside class="w-full md:w-72 bg-gray-900/50 border-r border-gray-800 flex flex-col">
                 <div class="p-4 border-b border-gray-800 flex justify-between items-center">
-                    <p class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">SME Toolkit</p>
-                    <a href="https://www.smartbizsystems.co.ke/" class="md:hidden text-[10px] text-brand-neon font-bold uppercase underline">Exit to Web</a>
+                    <p class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">SME AI Toolkit</p>
                 </div>
                 <div class="flex-1 overflow-y-auto app-scroll p-4 space-y-6">
-                    
-                    <!-- MONEY -->
                     <div>
                         <h3 class="text-[10px] font-black text-brand-orange mb-3 px-2 uppercase tracking-widest">Finance Operations</h3>
                         <div class="space-y-2">
@@ -83,8 +80,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- CUSTOMERS -->
                     <div>
                         <h3 class="text-[10px] font-black text-brand-neon mb-3 px-2 uppercase tracking-widest">Growth & Sales</h3>
                         <div class="space-y-2">
@@ -96,10 +91,9 @@
                             </button>
                         </div>
                     </div>
-
-                    <div class="pt-4">
-                        <a href="https://www.smartbizsystems.co.ke/" class="w-full flex items-center px-4 py-3 text-[10px] font-bold text-gray-500 hover:text-white border border-dashed border-gray-800 rounded-lg transition-all">
-                            <i class="fa-solid fa-arrow-left mr-2"></i> BACK TO MAIN WEBSITE
+                    <div class="pt-4 border-t border-gray-800">
+                        <a href="https://www.smartbizsystems.co.ke/" class="w-full flex items-center px-4 py-3 text-[10px] font-bold text-gray-500 hover:text-white rounded-lg transition-all">
+                            <i class="fa-solid fa-arrow-left mr-2"></i> BACK TO WEBSITE
                         </a>
                     </div>
                 </div>
@@ -107,49 +101,41 @@
 
             <!-- WORKSPACE -->
             <section class="flex-1 flex flex-col bg-gray-900/20" id="mainAppArea">
-                <!-- TOP BAR -->
                 <div class="h-16 md:h-20 border-b border-gray-800 flex items-center justify-between px-4 md:px-8 bg-black/10">
                     <h2 class="text-xs font-black uppercase tracking-widest flex items-center">
                         <i class="fa-solid fa-wand-magic-sparkles text-brand-neon mr-3"></i> 
                         <span id="currentModeTitle">M-Pesa Auditor</span>
                     </h2>
                     <button onclick="handleExport()" class="bg-white text-brand-dark px-3 py-2 rounded font-black text-[9px] md:text-[10px] uppercase tracking-wider hover:bg-gray-200 transition shadow-lg flex items-center">
-                        <i class="fa-solid fa-file-export mr-2"></i> <span class="hidden md:inline">Export</span>
+                        <i class="fa-solid fa-file-export mr-2"></i> <span>Export</span>
                     </button>
                 </div>
 
-                <!-- MAIN AREA -->
                 <div id="mainWorkspace" class="flex-1 p-4 md:p-8 grid lg:grid-cols-2 gap-8 overflow-hidden">
-                    
-                    <!-- INPUT -->
                     <div class="flex flex-col space-y-6 overflow-y-auto app-scroll pr-2">
                         <div id="primaryInputGroup">
                             <label id="label1" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Paste M-Pesa SMS Messages</label>
-                            <textarea id="mainInput" placeholder="Copy-paste SMS from your phone here..." class="w-full h-40 md:h-56 bg-gray-800/50 border border-gray-700 rounded-2xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
+                            <textarea id="mainInput" placeholder="Enter data here..." class="w-full h-40 md:h-56 bg-gray-800/50 border border-gray-700 rounded-2xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
                         </div>
-
                         <div id="secondaryInputGroup">
-                            <label id="label2" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Filters / Extra Details</label>
+                            <label id="label2" class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Extra Details</label>
                             <input id="subInput" type="text" placeholder="Optional..." class="w-full bg-gray-800/50 border border-gray-700 rounded-xl p-4 text-sm text-gray-200 focus:border-brand-neon outline-none transition-all">
                         </div>
-
                         <div id="toggleGroup" class="hidden-view">
                             <label class="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em] mb-2 block">Communication Tone</label>
                             <div class="flex bg-gray-800/50 p-1 rounded-xl border border-gray-700">
-                                <button onclick="setStrategy(this, 'Strategy A')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg bg-brand-neon text-brand-dark shadow-lg">Friendly</button>
-                                <button onclick="setStrategy(this, 'Strategy B')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg text-gray-400">Firm</button>
+                                <button onclick="setStrategy(this, 'Mwananchi / Friendly')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg bg-brand-neon text-brand-dark shadow-lg">Mwananchi</button>
+                                <button onclick="setStrategy(this, 'Firm / Legal Action')" class="strategy-btn flex-1 py-3 text-[10px] font-black uppercase tracking-widest rounded-lg text-gray-400">Firm / Legal</button>
                             </div>
                         </div>
-
                         <button id="actionBtn" onclick="runProcessor()" class="w-full py-4 md:py-5 bg-brand-neon text-brand-dark font-black text-xs uppercase tracking-[0.3em] rounded-2xl hover:scale-[1.01] transition-all shadow-xl shadow-brand-neon/10 active:scale-95">
-                            Process Task
+                            Process with AI
                         </button>
                     </div>
 
-                    <!-- OUTPUT -->
                     <div class="bg-black/40 border border-gray-800 rounded-2xl flex flex-col overflow-hidden min-h-[300px]">
                         <div class="p-3 border-b border-gray-800 bg-gray-800/30 flex justify-between items-center">
-                            <span class="text-[9px] font-black text-gray-500 uppercase tracking-widest">Live Results</span>
+                            <span class="text-[9px] font-black text-gray-500 uppercase tracking-widest">AI Output Terminal</span>
                             <div id="summaryBadge" class="flex space-x-1 md:space-x-2 hidden-view">
                                 <span id="totalInBadge" class="bg-green-500/20 text-green-400 text-[8px] md:text-[9px] font-bold px-2 py-1 rounded border border-green-500/20 uppercase">In: 0</span>
                                 <span id="totalOutBadge" class="bg-brand-orange/20 text-brand-orange text-[8px] md:text-[9px] font-bold px-2 py-1 rounded border border-brand-orange/20 uppercase">Out: 0</span>
@@ -157,8 +143,8 @@
                         </div>
                         <div id="outputArea" class="flex-1 p-4 md:p-6 overflow-y-auto app-scroll font-mono text-[12px] md:text-[13px] leading-relaxed">
                             <div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-20">
-                                <i class="fa-solid fa-terminal text-3xl"></i>
-                                <p class="text-[9px] font-black uppercase tracking-widest">Awaiting Command...</p>
+                                <i class="fa-solid fa-microchip text-3xl"></i>
+                                <p class="text-[9px] font-black uppercase tracking-widest">Ready for Command</p>
                             </div>
                         </div>
                     </div>
@@ -169,28 +155,22 @@
                     <div class="max-w-xl mx-auto space-y-6">
                         <div class="bg-green-500/5 border border-green-500/20 rounded-2xl p-6 text-center">
                             <i class="fa-brands fa-whatsapp text-4xl text-green-400 mb-2"></i>
-                            <h3 class="text-lg font-black mb-1">AI Sales Agent</h3>
-                            <p class="text-xs text-gray-400">Close sales while you sleep.</p>
+                            <h3 class="text-lg font-black mb-1">AI WhatsApp Sales Agent</h3>
+                            <p class="text-xs text-gray-400">Upload your price list to train the agent.</p>
                         </div>
-                        <div class="border-2 border-dashed border-gray-700 rounded-2xl p-10 text-center hover:border-green-500 transition cursor-pointer">
-                            <p class="text-[10px] font-bold text-gray-500 uppercase">Upload PDF Price List</p>
+                        <div class="border-2 border-dashed border-gray-700 rounded-2xl p-10 text-center hover:border-green-400 transition cursor-pointer">
+                            <p class="text-[10px] font-bold text-gray-500 uppercase">Drop PDF Price List Here</p>
                         </div>
-                        <button class="w-full py-4 bg-green-600 text-white font-black text-xs uppercase tracking-widest rounded-xl">Connect WhatsApp</button>
+                        <button class="w-full py-4 bg-green-600 text-white font-black text-xs uppercase tracking-widest rounded-xl">Connect Business WhatsApp</button>
                     </div>
                 </div>
-
             </section>
         </div>
     </main>
 
-    <footer class="py-10 text-center opacity-30">
-        <p class="text-[9px] font-black uppercase tracking-[0.4em]">&copy; 2025 SmartBiz Systems | Kenya</p>
-    </footer>
-
-    <!-- ENGINE -->
     <script>
         let currentMode = "M-Pesa Auditor";
-        let activeStrategy = "Strategy A";
+        let activeStrategy = "Mwananchi / Friendly";
         let globalTransactionData = [];
 
         window.addEventListener("DOMContentLoaded", () => {
@@ -203,14 +183,9 @@
         function switchMode(btn, mode) {
             currentMode = mode;
             document.getElementById('currentModeTitle').innerText = mode;
-            
-            // Auto-scroll to workspace on mobile
-            if (window.innerWidth < 768) {
-                document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (window.innerWidth < 768) { document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth' }); }
 
-            const sidebarBtns = document.querySelectorAll('.sidebar-btn');
-            sidebarBtns.forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all');
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white rounded-xl transition-all');
             
             const mainView = document.getElementById('mainWorkspace');
             const agentView = document.getElementById('agentWorkspace');
@@ -222,7 +197,7 @@
             agentView.classList.add('hidden-view');
             toggleGrp.classList.add('hidden-view');
             sumBadge.classList.add('hidden-view');
-            outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-20"><i class="fa-solid fa-terminal text-3xl"></i><p class="text-[9px] font-black uppercase tracking-widest">Awaiting Command...</p></div>`;
+            outArea.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-20"><i class="fa-solid fa-robot text-3xl"></i><p class="text-[9px] font-black uppercase tracking-widest">AI Standby...</p></div>`;
 
             if (mode === "M-Pesa Auditor") {
                 btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
@@ -230,8 +205,8 @@
                 document.getElementById('label2').innerText = "Extra Details";
             } else if (mode === "Debt Collection") {
                 btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-xl transition-all';
-                document.getElementById('label1').innerText = "Client Name & Phone";
-                document.getElementById('label2').innerText = "Debt Amount / Due Date";
+                document.getElementById('label1').innerText = "Client Name & Debt Info";
+                document.getElementById('label2').innerText = "Amount & Due Date";
                 toggleGrp.classList.remove('hidden-view');
             } else if (mode === "WhatsApp Agent") {
                 btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
@@ -239,15 +214,14 @@
                 agentView.classList.remove('hidden-view');
             } else {
                 btn.className = 'sidebar-btn w-full flex items-center px-4 py-4 text-sm font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-xl transition-all';
-                document.getElementById('label1').innerText = "Business / Product Name";
-                document.getElementById('label2').innerText = "Who are you selling to?";
+                document.getElementById('label1').innerText = "Product / Business Name";
+                document.getElementById('label2').innerText = "Target Audience Details";
             }
         }
 
         function setStrategy(btn, strat) {
             activeStrategy = strat;
-            const btns = document.querySelectorAll('.strategy-btn');
-            btns.forEach(b => {
+            document.querySelectorAll('.strategy-btn').forEach(b => {
                 b.classList.remove('bg-brand-neon', 'text-brand-dark', 'shadow-lg');
                 b.classList.add('text-gray-400');
             });
@@ -255,28 +229,54 @@
             btn.classList.add('bg-brand-neon', 'text-brand-dark', 'shadow-lg');
         }
 
-        function runProcessor() {
+        async function runProcessor() {
             const in1 = document.getElementById('mainInput').value.trim();
             const in2 = document.getElementById('subInput').value.trim();
             const actionBtn = document.getElementById('actionBtn');
 
             if (!in1) return alert("Please provide primary input.");
 
-            actionBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Thinking...';
+            actionBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AI IS THINKING...';
             actionBtn.disabled = true;
 
-            setTimeout(() => {
-                try {
-                    if (currentMode === "M-Pesa Auditor") parseMpesa(in1);
-                    else if (currentMode === "Debt Collection") generateDebtScript(in1, in2);
-                    else if (currentMode === "Viral Hooks") generateViralMarketing(in1, in2);
-                } catch (err) {
-                    document.getElementById('outputArea').innerHTML = `<p class="text-red-500">Error: ${err.message}</p>`;
-                } finally {
-                    actionBtn.innerHTML = 'Process Task';
-                    actionBtn.disabled = false;
+            try {
+                if (currentMode === "M-Pesa Auditor") {
+                    parseMpesa(in1);
+                } else {
+                    // CALL AI API
+                    const response = await callAIGenerator(currentMode, in1, in2, activeStrategy);
+                    document.getElementById('outputArea').innerHTML = `
+                        <div class="p-4 bg-brand-neon/10 text-brand-neon text-[10px] font-black uppercase mb-4 tracking-widest flex items-center">
+                            <i class="fa-solid fa-check-circle mr-2"></i> SmartBiz AI Generated
+                        </div>
+                        <div class="whitespace-pre-wrap leading-relaxed">${response}</div>`;
                 }
-            }, 800);
+            } catch (err) {
+                document.getElementById('outputArea').innerHTML = `<p class="text-red-500">Error: ${err.message}</p>`;
+            } finally {
+                actionBtn.innerHTML = 'Process with AI';
+                actionBtn.disabled = false;
+            }
+        }
+
+        async function callAIGenerator(mode, input, details, strategy) {
+            // SIMULATION Logic for Github Pages/Local. 
+            // In Production, replace with: await fetch('/api/generate', { ... })
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    if (mode === "Debt Collection") {
+                        if (strategy.includes("Mwananchi")) {
+                            resolve(`Habari boss, natumai uko sawa. Naandika tu kukumbusha kuhusu deni ya KES ${details}. Tafadhali jaribu kuclear kabla wiki iishe tuweze kuweka vitabu sawa. Shukran sana.`);
+                        } else {
+                            resolve(`URGENT NOTICE: Hello ${input}, your outstanding balance of KES ${details} is overdue. We require immediate settlement via M-Pesa to avoid further escalation. Please treat this as a final reminder.`);
+                        }
+                    } else if (mode === "Viral Hooks") {
+                        resolve(`🔥 TIKTOK HOOK 1: "Siku hizi usikubali kudanganywa na ${input}..."\n🔥 TIKTOK HOOK 2: "This is why your business needs ${input} today..."\n\nAD COPY:\nAre you tired of the struggle? ${details} is exactly what you need. WhatsApp us now for a 20% discount! 🇰🇪`);
+                    } else {
+                        resolve(`Generated optimized strategy for ${input}. Focus on high-value customers in ${details}.`);
+                    }
+                }, 1500);
+            });
         }
 
         function parseMpesa(text) {
@@ -292,13 +292,12 @@
                 
                 if (code && amountMatch) {
                     const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                    let party = "M-Pesa Transaction"; let type = "OUT";
+                    let party = "Transaction"; let type = "OUT";
 
-                    const isIn = msg.match(/received/i) || msg.match(/deposited/i) || msg.match(/reversed/i);
-                    if (isIn) {
+                    if (msg.toLowerCase().includes("received") || msg.toLowerCase().includes("deposited")) {
                         type = "IN"; totalIn += amount;
                         const fromMatch = msg.match(/from\s+(.*?)\s+on/i);
-                        party = fromMatch ? fromMatch[1].trim() : "Money Received";
+                        party = fromMatch ? fromMatch[1].trim() : "Money In";
                     } else {
                         type = "OUT"; totalOut += amount;
                         if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
@@ -308,42 +307,14 @@
 
                     party = party.replace(/\d{10,12}/g, '').trim();
                     globalTransactionData.push({ Code: code, Date: date, Details: party, Type: type, Amount: amount });
-                    
-                    rows += `<tr class="border-b border-gray-800/50">
-                        <td class="py-3 text-brand-neon font-bold">${code}</td>
-                        <td class="py-3 text-gray-500">${date}</td>
-                        <td class="py-3 truncate max-w-[100px]">${party}</td>
-                        <td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-200'}">${amount.toLocaleString()}</td>
-                    </tr>`;
+                    rows += `<tr class="border-b border-gray-800/50"><td class="py-3 text-brand-neon font-bold">${code}</td><td class="py-3 text-gray-500">${date}</td><td class="py-3 truncate max-w-[100px]">${party}</td><td class="py-3 text-right ${type === 'IN' ? 'text-green-400' : 'text-gray-200'}">${amount.toLocaleString()}</td></tr>`;
                 }
             });
 
-            const badgeIn = document.getElementById('totalInBadge');
-            const badgeOut = document.getElementById('totalOutBadge');
-            const summary = document.getElementById('summaryBadge');
-
-            if(badgeIn) badgeIn.innerText = `In: ${totalIn.toLocaleString()}`;
-            if(badgeOut) badgeOut.innerText = `Out: ${totalOut.toLocaleString()}`;
-            if(summary) summary.classList.remove('hidden-view');
-
-            document.getElementById('outputArea').innerHTML = `
-                <table class="w-full text-left mpesa-table">
-                    <thead class="text-[9px] text-gray-500 uppercase border-b border-gray-800">
-                        <tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr>
-                    </thead>
-                    <tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="text-center py-10 opacity-50">No data found.</td></tr>'}</tbody>
-                </table>`;
-        }
-
-        function generateDebtScript(name, details) {
-            let msg = activeStrategy === "Strategy A" ? 
-                `Habari ${name}, Hope you're well. Kindly follow up on KES ${details}. Asante.` : 
-                `URGENT: ${name}, please clear KES ${details} today to avoid escalation. Asante.`;
-            document.getElementById('outputArea').innerHTML = `<div class="p-4 bg-brand-neon/10 text-brand-neon text-[10px] font-black uppercase mb-4">WhatsApp Script</div><div class="whitespace-pre-wrap">${msg}</div>`;
-        }
-
-        function generateViralMarketing(product, audience) {
-            document.getElementById('outputArea').innerHTML = `<div class="space-y-4"><p class="text-brand-neon font-black uppercase text-[10px]">TikTok Hook</p><p>"Ushasikia kuhusu ${product}?"</p><hr class="border-gray-800"><p class="text-brand-neon font-black uppercase text-[10px]">Ad Copy</p><p>Attention ${audience}! Get ${product} today.</p></div>`;
+            document.getElementById('totalInBadge').innerText = `In: ${totalIn.toLocaleString()}`;
+            document.getElementById('totalOutBadge').innerText = `Out: ${totalOut.toLocaleString()}`;
+            document.getElementById('summaryBadge').classList.remove('hidden-view');
+            document.getElementById('outputArea').innerHTML = `<table class="w-full text-left mpesa-table"><thead class="text-[9px] text-gray-500 uppercase border-b border-gray-800"><tr><th class="pb-2">Code</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr></thead><tbody class="text-[11px]">${rows || '<tr><td colspan="4" class="py-10 text-center opacity-50">No data found.</td></tr>'}</tbody></table>`;
         }
 
         function handleExport() {
@@ -356,7 +327,7 @@
                 const text = document.getElementById('outputArea').innerText;
                 const blob = new Blob([text], { type: 'text/plain' });
                 const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-                a.download = `SmartBiz_Script.txt`; a.click();
+                a.download = `SmartBiz_AI_Script.txt`; a.click();
             }
         }
     </script>
