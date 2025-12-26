@@ -48,6 +48,10 @@
         /* Critical CSS for Hero */
         .hero-vignette { background: rgba(11, 15, 25, 0.7); }
     </style>
+
+    <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
@@ -231,13 +235,14 @@
                 <span class="text-[10px] font-bold tracking-widest uppercase text-brand-neon">Kenyan Business Intelligence</span>
             </div>
             
-            <!-- Font Colors: Using 'text-white' for high contrast, and your Brand Neon for the 'Punch' -->
-            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-white drop-shadow-xl">
+            <!-- H1 Title: Fades Up Immediately -->
+            <h1 data-aos="fade-up" class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-white drop-shadow-xl">
                 Turn Your Business <br class="hidden lg:block">
                 Into A <span class="text-gradient">Growth Machine.</span>
             </h1>
             
-            <p class="text-lg text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-md">
+            <!-- Paragraph: Fades Up with a 200ms Delay -->
+            <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-slate-200 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-md">
                 Stop relying on guesswork. We combine data-driven digital marketing with custom AI tools to help Kenyan SMEs scale faster and increase ROI.
             </p>
             
@@ -253,7 +258,7 @@
         </div>
 
         <!-- Metrics Card: Made it more "Glassy" so you can see the video through it -->
-        <div class="relative z-20">
+        <div class="relative z-20" data-aos="fade-up">
             <div class="absolute inset-0 bg-brand-neon/10 rounded-3xl blur-3xl opacity-20"></div>
             
             <div class="relative bg-brand-card/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
@@ -293,7 +298,7 @@
     <!-- SERVICES SECTION -->
     <section id="services" class="py-24 bg-gray-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Everything You Need to <span class="text-brand-neon">Dominate</span></h2>
                 <p class="text-brand-muted max-w-2xl mx-auto">We don't just "do marketing." We build ecosystems that attract, nurture, and convert customers automatically.</p>
             </div>
@@ -303,9 +308,9 @@
                 <!-- Service 1 -->
                 <a href="automation.html" class="group p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-neon transition-all duration-300 hover:shadow-card cursor-pointer block">
                     <div class="w-14 h-14 bg-brand-neon/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-neon/20 transition-colors">
-                        <i class="fa-solid fa-robot text-2xl text-brand-neon"></i>
+                         <i class="fa-solid fa-robot text-2xl text-brand-neon"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Marketing Automation</h3>
+                    <h3 data-aos="fade-up" class="text-xl font-bold text-white mb-3">Marketing Automation</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Email sequences, WhatsApp bots, and CRM flows that nurture leads 24/7 without you lifting a finger.
                     </p>
@@ -316,7 +321,7 @@
                     <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i class="fa-solid fa-magnifying-glass-chart text-2xl text-blue-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">SEO & Content</h3>
+                    <h3 data-aos="fade-up" data-aos-delay="100" class="text-xl font-bold text-white mb-3">SEO & Content</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Dominate Google search results in Kenya. We target high-intent keywords that drive ready-to-buy traffic.
                     </p>
@@ -327,7 +332,7 @@
                     <div class="w-14 h-14 bg-brand-purple/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-purple/20 transition-colors">
                         <i class="fa-solid fa-bullseye text-2xl text-brand-purple"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Paid Advertising</h3>
+                    <h3 data-aos="fade-up" data-aos-delay="200" class="text-xl font-bold text-white mb-3">Paid Advertising</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Precision Facebook, Instagram, and Google Ads campaigns designed to lower CPA and maximize ROAS.
                     </p>
@@ -338,7 +343,7 @@
                     <div class="w-14 h-14 bg-pink-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
                         <i class="fa-solid fa-code text-2xl text-pink-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Web Development</h3>
+                    <h3 data-aos="fade-up" data-aos-delay="300" class="text-xl font-bold text-white mb-3">Web Development</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Blazing fast, mobile-responsive websites optimized for conversion, not just aesthetics.
                     </p>
@@ -636,6 +641,16 @@
             }
         }
     </script>
-
+    
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>
