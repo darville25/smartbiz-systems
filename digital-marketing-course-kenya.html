@@ -402,7 +402,8 @@
                 </div>
                 <div class="bg-brand-dark p-8 rounded-3xl border border-brand-neon shadow-neon">
                     <h4 class="text-center text-sm font-black uppercase text-gray-400 mb-6 tracking-widest">Request Cohort Access</h4>
-                    <form action="https://formspree.io/f/xwveeaep" method="POST" class="space-y-4">
+                    <form id="enrollForm" class="space-y-4">
+
                         <input type="text" name="name" placeholder="Your Full Name" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:border-brand-neon outline-none">
                         <input type="email" name="email" placeholder="Email Address" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:border-brand-neon outline-none">
                         <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:border-brand-neon outline-none">
@@ -496,5 +497,25 @@
     once: true       // Whether animation should happen only once while scrolling down
   });
 </script>
+<script>
+document.getElementById("enrollForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = encodeURIComponent(this.name.value);
+  const email = encodeURIComponent(this.email.value);
+  const phone = encodeURIComponent(this.phone.value);
+  const goal = encodeURIComponent(this.goal.value);
+
+  const calendlyURL =
+    "https://calendly.com/smartbizsystemske/digital-marketing-training-enrollment-call" +
+    "?name=" + name +
+    "&email=" + email +
+    "&customAnswers[0]=" + phone +
+    "&customAnswers[1]=" + goal;
+
+  window.location.href = calendlyURL;
+});
+</script>
+
 </body>
 </html>
