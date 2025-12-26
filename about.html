@@ -105,6 +105,8 @@
 
       gtag("config", "G-HPRK4JYRR5");
     </script>
+    <!-- AOS Animation CSS -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
@@ -246,13 +248,13 @@
       <div
         class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
-        <h1
+        <h1 data-aos="fade-up"
           class="text-4xl lg:text-6xl font-extrabold mb-6 text-white leading-tight"
         >
           Building the Digital Backbone of <br />
           <span class="text-gradient">Kenyan Business.</span>
         </h1>
-        <p
+        <p data-aos="fade-up" data-aos-delay="100"
           class="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-10"
         >
           We believe that Kenyan entrepreneurs work too hard for too little
@@ -648,5 +650,16 @@
       src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js"
       async
     ></script>
+
+    <!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
   </body>
 </html>

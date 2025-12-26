@@ -116,6 +116,8 @@
 
       gtag("config", "G-HPRK4JYRR5");
     </script>
+    <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
@@ -273,13 +275,11 @@
                 >Systems Active 24/7</span
               >
             </div>
-            <h1
-              class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6"
-            >
+            <h1 data-aos="fade-up" class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
               Your Best Employee <br />
               <span class="text-gradient">Is A Robot.</span>
             </h1>
-            <p class="text-lg text-brand-muted mb-8 leading-relaxed">
+            <p data-aos="fade-up" data-aos-delay="100" class="text-lg text-brand-muted mb-8 leading-relaxed">
               Imagine a sales team that never sleeps, never complains, and
               responds to leads in 5 seconds flat. Stop trading your time for
               money. Build a machine that grows your business while you focus on
@@ -830,5 +830,15 @@
       src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js"
       async
     ></script>
+    <!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
   </body>
 </html>

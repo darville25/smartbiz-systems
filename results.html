@@ -71,6 +71,8 @@
 
   gtag('config', 'G-HPRK4JYRR5');
 </script>
+<!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
@@ -207,10 +209,10 @@
     <header class="relative pt-32 pb-20 bg-brand-dark overflow-hidden">
         <div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6">
+            <h1 data-aos="fade-up" class="text-4xl lg:text-6xl font-extrabold mb-6">
                 Our Work <span class="text-gradient">Speaks for Itself.</span>
             </h1>
-            <p class="text-lg text-brand-muted max-w-2xl mx-auto">
+            <p data-aos="fade-up" data-aos-delay="100" class="text-lg text-brand-muted max-w-2xl mx-auto">
                 From high-speed websites to complex automation systems. Explore the digital assets we've built for Kenyan businesses.
             </p>
         </div>
@@ -532,5 +534,15 @@
         }
     </script>
 <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>

@@ -99,6 +99,8 @@
 
   gtag('config', 'G-HPRK4JYRR5');
 </script>
+<!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
@@ -239,11 +241,11 @@
             <div class="inline-flex items-center px-4 py-2 rounded-full border border-gray-600 bg-gray-800 mb-6">
                 <span class="text-sm font-bold tracking-wide uppercase text-brand-neon">The Growth Blueprint</span>
             </div>
-            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
+            <h1 data-aos="fade-up" class="text-4xl lg:text-6xl font-extrabold mb-6 text-white leading-tight">
                 We Don't Guess. <br>
                 <span class="text-gradient">We Engineer Success.</span>
             </h1>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto font-medium">
+            <p data-aos="fade-up" data-aos-delay="100" class="text-xl text-gray-300 max-w-2xl mx-auto font-medium">
                 Most agencies rely on hope. We rely on a proven 4-stage methodology tailored for Kenyan market dynamics, real data, and rapid iteration.
             </p>
         </div>
@@ -647,5 +649,15 @@
     </script>
 
 <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>

@@ -89,6 +89,8 @@
         .price-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .price-card:hover { transform: translateY(-12px); }
     </style>
+    <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
 
@@ -225,11 +227,11 @@
             <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-brand-neon/30 bg-brand-neon/10 mb-8">
                 <span class="text-[11px] font-black text-brand-neon uppercase tracking-[0.2em]">High-Performance Web Infrastructure</span>
             </div>
-            <h1 class="text-5xl lg:text-8xl font-black tracking-tighter leading-[0.95] mb-8 text-white uppercase">
+            <h1 data-aos="fade-up" class="text-5xl lg:text-8xl font-black tracking-tighter leading-[0.95] mb-8 text-white uppercase">
                 TRANSPARENT <br>
                 <span class="text-gradient">PRICING MODELS.</span>
             </h1>
-            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-300 font-medium">
+            <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-gray-300 font-medium">
                 No hidden maintenance fees. No confusing jargon. Professional website development for Kenyan businesses ready to scale.
             </p>
         </div>
@@ -422,5 +424,15 @@
             }
         }
     </script>
+    <!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>

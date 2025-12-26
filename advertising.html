@@ -63,6 +63,8 @@
         .logic-card { transition: all 0.3s ease; }
         .logic-card:hover { transform: translateY(-5px); border-color: #2DD4BF; }
     </style>
+    <!-- AOS Animation CSS -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
     
@@ -208,11 +210,11 @@
             <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-brand-purple/30 bg-brand-purple/10 mb-6">
                 <span class="text-[10px] font-black text-brand-purple uppercase tracking-widest">Nairobi's Best Kept Business Secret</span>
             </div>
-            <h1 class="text-5xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 text-white uppercase">
+            <h1 data-aos="fade-up" class="text-5xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 text-white uppercase">
                 The Math Behind <br>
                 <span class="text-gradient">The 5% Who Scale.</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-12 max-w-3xl font-medium leading-relaxed mx-auto text-center">
+            <p data-aos="fade-up" data-aos-delay="100" class="text-xl md:text-2xl mb-12 max-w-3xl font-medium leading-relaxed mx-auto text-center">
                 While most businesses are "guessing" with their ad spend, a small group of Kenyan SMEs are using a **system** to print revenue on demand. Do you want to see how the system works?
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
@@ -437,6 +439,16 @@
             }
         }
     </script>
-    <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
+   <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
+<!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>

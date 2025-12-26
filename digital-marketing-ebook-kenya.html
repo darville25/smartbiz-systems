@@ -31,6 +31,8 @@
         .text-gradient { background: linear-gradient(to right, #2DD4BF, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
+    <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="antialiased">
 
@@ -168,10 +170,10 @@
             <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
                     <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase border border-brand-neon text-brand-neon rounded-full">New Release for 2026</span>
-                    <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6 text-white">
+                    <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-black leading-tight mb-6 text-white">
                         The Only <span class="text-gradient uppercase">Digital Marketing Ebook</span> Built for Revenue.
                     </h1>
-                    <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                    <p data-aos="fade-up" data-aos-delay="100" class="text-lg md:text-xl text-slate-200 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                         Stop wasting money on "Boost Post." Master the exact online marketing strategies used by Kenya's top SMEs to turn leads into M-Pesa confirmations.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
@@ -355,5 +357,15 @@
             }
         }
     </script>
+    <!-- AOS Animation JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,   // Animation duration in milliseconds (0.8s)
+    offset: 100,     // Offset (in px) from the original trigger point
+    easing: 'ease-out-cubic', // Smooth easing function
+    once: true       // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>
