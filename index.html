@@ -416,61 +416,59 @@
         </div>
     </section>
 
-    <!-- LOGICAL VALUE SECTION -->
-    <section class="py-20 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <h2 class="text-3xl font-bold mb-6 text-white">Why Kenyan SMEs Choose Us?</h2>
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                                <i class="fa-solid fa-check text-green-500 text-sm"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-white">Focus on ROI, Not Just Vanity Metrics</h4>
-                                <p class="text-gray-400 text-sm mt-1">Likes don't pay bills. We focus on leads, sales calls, and confirmed revenue.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                                <i class="fa-solid fa-check text-green-500 text-sm"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-white">Local Context, Global Standards</h4>
-                                <p class="text-gray-400 text-sm mt-1">We understand the Kenyan market (M-Pesa, WhatsApp, Local SEO) but execute with Silicon Valley precision.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
-                                <i class="fa-solid fa-check text-green-500 text-sm"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-white">Complete Transparency</h4>
-                                <p class="text-gray-400 text-sm mt-1">You get a live dashboard. No hidden fees, no confusing jargon.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="order-1 lg:order-2 bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700">
-                    <h3 class="text-xl font-bold text-white mb-6">Projected Growth Calculator</h3>
-                    <div class="space-y-4">
+    <!-- CALCULATOR WIDGET (Dynamic) -->
+                <div class="order-1 lg:order-2 bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 shadow-2xl relative overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
+                    
+                    <!-- Decorative Element -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-neon/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                        <i class="fa-solid fa-calculator text-brand-neon mr-3"></i> Growth Calculator
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        
+                        <!-- Input Field -->
                         <div>
-                            <label class="block text-sm text-gray-400 mb-2">Current Monthly Revenue</label>
-                            <div class="h-12 bg-gray-900 rounded-lg border border-gray-700 flex items-center px-4 text-gray-300">KES 500,000</div>
+                            <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-wide">Current Monthly Revenue (KES)</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">KES</span>
+                                <input type="number" id="revenueInput" value="500000" oninput="calculateGrowth()" 
+                                    class="w-full h-14 bg-gray-950 border border-gray-700 rounded-lg pl-14 pr-4 text-white font-mono text-lg focus:border-brand-neon focus:ring-1 focus:ring-brand-neon outline-none transition-all placeholder-gray-600">
+                            </div>
                         </div>
+
+                        <!-- Arrow Down -->
+                        <div class="flex justify-center -my-2 relative z-10">
+                            <div class="bg-gray-800 p-2 rounded-full border border-gray-600">
+                                <i class="fa-solid fa-arrow-down text-brand-neon animate-bounce"></i>
+                            </div>
+                        </div>
+
+                        <!-- Result Field -->
                         <div>
-                            <label class="block text-sm text-gray-400 mb-2">With SmartBiz Automation (+30%)</label>
-                            <div class="h-12 bg-brand-neon/10 rounded-lg border border-brand-neon/50 flex items-center px-4 text-brand-neon font-bold">KES 650,000</div>
+                            <label class="block text-sm font-bold text-brand-neon mb-2 uppercase tracking-wide">
+                                Projected Revenue (+30%)
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-brand-neon/20 blur-lg rounded-lg"></div>
+                                <div class="relative h-16 bg-gray-900/80 border border-brand-neon rounded-lg flex items-center justify-between px-6 backdrop-blur-sm">
+                                    <span class="text-gray-400 font-bold">KES</span>
+                                    <span id="growthResult" class="text-2xl font-black text-white font-mono tracking-tight">650,000</span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 text-right">*Based on avg client results</p>
                         </div>
                     </div>
-                    <div class="mt-6">
-                        <a href="#contact" class="block w-full text-center py-3 bg-white text-brand-dark font-bold rounded-lg hover:bg-gray-100 transition">See Your Numbers</a>
+
+                    <div class="mt-8">
+                        <a href="https://calendly.com/smartbizsystemske/free-digital-marketing-audit" class="block w-full text-center py-4 bg-white text-brand-dark font-black uppercase tracking-widest rounded-lg hover:bg-gray-200 transition shadow-lg transform hover:scale-[1.02]">
+                            Unlock This Growth
+                        </a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+
+
 
     <!-- TESTIMONIALS (SOCIAL PROOF) -->
     <section id="results" class="py-24 bg-brand-dark">
@@ -654,6 +652,28 @@
     easing: 'ease-out-cubic', // Smooth easing function
     once: true       // Whether animation should happen only once while scrolling down
   });
+</script>
+
+<!-- SCRIPT FOR CALCULATOR (Paste this right after the div or at bottom of page) -->
+<script>
+    function calculateGrowth() {
+        // Get Input Value
+        const input = document.getElementById('revenueInput').value;
+        const resultDisplay = document.getElementById('growthResult');
+
+        // Validate (If empty, show 0)
+        if (!input || input < 0) {
+            resultDisplay.innerText = "0";
+            return;
+        }
+
+        // Calculate +30%
+        const revenue = parseFloat(input);
+        const growth = revenue * 1.30;
+
+        // Format with Commas (e.g., 650,000)
+        resultDisplay.innerText = Math.floor(growth).toLocaleString();
+    }
 </script>
 </body>
 </html>
