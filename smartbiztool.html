@@ -425,6 +425,63 @@
             alert("Content Copied! ✅");
         }
     </script>
+    <!-- ============================================ -->
+    <!-- COOKIE CONSENT BANNER                        -->
+    <!-- ============================================ -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#0B0F19]/95 backdrop-blur-xl border-t border-gray-800 p-6 z-[100] transition-transform duration-500 transform translate-y-full">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Text -->
+            <div class="text-sm text-gray-300 text-center md:text-left">
+                <p class="leading-relaxed">
+                    <i class="fa-solid fa-cookie-bite text-brand-neon mr-2"></i>
+                    We use cookies to ensure SmartBiz works securely (Authentication & Payments). 
+                    By continuing, you agree to our <a href="privacy.html" class="text-brand-neon underline hover:text-white">Privacy Policy</a>.
+                </p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-4">
+                <button onclick="declineCookies()" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-700 rounded-lg transition-colors">
+                    Necessary Only
+                </button>
+                <button onclick="acceptCookies()" class="px-6 py-2 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover shadow-neon transition-all transform hover:scale-105">
+                    Accept All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- COOKIE LOGIC SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const banner = document.getElementById("cookie-banner");
+            
+            // Check if user has already decided
+            if (!localStorage.getItem("smartbiz_cookie_consent")) {
+                // Wait 2 seconds, then slide the banner up
+                setTimeout(() => {
+                    banner.classList.remove("translate-y-full");
+                }, 2000);
+            }
+        });
+
+        function acceptCookies() {
+            const banner = document.getElementById("cookie-banner");
+            // Save choice to browser memory
+            localStorage.setItem("smartbiz_cookie_consent", "accepted");
+            // Slide banner down to hide
+            banner.classList.add("translate-y-full");
+        }
+
+        function declineCookies() {
+            const banner = document.getElementById("cookie-banner");
+            // Save choice
+            localStorage.setItem("smartbiz_cookie_consent", "declined");
+            // Slide banner down
+            banner.classList.add("translate-y-full");
+        }
+    </script>
     <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
 </body>
 </html>
