@@ -1,0 +1,35 @@
+# Block OpenAI (ChatGPT)
+User-agent: GPTBot
+Disallow: /
+
+# Block Google AI (Bard/Gemini training data)
+User-agent: Google-Extended
+Disallow: /
+
+# Block Anthropic (Claude)
+User-agent: Anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+
+# Block Common Scrapers (Common Crawl used by many AIs)
+User-agent: CCBot
+Disallow: /
+
+# Block SEO Tools that eat bandwidth (Optional)
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+# Allow Google Search (So you still rank for SEO)
+User-agent: Googlebot
+Allow: /
+
+# Allow everyone else
+User-agent: *
+Allow: /
+
+Sitemap: https://smartbizsystems.co.ke/sitemap.xml
