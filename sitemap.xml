@@ -1,122 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-
+<!-- CORE PAGES (High Priority) -->
 <url>
   <loc>https://www.smartbizsystems.co.ke/</loc>
-  <lastmod>2025-12-22T07:57:04+00:00</lastmod>
+  <lastmod>2025-12-28</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.smartbizsystems.co.ke/services</loc>
-  <lastmod>2025-12-22T07:57:05+00:00</lastmod>
+  <loc>https://www.smartbizsystems.co.ke/smartbiztool.html</loc>
+  <lastmod>2025-12-28</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.smartbizsystems.co.ke/services.html</loc>
+  <lastmod>2025-12-28</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.smartbizsystems.co.ke/automation</loc>
-  <lastmod>2025-12-22T07:57:05+00:00</lastmod>
+  <loc>https://www.smartbizsystems.co.ke/automation.html</loc>
+  <lastmod>2025-12-28</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.smartbizsystems.co.ke/process</loc>
-  <lastmod>2025-12-22T07:57:05+00:00</lastmod>
+  <loc>https://www.smartbizsystems.co.ke/results.html</loc>
+  <lastmod>2025-12-28</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.smartbizsystems.co.ke/results</loc>
-  <lastmod>2025-12-22T07:57:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/about</loc>
-  <lastmod>2025-12-22T07:57:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/careers</loc>
-  <lastmod>2025-12-22T07:57:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/blog</loc>
-  <lastmod>2025-12-22T07:57:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/faq</loc>
-  <lastmod>2025-12-22T07:57:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/smartbiztool</loc>
-  <lastmod>2025-12-22T07:57:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/privacy</loc>
-  <lastmod>2025-12-22T07:57:06+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.smartbizsystems.co.ke/terms</loc>
-  <lastmod>2025-12-22T07:57:07+00:00</lastmod>
+  <loc>https://www.smartbizsystems.co.ke/blog.html</loc>
+  <lastmod>2025-12-28</lastmod>
   <priority>0.80</priority>
 </url>
 
-<!-- Individual Blog Posts -->
-<url><loc>https://www.smartbizsystems.co.ke/blog/whatsapp-automation-kenya.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/debt-collection-automation.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/mpesa-api-guide.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/best-crm-kenya.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/appointment-automation.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/email-marketing-kenya.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/sales-funnel-blueprint.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/sms-vs-whatsapp.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/inventory-systems.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/gbwhatsapp-risks.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/facebook-ads-payment.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/tiktok-business-kenya.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/influencer-rates-kenya.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/cold-calling-scripts.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/google-vs-facebook.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/lead-magnets.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/jiji-vs-website.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/real-estate-marketing.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/pricing-psychology.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/crisis-management.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/seo-case-study-hotel.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/fix-slow-website.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/google-my-business-guide.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/kenyan-keyword-research.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/wordpress-vs-code.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/writing-for-seo.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/backlinks-strategy.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ecommerce-seo.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/voice-search-africa.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/technical-seo-checklist.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ai-va-tools.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/chatgpt-for-lawyers.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ai-retail-prediction.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ai-security-brand.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ai-agriculture.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/bulk-content-creation.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ai-in-schools.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/ai-voice-agents.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/human-in-the-loop.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/case-study-logistics.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/winning-tenders.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/hiring-tips.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/scaling-systems.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/sme-finance-tips.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/cost-of-cheap-websites.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/import-tracking-tools.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/networking-nairobi.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/company-registration.html</loc><priority>0.70</priority></url>
-<url><loc>https://www.smartbizsystems.co.ke/blog/remote-work-africa.html</loc><priority>0.70</priority></url>
+<!-- COMPANY PAGES -->
+<url>
+  <loc>https://www.smartbizsystems.co.ke/about.html</loc>
+  <lastmod>2025-12-28</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.smartbizsystems.co.ke/careers.html</loc>
+  <lastmod>2025-12-28</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.smartbizsystems.co.ke/faq.html</loc>
+  <lastmod>2025-12-28</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://www.smartbizsystems.co.ke/privacy.html</loc>
+  <lastmod>2025-12-28</lastmod>
+  <priority>0.50</priority>
+</url>
+<url>
+  <loc>https://www.smartbizsystems.co.ke/terms.html</loc>
+  <lastmod>2025-12-28</lastmod>
+  <priority>0.50</priority>
+</url>
+
+<!-- BLOG POSTS (Content Strategy) -->
+<url><loc>https://www.smartbizsystems.co.ke/blog/whatsapp-automation-kenya.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/debt-collection-automation.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/mpesa-api-guide.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/best-crm-kenya.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/appointment-automation.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/email-marketing-kenya.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/sales-funnel-blueprint.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/sms-vs-whatsapp.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/inventory-systems.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/gbwhatsapp-risks.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/facebook-ads-payment.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/tiktok-business-kenya.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/influencer-rates-kenya.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/cold-calling-scripts.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/google-vs-facebook.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/lead-magnets.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/jiji-vs-website.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/real-estate-marketing.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/pricing-psychology.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/crisis-management.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/seo-case-study-hotel.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/fix-slow-website.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/google-my-business-guide.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/kenyan-keyword-research.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/wordpress-vs-code.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/writing-for-seo.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/backlinks-strategy.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ecommerce-seo.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/voice-search-africa.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/technical-seo-checklist.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ai-va-tools.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/chatgpt-for-lawyers.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ai-retail-prediction.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ai-security-brand.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ai-agriculture.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/bulk-content-creation.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ai-in-schools.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/ai-voice-agents.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/human-in-the-loop.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/case-study-logistics.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/winning-tenders.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/hiring-tips.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/scaling-systems.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/sme-finance-tips.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/cost-of-cheap-websites.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/import-tracking-tools.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/networking-nairobi.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/company-registration.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
+<url><loc>https://www.smartbizsystems.co.ke/blog/remote-work-africa.html</loc><lastmod>2025-12-28</lastmod><priority>0.70</priority></url>
 
 </urlset>
