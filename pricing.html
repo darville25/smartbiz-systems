@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Packages | SmartBizSystems Kenya</title>
+    <meta name="description" content="Transparent pricing for Digital Marketing, Web Design, and Automation in Kenya. No hidden fees. M-Pesa friendly.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', purple: '#A78BFA', text: '#F3F4F6' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0B0F19; color: #F3F4F6; }
+        .glass-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #2DD4BF, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .popular-badge { background: linear-gradient(to right, #2DD4BF, #14B8A6); color: #0B0F19; font-weight: bold; font-size: 0.75rem; padding: 4px 12px; border-radius: 9999px; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); z-index: 10; }
+    </style>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HPRK4JYRR5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-HPRK4JYRR5");
+    </script>
+</head>
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300 border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+                        SmartBiz<span class="text-brand-neon group-hover:text-white transition">Systems</span>
+                    </span>
+                </a>
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="services.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Services</a>
+                    <a href="automation.html" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Automation</a>
+                    <a href="blog.html" class="text-sm font-bold text-brand-neon transition-colors">Blog</a>
+                    <a href="digital-marketing-ebook-kenya.html" class="group relative inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-full border border-gray-700 hover:border-brand-purple transition-all">
+                        <i class="fa-solid fa-microchip mr-2 text-brand-purple"></i> SME play book
+                    </a>
+                    <a href="index.html#contact" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-full hover:bg-brand-neonhover hover:shadow-neon transition-all">Get a Free Audit</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-20 bg-brand-dark overflow-hidden text-center">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-neon/10 rounded-full blur-[120px]"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <div class="inline-flex items-center px-4 py-1 rounded-full border border-gray-700 bg-gray-800/50 mb-6">
+                <span class="text-xs font-bold tracking-wide uppercase text-gray-200">Transparent & ROI Focused</span>
+            </div>
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 text-white leading-tight" data-aos="fade-up">
+                Invest in Systems, <br>
+                <span class="text-gradient">Not Just Services.</span>
+            </h1>
+            <!-- UPDATED TEXT: High Contrast (Slate-200) -->
+            <p class="text-lg text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                We build assets that pay for themselves. From WhatsApp Bots to High-Ranking SEO, our pricing is designed for Kenyan SMEs ready to scale. No hidden fees.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="#automation" class="inline-block px-8 py-4 bg-brand-neon text-brand-dark font-bold rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">
+                    View Packages
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRICING PHILOSOPHY -->
+    <section class="py-12 bg-gray-900 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <i class="fa-solid fa-hand-holding-dollar text-brand-neon text-2xl mb-3"></i>
+                    <h3 class="text-white font-bold mb-2">Fair Kenyan Pricing</h3>
+                    <p class="text-sm text-gray-300">All prices in KES. M-Pesa accepted. We price for value, not hours.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-chart-line text-brand-neon text-2xl mb-3"></i>
+                    <h3 class="text-white font-bold mb-2">ROI Focused</h3>
+                    <p class="text-sm text-gray-300">Our goal is to help you break even within 1-3 months of launch.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-lock-open text-brand-neon text-2xl mb-3"></i>
+                    <h3 class="text-white font-bold mb-2">No Lock-ins</h3>
+                    <p class="text-sm text-gray-300">Cancel monthly services anytime. You own your website and data 100%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: MARKETING AUTOMATION -->
+    <section id="automation" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-neon font-bold tracking-wider uppercase text-sm">Service 01</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Marketing Automation</h2>
+                <p class="text-gray-300 mt-4">WhatsApp Bots, Email Sequences & CRM Setup.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Starter -->
+                <div class="border border-gray-800 bg-gray-900/50 rounded-2xl p-8 hover:border-gray-600 transition" data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-white">Starter</h3>
+                    <p class="text-sm text-gray-300 mb-6">For small retail shops.</p>
+                    <div class="text-3xl font-bold text-white mb-2">KES 50,000</div>
+                    <p class="text-xs text-gray-400 mb-6">One-time setup + 10k/mo maintenance</p>
+                    <a href="#contact" class="block w-full py-3 border border-gray-600 rounded-lg text-center text-white hover:bg-gray-800 transition">Get Started</a>
+                    <ul class="mt-8 space-y-3 text-sm text-gray-200">
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Basic WhatsApp Auto-reply</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Simple CRM Setup (HubSpot Free)</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Contact Form Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Growth (Highlighted) -->
+                <div class="border-2 border-brand-neon bg-gray-900 rounded-2xl p-8 relative transform md:-translate-y-4 shadow-neon" data-aos="fade-up" data-aos-delay="100">
+                    <span class="popular-badge">MOST POPULAR</span>
+                    <h3 class="text-xl font-bold text-brand-neon">Growth</h3>
+                    <p class="text-sm text-gray-300 mb-6">For businesses with 50+ leads/mo.</p>
+                    <div class="text-3xl font-bold text-white mb-2">KES 100,000</div>
+                    <p class="text-xs text-gray-400 mb-6">One-time setup + 20k/mo maintenance</p>
+                    <a href="#contact" class="block w-full py-3 bg-brand-neon text-brand-dark font-bold rounded-lg hover:bg-brand-neonhover transition">Get Started</a>
+                    <ul class="mt-8 space-y-3 text-sm text-white">
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Advanced WhatsApp Bot Flow</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Email Nurture Sequence (5 Emails)</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Lead Scoring & Segmentation</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Automated Follow-ups</li>
+                    </ul>
+                </div>
+
+                <!-- Premium -->
+                <div class="border border-gray-800 bg-gray-900/50 rounded-2xl p-8 hover:border-gray-600 transition" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-white">Premium</h3>
+                    <p class="text-sm text-gray-300 mb-6">Full ecosystem automation.</p>
+                    <div class="text-3xl font-bold text-white mb-2">KES 200,000</div>
+                    <p class="text-xs text-gray-400 mb-6">One-time setup + 40k/mo maintenance</p>
+                    <a href="#contact" class="block w-full py-3 border border-gray-600 rounded-lg text-center text-white hover:bg-gray-800 transition">Contact Sales</a>
+                    <ul class="mt-8 space-y-3 text-sm text-gray-200">
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Custom API Integrations</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> M-Pesa Payment Automation</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Dedicated Account Manager</li>
+                        <li class="flex"><i class="fa-solid fa-check text-brand-neon mr-2 mt-1"></i> Weekly Strategy Calls</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- SECTION 2: WEB DEVELOPMENT (Updated with Startup Tier) -->
+    <section id="web" class="py-20 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-purple-400 font-bold tracking-wider uppercase text-sm">Service 02</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">High-Performance Websites</h2>
+                <p class="text-gray-300 mt-4">From simple startup landing pages to complex e-commerce stores.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- TIER 1: STARTUP (KES 30k) -->
+                <div class="border border-gray-800 bg-gray-900/50 rounded-2xl p-8 hover:border-purple-500/30 transition" data-aos="fade-up">
+                    <div class="inline-block px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-xs font-bold text-purple-400 mb-4">
+                        ENTRY LEVEL
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Startup Launch</h3>
+                    <p class="text-sm text-gray-400 mt-2 mb-6">Perfect for side hustles & personal brands.</p>
+                    
+                    <div class="text-3xl font-bold text-white mb-2">KES 30,000</div>
+                    <p class="text-xs text-gray-500 mb-6">One-time fee</p>
+                    
+                    <a href="#contact" class="block w-full py-3 border border-gray-600 rounded-lg text-center text-white hover:bg-gray-800 font-medium transition">Get Online</a>
+                    
+                    <ul class="mt-8 space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> <strong>1-Page</strong> Long Form Design</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Mobile First (Lightweight)</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Click-to-WhatsApp Button</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Hosting Setup Included</li>
+                        <li class="flex items-start"><i class="fa-solid fa-clock text-gray-500 mr-2 mt-1"></i> 5-Day Delivery</li>
+                    </ul>
+                </div>
+
+                <!-- TIER 2: BUSINESS (KES 75k) -->
+                <div class="border-2 border-purple-500 bg-gray-900 rounded-2xl p-8 relative transform md:-translate-y-4 shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <span class="absolute top-0 right-0 bg-purple-500 text-white font-bold text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg">BEST VALUE</span>
+                    <h3 class="text-xl font-bold text-purple-400">Corporate / SME</h3>
+                    <p class="text-sm text-gray-300 mt-2 mb-6">For established companies needing multiple pages.</p>
+                    
+                    <div class="text-3xl font-bold text-white mb-2">KES 75,000</div>
+                    <p class="text-xs text-gray-400 mb-6">One-time fee</p>
+                    
+                    <a href="#contact" class="block w-full py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 transition shadow-lg shadow-purple-500/20">Build My Brand</a>
+                    
+                    <ul class="mt-8 space-y-3 text-sm text-white">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> <strong>Up to 7 Pages</strong> (Home, About, etc)</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> CMS Integration (Easy Edits)</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Basic SEO Setup (Google Maps)</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Blog / News Section</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> 2 Months Free Support</li>
+                    </ul>
+                </div>
+
+                <!-- TIER 3: E-COMMERCE (KES 150k+) -->
+                <div class="border border-gray-800 bg-gray-900/50 rounded-2xl p-8 hover:border-gray-600 transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-xs font-bold text-blue-400 mb-4">
+                        ONLINE STORE
+                    </div>
+                    <h3 class="text-xl font-bold text-white">E-Commerce</h3>
+                    <p class="text-sm text-gray-400 mt-2 mb-6">Sell products online with M-Pesa.</p>
+                    
+                    <div class="text-3xl font-bold text-white mb-2">KES 150,000</div>
+                    <p class="text-xs text-gray-500 mb-6">Starting price</p>
+                    
+                    <a href="#contact" class="block w-full py-3 border border-gray-600 rounded-lg text-center text-white hover:bg-gray-800 transition">Contact Sales</a>
+                    
+                    <ul class="mt-8 space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Shopify or WooCommerce</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> <strong>M-Pesa STK Push Integration</strong></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Inventory & Stock Management</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Discount Codes & Coupons</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-purple-400 mr-2 mt-1"></i> Staff Training included</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SEO & ADS -->
+    <section id="ads" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- SEO Pricing -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center"><i class="fa-solid fa-magnifying-glass-chart text-blue-500 mr-3"></i> SEO & Content</h3>
+                    <div class="space-y-4">
+                        <div class="p-6 border border-gray-800 rounded-xl bg-gray-900/50 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-white">Starter SEO</h4>
+                                <p class="text-xs text-gray-300">Local Maps Ranking</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-brand-neon">KES 40k</span>
+                                <span class="text-xs text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border border-blue-500/50 rounded-xl bg-gray-900 flex justify-between items-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-blue-500/5"></div>
+                            <div class="relative">
+                                <h4 class="font-bold text-white">Growth SEO</h4>
+                                <p class="text-xs text-gray-300">Content Strategy + Tech SEO</p>
+                            </div>
+                            <div class="text-right relative">
+                                <span class="block font-bold text-brand-neon">KES 80k</span>
+                                <span class="text-xs text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border border-gray-800 rounded-xl bg-gray-900/50 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-white">Domination</h4>
+                                <p class="text-xs text-gray-300">National Ranking</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-brand-neon">KES 150k</span>
+                                <span class="text-xs text-gray-400">/month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ads Pricing -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center"><i class="fa-solid fa-bullhorn text-pink-500 mr-3"></i> Paid Ads (Mgmt Fee)</h3>
+                    <div class="space-y-4">
+                        <div class="p-6 border border-gray-800 rounded-xl bg-gray-900/50 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-white">Starter Ads</h4>
+                                <p class="text-xs text-gray-300">FB/IG Only</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-brand-neon">KES 30k</span>
+                                <span class="text-xs text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border border-pink-500/50 rounded-xl bg-gray-900 flex justify-between items-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-pink-500/5"></div>
+                            <div class="relative">
+                                <h4 class="font-bold text-white">Growth Ads</h4>
+                                <p class="text-xs text-gray-300">FB/IG + Google Search</p>
+                            </div>
+                            <div class="text-right relative">
+                                <span class="block font-bold text-brand-neon">KES 60k</span>
+                                <span class="text-xs text-gray-400">/month</span>
+                            </div>
+                        </div>
+                        <div class="p-6 border border-gray-800 rounded-xl bg-gray-900/50 flex justify-between items-center">
+                            <div>
+                                <h4 class="font-bold text-white">Scale Ads</h4>
+                                <p class="text-xs text-gray-300">Full Funnel + YouTube</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block font-bold text-brand-neon">KES 120k</span>
+                                <span class="text-xs text-gray-400">/month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-8">* Ad spend is paid directly to Google/Meta by the client. Management fee covers strategy and optimization.</p>
+        </div>
+    </section>
+
+    <!-- BUNDLE OFFER -->
+    <section class="py-16 bg-gradient-to-r from-gray-900 to-black border-y border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="px-3 py-1 bg-brand-neon/20 text-brand-neon text-xs font-bold rounded-full uppercase tracking-wide">Limited Offer</span>
+            <h2 class="text-3xl font-bold text-white mt-4 mb-4">The "Total Growth" Bundle</h2>
+            <p class="text-gray-300 mb-8">Get a <strong>Website + SEO + Automation</strong> setup together and save 20% on the total cost.</p>
+            <a href="index.html#contact" class="inline-block px-8 py-4 bg-white text-brand-dark font-black rounded-lg hover:bg-gray-200 transition">Claim Bundle Offer</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-gray-900 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-2xl font-bold tracking-tight text-white block mb-4">SmartBiz<span class="text-brand-neon">Systems</span></span>
+            <p class="text-gray-400 text-sm mb-4">All prices exclude VAT.</p>
+            <p class="text-gray-500 text-sm">&copy; 2026 SmartBizSystems Kenya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, offset: 100, once: true });</script>
+   <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js"async ></script>
+</body>
+</html>
