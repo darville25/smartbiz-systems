@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/web-design-packages.html",
+      "destination": "/website-design-services-in-kenya.html",
+      "permanent": true
+    }
+  ]
 }
