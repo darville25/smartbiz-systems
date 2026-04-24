@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SmartBiz AI Commander | Kenya's Production SME OS</title>
+    
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NHPX2K7F');</script>
-    <!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NHPX2K7F');</script>
+    
     <!-- Prevent AI Scraping -->
     <meta name="robots" content="noai, noimageai">
     <meta name="googlebot" content="notranslate">
-    <!-- PRODUCTION SDKS -->
+    
+    <!-- LIBRARIES (PDF & Excel) -->
     <script src="https://js.paystack.co/v1/inline.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script> <!-- Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> <!-- PDF -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- FONTS & ICONS -->
@@ -38,153 +38,185 @@
 
     <style>
         body { background-color: #0B0F19; color: #FFFFFF; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-        .glass-panel { background: rgba(11, 15, 25, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-        .app-scroll::-webkit-scrollbar { width: 3px; }
+        .glass-panel { background: rgba(11, 15, 25, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+        .app-scroll::-webkit-scrollbar { width: 4px; }
+        .app-scroll::-webkit-scrollbar-track { background: #111827; }
         .app-scroll::-webkit-scrollbar-thumb { background: #2DD4BF; border-radius: 10px; }
         .hidden-view { display: none !important; }
-        .mpesa-table tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
-        textarea, input { font-size: 16px !important; } 
+        input, textarea { background-color: #111827 !important; border-color: #374151 !important; color: white !important; }
+        input:focus, textarea:focus { border-color: #2DD4BF !important; ring: 1px solid #2DD4BF !important; }
+        label { color: #2DD4BF !important; font-weight: 800 !important; letter-spacing: 1px; }
     </style>
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HPRK4JYRR5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HPRK4JYRR5');
-</script>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
- <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHPX2K7F"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) --> 
-</head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+<body class="antialiased selection:bg-brand-neon selection:text-brand-dark overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHPX2K7F" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- LOADER -->
     <div id="global-loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0F19]">
-        <div class="w-10 h-10 border-2 border-brand-neon/20 border-t-brand-neon rounded-full animate-spin mb-4"></div>
-        <p class="text-brand-neon font-mono text-[10px] tracking-[0.3em] animate-pulse">SMARTBIZ OPERATOR v3.2</p>
+        <div class="w-12 h-12 border-4 border-gray-800 border-t-brand-neon rounded-full animate-spin mb-4"></div>
+        <p class="text-white font-bold text-xs tracking-widest animate-pulse">LOADING SMARTBIZ...</p>
     </div>
 
     <!-- NAV -->
     <nav class="fixed w-full z-50 glass-panel">
         <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-            <span class="text-lg font-black tracking-tighter">SMARTBIZ<span class="text-brand-neon">TOOL</span></span>
+            <a href="index.html" class="text-xl font-black tracking-tighter text-white hover:text-brand-neon transition">SMARTBIZ<span class="text-brand-neon">TOOL</span></a>
             <div class="flex items-center space-x-4">
-                <a href="https://www.smartbizsystems.co.ke/" class="hidden md:block text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest">Main Site</a>
-                <button class="bg-brand-neon text-brand-dark px-4 py-1.5 rounded text-[10px] font-black uppercase tracking-wider shadow-neon">Pro Plan</button>
+                <a href="https://www.smartbizsystems.co.ke/" class="hidden md:block text-xs font-bold text-white hover:text-brand-neon uppercase tracking-widest">Exit to Home</a>
+                <button class="bg-brand-neon text-brand-dark px-5 py-2 rounded font-black text-xs uppercase tracking-wider shadow-neon hover:scale-105 transition">Pro Plan</button>
             </div>
         </div>
     </nav>
 
     <!-- MAIN APP CONTAINER -->
-    <main class="pt-20 pb-10 px-2 md:px-4 max-w-7xl mx-auto">
-        <div class="bg-brand-card border border-gray-800 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[85vh]">
+    <main class="pt-24 pb-10 px-2 md:px-4 max-w-7xl mx-auto">
+        <div class="bg-brand-card border border-gray-700 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row min-h-[85vh]">
             
             <!-- SIDEBAR -->
-            <aside class="w-full md:w-64 bg-gray-900/40 border-r border-gray-800 flex flex-col">
-                <div class="p-4 border-b border-gray-800">
-                    <p class="text-[9px] font-black text-gray-500 uppercase tracking-widest">SME AI Suite</p>
+            <aside class="w-full md:w-72 bg-gray-900 border-r border-gray-700 flex flex-col">
+                <div class="p-5 border-b border-gray-800">
+                    <p class="text-[10px] font-black text-white uppercase tracking-widest opacity-80">Select a Tool</p>
                 </div>
-                <div class="flex-1 overflow-y-auto app-scroll p-3 space-y-6">
+                
+                <div class="flex-1 overflow-y-auto app-scroll p-4 space-y-8">
+                    
+                    <!-- Finance Section -->
                     <div>
-                        <h3 class="text-[9px] font-black text-brand-orange mb-3 px-2 uppercase tracking-widest opacity-60">Finance</h3>
-                        <div class="space-y-1.5">
-                            <button onclick="switchMode(this, 'M-Pesa Auditor')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg">
-                                <i class="fa-solid fa-file-invoice-dollar mr-3"></i> M-Pesa Auditor
+                        <h3 class="text-xs font-bold text-brand-orange mb-3 px-2 uppercase tracking-widest flex items-center gap-2">
+                            <i class="fa-solid fa-coins"></i> Finance Ops
+                        </h3>
+                        <div class="space-y-2">
+                            <button onclick="switchMode(this, 'M-Pesa Auditor')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-white bg-gray-800 hover:bg-brand-orange hover:text-black border border-gray-700 rounded-lg transition-all">
+                                <i class="fa-solid fa-file-invoice-dollar w-5 mr-2"></i> M-Pesa Auditor
                             </button>
-                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all">
-                                <i class="fa-solid fa-hand-holding-dollar mr-3"></i> Debt Recovery
+                            <button onclick="switchMode(this, 'Cash Flow')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-solid fa-chart-line w-5 mr-2"></i> Cash Flow Tracker
+                            </button>
+                            <button onclick="switchMode(this, 'Quick Invoice')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-solid fa-file-invoice w-5 mr-2"></i> Quick Invoice
+                            </button>
+                            <button onclick="switchMode(this, 'Debt Collection')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-solid fa-hand-holding-dollar w-5 mr-2"></i> Debt Recovery
                             </button>
                         </div>
                     </div>
+
+                    <!-- Growth Section -->
                     <div>
-                        <h3 class="text-[9px] font-black text-brand-neon mb-3 px-2 uppercase tracking-widest opacity-60">Growth</h3>
-                        <div class="space-y-1.5">
-                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all">
-                                <i class="fa-solid fa-bolt mr-3"></i> Viral Marketing
+                        <h3 class="text-xs font-bold text-brand-neon mb-3 px-2 uppercase tracking-widest flex items-center gap-2">
+                            <i class="fa-solid fa-rocket"></i> Growth Tools
+                        </h3>
+                        <div class="space-y-2">
+                            <button onclick="switchMode(this, 'WhatsApp Gen')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-brands fa-whatsapp w-5 mr-2"></i> WhatsApp Ads
                             </button>
+                            <button onclick="switchMode(this, 'Social Captions')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-brands fa-instagram w-5 mr-2"></i> Social Captions
+                            </button>
+                            <button onclick="switchMode(this, 'SMS Templates')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-solid fa-comment-sms w-5 mr-2"></i> SMS Blasts
+                            </button>
+                            <button onclick="switchMode(this, 'Viral Hooks')" class="sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-300 hover:bg-gray-800 hover:text-white rounded-lg transition-all">
+                                <i class="fa-solid fa-bolt w-5 mr-2"></i> Viral Hooks
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Profile Area -->
+                <div class="p-4 border-t border-gray-800 bg-black/40">
+                    <div id="userProfileArea" class="flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-neon to-blue-600 border border-white/20"></div>
+                        <div class="ml-3">
+                            <p class="text-sm font-bold text-white">Guest User</p>
+                            <p class="text-xs text-brand-neon">Free Plan</p>
                         </div>
                     </div>
                 </div>
             </aside>
 
             <!-- WORKSPACE -->
-            <section class="flex-1 flex flex-col bg-gray-900/10" id="mainAppArea">
-                <div class="h-14 border-b border-gray-800 flex items-center justify-between px-4 md:px-6 bg-black/10">
-                    <h2 class="text-[10px] font-black uppercase tracking-widest text-gray-200">
-                        <i class="fa-solid fa-microchip text-brand-neon mr-2"></i> 
+            <section class="flex-1 flex flex-col bg-[#111827]" id="mainAppArea">
+                
+                <!-- Toolbar -->
+                <div class="h-16 border-b border-gray-700 flex items-center justify-between px-6 bg-black/20">
+                    <h2 class="text-sm font-black uppercase tracking-widest text-white flex items-center">
+                        <i class="fa-solid fa-layer-group text-brand-neon mr-3"></i> 
                         <span id="currentModeTitle">M-Pesa Auditor</span>
                     </h2>
-                    <button onclick="handleExport()" class="bg-white text-brand-dark px-3 py-1.5 rounded font-black text-[9px] uppercase tracking-wider hover:bg-gray-200 transition">
-                        <i class="fa-solid fa-file-export mr-1"></i> Export Data
-                    </button>
+                    
+                    <div class="flex items-center gap-4">
+                        <div id="authActionArea">
+                            <!-- Auth buttons injected here -->
+                        </div>
+                        <button onclick="handleExport()" class="bg-white text-brand-dark px-4 py-2 rounded font-bold text-xs uppercase tracking-wider hover:bg-brand-neon hover:text-white transition shadow-lg">
+                            <i class="fa-solid fa-file-export mr-2"></i> Export Data
+                        </button>
+                    </div>
                 </div>
 
-                <div id="mainWorkspace" class="flex-1 p-4 md:p-6 grid lg:grid-cols-2 gap-6 overflow-hidden">
+                <div id="mainWorkspace" class="flex-1 p-6 grid lg:grid-cols-2 gap-8 overflow-hidden">
                     
                     <!-- INPUT COLUMN -->
-                    <div class="flex flex-col space-y-4 overflow-y-auto app-scroll">
-                        <div>
-                            <label id="label1" class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Paste Messages Below</label>
-                            <textarea id="mainInput" placeholder="Select all M-Pesa messages in your SMS app, copy them, and paste the whole block here..." class="w-full h-44 md:h-64 bg-gray-800/40 border border-gray-700 rounded-xl p-4 text-sm font-mono text-gray-200 focus:border-brand-neon outline-none transition-all"></textarea>
+                    <div class="flex flex-col space-y-6 overflow-y-auto app-scroll pr-2 pb-10">
+                        
+                        <!-- 1. CUSTOM UI (Invoice/Cashflow) -->
+                        <div id="customUIContainer" class="hidden-view space-y-6">
+                            <!-- Injected via JS -->
                         </div>
-                        <div>
-                            <label id="label2" class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Context (Optional)</label>
-                            <input id="subInput" type="text" placeholder="Amount or specific info..." class="w-full bg-gray-800/40 border border-gray-700 rounded-lg p-3 text-sm text-gray-200 focus:border-brand-neon outline-none">
-                        </div>
-                        <div id="toggleGroup" class="hidden-view">
-                            <label class="text-[9px] font-black text-gray-500 uppercase tracking-widest mb-2 block">Strategy Tone</label>
-                            <div class="flex bg-gray-800/50 p-1 rounded-lg border border-gray-700">
-                                <button onclick="setTone(this, 'Friendly')" class="tone-btn flex-1 py-2 text-[9px] font-black uppercase rounded-md bg-brand-neon text-brand-dark">Friendly</button>
-                                <button onclick="setTone(this, 'Firm')" class="tone-btn flex-1 py-2 text-[9px] font-black uppercase rounded-md text-gray-400">Firm</button>
+
+                        <!-- 2. STANDARD TEXT INPUTS (Generators) -->
+                        <div id="standardInputs" class="space-y-6">
+                            <div>
+                                <label id="label1" class="text-xs font-black text-brand-neon uppercase tracking-widest mb-2 block">INPUT DATA</label>
+                                <textarea id="mainInput" placeholder="Paste content here..." class="w-full h-48 bg-gray-900 border border-gray-700 rounded-xl p-4 text-base font-mono text-white focus:border-brand-neon focus:ring-1 focus:ring-brand-neon outline-none transition-all shadow-inner"></textarea>
+                            </div>
+                            <div id="subInputContainer">
+                                <label id="label2" class="text-xs font-black text-brand-neon uppercase tracking-widest mb-2 block">CONTEXT / DETAILS</label>
+                                <input id="subInput" type="text" placeholder="Details..." class="w-full h-12 bg-gray-900 border border-gray-700 rounded-lg p-3 text-base text-white focus:border-brand-neon outline-none shadow-inner">
+                            </div>
+                            
+                            <!-- Tone Toggle -->
+                            <div id="toggleGroup" class="hidden-view">
+                                <label class="text-xs font-black text-brand-neon uppercase tracking-widest mb-2 block">TONE OF VOICE</label>
+                                <div class="flex bg-gray-800 p-1 rounded-lg border border-gray-700">
+                                    <button onclick="setTone(this, 'Friendly')" class="tone-btn flex-1 py-2 text-xs font-bold uppercase rounded bg-brand-neon text-brand-dark shadow">Friendly</button>
+                                    <button onclick="setTone(this, 'Firm')" class="tone-btn flex-1 py-2 text-xs font-bold uppercase rounded text-gray-400 hover:text-white">Firm</button>
+                                </div>
                             </div>
                         </div>
-                        <button id="processBtn" onclick="runProcessor()" class="w-full py-4 bg-brand-neon text-brand-dark font-black text-[11px] uppercase tracking-[0.2em] rounded-xl hover:shadow-neon active:scale-95 transition-all">
-                            Process with SmartBiz AI
+
+                        <button id="processBtn" onclick="runProcessor()" class="w-full py-4 bg-brand-neon text-brand-dark font-black text-sm uppercase tracking-widest rounded-xl hover:bg-white hover:scale-[1.02] transition-all shadow-neon">
+                            PROCESS REQUEST <i class="fa-solid fa-bolt ml-2"></i>
                         </button>
                     </div>
 
                     <!-- OUTPUT COLUMN -->
-                    <div class="bg-black/60 border border-gray-800 rounded-xl flex flex-col overflow-hidden min-h-[350px]">
+                    <div class="bg-black/40 border border-gray-700 rounded-xl flex flex-col overflow-hidden shadow-2xl relative">
                         
-                        <!-- Financial Headers (Toggled via JS) -->
-                        <div class="p-3 border-b border-gray-800 bg-gray-800/40">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-[8px] font-black text-gray-500 uppercase tracking-widest">Financial Terminal</span>
-                                <div id="summaryBadge" class="flex space-x-1.5 hidden-view">
-                                    <span id="totalIn" class="bg-green-500/10 text-green-400 text-[8px] font-bold px-2 py-1 rounded border border-green-500/20">IN: 0</span>
-                                    <span id="totalOut" class="bg-brand-orange/10 text-brand-orange text-[8px] font-bold px-2 py-1 rounded border border-brand-orange/20">OUT: 0</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Quick Stats Health Summary -->
-                            <div id="healthSummary" class="hidden grid grid-cols-3 gap-2 mt-2">
-                                <div class="bg-gray-800/50 p-2 rounded border border-gray-700 text-center">
-                                    <p class="text-[7px] text-gray-500 uppercase">Cash flow</p>
-                                    <p id="flowRatio" class="text-xs font-bold text-white">0%</p>
-                                </div>
-                                <div class="bg-gray-800/50 p-2 rounded border border-gray-700 text-center">
-                                    <p class="text-[7px] text-gray-500 uppercase">Top Expense</p>
-                                    <p id="topExpense" class="text-[8px] font-bold text-brand-orange truncate">None</p>
-                                </div>
-                                <div class="bg-gray-800/50 p-2 rounded border border-gray-700 text-center">
-                                    <p class="text-[7px] text-gray-500 uppercase">Reliability</p>
-                                    <p class="text-xs font-bold text-green-400">HIGH</p>
+                        <!-- Header & Stats -->
+                        <div class="p-4 border-b border-gray-700 bg-gray-900">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">RESULTS TERMINAL</span>
+                                <div id="summaryBadge" class="flex space-x-2 hidden-view">
+                                    <span id="totalIn" class="bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded border border-green-500/30"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- TERMINAL CONTENT -->
-                        <div id="outputArea" class="flex-1 p-4 overflow-y-auto app-scroll font-mono text-[12px] leading-relaxed">
-                            <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
-                                <i class="fa-solid fa-terminal text-2xl"></i>
-                                <p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p>
+                        <!-- Content Area -->
+                        <div id="outputArea" class="flex-1 p-6 overflow-y-auto app-scroll font-mono text-sm leading-relaxed text-gray-300">
+                            <div class="h-full flex flex-col items-center justify-center text-center space-y-4 opacity-30">
+                                <i class="fa-solid fa-terminal text-4xl"></i>
+                                <p class="text-xs font-black uppercase tracking-widest">Waiting for Command...</p>
                             </div>
+                        </div>
+                        
+                        <!-- Chart Container (Hidden by default) -->
+                        <div id="chartContainer" class="hidden-view p-4 h-64 border-t border-gray-700 bg-gray-900">
+                            <canvas id="cashFlowChart"></canvas>
                         </div>
 
                     </div>
@@ -193,305 +225,459 @@
         </div>
     </main>
 
-    <!-- SCRIPTS -->
+<!-- ============================================ -->
+    <!-- LOGIC SCRIPT (Updated Payment Methods)       -->
+    <!-- ============================================ -->
     <script>
+        // --- CONFIGURATION ---
+        const DEV_MODE = true; // Set to FALSE for Production
+        const PAYSTACK_PUBLIC_KEY = 'pk_test_YOUR_PAYSTACK_KEY'; // PASTE KEY HERE
+
         let currentMode = "M-Pesa Auditor";
         let activeTone = "Friendly";
         let globalData = [];
+        let clerkInstance = null;
+        let currentUser = null;
 
-        // 1. APP LOADER
-        window.addEventListener("DOMContentLoaded", () => {
+        // 1. INIT & AUTH
+        window.addEventListener("DOMContentLoaded", async function () {
             setTimeout(() => {
                 const loader = document.getElementById('global-loader');
                 if(loader) { loader.style.opacity = '0'; setTimeout(() => loader.remove(), 400); }
             }, 600);
+
+            if (DEV_MODE) {
+                console.log("⚠️ DEVELOPER MODE: Bypassing Auth");
+                currentUser = {
+                    firstName: "Developer",
+                    imageUrl: "https://ui-avatars.com/api/?name=Dev+Admin&background=2DD4BF&color=fff",
+                    publicMetadata: { isPro: true }
+                };
+                updateUIForUser(currentUser);
+                return;
+            }
+
+            try {
+                await Clerk.load();
+                clerkInstance = Clerk;
+                if (Clerk.user) {
+                    currentUser = Clerk.user;
+                    updateUIForUser(Clerk.user);
+                } else {
+                    updateUIForGuest();
+                }
+            } catch (error) {
+                console.error("Clerk Error");
+                updateUIForGuest();
+            }
         });
 
-        // 2. UX: TOOL SWITCHER
+        // 2. UI UPDATERS
+        function updateUIForUser(user) {
+            const isPro = user.publicMetadata.isPro === true;
+            const planName = isPro ? '<span class="text-brand-neon font-bold">PRO ACCOUNT</span>' : 'Free Plan';
+            document.getElementById('userProfileArea').innerHTML = `
+                <div class="flex items-center">
+                    <img src="${user.imageUrl}" class="w-10 h-10 rounded-full border-2 border-brand-neon">
+                    <div class="ml-3">
+                        <p class="text-sm font-bold text-white">${user.firstName}</p>
+                        <p class="text-xs text-gray-400">${planName}</p>
+                    </div>
+                </div>`;
+            document.getElementById('authActionArea').innerHTML = `<button onclick="Clerk.signOut()" class="hidden md:flex items-center space-x-2 text-xs font-bold text-gray-300 hover:text-red-400 transition"><i class="fa-solid fa-right-from-bracket"></i><span>Sign Out</span></button>`;
+        }
+
+        function updateUIForGuest() {
+            document.getElementById('authActionArea').innerHTML = `<button onclick="Clerk.openSignIn()" class="hidden md:flex items-center space-x-2 text-xs font-bold text-brand-neon hover:text-white transition animate-pulse"><i class="fa-solid fa-lock"></i><span>Login to Save</span></button>`;
+        }
+
+        // 3. SWITCH MODES
         function switchMode(btn, mode) {
             currentMode = mode;
             document.getElementById('currentModeTitle').innerText = mode;
             
-            // Clear inputs
+            const std = document.getElementById('standardInputs');
+            const cst = document.getElementById('customUIContainer');
+            const out = document.getElementById('outputArea');
+            const sub = document.getElementById('subInputContainer');
+            const tog = document.getElementById('toggleGroup');
+            const chart = document.getElementById('chartContainer');
+            const sumBadge = document.getElementById('summaryBadge');
+            
+            std.classList.remove('hidden-view');
+            cst.classList.add('hidden-view');
+            sub.classList.remove('hidden-view');
+            tog.classList.add('hidden-view');
+            chart.classList.add('hidden-view');
+            sumBadge.classList.add('hidden-view');
+            out.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20"><i class="fa-solid fa-terminal text-2xl"></i><p class="text-[8px] font-black uppercase tracking-widest">Ready</p></div>`;
             document.getElementById('mainInput').value = "";
-            document.getElementById('subInput').value = "";
             
-            // Reset Output Area
-            document.getElementById('outputArea').innerHTML = `
-                <div class="h-full flex flex-col items-center justify-center text-center space-y-3 opacity-20">
-                    <i class="fa-solid fa-terminal text-2xl"></i>
-                    <p class="text-[8px] font-black uppercase tracking-widest">Command Ready</p>
-                </div>`;
+            if(window.innerWidth < 768) document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth' });
 
-            // Reset UI Visibility
-            document.getElementById('summaryBadge').classList.add('hidden-view');
-            document.getElementById('healthSummary').classList.add('hidden');
-            document.getElementById('toggleGroup').classList.add('hidden-view');
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
+            btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg shadow-neon transition-all';
 
-            // Scroll for mobile
-            document.getElementById('mainAppArea').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-            // Highlight button
-            document.querySelectorAll('.sidebar-btn').forEach(b => b.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-medium text-gray-400 hover:bg-gray-800 rounded-lg transition-all');
-            
+            // MODE CONFIG
             if (mode === "M-Pesa Auditor") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-                document.getElementById('label1').innerText = "Paste M-Pesa SMS Messages";
-                document.getElementById('label2').innerText = "Filters (Optional)";
-            } else if (mode === "Debt Collection") {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 rounded-lg';
-                document.getElementById('label1').innerText = "Client Name & Phone";
-                document.getElementById('label2').innerText = "Amount & Due Date";
-                document.getElementById('toggleGroup').classList.remove('hidden-view');
-            } else {
-                btn.className = 'sidebar-btn w-full flex items-center px-4 py-3 text-xs font-bold text-brand-neon bg-brand-neon/10 border border-brand-neon/20 rounded-lg';
-                document.getElementById('label1').innerText = "Product / Service Name";
-                document.getElementById('label2').innerText = "Target Audience Details";
+                document.getElementById('label1').innerText = "PASTE SMS MESSAGES";
+                document.getElementById('mainInput').placeholder = "Paste full M-Pesa SMS messages here...";
+                sub.classList.add('hidden-view');
+            } 
+            else if (mode === "Cash Flow") {
+                std.classList.add('hidden-view');
+                cst.classList.remove('hidden-view');
+                cst.innerHTML = `<div class="grid grid-cols-2 gap-4"><div><label class="text-xs font-bold text-gray-400 mb-2 block">Opening Balance</label><input type="number" id="cf-open" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 text-white font-mono" placeholder="0"></div><div><label class="text-xs font-bold text-green-500 mb-2 block">Sales Today</label><input type="number" id="cf-in" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 text-white font-mono" placeholder="0"></div><div class="col-span-2"><label class="text-xs font-bold text-red-500 mb-2 block">Total Expenses</label><input type="number" id="cf-out" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 text-white font-mono" placeholder="0"></div></div>`;
+                chart.classList.remove('hidden-view');
+            }
+            // --- UPDATED INVOICE UI ---
+            else if (mode === "Quick Invoice") {
+                std.classList.add('hidden-view');
+                cst.classList.remove('hidden-view');
+                cst.innerHTML = `
+                    <div class="space-y-4">
+                        <input type="text" id="inv-biz" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 text-white font-bold" placeholder="Your Business Name">
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                             <select id="inv-pay-method" class="bg-gray-900 border border-gray-700 rounded-lg p-3 text-white text-sm focus:border-brand-neon outline-none">
+                                <option value="M-Pesa Buy Goods">M-Pesa Buy Goods (Till)</option>
+                                <option value="M-Pesa Paybill">M-Pesa Paybill</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                             </select>
+                             <input type="text" id="inv-pay-acc" class="bg-gray-900 border border-gray-700 rounded-lg p-3 text-brand-neon text-sm font-bold placeholder-gray-500" placeholder="Enter Number / Account">
+                        </div>
+                        
+                        <input type="text" id="inv-phone" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-3 text-white text-sm" placeholder="Your Contact Phone">
+                        
+                        <hr class="border-gray-700">
+                        
+                        <input type="text" id="inv-client" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-4 text-white" placeholder="Client Name">
+                        
+                        <div class="grid grid-cols-3 gap-2">
+                            <input type="text" id="item1" class="col-span-2 bg-gray-900 border border-gray-700 rounded-lg p-3 text-white" placeholder="Item Description">
+                            <input type="number" id="price1" class="bg-gray-900 border border-gray-700 rounded-lg p-3 text-white font-mono" placeholder="Price">
+                        </div>
+                    </div>
+                `;
+            }
+            else if (mode === "Debt Collection" || mode === "SMS Templates") {
+                document.getElementById('label1').innerText = "CLIENT INFO";
+                document.getElementById('label2').innerText = "AMOUNT & DATE";
+                tog.classList.remove('hidden-view');
+            }
+            else {
+                document.getElementById('label1').innerText = "PRODUCT / SERVICE";
+                document.getElementById('label2').innerText = "TARGET AUDIENCE / OFFER";
             }
         }
 
         function setTone(btn, tone) {
             activeTone = tone;
-            document.querySelectorAll('.tone-btn').forEach(b => {
-                b.classList.remove('bg-brand-neon', 'text-brand-dark');
-                b.classList.add('text-gray-400');
-            });
-            btn.classList.remove('text-gray-400');
-            btn.classList.add('bg-brand-neon', 'text-brand-dark');
+            document.querySelectorAll('.tone-btn').forEach(b => { b.classList.remove('bg-brand-neon', 'text-brand-dark', 'shadow'); b.classList.add('text-gray-400'); });
+            btn.classList.remove('text-gray-400'); btn.classList.add('bg-brand-neon', 'text-brand-dark', 'shadow');
         }
 
-        // 3. MAIN PROCESSOR
+        // 4. PROCESSOR LOGIC
         async function runProcessor() {
-            const inputA = document.getElementById('mainInput').value.trim();
-            const inputB = document.getElementById('subInput').value.trim();
             const btn = document.getElementById('processBtn');
-
-            if (!inputA) return alert("Please enter data first.");
-
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AI PROCESSING...';
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> READING DATA...';
             btn.disabled = true;
 
-            try {
-                if (currentMode === "M-Pesa Auditor") {
-                    parseMpesa(inputA);
-                } else {
-                    const data = await callGPTAPI(currentMode, inputA, inputB, activeTone);
+            // Small delay to allow UI to update
+            setTimeout(async () => {
+                try {
+                    // --- A. CLIENT-SIDE TOOLS (Calculators/Regex) ---
                     
-                    // Display AI variations with Copy Button
-                    document.getElementById('outputArea').innerHTML = `
-                        <div class="flex justify-between items-center mb-4">
-                            <div class="p-2 bg-brand-neon/10 text-brand-neon text-[8px] font-black uppercase border border-brand-neon/20 rounded">AI RESPONSE</div>
-                            <button onclick="copyToClipboard()" class="text-[10px] bg-brand-neon text-brand-dark px-3 py-1 rounded font-bold hover:bg-white transition">
-                                <i class="fa-solid fa-copy mr-1"></i> COPY
-                            </button>
-                        </div>
-                        <div id="aiTextContent" class="space-y-6">
-                            <div class="p-3 border-l-2 border-brand-neon bg-white/5 rounded">
-                                <p class="text-[9px] text-brand-neon uppercase font-black mb-2 tracking-widest">Variation A</p>
-                                <div class="text-gray-200 leading-relaxed">${data.variationA}</div>
-                            </div>
-                            <div class="p-3 border-l-2 border-brand-purple bg-white/5 rounded">
-                                <p class="text-[9px] text-brand-purple uppercase font-black mb-2 tracking-widest">Variation B</p>
-                                <div class="text-gray-200 leading-relaxed">${data.variationB}</div>
-                            </div>
-                        </div>`;
-                }
-            } catch (err) {
-                document.getElementById('outputArea').innerHTML = `<p class="text-red-500 text-xs">Error connecting to server.</p>`;
-            } finally {
-                btn.innerHTML = 'Process with SmartBiz AI';
-                btn.disabled = false;
-            }
-        }
-
-        // 4. API BRIDGE
-        async function callGPTAPI(mode, prod, aud, tone) {
-            const API_URL = '/api/generate'; 
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ mode, product: prod, audience: aud, strategy: tone })
-            });
-            if (!response.ok) throw new Error("API Failed");
-            return await response.json();
-        }
-
-        // 5. MPESA ENGINE (PRECISION BUILD)
-        function parseMpesa(text) {
-            const chunks = text.split(/(?=[A-Z0-9]{10}\s+Confirmed)/i);
-            const uniqueTransactions = new Map();
-            let tin = 0, tout = 0;
-            let topExp = { name: "None", val: 0 };
-
-            chunks.forEach(msg => {
-                if (!msg.trim()) return;
-                const code = msg.match(/([A-Z0-9]{10})/)?.[1];
-                if (!code) return;
-
-                const amountRegex = /(?:Confirmed|received|deposited|sent|paid|reversed|bought).*?Ksh\s?([\d,]+\.\d{2})/i;
-                const amountMatch = msg.match(amountRegex);
-                const dateRegex = /on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at/i;
-                let date = msg.match(dateRegex)?.[1] || "N/A";
-                
-                if (code && amountMatch) {
-                    const amount = parseFloat(amountMatch[1].replace(/,/g, ''));
-                    let type = msg.match(/received|deposited|reversed/i) ? "IN" : "OUT";
-                    let party = "Other";
-
-                    if (msg.match(/received from/i)) party = msg.split(/received from/i)[1]?.split(/on/i)[0]?.trim();
-                    else if (msg.match(/sent to/i)) party = msg.split(/sent to/i)[1]?.split(/on/i)[0]?.trim();
-                    else if (msg.match(/paid to/i)) party = msg.split(/paid to/i)[1]?.split(/on/i)[0]?.trim();
-                    else if (msg.match(/fuliza/i)) party = "Fuliza Repayment";
-
-                    party = party.replace(/\d{10,12}/g, '').trim();
-
-                    if (!uniqueTransactions.has(code)) {
-                        uniqueTransactions.set(code, { code, date, party, type, amount });
-                        if (type === "IN") tin += amount; else {
-                            tout += amount;
-                            if (amount > topExp.val) topExp = { name: party, val: amount };
+                    if (currentMode === "M-Pesa Auditor") {
+                        const text = document.getElementById('mainInput').value;
+                        const regex = /([A-Z0-9]{10}).*?Confirmed.*?Ksh\s?([\d,]+\.?\d*).*?(?:sent to|paid to|received from|bought)\s+(.*?)\s+on\s+(\d{1,2}\/\d{1,2}\/\d{2,4})\s+at\s+(\d{1,2}:\d{2}\s?[AP]M)/gi;
+                        let match, html = "", total = 0;
+                        while ((match = regex.exec(text)) !== null) {
+                            const amt = parseFloat(match[2].replace(/,/g, ''));
+                            total += amt;
+                            html += `<div class="p-3 border-b border-gray-800 flex justify-between items-center hover:bg-white/5 transition"><div><span class="text-brand-neon font-mono text-xs block">${match[1]}</span><span class="text-gray-400 text-[10px]">${match[4]} ${match[5]}</span></div><div class="text-right"><span class="text-white text-xs block font-bold">${match[3].substr(0,15)}..</span><span class="text-green-400 font-mono text-sm">KES ${amt.toLocaleString()}</span></div></div>`;
                         }
+                        document.getElementById('outputArea').innerHTML = html || "<div class='text-center p-10 text-gray-500'>No valid M-Pesa messages found.</div>";
+                        document.getElementById('totalIn').innerText = `TOTAL: KES ${total.toLocaleString()}`;
+                        document.getElementById('summaryBadge').classList.remove('hidden-view');
+                    } 
+                    else if (currentMode === "Cash Flow") {
+                        const open = parseFloat(document.getElementById('cf-open').value) || 0;
+                        const income = parseFloat(document.getElementById('cf-in').value) || 0;
+                        const exp = parseFloat(document.getElementById('cf-out').value) || 0;
+                        const close = open + income - exp;
+                        document.getElementById('outputArea').innerHTML = `<div class="h-full flex flex-col justify-center items-center"><p class="text-gray-500 uppercase text-[10px] font-bold tracking-widest mb-2">CLOSING BALANCE</p><h2 class="text-5xl font-black text-brand-neon my-2">KES ${close.toLocaleString()}</h2></div>`;
+                        const ctx = document.getElementById('cashFlowChart');
+                        if (window.myChart) window.myChart.destroy();
+                        window.myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: { labels: ['In', 'Out', 'Net'], datasets: [{ label: 'KES', data: [income, exp, income-exp], backgroundColor: ['#4ade80', '#f87171', '#2DD4BF'] }] },
+                            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                        });
                     }
+                    else if (currentMode === "Quick Invoice") {
+                        const biz = document.getElementById('inv-biz').value;
+                        const client = document.getElementById('inv-client').value;
+                        const item = document.getElementById('item1').value;
+                        const price = document.getElementById('price1').value;
+                        const payMethod = document.getElementById('inv-pay-method').value;
+                        const payAcc = document.getElementById('inv-pay-acc').value;
+                        
+                        const now = new Date();
+                        const dateStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                        const invNum = `INV-${now.getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
+
+                        const vat = (price * 0.16).toFixed(2);
+                        const total = (parseFloat(price) + parseFloat(vat)).toFixed(2);
+                        
+                        document.getElementById('outputArea').innerHTML = `
+                            <div class="p-6 bg-white text-slate-800 rounded shadow-lg font-sans h-full overflow-y-auto relative">
+                                <div class="flex justify-between items-start border-b-2 border-gray-800 pb-4 mb-4">
+                                    <div><h2 class="text-xl font-black uppercase tracking-tight text-slate-900">${biz}</h2><p class="text-xs text-gray-500 mt-1">${invNum}</p></div>
+                                    <div class="text-right"><p class="text-xs font-bold text-gray-500">DATE</p><p class="text-xs font-bold text-slate-900">${dateStr}</p></div>
+                                </div>
+                                <div class="mb-6"><p class="text-[10px] font-bold text-gray-400 uppercase mb-1">Bill To:</p><p class="text-lg font-bold text-slate-900">${client}</p></div>
+                                <table class="w-full text-left text-sm mb-6">
+                                    <thead class="bg-gray-100"><tr class="uppercase text-[10px] text-gray-600"><th class="p-2">Description</th><th class="p-2 text-right">Amount</th></tr></thead>
+                                    <tbody><tr class="border-b border-gray-200"><td class="p-2 font-medium text-slate-900">${item}</td><td class="p-2 text-right text-slate-900">${parseInt(price).toLocaleString()}</td></tr></tbody>
+                                </table>
+                                <div class="flex justify-end mb-8"><div class="w-1/2 space-y-1 text-right text-slate-700"><div class="flex justify-between text-xs"><span>Subtotal:</span><span>${parseInt(price).toLocaleString()}</span></div><div class="flex justify-between text-xs"><span>VAT (16%):</span><span>${parseFloat(vat).toLocaleString()}</span></div><div class="flex justify-between text-lg font-black border-t-2 border-gray-800 pt-2 text-slate-900"><span>Total:</span><span>KES ${parseFloat(total).toLocaleString()}</span></div></div></div>
+                                <div class="bg-slate-100 p-4 rounded border-l-4 border-slate-800">
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase mb-1">PAYMENT DETAILS</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-bold text-slate-900 text-sm">${payMethod}</span>
+                                        <span class="font-black text-slate-900 text-lg bg-white px-2 py-1 rounded shadow-sm">${payAcc}</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-center text-[9px] text-gray-400">Generated by SmartBizSystems</div>
+                            </div>
+                        `;
+                    }
+
+                    // --- B. AI TOOLS (Server-Side) ---
+                    else {
+                        btn.innerHTML = '<i class="fa-solid fa-brain fa-pulse mr-2"></i> GENERATING AI CONTENT...';
+                        
+                        const product = document.getElementById('mainInput').value;
+                        const audience = document.getElementById('subInput').value || "General Audience";
+                        const strategy = activeTone;
+
+                        if (!product) {
+                            alert("Please enter a product or topic first.");
+                            throw new Error("Empty Input");
+                        }
+
+                        // Call the API
+                        const response = await fetch('/api/generate', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ 
+                                mode: currentMode,
+                                product: product,
+                                audience: audience,
+                                strategy: strategy,
+                                tone: activeTone
+                            })
+                        });
+
+                        const data = await response.json();
+
+                        if (!response.ok) {
+                            throw new Error(data.message || "AI Error");
+                        }
+
+                        // Render AI Output
+                        let outputHTML = '';
+                        if (data.variationA) {
+                            outputHTML += `
+                                <div class="p-4 border-l-4 border-brand-neon bg-white/5 rounded-r-lg mb-6 hover:bg-white/10 transition">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="text-[10px] text-brand-neon uppercase font-black tracking-widest">OPTION A: ${currentMode === 'Viral Hooks' ? 'TikTok Style' : 'Primary'}</p>
+                                        <button onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)" class="text-xs text-gray-500 hover:text-white" title="Copy"><i class="fa-solid fa-copy"></i></button>
+                                    </div>
+                                    <p class="text-gray-200 leading-relaxed text-sm whitespace-pre-wrap font-sans">${data.variationA}</p>
+                                </div>
+                            `;
+                        }
+                        if (data.variationB) {
+                            outputHTML += `
+                                <div class="p-4 border-l-4 border-brand-purple bg-white/5 rounded-r-lg mb-4 hover:bg-white/10 transition">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="text-[10px] text-brand-purple uppercase font-black tracking-widest">OPTION B: ${currentMode === 'Viral Hooks' ? 'IG/FB Style' : 'Alternative'}</p>
+                                        <button onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)" class="text-xs text-gray-500 hover:text-white" title="Copy"><i class="fa-solid fa-copy"></i></button>
+                                    </div>
+                                    <p class="text-gray-200 leading-relaxed text-sm whitespace-pre-wrap font-sans">${data.variationB}</p>
+                                </div>
+                            `;
+                        }
+                        
+                        document.getElementById('outputArea').innerHTML = outputHTML || "<div class='p-4 text-red-400'>No content returned.</div>";
+                    }
+
+                } catch (err) {
+                    console.error(err);
+                    if (err.message !== "Empty Input") {
+                        document.getElementById('outputArea').innerHTML = `
+                            <div class="h-full flex flex-col justify-center items-center text-center p-6">
+                                <i class="fa-solid fa-triangle-exclamation text-3xl text-red-500 mb-4"></i>
+                                <p class="text-sm font-bold text-white mb-2">Generation Failed</p>
+                                <p class="text-xs text-gray-400 max-w-xs">${err.message || "Check your internet connection or API Key."}</p>
+                            </div>
+                        `;
+                    }
+                } finally {
+                    btn.innerHTML = originalBtnText;
+                    btn.disabled = false;
                 }
-            });
-
-            globalData = Array.from(uniqueTransactions.values());
-
-            // Update UI
-            document.getElementById('totalIn').innerText = `IN: KES ${tin.toLocaleString()}`;
-            document.getElementById('totalOut').innerText = `OUT: KES ${tout.toLocaleString()}`;
-            document.getElementById('summaryBadge').classList.remove('hidden-view');
-            
-            // Health Stats
-            document.getElementById('healthSummary').classList.remove('hidden');
-            document.getElementById('flowRatio').innerText = tin > 0 ? Math.round((tout/tin)*100) + "% Burn" : "N/A";
-            document.getElementById('topExpense').innerText = topExp.name;
-
-            let rows = globalData.map(row => `
-                <tr class="border-b border-gray-800/50">
-                    <td class="py-3 text-brand-neon font-bold text-[10px]">${row.code}</td>
-                    <td class="py-3 text-gray-500 text-[10px]">${row.date}</td>
-                    <td class="py-3 truncate max-w-[100px] text-gray-300 text-[10px]">${row.party}</td>
-                    <td class="py-3 text-right ${row.type === 'IN' ? 'text-green-400' : 'text-gray-200'} font-bold text-[10px]">
-                        ${row.type === 'IN' ? '+' : '-'}${row.amount.toLocaleString()}
-                    </td>
-                </tr>`).join('');
-
-            document.getElementById('outputArea').innerHTML = `
-                <table class="w-full text-left mpesa-table">
-                    <thead class="text-[8px] text-gray-500 uppercase border-b border-gray-800">
-                        <tr><th class="pb-2">Ref</th><th class="pb-2">Date</th><th class="pb-2">Party</th><th class="pb-2 text-right">KES</th></tr>
-                    </thead>
-                    <tbody>${rows || '<tr><td colspan="4" class="py-10 text-center opacity-30">No data found.</td></tr>'}</tbody>
-                </table>`;
+            }, 100); // Immediate execution after UI update
         }
 
-        // 6. EXCEL EXPORT (WITH SUMMARY & METADATA)
+        // 5. EXPORT (UPDATED PDF WITH PAYMENT INFO)
         function handleExport() {
-            if (currentMode === "M-Pesa Auditor") {
-                if (!globalData.length) return alert("Nothing to export.");
+            const content = document.getElementById('outputArea').innerText;
+            if(!content || content.includes("Ready")) return alert("Nothing to export.");
+            
+            if(currentMode === "Quick Invoice") {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                
+                const biz = document.getElementById('inv-biz').value || "Company";
+                const phone = document.getElementById('inv-phone').value || "";
+                const client = document.getElementById('inv-client').value || "Client";
+                const item = document.getElementById('item1').value || "Service";
+                const price = parseFloat(document.getElementById('price1').value) || 0;
+                
+                const payMethod = document.getElementById('inv-pay-method').value;
+                const payAcc = document.getElementById('inv-pay-acc').value;
+                
+                const now = new Date();
+                const dateStr = now.toLocaleDateString();
+                const invNum = `INV-${now.getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
+                const vat = price * 0.16;
+                const total = price + vat;
 
-                let tin = 0, tout = 0;
-                const excelRows = globalData.map(d => {
-                    if (d.type === "IN") tin += d.amount; else tout += d.amount;
-                    return {
-                        "Ref Code": d.code,
-                        "Date": d.date,
-                        "Description": d.party,
-                        "Type": d.type,
-                        "Amount": d.type === "IN" ? d.amount : -d.amount
-                    };
-                });
+                // PDF DESIGN
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(22);
+                doc.text(biz, 15, 20); 
+                
+                doc.setFontSize(10);
+                doc.setFont("helvetica", "normal");
+                doc.text(phone, 15, 26);
+                
+                doc.setFontSize(16);
+                doc.text("INVOICE", 150, 20);
+                doc.setFontSize(10);
+                doc.text(`Date: ${dateStr}`, 150, 26);
+                doc.text(`No: ${invNum}`, 150, 31);
 
-                // Add Summaries
-                excelRows.push({}); 
-                excelRows.push({ "Description": "TOTAL MONEY IN", "Amount": tin });
-                excelRows.push({ "Description": "TOTAL MONEY OUT", "Amount": -tout });
-                excelRows.push({ "Description": "NET BALANCE", "Amount": tin - tout });
+                doc.setLineWidth(0.5);
+                doc.line(15, 36, 195, 36); 
 
-                // Add Metadata to Top
-                excelRows.unshift({}); 
-                excelRows.unshift({ "Description": "Generated on: " + new Date().toLocaleString() });
-                excelRows.unshift({ "Description": "SMARTBIZ FINANCIAL AUDIT REPORT" });
+                doc.text("BILL TO:", 15, 45);
+                doc.setFont("helvetica", "bold");
+                doc.text(client, 15, 51);
 
-                const ws = XLSX.utils.json_to_sheet(excelRows);
+                // Table
+                doc.setFillColor(240, 240, 240);
+                doc.rect(15, 60, 180, 8, "F");
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(9);
+                doc.text("DESCRIPTION", 18, 65);
+                doc.text("AMOUNT (KES)", 160, 65);
+
+                doc.setFont("helvetica", "normal");
+                doc.text(item, 18, 75);
+                doc.text(price.toLocaleString(), 160, 75);
+
+                doc.line(15, 80, 195, 80);
+
+                // Total
+                doc.text("Subtotal:", 130, 90);
+                doc.text(price.toLocaleString(), 160, 90);
+                doc.text("VAT (16%):", 130, 96);
+                doc.text(vat.toLocaleString(undefined, {minimumFractionDigits: 2}), 160, 96);
+
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.text("TOTAL:", 130, 108);
+                doc.text("KES " + total.toLocaleString(undefined, {minimumFractionDigits: 2}), 160, 108);
+
+                // Payment Box
+                doc.setDrawColor(0);
+                doc.rect(15, 120, 180, 25);
+                doc.setFontSize(10);
+                doc.text("PAYMENT DETAILS", 20, 128);
+                doc.setFont("helvetica", "normal");
+                doc.text(`${payMethod}:`, 20, 136);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(14);
+                doc.text(payAcc, 60, 136);
+
+                doc.setFontSize(8);
+                doc.setFont("helvetica", "italic");
+                doc.text("Thank you for your business!", 15, 155);
+
+                doc.save(`Invoice_${invNum}.pdf`);
+            } 
+            else if (currentMode === "M-Pesa Auditor") {
+                const ws = XLSX.utils.json_to_sheet(globalData);
                 const wb = XLSX.utils.book_new();
-                ws['!cols'] = [{wch:12}, {wch:12}, {wch:35}, {wch:8}, {wch:12}];
-                XLSX.utils.book_append_sheet(wb, ws, "Audit");
-                XLSX.writeFile(wb, `SmartBiz_Audit_${new Date().toISOString().slice(0,10)}.xlsx`);
-            } else {
-                const text = document.getElementById('outputArea').innerText;
-                const blob = new Blob([text], { type: 'text/plain' });
+                XLSX.utils.book_append_sheet(wb, ws, "Transactions");
+                XLSX.writeFile(wb, "SmartBiz_Audit.xlsx");
+            }
+            else {
+                const content = document.getElementById('outputArea').innerText;
+                const blob = new Blob([content], { type: 'text/plain' });
                 const a = document.createElement('a');
                 a.href = URL.createObjectURL(blob);
-                a.download = `SmartBiz_AI_Output.txt`;
+                a.download = "SmartBiz_Output.txt";
                 a.click();
             }
         }
-
-        function copyToClipboard() {
-            const text = document.getElementById('aiTextContent').innerText;
-            navigator.clipboard.writeText(text);
-            alert("Content Copied! ✅");
+        
+        function payWithPaystack(user) {
+             let handler = PaystackPop.setup({
+                key: PAYSTACK_PUBLIC_KEY, 
+                email: user.primaryEmailAddress.emailAddress,
+                amount: 2500 * 100, 
+                currency: 'KES',
+                ref: ''+Math.floor((Math.random() * 1000000000) + 1),
+                callback: function(response) {
+                    alert('Payment successful!');
+                    fetch('/api/upgrade-user', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userId: user.id, reference: response.reference })
+                    }).then(() => { window.location.reload(); });
+                },
+                onClose: function() { alert('Transaction cancelled.'); }
+            });
+            handler.openIframe();
+        }
+        
+        function formatAIResponse(data) {
+            if (typeof data === 'string') return data.replace(/\n/g, "<br>");
+            if (typeof data === 'object' && data !== null) {
+                return Object.values(data).map(val => String(val).replace(/\n/g, "<br>")).join('<br><br>');
+            }
+            return "No content generated.";
         }
     </script>
-    <!-- ============================================ -->
-    <!-- COOKIE CONSENT BANNER                        -->
-    <!-- ============================================ -->
+
+
+    <!-- COOKIE CONSENT BANNER -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-[#0B0F19]/95 backdrop-blur-xl border-t border-gray-800 p-6 z-[100] transition-transform duration-500 transform translate-y-full">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            <!-- Text -->
-            <div class="text-sm text-gray-300 text-center md:text-left">
-                <p class="leading-relaxed">
-                    <i class="fa-solid fa-cookie-bite text-brand-neon mr-2"></i>
-                    We use cookies to ensure SmartBiz works securely (Authentication & Payments). 
-                    By continuing, you agree to our <a href="privacy.html" class="text-brand-neon underline hover:text-white">Privacy Policy</a>.
-                </p>
-            </div>
-
-            <!-- Buttons -->
-            <div class="flex gap-4">
-                <button onclick="declineCookies()" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-700 rounded-lg transition-colors">
-                    Necessary Only
-                </button>
-                <button onclick="acceptCookies()" class="px-6 py-2 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover shadow-neon transition-all transform hover:scale-105">
-                    Accept All
-                </button>
-            </div>
+            <div class="text-sm text-gray-300 text-center md:text-left"><p class="leading-relaxed"><i class="fa-solid fa-cookie-bite text-brand-neon mr-2"></i> We use cookies to ensure SmartBiz works securely. By continuing, you agree to our <a href="privacy.html" class="text-brand-neon underline hover:text-white">Privacy Policy</a>.</p></div>
+            <div class="flex gap-4"><button onclick="declineCookies()" class="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-700 rounded-lg transition-colors">Necessary Only</button><button onclick="acceptCookies()" class="px-6 py-2 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover shadow-neon transition-all transform hover:scale-105">Accept All</button></div>
         </div>
     </div>
-
-    <!-- COOKIE LOGIC SCRIPT -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const banner = document.getElementById("cookie-banner");
-            
-            // Check if user has already decided
-            if (!localStorage.getItem("smartbiz_cookie_consent")) {
-                // Wait 2 seconds, then slide the banner up
-                setTimeout(() => {
-                    banner.classList.remove("translate-y-full");
-                }, 2000);
-            }
-        });
-
-        function acceptCookies() {
-            const banner = document.getElementById("cookie-banner");
-            // Save choice to browser memory
-            localStorage.setItem("smartbiz_cookie_consent", "accepted");
-            // Slide banner down to hide
-            banner.classList.add("translate-y-full");
-        }
-
-        function declineCookies() {
-            const banner = document.getElementById("cookie-banner");
-            // Save choice
-            localStorage.setItem("smartbiz_cookie_consent", "declined");
-            // Slide banner down
-            banner.classList.add("translate-y-full");
-        }
+        document.addEventListener("DOMContentLoaded", function() { const banner = document.getElementById("cookie-banner"); if (!localStorage.getItem("smartbiz_cookie_consent")) { setTimeout(() => { banner.classList.remove("translate-y-full"); }, 2000); } });
+        function acceptCookies() { const banner = document.getElementById("cookie-banner"); localStorage.setItem("smartbiz_cookie_consent", "accepted"); banner.classList.add("translate-y-full"); }
+        function declineCookies() { const banner = document.getElementById("cookie-banner"); localStorage.setItem("smartbiz_cookie_consent", "declined"); banner.classList.add("translate-y-full"); }
     </script>
-    <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
 </body>
 </html>
