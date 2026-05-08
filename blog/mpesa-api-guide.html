@@ -17,26 +17,107 @@
 
     <!-- SCHEMA MARKUP -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "M-Pesa API Integration in Kenya 2026: The Ultimate Automation Guide",
-  "description": "Learn how to integrate the M-Pesa Daraja API and STK Push to automate payments for your Kenyan SME. Reduce abandoned carts and eliminate manual reconciliation.",
-  "author": {
-    "@type": "Organization",
-    "name": "SmartBiz Systems Kenya"
-  },
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is M-Pesa STK Push?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "STK Push (Lipa na M-Pesa Online) is a technology that allows a merchant to initiate a payment request directly to a customer's phone, triggering an M-Pesa PIN pop-up for instant authorization."
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "The Ultimate M-Pesa API Integration Guide for Kenyan Developers (2026)",
+    "description": "A comprehensive technical guide on integrating Daraja 2.0 APIs, including STK Push, C2B, and B2C, into your website or mobile app.",
+    "image": "https://smartbizsystems.co.ke/images/mpesa-api-integration-guide.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "SmartBiz Systems Kenya"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SmartBiz Systems Kenya",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://smartbizsystems.co.ke/logo.png"
       }
-    }
-  ]
-}
+    },
+    "datePublished": "2026-05-08",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://smartbizsystems.co.ke/blog/mpesa-api-guide"
+    },
+    "proficiencyLevel": "Intermediate"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Integrate M-Pesa STK Push (Lipa Na M-Pesa Online)",
+    "description": "Follow these steps to trigger a secure payment request directly to your customer's phone.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Register on Daraja Portal",
+        "text": "Create a developer account on the Safaricom Daraja portal and create a new App to get your Consumer Key and Consumer Secret."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Generate OAuth Access Token",
+        "text": "Use your credentials to make an authenticated request to the Safaricom OAuth endpoint to receive a time-bound access token."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Configure Callback URL",
+        "text": "Setup a publicly accessible HTTPS endpoint on your server to receive the payment confirmation JSON from Safaricom."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Initiate STK Push Request",
+        "text": "Send a POST request to the LNMO process request endpoint with the customer's phone number, amount, and your shortcode."
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between M-Pesa C2B and STK Push?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "C2B requires the customer to manually enter a Paybill/Till number, while STK Push (Lipa Na M-Pesa Online) automatically triggers a PIN prompt on the customer's phone for a frictionless checkout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get an M-Pesa API production passkey?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After successful sandbox testing, you must go live on the Daraja portal by uploading your business head's ID and the company's certificate of incorporation to receive production credentials."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://smartbizsystems.co.ke"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Dev Resources",
+        "item": "https://smartbizsystems.co.ke/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "M-Pesa API Guide",
+        "item": "https://smartbizsystems.co.ke/blog/mpesa-api-guide"
+      }
+    ]
+  }
+]
 </script>
     
     <!-- Google Fonts & Icons -->
