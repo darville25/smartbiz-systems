@@ -1,35 +1,18 @@
-# Block OpenAI (ChatGPT)
+# Allow AI bots to crawl so they can see your 'index' tags
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
-# Block Google AI (Bard/Gemini training data)
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
-# Block Anthropic (Claude)
-User-agent: Anthropic-ai
-Disallow: /
-User-agent: ClaudeBot
-Disallow: /
-
-# Block Common Scrapers (Common Crawl used by many AIs)
-User-agent: CCBot
-Disallow: /
-
-# Block SEO Tools that eat bandwidth (Optional)
+# Keep blocking heavy SEO scrapers that don't help your ranking
 User-agent: AhrefsBot
 Disallow: /
 User-agent: SemrushBot
 Disallow: /
-User-agent: MJ12bot
-Disallow: /
 
-# Allow Google Search (So you still rank for SEO)
+# Standard Google Search
 User-agent: Googlebot
-Allow: /
-
-# Allow everyone else
-User-agent: *
 Allow: /
 
 Sitemap: https://smartbizsystems.co.ke/sitemap.xml
