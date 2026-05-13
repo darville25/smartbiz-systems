@@ -4,7 +4,12 @@
   "redirects": [
     {
       "source": "/web-design-packages.html",
-      "destination": "/website-design-services-in-kenya.html",
+      "destination": "/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
       "permanent": true
     }
   ]
