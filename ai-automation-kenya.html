@@ -399,6 +399,22 @@
     </div>
   </div>
 </nav>
+!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+    </script>
 
 <!-- ═══════════════════════════════════════════════════
      HERO SECTION
@@ -1077,22 +1093,7 @@
   });
 </script>
 
-!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            menu.classList.toggle('hidden');
-            
-            if (menu.classList.contains('hidden')) {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            }
-        }
-    </script>
+
 
 <!--
 ================================================================
