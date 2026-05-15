@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════
+       SEO: PAGE TITLE (57 chars)
+  ════════════════════════════════════════════ -->
+  <title>AI Automation Kenya | SmartBizSystems</title>
+
+  <!-- ═══════════════════════════════════════════
+       META DESCRIPTION (154 chars)
+  ════════════════════════════════════════════ -->
+  <meta name="description" content="Leading AI automation agency in Kenya. Custom workflows, WhatsApp bots & CRM integration for SMEs, SACCOs & clinics. Save 40+ hrs/month. Get a free audit." />
+
+  <!-- Canonical & Robots -->
+  <link rel="canonical" href="https://www.smartbizsystems.co.ke/ai-automation-kenya.html" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH META TAGS
+  ════════════════════════════════════════════ -->
+  <meta property="og:title"       content="AI Automation Kenya | SmartBizSystems" />
+  <meta property="og:description" content="Kenya's #1 AI automation agency. We build custom workflows, WhatsApp bots & CRM systems for SMEs, SACCOs, schools & clinics. Free audit available." />
+  <meta property="og:image"       content="https://www.smartbizsystems.co.ke/images/ai-automation-kenya-og.webp" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.smartbizsystems.co.ke/ai-automation-kenya.html" />
+  <meta property="og:site_name"   content="SmartBizSystems" />
+  <meta property="og:locale"      content="en_KE" />
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER CARD TAGS
+  ════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="AI Automation Kenya | SmartBizSystems" />
+  <meta name="twitter:description" content="Custom AI automation for Kenyan SMEs. WhatsApp bots, CRM flows & M-Pesa integration. Save 40+ hrs/month. Free audit." />
+  <meta name="twitter:image"       content="https://www.smartbizsystems.co.ke/images/ai-automation-kenya-og.webp" />
+
+  <!-- ═══════════════════════════════════════════
+       FONTS & ICONS
+  ════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- ═══════════════════════════════════════════
+       TAILWIND CDN
+  ════════════════════════════════════════════ -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ═══════════════════════════════════════════
+       BRAND CONFIG — matches index.html exactly
+  ════════════════════════════════════════════ -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark:      '#0B0F19',
+              card:      '#111827',
+              neon:      '#2DD4BF',
+              neonhover: '#14B8A6',
+              text:      '#F3F4F6',
+              muted:     '#9CA3AF'
+            }
+          },
+          boxShadow: {
+            'neon': '0 0 20px rgba(45, 212, 191, 0.3)',
+            'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       CUSTOM STYLES
+  ════════════════════════════════════════════ -->
+  <style>
+    body {
+      background-color: #0B0F19;
+      color: #F3F4F6;
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #2DD4BF, #60A5FA);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .bg-grid {
+      background-image:
+        linear-gradient(to right,  rgba(45, 212, 191, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .card-border {
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .card-border:hover {
+      border-color: rgba(45, 212, 191, 0.3);
+    }
+    .neon-border {
+      border: 1px solid rgba(45, 212, 191, 0.25);
+    }
+    .workflow-step {
+      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+    }
+    .workflow-step:hover {
+      border-color: rgba(45,212,191,0.2);
+    }
+    /* FAQ accordion */
+    .faq-answer {
+      display: none;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-icon {
+      transition: transform 0.2s ease;
+    }
+    /* Smooth transitions */
+    .transition-card {
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .transition-card:hover {
+      transform: translateY(-4px);
+    }
+    /* Animated dot */
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(1.4); }
+    }
+    .pulse-dot {
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    /* Metric chip */
+    .metric-chip {
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      color: #2DD4BF;
+    }
+    /* Top bar gradient line */
+    .top-bar-line {
+      background: linear-gradient(to right, #2DD4BF, #60A5FA, #2DD4BF);
+      height: 2px;
+    }
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0B0F19; }
+    ::-webkit-scrollbar-thumb { background: #2DD4BF; border-radius: 3px; }
+  </style>
+
+  <!-- ═══════════════════════════════════════════
+       FAQ SCHEMA — JSON-LD
+  ════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AI automation and how can it help my Kenyan business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI automation uses intelligent software to handle repetitive business tasks — customer follow-ups, invoice reminders, lead nurturing, and reporting. For Kenyan SMEs, this means less time on manual work and more time on growth. SmartBizSystems builds custom automation workflows tailored to your industry, tools, and team size."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does AI automation cost for a small business in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SmartBizSystems automation packages start from KES 30,000 as a one-time setup fee, with monthly maintenance plans from KES 5,000. We recommend starting with a free business audit to identify the highest-impact automation opportunities before any financial commitment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you integrate AI automation with M-Pesa and WhatsApp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. SmartBizSystems specialises in integrating AI workflows with the Meta WhatsApp Business API and M-Pesa's Daraja API. This enables automated payment confirmations, WhatsApp follow-up messages after transactions, and full customer journeys triggered by M-Pesa payment events."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which industries in Kenya benefit most from AI automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI automation delivers strong results for SMEs, insurance companies, SACCOs, schools, ecommerce stores, real estate firms, clinics, and law firms. Any business handling repetitive communications or sales pipelines can reduce costs and improve efficiency through automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to set up an AI automation system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most SmartBizSystems automation projects are delivered within 2 to 4 weeks depending on complexity. Simple WhatsApp or CRM setups can go live within 7 days. Our process covers discovery, workflow design, build, testing, and launch — with team training included."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need technical skills to manage my automation system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No technical background is required. We build on no-code and low-code platforms like Make and n8n with visual dashboards that are easy to monitor. We provide full training and ongoing support so your team feels confident managing the system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools does SmartBizSystems use to build automation workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our core stack includes Make, n8n, HubSpot, Brevo, OpenAI APIs, Meta WhatsApp Business API, and M-Pesa's Daraja API. Tool selection is always based on your existing infrastructure and business needs — we never over-engineer or add unnecessary cost."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- LOCAL BUSINESS SCHEMA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SmartBizSystems",
+    "description": "AI automation agency in Nairobi, Kenya helping SMEs, SACCOs, schools, and enterprises automate workflows, CRM, and WhatsApp communications.",
+    "url": "https://www.smartbizsystems.co.ke",
+    "telephone": "+254734230445",
+    "email": "info@smartbizsystems.co.ke",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Westlands",
+      "addressLocality": "Nairobi",
+      "addressCountry": "KE"
+    },
+    "areaServed": ["Kenya", "East Africa"],
+    "serviceType": "AI Automation, Business Process Automation, CRM Integration, WhatsApp Automation"
+  }
+  </script>
+
+</head>
+<body class="font-sans antialiased">
+
+<!-- ═══════════════════════════════════════════════════
+     TOP GRADIENT LINE
+════════════════════════════════════════════════════ -->
+<div class="top-bar-line w-full"></div>
+
+<!-- ================================================================= -->
+<!-- BLOG POST NAVIGATION (With ../ to go back to root)                -->
+<!-- ================================================================= -->
+<nav class="fixed w-full z-50 glass-nav transition-all duration-300 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- LOGO -->
+      <a href="../" class="flex-shrink-0 flex items-center cursor-pointer group">
+        <span class="text-2xl font-bold tracking-tight text-white group-hover:text-brand-neon transition">
+          SmartBiz<span class="text-brand-neon group-hover:text-white transition">Systems</span>
+        </span>
+      </a>
+
+      <!-- DESKTOP MENU -->
+      <div class="hidden lg:flex space-x-6 items-center">
+        
+        <!-- Dropdown: Solutions -->
+        <div class="relative group">
+          <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+            Solutions
+            <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+          </button>
+          <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+            <div class="py-2">
+              <a href="../services" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-layer-group w-5 text-brand-neon"></i> All Services
+              </a>
+              <a href="../automation" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-robot w-5 text-brand-neon"></i> Automation
+              </a>
+              <a href="../process" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-list-check w-5 text-brand-neon"></i> Our Process
+              </a>
+              <a href="../pricing" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-list-check w-5 text-brand-neon"></i> Pricing
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Link: Results -->
+        <a href="../results" class="text-sm font-medium text-gray-300 hover:text-brand-neon transition-colors">Results</a>
+
+        <!-- Dropdown: Company -->
+        <div class="relative group">
+          <button class="flex items-center text-sm font-medium text-gray-300 hover:text-white transition-colors focus:outline-none py-2">
+            Company
+            <i class="fa-solid fa-chevron-down ml-2 text-xs opacity-50 group-hover:opacity-100 transition"></i>
+          </button>
+          <div class="absolute left-0 mt-0 w-56 bg-[#0B0F19] border border-gray-800 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-2">
+            <div class="py-2">
+              <a href="../about" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-building w-5 text-purple-400"></i> About Us
+              </a>
+              <a href="../careers" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-briefcase w-5 text-purple-400"></i> Careers
+              </a>
+              <a href="../blog" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-newspaper w-5 text-purple-400"></i> Blog
+              </a>
+              <a href="../faq" class="block px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-800 transition">
+                <i class="fa-solid fa-circle-question w-5 text-purple-400"></i> FAQ
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SME Marketing Playbook (Desktop Style) -->
+        <a href="../digital-marketing-ebook-kenya" class="group relative inline-flex items-center px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-lg border border-gray-700 hover:border-brand-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all">
+          <i class="fa-solid fa-book-open mr-2 text-brand-purple group-hover:animate-pulse"></i> SME Playbook
+        </a>
+
+        <!-- CTA -->
+        <a href="../free-audit" class="px-5 py-2.5 text-sm font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">
+          Get a Free Audit
+        </a>
+      </div>
+
+      <!-- MOBILE MENU BUTTON -->
+      <div class="lg:hidden flex items-center">
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none p-2 border border-gray-800 rounded-lg">
+          <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU DROPDOWN -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-[#0B0F19] border-t border-gray-800 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto pb-20">
+    <div class="px-4 pt-4 space-y-1">
+      <p class="px-3 pt-4 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Solutions</p>
+      <a href="../services" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-layer-group w-6 text-brand-neon"></i> All Services
+      </a>
+      <a href="../automation" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-robot w-6 text-brand-neon"></i> Automation
+      </a>
+      <a href="../process" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-list-check w-6 text-brand-neon"></i> Our Process
+      </a>
+
+      <div class="h-px bg-gray-800 my-2"></div>
+
+      <p class="px-3 pt-2 pb-2 text-xs font-bold text-gray-500 uppercase tracking-wider">Company</p>
+      <a href="../results" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-trophy w-6 text-purple-400"></i> Results
+      </a>
+      <a href="../pricing" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-trophy w-6 text-purple-400"></i> Pricing
+      </a>
+      
+      <a href="../about" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-building w-6 text-purple-400"></i> About Us
+      </a>
+      <a href="../blog" class="block px-3 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition">
+        <i class="fa-solid fa-newspaper w-6 text-purple-400"></i> Blog
+      </a>
+
+      <div class="h-px bg-gray-800 my-4"></div>
+
+      <!-- Mobile SME Playbook Link -->
+      <a href="../digital-marketing-ebook-kenya" class="block w-full text-center px-3 py-3 rounded-lg text-base font-bold text-white bg-gray-800 border border-gray-700 mb-3 hover:bg-gray-700 transition-all">
+        <i class="fa-solid fa-book-open mr-2 text-brand-purple"></i> SME Marketing Playbook
+      </a>
+
+      <!-- Mobile CTA -->
+      <a href="../free-audit" class="block w-full text-center px-5 py-3 text-base font-bold text-brand-dark bg-brand-neon rounded-lg hover:bg-brand-neonhover transition">
+        Get a Free Audit
+      </a>
+      <div class="pb-10"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════════ -->
+<header class="relative bg-brand-dark bg-grid overflow-hidden" role="banner">
+
+  <!-- Glow blob -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full"
+       style="background: radial-gradient(ellipse, rgba(45,212,191,0.08) 0%, transparent 70%);"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 neon-border rounded-full px-4 py-1.5 mb-8"
+         style="background: rgba(45,212,191,0.06);">
+      <span class="pulse-dot w-2 h-2 rounded-full bg-brand-neon inline-block"></span>
+      <span class="text-brand-neon text-xs font-bold tracking-widest uppercase">Kenya's #1 AI Automation Agency</span>
+    </div>
+
+    <!-- H1 -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+      Solutions Engineered for<br />
+      <span class="text-gradient">Maximum ROI.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-brand-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+      We don't sell "packages." We build custom AI automation ecosystems — from intelligent WhatsApp flows to full CRM integration — giving Kenyan businesses the tools to scale without scaling their headcount.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%27m%20interested%20in%20AI%20automation%20for%20my%20business"
+         class="inline-flex items-center gap-3 bg-brand-neon hover:bg-brand-neonhover text-brand-dark font-bold text-base px-8 py-4 rounded-xl transition-all shadow-neon w-full sm:w-auto justify-center"
+         aria-label="Talk to SmartBizSystems on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        Talk on WhatsApp
+      </a>
+      <a href="/free-audit.html"
+         class="inline-flex items-center gap-3 bg-transparent border border-white/15 hover:border-brand-neon/50 text-brand-text font-semibold text-base px-8 py-4 rounded-xl transition-all w-full sm:w-auto justify-center"
+         aria-label="Request a free business audit">
+        Request Free Audit <i class="fa-solid fa-arrow-right text-brand-neon text-sm"></i>
+      </a>
+    </div>
+
+    <!-- Trust Stats Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden max-w-3xl mx-auto border border-white/06"
+         role="list" aria-label="Key statistics">
+      <div class="bg-brand-card px-6 py-5 text-center" role="listitem">
+        <p class="text-3xl font-extrabold text-brand-neon">34+</p>
+        <p class="text-brand-muted text-xs font-semibold uppercase tracking-wider mt-1">Brands Scaled</p>
+      </div>
+      <div class="bg-brand-card px-6 py-5 text-center" role="listitem">
+        <p class="text-3xl font-extrabold text-brand-neon">40hrs</p>
+        <p class="text-brand-muted text-xs font-semibold uppercase tracking-wider mt-1">Saved / Month</p>
+      </div>
+      <div class="bg-brand-card px-6 py-5 text-center" role="listitem">
+        <p class="text-3xl font-extrabold text-brand-neon">+30%</p>
+        <p class="text-brand-muted text-xs font-semibold uppercase tracking-wider mt-1">Revenue Lift</p>
+      </div>
+      <div class="bg-brand-card px-6 py-5 text-center" role="listitem">
+        <p class="text-3xl font-extrabold text-brand-neon">7 days</p>
+        <p class="text-brand-muted text-xs font-semibold uppercase tracking-wider mt-1">To Go Live</p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     WHAT WE BUILD — ABOVE THE FOLD EXPLAINER
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-brand-dark" aria-labelledby="explainer-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- CRM Workflow Visual Card -->
+      <div class="bg-brand-card rounded-2xl overflow-hidden card-border shadow-card" aria-hidden="true">
+        <!-- Titlebar -->
+        <div class="flex items-center justify-between px-4 py-3 border-b border-white/06"
+             style="background: rgba(255,255,255,0.02);">
+          <div class="flex gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-red-400"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          </div>
+          <span class="text-brand-muted text-xs font-mono">CRM Workflow — Live</span>
+          <span class="w-16"></span>
+        </div>
+        <!-- Steps -->
+        <div class="p-5 space-y-2">
+          <div class="workflow-step flex items-center gap-3 rounded-xl p-3.5 transition-card">
+            <span class="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
+                  style="background: rgba(37,211,102,0.12);">🟢</span>
+            <div>
+              <p class="text-sm font-bold text-brand-text">Lead Inquiry (WhatsApp)</p>
+              <p class="text-xs font-semibold" style="color:#2DD4BF;">Status: Auto-Replied</p>
+            </div>
+          </div>
+          <div class="text-center text-brand-muted text-sm">↓</div>
+          <div class="workflow-step flex items-center gap-3 rounded-xl p-3.5 transition-card">
+            <span class="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
+                  style="background: rgba(96,165,250,0.12);">📧</span>
+            <div>
+              <p class="text-sm font-bold text-brand-text">Send Brochure PDF</p>
+              <p class="text-xs font-semibold" style="color:#60A5FA;">Status: Sent via Email</p>
+            </div>
+          </div>
+          <div class="text-center text-brand-muted text-sm">↓</div>
+          <div class="workflow-step flex items-center gap-3 rounded-xl p-3.5 transition-card">
+            <span class="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
+                  style="background: rgba(167,139,250,0.12);">📅</span>
+            <div>
+              <p class="text-sm font-bold text-brand-text">Schedule Follow-up</p>
+              <p class="text-xs font-semibold" style="color:#a78bfa;">Status: Booked in Calendar</p>
+            </div>
+          </div>
+          <div class="text-center text-brand-muted text-sm">↓</div>
+          <div class="workflow-step flex items-center gap-3 rounded-xl p-3.5 transition-card">
+            <span class="w-9 h-9 rounded-lg flex items-center justify-center text-base flex-shrink-0"
+                  style="background: rgba(45,212,191,0.12);">💳</span>
+            <div>
+              <p class="text-sm font-bold text-brand-text">M-Pesa Payment Received</p>
+              <p class="text-xs font-semibold" style="color:#FBBF24;">Status: Receipt Sent. Onboarding Triggered.</p>
+            </div>
+          </div>
+          <div class="mt-4 rounded-xl p-3 text-center"
+               style="background: rgba(45,212,191,0.05); border:1px solid rgba(45,212,191,0.15);">
+            <p class="text-xs text-brand-muted">⚡ This entire flow runs <strong class="text-brand-text">automatically — 24/7</strong>, with zero manual input required.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explainer Text -->
+      <div>
+        <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">What We Build</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text leading-tight tracking-tight mb-5" id="explainer-title">
+          AI-Powered Workflows Built<br />for the Kenyan Market
+        </h2>
+        <p class="text-brand-muted text-base leading-relaxed mb-4">
+          Most Kenyan businesses are losing revenue to slow response times, missed follow-ups, and hours of manual data entry. In a market where customers expect instant answers, operating manually is a competitive disadvantage.
+        </p>
+        <p class="text-brand-muted text-base leading-relaxed mb-6">
+          SmartBizSystems builds <strong class="text-brand-text">intelligent automation systems</strong> that connect your tools — WhatsApp, CRM, email, M-Pesa — into one self-running engine that works while you sleep.
+        </p>
+        <ul class="space-y-3 mb-8" aria-label="Key capabilities">
+          <li class="flex items-start gap-3 text-sm text-brand-muted">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style="background:rgba(45,212,191,0.12);color:#2DD4BF;">✓</span>
+            Automated lead capture, scoring, and personalised follow-up
+          </li>
+          <li class="flex items-start gap-3 text-sm text-brand-muted">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style="background:rgba(45,212,191,0.12);color:#2DD4BF;">✓</span>
+            WhatsApp bots that qualify and convert customers in real time
+          </li>
+          <li class="flex items-start gap-3 text-sm text-brand-muted">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style="background:rgba(45,212,191,0.12);color:#2DD4BF;">✓</span>
+            CRM automation synced with your full sales pipeline
+          </li>
+          <li class="flex items-start gap-3 text-sm text-brand-muted">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style="background:rgba(45,212,191,0.12);color:#2DD4BF;">✓</span>
+            M-Pesa triggers — receipts, access grants, and onboarding flows
+          </li>
+          <li class="flex items-start gap-3 text-sm text-brand-muted">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style="background:rgba(45,212,191,0.12);color:#2DD4BF;">✓</span>
+            AI customer support that handles FAQs around the clock
+          </li>
+          <li class="flex items-start gap-3 text-sm text-brand-muted">
+            <span class="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-xs font-bold" style="background:rgba(45,212,191,0.12);color:#2DD4BF;">✓</span>
+            Automated reports, alerts, and internal team notifications
+          </li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%20want%20to%20automate%20my%20business"
+           class="inline-flex items-center gap-2 text-brand-neon font-semibold text-sm hover:underline">
+          Automate My Business <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SERVICE BENEFITS SECTION
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-brand-card border-t border-white/05" aria-labelledby="benefits-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">Why Automate</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight mb-4" id="benefits-title">
+        The Business Case Is Clear
+      </h2>
+      <p class="text-brand-muted text-base max-w-xl mx-auto leading-relaxed">
+        Here is what SmartBizSystems clients gain within the first 90 days of going live.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Card -->
+      <article class="bg-brand-dark rounded-2xl p-6 card-border transition-card shadow-card relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5"
+             style="background: linear-gradient(to right, #2DD4BF, transparent);"></div>
+        <div class="text-3xl mb-4">⏱️</div>
+        <h3 class="text-base font-bold text-brand-text mb-2">Save 40+ Hours Every Month</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Automating follow-ups, data entry, and customer communication frees your team to focus on high-value work — strategy, sales, and service quality.</p>
+        <span class="metric-chip text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1">
+          <i class="fa-solid fa-arrow-trend-up text-xs"></i> Avg. 40hrs/month saved per client
+        </span>
+      </article>
+
+      <article class="bg-brand-dark rounded-2xl p-6 card-border transition-card shadow-card relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5"
+             style="background: linear-gradient(to right, #2DD4BF, transparent);"></div>
+        <div class="text-3xl mb-4">🚀</div>
+        <h3 class="text-base font-bold text-brand-text mb-2">Faster Sales Cycles</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Automated lead nurturing ensures no prospect falls through the cracks. Personalised WhatsApp sequences keep your brand top-of-mind without manual effort.</p>
+        <span class="metric-chip text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1">
+          <i class="fa-solid fa-arrow-trend-up text-xs"></i> 2× faster average response time
+        </span>
+      </article>
+
+      <article class="bg-brand-dark rounded-2xl p-6 card-border transition-card shadow-card relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5"
+             style="background: linear-gradient(to right, #2DD4BF, transparent);"></div>
+        <div class="text-3xl mb-4">💬</div>
+        <h3 class="text-base font-bold text-brand-text mb-2">24/7 Customer Support — No Salary</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">AI-powered WhatsApp bots handle FAQs, bookings, quote requests, and order status queries around the clock — even when your team is offline.</p>
+        <span class="metric-chip text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1">
+          <i class="fa-solid fa-arrow-trend-down text-xs"></i> Up to 60% support ticket reduction
+        </span>
+      </article>
+
+      <article class="bg-brand-dark rounded-2xl p-6 card-border transition-card shadow-card relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5"
+             style="background: linear-gradient(to right, #2DD4BF, transparent);"></div>
+        <div class="text-3xl mb-4">📊</div>
+        <h3 class="text-base font-bold text-brand-text mb-2">CRM That Updates Itself</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Every call, payment, message, and form submission is automatically logged. No spreadsheets. No missing data. No manual updates — ever.</p>
+        <span class="metric-chip text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1">
+          <i class="fa-solid fa-circle-check text-xs"></i> 100% CRM data accuracy
+        </span>
+      </article>
+
+      <article class="bg-brand-dark rounded-2xl p-6 card-border transition-card shadow-card relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5"
+             style="background: linear-gradient(to right, #2DD4BF, transparent);"></div>
+        <div class="text-3xl mb-4">💳</div>
+        <h3 class="text-base font-bold text-brand-text mb-2">M-Pesa Integration That Works</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Trigger automated receipts, access grants, and onboarding sequences the moment a customer pays via M-Pesa — zero manual intervention required.</p>
+        <span class="metric-chip text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1">
+          <i class="fa-solid fa-arrow-trend-down text-xs"></i> Payment follow-up time cut by 95%
+        </span>
+      </article>
+
+      <article class="bg-brand-dark rounded-2xl p-6 card-border transition-card shadow-card relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-0.5"
+             style="background: linear-gradient(to right, #2DD4BF, transparent);"></div>
+        <div class="text-3xl mb-4">📈</div>
+        <h3 class="text-base font-bold text-brand-text mb-2">Smarter Lead Generation</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">AI workflows qualify inbound leads, assign them to the right team member, and trigger personalised outreach based on their behaviour and interests.</p>
+        <span class="metric-chip text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1">
+          <i class="fa-solid fa-arrow-trend-up text-xs"></i> 30% avg. conversion rate increase
+        </span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INDUSTRIES SECTION
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-brand-dark" aria-labelledby="industries-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">Industries We Serve</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight mb-4" id="industries-title">
+        Built for Your Industry.<br class="hidden md:block" /> Ready for Kenya.
+      </h2>
+      <p class="text-brand-muted text-base max-w-xl mx-auto leading-relaxed">
+        Every workflow we build is tailored to your specific industry, customers, and processes — not a generic template.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🏪</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">SMEs & Startups</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Automate lead follow-up, invoice reminders, and customer onboarding. Compete with bigger brands without scaling your salary bill.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🛡️</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">Insurance Companies</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Streamline policy renewals, claims intake, and premium reminders. AI chatbots handle initial queries, freeing agents for complex cases.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🏦</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">SACCOs</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Automate member updates, loan workflows, and statement distribution. Reduce back-office workload while improving member satisfaction.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🎓</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">Schools & Colleges</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Handle fee reminders, admission enquiries, exam notifications, and parent communication automatically across WhatsApp, SMS, and email.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🛒</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">Ecommerce Businesses</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Automate order confirmations, abandoned cart recovery, shipping updates, and post-purchase review requests to increase repeat purchases.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🏘️</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">Real Estate Firms</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Qualify property enquiries via WhatsApp bots, automate site visit scheduling, and keep buyers engaged throughout the full sales cycle.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">🏥</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">Clinics & Hospitals</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Automate appointment booking, reminders, prescription refill notifications, and patient follow-up. Reduce no-shows significantly.</p>
+      </article>
+
+      <article class="bg-brand-card rounded-2xl p-5 card-border transition-card shadow-card">
+        <div class="text-3xl mb-3">⚖️</div>
+        <h3 class="text-sm font-bold text-brand-text mb-2">Law Firms</h3>
+        <p class="text-brand-muted text-xs leading-relaxed">Streamline client intake, document requests, court date reminders, and billing communications. More time on cases, less on admin.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TOOLS & PLATFORMS SECTION
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-brand-card border-t border-white/05" aria-labelledby="tools-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+      <div>
+        <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">Technology Stack</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight mb-5" id="tools-title">
+          Enterprise Tools.<br />SME Pricing.
+        </h2>
+        <p class="text-brand-muted text-base leading-relaxed mb-6">
+          We use the same platforms trusted by global brands — configured and optimised for your Kenyan business context and budget. Our tool selection is always based on your existing infrastructure; you never pay for complexity you don't need.
+        </p>
+        <p class="text-brand-muted text-base leading-relaxed">
+          Whether it's connecting your WhatsApp to a HubSpot CRM via Make, building an n8n workflow that fires on every M-Pesa payment, or using OpenAI to power intelligent chat responses — we've built it before, and we know what works in the East African market.
+        </p>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap gap-3" role="list" aria-label="Tools and platforms">
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> Make (Integromat)
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> n8n Workflow Engine
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> HubSpot CRM
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> Brevo (Email & SMS)
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> OpenAI API
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> WhatsApp Business API
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> M-Pesa Daraja API
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> Airtable & Notion
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> Google Workspace
+          </span>
+          <span class="flex items-center gap-2 bg-brand-dark border border-white/08 hover:border-brand-neon/40 text-brand-muted hover:text-brand-neon text-sm font-semibold px-4 py-2.5 rounded-full transition-all cursor-default" role="listitem">
+            <span class="w-2 h-2 rounded-full bg-brand-neon opacity-60"></span> Zapier (legacy support)
+          </span>
+        </div>
+        <p class="text-brand-muted text-xs mt-5 leading-relaxed">
+          * Tool recommendations are always based on your existing setup and budget. You never pay for tools you don't need.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     DIFFERENTIATION SECTION
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-brand-dark" aria-labelledby="diff-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">Why SmartBizSystems</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight mb-4" id="diff-title">
+        We're Different. Here's Proof.
+      </h2>
+      <p class="text-brand-muted text-base max-w-xl mx-auto leading-relaxed">
+        Any agency can sell you software. We build systems that run your business — backed by 34+ real Kenyan and East African client results.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="bg-brand-card rounded-2xl p-7 card-border transition-card shadow-card flex gap-5 items-start">
+        <span class="text-4xl font-black text-brand-neon opacity-20 leading-none font-mono flex-shrink-0">01</span>
+        <div>
+          <h3 class="text-base font-bold text-brand-text mb-2">Affordable SME Automation Partner</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">We price for Kenyan business realities. Packages start at KES 30,000 — no bloated retainers, no surprise costs. You get enterprise-grade automation at SME-friendly prices.</p>
+        </div>
+      </div>
+
+      <div class="bg-brand-card rounded-2xl p-7 card-border transition-card shadow-card flex gap-5 items-start">
+        <span class="text-4xl font-black text-brand-neon opacity-20 leading-none font-mono flex-shrink-0">02</span>
+        <div>
+          <h3 class="text-base font-bold text-brand-text mb-2">AI + Marketing Hybrid Agency</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">We don't just automate — we automate the right things. Our digital marketing background means every workflow is designed to generate leads, nurture customers, and drive measurable revenue growth.</p>
+        </div>
+      </div>
+
+      <div class="bg-brand-card rounded-2xl p-7 card-border transition-card shadow-card flex gap-5 items-start">
+        <span class="text-4xl font-black text-brand-neon opacity-20 leading-none font-mono flex-shrink-0">03</span>
+        <div>
+          <h3 class="text-base font-bold text-brand-text mb-2">Education-First Approach</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">We train your team on every system we build. You'll never be dependent on us for small changes. Our goal is to make you self-sufficient — while remaining available for complex upgrades.</p>
+        </div>
+      </div>
+
+      <div class="bg-brand-card rounded-2xl p-7 card-border transition-card shadow-card flex gap-5 items-start">
+        <span class="text-4xl font-black text-brand-neon opacity-20 leading-none font-mono flex-shrink-0">04</span>
+        <div>
+          <h3 class="text-base font-bold text-brand-text mb-2">Practical AI — Battle-Tested in Kenya</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">We've implemented automation for 34+ Kenyan and East African businesses across 8+ industries. We know what works in this market — and what doesn't. Every recommendation is proven in the field.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INTERNAL LINKING SECTION
+════════════════════════════════════════════════════ -->
+<section class="py-20 bg-brand-card border-t border-white/05" aria-labelledby="related-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">Explore More</p>
+    <h2 class="text-2xl font-extrabold text-brand-text mb-8" id="related-title">Related Services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" role="navigation" aria-label="Related services">
+
+      <a href="/whatsapp-automation-kenya.html"
+         class="flex items-center justify-between gap-3 bg-brand-dark border border-white/06 hover:border-brand-neon/40 rounded-xl px-5 py-4 text-brand-muted hover:text-brand-neon text-sm font-semibold transition-all group">
+        <span class="flex items-center gap-3"><i class="fa-brands fa-whatsapp text-green-400"></i> WhatsApp Automation Kenya</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-40 group-hover:opacity-100 transition-opacity"></i>
+      </a>
+
+      <a href="/crm-automation-kenya.html"
+         class="flex items-center justify-between gap-3 bg-brand-dark border border-white/06 hover:border-brand-neon/40 rounded-xl px-5 py-4 text-brand-muted hover:text-brand-neon text-sm font-semibold transition-all group">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-chart-bar text-blue-400"></i> CRM Automation Kenya</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-40 group-hover:opacity-100 transition-opacity"></i>
+      </a>
+
+      <a href="/mpesa-automation-kenya.html"
+         class="flex items-center justify-between gap-3 bg-brand-dark border border-white/06 hover:border-brand-neon/40 rounded-xl px-5 py-4 text-brand-muted hover:text-brand-neon text-sm font-semibold transition-all group">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-credit-card text-yellow-400"></i> M-Pesa Automation Kenya</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-40 group-hover:opacity-100 transition-opacity"></i>
+      </a>
+
+      <a href="/insurance-automation-kenya.html"
+         class="flex items-center justify-between gap-3 bg-brand-dark border border-white/06 hover:border-brand-neon/40 rounded-xl px-5 py-4 text-brand-muted hover:text-brand-neon text-sm font-semibold transition-all group">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-shield text-purple-400"></i> Insurance Automation Kenya</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-40 group-hover:opacity-100 transition-opacity"></i>
+      </a>
+
+      <a href="/blog.html"
+         class="flex items-center justify-between gap-3 bg-brand-dark border border-white/06 hover:border-brand-neon/40 rounded-xl px-5 py-4 text-brand-muted hover:text-brand-neon text-sm font-semibold transition-all group">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-pen-nib text-brand-neon"></i> Blog & Automation Guides</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-40 group-hover:opacity-100 transition-opacity"></i>
+      </a>
+
+      <a href="/free-audit.html"
+         class="flex items-center justify-between gap-3 bg-brand-dark border border-white/06 hover:border-brand-neon/40 rounded-xl px-5 py-4 text-brand-muted hover:text-brand-neon text-sm font-semibold transition-all group">
+        <span class="flex items-center gap-3"><i class="fa-solid fa-magnifying-glass text-orange-400"></i> Get Your Free Audit</span>
+        <i class="fa-solid fa-arrow-right text-xs opacity-40 group-hover:opacity-100 transition-opacity"></i>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ SECTION
+════════════════════════════════════════════════════ -->
+<section class="py-24 bg-brand-dark" aria-labelledby="faq-title">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-3">FAQ</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight mb-4" id="faq-title">
+        Your Questions, Answered
+      </h2>
+      <p class="text-brand-muted text-base leading-relaxed">
+        Everything Kenyan business owners ask before starting their automation journey.
+      </p>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">What is AI automation and how can it help my Kenyan business?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">AI automation uses intelligent software to handle repetitive tasks — customer follow-ups, invoice reminders, lead nurturing, and reporting. For Kenyan SMEs, this means less time on manual work and more focus on revenue-generating activities. SmartBizSystems builds custom workflows tailored to your industry, tools, and team size.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">How much does AI automation cost for a small business in Kenya?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">Packages start from <strong class="text-brand-text">KES 30,000</strong> as a one-time setup fee, with monthly maintenance from <strong class="text-brand-text">KES 5,000</strong>. Cost varies by complexity and integrations required. We always recommend starting with a free audit to identify the highest-impact automation opportunities before any financial commitment.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">Can you integrate AI automation with M-Pesa and WhatsApp?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">Yes — this is one of our core specialisations. We integrate AI workflows with the Meta WhatsApp Business API and M-Pesa's Daraja API, enabling automated payment confirmations, WhatsApp follow-up messages triggered by M-Pesa events, and complete customer journeys built around payments.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">Which industries in Kenya benefit most from AI automation?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">SMEs, insurance companies, SACCOs, schools, ecommerce stores, real estate firms, clinics, and law firms all see strong results. Any business handling repetitive communications, customer data, or sales pipelines can significantly reduce costs and improve efficiency through automation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">How long does it take to set up an AI automation system?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">Most projects are delivered in 2 to 4 weeks. Simple WhatsApp or CRM setups can go live in as little as 7 days. Our structured process covers discovery, workflow design, build, testing, and launch — with team training included at no extra cost.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">Do I need technical skills to manage my automation system?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">No technical background required. We build on no-code and low-code platforms like Make and n8n, which have visual dashboards anyone can monitor. We provide full training so your team manages the system confidently — and we remain available for ongoing support and upgrades.</p>
+        </div>
+      </div>
+
+      <div class="faq-item bg-brand-card rounded-2xl overflow-hidden card-border transition-all">
+        <button class="faq-q w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                aria-expanded="false">
+          <span class="text-sm font-bold text-brand-text">What tools does SmartBizSystems use to build automation workflows?</span>
+          <i class="fa-solid fa-plus faq-icon text-brand-neon flex-shrink-0 text-sm"></i>
+        </button>
+        <div class="faq-answer px-6 pb-5 border-t border-white/05">
+          <p class="text-brand-muted text-sm leading-relaxed pt-4">Our core stack includes Make, n8n, HubSpot, Brevo, OpenAI APIs, Meta WhatsApp Business API, and M-Pesa's Daraja API. Tool selection is always based on your existing infrastructure and budget — we never add unnecessary complexity or cost.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════════════════ -->
+<section class="relative py-24 overflow-hidden bg-brand-card border-t border-white/05" aria-labelledby="cta-title">
+  <div class="absolute inset-0 bg-grid opacity-50"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full"
+       style="background: radial-gradient(ellipse, rgba(45,212,191,0.07) 0%, transparent 70%);"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-brand-neon text-xs font-bold tracking-widest uppercase mb-4">Ready to Scale?</p>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-brand-text tracking-tight mb-4" id="cta-title">
+      Stop Losing Revenue to Manual Work.
+    </h2>
+    <p class="text-brand-muted text-base leading-relaxed mb-10 max-w-xl mx-auto">
+      Book a free discovery call and let's build an automation system that works while you sleep. No commitment. No jargon. Just results.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%27m%20ready%20to%20automate%20my%20business"
+         class="inline-flex items-center gap-3 bg-brand-neon hover:bg-brand-neonhover text-brand-dark font-bold text-base px-8 py-4 rounded-xl transition-all shadow-neon w-full sm:w-auto justify-center">
+        <i class="fa-brands fa-whatsapp text-xl"></i> Talk on WhatsApp
+      </a>
+      <a href="/free-audit.html"
+         class="inline-flex items-center gap-3 bg-transparent border border-white/15 hover:border-brand-neon/50 text-brand-text font-semibold text-base px-8 py-4 rounded-xl transition-all w-full sm:w-auto justify-center">
+        Request Free Audit
+      </a>
+      <a href="https://calendly.com/smartbizsystemske/30min"
+         class="inline-flex items-center gap-3 bg-transparent border border-white/15 hover:border-brand-neon/50 text-brand-text font-semibold text-base px-8 py-4 rounded-xl transition-all w-full sm:w-auto justify-center">
+        Book a Consultation
+      </a>
+    </div>
+    <p class="text-brand-muted text-xs">
+      No commitment required &nbsp;·&nbsp; 100% Free Strategy Session &nbsp;·&nbsp; Westlands, Nairobi &nbsp;·&nbsp; Serving all of Kenya & East Africa
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════ -->
+<footer class="bg-brand-dark border-t border-white/05 py-10 text-center" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <a href="/" class="inline-block mb-4">
+      <span class="text-lg font-extrabold"><span class="text-brand-text">SmartBiz</span><span class="text-brand-neon">Systems</span></span>
+    </a>
+    <p class="text-brand-muted text-sm mb-3">
+      Westlands, Nairobi, Kenya &nbsp;|&nbsp;
+      <a href="tel:+254734230445" class="hover:text-brand-neon transition-colors">+254 734 230 445</a> &nbsp;|&nbsp;
+      <a href="mailto:info@smartbizsystems.co.ke" class="hover:text-brand-neon transition-colors">info@smartbizsystems.co.ke</a>
+    </p>
+    <p class="text-brand-muted text-xs mb-4">
+      <a href="/privacy.html" class="hover:text-brand-neon transition-colors">Privacy Policy</a>
+      &nbsp;|&nbsp;
+      <a href="/terms.html" class="hover:text-brand-neon transition-colors">Terms of Service</a>
+      &nbsp;|&nbsp;
+      <a href="/sitemap.html" class="hover:text-brand-neon transition-colors">Sitemap</a>
+    </p>
+    <p class="text-brand-muted text-xs">© 2026 SmartBizSystems. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ ACCORDION SCRIPT
+════════════════════════════════════════════════════ -->
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+    </script>
+
+<!--
+================================================================
+IMAGE SEO RECOMMENDATIONS
+================================================================
+Hero:
+  File: ai-automation-kenya-hero.webp
+  Alt:  "SmartBizSystems team building AI automation workflows for Kenyan businesses in Nairobi"
+  Loading: eager (above fold)
+
+Workflow Diagram:
+  File: ai-workflow-diagram-kenya.webp
+  Alt:  "AI-powered business workflow showing lead to M-Pesa payment automation"
+  Loading: lazy
+
+Industry Icons (per industry):
+  File: sme-automation-kenya.webp, insurance-automation-kenya.webp, etc.
+  Loading: lazy | Quality: 80% WebP
+
+OG Image:
+  File: ai-automation-kenya-og.webp
+  Dimensions: 1200 × 630px
+
+================================================================
+PERFORMANCE SEO RECOMMENDATIONS
+================================================================
+Core Web Vitals:
+  - Preload hero image with <link rel="preload" as="image">
+  - Use font-display: swap (already in Google Fonts URL)
+  - Defer non-critical scripts (analytics, chat widgets)
+
+Images:
+  - All images as .webp format
+  - Add explicit width & height to all <img> tags
+  - loading="lazy" on all below-fold images
+  - Target < 80KB per image after compression
+
+Tailwind:
+  - In production, use Tailwind CLI to purge unused classes
+  - Replace CDN with compiled CSS for production
+
+Schema:
+  - FAQPage JSON-LD ✓
+  - LocalBusiness JSON-LD ✓
+  - Consider adding BreadcrumbList for navigation
+  - Consider adding Service schema for each service
+
+Mobile:
+  - Viewport meta ✓
+  - Touch targets ≥ 44px ✓
+  - No horizontal overflow ✓
+  - Font sizes ≥ 14px on mobile ✓
+================================================================
+-->
+
+</body>
+</html>
