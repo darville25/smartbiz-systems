@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Marketing Services | SmartBizSystems Kenya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;
+  --white:#ffffff;
+  --gold:#C8A84B;
+  --gold-light:#F0D98A;
+  --gold-dim:#8a7232;
+  --surface:#111111;
+  --surface2:#181818;
+  --surface3:#222222;
+  --border:#2a2a2a;
+  --text:#e8e4dc;
+  --muted:#888;
+  --green:#1d9e75;
+  --green-light:#9FE1CB;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:rgba(10,10,10,0.92);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white);letter-spacing:-0.02em}
+.nav-logo span{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--black);font-family:'Syne',sans-serif;font-weight:700;font-size:0.78rem;padding:0.5rem 1.2rem;border-radius:4px;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 2rem 4rem;max-width:1100px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:0.35rem 1rem;font-size:0.78rem;color:var(--gold);font-family:'Syne',sans-serif;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2rem}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.05;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.5rem}
+h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:1.15rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;padding:0.85rem 2rem;border-radius:4px;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.85}
+.btn-outline{border:1px solid var(--border);color:var(--text);font-family:'Syne',sans-serif;font-weight:600;font-size:0.85rem;padding:0.85rem 2rem;border-radius:4px;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:border-color 0.2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;margin-top:4rem;overflow:hidden}
+.stat{background:var(--surface);padding:1.5rem;text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--gold);display:block}
+.stat-label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+
+/* SECTION */
+section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em;color:var(--white);margin-bottom:1rem}
+.section-intro{color:var(--muted);font-size:1rem;max-width:560px;margin-bottom:3rem}
+
+/* CATEGORY TABS */
+.cat-nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2.5rem}
+.cat-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-family:'Syne',sans-serif;font-weight:600;font-size:0.75rem;padding:0.45rem 1rem;border-radius:100px;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:all 0.2s}
+.cat-btn:hover,.cat-btn.active{background:var(--gold);border-color:var(--gold);color:var(--black)}
+
+/* SERVICE CARDS */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.service-card{background:var(--surface);padding:1.5rem;cursor:pointer;transition:background 0.2s;position:relative}
+.service-card:hover{background:var(--surface2)}
+.service-card.featured{background:var(--surface2);border-left:2px solid var(--gold)}
+.card-cat{font-size:0.68rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.5rem}
+.card-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--white);margin-bottom:0.4rem;line-height:1.3}
+.card-desc{font-size:0.83rem;color:var(--muted);line-height:1.5}
+.card-tag{display:inline-block;margin-top:0.8rem;background:var(--surface3);border:1px solid var(--border);border-radius:100px;padding:0.2rem 0.7rem;font-size:0.68rem;font-family:'Syne',sans-serif;font-weight:600;letter-spacing:0.05em;color:var(--text);text-transform:uppercase}
+.card-tag.popular{background:rgba(200,168,75,0.1);border-color:rgba(200,168,75,0.3);color:var(--gold)}
+.card-arrow{position:absolute;top:1.5rem;right:1.5rem;color:var(--border);font-size:1rem;transition:color 0.2s}
+.service-card:hover .card-arrow{color:var(--gold)}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2rem}
+.step{background:var(--surface);padding:1.5rem;position:relative}
+.step-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:var(--border);line-height:1;margin-bottom:1rem}
+.step-title{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;color:var(--white);margin-bottom:0.4rem}
+.step-desc{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+/* PRICING STRIP */
+.pricing-strip{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;overflow:hidden;margin-top:2rem}
+.price-col{padding:1.5rem;border-right:1px solid var(--border)}
+.price-col:last-child{border-right:none}
+.price-tier{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.price-amount{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:0.25rem}
+.price-note{font-size:0.78rem;color:var(--muted)}
+.price-items{list-style:none;margin-top:1rem}
+.price-items li{font-size:0.82rem;color:var(--text);padding:0.25rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px}
+.price-items li::before{content:'↗';color:var(--gold);font-size:0.7rem;flex-shrink:0}
+
+/* CTA STRIP */
+.cta-strip{background:var(--gold);border-radius:12px;padding:3rem;text-align:center;margin:2rem 0}
+.cta-strip h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;color:var(--black);margin-bottom:0.5rem;letter-spacing:-0.02em}
+.cta-strip p{color:rgba(0,0,0,0.6);margin-bottom:1.5rem;font-size:0.95rem}
+.btn-dark{background:var(--black);color:var(--gold);font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;padding:0.85rem 2rem;border-radius:4px;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;display:inline-block}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.8rem}
+
+/* HIDDEN */
+.hidden{display:none!important}
+
+@media(max-width:640px){
+  .hero-stats{grid-template-columns:1fr}
+  nav{padding:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Smart<span>Biz</span>Systems</div>
+  <a href="https://wa.me/254734230445" class="nav-cta">Get Free Audit →</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">40 AI-Powered Marketing Services — Built for Kenya</div>
+  <h1>Stop Guessing.<br>Start <em>Growing.</em></h1>
+  <p class="hero-sub">We deploy 40 specialised AI marketing systems to attract, nurture, and convert your customers — automatically. No fluff. Pure results.</p>
+  <div class="hero-actions">
+    <a href="https://calendly.com/smartbizsystemske/30min" class="btn-primary">Book Free Strategy Call</a>
+    <a href="#services" class="btn-outline">Browse All Services</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">40+</span><span class="stat-label">AI Marketing Systems</span></div>
+    <div class="stat"><span class="stat-num">+30%</span><span class="stat-label">Avg Revenue Lift</span></div>
+    <div class="stat"><span class="stat-num">34+</span><span class="stat-label">Kenyan Brands Scaled</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-label">Our AI Services</div>
+  <h2>Every Tool You Need to <em style="color:var(--gold);font-style:normal">Dominate</em></h2>
+  <p class="section-intro">Each service is powered by specialised AI systems trained on best-in-class marketing frameworks — localised for the Kenyan market.</p>
+
+  <div class="cat-nav">
+    <button class="cat-btn active" onclick="filterCat('all',this)">All 40</button>
+    <button class="cat-btn" onclick="filterCat('cro',this)">Conversion</button>
+    <button class="cat-btn" onclick="filterCat('copy',this)">Copy & Content</button>
+    <button class="cat-btn" onclick="filterCat('seo',this)">SEO</button>
+    <button class="cat-btn" onclick="filterCat('ads',this)">Paid Ads</button>
+    <button class="cat-btn" onclick="filterCat('growth',this)">Growth</button>
+    <button class="cat-btn" onclick="filterCat('strategy',this)">Strategy</button>
+    <button class="cat-btn" onclick="filterCat('sales',this)">Sales & RevOps</button>
+  </div>
+
+  <div class="services-grid" id="servicesGrid">
+  </div>
+</section>
+
+<section>
+  <div class="section-label">How It Works</div>
+  <h2>From Briefing to Results in <em style="color:var(--gold);font-style:normal">Days</em></h2>
+  <p class="section-intro">Our AI-powered process moves fast. No lengthy agency delays — you get real deliverables in days, not months.</p>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">01</div><div class="step-title">Free Audit</div><div class="step-desc">We audit your website, ads, and content to find exactly where you're losing money and leads.</div></div>
+    <div class="step"><div class="step-num">02</div><div class="step-title">AI Strategy Build</div><div class="step-desc">We configure the right combination of our 40 AI marketing systems for your specific business and industry.</div></div>
+    <div class="step"><div class="step-num">03</div><div class="step-title">Deploy & Automate</div><div class="step-desc">Systems go live. WhatsApp bots, SEO content, ad campaigns, and email flows run 24/7 without you.</div></div>
+    <div class="step"><div class="step-num">04</div><div class="step-title">Measure & Scale</div><div class="step-desc">We track every KES of ROI and continuously optimise. Average clients break even in 1–3 months.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Investment</div>
+  <h2>Transparent KES Pricing. <em style="color:var(--gold);font-style:normal">No Surprises.</em></h2>
+  <p class="section-intro">M-Pesa accepted. No lock-in contracts. You own your data 100%.</p>
+  <div class="pricing-strip">
+    <div class="price-col">
+      <div class="price-tier">Starter</div>
+      <div class="price-amount">KES 30,000</div>
+      <div class="price-note">One-time + from KES 5k/mo</div>
+      <ul class="price-items">
+        <li>5-Page SEO Website</li>
+        <li>Basic WhatsApp Auto-reply</li>
+        <li>Local Google Maps SEO</li>
+        <li>FB/IG Ad Management</li>
+      </ul>
+    </div>
+    <div class="price-col">
+      <div class="price-tier">Growth</div>
+      <div class="price-amount">KES 100,000</div>
+      <div class="price-note">One-time + from KES 20k/mo</div>
+      <ul class="price-items">
+        <li>Advanced WhatsApp Bot</li>
+        <li>Email Nurture Sequence</li>
+        <li>Lead Scoring & CRM</li>
+        <li>FB/IG + Google Ads</li>
+        <li>Growth SEO Strategy</li>
+      </ul>
+    </div>
+    <div class="price-col">
+      <div class="price-tier">Premium</div>
+      <div class="price-amount">Custom</div>
+      <div class="price-note">Full ecosystem automation</div>
+      <ul class="price-items">
+        <li>All 40 AI Systems Active</li>
+        <li>M-Pesa Payment Automation</li>
+        <li>Custom API Integrations</li>
+        <li>Dedicated Account Manager</li>
+        <li>Weekly Strategy Calls</li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:1rem;font-size:0.8rem;color:var(--muted)">* All prices exclude VAT. Bundle: Website + SEO + Automation = 20% off.</p>
+</section>
+
+<section>
+  <div class="cta-strip">
+    <h3>Ready to Automate Your Growth?</h3>
+    <p>Book a free 30-minute strategy call. No commitment. We'll map out exactly how these 40 systems can grow your revenue by 30% in 90 days.</p>
+    <a href="https://calendly.com/smartbizsystemske/30min" class="btn-dark">Book Free Discovery Call →</a>
+  </div>
+</section>
+
+<footer>
+  <strong style="color:var(--white);font-family:'Syne',sans-serif">SmartBizSystems</strong> — Westlands, Nairobi | +254 734 230 445 | smartbizsystems.co.ke<br>
+  <span style="color:var(--border)">©2026 SmartBizSystems. All rights reserved.</span>
+</footer>
+
+<script>
+const services = [
+  {cat:'cro',title:'Conversion Rate Optimisation',desc:'AI audits your pages, forms, and funnels to find and fix every conversion leak. More sales from your existing traffic.',tag:'Most Popular',popular:true},
+  {cat:'cro',title:'Signup Flow Optimisation',desc:'Redesign your registration and trial activation flows to maximise the number of visitors who become paying customers.',tag:'CRO'},
+  {cat:'cro',title:'Onboarding & Activation',desc:'Optimise your post-signup experience so new users reach value faster and stay longer.',tag:'Retention'},
+  {cat:'cro',title:'Popup & Modal Strategy',desc:'Design and deploy high-converting popups, overlays, and slide-ins that capture leads without annoying visitors.',tag:'CRO'},
+  {cat:'cro',title:'Paywall & Upsell Optimisation',desc:'Craft in-app upgrade moments and paywalls that convert free users to paying customers.',tag:'Revenue'},
+  {cat:'copy',title:'Marketing Copywriting',desc:'AI-powered copy for your homepage, landing pages, and product pages. Written for Kenyan audiences that convert.',tag:'Most Popular',popular:true},
+  {cat:'copy',title:'Copy Editing & Refresh',desc:'Audit and rewrite your existing marketing copy. Remove weak language, sharpen the message, boost conversions.',tag:'Copy'},
+  {cat:'copy',title:'Cold Email Sequences',desc:'B2B cold outreach emails and follow-up sequences crafted to get replies from your ideal Kenyan business clients.',tag:'Outreach'},
+  {cat:'copy',title:'Email Marketing Flows',desc:'Automated welcome, nurture, and lifecycle email sequences that turn subscribers into buyers on autopilot.',tag:'Automation'},
+  {cat:'copy',title:'Social Media Content',desc:'LinkedIn, Facebook, Instagram, and TikTok content strategy and post creation — localised for the Kenyan market.',tag:'Social'},
+  {cat:'copy',title:'Ad Creative Generation',desc:'Bulk generation of headlines, descriptions, and primary text for Facebook, Instagram, and Google ads at scale.',tag:'Ads'},
+  {cat:'copy',title:'Video Content Strategy',desc:'Plan and script AI-generated video content for social, YouTube, and WhatsApp broadcasts.',tag:'Video'},
+  {cat:'seo',title:'Technical SEO Audit',desc:'Deep AI audit of your site — crawl issues, Core Web Vitals, on-page gaps, and a prioritised fix list.',tag:'Most Popular',popular:true},
+  {cat:'seo',title:'AI & LLM SEO (AEO)',desc:'Optimise your content to appear in ChatGPT, Google AI Overviews, and Perplexity answers.',tag:'Trending'},
+  {cat:'seo',title:'Programmatic SEO',desc:'Generate hundreds of SEO-optimised pages at scale using data templates — ideal for real estate, insurance, and directories.',tag:'Scale'},
+  {cat:'seo',title:'Site Architecture Planning',desc:'Map and restructure your website hierarchy, navigation, and URL structure for maximum SEO authority flow.',tag:'Technical'},
+  {cat:'seo',title:'Schema Markup & Structured Data',desc:'Add structured data to your pages so Google understands your content and shows rich results.',tag:'Technical'},
+  {cat:'seo',title:'Competitor Comparison Pages',desc:'Build "vs" and "alternative" pages that rank for competitor search terms and capture their traffic.',tag:'SEO'},
+  {cat:'seo',title:'Content Strategy',desc:'Plan a full content calendar based on keyword opportunity, audience intent, and your business goals.',tag:'Strategy'},
+  {cat:'seo',title:'App Store Optimisation (ASO)',desc:'Audit and optimise your App Store or Google Play listing to rank higher and drive more downloads.',tag:'Mobile'},
+  {cat:'ads',title:'Google & Meta Ads Management',desc:'Precision Facebook, Instagram, and Google Ads campaigns designed to lower your CPA and maximise ROAS.',tag:'Most Popular',popular:true},
+  {cat:'ads',title:'A/B Testing & Experiments',desc:'Design, run, and analyse marketing experiments to continuously improve your conversion rates with data.',tag:'Testing'},
+  {cat:'ads',title:'Analytics & Tracking Setup',desc:'Full GA4, Google Tag Manager, and Meta Pixel setup so you know exactly what is working and what is not.',tag:'Data'},
+  {cat:'growth',title:'Referral & Affiliate Programs',desc:'Build a word-of-mouth engine. Design and launch a referral or affiliate program that turns clients into salespeople.',tag:'Growth'},
+  {cat:'growth',title:'Free Tool Strategy',desc:'Plan and build a free marketing tool or calculator that generates SEO traffic and captures leads 24/7.',tag:'Lead Gen'},
+  {cat:'growth',title:'Lead Magnet Creation',desc:'Create high-value ebooks, templates, or checklists that grow your email list with qualified Kenyan business leads.',tag:'Lead Gen'},
+  {cat:'growth',title:'Churn Prevention Systems',desc:'Build cancellation flows, save offers, failed payment recovery, and re-engagement sequences to keep customers longer.',tag:'Retention'},
+  {cat:'growth',title:'Community Marketing',desc:'Build and leverage WhatsApp groups, Facebook communities, or online forums to drive product growth and loyalty.',tag:'Community'},
+  {cat:'growth',title:'Co-Marketing & Partnerships',desc:'Identify and launch joint campaigns with complementary Kenyan brands to reach new audiences at zero ad spend.',tag:'Partnerships'},
+  {cat:'growth',title:'Directory Submissions',desc:'Submit your business to relevant directories, app stores, and review platforms to build backlinks and visibility.',tag:'SEO'},
+  {cat:'strategy',title:'Marketing Ideas Engine',desc:'Generate 140+ tailored marketing ideas for your specific business, audience, and growth stage in Kenya.',tag:'Strategy'},
+  {cat:'strategy',title:'Marketing Psychology',desc:'Apply proven psychological principles — scarcity, social proof, anchoring — to every touchpoint of your marketing.',tag:'Strategy'},
+  {cat:'strategy',title:'Product Launch Planning',desc:'Full launch strategy for new products, features, or service offerings — from pre-launch to post-launch momentum.',tag:'Launch'},
+  {cat:'strategy',title:'Pricing & Packaging Strategy',desc:'Optimise your pricing tiers, packaging, and monetisation to maximise revenue per customer.',tag:'Revenue'},
+  {cat:'strategy',title:'Customer Research & Analysis',desc:'Conduct, analyse, and synthesise customer interviews and surveys into actionable marketing insights.',tag:'Research'},
+  {cat:'strategy',title:'Competitor Intelligence',desc:'Deep research and profiling of your top competitors — positioning, messaging, pricing, and weaknesses.',tag:'Research'},
+  {cat:'sales',title:'Sales Enablement Materials',desc:'Create pitch decks, one-pagers, objection-handling docs, and demo scripts that help you close more deals.',tag:'Sales'},
+  {cat:'sales',title:'Revenue Operations (RevOps)',desc:'Build lead lifecycle management, scoring, routing, and CRM pipeline processes that align marketing and sales.',tag:'RevOps'},
+  {cat:'sales',title:'Product Marketing Context',desc:'Build your core product marketing foundation — positioning, messaging, ICP, and competitive differentiation.',tag:'Foundation'},
+  {cat:'copy',title:'Image & Visual Marketing',desc:'Generate and optimise marketing images — blog heroes, social graphics, ad creatives — using AI design tools.',tag:'Design'},
+];
+
+function renderCards(filter){
+  const grid = document.getElementById('servicesGrid');
+  const filtered = filter==='all' ? services : services.filter(s=>s.cat===filter);
+  grid.innerHTML = filtered.map(s=>`
+    <div class="service-card${s.popular?' featured':''}">
+      <div class="card-cat">${catLabel(s.cat)}</div>
+      <div class="card-title">${s.title}</div>
+      <div class="card-desc">${s.desc}</div>
+      <span class="card-tag${s.popular?' popular':''}">${s.tag}</span>
+      <div class="card-arrow">↗</div>
+    </div>
+  `).join('');
+  // click to WhatsApp
+  grid.querySelectorAll('.service-card').forEach((card,i)=>{
+    card.addEventListener('click',()=>{
+      const svc = filtered[i];
+      window.open(`https://wa.me/254734230445?text=Hi SmartBiz, I'm interested in your ${encodeURIComponent(svc.title)} service.`,'_blank');
+    });
+  });
+}
+
+function catLabel(c){
+  const m={cro:'Conversion',copy:'Copy & Content',seo:'SEO & Discovery',ads:'Paid & Analytics',growth:'Growth',strategy:'Strategy',sales:'Sales & RevOps'};
+  return m[c]||c;
+}
+
+function filterCat(cat,btn){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards(cat);
+}
+
+renderCards('all');
+</script>
+</body>
+</html>
