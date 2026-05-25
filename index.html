@@ -744,32 +744,142 @@ footer{
         gap: 1rem;
     }
 }
+
+/* ── HAMBURGER BUTTON ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 8px 10px;
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 1rem 5%;
+  z-index: 99;
+  flex-direction: column;
+  gap: 2px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.975rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 12px 10px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+}
+.mobile-menu a:hover { background: var(--grey-50); color: var(--text-primary); }
+.mob-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+}
+.mob-ghost {
+  font-weight: 600 !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border) !important;
+  justify-content: center !important;
+}
+.mob-ghost:hover { border-color: var(--grey-400) !important; }
+.mob-cta {
+  background: var(--blue) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  justify-content: center !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 14px !important;
+  margin-top: 4px;
+}
+.mob-cta:hover { background: var(--blue-dark) !important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0 4%; }
+  .nav-logo { font-size: 1rem; }
+  .nav-logo-mark { width: 28px; height: 28px; font-size: 0.75rem; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#/" class="nav-logo">
+  <a href="/" class="nav-logo">
     <div class="nav-logo-mark">S</div>
     Smart<em>Biz</em>Systems
   </a>
+
   <ul class="nav-links">
-    <li><a href="services/index.html">Services</a></li>
-    <li><a href="work/index.html">Work</a></li>
-    <li><a href="pricing/index.html">Pricing</a></li>
-    <li><a href="about/index.html">About</a></li>
-    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
   </ul>
+
   <div class="nav-cta">
-    <a href="work/index.html" class="btn-ghost">See our work</a>
+    <a href="/free-audit/" class="btn-ghost">Free Audit</a>
     <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">
       Book a call
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
+
+  <!-- HAMBURGER -->
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/services/"><i>⚙️</i> Services</a>
+  <a href="/work/"><i>🏆</i> Work & Results</a>
+  <a href="/pricing/"><i>💰</i> Pricing</a>
+  <a href="/about/"><i>🏢</i> About</a>
+  <a href="/blog/"><i>📰</i> Blog</a>
+  <div class="mob-divider"></div>
+  <a href="/free-audit/" class="mob-ghost">Get Free Audit</a>
+  <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="mob-cta">
+    Book a Call →
+  </a>
+</div>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
