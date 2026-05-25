@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Automation Kenya | Official Meta API & M-Pesa | SmartBizSystems</title>
+    <meta name="description" content="Scale your Kenyan business with official WhatsApp automation. Bots for SACCOs, Real Estate, and Schools. Integrated with M-Pesa Daraja API.">
+    
+    <!-- CANONICAL: Points to the Authority Service Page -->
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/whatsapp-automation.html" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --accent: #25d366; --accent-dark: #128c7e; --accent-light: #e9fbf0;
+            --blue: #0d6efd; --blue-dark: #0a56c8; --white: #ffffff;
+            --grey-50: #f8f9fb; --grey-100: #f1f3f6; --grey-200: #e4e7ed;
+            --grey-700: #242b38; --grey-800: #151b27;
+            --text-primary: #151b27; --text-secondary: #3d4554;
+            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
+
+        /* Hero */
+        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
+        
+        .btn { padding: 1rem 2rem; border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); border: none; cursor: pointer; }
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); }
+        .btn-outline { background: white; border: 1px solid var(--border); color: var(--text-primary); }
+
+        /* Content Sections */
+        .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .feature-list { list-style: none; margin: 2rem 0; }
+        .feature-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; font-weight: 500; }
+        .feature-list i { color: var(--accent); }
+
+        /* Industry Specifics */
+        .industry-box { background: white; padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border); margin-top: 4rem; }
+        .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+        .ind-card { text-align: center; }
+        .ind-card i { color: var(--accent); margin-bottom: 1rem; }
+
+        /* Final Push CTA */
+        .push-cta { background: var(--grey-800); color: white; padding: 5rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
+        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+        @media (max-width: 768px) {
+            .hero, .grid-2, .industry-grid { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <nav id="nav">
+  <a href="#/" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    Smart<em>Biz</em>Systems
+  </a>
+  <ul class="nav-links">
+    <li><a href="services/index.html">Services</a></li>
+    <li><a href="work/index.html">Work</a></li>
+    <li><a href="pricing/index.html">Pricing</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="work/index.html" class="btn-ghost">See our work</a>
+    <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">
+      Book a call
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services/index.html">Services</a>
+  <a href="work/index.html">Work</a>
+  <a href="pricing/index.html">Pricing</a>
+  <a href="about/index.html">About</a>
+  <a href="blog/index.html">Blog</a>
+  <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="mob-cta">Book a free call</a>
+</div>
+
+    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
+        <a href="index.html" style="color: inherit; text-decoration: none;">WhatsApp Hub</a> / 
+        Kenya
+    </div>
+
+    <section class="hero">
+        <div class="reveal active">
+            <span class="kicker">Official Meta Business Partner</span>
+            <h1>WhatsApp Automation Kenya: The 24/7 Revenue Engine</h1>
+            <p>From Nairobi to Mombasa, Kenyan businesses are losing millions in sales due to slow responses. Our AI-powered bots qualify leads and collect M-Pesa payments instantly.</p>
+            <div style="display: flex; gap: 1rem;">
+                <a href="../../services/whatsapp-automation.html" class="btn btn-accent">View Full Service & Pricing</a>
+                <a href="https://wa.me/254734230445" class="btn btn-outline">Free WhatsApp Audit</a>
+            </div>
+        </div>
+        <div class="reveal active">
+            <div style="background: white; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%;"></div>
+                    <strong>Lead from Nairobi</strong>
+                </div>
+                <div style="background: var(--grey-100); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 0.9rem;">
+                    "Hi, do you have school bus services for your Kilimani branch?"
+                </div>
+                <div style="background: var(--accent-light); padding: 10px; border-radius: 8px; margin-left: 2rem; font-size: 0.9rem; color: var(--accent-dark);">
+                    "Yes! We cover Kilimani, Lavington, and Westlands. Would you like the fee structure?"
+                </div>
+                <p style="text-align: center; font-size: 0.7rem; color: var(--grey-400); margin-top: 1rem;">Reply time: 0.4 seconds</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="grid-2">
+            <div class="reveal">
+                <h2>Why It Matters in the Kenyan Economy</h2>
+                <p>97% of Kenyan internet users are on WhatsApp. If your business isn't automating this channel, you are leaving the door open for your competitors to answer first.</p>
+                <ul class="feature-list">
+                    <li><i data-lucide="check-circle"></i> <strong>Zero Ban Risk:</strong> We build only on the official Meta API.</li>
+                    <li><i data-lucide="check-circle"></i> <strong>M-Pesa Daraja Sync:</strong> Automatic payment triggers.</li>
+                    <li><i data-lucide="check-circle"></i> <strong>24/7 Availability:</strong> Capture leads while you sleep.</li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div style="background: var(--grey-800); color: white; padding: 3rem; border-radius: var(--radius-xl);">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">National Reach</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 2rem;">We support businesses across all major Kenyan hubs with full remote deployment and local support.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Nairobi (Westlands)</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Mombasa (Nyali)</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Kisumu CBD</div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Thika / Kiambu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="industry-box reveal">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Tailored for Local Industries</h2>
+            <div class="industry-grid">
+                <div class="ind-card">
+                    <i data-lucide="building-2" size="40"></i>
+                    <h3>Real Estate</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Automated floor plans & site visit booking.</p>
+                </div>
+                <div class="ind-card">
+                    <i data-lucide="graduation-cap" size="40"></i>
+                    <h3>Private Schools</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Admission inquiries & fee reminders.</p>
+                </div>
+                <div class="ind-card">
+                    <i data-lucide="landmark" size="40"></i>
+                    <h3>SACCOs</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Member balance & loan eligibility checks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="push-cta reveal">
+            <h2>Ready to see the full system?</h2>
+            <p>Every localized solution is built on our core WhatsApp engine. Visit our official service page to view our KES pricing tiers and technical integration details.</p>
+            <a href="../../services/whatsapp-automation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Authority Service Page & Pricing</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <a href="../../index.html" class="logo" style="color: white;">SmartBizSystems</a>
+            <p style="font-size: 0.85rem; color: var(--grey-400);">© 2026 SmartBizSystems — Nairobi, Kenya.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+
+</body>
+</html>

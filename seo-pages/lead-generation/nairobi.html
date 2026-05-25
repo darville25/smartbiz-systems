@@ -78,7 +78,39 @@
     </style>
 </head>
 <body>
+<nav id="nav">
+  <a href="#/" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    Smart<em>Biz</em>Systems
+  </a>
+  <ul class="nav-links">
+    <li><a href="services/index.html">Services</a></li>
+    <li><a href="work/index.html">Work</a></li>
+    <li><a href="pricing/index.html">Pricing</a></li>
+    <li><a href="about/index.html">About</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="work/index.html" class="btn-ghost">See our work</a>
+    <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">
+      Book a call
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services/index.html">Services</a>
+  <a href="work/index.html">Work</a>
+  <a href="pricing/index.html">Pricing</a>
+  <a href="about/index.html">About</a>
+  <a href="blog/index.html">Blog</a>
+  <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="mob-cta">Book a free call</a>
+</div>
     
 
     <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
@@ -154,8 +186,36 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile menu
+const navToggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-label',
+    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
+  );
+});
+
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+    navToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+});
     </script>
 
-<script src="/components/nav.js"></script>
+
 </body>
 </html>

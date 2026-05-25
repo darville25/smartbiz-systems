@@ -259,11 +259,127 @@ footer{background:#0B0F19;padding:36px 24px;border-top:1px solid rgba(255,255,25
   .hero-actions,.cta-btns{flex-direction:column;align-items:stretch}
   .btn-wa,.btn-outline,.btn-wa-lg,.btn-ghost{justify-content:center;text-align:center}
 }
+
+/* --- Navigation Fixes --- */
+nav {
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 24px;
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px; /* Increased slightly for better breathing room */
+  gap: 16px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav-logo-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.nav-logo em {
+  font-style: normal;
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--body);
+  text-decoration: none;
+  transition: color .15s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--blue-hover);
+}
 </style>
 </head>
 <body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">S</div>
+      <span>Smart<em>Biz</em>Systems</span>
+    </a>
 
+    <ul class="nav-links">
+      <li><a href="services/index.html">Services</a></li>
+      <li><a href="work/index.html">Work</a></li>
+      <li><a href="pricing/index.html">Pricing</a></li>
+      <li><a href="about/index.html">About</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
 
+    <div class="nav-cta-group">
+      <a href="work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px;">See our work</a>
+      <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">
+        Book a call
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
 <div class="bc">
   <a href="https://www.smartbizsystems.co.ke">Home</a>
@@ -560,6 +676,37 @@ footer{background:#0B0F19;padding:36px 24px;border-top:1px solid rgba(255,255,25
   </div>
 </footer>
 
-<script src="/components/nav.js"></script>
+<script>
+
+// Mobile menu
+const navToggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-label',
+    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
+  );
+});
+
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+    navToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+});
+
+</script>
+
 </body>
 </html>
