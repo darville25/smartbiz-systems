@@ -1,0 +1,56 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/web-design-packages.html",
+      "destination": "/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
+      "source": "/results.html",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/automation.html",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/free-audit.html",
+      "destination": "/free-audit",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-course-kenya.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-ebook-kenya.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ]
+}
