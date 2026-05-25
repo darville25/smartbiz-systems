@@ -375,21 +375,7 @@
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">SmartBiz<span>Systems</span></a>
-    <div class="nav-links">
-      <a href="../services/index.html">Services</a>
-      <a href="../work/index.html" class="active">Work</a>
-      <a href="../pricing/index.html">Pricing</a>
-      <a href="../about/index.html">About</a>
-      <a href="../blog/index.html">Blog</a>
-      <a href="https://calendly.com/smartbizsystemske/30min" class="nav-cta" target="_blank">Book a call</a>
-    </div>
-    <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'"><i class="fa-solid fa-bars"></i></button>
-  </div>
-</nav>
+
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
@@ -1103,5 +1089,7 @@
   }, { threshold: 0.3 });
   document.querySelectorAll('.metrics-grid').forEach(el => countObserver.observe(el));
 </script>
+
+<script src="/components/nav.js"></script>
 </body>
 </html>
