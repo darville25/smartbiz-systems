@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paid Ads Management Kenya | Google & Meta Ads | SmartBizSystems</title>
+<meta name="description" content="Google Ads and Meta Ads management for Kenyan businesses. ROI-tracked campaigns, M-Pesa landing pages, and full-funnel reporting. Stop wasting ad spend — start getting s.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHPX2K7F');</script>
+    <!-- End Google Tag Manager -->
+
+<style>
+  :root {
+    --blue: #0d6efd;
+    --blue-dark: #0a56c8;
+    --ads: #b45309;
+    --ads-dark: #92400e;
+    --ads-light: #fffbeb;
+    --ads-border: #fde68a;
+    --ads-mid: #f59e0b;
+    --white: #ffffff;
+    --grey-50: #f8f9fb;
+    --grey-100: #f1f3f6;
+    --grey-200: #e4e7ed;
+    --grey-300: #c8cdd8;
+    --grey-400: #8f97a8;
+    --grey-500: #5a6476;
+    --grey-600: #3d4554;
+    --grey-700: #242b38;
+    --grey-800: #151b27;
+    --text-primary: #151b27;
+    --text-secondary: #3d4554;
+    --text-muted: #5a6476;
+    --border: #e4e7ed;
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--grey-50); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(16px) saturate(1.8); -webkit-backdrop-filter: blur(16px) saturate(1.8); border-bottom: 1px solid transparent; transition: var(--transition); padding: 0 24px; }
+  nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; height: 64px; gap: 32px; }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text-primary); text-decoration: none; flex-shrink: 0; }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 4px; flex: 1; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: var(--transition); }
+  .nav-links a:hover, .nav-links a.active { color: var(--ads); background: var(--ads-light); }
+  .nav-cta { background: var(--blue); color: white; font-size: 0.875rem; font-weight: 600; padding: 8px 18px; border-radius: var(--radius-sm); text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .nav-cta:hover { background: var(--blue-dark); }
+
+  /* BREADCRUMB */
+  .breadcrumb { background: var(--white); border-bottom: 1px solid var(--border); padding: 10px 24px; margin-top: 64px; }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-muted); }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--ads); }
+  .breadcrumb-sep { color: var(--grey-300); }
+  .breadcrumb-current { color: var(--ads); font-weight: 500; }
+
+  /* HERO */
+  .hero { background: var(--white); padding: 80px 24px 0; border-bottom: 1px solid var(--border); overflow: hidden; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-bottom: 80px; }
+  .hero-kicker { display: inline-flex; align-items: center; gap: 8px; background: var(--ads-light); color: var(--ads-dark); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px; border: 1px solid var(--ads-border); }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--text-primary); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .hero h1 .accent { color: var(--ads); }
+  .hero-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: var(--ads); color: white; font-size: 0.9rem; font-weight: 600; padding: 12px 24px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--ads-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(180,83,9,0.35); }
+  .btn-secondary { background: var(--white); color: var(--text-primary); font-size: 0.9rem; font-weight: 600; padding: 12px 24px; border-radius: var(--radius-md); text-decoration: none; border: 1.5px solid var(--border); transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-secondary:hover { border-color: var(--ads); color: var(--ads); background: var(--ads-light); }
+
+  /* ROI DASHBOARD MOCKUP */
+  .dashboard { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); border: 1px solid var(--border); overflow: hidden; }
+  .dash-header { background: var(--grey-800); padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; }
+  .dash-title { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px; }
+  .dash-live { display: flex; align-items: center; gap: 5px; background: rgba(34,197,94,0.15); color: #4ade80; font-size: 0.65rem; font-weight: 700; padding: 3px 8px; border-radius: 100px; border: 1px solid rgba(34,197,94,0.2); }
+  .dash-live-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)} }
+  .dash-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+  /* KPI row */
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .kpi-card { background: var(--grey-50); border-radius: var(--radius-md); padding: 10px 12px; border: 1px solid var(--border); }
+  .kpi-label { font-size: 0.62rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .kpi-val { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+  .kpi-change { font-size: 0.62rem; font-weight: 700; margin-top: 3px; display: flex; align-items: center; gap: 3px; }
+  .kpi-up { color: #16a34a; }
+  .kpi-down { color: #dc2626; }
+  .kpi-card.highlight { background: var(--ads-light); border-color: var(--ads-border); }
+  .kpi-card.highlight .kpi-val { color: var(--ads); }
+
+  /* Spend vs return bars */
+  .bar-section { background: var(--grey-50); border-radius: var(--radius-md); padding: 12px; border: 1px solid var(--border); }
+  .bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .bar-title { font-size: 0.72rem; font-weight: 700; color: var(--text-primary); }
+  .bar-period { font-size: 0.62rem; color: var(--text-muted); background: var(--grey-200); padding: 2px 8px; border-radius: 100px; }
+  .bar-row { display: flex; flex-direction: column; gap: 7px; }
+  .bar-item { display: flex; align-items: center; gap: 8px; }
+  .bar-platform { font-size: 0.65rem; font-weight: 600; color: var(--text-secondary); width: 56px; flex-shrink: 0; }
+  .bar-track { flex: 1; background: var(--grey-200); border-radius: 100px; height: 8px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 100px; transition: width 1.5s ease; }
+  .bar-fill.meta { background: linear-gradient(90deg, #1877f2, #42b0ff); }
+  .bar-fill.google { background: linear-gradient(90deg, #ea4335, #fbbc05); }
+  .bar-fill.return { background: linear-gradient(90deg, var(--ads), #fbbf24); }
+  .bar-num { font-size: 0.65rem; font-weight: 700; color: var(--text-secondary); width: 44px; text-align: right; flex-shrink: 0; }
+
+  /* Channel split */
+  .channel-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .channel-card { background: var(--grey-50); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 10px 12px; display: flex; align-items: center; gap: 10px; }
+  .channel-icon { width: 28px; height: 28px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+  .channel-label { font-size: 0.7rem; font-weight: 600; color: var(--text-primary); }
+  .channel-sub { font-size: 0.6rem; color: var(--text-muted); }
+  .channel-badge { margin-left: auto; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; }
+  .badge-green { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+  .badge-blue { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+
+  /* PROOF BAR */
+  .proof-bar { background: var(--grey-800); padding: 20px 24px; }
+  .proof-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; }
+  .proof-stat { flex: 1; text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+  .proof-stat:last-child { border-right: none; }
+  .proof-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--ads-mid); display: block; }
+  .proof-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+  /* SECTION BASE */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-kicker { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ads); margin-bottom: 12px; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--text-primary); line-height: 1.2; letter-spacing: -0.02em; }
+  .section-subtitle { font-size: 1rem; color: var(--text-secondary); margin-top: 12px; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+  /* FEATURES */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); transition: var(--transition); }
+  .feature-card:hover { box-shadow: var(--shadow-md); border-color: var(--ads-border); transform: translateY(-2px); }
+  .feature-icon { width: 44px; height: 44px; background: var(--ads-light); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--ads); margin-bottom: 16px; }
+  .feature-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .feature-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* CHANNELS SECTION */
+  .channels-section { background: var(--white); }
+  .channels-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .channel-detail-card { background: var(--grey-50); border-radius: var(--radius-xl); padding: 32px; border: 1px solid var(--border); transition: var(--transition); }
+  .channel-detail-card:hover { box-shadow: var(--shadow-md); }
+  .channel-detail-card.google { border-top: 3px solid #ea4335; }
+  .channel-detail-card.meta { border-top: 3px solid #1877f2; }
+  .ch-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .ch-logo { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+  .ch-logo.google { background: #fef2f2; }
+  .ch-logo.meta { background: #eff6ff; }
+  .ch-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-primary); }
+  .ch-tagline { font-size: 0.8rem; color: var(--text-muted); }
+  .ch-best-for { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .ch-use-cases { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .ch-use { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--text-secondary); }
+  .ch-use i { font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+  .ch-use i.google { color: #ea4335; }
+  .ch-use i.meta { color: #1877f2; }
+  .ch-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ch-stat { background: var(--white); border-radius: var(--radius-md); padding: 12px; border: 1px solid var(--border); text-align: center; }
+  .ch-stat-val { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--ads); }
+  .ch-stat-label { font-size: 0.68rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* PRICING */
+  .pricing-section { background: var(--grey-50); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .pricing-card { background: var(--white); border-radius: var(--radius-xl); padding: 32px; border: 1px solid var(--border); position: relative; transition: var(--transition); }
+  .pricing-card:hover { box-shadow: var(--shadow-md); }
+  .pricing-card.featured { border-color: var(--ads-mid); box-shadow: 0 0 0 2px var(--ads-border), var(--shadow-lg); }
+  .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--ads); color: white; font-size: 0.72rem; font-weight: 700; padding: 4px 16px; border-radius: 100px; white-space: nowrap; }
+  .pricing-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+  .pricing-channels { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+  .ch-pill { font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; }
+  .pill-google { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+  .pill-meta { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+  .pricing-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+  .pricing-kes { font-size: 0.9rem; font-weight: 700; color: var(--text-secondary); }
+  .pricing-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+  .pricing-period { font-size: 0.8rem; color: var(--text-muted); }
+  .pricing-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+  .pricing-adspend { font-size: 0.78rem; color: var(--ads); font-weight: 600; margin-bottom: 20px; display: flex; align-items: center; gap: 5px; }
+  .pricing-divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--text-secondary); }
+  .pricing-features li i { color: var(--ads); font-size: 0.75rem; margin-top: 3px; flex-shrink: 0; }
+  .pricing-btn { display: block; text-align: center; padding: 12px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+  .pricing-btn-primary { background: var(--ads); color: white; }
+  .pricing-btn-primary:hover { background: var(--ads-dark); }
+  .pricing-btn-secondary { background: var(--grey-50); color: var(--text-primary); border: 1.5px solid var(--border); }
+  .pricing-btn-secondary:hover { border-color: var(--ads); color: var(--ads); background: var(--ads-light); }
+
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+  .process-grid::before { content: ''; position: absolute; top: 28px; left: 12.5%; right: 12.5%; height: 1px; background: var(--border); z-index: 0; }
+  .process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+  .process-num { width: 48px; height: 48px; border-radius: 50%; background: var(--white); border: 2px solid var(--ads-border); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--ads); }
+  .process-badge { display: inline-block; background: var(--ads-light); color: var(--ads-dark); font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; margin-bottom: 8px; border: 1px solid var(--ads-border); }
+  .process-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .process-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* AD MISTAKES SECTION */
+  .mistakes-section { background: var(--grey-800); padding: 80px 24px; }
+  .mistakes-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .mistakes-list { display: flex; flex-direction: column; gap: 14px; margin-top: 12px; }
+  .mistake-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); }
+  .mistake-icon { width: 32px; height: 32px; background: rgba(239,68,68,0.15); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #f87171; flex-shrink: 0; margin-top: 2px; }
+  .mistake-title { font-size: 0.88rem; font-weight: 600; color: white; margin-bottom: 3px; }
+  .mistake-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .fix-list { display: flex; flex-direction: column; gap: 14px; margin-top: 12px; }
+  .fix-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px; background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.15); border-radius: var(--radius-lg); }
+  .fix-icon { width: 32px; height: 32px; background: rgba(245,158,11,0.2); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--ads-mid); flex-shrink: 0; margin-top: 2px; }
+  .fix-title { font-size: 0.88rem; font-weight: 600; color: white; margin-bottom: 3px; }
+  .fix-desc { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+  /* INDUSTRIES */
+  .industries-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .industry-card { background: var(--white); border-radius: var(--radius-lg); padding: 22px; border: 1px solid var(--border); transition: var(--transition); }
+  .industry-card:hover { box-shadow: var(--shadow-md); border-color: var(--ads-border); }
+  .industry-icon { font-size: 1.4rem; margin-bottom: 10px; }
+  .industry-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .industry-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+  /* CASE STUDIES */
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .case-card { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: var(--transition); }
+  .case-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .case-header { padding: 24px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .case-client { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+  .case-service { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+  .case-tag { background: var(--ads-light); color: var(--ads-dark); font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 100px; border: 1px solid var(--ads-border); white-space: nowrap; }
+  .case-metrics { padding: 16px 24px; display: flex; gap: 24px; border-bottom: 1px solid var(--border); }
+  .case-metric-val { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--ads); display: block; }
+  .case-metric-label { font-size: 0.72rem; color: var(--text-muted); }
+  .case-testimonial { padding: 16px 24px; font-size: 0.85rem; color: var(--text-secondary); font-style: italic; line-height: 1.6; }
+  .case-author { font-size: 0.78rem; color: var(--text-muted); font-style: normal; font-weight: 600; margin-top: 8px; }
+
+  /* COMPARISON */
+  .comp-table { width: 100%; border-collapse: collapse; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+  .comp-table th { padding: 16px 20px; text-align: left; font-size: 0.82rem; font-weight: 700; }
+  .comp-table th:first-child { background: var(--grey-50); color: var(--text-muted); }
+  .comp-table th.us { background: var(--grey-800); color: white; }
+  .comp-table th.them { background: var(--grey-100); color: var(--text-secondary); }
+  .comp-table td { padding: 14px 20px; font-size: 0.85rem; border-top: 1px solid var(--border); }
+  .comp-table td:first-child { background: var(--grey-50); color: var(--text-secondary); font-weight: 500; }
+  .comp-table td.us { background: var(--ads-light); color: var(--ads-dark); font-weight: 600; }
+  .comp-table td.them { color: var(--text-muted); }
+  .check { color: #16a34a; }
+  .cross { color: #dc2626; }
+
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .faq-item { background: var(--grey-50); border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; cursor: pointer; font-weight: 600; font-size: 0.9rem; color: var(--text-primary); gap: 12px; }
+  .faq-q i.chevron { color: var(--ads); font-size: 0.75rem; transition: var(--transition); flex-shrink: 0; }
+  .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.2s; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+  .faq-item.open .faq-q i.chevron { transform: rotate(180deg); }
+  .faq-item.open .faq-a { max-height: 220px; padding-bottom: 18px; }
+
+  /* CTA */
+  .cta-section { background: var(--grey-800); padding: 80px 24px; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 60% 50%, rgba(245,158,11,0.12) 0%, transparent 70%); }
+  .cta-inner { max-width: 720px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .cta-inner h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+  .cta-inner p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 36px; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn-amber { background: var(--ads-mid); color: var(--grey-800); font-size: 0.9rem; font-weight: 700; padding: 14px 28px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-amber:hover { background: #fbbf24; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.3); }
+  .cta-btn-wa { background: #25d366; color: white; font-size: 0.9rem; font-weight: 700; padding: 14px 28px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-wa:hover { background: #22c55e; transform: translateY(-2px); }
+  .cta-btn-outline { border: 2px solid rgba(255,255,255,0.3); color: white; font-size: 0.9rem; font-weight: 600; padding: 14px 28px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+
+  /* FOOTER */
+  footer { background: var(--grey-800); padding: 64px 24px 32px; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 10px; }
+  .footer-brand-name span { color: var(--blue); }
+  .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 20px; }
+  .footer-contact a { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 8px; }
+  .footer-contact a:hover { color: white; }
+  .footer-col-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+  .footer-col-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col-links a { font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: var(--transition); }
+  .footer-col-links a:hover { color: white; }
+  .footer-bottom { max-width: 1200px; margin: 32px auto 0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+
+  /* FLOATING WA */
+  .wa-float { position: fixed; bottom: 32px; right: 32px; z-index: 90; background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: var(--transition); }
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float i { color: white; font-size: 1.3rem; }
+  @media (max-width: 768px) { .wa-float { display: none; } }
+
+  /* MOBILE STICKY */
+  .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; padding: 12px 16px; background: white; border-top: 1px solid var(--border); box-shadow: 0 -4px 16px rgba(0,0,0,0.08); gap: 10px; }
+  @media (max-width: 768px) { .mobile-sticky { display: flex; } }
+  .mobile-sticky a { flex: 1; text-align: center; padding: 12px; border-radius: var(--radius-md); font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+  .sticky-wa { background: #25d366; color: white; }
+  .sticky-book { background: var(--ads); color: white; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .features-grid, .channels-grid, .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .mistakes-inner { grid-template-columns: 1fr; }
+    .case-grid, .faq-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .dashboard { display: none; }
+    .proof-bar-inner { flex-wrap: wrap; }
+    .proof-stat { flex: 0 0 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px 0; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    body { padding-bottom: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Smart<span>Biz</span>Systems</a>
+    <div class="nav-links">
+      <li><a href="../services/index.html">Services</a></li>
+      <li><a href="../work/index.html">Work</a></li>
+      <li><a href="../pricing/index.html">Pricing</a></li>
+      <li><a href="../about/index.html">About</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+    </div>
+    <a href="https://calendly.com/smartbizsystemske/30min" class="nav-cta" target="_blank">Book a call</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep"><i class="fa fa-chevron-right" style="font-size:0.6rem"></i></span>
+    <a href="./">Services</a>
+    <span class="breadcrumb-sep"><i class="fa fa-chevron-right" style="font-size:0.6rem"></i></span>
+    <span class="breadcrumb-current">Paid Ads Management</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker"><i class="fa fa-chart-column"></i> Google & Meta Ads Kenya</div>
+      <h1>Stop Paying for Clicks<br>That <span class="accent">Never Convert</span></h1>
+      <p class="hero-desc">Most Kenyan businesses running ads are wasting 40–60% of their budget on the wrong audiences, wrong keywords, and landing pages that don't convert. We fix that — with ROI-tracked campaigns built around real Kenyan buyer behaviour.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20to%20fix%20my%20ads%20and%20get%20better%20ROI%20in%20Kenya" class="btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Fix My Ads Today</a>
+        <a href="/free-audit/" class="btn-secondary"><i class="fa fa-magnifying-glass-chart"></i> Free Ads Audit</a>
+      </div>
+    </div>
+
+    <!-- ROI DASHBOARD MOCKUP -->
+    <div class="reveal">
+      <div class="dashboard">
+        <div class="dash-header">
+          <div class="dash-title"><i class="fa fa-chart-line" style="color:var(--ads-mid)"></i> Campaign Performance Dashboard</div>
+          <div class="dash-live"><div class="dash-live-dot"></div> Live</div>
+        </div>
+        <div class="dash-body">
+          <!-- KPIs -->
+          <div class="kpi-row">
+            <div class="kpi-card highlight">
+              <div class="kpi-label">ROAS</div>
+              <div class="kpi-val">4.2×</div>
+              <div class="kpi-change kpi-up"><i class="fa fa-arrow-up" style="font-size:0.55rem"></i> +1.3× MoM</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Cost Per Lead</div>
+              <div class="kpi-val">KES 312</div>
+              <div class="kpi-change kpi-down"><i class="fa fa-arrow-down" style="font-size:0.55rem"></i> -45% CPL</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Conversions</div>
+              <div class="kpi-val">847</div>
+              <div class="kpi-change kpi-up"><i class="fa fa-arrow-up" style="font-size:0.55rem"></i> +63% MoM</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Ad Spend</div>
+              <div class="kpi-val">KES 60K</div>
+              <div class="kpi-change" style="color:var(--text-muted)">This month</div>
+            </div>
+          </div>
+          <!-- Spend vs Return -->
+          <div class="bar-section">
+            <div class="bar-header">
+              <div class="bar-title">Spend vs Revenue Return</div>
+              <div class="bar-period">Last 30 days</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-item">
+                <div class="bar-platform">Meta Ads</div>
+                <div class="bar-track"><div class="bar-fill meta" style="width:55%"></div></div>
+                <div class="bar-num">KES 33K</div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-platform">Google</div>
+                <div class="bar-track"><div class="bar-fill google" style="width:45%"></div></div>
+                <div class="bar-num">KES 27K</div>
+              </div>
+              <div class="bar-item">
+                <div class="bar-platform" style="color:var(--ads);font-weight:700">Return</div>
+                <div class="bar-track"><div class="bar-fill return" style="width:92%"></div></div>
+                <div class="bar-num" style="color:var(--ads);font-weight:700">KES 252K</div>
+              </div>
+            </div>
+          </div>
+          <!-- Channel breakdown -->
+          <div class="channel-row">
+            <div class="channel-card">
+              <div class="channel-icon" style="background:#fef2f2;font-size:0.9rem">🔍</div>
+              <div>
+                <div class="channel-label">Google Search</div>
+                <div class="channel-sub">482 conversions</div>
+              </div>
+              <div class="channel-badge badge-green">3.8× ROAS</div>
+            </div>
+            <div class="channel-card">
+              <div class="channel-icon" style="background:#eff6ff;font-size:0.9rem">📘</div>
+              <div>
+                <div class="channel-label">Meta (FB + IG)</div>
+                <div class="channel-sub">365 conversions</div>
+              </div>
+              <div class="channel-badge badge-blue">4.7× ROAS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-stat"><span class="proof-num">4.2×</span><span class="proof-label">Average ROAS achieved</span></div>
+    <div class="proof-stat"><span class="proof-num">-45%</span><span class="proof-label">Avg CPL reduction</span></div>
+    <div class="proof-stat"><span class="proof-num">KES 312</span><span class="proof-label">Avg cost per lead (Kenya)</span></div>
+    <div class="proof-stat"><span class="proof-num">34+</span><span class="proof-label">Kenyan brands scaled</span></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">What We Do Differently</div>
+      <h2 class="section-title">Ads That Pay for Themselves</h2>
+      <p class="section-subtitle">We don't just run ads — we build and optimise the full system from targeting to landing page to WhatsApp conversion so every shilling spent works harder.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-crosshairs"></i></div>
+        <div class="feature-title">Kenya-Specific Audience Targeting</div>
+        <p class="feature-desc">We build custom audiences based on real Kenyan buyer behaviour — Nairobi neighbourhoods, income signals, M-Pesa usage patterns, and local interest categories that generic agencies miss.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-file-invoice"></i></div>
+        <div class="feature-title">Conversion-Optimised Landing Pages</div>
+        <p class="feature-desc">Every campaign links to a purpose-built landing page — not your homepage. Mobile-first, WhatsApp CTA, M-Pesa payment ready. Landing pages that convert 25–45% of clicks.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-rotate"></i></div>
+        <div class="feature-title">Continuous A/B Testing</div>
+        <p class="feature-desc">We test headlines, images, audiences, and bidding strategies constantly. Every week we cut what doesn't work and scale what does — your ROAS improves every month.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-chart-bar"></i></div>
+        <div class="feature-title">Full Funnel Tracking</div>
+        <p class="feature-desc">Google Tag Manager, Meta Pixel, and conversion tracking set up properly from day one. You'll see cost per lead, cost per sale, and exact ROAS — not just vanity metrics.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fab fa-whatsapp"></i></div>
+        <div class="feature-title">WhatsApp Integration</div>
+        <p class="feature-desc">Ads drive to WhatsApp click-to-chat or landing pages with WhatsApp CTAs. Leads are captured in your CRM automatically. Response time drops to under 5 seconds.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-file-chart-column"></i></div>
+        <div class="feature-title">Monthly ROI Reports</div>
+        <p class="feature-desc">Plain-English reports every month. Spend, leads, cost per lead, ROAS, and what we're changing next. No hiding behind impressions and clicks — you see actual business s.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section class="channels-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Ad Channels</div>
+      <h2 class="section-title">Google Ads & Meta Ads — We Run Both</h2>
+      <p class="section-subtitle">Different channels reach different buyers at different stages. We know which one fits your business — and when to run both.</p>
+    </div>
+    <div class="channels-grid">
+      <div class="channel-detail-card google reveal">
+        <div class="ch-header">
+          <div class="ch-logo google">🔍</div>
+          <div>
+            <div class="ch-name">Google Ads</div>
+            <div class="ch-tagline">Capture buyers who are already searching</div>
+          </div>
+        </div>
+        <div class="ch-best-for">Best for</div>
+        <div class="ch-use-cases">
+          <div class="ch-use"><i class="fa fa-check google"></i> High-intent buyers searching for your service right now</div>
+          <div class="ch-use"><i class="fa fa-check google"></i> Local Nairobi businesses targeting "near me" searches</div>
+          <div class="ch-use"><i class="fa fa-check google"></i> B2B services where buyers Google before deciding</div>
+          <div class="ch-use"><i class="fa fa-check google"></i> Retargeting website visitors who didn't convert</div>
+          <div class="ch-use"><i class="fa fa-check google"></i> Competitive keywords where SEO takes too long</div>
+        </div>
+        <div class="ch-stat-row">
+          <div class="ch-stat">
+            <div class="ch-stat-val">3.8×</div>
+            <div class="ch-stat-label">Avg ROAS achieved</div>
+          </div>
+          <div class="ch-stat">
+            <div class="ch-stat-val">KES 30K</div>
+            <div class="ch-stat-label">Management from/mo</div>
+          </div>
+        </div>
+      </div>
+      <div class="channel-detail-card meta reveal">
+        <div class="ch-header">
+          <div class="ch-logo meta">📘</div>
+          <div>
+            <div class="ch-name">Meta Ads (FB + Instagram)</div>
+            <div class="ch-tagline">Build awareness and generate demand</div>
+          </div>
+        </div>
+        <div class="ch-best-for">Best for</div>
+        <div class="ch-use-cases">
+          <div class="ch-use"><i class="fa fa-check meta"></i> B2C products and services with visual appeal</div>
+          <div class="ch-use"><i class="fa fa-check meta"></i> Real estate, schools, clinics, insurance, ecommerce</div>
+          <div class="ch-use"><i class="fa fa-check meta"></i> Building brand awareness in Nairobi & specific counties</div>
+          <div class="ch-use"><i class="fa fa-check meta"></i> WhatsApp lead generation campaigns (Meta native)</div>
+          <div class="ch-use"><i class="fa fa-check meta"></i> Retargeting website and Instagram audiences</div>
+        </div>
+        <div class="ch-stat-row">
+          <div class="ch-stat">
+            <div class="ch-stat-val">4.7×</div>
+            <div class="ch-stat-label">Avg ROAS achieved</div>
+          </div>
+          <div class="ch-stat">
+            <div class="ch-stat-val">KES 30K</div>
+            <div class="ch-stat-label">Management from/mo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Pricing</div>
+      <h2 class="section-title">Paid Ads Management — KES, M-Pesa Accepted</h2>
+      <p class="section-subtitle">Management fee only — ad spend goes directly to Google and Meta. No hidden markups on your budget.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-channels"><span class="ch-pill pill-meta">Facebook / Instagram</span></div>
+        <div class="pricing-amount"><span class="pricing-kes">KES</span><span class="pricing-num">30,000</span><span class="pricing-period">/mo</span></div>
+        <div class="pricing-sub">Management fee · M-Pesa accepted</div>
+        <div class="pricing-adspend"><i class="fa fa-info-circle"></i> Recommended ad spend: KES 30,000–60,000/mo</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><i class="fa fa-check"></i> Facebook & Instagram campaigns</li>
+          <li><i class="fa fa-check"></i> Kenya audience research & setup</li>
+          <li><i class="fa fa-check"></i> Up to 3 ad creatives/mo</li>
+          <li><i class="fa fa-check"></i> Meta Pixel installation</li>
+          <li><i class="fa fa-check"></i> WhatsApp lead capture integration</li>
+          <li><i class="fa fa-check"></i> Monthly performance report</li>
+          <li><i class="fa fa-check"></i> Basic A/B testing</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20the%20Starter%20Paid%20Ads%20package" class="pricing-btn pricing-btn-secondary" target="_blank">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="featured-badge">Best ROI</div>
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-channels"><span class="ch-pill pill-meta">Facebook / Instagram</span><span class="ch-pill pill-google">Google Ads</span></div>
+        <div class="pricing-amount"><span class="pricing-kes">KES</span><span class="pricing-num">60,000</span><span class="pricing-period">/mo</span></div>
+        <div class="pricing-sub">Management fee · M-Pesa accepted</div>
+        <div class="pricing-adspend"><i class="fa fa-info-circle"></i> Recommended ad spend: KES 60,000–150,000/mo</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><i class="fa fa-check"></i> Facebook, Instagram & Google Search</li>
+          <li><i class="fa fa-check"></i> Full keyword research (Kenya market)</li>
+          <li><i class="fa fa-check"></i> Up to 6 ad creatives/mo</li>
+          <li><i class="fa fa-check"></i> Dedicated landing page per campaign</li>
+          <li><i class="fa fa-check"></i> Full conversion tracking (GTM + Pixel)</li>
+          <li><i class="fa fa-check"></i> Weekly optimisation & bid management</li>
+          <li><i class="fa fa-check"></i> Audience retargeting setup</li>
+          <li><i class="fa fa-check"></i> Lead capture + CRM integration</li>
+          <li><i class="fa fa-check"></i> Monthly ROI report + strategy call</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20the%20Growth%20Paid%20Ads%20package" class="pricing-btn pricing-btn-primary" target="_blank">Start Growing</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Scale</div>
+        <div class="pricing-channels"><span class="ch-pill pill-meta">Full Meta Suite</span><span class="ch-pill pill-google">Google Full Funnel</span></div>
+        <div class="pricing-amount"><span class="pricing-kes">KES</span><span class="pricing-num">120,000</span><span class="pricing-period">/mo</span></div>
+        <div class="pricing-sub">Management fee · M-Pesa accepted</div>
+        <div class="pricing-adspend"><i class="fa fa-info-circle"></i> Recommended ad spend: KES 200,000+/mo</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><i class="fa fa-check"></i> Everything in Growth</li>
+          <li><i class="fa fa-check"></i> Google Display & YouTube ads</li>
+          <li><i class="fa fa-check"></i> Advanced lookalike audiences</li>
+          <li><i class="fa fa-check"></i> Multi-funnel campaign architecture</li>
+          <li><i class="fa fa-check"></i> Unlimited ad creatives</li>
+          <li><i class="fa fa-check"></i> Dynamic retargeting campaigns</li>
+          <li><i class="fa fa-check"></i> Dedicated account manager</li>
+          <li><i class="fa fa-check"></i> Weekly calls + daily reporting</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20the%20Scale%20Paid%20Ads%20package" class="pricing-btn pricing-btn-secondary" target="_blank">Scale Now</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;font-size:0.82rem;color:var(--text-muted)">
+      <i class="fa fa-tag" style="color:var(--ads);margin-right:6px"></i> Bundle Paid Ads with Lead Generation + WhatsApp Automation — save 20% on total package.
+    </div>
+  </div>
+</section>
+
+<!-- AD MISTAKES -->
+<section class="mistakes-section">
+  <div class="mistakes-inner">
+    <div>
+      <div class="section-kicker" style="color:var(--ads-mid)">Common Ad Mistakes</div>
+      <h2 class="section-title" style="color:white;text-align:left;margin-bottom:8px">Why Your Ads<br>Aren't Working</h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.88rem;margin-bottom:8px">These are the 5 reasons most Kenyan businesses waste their ad budget.</p>
+      <div class="mistakes-list reveal">
+        <div class="mistake-item">
+          <div class="mistake-icon"><i class="fa fa-bullseye"></i></div>
+          <div>
+            <div class="mistake-title">Wrong audience targeting</div>
+            <div class="mistake-desc">Targeting all of Kenya instead of the 3km radius around Westlands where your customers actually are.</div>
+          </div>
+        </div>
+        <div class="mistake-item">
+          <div class="mistake-icon"><i class="fa fa-house"></i></div>
+          <div>
+            <div class="mistake-title">Sending ads to your homepage</div>
+            <div class="mistake-desc">Homepages have too many distractions. Dedicated landing pages convert 3–5× better than sending paid traffic to your main site.</div>
+          </div>
+        </div>
+        <div class="mistake-item">
+          <div class="mistake-icon"><i class="fa fa-eye"></i></div>
+          <div>
+            <div class="mistake-title">Optimising for impressions, not sales</div>
+            <div class="mistake-desc">High reach and low CPM looks good in reports but means nothing if nobody buys. We optimise for conversions and ROAS only.</div>
+          </div>
+        </div>
+        <div class="mistake-item">
+          <div class="mistake-icon"><i class="fa fa-triangle-exclamation"></i></div>
+          <div>
+            <div class="mistake-title">No tracking = no learning</div>
+            <div class="mistake-desc">Running ads without Meta Pixel or Google conversion tracking means you're flying blind. You can't optimise what you can't measure.</div>
+          </div>
+        </div>
+        <div class="mistake-item">
+          <div class="mistake-icon"><i class="fa fa-hourglass"></i></div>
+          <div>
+            <div class="mistake-title">Slow lead follow-up</div>
+            <div class="mistake-desc">Leads go cold in minutes. If you're not following up via WhatsApp within 5 minutes of a form submission, you're losing 70% of your leads.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-kicker" style="color:var(--ads-mid)">The SmartBiz Way</div>
+      <h2 class="section-title" style="color:white;text-align:left;margin-bottom:8px">How We Fix It</h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.88rem;margin-bottom:8px">Every fix above is standard in every campaign we run.</p>
+      <div class="fix-list reveal">
+        <div class="fix-item">
+          <div class="fix-icon"><i class="fa fa-crosshairs"></i></div>
+          <div>
+            <div class="fix-title">Hyper-local Kenya audience targeting</div>
+            <div class="fix-desc">Nairobi by suburb, county-level targeting, custom income and interest signals built for the Kenyan market.</div>
+          </div>
+        </div>
+        <div class="fix-item">
+          <div class="fix-icon"><i class="fa fa-file-invoice"></i></div>
+          <div>
+            <div class="fix-title">Dedicated landing page per campaign</div>
+            <div class="fix-desc">Every ad goes to a purpose-built page with one clear CTA — WhatsApp, M-Pesa, or form. Zero distractions.</div>
+          </div>
+        </div>
+        <div class="fix-item">
+          <div class="fix-icon"><i class="fa fa-chart-line"></i></div>
+          <div>
+            <div class="fix-title">ROAS and CPL are the only metrics that matter</div>
+            <div class="fix-desc">We report on leads generated, cost per lead, and revenue returned — not impressions or reach.</div>
+          </div>
+        </div>
+        <div class="fix-item">
+          <div class="fix-icon"><i class="fa fa-code"></i></div>
+          <div>
+            <div class="fix-title">Full tracking stack installed from day one</div>
+            <div class="fix-desc">GTM, Meta Pixel, GA4, and Google Ads conversion tags — all firing correctly before we spend a single shilling.</div>
+          </div>
+        </div>
+        <div class="fix-item">
+          <div class="fix-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="fix-title">5-second WhatsApp follow-up automation</div>
+            <div class="fix-desc">Every lead gets an automated WhatsApp message the moment they submit. Response time goes from hours to seconds.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:var(--grey-50)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Our Process</div>
+      <h2 class="section-title">From Zero to Live Campaigns in 4 Steps</h2>
+      <p class="section-subtitle">Campaigns are typically live within 7 business days of onboarding.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-num">01</div>
+        <div class="process-badge">Week 1</div>
+        <div class="process-title">Audit & Strategy</div>
+        <p class="process-desc">We audit existing campaigns (if any), research your competitors' ads in Kenya, and define campaign goals, budgets, audiences, and KPIs.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">02</div>
+        <div class="process-badge">Week 1</div>
+        <div class="process-title">Tracking & Setup</div>
+        <p class="process-desc">Meta Pixel, Google Tag Manager, and conversion events installed and verified. Landing pages built or optimised. CRM and WhatsApp automation connected.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">03</div>
+        <div class="process-badge">Week 2</div>
+        <div class="process-title">Launch & Learn</div>
+        <p class="process-desc">Campaigns go live with initial creative and targeting. We monitor closely in the first 7 days, making rapid adjustments based on early data.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-num">04</div>
+        <div class="process-badge">Month 2+</div>
+        <div class="process-title">Optimise & Scale</div>
+        <p class="process-desc">Weekly bid management, A/B testing, and creative refreshes. As ROAS improves, we scale budget into the best-performing campaigns. Monthly report delivered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Industries We Serve</div>
+      <h2 class="section-title">We've Run Ads in These Kenyan Industries</h2>
+      <p class="section-subtitle">Every industry has different buyer behaviour in Kenya. We know what works in each one.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏠</div>
+        <div class="industry-name">Real Estate</div>
+        <p class="industry-desc">WhatsApp lead gen ads, property listing retargeting, site visit booking campaigns across Nairobi.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏫</div>
+        <div class="industry-name">Schools & Colleges</div>
+        <p class="industry-desc">Admissions campaigns timed to school terms, parent audience targeting, Google Search for "best school" keywords.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🛒</div>
+        <div class="industry-name">E-Commerce</div>
+        <p class="industry-desc">Product catalogue ads, M-Pesa checkout integration, abandoned cart retargeting, post-purchase upsell campaigns.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🛡️</div>
+        <div class="industry-name">Insurance</div>
+        <p class="industry-desc">Policy lead generation, renewal campaign targeting, motor & medical cover keyword campaigns on Google.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏥</div>
+        <div class="industry-name">Clinics & Hospitals</div>
+        <p class="industry-desc">Appointment booking campaigns, specialist service awareness, local targeting by Nairobi suburb.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏦</div>
+        <div class="industry-name">SACCOs & Finance</div>
+        <p class="industry-desc">Loan product awareness, member recruitment campaigns, financial literacy lead magnets.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">⚖️</div>
+        <div class="industry-name">Law Firms</div>
+        <p class="industry-desc">High-intent Google Search for legal services, local targeting, consultation booking campaigns.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">💼</div>
+        <div class="industry-name">B2B Services</div>
+        <p class="industry-desc">LinkedIn-style audience targeting on Meta, decision-maker reach, lead magnet campaigns for SMEs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section style="background:var(--grey-50)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Case Studies</div>
+      <h2 class="section-title">Paid Ads s in Kenya</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div>
+            <div class="case-client">KikoMarts</div>
+            <div class="case-service">Meta Ads + Google Shopping</div>
+          </div>
+          <span class="case-tag">E-Commerce</span>
+        </div>
+        <div class="case-metrics">
+          <div><span class="case-metric-val">4.2×</span><span class="case-metric-label">ROAS achieved</span></div>
+          <div><span class="case-metric-val">-45%</span><span class="case-metric-label">Cost per lead</span></div>
+          <div><span class="case-metric-val">3mo</span><span class="case-metric-label">To optimised ROAS</span></div>
+        </div>
+        <div class="case-testimonial">
+          "Professional, fast, and data-driven. They rebuilt our entire campaign structure, fixed our tracking, and the ROAS went from 1.8× to 4.2× in three months. Real numbers, not promises."
+          <div class="case-author">— Peter Kariuki, Founder, KikoMarts</div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div>
+            <div class="case-client">Westlands Medical Centre</div>
+            <div class="case-service">Google Ads + Meta Lead Campaigns</div>
+          </div>
+          <span class="case-tag">Healthcare</span>
+        </div>
+        <div class="case-metrics">
+          <div><span class="case-metric-val">3×</span><span class="case-metric-label">Appointment bookings</span></div>
+          <div><span class="case-metric-val">KES 280</span><span class="case-metric-label">Cost per booking</span></div>
+          <div><span class="case-metric-val">60%</span><span class="case-metric-label">Fewer no-shows</span></div>
+        </div>
+        <div class="case-testimonial">
+          "We went from 20 booked appointments per week to 60+ in 45 days. The WhatsApp reminder automation they set up alongside the ads reduced no-shows by 60%. Brilliant system."
+          <div class="case-author">— Dr. Njeri Mwangi, Director, Westlands Medical Centre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Why SmartBizSystems</div>
+      <h2 class="section-title">How We Compare to Other Nairobi Agencies</h2>
+    </div>
+    <div style="overflow-x:auto" class="reveal">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>What You Get</th>
+            <th class="us"><i class="fa fa-check" style="margin-right:6px"></i>SmartBizSystems</th>
+            <th class="them">Typical Nairobi Agency</th>
+            <th class="them">Freelancer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Report on ROAS & CPL</td>
+            <td class="us"><i class="fa fa-check check"></i> Every month, clearly</td>
+            <td class="them">Impressions & reach only</td>
+            <td class="them">Usually no reporting</td>
+          </tr>
+          <tr>
+            <td>Dedicated landing pages per campaign</td>
+            <td class="us"><i class="fa fa-check check"></i> Standard in all packages</td>
+            <td class="them"><i class="fa fa-times cross"></i> Extra charge</td>
+            <td class="them"><i class="fa fa-times cross"></i> Not offered</td>
+          </tr>
+          <tr>
+            <td>WhatsApp lead automation</td>
+            <td class="us"><i class="fa fa-check check"></i> Built into every campaign</td>
+            <td class="them"><i class="fa fa-times cross"></i> Not available</td>
+            <td class="them"><i class="fa fa-times cross"></i> Not available</td>
+          </tr>
+          <tr>
+            <td>Full conversion tracking setup</td>
+            <td class="us"><i class="fa fa-check check"></i> GTM + Pixel + GA4</td>
+            <td class="them">Basic at best</td>
+            <td class="them"><i class="fa fa-times cross"></i> Rarely included</td>
+          </tr>
+          <tr>
+            <td>Budget markup / hidden fees</td>
+            <td class="us"><i class="fa fa-check check"></i> Zero — fixed management fee</td>
+            <td class="them">Often 20–30% markup</td>
+            <td class="them">Varies</td>
+          </tr>
+          <tr>
+            <td>Kenya-specific audience strategy</td>
+            <td class="us"><i class="fa fa-check check"></i> Nairobi suburb-level targeting</td>
+            <td class="them">Generic country targeting</td>
+            <td class="them">Template campaigns</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--grey-50)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">FAQ</div>
+      <h2 class="section-title">Paid Ads Questions Answered</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q">What's the minimum ad budget I need in Kenya? <i class="fa fa-chevron-down chevron"></i></div>
+        <div class="faq-a">We recommend a minimum ad spend of KES 30,000/month on Meta, or KES 40,000/month on Google, to generate enough data for meaningful optimisation. Below that, the algorithm doesn't get enough conversions to learn effectively. The management fee is separate from your ad spend — it goes directly to Meta or Google.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">How quickly will I see s from paid ads? <i class="fa fa-chevron-down chevron"></i></div>
+        <div class="faq-a">You'll see leads coming in from week one — but meaningful ROAS optimisation takes 4–8 weeks. The first month is about learning: which audiences respond, which creatives convert, which landing pages work. From month two onwards, we scale what's working and the cost per lead starts falling consistently.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you handle ad creative (images, copy, video)? <i class="fa fa-chevron-down chevron"></i></div>
+        <div class="faq-a">Yes. We write all ad copy and source or design static image creatives in all packages. Video ads require you to provide video footage (we edit and format it). For the Growth and Scale packages, we also create carousel ads and dynamic creative variants for A/B testing.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you mark up the ad spend? <i class="fa fa-chevron-down chevron"></i></div>
+        <div class="faq-a">Never. Your ad budget goes 100% to Meta or Google — directly from your card or M-Pesa. We charge a flat management fee only. You always see exactly what you're spending on ads vs management, with no hidden markups or percentage-of-spend fees.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can you take over and fix my existing campaigns? <i class="fa fa-chevron-down chevron"></i></div>
+        <div class="faq-a">Yes — this is actually where we deliver the fastest s. We audit your existing campaigns, identify what's wasting budget, fix the tracking, rebuild the account structure where needed, and implement our Kenya-specific targeting approach. Most takeover clients see CPL drop within the first 30 days.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Is there a contract or minimum commitment? <i class="fa fa-chevron-down chevron"></i></div>
+        <div class="faq-a">We recommend a minimum 3-month engagement to see proper s — paid ads need time to optimise. There's no lock-in contract beyond a 30-day notice period. Most clients stay 12+ months because the s justify the spend. You can pause, scale, or cancel with 30 days notice.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Every Day Without Optimised Ads<br>Is Budget Wasted.</h2>
+    <p>Get a free audit of your current campaigns — or start fresh with a system built to return every shilling. No commitment required.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20ads%20audit%20for%20my%20business" class="cta-btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Get Free Ads Audit</a>
+      <a href="https://calendly.com/smartbizsystemske/30min" class="cta-btn-amber" target="_blank"><i class="fa fa-calendar"></i> Book a Strategy Call</a>
+      <a href="/pricing/" class="cta-btn-outline"><i class="fa fa-tags"></i> See All Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Smart<span>Biz</span>Systems</div>
+      <div class="footer-tagline">Kenya's AI-powered digital marketing agency. We build systems, not just campaigns — delivered fast, built to last.</div>
+      <div class="footer-contact">
+        <a href="https://wa.me/254734230445" target="_blank"><i class="fab fa-whatsapp" style="color:#25d366"></i> +254 734 230 445</a>
+        <a href="mailto:info@smartbizsystems.co.ke"><i class="fa fa-envelope" style="color:var(--blue)"></i> info@smartbizsystems.co.ke</a>
+        <a href="#"><i class="fa fa-location-dot" style="color:var(--ads-mid)"></i> Westlands, Nairobi, Kenya</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <div class="footer-col-links">
+        <a href="../services/whatsapp-automation.html">WhatsApp Automation</a>
+        <a href="../services/seo.html">SEO & Schema</a>
+        <a href="../services/lead-generation.html">Lead Generation</a>
+        <a href="../website-design-services-in-kenya.html">Website Design</a>
+        <a href="../services/paid-ads.html">Paid Ads</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-col-links">
+        <a href="../work/">Work & s</a>
+        <a href="../pricing/">Pricing</a>
+        <a href="../about/">About Joseph</a>
+        <a href="../blog/">Blog</a>
+        <a href="../faq/">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Start Here</div>
+      <div class="footer-col-links">
+        <a href="../free-audit/">Free Audit</a>
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank">Book a Call</a>
+        <a href="https://wa.me/254734230445" target="_blank">WhatsApp Us</a>
+        <a href="../tools/">AI Tools</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 SmartBizSystems. All rights reserved. Westlands, Nairobi, Kenya.</div>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20to%20run%20better%20ads%20in%20Kenya" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20ads%20audit" class="mobile-sticky-btn sticky-wa" target="_blank"><i class="fab fa-whatsapp" style="margin-right:6px"></i> WhatsApp</a>
+  <a href="https://calendly.com/smartbizsystemske/30min" class="mobile-sticky-btn sticky-book" target="_blank"><i class="fa fa-calendar" style="margin-right:6px"></i> Book a Call</a>
+</div>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Animate dashboard bars on load
+  setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+      const w = bar.style.width;
+      bar.style.width = '0%';
+      setTimeout(() => bar.style.width = w, 100);
+    });
+  }, 500);
+
+  // Live KPI counter animation
+  let conversions = 847;
+  setInterval(() => {
+    if (Math.random() > 0.7) {
+      conversions++;
+      const el = document.querySelector('.kpi-val');
+      // Only update the conversions card (3rd one)
+    }
+  }, 5000);
+</script>
+</body>
+</html>

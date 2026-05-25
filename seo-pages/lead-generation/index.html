@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Generation Solutions Kenya | Ad Strategy & Funnel Hub | SmartBizSystems</title>
+    <meta name="description" content="Explore regional lead generation and advertising solutions for Kenyan businesses. Meta Ads, Google Ads, and high-converting funnels for Nairobi, Mombasa, and beyond.">
+    
+    <!-- CANONICAL: Points to the Authority Lead Gen Service Page -->
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/lead-generation.html" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* Lead Gen Specific Palette */
+            --accent: #7c3aed; --accent-dark: #6d28d9; --accent-light: #f5f3ff;
+            --blue: #0d6efd; --blue-dark: #0a56c8; --white: #ffffff;
+            --grey-50: #f8f9fb; --grey-100: #f1f3f6; --grey-200: #e4e7ed;
+            --grey-700: #242b38; --grey-800: #151b27;
+            --text-primary: #151b27; --text-secondary: #3d4554;
+            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+
+        /* Nav */
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
+        .nav-cta { background: var(--accent); color: white; padding: 0.6rem 1.2rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+
+        /* Hero Hub */
+        .hub-hero { padding: 8rem 2rem 4rem; background: var(--white); border-bottom: 1px solid var(--border); text-align: center; }
+        .hub-hero span { color: var(--accent); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; }
+        .hub-hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 1rem 0 1.5rem; }
+        .hub-hero p { max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.2rem; color: var(--text-secondary); }
+
+        /* Directory Grid */
+        .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2rem; margin-bottom: 3rem; display: flex; align-items: center; gap: 12px; }
+        .section-title i { color: var(--accent); }
+
+        .directory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .directory-card { 
+            background: var(--white); padding: 2.5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); 
+            text-decoration: none; color: inherit; transition: var(--transition);
+        }
+        .directory-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .directory-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+        .directory-card p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .directory-card .link-text { color: var(--accent); font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
+
+        /* Industry Section */
+        .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .industry-card { background: var(--grey-800); color: white; padding: 2.5rem 1.5rem; border-radius: var(--radius-xl); text-decoration: none; transition: var(--transition); text-align: center; }
+        .industry-card:hover { background: var(--text-primary); transform: scale(1.02); }
+        .industry-card i { margin-bottom: 1rem; color: var(--accent); }
+        .industry-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .industry-card p { font-size: 0.8rem; opacity: 0.7; }
+
+        /* Push to Authority CTA */
+        .authority-push { 
+            background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 100%); 
+            color: white; border-radius: var(--radius-xl); padding: 5rem 3rem; text-align: center; margin-top: 4rem;
+        }
+        .authority-push h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .authority-push p { font-size: 1.2rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+        .btn-white { background: white; color: var(--accent-dark); padding: 1.2rem 2.5rem; border-radius: 12px; font-weight: 800; text-decoration: none; display: inline-block; transition: 0.2s; }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+        /* Footer */
+        footer { background: var(--grey-800); color: white; padding: 5rem 2rem 2rem; }
+
+        @media (max-width: 1100px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) {
+            .industry-grid, .directory-grid { grid-template-columns: 1fr; }
+            .hub-hero h1 { font-size: 2.2rem; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">SmartBizSystems</a>
+            <a href="https://wa.me/254734230445" class="nav-cta">Get Free Audit</a>
+        </div>
+    </nav>
+
+    <header class="hub-hero">
+        <div class="reveal active">
+            <span>Customer Acquisition Hub</span>
+            <h1>High-Performance Lead Generation<br>for the Kenyan Market</h1>
+            <p>We build automated advertising funnels that find, qualify, and deliver your next best customers. Select your region or industry to see our specialized lead strategies.</p>
+        </div>
+    </header>
+
+    <section class="section">
+    <h2 class="section-title reveal active"><i data-lucide="map-pin"></i> Regional Ad Strategies</h2>
+    <div class="directory-grid">
+        
+        <!-- 1. Nairobi -->
+        <a href="nairobi.html" class="directory-card reveal">
+            <h3>Nairobi & CBD</h3>
+            <p>Dominating high-competition search terms in the capital's central business district.</p>
+            <span class="link-text">Explore Nairobi Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 2. Westlands -->
+        <a href="westlands.html" class="directory-card reveal">
+            <h3>Westlands & Tech</h3>
+            <p>High-precision B2B funnels for the corporate headquarters and tech startups of Nairobi.</p>
+            <span class="link-text">Explore Westlands Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 3. Mombasa -->
+        <a href="mombasa.html" class="directory-card reveal">
+            <h3>Mombasa & Coast</h3>
+            <p>Tourism and logistics acquisition funnels for coastal commercial and maritime firms.</p>
+            <span class="link-text">Explore Mombasa Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 4. Upper Hill -->
+        <a href="upper-hill.html" class="directory-card reveal">
+            <h3>Upper Hill & Finance</h3>
+            <p>Enterprise-grade lead capture for the financial district’s insurance and banking sectors.</p>
+            <span class="link-text">Explore Upper Hill Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 5. Karen -->
+        <a href="karen.html" class="directory-card reveal">
+            <h3>Karen & Luxury</h3>
+            <p>Sophisticated, high-trust ad funnels for elite services and high-net-worth audiences.</p>
+            <span class="link-text">Explore Karen Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 6. Kilimani -->
+        <a href="kilimani.html" class="directory-card reveal">
+            <h3>Kilimani & Boutique</h3>
+            <p>Boutique agency and NGO donor acquisition focused on professional social commerce.</p>
+            <span class="link-text">Explore Kilimani Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 7. Kisumu -->
+        <a href="kisumu.html" class="directory-card reveal">
+            <h3>Kisumu & Western</h3>
+            <p>Scaling trade and NGO outreach across the Lake Basin and cross-border trade routes.</p>
+            <span class="link-text">Explore Western Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 8. Nakuru -->
+        <a href="nakuru.html" class="directory-card reveal">
+            <h3>Nakuru & Rift Valley</h3>
+            <p>Agri-business and trade-focused customer acquisition for Kenya's newest city.</p>
+            <span class="link-text">Explore Nakuru Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 9. Thika -->
+        <a href="thika.html" class="directory-card reveal">
+            <h3>Thika & Industry</h3>
+            <p>Industrial SME and manufacturing lead funnels optimized for the Superhighway traffic.</p>
+            <span class="link-text">Explore Central Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 10. Eldoret -->
+        <a href="eldoret.html" class="directory-card reveal">
+            <h3>Eldoret & North Rift</h3>
+            <p>Institutional and regional trade acquisition for the North Rift’s commercial capital.</p>
+            <span class="link-text">Explore Eldoret Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+        <!-- 11. Kiambu -->
+        <a href="kiambu.html" class="directory-card reveal">
+            <h3>Kiambu & Commuter</h3>
+            <p>Real estate and educational lead funnels for the rapidly growing Nairobi periphery.</p>
+            <span class="link-text">Explore Kiambu Leads <i data-lucide="arrow-right"></i></span>
+        </a>
+
+    </div>
+</section>
+    <section class="section" style="background: white; border-radius: var(--radius-xl);">
+        <h2 class="section-title reveal"><i data-lucide="target"></i> Sector-Specific Funnels</h2>
+        <div class="industry-grid">
+            <!-- 1. Real Estate -->
+            <a href="real-estate.html" class="industry-card reveal">
+                <i data-lucide="home" size="32"></i>
+                <h3>Real Estate</h3>
+                <p>Buyer & Tenant Funnels</p>
+            </a>
+            <!-- 2. SACCOs -->
+            <a href="saccos.html" class="industry-card reveal">
+                <i data-lucide="users" size="32"></i>
+                <h3>SACCOs</h3>
+                <p>Member Growth Funnels</p>
+            </a>
+            <!-- 3. Schools -->
+            <a href="schools.html" class="industry-card reveal">
+                <i data-lucide="graduation-cap" size="32"></i>
+                <h3>Schools</h3>
+                <p>Admission Lead Funnels</p>
+            </a>
+            <!-- 4. Insurance -->
+            <a href="insurance.html" class="industry-card reveal">
+                <i data-lucide="shield-check" size="32"></i>
+                <h3>Insurance</h3>
+                <p>Policy Quote Funnels</p>
+            </a>
+        </div>
+        <div class="industry-grid" style="margin-top: 1.5rem;">
+            <!-- 5. Clinics -->
+            <a href="clinics.html" class="industry-card reveal">
+                <i data-lucide="stethoscope" size="32"></i>
+                <h3>Clinics</h3>
+                <p>Patient Intake Funnels</p>
+            </a>
+            <!-- 6. Law Firms -->
+            <a href="law-firms.html" class="industry-card reveal">
+                <i data-lucide="scale" size="32"></i>
+                <h3>Law Firms</h3>
+                <p>Client Matter Funnels</p>
+            </a>
+            <!-- 7. E-Commerce -->
+            <a href="ecommerce.html" class="industry-card reveal">
+                <i data-lucide="shopping-cart" size="32"></i>
+                <h3>E-Commerce</h3>
+                <p>Direct Sales Funnels</p>
+            </a>
+            <!-- 8. SMEs -->
+            <a href="smes.html" class="industry-card reveal">
+                <i data-lucide="zap" size="32"></i>
+                <h3>SMEs</h3>
+                <p>Rapid Scaling Funnels</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="authority-push reveal">
+            <h2>Stop Guessing. Start Growing.</h2>
+            <p>Our localized referral strategies are just the beginning. Visit our main Lead Generation service page to see how we build end-to-end customer acquisition machines in KES.</p>
+            <a href="../../services/lead-generation.html" class="btn-white">View Full Service & Pricing →</a>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center; color: var(--grey-400); padding: 4rem;">© 2026 SmartBizSystems — Lead Generation Hub Kenya.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

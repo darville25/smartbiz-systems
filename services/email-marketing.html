@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Marketing & Automation Kenya | SmartBizSystems</title>
+<meta name="description" content="Email marketing and automation for Kenyan businesses. Welcome sequences, nurture flows, cold outreach, and re-engagement campaigns. Turn your email list into revenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHPX2K7F');</script>
+    <!-- End Google Tag Manager -->
+<style>
+  :root {
+    --blue: #0d6efd;
+    --blue-dark: #0a56c8;
+    --em: #dc2626;
+    --em-dark: #b91c1c;
+    --em-light: #fef2f2;
+    --em-border: #fecaca;
+    --em-mid: #ef4444;
+    --white: #ffffff;
+    --grey-50: #f8f9fb;
+    --grey-100: #f1f3f6;
+    --grey-200: #e4e7ed;
+    --grey-300: #c8cdd8;
+    --grey-400: #8f97a8;
+    --grey-500: #5a6476;
+    --grey-600: #3d4554;
+    --grey-700: #242b38;
+    --grey-800: #151b27;
+    --text-primary: #151b27;
+    --text-secondary: #3d4554;
+    --text-muted: #5a6476;
+    --border: #e4e7ed;
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --transition: 0.2s cubic-bezier(.4,0,.2,1);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--grey-50); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.85); backdrop-filter: blur(16px) saturate(1.8); -webkit-backdrop-filter: blur(16px) saturate(1.8); border-bottom: 1px solid transparent; transition: var(--transition); padding: 0 24px; }
+  nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; height: 64px; gap: 32px; }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text-primary); text-decoration: none; flex-shrink: 0; }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 4px; flex: 1; }
+  .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: var(--transition); }
+  .nav-links a:hover, .nav-links a.active { color: var(--em); background: var(--em-light); }
+  .nav-cta { background: var(--blue); color: white; font-size: 0.875rem; font-weight: 600; padding: 8px 18px; border-radius: var(--radius-sm); text-decoration: none; transition: var(--transition); white-space: nowrap; }
+  .nav-cta:hover { background: var(--blue-dark); }
+
+  /* BREADCRUMB */
+  .breadcrumb { background: var(--white); border-bottom: 1px solid var(--border); padding: 10px 24px; margin-top: 64px; }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-muted); }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--em); }
+  .breadcrumb-sep { color: var(--grey-300); }
+  .breadcrumb-current { color: var(--em); font-weight: 500; }
+
+  /* HERO */
+  .hero { background: var(--white); padding: 80px 24px 0; border-bottom: 1px solid var(--border); overflow: hidden; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding-bottom: 80px; }
+  .hero-kicker { display: inline-flex; align-items: center; gap: 8px; background: var(--em-light); color: var(--em-dark); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 20px; border: 1px solid var(--em-border); }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--text-primary); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .hero h1 .accent { color: var(--em); }
+  .hero-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 32px; max-width: 480px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary { background: var(--em); color: white; font-size: 0.9rem; font-weight: 600; padding: 12px 24px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--em-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(220,38,38,0.3); }
+  .btn-secondary { background: var(--white); color: var(--text-primary); font-size: 0.9rem; font-weight: 600; padding: 12px 24px; border-radius: var(--radius-md); text-decoration: none; border: 1.5px solid var(--border); transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-secondary:hover { border-color: var(--em); color: var(--em); background: var(--em-light); }
+
+  /* INBOX MOCKUP */
+  .inbox-wrap { position: relative; }
+  .inbox { background: var(--white); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); border: 1px solid var(--border); overflow: hidden; }
+  .inbox-header { background: var(--grey-800); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; }
+  .inbox-title { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px; }
+  .inbox-badge { background: var(--em); color: white; font-size: 0.62rem; font-weight: 800; padding: 2px 8px; border-radius: 100px; }
+  .inbox-body { display: grid; grid-template-columns: 180px 1fr; height: 340px; }
+  /* Sidebar */
+  .inbox-sidebar { background: var(--grey-50); border-right: 1px solid var(--border); padding: 12px 0; }
+  .inbox-folder { display: flex; align-items: center; gap: 8px; padding: 7px 14px; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: var(--transition); }
+  .inbox-folder:hover { background: var(--grey-100); color: var(--text-primary); }
+  .inbox-folder.active { background: var(--em-light); color: var(--em-dark); font-weight: 700; border-right: 2px solid var(--em); }
+  .inbox-folder i { width: 14px; text-align: center; font-size: 0.7rem; }
+  .inbox-folder .count { margin-left: auto; background: var(--em); color: white; font-size: 0.58rem; font-weight: 800; padding: 1px 5px; border-radius: 100px; }
+  .inbox-divider { height: 1px; background: var(--border); margin: 8px 12px; }
+  /* Email list */
+  .email-list { overflow-y: auto; }
+  .email-item { padding: 10px 14px; border-bottom: 1px solid var(--border); cursor: pointer; transition: var(--transition); display: flex; flex-direction: column; gap: 3px; }
+  .email-item:hover { background: var(--grey-50); }
+  .email-item.unread { background: var(--em-light); }
+  .email-item.active { background: #fef2f2; border-left: 2px solid var(--em); }
+  .email-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .email-sender { font-size: 0.75rem; font-weight: 700; color: var(--text-primary); }
+  .email-item.unread .email-sender { color: var(--em-dark); }
+  .email-time { font-size: 0.62rem; color: var(--text-muted); white-space: nowrap; }
+  .email-subject { font-size: 0.7rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .email-preview { font-size: 0.65rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .unread-dot { width: 6px; height: 6px; background: var(--em); border-radius: 50%; flex-shrink: 0; }
+  /* Open rate banner */
+  .open-rate-banner { background: var(--em-light); border-top: 1px solid var(--em-border); padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; }
+  .or-stat { text-align: center; }
+  .or-val { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800; color: var(--em); }
+  .or-label { font-size: 0.6rem; color: var(--em-dark); font-weight: 600; }
+  .or-divider { width: 1px; height: 28px; background: var(--em-border); }
+
+  /* PROOF BAR */
+  .proof-bar { background: var(--grey-800); padding: 20px 24px; }
+  .proof-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; }
+  .proof-stat { flex: 1; text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+  .proof-stat:last-child { border-right: none; }
+  .proof-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--em-mid); display: block; }
+  .proof-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+  /* SECTION BASE */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-kicker { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--em); margin-bottom: 12px; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--text-primary); line-height: 1.2; letter-spacing: -0.02em; }
+  .section-subtitle { font-size: 1rem; color: var(--text-secondary); margin-top: 12px; max-width: 540px; margin-left: auto; margin-right: auto; }
+
+  /* FEATURES */
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); transition: var(--transition); }
+  .feature-card:hover { box-shadow: var(--shadow-md); border-color: var(--em-border); transform: translateY(-2px); }
+  .feature-icon { width: 44px; height: 44px; background: var(--em-light); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--em); margin-bottom: 16px; }
+  .feature-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .feature-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+
+  /* SEQUENCE TYPES */
+  .sequences-section { background: var(--white); }
+  .sequences-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .sequence-card { background: var(--grey-50); border-radius: var(--radius-xl); padding: 28px; border: 1px solid var(--border); transition: var(--transition); }
+  .sequence-card:hover { box-shadow: var(--shadow-md); border-color: var(--em-border); }
+  .seq-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .seq-icon { width: 44px; height: 44px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .seq-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+  .seq-tagline { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+  /* Email flow timeline */
+  .email-flow { display: flex; flex-direction: column; gap: 0; }
+  .email-flow-step { display: flex; gap: 12px; padding-bottom: 12px; position: relative; }
+  .email-flow-step:last-child { padding-bottom: 0; }
+  .ef-num-wrap { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .ef-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; flex-shrink: 0; }
+  .ef-line { flex: 1; width: 1px; background: var(--border); margin: 3px 0; min-height: 10px; }
+  .ef-content { padding-top: 4px; flex: 1; }
+  .ef-day { font-size: 0.62rem; font-weight: 700; color: var(--em); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .ef-subject { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .ef-desc { font-size: 0.72rem; color: var(--text-muted); line-height: 1.4; }
+  .ef-stat { font-size: 0.65rem; font-weight: 700; color: #16a34a; margin-top: 3px; }
+
+  /* AUTOMATION SECTION */
+  .automation-section { background: var(--grey-800); padding: 80px 24px; }
+  .automation-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .automation-flow { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-xl); padding: 24px; }
+  .af-title { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: white; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .af-dot { width: 8px; height: 8px; background: var(--em-mid); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.3)} }
+  .af-steps { display: flex; flex-direction: column; gap: 0; }
+  .af-step { display: flex; gap: 14px; padding-bottom: 16px; }
+  .af-step:last-child { padding-bottom: 0; }
+  .af-num-wrap { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .af-num { width: 34px; height: 34px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; flex-shrink: 0; }
+  .af-line { flex: 1; width: 1px; background: rgba(255,255,255,0.1); margin: 4px 0; min-height: 12px; }
+  .af-content { padding-top: 6px; }
+  .af-step-title { font-size: 0.82rem; font-weight: 600; color: white; margin-bottom: 2px; }
+  .af-step-desc { font-size: 0.72rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+  .af-trigger { display: inline-flex; align-items: center; gap: 4px; font-size: 0.62rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; margin-top: 4px; }
+  .trigger-red { background: rgba(220,38,38,0.2); color: #fca5a5; border: 1px solid rgba(220,38,38,0.3); }
+  .trigger-green { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+  .trigger-blue { background: rgba(59,130,246,0.15); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+  .trigger-amber { background: rgba(245,158,11,0.15); color: #fcd34d; border: 1px solid rgba(245,158,11,0.2); }
+
+  /* PLATFORMS */
+  .platforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .platform-card { background: var(--white); border-radius: var(--radius-xl); padding: 28px; border: 1px solid var(--border); text-align: center; transition: var(--transition); }
+  .platform-card:hover { box-shadow: var(--shadow-md); border-color: var(--em-border); transform: translateY(-2px); }
+  .platform-logo { width: 56px; height: 56px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 14px; }
+  .platform-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+  .platform-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+  .platform-tags { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
+  .platform-tag { font-size: 0.65rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; background: var(--em-light); color: var(--em-dark); border: 1px solid var(--em-border); }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .pricing-card { background: var(--white); border-radius: var(--radius-xl); padding: 32px; border: 1px solid var(--border); position: relative; transition: var(--transition); }
+  .pricing-card:hover { box-shadow: var(--shadow-md); }
+  .pricing-card.featured { border-color: var(--em); box-shadow: 0 0 0 2px var(--em-border), var(--shadow-lg); }
+  .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--em); color: white; font-size: 0.72rem; font-weight: 700; padding: 4px 16px; border-radius: 100px; white-space: nowrap; }
+  .pricing-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 6px; }
+  .pricing-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 20px; }
+  .pricing-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+  .pricing-kes { font-size: 0.9rem; font-weight: 700; color: var(--text-secondary); }
+  .pricing-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+  .pricing-period { font-size: 0.8rem; color: var(--text-muted); }
+  .pricing-sub { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 24px; }
+  .pricing-divider { height: 1px; background: var(--border); margin: 20px 0; }
+  .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.85rem; color: var(--text-secondary); }
+  .pricing-features li i { color: var(--em); font-size: 0.75rem; margin-top: 3px; flex-shrink: 0; }
+  .pricing-btn { display: block; text-align: center; padding: 12px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+  .pricing-btn-primary { background: var(--em); color: white; }
+  .pricing-btn-primary:hover { background: var(--em-dark); }
+  .pricing-btn-secondary { background: var(--grey-50); color: var(--text-primary); border: 1.5px solid var(--border); }
+  .pricing-btn-secondary:hover { border-color: var(--em); color: var(--em); background: var(--em-light); }
+
+  /* INDUSTRIES */
+  .industries-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .industry-card { background: var(--white); border-radius: var(--radius-lg); padding: 22px; border: 1px solid var(--border); transition: var(--transition); }
+  .industry-card:hover { box-shadow: var(--shadow-md); border-color: var(--em-border); }
+  .industry-icon { font-size: 1.4rem; margin-bottom: 10px; }
+  .industry-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+  .industry-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+  /* CASE STUDIES */
+  .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .case-card { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: var(--transition); }
+  .case-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+  .case-header { padding: 24px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .case-client { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+  .case-service { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+  .case-tag { background: var(--em-light); color: var(--em-dark); font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 100px; border: 1px solid var(--em-border); white-space: nowrap; }
+  .case-metrics { padding: 16px 24px; display: flex; gap: 24px; border-bottom: 1px solid var(--border); }
+  .case-metric-val { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--em); display: block; }
+  .case-metric-label { font-size: 0.72rem; color: var(--text-muted); }
+  .case-testimonial { padding: 16px 24px; font-size: 0.85rem; color: var(--text-secondary); font-style: italic; line-height: 1.6; }
+  .case-author { font-size: 0.78rem; color: var(--text-muted); font-style: normal; font-weight: 600; margin-top: 8px; }
+
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .faq-item { background: var(--grey-50); border-radius: var(--radius-lg); border: 1px solid var(--border); overflow: hidden; }
+  .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; cursor: pointer; font-weight: 600; font-size: 0.9rem; color: var(--text-primary); gap: 12px; }
+  .faq-q i { color: var(--em); font-size: 0.75rem; transition: var(--transition); flex-shrink: 0; }
+  .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; }
+  .faq-item.open .faq-q i { transform: rotate(180deg); }
+  .faq-item.open .faq-a { max-height: 220px; padding-bottom: 18px; }
+
+  /* CTA */
+  .cta-section { background: var(--em); padding: 80px 24px; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--em-dark) 0%, var(--em) 100%); }
+  .cta-inner { max-width: 720px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .cta-inner h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: white; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.02em; }
+  .cta-inner p { color: rgba(255,255,255,0.85); font-size: 1rem; margin-bottom: 36px; }
+  .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn-white { background: white; color: var(--em-dark); font-size: 0.9rem; font-weight: 700; padding: 14px 28px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+  .cta-btn-outline { border: 2px solid rgba(255,255,255,0.5); color: white; font-size: 0.9rem; font-weight: 600; padding: 14px 28px; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+  .cta-btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+  /* FOOTER */
+  footer { background: var(--grey-800); padding: 64px 24px 32px; }
+  .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .footer-brand-name { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 10px; }
+  .footer-brand-name span { color: var(--blue); }
+  .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 20px; }
+  .footer-contact a { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 8px; }
+  .footer-contact a:hover { color: white; }
+  .footer-col-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+  .footer-col-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col-links a { font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: var(--transition); }
+  .footer-col-links a:hover { color: white; }
+  .footer-bottom { max-width: 1200px; margin: 32px auto 0; display: flex; justify-content: space-between; align-items: center; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+
+  /* FLOATING WA */
+  .wa-float { position: fixed; bottom: 32px; right: 32px; z-index: 90; background: #25d366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: var(--transition); }
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float i { color: white; font-size: 1.3rem; }
+  @media (max-width: 768px) { .wa-float { display: none; } }
+
+  /* MOBILE STICKY */
+  .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; padding: 12px 16px; background: white; border-top: 1px solid var(--border); box-shadow: 0 -4px 16px rgba(0,0,0,0.08); gap: 10px; }
+  @media (max-width: 768px) { .mobile-sticky { display: flex; } }
+  .mobile-sticky a { flex: 1; text-align: center; padding: 12px; border-radius: var(--radius-md); font-size: 0.85rem; font-weight: 600; text-decoration: none; }
+  .sticky-wa { background: #25d366; color: white; }
+  .sticky-book { background: var(--em); color: white; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .sequences-grid { grid-template-columns: 1fr; }
+    .platforms-grid { grid-template-columns: 1fr 1fr; }
+    .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .automation-inner { grid-template-columns: 1fr; }
+    .case-grid, .faq-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .inbox-wrap { display: none; }
+    .proof-bar-inner { flex-wrap: wrap; }
+    .proof-stat { flex: 0 0 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 12px 0; }
+    .platforms-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    body { padding-bottom: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Smart<span>Biz</span>Systems</a>
+    <div class="nav-links">
+      <a href="../services/index.html" class="active">Services</a>
+      <a href="../work/index.html">Work</a>
+      <a href="../pricing/index.html">Pricing</a>
+      <a href="../about/index.html">About</a>
+      <a href="../blog/index.html">Blog</a>
+    </div>
+    <a href="https://calendly.com/smartbizsystemske/30min" class="nav-cta" target="_blank">Book a call</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep"><i class="fa fa-chevron-right" style="font-size:0.6rem"></i></span>
+    <a href="../services/index.html">Services</a>
+    <span class="breadcrumb-sep"><i class="fa fa-chevron-right" style="font-size:0.6rem"></i></span>
+    <span class="breadcrumb-current">Email Marketing</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker"><i class="fa fa-envelope"></i> Email Marketing & Automation Kenya</div>
+      <h1>Your Email List Is<br><span class="accent">Leaving Money</span><br>on the Table</h1>
+      <p class="hero-desc">Most Kenyan businesses collect emails and do nothing with them. We build automated email sequences that welcome, nurture, and convert — running 24/7 while you focus on your business. Turn subscribers into revenue.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20to%20set%20up%20email%20marketing%20automation%20for%20my%20business" class="btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> Start My Email System</a>
+        <a href="/free-audit/" class="btn-secondary"><i class="fa fa-magnifying-glass-chart"></i> Get Free Email Audit</a>
+      </div>
+    </div>
+
+    <!-- INBOX MOCKUP -->
+    <div class="inbox-wrap reveal">
+      <div class="inbox">
+        <div class="inbox-header">
+          <div class="inbox-title"><i class="fa fa-envelope" style="color:var(--em-mid)"></i> SmartBiz Email Campaigns <span class="inbox-badge">3 new</span></div>
+        </div>
+        <div class="inbox-body">
+          <!-- Sidebar -->
+          <div class="inbox-sidebar">
+            <div class="inbox-folder active"><i class="fa fa-inbox"></i> Inbox <span class="count">3</span></div>
+            <div class="inbox-folder"><i class="fa fa-paper-plane"></i> Sent</div>
+            <div class="inbox-folder"><i class="fa fa-rotate"></i> Sequences</div>
+            <div class="inbox-folder"><i class="fa fa-chart-bar"></i> Analytics</div>
+            <div class="inbox-divider"></div>
+            <div class="inbox-folder"><i class="fa fa-users"></i> Segments</div>
+            <div class="inbox-folder"><i class="fa fa-tag"></i> Tags</div>
+            <div class="inbox-folder"><i class="fa fa-robot"></i> Automations</div>
+          </div>
+          <!-- Email list -->
+          <div class="email-list">
+            <div class="email-item unread active">
+              <div class="email-row">
+                <span class="email-sender">Welcome Series — Day 1</span>
+                <div style="display:flex;align-items:center;gap:6px"><div class="unread-dot"></div><span class="email-time">Just now</span></div>
+              </div>
+              <div class="email-subject">Welcome to [Business Name] — Here's what to expect</div>
+              <div class="email-preview">Thank you for joining us. Over the next 7 days we'll show you exactly how...</div>
+            </div>
+            <div class="email-item unread">
+              <div class="email-row">
+                <span class="email-sender">Nurture Flow — Day 3</span>
+                <div style="display:flex;align-items:center;gap:6px"><div class="unread-dot"></div><span class="email-time">2h ago</span></div>
+              </div>
+              <div class="email-subject">The #1 mistake Kenyan businesses make (and how to fix it)</div>
+              <div class="email-preview">Most businesses we speak to in Nairobi are making this exact mistake...</div>
+            </div>
+            <div class="email-item unread">
+              <div class="email-row">
+                <span class="email-sender">Re-engagement — Win Back</span>
+                <div style="display:flex;align-items:center;gap:6px"><div class="unread-dot"></div><span class="email-time">5h ago</span></div>
+              </div>
+              <div class="email-subject">We miss you — here's KES 2,000 off your first order</div>
+              <div class="email-preview">It's been 30 days since your last visit. We wanted to reach out...</div>
+            </div>
+            <div class="email-item">
+              <div class="email-row">
+                <span class="email-sender">Cold Outreach — B2B</span>
+                <span class="email-time">Yesterday</span>
+              </div>
+              <div class="email-subject">Quick question about [Company Name]'s lead follow-up</div>
+              <div class="email-preview">Hi [First Name], I noticed you're running ads but your lead response time...</div>
+            </div>
+            <div class="email-item">
+              <div class="email-row">
+                <span class="email-sender">Abandoned Cart Recovery</span>
+                <span class="email-time">2d ago</span>
+              </div>
+              <div class="email-subject">You left something behind — complete your order</div>
+              <div class="email-preview">You added items to your cart but didn't complete checkout. Your items are still...</div>
+            </div>
+          </div>
+        </div>
+        <!-- Stats bar -->
+        <div class="open-rate-banner">
+          <div class="or-stat"><div class="or-val">47%</div><div class="or-label">Open Rate</div></div>
+          <div class="or-divider"></div>
+          <div class="or-stat"><div class="or-val">12%</div><div class="or-label">Click Rate</div></div>
+          <div class="or-divider"></div>
+          <div class="or-stat"><div class="or-val">3.8×</div><div class="or-label">ROI</div></div>
+          <div class="or-divider"></div>
+          <div class="or-stat"><div class="or-val">2,400</div><div class="or-label">Subscribers</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-stat"><span class="proof-num">47%</span><span class="proof-label">Avg open rate (vs 21% industry)</span></div>
+    <div class="proof-stat"><span class="proof-num">3.8×</span><span class="proof-label">Average email ROI</span></div>
+    <div class="proof-stat"><span class="proof-num">40+</span><span class="proof-label">Hours saved per client/month</span></div>
+    <div class="proof-stat"><span class="proof-num">34+</span><span class="proof-label">Kenyan businesses automated</span></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">What We Build</div>
+      <h2 class="section-title">Email That Works While You Sleep</h2>
+      <p class="section-subtitle">Not newsletters nobody reads. Automated, personalised sequences that move prospects through your pipeline — triggered by real behaviour.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-hand-wave"></i></div>
+        <div class="feature-title">Welcome & Onboarding Sequences</div>
+        <p class="feature-desc">The first 7 days after a subscriber joins are the most important. We build welcome sequences that introduce your brand, deliver value, and move new leads toward their first purchase.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-seedling"></i></div>
+        <div class="feature-title">Lead Nurture Flows</div>
+        <p class="feature-desc">Not every lead is ready to buy today. We build 14–30 day nurture sequences that educate, build trust, and bring lukewarm leads back to a buying decision — automatically.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-envelope-open-text"></i></div>
+        <div class="feature-title">Cold Email Outreach (B2B)</div>
+        <p class="feature-desc">Personalised cold email sequences for B2B businesses targeting decision-makers in Kenya. Research-backed subject lines, plain-text format, and follow-up timing that gets replies.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-cart-arrow-down"></i></div>
+        <div class="feature-title">Abandoned Cart Recovery</div>
+        <p class="feature-desc">For e-commerce businesses — automated 3-email sequences triggered when a customer abandons their cart. Average 25% cart recovery rate, sent within 1 hour of abandonment.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-rotate-left"></i></div>
+        <div class="feature-title">Re-engagement Campaigns</div>
+        <p class="feature-desc">Subscribers who haven't opened in 60+ days are costing you deliverability. We build win-back campaigns with strong offers and clear exit paths — reactivating 15–30% of cold lists.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fa fa-chart-line"></i></div>
+        <div class="feature-title">Deliverability & Analytics</div>
+        <p class="feature-desc">SPF, DKIM, and DMARC configured correctly so your emails land in inbox — not spam. Monthly reporting on open rates, click rates, unsubscribes, and revenue attributed to email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEQUENCE TYPES -->
+<section class="sequences-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Sequence Examples</div>
+      <h2 class="section-title">What Your Email Flows Look Like</h2>
+      <p class="section-subtitle">Every sequence is written for Kenyan business context — the language, the offers, and the timing your audience responds to.</p>
+    </div>
+    <div class="sequences-grid">
+      <!-- Welcome sequence -->
+      <div class="sequence-card reveal">
+        <div class="seq-header">
+          <div class="seq-icon" style="background:#fef2f2"><i class="fa fa-hand-wave" style="color:var(--em)"></i></div>
+          <div>
+            <div class="seq-name">Welcome Sequence — 7 Emails</div>
+            <div class="seq-tagline">Triggered when someone joins your list</div>
+          </div>
+        </div>
+        <div class="email-flow">
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:var(--em-light);color:var(--em)">1</div><div class="ef-line"></div></div>
+            <div class="ef-content"><div class="ef-day">Day 0 — Immediate</div><div class="ef-subject">Welcome to [Business] — here's what happens next</div><div class="ef-desc">Brand intro, what to expect, first value delivery</div><div class="ef-stat">↑ 58% open rate</div></div>
+          </div>
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:var(--grey-100);color:var(--text-secondary)">2</div><div class="ef-line"></div></div>
+            <div class="ef-content"><div class="ef-day">Day 2</div><div class="ef-subject">The biggest problem we solve for Kenyan businesses</div><div class="ef-desc">Educational content — build authority and trust</div><div class="ef-stat">↑ 44% open rate</div></div>
+          </div>
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:var(--grey-100);color:var(--text-secondary)">3</div><div class="ef-line"></div></div>
+            <div class="ef-content"><div class="ef-day">Day 4</div><div class="ef-subject">Case study: How [Client] doubled revenue in 90 days</div><div class="ef-desc">Social proof — real Kenyan client </div><div class="ef-stat">↑ 41% open rate</div></div>
+          </div>
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:var(--em-light);color:var(--em)">7</div></div>
+            <div class="ef-content"><div class="ef-day">Day 7</div><div class="ef-subject">Ready to get started? Here's your next step</div><div class="ef-desc">Soft CTA — WhatsApp link or book a call</div><div class="ef-stat">↑ 12% conversion to enquiry</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Cold outreach sequence -->
+      <div class="sequence-card reveal">
+        <div class="seq-header">
+          <div class="seq-icon" style="background:#eff6ff"><i class="fa fa-paper-plane" style="color:#2563eb"></i></div>
+          <div>
+            <div class="seq-name">B2B Cold Outreach — 5 Emails</div>
+            <div class="seq-tagline">For reaching decision-makers in Nairobi</div>
+          </div>
+        </div>
+        <div class="email-flow">
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:#eff6ff;color:#2563eb">1</div><div class="ef-line"></div></div>
+            <div class="ef-content"><div class="ef-day">Day 1 — Initial outreach</div><div class="ef-subject">Quick question about [Company]'s lead process</div><div class="ef-desc">Short, personalised, one question — no pitch</div><div class="ef-stat">↑ 38% open rate</div></div>
+          </div>
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:var(--grey-100);color:var(--text-secondary)">2</div><div class="ef-line"></div></div>
+            <div class="ef-content"><div class="ef-day">Day 3 — Follow-up</div><div class="ef-subject">Re: Quick question about [Company]</div><div class="ef-desc">Bump of first email — adds one value point</div><div class="ef-stat">↑ 29% reply rate on follow-up</div></div>
+          </div>
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:var(--grey-100);color:var(--text-secondary)">3</div><div class="ef-line"></div></div>
+            <div class="ef-content"><div class="ef-day">Day 7 — Value email</div><div class="ef-subject">How [similar company] solved this in 30 days</div><div class="ef-desc">Relevant case study — zero selling</div><div class="ef-stat">↑ 33% open rate</div></div>
+          </div>
+          <div class="email-flow-step">
+            <div class="ef-num-wrap"><div class="ef-num" style="background:#eff6ff;color:#2563eb">5</div></div>
+            <div class="ef-content"><div class="ef-day">Day 14 — Breakup email</div><div class="ef-subject">Should I stop reaching out?</div><div class="ef-desc">Permission-based close — highest reply rate of the sequence</div><div class="ef-stat">↑ 22% reply rate on breakup</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATION SECTION -->
+<section class="automation-section">
+  <div class="automation-inner">
+    <div>
+      <div class="section-kicker" style="color:var(--em-mid)">Automation Logic</div>
+      <h2 class="section-title" style="color:white;text-align:left">Emails Triggered by What Your Customer Does — Not the Calendar</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.6);text-align:left;margin-left:0;margin-top:12px">The difference between email campaigns that annoy people and email sequences that convert is behaviour-based triggers. We build automations that respond to what your subscriber actually does — not just time delays.</p>
+      <ul style="list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:12px">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8)"><i class="fa fa-check-circle" style="color:var(--em-mid);margin-top:3px;flex-shrink:0"></i> Lead submits form → welcome sequence starts immediately</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8)"><i class="fa fa-check-circle" style="color:var(--em-mid);margin-top:3px;flex-shrink:0"></i> Opens email but doesn't click → follow-up with different angle</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8)"><i class="fa fa-check-circle" style="color:var(--em-mid);margin-top:3px;flex-shrink:0"></i> Clicks pricing page → sales sequence triggered immediately</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8)"><i class="fa fa-check-circle" style="color:var(--em-mid);margin-top:3px;flex-shrink:0"></i> M-Pesa payment received → onboarding sequence starts</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8)"><i class="fa fa-check-circle" style="color:var(--em-mid);margin-top:3px;flex-shrink:0"></i> No open in 60 days → win-back campaign triggered</li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:0.9rem;color:rgba(255,255,255,0.8)"><i class="fa fa-check-circle" style="color:var(--em-mid);margin-top:3px;flex-shrink:0"></i> WhatsApp opt-in captured → synced to email list automatically</li>
+      </ul>
+    </div>
+    <div class="automation-flow reveal">
+      <div class="af-title"><div class="af-dot"></div> Live Automation — New Lead Flow</div>
+      <div class="af-steps">
+        <div class="af-step">
+          <div class="af-num-wrap"><div class="af-num" style="background:var(--em-light);color:var(--em)"><i class="fa fa-filter" style="font-size:0.65rem"></i></div><div class="af-line"></div></div>
+          <div class="af-content"><div class="af-step-title">Lead submits landing page</div><div class="af-step-desc">Name, email, WhatsApp captured to HubSpot</div><div class="af-trigger trigger-red"><i class="fa fa-bolt" style="font-size:0.55rem"></i> Trigger</div></div>
+        </div>
+        <div class="af-step">
+          <div class="af-num-wrap"><div class="af-num" style="background:#dcfce7;color:#166534"><i class="fab fa-whatsapp" style="font-size:0.65rem"></i></div><div class="af-line"></div></div>
+          <div class="af-content"><div class="af-step-title">WhatsApp message sent (5 seconds)</div><div class="af-step-desc">Personalised welcome + lead magnet delivery</div><div class="af-trigger trigger-green">Instant</div></div>
+        </div>
+        <div class="af-step">
+          <div class="af-num-wrap"><div class="af-num" style="background:#dbeafe;color:#1e40af"><i class="fa fa-envelope" style="font-size:0.65rem"></i></div><div class="af-line"></div></div>
+          <div class="af-content"><div class="af-step-title">Welcome email sent (2 mins later)</div><div class="af-step-desc">Branded, value-rich first email — 58% open rate</div><div class="af-trigger trigger-blue">Email #1 of 7</div></div>
+        </div>
+        <div class="af-step">
+          <div class="af-num-wrap"><div class="af-num" style="background:rgba(245,158,11,0.15);color:#fcd34d"><i class="fa fa-eye" style="font-size:0.65rem"></i></div><div class="af-line"></div></div>
+          <div class="af-content"><div class="af-step-title">Lead opens email → tracked</div><div class="af-step-desc">If clicked pricing page — sales sequence starts immediately</div><div class="af-trigger trigger-amber">Behaviour trigger</div></div>
+        </div>
+        <div class="af-step">
+          <div class="af-num-wrap"><div class="af-num" style="background:var(--em-light);color:var(--em)"><i class="fa fa-user-tie" style="font-size:0.65rem"></i></div></div>
+          <div class="af-content"><div class="af-step-title">HubSpot deal created + scored</div><div class="af-step-desc">Sales team notified via WhatsApp — ready to close</div><div class="af-trigger trigger-red">CRM updated</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORMS -->
+<section style="background:var(--grey-50)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Platforms We Use</div>
+      <h2 class="section-title">The Right Tool for Your Business Size</h2>
+      <p class="section-subtitle">We recommend and build on the platform that fits your needs and budget — not the one we get a commission on.</p>
+    </div>
+    <div class="platforms-grid">
+      <div class="platform-card reveal">
+        <div class="platform-logo" style="background:#fff7f7">📧</div>
+        <div class="platform-name">Brevo (Sendinblue)</div>
+        <p class="platform-desc">Our top recommendation for Kenyan SMEs. Generous free tier, excellent deliverability to East African inboxes, and built-in SMS and WhatsApp channels alongside email.</p>
+        <div class="platform-tags">
+          <span class="platform-tag">Free tier available</span>
+          <span class="platform-tag">SMS + Email</span>
+          <span class="platform-tag">Best for SMEs</span>
+        </div>
+      </div>
+      <div class="platform-card reveal">
+        <div class="platform-logo" style="background:#fff7f0">🟠</div>
+        <div class="platform-name">HubSpot Email</div>
+        <p class="platform-desc">Best for B2B businesses that need email tightly integrated with CRM, sales pipeline, and lead scoring. Email behaviour syncs directly to contact records and deal stages.</p>
+        <div class="platform-tags">
+          <span class="platform-tag">CRM integrated</span>
+          <span class="platform-tag">Lead scoring</span>
+          <span class="platform-tag">Best for B2B</span>
+        </div>
+      </div>
+      <div class="platform-card reveal">
+        <div class="platform-logo" style="background:#f0fff4">🐒</div>
+        <div class="platform-name">Mailchimp</div>
+        <p class="platform-desc">Familiar, reliable, and widely used. We build and migrate campaigns on Mailchimp for clients already on the platform — including advanced segmentation and automation flows.</p>
+        <div class="platform-tags">
+          <span class="platform-tag">Widely used</span>
+          <span class="platform-tag">Strong templates</span>
+          <span class="platform-tag">Migration supported</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Pricing</div>
+      <h2 class="section-title">Email Marketing Packages — KES, M-Pesa Accepted</h2>
+      <p class="section-subtitle">One-time build fee to set up your sequences. Optional monthly retainer for ongoing campaigns and optimisation.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Starter</div>
+        <div class="pricing-desc">Welcome sequence + basic setup</div>
+        <div class="pricing-amount"><span class="pricing-kes">KES</span><span class="pricing-num">30,000</span></div>
+        <div class="pricing-sub">One-time setup · M-Pesa accepted</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><i class="fa fa-check"></i> Platform setup (Brevo or Mailchimp)</li>
+          <li><i class="fa fa-check"></i> SPF, DKIM, DMARC configuration</li>
+          <li><i class="fa fa-check"></i> 5-email welcome sequence</li>
+          <li><i class="fa fa-check"></i> List import + segmentation setup</li>
+          <li><i class="fa fa-check"></i> Opt-in form embedded on website</li>
+          <li><i class="fa fa-check"></i> 30-day performance report</li>
+          <li><i class="fa fa-check"></i> Training walkthrough included</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20the%20Starter%20Email%20Marketing%20package" class="pricing-btn pricing-btn-secondary" target="_blank">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-name">Growth</div>
+        <div class="pricing-desc">Full automation + nurture system</div>
+        <div class="pricing-amount"><span class="pricing-kes">KES</span><span class="pricing-num">70,000</span></div>
+        <div class="pricing-sub">One-time setup · M-Pesa accepted</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><i class="fa fa-check"></i> Everything in Starter</li>
+          <li><i class="fa fa-check"></i> 7-email welcome sequence</li>
+          <li><i class="fa fa-check"></i> 7-email lead nurture sequence</li>
+          <li><i class="fa fa-check"></i> Re-engagement win-back campaign</li>
+          <li><i class="fa fa-check"></i> Behaviour-based triggers (open, click, page visit)</li>
+          <li><i class="fa fa-check"></i> HubSpot CRM integration</li>
+          <li><i class="fa fa-check"></i> A/B subject line testing</li>
+          <li><i class="fa fa-check"></i> WhatsApp + email sync setup</li>
+          <li><i class="fa fa-check"></i> 60-day post-launch support</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20the%20Growth%20Email%20Marketing%20package" class="pricing-btn pricing-btn-primary" target="_blank">Build My System</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Retainer</div>
+        <div class="pricing-desc">Ongoing campaigns + optimisation</div>
+        <div class="pricing-amount"><span class="pricing-kes">KES</span><span class="pricing-num">25,000</span><span class="pricing-period">/mo</span></div>
+        <div class="pricing-sub">Monthly · M-Pesa accepted · Cancel anytime</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li><i class="fa fa-check"></i> 2 broadcast campaigns/month</li>
+          <li><i class="fa fa-check"></i> Sequence optimisation (open/click rates)</li>
+          <li><i class="fa fa-check"></i> List hygiene + deliverability management</li>
+          <li><i class="fa fa-check"></i> New subscriber segment setup</li>
+          <li><i class="fa fa-check"></i> Monthly analytics report</li>
+          <li><i class="fa fa-check"></i> A/B testing ongoing</li>
+          <li><i class="fa fa-check"></i> WhatsApp strategy alignment</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I'm%20interested%20in%20the%20Email%20Marketing%20monthly%20retainer" class="pricing-btn pricing-btn-secondary" target="_blank">Start Retainer</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px;font-size:0.82rem;color:var(--text-muted)">
+      <i class="fa fa-tag" style="color:var(--em);margin-right:6px"></i> Bundle Email + WhatsApp Automation + Lead Generation — save 20% on the total package.
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section style="background:var(--grey-50)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Industries We Serve</div>
+      <h2 class="section-title">Email Sequences Built for Your Industry</h2>
+      <p class="section-subtitle">We've written sequences for 8 industries in Kenya. We know the language, the objections, and the timing that works in each one.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏠</div>
+        <div class="industry-name">Real Estate</div>
+        <p class="industry-desc">Property alert sequences, viewing follow-up, investor nurture flows. Sends new listings automatically to matched buyers.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏫</div>
+        <div class="industry-name">Schools & Colleges</div>
+        <p class="industry-desc">Admissions drip sequences, open day invites, fee reminder flows, and parent re-engagement campaigns.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🛒</div>
+        <div class="industry-name">E-Commerce</div>
+        <p class="industry-desc">Welcome series, abandoned cart recovery, post-purchase upsell, review request, and loyalty campaigns.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🛡️</div>
+        <div class="industry-name">Insurance</div>
+        <p class="industry-desc">Policy renewal reminders, cross-sell sequences, claims process updates, and re-engagement for lapsed clients.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏦</div>
+        <div class="industry-name">SACCOs & Finance</div>
+        <p class="industry-desc">Loan product sequences, member onboarding flows, contribution reminders, and financial education drips.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">🏥</div>
+        <div class="industry-name">Clinics & Hospitals</div>
+        <p class="industry-desc">Appointment reminders, post-visit follow-up, health tip nurture campaigns, and recall sequences.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">💼</div>
+        <div class="industry-name">B2B Services</div>
+        <p class="industry-desc">Cold outreach sequences, proposal follow-up flows, and client onboarding drip campaigns for consulting businesses.</p>
+      </div>
+      <div class="industry-card reveal">
+        <div class="industry-icon">⚖️</div>
+        <div class="industry-name">Law Firms</div>
+        <p class="industry-desc">Client intake nurture, retainer renewal reminders, and educational content sequences that position your firm as the authority.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">Case Studies</div>
+      <h2 class="section-title">Email Marketing s in Kenya</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div>
+            <div class="case-client">Shield Insurance Brokers</div>
+            <div class="case-service">Renewal Reminder Sequence + Re-engagement</div>
+          </div>
+          <span class="case-tag">Insurance</span>
+        </div>
+        <div class="case-metrics">
+          <div><span class="case-metric-val">+22%</span><span class="case-metric-label">Renewal rate increase</span></div>
+          <div><span class="case-metric-val">85%</span><span class="case-metric-label">Renewals automated</span></div>
+          <div><span class="case-metric-val">KES 0</span><span class="case-metric-label">Extra staff cost</span></div>
+        </div>
+        <div class="case-testimonial">
+          "We were losing policies because agents forgot to follow up before expiry. The automated email sequence now sends reminders at 60, 30, and 7 days before renewal. Our renewal rate went up 22% in 3 months."
+          <div class="case-author">— Director, Shield Insurance Brokers</div>
+        </div>
+      </div>
+      <div class="case-card reveal">
+        <div class="case-header">
+          <div>
+            <div class="case-client">Savanna Logistics KE</div>
+            <div class="case-service">B2B Cold Email + Lead Nurture</div>
+          </div>
+          <span class="case-tag">Logistics</span>
+        </div>
+        <div class="case-metrics">
+          <div><span class="case-metric-val">34%</span><span class="case-metric-label">Cold email open rate</span></div>
+          <div><span class="case-metric-val">18%</span><span class="case-metric-label">Reply rate</span></div>
+          <div><span class="case-metric-val">7</span><span class="case-metric-label">New B2B contracts in 60 days</span></div>
+        </div>
+        <div class="case-testimonial">
+          "We'd never done cold email before. SmartBizSystems built a 5-email sequence targeting logistics managers in Nairobi. We closed 7 new contracts in the first 60 days from email alone."
+          <div class="case-author">— Brian Kamau, Operations Director, Savanna Logistics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--grey-50)">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-kicker">FAQ</div>
+      <h2 class="section-title">Email Marketing Questions Answered</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q">Do Kenyan audiences actually respond to email? <i class="fa fa-chevron-down"></i></div>
+        <div class="faq-a">Yes — significantly better than global averages when done right. Kenyan business email open rates for well-segmented, relevant sequences average 40–55%, compared to a global average of 21%. The key is personalisation and relevance to the Kenyan context, not generic templates.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What if I have a small email list? <i class="fa fa-chevron-down"></i></div>
+        <div class="faq-a">Even 200 subscribers can generate meaningful revenue with the right sequences. A well-written welcome sequence to a small, engaged list outperforms a broadcast to a large cold list every time. We start where you are — the system scales as your list grows.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you write all the emails or do I need to provide content? <i class="fa fa-chevron-down"></i></div>
+        <div class="faq-a">We write everything — every subject line, every email body, every CTA — in your brand voice and tailored to your specific industry and Kenyan audience. You review and approve before anything goes live. You'll never need to write a single email yourself.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Will my emails land in inbox or spam? <i class="fa fa-chevron-down"></i></div>
+        <div class="faq-a">Deliverability is a core part of every setup we do. We configure SPF, DKIM, and DMARC records on your domain, warm up new sending infrastructure properly, and maintain list hygiene ongoing. Our clients typically achieve 95%+ inbox placement rates.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can email work alongside WhatsApp — do I need both? <i class="fa fa-chevron-down"></i></div>
+        <div class="faq-a">They work best together. WhatsApp handles instant, personal, conversational touchpoints. Email handles longer-form nurture, educational content, and broadcast campaigns. Together they create a multi-channel system where if a lead doesn't respond on one channel, the other picks them up. We sync both by default.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">How do I grow my email list in Kenya? <i class="fa fa-chevron-down"></i></div>
+        <div class="faq-a">We build the list growth system alongside the sequences — opt-in forms on your website, lead magnets (free guides, calculators, checklists), WhatsApp opt-in capture, and Meta lead ad integration. By the time your sequences are live, you'll have multiple active sources feeding subscribers into your list automatically.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Your Competitors Are in<br>Their Customers' Inboxes. Are You?</h2>
+    <p>Get a free email audit — we'll show you exactly what sequences you're missing, what your deliverability looks like, and how much revenue your list could be generating.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20email%20marketing%20audit" class="cta-btn-white" target="_blank"><i class="fab fa-whatsapp"></i> Get Free Email Audit</a>
+      <a href="https://calendly.com/smartbizsystemske/30min" class="cta-btn-outline" target="_blank"><i class="fa fa-calendar"></i> Book a Strategy Call</a>
+      <a href="/pricing/" class="cta-btn-outline"><i class="fa fa-tags"></i> See All Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Smart<span>Biz</span>Systems</div>
+      <div class="footer-tagline">Kenya's AI-powered digital marketing agency. We build systems, not just campaigns — delivered fast, built to last.</div>
+      <div class="footer-contact">
+        <a href="https://wa.me/254734230445" target="_blank"><i class="fab fa-whatsapp" style="color:#25d366"></i> +254 734 230 445</a>
+        <a href="mailto:info@smartbizsystems.co.ke"><i class="fa fa-envelope" style="color:var(--blue)"></i> info@smartbizsystems.co.ke</a>
+        <a href="#"><i class="fa fa-location-dot" style="color:var(--em)"></i> Westlands, Nairobi, Kenya</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <div class="footer-col-links">
+        <a href="../services/whatsapp-automation.html">WhatsApp Automation</a>
+        <a href="../services/seo.html">SEO & Schema</a>
+        <a href="../services/lead-generation.html">Lead Generation</a>
+        <a href="../services/website-design-services-in-kenya.html">Website Design</a>
+        <a href="../services/paid-ads.html">Paid Ads</a>
+        <a href="../services/email-marketing.html">Email Marketing</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-col-links">
+        <a href="../work/">Work & s</a>
+        <a href="../pricing/">Pricing</a>
+        <a href="../about/">About Joseph</a>
+        <a href="../blog/">Blog</a>
+        <a href="../faq/">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Start Here</div>
+      <div class="footer-col-links">
+        <a href="../free-audit/">Free Audit</a>
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank">Book a Call</a>
+        <a href="https://wa.me/254734230445" target="_blank">WhatsApp Us</a>
+        <a href="../tools/">AI Tools</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 SmartBizSystems. All rights reserved. Westlands, Nairobi, Kenya.</div>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20to%20set%20up%20email%20marketing%20for%20my%20business" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20email%20marketing%20for%20my%20business" class="mobile-sticky-btn sticky-wa" target="_blank"><i class="fab fa-whatsapp" style="margin-right:6px"></i> WhatsApp</a>
+  <a href="https://calendly.com/smartbizsystemske/30min" class="mobile-sticky-btn sticky-book" target="_blank"><i class="fa fa-calendar" style="margin-right:6px"></i> Book a Call</a>
+</div>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>

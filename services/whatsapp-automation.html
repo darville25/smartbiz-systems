@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="WhatsApp automation for Kenyan businesses — AI bots that qualify leads, book appointments and collect M-Pesa payments 24/7. Westlands, Nairobi."/>
+<title>WhatsApp Automation Kenya — SmartBizSystems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NHPX2K7F');</script>
+    <!-- End Google Tag Manager -->
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#0d6efd;
+  --blue-dark:#0a56c8;
+  --blue-light:#e8f0fe;
+  --blue-mid:#d0e2ff;
+  --wa:#25d366;
+  --wa-dark:#1da851;
+  --wa-light:#dcfce7;
+  --white:#ffffff;
+  --grey-50:#f8f9fb;
+  --grey-100:#f1f3f6;
+  --grey-200:#e4e7ed;
+  --grey-300:#c8cdd8;
+  --grey-400:#8f97a8;
+  --grey-500:#5a6476;
+  --grey-600:#3d4554;
+  --grey-700:#242b38;
+  --grey-800:#151b27;
+  --text-primary:#151b27;
+  --text-secondary:#3d4554;
+  --text-muted:#5a6476;
+  --border:#e4e7ed;
+  --border-strong:#c8cdd8;
+  --surface-page:#f8f9fb;
+  --shadow-sm:0 1px 4px rgba(0,0,0,0.07),0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.08),0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-lg:0 16px 48px rgba(0,0,0,0.1),0 0 0 1px rgba(0,0,0,0.04);
+  --ff-display:'Syne',sans-serif;
+  --ff-body:'DM Sans',sans-serif;
+  --radius-sm:6px;
+  --radius-md:10px;
+  --radius-lg:16px;
+  --radius-xl:24px;
+  --transition:0.2s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{background:var(--surface-page);color:var(--text-primary);font-family:var(--ff-body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--grey-100)}::-webkit-scrollbar-thumb{background:var(--grey-300);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+nav.scrolled{box-shadow:var(--shadow-sm)}
+.nav-logo{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--ff-display);font-weight:800;font-size:1.1rem;
+  color:var(--text-primary);text-decoration:none;letter-spacing:-0.02em;
+  flex-shrink:0;
+}
+.nav-logo-mark{
+  width:30px;height:30px;border-radius:7px;
+  background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.8rem;font-weight:800;
+}
+.nav-logo em{color:var(--blue);font-style:normal}
+.nav-links{display:flex;align-items:center;gap:1.5rem;list-style:none}
+.nav-links a{font-size:0.88rem;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color var(--transition)}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-links a.active{color:var(--blue);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:8px}
+.btn-ghost{font-family:var(--ff-body);font-size:0.85rem;font-weight:500;color:var(--text-secondary);background:none;border:none;cursor:pointer;text-decoration:none;padding:8px 12px;border-radius:var(--radius-sm);transition:all var(--transition)}
+.btn-ghost:hover{color:var(--text-primary);background:var(--grey-100)}
+.btn-primary{font-family:var(--ff-body);font-weight:600;font-size:0.85rem;background:var(--blue);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background var(--transition),box-shadow var(--transition),transform var(--transition);white-space:nowrap}
+.btn-primary:hover{background:var(--blue-dark);box-shadow:0 4px 16px rgba(13,110,253,0.3);transform:translateY(-1px)}
+.btn-wa{font-family:var(--ff-body);font-weight:600;font-size:0.85rem;background:var(--wa);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background var(--transition),box-shadow var(--transition),transform var(--transition);white-space:nowrap}
+.btn-wa:hover{background:var(--wa-dark);box-shadow:0 4px 16px rgba(37,211,102,0.35);transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  padding:90px 5% 60px;
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--text-muted);margin-bottom:1.2rem;flex-wrap:wrap}
+.breadcrumb a{color:var(--text-muted);text-decoration:none;transition:color var(--transition)}
+.breadcrumb a:hover{color:var(--blue)}
+.breadcrumb span{color:var(--grey-300)}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--wa-light);color:#166534;
+  border:1px solid #a7f3d0;
+  border-radius:100px;padding:5px 13px;
+  font-size:0.77rem;font-weight:600;letter-spacing:0.03em;
+  margin-bottom:1.2rem;
+}
+.badge-dot{width:6px;height:6px;background:var(--wa);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+h1{
+  font-family:var(--ff-display);font-weight:800;
+  font-size:clamp(1.9rem,3.5vw,2.9rem);
+  line-height:1.1;letter-spacing:-0.03em;
+  color:var(--text-primary);margin-bottom:1.1rem;
+}
+h1 .wa-accent{color:var(--wa-dark)}
+.hero-desc{
+  font-size:1rem;color:var(--text-secondary);
+  line-height:1.75;margin-bottom:1.8rem;
+}
+.hero-desc strong{color:var(--text-primary);font-weight:600}
+.hero-btns{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:1.8rem}
+.btn-lg{font-size:0.95rem;padding:12px 24px}
+.btn-secondary{font-family:var(--ff-body);font-weight:600;font-size:0.875rem;background:var(--white);color:var(--text-primary);padding:10px 20px;border-radius:var(--radius-sm);border:1.5px solid var(--border-strong);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:border-color var(--transition),box-shadow var(--transition)}
+.btn-secondary:hover{border-color:var(--grey-400);box-shadow:var(--shadow-sm)}
+.hero-proof{
+  display:flex;align-items:center;gap:1.5rem;
+  padding-top:1.5rem;border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.hp-item{display:flex;align-items:center;gap:7px}
+.hp-ico{width:32px;height:32px;border-radius:8px;background:var(--wa-light);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0}
+.hp-text{font-size:0.82rem}
+.hp-val{font-family:var(--ff-display);font-weight:700;font-size:1rem;color:var(--text-primary);line-height:1.1}
+.hp-lbl{color:var(--text-muted);font-size:0.73rem}
+
+/* ── CHAT MOCKUP ── */
+.chat-mockup{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+  max-width:360px;
+  margin-left:auto;
+}
+.chat-header{
+  background:#075e54;
+  padding:12px 16px;
+  display:flex;align-items:center;gap:10px;
+}
+.chat-avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--wa);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+}
+.chat-name{font-weight:600;font-size:0.88rem;color:#fff}
+.chat-status{font-size:0.72rem;color:rgba(255,255,255,0.65)}
+.chat-body{
+  background:#ece5dd;
+  padding:16px 12px;
+  display:flex;flex-direction:column;gap:8px;
+  min-height:320px;
+}
+.msg{
+  max-width:82%;padding:8px 12px;
+  border-radius:10px;font-size:0.82rem;line-height:1.45;
+  position:relative;
+}
+.msg-time{font-size:0.65rem;color:rgba(0,0,0,0.4);margin-top:3px;text-align:right}
+.msg-in{
+  background:#fff;
+  border-radius:0 10px 10px 10px;
+  align-self:flex-start;
+  box-shadow:0 1px 2px rgba(0,0,0,0.1);
+  color:var(--text-primary);
+}
+.msg-out{
+  background:#d9fdd3;
+  border-radius:10px 0 10px 10px;
+  align-self:flex-end;
+  box-shadow:0 1px 2px rgba(0,0,0,0.1);
+  color:var(--text-primary);
+}
+.msg-bot{
+  background:#fff;
+  border-radius:0 10px 10px 10px;
+  align-self:flex-start;
+  box-shadow:0 1px 2px rgba(0,0,0,0.1);
+  border-left:3px solid var(--wa);
+  color:var(--text-primary);
+}
+.msg-label{font-size:0.67rem;font-weight:700;color:var(--wa-dark);margin-bottom:3px;text-transform:uppercase;letter-spacing:0.05em}
+.chat-typing{
+  background:#fff;border-radius:0 10px 10px 10px;
+  padding:10px 14px;align-self:flex-start;
+  box-shadow:0 1px 2px rgba(0,0,0,0.1);
+  display:flex;align-items:center;gap:4px;
+}
+.typing-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--grey-400);
+  animation:typing 1.2s infinite;
+}
+.typing-dot:nth-child(2){animation-delay:.2s}
+.typing-dot:nth-child(3){animation-delay:.4s}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+.chat-input-bar{
+  background:#f0f0f0;
+  padding:10px 12px;
+  display:flex;align-items:center;gap:8px;
+  border-top:1px solid var(--border);
+}
+.chat-input{
+  flex:1;background:#fff;border:none;border-radius:20px;
+  padding:8px 14px;font-size:0.8rem;color:var(--text-muted);
+  font-family:var(--ff-body);outline:none;
+}
+.chat-send{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--wa);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:0.9rem;cursor:pointer;border:none;
+  flex-shrink:0;
+}
+
+/* ── PROOF BAR ── */
+.proof-bar{
+  background:var(--white);border-bottom:1px solid var(--border);
+  display:flex;align-items:stretch;flex-wrap:wrap;
+}
+.pb-item{
+  flex:1;min-width:130px;
+  padding:1.4rem 1.5rem;border-right:1px solid var(--border);
+  text-align:center;
+}
+.pb-item:last-child{border-right:none}
+.pb-val{font-family:var(--ff-display);font-weight:800;font-size:1.8rem;line-height:1;color:var(--text-primary);letter-spacing:-0.03em}
+.pb-val span{color:var(--wa-dark)}
+.pb-lbl{font-size:0.78rem;color:var(--text-muted);margin-top:4px;font-weight:500}
+
+/* ── SHARED SECTION ── */
+section{padding:72px 5%}
+.section-inner{max-width:1100px;margin:0 auto}
+.kicker{font-size:0.76rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--wa-dark);margin-bottom:0.7rem;display:block}
+h2{font-family:var(--ff-display);font-weight:800;font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.12;letter-spacing:-0.025em;color:var(--text-primary);margin-bottom:0.9rem}
+.sub{font-size:1rem;color:var(--text-secondary);line-height:1.75;max-width:540px}
+
+/* ── WHAT YOU GET ── */
+.features-section{background:var(--grey-50)}
+.features-header{margin-bottom:3rem}
+.features-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;
+}
+.feat-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:1.75rem;
+  transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition);
+}
+.feat-card:hover{border-color:var(--wa);box-shadow:0 0 0 3px var(--wa-light),var(--shadow-sm);transform:translateY(-3px)}
+.feat-ico{
+  width:44px;height:44px;border-radius:11px;
+  background:var(--wa-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.15rem;margin-bottom:1.2rem;
+}
+.feat-name{font-family:var(--ff-display);font-weight:700;font-size:0.98rem;color:var(--text-primary);margin-bottom:0.5rem}
+.feat-desc{font-size:0.84rem;color:var(--text-secondary);line-height:1.65}
+
+/* ── HOW IT WORKS ── */
+.how-section{background:var(--white)}
+.how-layout{
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.flow-steps{display:flex;flex-direction:column;gap:0}
+.flow-step{
+  display:flex;gap:1.2rem;
+  padding:1.4rem 0;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+.flow-step:last-child{border-bottom:none}
+.flow-num{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--wa-light);border:1.5px solid #a7f3d0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-weight:800;font-size:0.88rem;
+  color:var(--wa-dark);flex-shrink:0;margin-top:2px;
+}
+.flow-title{font-family:var(--ff-display);font-weight:700;font-size:0.95rem;color:var(--text-primary);margin-bottom:0.3rem}
+.flow-desc{font-size:0.84rem;color:var(--text-secondary);line-height:1.6}
+
+/* Flow visual — timeline phone */
+.phone-wrap{
+  background:var(--grey-50);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  padding:2rem;
+  display:flex;flex-direction:column;gap:1rem;
+}
+.phone-label{font-size:0.75rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.25rem}
+.flow-event{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:1rem 1.1rem;
+  display:flex;align-items:center;gap:10px;
+}
+.fe-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+.fe-wa{background:var(--wa-light)}
+.fe-cal{background:var(--blue-light)}
+.fe-pay{background:#fef3c7}
+.fe-crm{background:#f3e8ff}
+.fe-title{font-weight:600;font-size:0.83rem;color:var(--text-primary)}
+.fe-desc{font-size:0.75rem;color:var(--text-muted);margin-top:1px}
+.fe-badge{
+  margin-left:auto;flex-shrink:0;
+  font-size:0.68rem;font-weight:700;
+  padding:3px 9px;border-radius:100px;
+}
+.badge-auto{background:#dcfce7;color:#166534}
+.badge-live{background:var(--blue-light);color:var(--blue-dark)}
+.badge-done{background:var(--grey-100);color:var(--text-muted)}
+
+/* ── USE CASES ── */
+.usecases-section{background:var(--grey-50)}
+.uc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
+.uc-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:1.75rem;
+  transition:border-color var(--transition),box-shadow var(--transition);
+}
+.uc-card:hover{border-color:var(--wa);box-shadow:0 0 0 3px var(--wa-light)}
+.uc-tag{
+  display:inline-block;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--wa-dark);background:var(--wa-light);
+  padding:3px 10px;border-radius:100px;margin-bottom:0.85rem;
+}
+.uc-title{font-family:var(--ff-display);font-weight:700;font-size:0.98rem;color:var(--text-primary);margin-bottom:0.5rem}
+.uc-desc{font-size:0.84rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1rem}
+.uc-{
+  display:flex;align-items:center;gap:8px;
+  background:var(--grey-50);border-radius:var(--radius-sm);
+  padding:0.6rem 0.9rem;
+}
+.uc--ico{font-size:0.85rem}
+.uc--text{font-size:0.8rem;color:var(--text-secondary)}
+.uc--text strong{color:var(--text-primary);font-weight:600}
+
+/* ── PRICING ── */
+.pricing-section{background:var(--white)}
+.pricing-header{text-align:center;max-width:540px;margin:0 auto 3rem}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.price-card{
+  background:var(--grey-50);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:2rem;
+  display:flex;flex-direction:column;
+  transition:border-color var(--transition),box-shadow var(--transition);
+}
+.price-card:hover{border-color:var(--wa);box-shadow:0 0 0 3px var(--wa-light)}
+.price-card.popular{
+  background:var(--white);
+  border-color:var(--wa);
+  box-shadow:0 0 0 3px var(--wa-light),var(--shadow-md);
+  position:relative;
+}
+.pop-badge{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--wa);color:#fff;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
+  padding:4px 14px;border-radius:100px;white-space:nowrap;
+}
+.price-tier{font-family:var(--ff-display);font-weight:700;font-size:0.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.75rem}
+.price-amount{font-family:var(--ff-display);font-weight:800;font-size:2rem;line-height:1;color:var(--text-primary);letter-spacing:-0.03em;margin-bottom:0.2rem}
+.price-amount span{color:var(--wa-dark)}
+.price-mo{font-size:0.78rem;color:var(--text-muted);margin-bottom:1.5rem}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:2rem;flex:1}
+.price-features li{display:flex;align-items:flex-start;gap:8px;font-size:0.84rem;color:var(--text-secondary);line-height:1.4}
+.price-features li::before{content:'✓';color:var(--wa-dark);font-weight:700;flex-shrink:0;margin-top:1px}
+.btn-block{display:block;width:100%;text-align:center;font-family:var(--ff-body);font-weight:600;font-size:0.9rem;padding:11px;border-radius:var(--radius-sm);text-decoration:none;transition:all var(--transition)}
+.btn-block-wa{background:var(--wa);color:#fff;border:1.5px solid var(--wa)}
+.btn-block-wa:hover{background:var(--wa-dark);box-shadow:0 4px 16px rgba(37,211,102,0.35)}
+.btn-block-outline{background:transparent;color:var(--text-primary);border:1.5px solid var(--border-strong)}
+.btn-block-outline:hover{border-color:var(--wa);color:var(--wa-dark)}
+.mpesa-note{
+  display:flex;align-items:center;gap:8px;
+  background:var(--grey-50);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:0.9rem 1.1rem;
+  margin-top:2rem;font-size:0.83rem;color:var(--text-secondary);
+}
+.mpesa-ico{font-size:1.1rem;flex-shrink:0}
+
+/* ── S ── */
+.s-section{background:var(--grey-50)}
+.s-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:3rem}
+.-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:2rem;
+  transition:border-color var(--transition);
+}
+.-card:hover{border-color:var(--wa)}
+.-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--wa-dark);margin-bottom:0.6rem;display:block}
+.-title{font-family:var(--ff-display);font-weight:700;font-size:1rem;color:var(--text-primary);margin-bottom:0.5rem}
+.-body{font-size:0.85rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1.2rem}
+.-body strong{color:var(--text-primary);font-weight:600}
+.-nums{display:flex;gap:1.5rem;padding-top:1rem;border-top:1px solid var(--border)}
+.rn-val{font-family:var(--ff-display);font-weight:800;font-size:1.6rem;color:var(--wa-dark);line-height:1}
+.rn-lbl{font-size:0.73rem;color:var(--text-muted);margin-top:2px}
+.testimonial-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:2rem;
+  box-shadow:var(--shadow-sm);
+}
+.stars{color:#f59e0b;font-size:0.82rem;letter-spacing:2px;margin-bottom:0.9rem}
+.testi-text{font-size:0.9rem;color:var(--text-secondary);line-height:1.75;font-style:italic;margin-bottom:1.4rem}
+.testi-author{display:flex;align-items:center;gap:10px}
+.t-ava{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#fff;flex-shrink:0}
+.t-name{font-weight:600;font-size:0.875rem;color:var(--text-primary)}
+.t-role{font-size:0.77rem;color:var(--text-muted);margin-top:1px}
+
+/* ── FAQ ── */
+.faq-section{background:var(--white)}
+.faq-layout{display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start}
+.faq-sticky{position:sticky;top:80px}
+.faq-list{display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--grey-50);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:border-color var(--transition)}
+.faq-item.open{border-color:var(--wa);background:var(--white)}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;padding:1rem 1.3rem;cursor:pointer;font-family:var(--ff-body);font-size:0.88rem;font-weight:600;color:var(--text-primary);text-align:left;gap:1rem;transition:background var(--transition)}
+.faq-item.open .faq-q{color:var(--wa-dark)}
+.faq-icon{width:20px;height:20px;border-radius:50%;background:var(--grey-200);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;transition:transform var(--transition),background var(--transition);color:var(--text-muted)}
+.faq-item.open .faq-icon{background:var(--wa);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 1.3rem 1.1rem;font-size:0.86rem;color:var(--text-secondary);line-height:1.75}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--wa);
+  padding:80px 5%;text-align:center;
+}
+.cta-section h2{color:#fff}
+.cta-section .kicker{color:rgba(255,255,255,0.7)}
+.cta-desc{font-size:1.05rem;color:rgba(255,255,255,0.85);line-height:1.75;max-width:480px;margin:0 auto 2.2rem}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn-white{font-family:var(--ff-body);font-weight:700;font-size:0.95rem;background:#fff;color:var(--wa-dark);padding:13px 28px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:box-shadow var(--transition),transform var(--transition)}
+.btn-white:hover{box-shadow:0 8px 24px rgba(0,0,0,0.2);transform:translateY(-1px)}
+.btn-outline-white{font-family:var(--ff-body);font-weight:600;font-size:0.9rem;background:transparent;color:#fff;padding:12px 24px;border-radius:var(--radius-sm);border:1.5px solid rgba(255,255,255,0.55);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:border-color var(--transition),background var(--transition)}
+.btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.cta-note{font-size:0.8rem;color:rgba(255,255,255,0.55);margin-top:1.1rem}
+
+/* ── FOOTER ── */
+footer{background:var(--grey-800);color:rgba(255,255,255,0.7);padding:56px 5% 32px}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-logo-wrap{display:flex;align-items:center;gap:8px;margin-bottom:0.9rem;font-family:var(--ff-display);font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:-0.02em}
+.footer-logo-mark{width:28px;height:28px;border-radius:6px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:#fff}
+.footer-logo-wrap em{color:rgba(255,255,255,0.45);font-style:normal}
+.footer-tagline{font-size:0.83rem;line-height:1.65;max-width:230px;margin-bottom:1.2rem;color:rgba(255,255,255,0.45)}
+.footer-contact a{display:flex;align-items:center;gap:5px;font-size:0.8rem;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:5px;transition:color var(--transition)}
+.footer-contact a:hover{color:#fff}
+.footer-col-title{font-family:var(--ff-display);font-weight:700;font-size:0.76rem;color:#fff;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1.1rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:7px}
+.footer-links a{font-size:0.82rem;color:rgba(255,255,255,0.5);text-decoration:none;transition:color var(--transition)}
+.footer-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+.footer-legal{display:flex;gap:1.4rem}
+.footer-legal a{font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color var(--transition)}
+.footer-legal a:hover{color:rgba(255,255,255,0.65)}
+
+/* ── WA FLOAT ── */
+.wa-float{position:fixed;bottom:20px;right:20px;z-index:99;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;font-family:var(--ff-body);font-weight:600;font-size:0.85rem;padding:11px 18px 11px 13px;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.45);transition:transform var(--transition),box-shadow var(--transition)}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,0.55)}
+
+/* ── MOBILE STICKY CTA ── */
+.mobile-cta-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:98;
+  background:var(--white);
+  border-top:1px solid var(--border);
+  padding:12px 5%;
+  gap:10px;
+  box-shadow:0 -4px 20px rgba(0,0,0,0.08);
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+════════════════════════════ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .chat-mockup{max-width:100%;margin:0 auto}
+  .how-layout{grid-template-columns:1fr;gap:2.5rem}
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr}
+  .s-layout{grid-template-columns:1fr}
+  .faq-layout{grid-template-columns:1fr;gap:2rem}
+  .faq-sticky{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+
+@media(max-width:768px){
+  nav{padding:0 4%}
+  .nav-links{display:none}
+  .hero{padding:78px 4% 48px}
+  section{padding:56px 4%}
+  .features-grid{grid-template-columns:1fr}
+  .uc-grid{grid-template-columns:1fr}
+  .proof-bar{flex-wrap:wrap}
+  .pb-item{min-width:calc(50% - 1px);flex:none;border-right:none;border-bottom:1px solid var(--border)}
+  .pb-item:nth-child(odd){border-right:1px solid var(--border)}
+  .pb-item:last-child{border-bottom:none;width:100%;border-right:none}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .hero-btns a{text-align:center;justify-content:center}
+  .hero-proof{gap:1rem}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .cta-btns a{text-align:center;justify-content:center}
+  .footer-grid{grid-template-columns:1fr}
+  .mobile-cta-bar{display:flex}
+  body{padding-bottom:72px}
+  .wa-float{display:none}
+  h1{font-size:1.75rem}
+  h2{font-size:1.5rem}
+  .pricing-grid{grid-template-columns:1fr}
+  .price-card.popular{margin-top:0.75rem}
+}
+
+@media(max-width:480px){
+  nav{padding:0 4%}
+  .nav-logo{font-size:1rem}
+  .pb-item{min-width:calc(50% - 1px)}
+  .btn-ghost{display:none}
+  .hero-proof{flex-direction:column;align-items:flex-start;gap:0.8rem}
+  .-nums{flex-wrap:wrap;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><div class="nav-logo-mark">S</div>Smart<em>Biz</em>Systems</a>
+  <ul class="nav-links">
+    <li><a href="../services/index.html" class="active">Services</a></li>
+    <li><a href="../work/index.html">Work</a></li>
+    <li><a href="../pricing/index.html">Pricing</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="../work/index.html" class="btn-ghost">Our work</a>
+    <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">
+      Book a call
+      <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a><span>/</span>
+        <a href="../services/index.html">Services</a><span>/</span>
+        <span>WhatsApp Automation</span>
+      </div>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Kenya's #1 WhatsApp automation service
+      </div>
+      <h1>Never miss a lead.<br><span class="wa-accent">24/7 WhatsApp</span><br>that sells for you.</h1>
+      <p class="hero-desc">
+        We build AI-powered WhatsApp bots that <strong>qualify leads, book appointments, answer questions, and collect M-Pesa payments</strong> — automatically, around the clock, even when you're sleeping.
+      </p>
+      <div class="hero-btns">
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-wa btn-lg">
+          💬 Book free demo call
+        </a>
+        <a href="#pricing" class="btn-secondary btn-lg">View pricing</a>
+      </div>
+      <div class="hero-proof">
+        <div class="hp-item">
+          <div class="hp-ico">⚡</div>
+          <div class="hp-text"><div class="hp-val">7 days</div><div class="hp-lbl">Setup to go-live</div></div>
+        </div>
+        <div class="hp-item">
+          <div class="hp-ico">📈</div>
+          <div class="hp-text"><div class="hp-val">2× lift</div><div class="hp-lbl">Conversion rate</div></div>
+        </div>
+        <div class="hp-item">
+          <div class="hp-ico">🤖</div>
+          <div class="hp-text"><div class="hp-val">24/7</div><div class="hp-lbl">Zero missed leads</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT MOCKUP -->
+    <div>
+      <div class="chat-mockup" id="chatMockup">
+        <div class="chat-header">
+          <div class="chat-avatar">🏢</div>
+          <div>
+            <div class="chat-name">Savanna Realty</div>
+            <div class="chat-status">🟢 Online — replies instantly</div>
+          </div>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="msg msg-in">
+            Hi, I saw your ad. Do you have 3-bedroom apartments in Kilimani?
+            <div class="msg-time">10:14 AM</div>
+          </div>
+          <div class="msg msg-bot">
+            <div class="msg-label">🤖 SmartBot</div>
+            Hi! Yes, we have 3-bed apartments in Kilimani from KES 4.5M. May I ask — are you looking to buy or rent?
+            <div class="msg-time">10:14 AM</div>
+          </div>
+          <div class="msg msg-out">
+            Buy. What's available now?
+            <div class="msg-time">10:15 AM</div>
+          </div>
+          <div class="msg msg-bot">
+            <div class="msg-label">🤖 SmartBot</div>
+            We have 2 units ready for viewing this week. I can book your site visit right now — which day works for you? Mon, Tue or Wed?
+            <div class="msg-time">10:15 AM</div>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <input class="chat-input" type="text" placeholder="Type a message..." readonly/>
+          <button class="chat-send">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROOF BAR -->
+<div class="proof-bar reveal">
+  <div class="pb-item"><div class="pb-val">2<span>×</span></div><div class="pb-lbl">Avg conversion lift</div></div>
+  <div class="pb-item"><div class="pb-val">24<span>/7</span></div><div class="pb-lbl">Always responding</div></div>
+  <div class="pb-item"><div class="pb-val">7<span>d</span></div><div class="pb-lbl">Setup to go-live</div></div>
+  <div class="pb-item"><div class="pb-val">0</div><div class="pb-lbl">Missed leads</div></div>
+  <div class="pb-item"><div class="pb-val">40<span>+</span></div><div class="pb-lbl">Hours saved / month</div></div>
+</div>
+
+<!-- WHAT YOU GET -->
+<section class="features-section">
+  <div class="section-inner">
+    <div class="features-header reveal">
+      <span class="kicker">What's included</span>
+      <h2>Everything your business needs<br>to automate WhatsApp.</h2>
+      <p class="sub">One setup. Works 24/7. Pays for itself in weeks.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-ico">🤖</div>
+        <div class="feat-name">AI Chatbot Setup &amp; Training</div>
+        <div class="feat-desc">A custom-trained bot that understands your business, products, pricing, and tone of voice — built specifically for your Kenyan audience.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-ico">🎯</div>
+        <div class="feat-name">Lead Qualification Flows</div>
+        <div class="feat-desc">Automatically scores and qualifies leads based on budget, timeline, and intent — so you only spend time on buyers who are ready to act.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-ico">📅</div>
+        <div class="feat-name">Appointment Booking</div>
+        <div class="feat-desc">Integrates with your calendar to book appointments, send reminders, and reduce no-shows — all without you touching a phone.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-ico">💳</div>
+        <div class="feat-name">M-Pesa Payment Integration</div>
+        <div class="feat-desc">Customers can pay deposits, subscription fees, or full amounts via M-Pesa directly in the WhatsApp chat. Instant confirmation sent automatically.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-ico">🔗</div>
+        <div class="feat-name">CRM Sync (HubSpot)</div>
+        <div class="feat-desc">Every lead, every conversation, every payment is logged in your CRM automatically. Full contact history, deal stage tracking, and pipeline visibility.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-ico">📊</div>
+        <div class="feat-name">Monthly Performance Reports</div>
+        <div class="feat-desc">Clear dashboards showing leads captured, conversion rate, revenue generated, and time saved — every month, without you asking.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-inner">
+    <div class="how-layout">
+      <div class="reveal">
+        <span class="kicker">How it works</span>
+        <h2>Your new 24/7<br>sales assistant.</h2>
+        <p class="sub" style="margin-bottom:2rem">From the moment a lead messages you, the system takes over — qualifying, booking, and closing while you focus on delivery.</p>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-num">01</div>
+            <div>
+              <div class="flow-title">Lead sends a WhatsApp message</div>
+              <div class="flow-desc">Could be from your ad, website button, Google Business Profile, or referral. The bot responds in under 3 seconds — day or night.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">02</div>
+            <div>
+              <div class="flow-title">Bot qualifies the lead</div>
+              <div class="flow-desc">Asks smart questions about budget, timeline, and needs. Scores the lead and decides the next best action — all in natural Swahili or English.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">03</div>
+            <div>
+              <div class="flow-title">Books appointment or collects payment</div>
+              <div class="flow-desc">High-intent leads get booked directly into your calendar. M-Pesa deposits collected instantly. Brochures and pricing sent automatically.</div>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">04</div>
+            <div>
+              <div class="flow-title">Everything syncs to your CRM</div>
+              <div class="flow-desc">Lead details, conversation history, and payment records land in HubSpot. You wake up to a full pipeline — no manual data entry needed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="phone-wrap">
+          <div class="phone-label">Live system activity</div>
+          <div class="flow-event">
+            <div class="fe-ico fe-wa">💬</div>
+            <div><div class="fe-title">New lead — Kilimani buyer</div><div class="fe-desc">Qualified in 90 seconds</div></div>
+            <span class="fe-badge badge-auto">Auto</span>
+          </div>
+          <div class="flow-event">
+            <div class="fe-ico fe-cal">📅</div>
+            <div><div class="fe-title">Site visit booked — Tue 2pm</div><div class="fe-desc">Reminder sent to buyer</div></div>
+            <span class="fe-badge badge-auto">Auto</span>
+          </div>
+          <div class="flow-event">
+            <div class="fe-ico fe-pay">💳</div>
+            <div><div class="fe-title">M-Pesa deposit received</div><div class="fe-desc">KES 50,000 — confirmed</div></div>
+            <span class="fe-badge badge-live">Live</span>
+          </div>
+          <div class="flow-event">
+            <div class="fe-ico fe-crm">📋</div>
+            <div><div class="fe-title">HubSpot deal created</div><div class="fe-desc">Stage: Site visit scheduled</div></div>
+            <span class="fe-badge badge-auto">Auto</span>
+          </div>
+          <div class="flow-event">
+            <div class="fe-ico fe-wa">💬</div>
+            <div><div class="fe-title">Follow-up sent — 3 leads</div><div class="fe-desc">Re-engagement sequence active</div></div>
+            <span class="fe-badge badge-auto">Auto</span>
+          </div>
+          <div class="flow-event">
+            <div class="fe-ico fe-cal">📅</div>
+            <div><div class="fe-title">No-show reminder — 1hr before</div><div class="fe-desc">Sent to tomorrow's appointments</div></div>
+            <span class="fe-badge badge-done">Done</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="usecases-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="kicker">Industry use cases</span>
+      <h2>Built for your sector.</h2>
+      <p class="sub">The same system, tailored to how your industry sells.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="uc-card reveal">
+        <span class="uc-tag">🏘️ Real Estate</span>
+        <div class="uc-title">Never lose a property enquiry again</div>
+        <div class="uc-desc">Bot qualifies buyer budget and location preference, sends property listings with photos, books site visits, and collects holding deposits via M-Pesa — all automatically.</div>
+        <div class="uc-"><span class="uc--ico">📈</span><span class="uc--text">Client : <strong>conversion doubled in 90 days</strong></span></div>
+      </div>
+      <div class="uc-card reveal">
+        <span class="uc-tag">🎓 Schools &amp; Colleges</span>
+        <div class="uc-title">Automate admissions from enquiry to enrolment</div>
+        <div class="uc-desc">Parents enquire via WhatsApp, bot sends prospectus, collects student details, books open days, and sends fee payment reminders — reducing admin team workload by 60%.</div>
+        <div class="uc-"><span class="uc--ico">🕐</span><span class="uc--text">Client : <strong>40+ admin hours saved per month</strong></span></div>
+      </div>
+      <div class="uc-card reveal">
+        <span class="uc-tag">🏦 SACCOs &amp; Finance</span>
+        <div class="uc-title">Member onboarding and loan workflows on autopilot</div>
+        <div class="uc-desc">New members sign up, submit documents, and track loan status via WhatsApp. Automated reminders for repayments and statement distribution — compliant and audit-ready.</div>
+        <div class="uc-"><span class="uc--ico">📊</span><span class="uc--text">Client : <strong>47 new applications per week</strong></span></div>
+      </div>
+      <div class="uc-card reveal">
+        <span class="uc-tag">🏥 Clinics &amp; Hospitals</span>
+        <div class="uc-title">Reduce no-shows and fill appointment books</div>
+        <div class="uc-desc">Patients book appointments, receive reminders 24hrs and 1hr before, and get post-visit follow-ups automatically. M-Pesa consultation fee collection built in.</div>
+        <div class="uc-"><span class="uc--ico">🎯</span><span class="uc--text">Industry benchmark: <strong>60% fewer no-shows</strong></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="pricing-header reveal">
+      <span class="kicker">Transparent pricing</span>
+      <h2>One setup. Runs forever.</h2>
+      <p class="sub" style="margin:0 auto">All plans include M-Pesa integration, CRM sync, and full setup. No hidden fees. You own everything.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-tier">Starter</div>
+        <div class="price-amount">KES <span>50</span>K</div>
+        <div class="price-mo">one-time setup + KES 10,000/mo</div>
+        <ul class="price-features">
+          <li>AI chatbot setup &amp; training</li>
+          <li>Up to 3 conversation flows</li>
+          <li>Lead qualification</li>
+          <li>Appointment booking</li>
+          <li>M-Pesa integration</li>
+          <li>Basic HubSpot CRM setup</li>
+          <li>Monthly performance report</li>
+        </ul>
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-block btn-block-outline">Book a call</a>
+      </div>
+      <div class="price-card popular reveal">
+        <div class="pop-badge">Most popular</div>
+        <div class="price-tier">Growth</div>
+        <div class="price-amount">KES <span>100</span>K</div>
+        <div class="price-mo">one-time setup + KES 20,000/mo</div>
+        <ul class="price-features">
+          <li>Everything in Starter</li>
+          <li>Up to 10 conversation flows</li>
+          <li>Multi-product catalog sharing</li>
+          <li>Advanced lead scoring</li>
+          <li>M-Pesa full payment processing</li>
+          <li>Full HubSpot CRM + pipeline</li>
+          <li>WhatsApp broadcast campaigns</li>
+          <li>Re-engagement sequences</li>
+          <li>Weekly reporting</li>
+        </ul>
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-block btn-block-wa">Book a call →</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-tier">Premium</div>
+        <div class="price-amount">KES <span>200</span>K</div>
+        <div class="price-mo">one-time setup + KES 40,000/mo</div>
+        <ul class="price-features">
+          <li>Everything in Growth</li>
+          <li>Unlimited conversation flows</li>
+          <li>Custom AI persona &amp; branding</li>
+          <li>Multi-agent handoff (bot to human)</li>
+          <li>Zapier + API integrations</li>
+          <li>WhatsApp + SMS cross-channel</li>
+          <li>Dedicated account manager</li>
+          <li>Monthly executive review</li>
+          <li>Priority support (24hr response)</li>
+        </ul>
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-block btn-block-outline">Book a call</a>
+      </div>
+    </div>
+    <div class="mpesa-note reveal">
+      <span class="mpesa-ico">📱</span>
+      <span>M-Pesa accepted for all packages. 50% deposit to start, 50% on go-live. Payment plans available for Growth and Premium.</span>
+    </div>
+  </div>
+</section>
+
+<!-- S -->
+<section class="s-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="kicker">Proven s</span>
+      <h2>Real Kenyan businesses.<br>Real numbers.</h2>
+    </div>
+    <div class="s-layout">
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div class="-card reveal">
+          <span class="-tag">WhatsApp Automation · Logistics</span>
+          <div class="-title">Doubled conversion rate in 90 days</div>
+          <div class="-body">A Nairobi logistics firm was losing leads to <strong>slow WhatsApp response times</strong>. We deployed a 24/7 bot that qualified, quoted, and booked pickups automatically. Zero missed leads since launch.</div>
+          <div class="-nums">
+            <div><div class="rn-val">2×</div><div class="rn-lbl">Conversion rate</div></div>
+            <div><div class="rn-val">90d</div><div class="rn-lbl">Time to </div></div>
+            <div><div class="rn-val">0</div><div class="rn-lbl">Missed leads</div></div>
+          </div>
+        </div>
+        <div class="-card reveal">
+          <span class="-tag">WhatsApp Automation · School</span>
+          <div class="-title">40+ admin hours saved every month</div>
+          <div class="-body">A Nairobi school was managing admissions <strong>entirely through manual WhatsApp messages</strong>. We automated the full flow — from enquiry to open day booking to fee reminders.</div>
+          <div class="-nums">
+            <div><div class="rn-val">40+</div><div class="rn-lbl">Hours saved/mo</div></div>
+            <div><div class="rn-val">3×</div><div class="rn-lbl">Enquiries handled</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-text">"We were losing leads to slow WhatsApp response times. SmartBiz deployed a bot in 7 days. It qualifies buyers, sends listings, books viewings, and collects deposits — all automatically. Our conversion rate doubled in 3 months. I only step in when a serious buyer needs a personal call. Best investment we've made."</div>
+          <div class="testi-author">
+            <div class="t-ava" style="background:#1a56db">BK</div>
+            <div>
+              <div class="t-name">Brian Kamau</div>
+              <div class="t-role">Operations Director, Savanna Logistics KE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="faq-layout">
+      <div class="faq-sticky reveal">
+        <span class="kicker">FAQ</span>
+        <h2>Questions about WhatsApp automation.</h2>
+        <p class="sub" style="margin-bottom:1.5rem">Still unsure? <a href="https://wa.me/254734230445" style="color:var(--wa-dark);font-weight:600;text-decoration:none">WhatsApp us directly</a> and we'll answer in minutes.</p>
+        <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-wa" style="display:inline-flex">
+          💬 Book free demo
+        </a>
+      </div>
+      <div class="faq-list reveal" id="faqList">
+        <div class="faq-item open">
+          <button class="faq-q"><span>How long does setup take?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Most clients are live within 7 business days from briefing. Day 1–2: discovery and flow mapping. Day 3–5: build and training. Day 6–7: testing and go-live. We've never missed a deadline.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Do I need the WhatsApp Business API?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — the automation requires the official WhatsApp Business API (not just the WhatsApp Business app). We handle the full API setup and verification process for you. It's included in the setup fee.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Can the bot switch to English and Swahili?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. The bot can detect the language of the customer's message and respond appropriately in English, Swahili, or both. We can also add Sheng phrases for specific audiences. Language is configured during the training phase.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>What happens when a lead needs a human?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">The bot is trained to recognise when a conversation needs a human touch — complex objections, high-value buyers, or specific requests outside its scope. It flags the conversation, alerts your team, and hands over seamlessly without the customer noticing a gap.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>Is my customer data safe?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">All data is handled through the official WhatsApp Business API, which is end-to-end encrypted. Customer data is stored in your own CRM (HubSpot), not on our servers. You own all data from day one and can export or delete it at any time.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q"><span>What's the monthly fee for?</span><span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">The monthly fee covers: WhatsApp API hosting and message fees, ongoing bot maintenance and updates, performance monitoring, monthly reporting, and any flow adjustments needed. Think of it as having a full-time digital sales rep for a fraction of the cost.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <span class="kicker reveal">Ready to automate?</span>
+    <h2 class="reveal">Book your free WhatsApp<br>automation demo.</h2>
+    <p class="cta-desc reveal">We'll show you exactly how the system works for your business, build a sample flow live on the call, and give you a fixed quote — in 30 minutes.</p>
+    <div class="cta-btns reveal">
+      <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-white">
+        💬 Book free demo call
+      </a>
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%20want%20to%20know%20more%20about%20WhatsApp%20automation." target="_blank" class="btn-outline-white">
+        WhatsApp us now
+      </a>
+    </div>
+    <p class="cta-note reveal">No commitment · No credit card · Live in 7 days</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-wrap"><div class="footer-logo-mark">S</div>Smart<em>Biz</em>Systems</div>
+      <p class="footer-tagline">Kenya's AI-powered digital marketing agency. We build systems, not just campaigns.</p>
+      <div class="footer-contact">
+        <a href="tel:+254734230445">📞 +254 734 230 445</a>
+        <a href="https://wa.me/254734230445" target="_blank">💬 WhatsApp us</a>
+        <a href="mailto:hello@smartbizsystems.co.ke">✉️ hello@smartbizsystems.co.ke</a>
+        <a href="#">📍 Westlands, Nairobi</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="../services/whatsapp-automation.html">WhatsApp Automation</a></li>
+        <li><a href="../services/seo.html">SEO &amp; Schema</a></li>
+        <li><a href="../services/lead-generation.html">Lead Generation</a></li>
+        <li><a href="../services/website-design-services-in-kenya.html">Web Development</a></li>
+        <li><a href="../services/paid-ads.html">Paid Advertising</a></li>
+        <li><a href="../services/email-marketing">Email Marketing</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="../work/index.html">Our Work</a></li>
+        <li><a href="../about/">About Us</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Get started</div>
+      <ul class="footer-links">
+        <li><a href="https://calendly.com/smartbizsystemske/30min" target="_blank">Book a call</a></li>
+        <li><a href="/free-audit">Free audit</a></li>
+        <li><a href="/tools">AI Commander</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 SmartBizSystems. Built for Kenya. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/sitemap">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT (desktop only) -->
+<a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20tell%20me%20more%20about%20WhatsApp%20automation." class="wa-float" target="_blank">💬 Chat on WhatsApp</a>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%20want%20to%20know%20more%20about%20WhatsApp%20automation." target="_blank" class="btn-wa" style="flex:1;justify-content:center;font-size:0.9rem;padding:12px">
+    💬 WhatsApp us
+  </a>
+  <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary" style="flex:1;justify-content:center;font-size:0.9rem;padding:12px">
+    Book free call
+  </a>
+</div>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40));
+
+// Scroll reveal
+const ro=new IntersectionObserver(en=>{
+  en.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);ro.unobserve(e.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// FAQ accordion
+document.getElementById('faqList').addEventListener('click',e=>{
+  const q=e.target.closest('.faq-q');
+  if(!q)return;
+  const item=q.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+});
+
+// Chat animation — type a reply
+setTimeout(()=>{
+  const body=document.getElementById('chatBody');
+  const typing=document.createElement('div');
+  typing.className='chat-typing';
+  typing.innerHTML='<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+  body.appendChild(typing);
+  body.scrollTop=body.scrollHeight;
+  setTimeout(()=>{
+    body.removeChild(typing);
+    const reply=document.createElement('div');
+    reply.className='msg msg-bot';
+    reply.innerHTML='<div class="msg-label">🤖 SmartBot</div>Wednesday works! I\'ve booked your viewing for Wed 2pm at Kilimani Gardens. You\'ll receive a confirmation with the address now. Shall I collect a KES 5,000 holding deposit via M-Pesa?<div class="msg-time">Just now</div>';
+    body.appendChild(reply);
+    body.scrollTop=body.scrollHeight;
+  },2000);
+},3500);
+</script>
+</body>
+</html>
