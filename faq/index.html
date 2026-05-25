@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — SmartBizSystems | AI Automation & Digital Marketing Kenya</title>
+<meta name="description" content="Answers to common questions about AI automation, WhatsApp bots, SEO, pricing, and how SmartBizSystems works with Kenyan businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --blue: #0d6efd;
+  --blue-dark: #0a56c8;
+  --blue-light: #e8f0fe;
+  --blue-mid: #d0e2ff;
+  --white: #ffffff;
+  --grey-50: #f8f9fb;
+  --grey-100: #f1f3f6;
+  --grey-200: #e4e7ed;
+  --grey-300: #c8cdd8;
+  --grey-400: #8f97a8;
+  --grey-500: #5a6476;
+  --grey-600: #3d4554;
+  --grey-700: #242b38;
+  --grey-800: #151b27;
+  --text-primary: #151b27;
+  --text-secondary: #3d4554;
+  --text-muted: #5a6476;
+  --border: #e4e7ed;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.1);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(248,249,251,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:var(--transition)}
+nav.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-sm)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text-primary);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{font-size:0.875rem;font-weight:500;color:var(--text-secondary);text-decoration:none;padding:6px 12px;border-radius:var(--radius-sm);transition:var(--transition)}
+.nav-links a:hover{color:var(--text-primary);background:var(--grey-100)}
+.nav-cta{background:var(--blue);color:#fff!important;padding:8px 18px!important;border-radius:var(--radius-md)!important;font-weight:600!important}
+.nav-cta:hover{background:var(--blue-dark)!important;color:#fff!important}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* BREADCRUMB */
+.breadcrumb{padding:96px 24px 0;max-width:900px;margin:0 auto}
+.breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-muted)}
+.breadcrumb-inner a{color:var(--text-muted);text-decoration:none}
+.breadcrumb-inner a:hover{color:var(--blue)}
+.breadcrumb-inner i{font-size:0.6rem}
+
+/* HERO */
+.hero{padding:40px 24px 56px;max-width:900px;margin:0 auto;text-align:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--blue-light);color:var(--blue-dark);font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:50px;margin-bottom:20px;letter-spacing:0.04em;text-transform:uppercase}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-0.03em;color:var(--text-primary);line-height:1.1;margin-bottom:16px}
+.hero h1 span{color:var(--blue)}
+.hero p{font-size:1.05rem;color:var(--text-secondary);max-width:560px;margin:0 auto 32px;font-weight:400}
+
+/* SEARCH */
+.search-wrap{max-width:520px;margin:0 auto 48px;position:relative}
+.search-wrap input{width:100%;padding:14px 20px 14px 48px;border:1.5px solid var(--border);border-radius:var(--radius-lg);font-family:'DM Sans',sans-serif;font-size:0.95rem;color:var(--text-primary);background:#fff;outline:none;transition:var(--transition);box-shadow:var(--shadow-sm)}
+.search-wrap input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(13,110,253,0.12)}
+.search-wrap i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:1rem}
+.search-wrap input::placeholder{color:var(--grey-400)}
+
+/* CATEGORY PILLS */
+.categories{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:52px}
+.cat-pill{padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);font-size:0.83rem;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:var(--transition);background:#fff;display:flex;align-items:center;gap:6px}
+.cat-pill:hover{border-color:var(--blue);color:var(--blue)}
+.cat-pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.cat-pill .count{background:rgba(255,255,255,0.25);padding:1px 7px;border-radius:50px;font-size:0.72rem;font-weight:600}
+.cat-pill:not(.active) .count{background:var(--grey-100);color:var(--text-muted)}
+
+/* FAQ SECTIONS */
+.faq-outer{max-width:900px;margin:0 auto;padding:0 24px 80px}
+.faq-section{margin-bottom:48px}
+.section-label{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-label .icon{width:32px;height:32px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:0.85rem}
+.section-label h2{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;letter-spacing:-0.01em;color:var(--text-primary)}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:4px}
+.acc-item{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-md);overflow:hidden;transition:var(--transition)}
+.acc-item.open{border-color:var(--blue);box-shadow:0 0 0 3px rgba(13,110,253,0.07)}
+.acc-item.hidden{display:none}
+.acc-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;cursor:pointer;background:none;border:none;text-align:left;font-family:'DM Sans',sans-serif}
+.acc-trigger:hover .acc-q{color:var(--blue)}
+.acc-q{font-size:0.95rem;font-weight:600;color:var(--text-primary);flex:1;line-height:1.4;transition:var(--transition)}
+.acc-icon{width:24px;height:24px;border-radius:50%;background:var(--grey-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition)}
+.acc-item.open .acc-icon{background:var(--blue);transform:rotate(45deg)}
+.acc-icon i{font-size:0.65rem;color:var(--text-muted);transition:var(--transition)}
+.acc-item.open .acc-icon i{color:#fff}
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(.4,0,.2,1)}
+.acc-item.open .acc-body{max-height:600px}
+.acc-content{padding:0 20px 20px;font-size:0.9rem;color:var(--text-secondary);line-height:1.7}
+.acc-content p{margin-bottom:10px}
+.acc-content p:last-child{margin-bottom:0}
+.acc-content strong{color:var(--text-primary)}
+.acc-content a{color:var(--blue);text-decoration:none;font-weight:500}
+.acc-content a:hover{text-decoration:underline}
+.acc-content ul{padding-left:18px;margin:8px 0}
+.acc-content ul li{margin-bottom:4px}
+
+/* NO S */
+.no-s{text-align:center;padding:60px 24px;color:var(--text-muted);display:none}
+.no-s i{font-size:2.5rem;margin-bottom:16px;color:var(--grey-300)}
+.no-s h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text-secondary);margin-bottom:8px}
+
+/* CTA BAND */
+.cta-band{background:var(--grey-800);padding:72px 24px;text-align:center}
+.cta-inner{max-width:560px;margin:0 auto}
+.cta-band h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.2rem);color:#fff;letter-spacing:-0.03em;margin-bottom:12px}
+.cta-band p{color:var(--grey-400);font-size:0.95rem;margin-bottom:32px}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;font-weight:600;font-size:0.9rem;padding:13px 24px;border-radius:var(--radius-md);text-decoration:none;transition:var(--transition)}
+.btn-wa:hover{background:#1da955;transform:translateY(-1px)}
+.btn-audit{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-weight:600;font-size:0.9rem;padding:13px 24px;border-radius:var(--radius-md);text-decoration:none;border:1.5px solid rgba(255,255,255,0.2);transition:var(--transition)}
+.btn-audit:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.4)}
+
+/* FOOTER */
+footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);padding:56px 24px 32px}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#fff;margin-bottom:12px}
+.footer-brand .logo span{color:var(--blue)}
+.footer-brand p{font-size:0.83rem;color:var(--grey-400);line-height:1.6;margin-bottom:16px}
+.footer-contact a{display:flex;align-items:center;gap:8px;font-size:0.83rem;color:var(--grey-400);text-decoration:none;margin-bottom:8px;transition:var(--transition)}
+.footer-contact a:hover{color:#fff}
+.footer-col h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.78rem;color:var(--grey-400);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
+.footer-col a{display:block;font-size:0.83rem;color:var(--grey-400);text-decoration:none;margin-bottom:8px;transition:var(--transition)}
+.footer-col a:hover{color:#fff}
+.footer-bottom{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:0.78rem;color:var(--grey-500)}
+@media(max-width:768px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-brand{grid-column:1/-1}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+
+/* FLOATING WA */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:90;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:var(--transition);animation:pulse-wa 3s infinite}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,0.5)}
+.wa-float i{color:#fff;font-size:1.4rem}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,0.6)}}
+@media(max-width:768px){.wa-float{display:none}}
+
+/* MOBILE BOTTOM BAR */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;padding:10px 16px;background:#fff;border-top:1px solid var(--border);gap:10px}
+.mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:var(--radius-md);font-size:0.85rem;font-weight:600;text-decoration:none;transition:var(--transition)}
+.mb-wa{background:#25d366;color:#fff}
+.mb-book{background:var(--blue);color:#fff}
+@media(max-width:768px){.mobile-bar{display:flex}}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">SmartBiz<span>Systems</span></a>
+  <div class="nav-links">
+    <a href="../services/index.html">Services</a>
+    <a href="../work/index.html">Work</a>
+    <a href="../pricing/index.html">Pricing</a>
+    <a href="../about/index.html">About</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="nav-cta"><i class="fab fa-whatsapp"></i> Book a Call</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Home</a>
+    <i class="fas fa-chevron-right"></i>
+    <span>FAQ</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <div class="kicker"><i class="fas fa-circle-question"></i> Frequently Asked Questions</div>
+  <h1>Got Questions?<br><span>We've Got Answers.</span></h1>
+  <p>Everything you need to know about AI automation, WhatsApp bots, SEO, pricing, and how SmartBizSystems works.</p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-wrap reveal" style="max-width:900px;margin:0 auto 0;padding:0 24px">
+  <div style="position:relative;max-width:520px;margin:0 auto 32px">
+    <i class="fas fa-search" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-muted)"></i>
+    <input type="text" id="faq-search" placeholder="Search questions — e.g. &quot;WhatsApp bot price&quot;" />
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="faq-outer" style="padding-bottom:0">
+  <div class="categories reveal" id="categories">
+    <button class="cat-pill active" data-cat="all">All Questions <span class="count" id="all-count">28</span></button>
+    <button class="cat-pill" data-cat="automation"><i class="fas fa-robot"></i> Automation <span class="count">8</span></button>
+    <button class="cat-pill" data-cat="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp <span class="count">6</span></button>
+    <button class="cat-pill" data-cat="pricing"><i class="fas fa-tag"></i> Pricing <span class="count">5</span></button>
+    <button class="cat-pill" data-cat="seo"><i class="fas fa-magnifying-glass-chart"></i> SEO <span class="count">5</span></button>
+    <button class="cat-pill" data-cat="process"><i class="fas fa-timeline"></i> Process <span class="count">4</span></button>
+  </div>
+</div>
+
+<!-- FAQ CONTENT -->
+<div class="faq-outer" id="faq-outer">
+
+  <!-- AUTOMATION -->
+  <div class="faq-section reveal" data-section="automation">
+    <div class="section-label">
+      <div class="icon" style="background:#e8f0fe;color:var(--blue)"><i class="fas fa-robot"></i></div>
+      <h2>AI Automation</h2>
+    </div>
+    <div class="accordion">
+
+      <div class="acc-item" data-cat="automation" data-q="what is ai automation what does it mean for my business">
+        <button class="acc-trigger">
+          <span class="acc-q">What is AI automation and what does it mean for my business?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>AI automation means replacing manual, repetitive tasks in your business with intelligent systems that run 24/7 without your involvement. For a Kenyan SME, this typically means things like: <strong>automatically responding to WhatsApp enquiries</strong>, sending M-Pesa payment confirmations, following up on leads who didn't buy, reminding clients about appointments, and syncing everything into your CRM.</p>
+          <p>Instead of you — or your staff — doing the same thing 50 times a day, the system does it every time, instantly, without errors or delays.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="what can you actually automate for my business">
+        <button class="acc-trigger">
+          <span class="acc-q">What can you actually automate for my business?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Quite a lot. The most common workflows we build for Kenyan businesses:</p>
+          <ul>
+            <li>WhatsApp lead capture, qualification, and follow-up</li>
+            <li>M-Pesa payment confirmation and access provisioning</li>
+            <li>Appointment booking, reminders, and no-show follow-up</li>
+            <li>CRM updates — every lead captured and tracked automatically</li>
+            <li>Email and WhatsApp nurture sequences for cold leads</li>
+            <li>Loan application workflows (SACCOs)</li>
+            <li>Policy renewal reminders (Insurance)</li>
+            <li>Fee payment reminders (Schools)</li>
+            <li>Order status updates (Ecommerce)</li>
+            <li>Internal alerts when a high-value lead enquires</li>
+          </ul>
+          <p>If it's repetitive and rule-based, we can almost certainly automate it.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="do i need to be technical to use the automation systems you build">
+        <button class="acc-trigger">
+          <span class="acc-q">Do I need to be technical to use the automation systems you build?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p><strong>No.</strong> We build systems that are designed to run without any technical knowledge. After we deliver, the system works in the background — you don't need to manage it daily.</p>
+          <p>We also train your team on how to monitor it, make simple changes (like updating a message), and escalate if something breaks. Our goal is to make you self-sufficient — not dependent on us for everything.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="what tools do you use to build automations">
+        <button class="acc-trigger">
+          <span class="acc-q">What tools do you use to build automations?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>We build on enterprise-grade, battle-tested platforms — not cheap grey-market tools. Our main stack:</p>
+          <ul>
+            <li><strong>WhatsApp:</strong> Official Meta WhatsApp Business API (licensed, no ban risk)</li>
+            <li><strong>M-Pesa:</strong> Safaricom Daraja API (official)</li>
+            <li><strong>Workflows:</strong> Make (Integromat) and n8n</li>
+            <li><strong>CRM:</strong> HubSpot, Brevo, or Zoho depending on your needs</li>
+            <li><strong>Email:</strong> Brevo / HubSpot</li>
+            <li><strong>AI responses:</strong> OpenAI API (for intelligent chatbot replies)</li>
+          </ul>
+          <p>You own all accounts and credentials. <strong>Zero lock-in.</strong></p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="will the automations keep working if i stop paying you">
+        <button class="acc-trigger">
+          <span class="acc-q">Will the automations keep working if I stop paying you?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p><strong>Yes.</strong> Everything we build is owned by you. Your WhatsApp number, your API accounts, your workflow tool subscription — all in your name. If you decide to stop the monthly maintenance retainer, the system continues to run.</p>
+          <p>The monthly fee covers ongoing monitoring, updates, optimisation, and support — not a lock that keeps your system alive. You own everything.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="what industries does ai automation work best for in kenya">
+        <button class="acc-trigger">
+          <span class="acc-q">What industries does AI automation work best for in Kenya?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>We have delivered automation across 8+ Kenyan industries. The highest-ROI use cases we have seen:</p>
+          <ul>
+            <li><strong>Insurance:</strong> Policy renewal automation — we helped one client reduce lapsed policies by 60%</li>
+            <li><strong>SACCOs:</strong> Loan workflow automation — reduced processing time from 5 days to same-day</li>
+            <li><strong>Schools:</strong> Fee reminders — 40% reduction in late payments within month one</li>
+            <li><strong>Clinics:</strong> Appointment reminders — no-show rate dropped from 35% to 12%</li>
+            <li><strong>Real Estate:</strong> WhatsApp lead qualification — 100% of leads qualified without human input after hours</li>
+            <li><strong>Ecommerce:</strong> Abandoned cart recovery — 25% cart recovery rate</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="can automation integrate with my existing tools like my crm or accounting software">
+        <button class="acc-trigger">
+          <span class="acc-q">Can automation integrate with my existing tools — CRM, accounting software, Google Sheets?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>In most cases, yes. Our workflow tools (Make and n8n) connect to hundreds of platforms via API. Common integrations we build:</p>
+          <ul>
+            <li>HubSpot, Zoho, Brevo CRM</li>
+            <li>Google Sheets and Google Forms</li>
+            <li>QuickBooks, Xero (accounting)</li>
+            <li>Slack, Teams (internal alerts)</li>
+            <li>WooCommerce / Shopify (ecommerce)</li>
+            <li>M-Pesa Daraja API</li>
+          </ul>
+          <p>If you're using something less common, tell us — we'll assess compatibility during the free audit.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="automation" data-q="what happens if the automation breaks or makes a mistake">
+        <button class="acc-trigger">
+          <span class="acc-q">What happens if the automation breaks or makes a mistake?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Clients on a monthly maintenance retainer get active monitoring — we are alerted before you notice most issues. For one-time setups, we provide 30 days of post-delivery support to catch and fix any issues.</p>
+          <p>Every system we build includes error handling and fallback logic — so if something unexpected happens (e.g. a lead sends an unusual message), the system routes it to a human rather than failing silently. We design for edge cases, not just the happy path.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHATSAPP -->
+  <div class="faq-section reveal" data-section="whatsapp">
+    <div class="section-label">
+      <div class="icon" style="background:#e7f9ef;color:#25d366"><i class="fab fa-whatsapp"></i></div>
+      <h2>WhatsApp Automation</h2>
+    </div>
+    <div class="accordion">
+
+      <div class="acc-item" data-cat="whatsapp" data-q="is this the official whatsapp api or one of those third party tools">
+        <button class="acc-trigger">
+          <span class="acc-q">Is this the official WhatsApp API or one of those third-party tools?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p><strong>Official Meta WhatsApp Business API only.</strong> We never use unofficial, grey-market, or multi-device hacks. Those tools risk your number being permanently banned — something we have seen happen to businesses in Kenya that used them.</p>
+          <p>The official API costs slightly more to set up, but your number is safe, your business is compliant with Meta's policies, and you get access to broadcast messaging, interactive buttons, product catalogs, and verified sender features.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="whatsapp" data-q="can i keep my existing whatsapp number">
+        <button class="acc-trigger">
+          <span class="acc-q">Can I keep my existing WhatsApp number?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Yes — in most cases. If your current number is a standard Safaricom, Airtel, or Telkom line registered on the personal WhatsApp app, we can migrate it to the Business API. The process takes a few days and involves verifying ownership with Meta.</p>
+          <p>If you have been using a third-party unofficial tool on the number, there may be complications. We will assess this during the onboarding audit and advise accordingly.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="whatsapp" data-q="can the whatsapp bot handle complex questions or will it confuse customers">
+        <button class="acc-trigger">
+          <span class="acc-q">Can the WhatsApp bot handle complex questions, or will it confuse customers?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Good question — and it depends on how you build it. We design every bot with a <strong>graceful handoff</strong>: the bot handles the 80% of questions it knows, and for anything complex, it says "Let me connect you with our team" and notifies a human immediately.</p>
+          <p>For more advanced use cases, we integrate OpenAI's GPT to give the bot the ability to understand and answer natural-language questions about your business. This is included in our Growth and Premium packages.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="whatsapp" data-q="can i still use whatsapp normally while the bot is running">
+        <button class="acc-trigger">
+          <span class="acc-q">Can I still use WhatsApp normally while the bot is running?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Yes. The WhatsApp Business API works via a dashboard — you and your team can still send and receive messages manually. The bot handles the initial contact and flows, and you can jump into any conversation at any time to take over.</p>
+          <p>Most clients set it up so the bot handles the first 3-5 messages (qualification, info sharing, booking), then alerts a human agent who takes it from there.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="whatsapp" data-q="can the whatsapp bot accept mpesa payments">
+        <button class="acc-trigger">
+          <span class="acc-q">Can the WhatsApp bot accept M-Pesa payments?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Yes — this is one of our core capabilities. We integrate the Safaricom Daraja API with WhatsApp so the bot can:</p>
+          <ul>
+            <li>Send an M-Pesa STK push prompt to the customer</li>
+            <li>Confirm payment instantly once received</li>
+            <li>Trigger the next step automatically (send receipt, grant access, book appointment, etc.)</li>
+          </ul>
+          <p>This is particularly powerful for schools collecting fees, SACCOs collecting contributions, and ecommerce businesses collecting deposits.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="whatsapp" data-q="how many messages can the bot send per day">
+        <button class="acc-trigger">
+          <span class="acc-q">How many messages can the bot send per day?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Meta's Business API has tiered messaging limits that increase as your account builds trust. New accounts start at 1,000 business-initiated conversations per day — enough for most Kenyan SMEs. This scales to 10,000 then 100,000+ as your account matures.</p>
+          <p>Customer-initiated conversations (when a customer messages you first) have <strong>no daily limit</strong>. For most businesses, this is the primary flow anyway.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="faq-section reveal" data-section="pricing">
+    <div class="section-label">
+      <div class="icon" style="background:#fef3c7;color:#b45309"><i class="fas fa-tag"></i></div>
+      <h2>Pricing & Payment</h2>
+    </div>
+    <div class="accordion">
+
+      <div class="acc-item" data-cat="pricing" data-q="do you accept mpesa">
+        <button class="acc-trigger">
+          <span class="acc-q">Do you accept M-Pesa?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p><strong>Yes — M-Pesa is our primary payment method.</strong> We accept payment via M-Pesa Paybill and Till. We also accept bank transfer for larger projects. Invoices are issued in KES.</p>
+          <p>For monthly retainers, you can set up a standing order or we will send an invoice at the start of each month.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="pricing" data-q="why is there a setup fee and a monthly fee">
+        <button class="acc-trigger">
+          <span class="acc-q">Why is there a setup fee AND a monthly fee?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>The <strong>setup fee</strong> covers the work of building, configuring, testing, and launching your automation system — this is where the heavy lifting happens.</p>
+          <p>The <strong>monthly fee</strong> covers ongoing monitoring, optimisation, updates, support, and platform costs. Automation systems need active maintenance — API updates, flow improvements, message template approvals, and performance tuning. Without this, systems degrade over time.</p>
+          <p>Think of it like a car: there's a purchase cost and ongoing servicing. Both matter.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="pricing" data-q="how long before i break even on the investment">
+        <button class="acc-trigger">
+          <span class="acc-q">How long before I break even on the investment?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Most clients break even within <strong>1–3 months</strong>. Here's how:</p>
+          <ul>
+            <li>A WhatsApp bot that captures 10 extra leads per month at KES 5,000 average sale = KES 50,000/mo in recovered revenue</li>
+            <li>An insurance renewal bot that saves 3 agents 2 hours/day = significant staff time back</li>
+            <li>A school fee reminder that reduces late payments by 40% = immediate cash flow improvement</li>
+          </ul>
+          <p>During your free audit, we estimate your specific ROI based on your current lead volume, conversion rate, and average transaction value.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="pricing" data-q="can i start small and upgrade later">
+        <button class="acc-trigger">
+          <span class="acc-q">Can I start small and upgrade later?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Yes — this is how most clients grow with us. Start with a Starter package (KES 30,000 setup + KES 5,000/mo) to get your first 1–2 workflows running. Once you see the s, upgrade to Growth or Premium to add more automations and integrations.</p>
+          <p>We build all systems to be modular — so adding new workflows later doesn't require rebuilding from scratch.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="pricing" data-q="are there any hidden costs i should know about">
+        <button class="acc-trigger">
+          <span class="acc-q">Are there any hidden costs I should know about?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>We believe in full transparency on pricing. The costs you should be aware of beyond our setup and monthly fees:</p>
+          <ul>
+            <li><strong>WhatsApp API:</strong> Meta charges per conversation (roughly KES 3–10 per business-initiated conversation). Customer-initiated conversations are free.</li>
+            <li><strong>Workflow tools:</strong> Make.com and n8n have their own subscription costs — typically USD 9–29/mo depending on volume. We advise on the best plan for you.</li>
+            <li><strong>CRM:</strong> HubSpot has a free tier that covers most SME needs. Paid tiers start at ~USD 15/mo.</li>
+          </ul>
+          <p>We itemise all third-party costs upfront before you sign. No surprises.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SEO -->
+  <div class="faq-section reveal" data-section="seo">
+    <div class="section-label">
+      <div class="icon" style="background:#ecfdf5;color:#0f9d58"><i class="fas fa-magnifying-glass-chart"></i></div>
+      <h2>SEO & Digital Marketing</h2>
+    </div>
+    <div class="accordion">
+
+      <div class="acc-item" data-cat="seo" data-q="how long does seo take to show s in kenya">
+        <button class="acc-trigger">
+          <span class="acc-q">How long does SEO take to show s in Kenya?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>For local/maps SEO (Google Business Profile), most clients see movement within <strong>4–8 weeks</strong>. For organic keyword rankings, meaningful traction typically comes at <strong>60–90 days</strong>, with compounding growth from month 3–6.</p>
+          <p>Kenya's digital landscape is less saturated than Western markets — which means good SEO moves faster here. We helped one school go from 200 to 4,500 monthly visitors in 90 days, and ranked Modern Homes Interiors #1 for their main Nairobi keywords in 6 months.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="seo" data-q="what is schema markup and do i need it">
+        <button class="acc-trigger">
+          <span class="acc-q">What is schema markup and do I need it?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Schema markup is structured data you add to your website that tells Google exactly what your business is, what you offer, your reviews, your location, and your FAQs — in a format Google can read directly. It helps you appear in rich s (star ratings, FAQ dropdowns, featured snippets) that take up more space on search s.</p>
+          <p><strong>Do you need it?</strong> Yes — especially in Kenya where many local competitors don't use it, giving you a fast-mover advantage. We implement LocalBusiness, Service, FAQPage, and Review schema as standard on all SEO engagements.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="seo" data-q="do you guarantee first page rankings on google">
+        <button class="acc-trigger">
+          <span class="acc-q">Do you guarantee first page rankings on Google?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Any agency that guarantees specific rankings is misleading you — Google's algorithm is controlled by Google, not us. What we <strong>do</strong> guarantee is:</p>
+          <ul>
+            <li>Full technical SEO implementation to the highest standard</li>
+            <li>Monthly reporting showing real ranking movement, traffic, and leads</li>
+            <li>Continuous optimisation until we achieve strong s</li>
+          </ul>
+          <p>Our track record speaks: 34+ clients, a school ranked #1 for admissions keywords, an interiors firm ranked #1 for Nairobi keywords. We are s-obsessed — just not in a way that involves false promises.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="seo" data-q="what is the difference between seo and google ads which should i use">
+        <button class="acc-trigger">
+          <span class="acc-q">What's the difference between SEO and Google Ads — which should I use?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p><strong>SEO</strong> builds long-term organic visibility — it takes 2–6 months to see s but delivers free traffic indefinitely once it ranks. <strong>Google Ads</strong> delivers traffic immediately but stops the moment you stop paying.</p>
+          <p>The ideal strategy for most Kenyan SMEs: <strong>run Ads to generate revenue now</strong> while SEO builds in the background. By month 6, your SEO starts delivering leads at zero cost-per-click. Over 12 months, the combined ROI far outperforms either channel alone.</p>
+          <p>We offer both — and can advise on the right mix for your budget and timeline.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="seo" data-q="do you optimise google business profile as part of seo">
+        <button class="acc-trigger">
+          <span class="acc-q">Do you optimise Google Business Profile as part of SEO?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Yes — Google Business Profile (formerly Google My Business) is included in all our SEO packages. For local Nairobi businesses, it is often the fastest way to appear in "near me" searches and Google Maps.</p>
+          <p>We handle full optimisation: profile completeness, category selection, service listings, photo uploads, Q&A setup, and a review generation strategy. Local citations across Kenyan directories are also part of the Starter package.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="faq-section reveal" data-section="process">
+    <div class="section-label">
+      <div class="icon" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-timeline"></i></div>
+      <h2>Process & Working Together</h2>
+    </div>
+    <div class="accordion">
+
+      <div class="acc-item" data-cat="process" data-q="how does the process work from first call to going live">
+        <button class="acc-trigger">
+          <span class="acc-q">How does the process work — from first call to going live?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Our standard process for automation projects:</p>
+          <ul>
+            <li><strong>Day 0:</strong> Free audit call — we map your current workflows, identify automation opportunities, and give you a clear scope and quote</li>
+            <li><strong>Day 1–2:</strong> Proposal accepted, invoice paid, project kicked off</li>
+            <li><strong>Day 3–7:</strong> Build phase — we configure, test, and refine the system</li>
+            <li><strong>Day 7:</strong> Live delivery + handover call + team training</li>
+            <li><strong>Day 8–37:</strong> 30-day monitoring and support window — we fix anything that needs tuning</li>
+          </ul>
+          <p>Simple automations (1–2 workflows) go live in 7 days. Complex multi-channel systems take 2–4 weeks. We will always give you an accurate timeline before you commit.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="process" data-q="what do i need to provide to get started">
+        <button class="acc-trigger">
+          <span class="acc-q">What do I need to provide to get started?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>For most projects, we need:</p>
+          <ul>
+            <li>Access to your WhatsApp Business number (for WhatsApp automation)</li>
+            <li>Facebook Business Manager admin access (for WhatsApp API)</li>
+            <li>Logins to any existing CRM or tools you want integrated</li>
+            <li>Your Safaricom Daraja API credentials (for M-Pesa — we can help set this up)</li>
+            <li>Basic business info: services, pricing, FAQs, team contacts</li>
+          </ul>
+          <p>Don't worry if you don't have everything ready — we guide you through each step during onboarding.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="process" data-q="do you work with businesses outside nairobi">
+        <button class="acc-trigger">
+          <span class="acc-q">Do you work with businesses outside Nairobi?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>Yes — we work with businesses across Kenya and East Africa. All our work is delivered remotely, so location is no barrier. We have clients in Mombasa, Kisumu, Nakuru, and Eldoret.</p>
+          <p>Meetings happen via WhatsApp voice calls or video call. Communication is primarily via WhatsApp — which is how most Kenyan business owners prefer to work anyway.</p>
+        </div></div>
+      </div>
+
+      <div class="acc-item" data-cat="process" data-q="what is the free audit and what does it cover">
+        <button class="acc-trigger">
+          <span class="acc-q">What is the free audit and what does it cover?</span>
+          <span class="acc-icon"><i class="fas fa-plus"></i></span>
+        </button>
+        <div class="acc-body"><div class="acc-content">
+          <p>The free audit is a 30-minute call where we review your current digital marketing and automation setup. We look at:</p>
+          <ul>
+            <li>Your website — speed, SEO health, conversion issues</li>
+            <li>Your Google presence — rankings, Business Profile, schema</li>
+            <li>Your lead capture — how leads come in and what happens next</li>
+            <li>Your WhatsApp and CRM setup — what's automated vs manual</li>
+            <li>Your biggest growth blockers right now</li>
+          </ul>
+          <p>You leave with a prioritised action plan — whether you work with us or not. <strong>No commitment required, no hard sell.</strong> <a href="/free-audit/">Book yours here</a>.</p>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="no-s" id="no-s">
+    <i class="fas fa-circle-question"></i>
+    <h3>No matching questions found</h3>
+    <p>Try a different search term, or <a href="https://wa.me/254734230445" style="color:var(--blue)">ask us directly on WhatsApp</a>.</p>
+  </div>
+
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band reveal">
+  <div class="cta-inner">
+    <h2>Still Have Questions?</h2>
+    <p>Talk to Joseph directly on WhatsApp — get a straight answer in minutes, not days.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20have%20a%20question%20about%20your%20services" class="btn-wa"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a>
+      <a href="/free-audit/" class="btn-audit"><i class="fas fa-magnifying-glass"></i> Request Free Audit</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">SmartBiz<span>Systems</span></div>
+      <p>Kenya's AI automation + digital marketing agency. We build systems that replace manual work, capture every lead, and grow your revenue — while you focus on running your business.</p>
+      <div class="footer-contact">
+        <a href="https://wa.me/254734230445"><i class="fab fa-whatsapp"></i> +254 734 230 445</a>
+        <a href="mailto:info@smartbizsystems.co.ke"><i class="fas fa-envelope"></i> info@smartbizsystems.co.ke</a>
+        <a href="#"><i class="fas fa-location-dot"></i> Westlands, Nairobi</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="../services/whatsapp-automation.html">WhatsApp Automation</a>
+      <a href="../services/seo.html">SEO & Rankings</a>
+      <a href="../services/lead-generation.html">Lead Generation</a>
+      <a href="../services/paid-ads.html">Paid Ads</a>
+      <a href="../services/web-development.html">Web Development</a>
+      <a href="../services/email-marketing.html">Email Marketing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="../work/index.html">Case Studies</a>
+      <a href="../pricing/index.html">Pricing</a>
+      <a href="../about/index.html">About</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="../faq/index.html">FAQ</a>
+      <a href="../free-audit/index.html">Free Audit</a>
+    </div>
+    <div class="footer-col">
+      <h4>Industries</h4>
+      <a href="#">Insurance</a>
+      <a href="#">SACCOs</a>
+      <a href="#">Real Estate</a>
+      <a href="#">Schools</a>
+      <a href="#">Clinics</a>
+      <a href="#">Ecommerce</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SmartBizSystems. Built for Kenya.</span>
+    <span>Stop Guessing. Start Growing.</span>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/254734230445" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="https://wa.me/254734230445" class="mb-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20to%20book%20a%20strategy%20call" class="mb-book"><i class="fas fa-calendar"></i> Book a Call</a>
+</div>
+
+<script>
+// NAV scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ACCORDION
+document.querySelectorAll('.acc-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.acc-item');
+    const isOpen = item.classList.contains('open');
+    // close all in same accordion
+    btn.closest('.accordion').querySelectorAll('.acc-item.open').forEach(o => o.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// CATEGORY FILTER
+const pills = document.querySelectorAll('.cat-pill');
+pills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    pills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const cat = pill.dataset.cat;
+    filterFaq(cat, document.getElementById('faq-search').value.trim().toLowerCase());
+  });
+});
+
+// SEARCH
+document.getElementById('faq-search').addEventListener('input', e => {
+  const activeCat = document.querySelector('.cat-pill.active').dataset.cat;
+  filterFaq(activeCat, e.target.value.trim().toLowerCase());
+});
+
+function filterFaq(cat, query) {
+  let visibleCount = 0;
+  document.querySelectorAll('.acc-item').forEach(item => {
+    const itemCat = item.dataset.cat;
+    const itemQ = item.dataset.q || '';
+    const itemText = item.querySelector('.acc-content')?.textContent.toLowerCase() || '';
+    const catMatch = cat === 'all' || itemCat === cat;
+    const qMatch = !query || itemQ.includes(query) || itemText.includes(query);
+    if (catMatch && qMatch) {
+      item.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+
+  // show/hide sections
+  document.querySelectorAll('.faq-section').forEach(sec => {
+    const visible = sec.querySelectorAll('.acc-item:not(.hidden)').length > 0;
+    sec.style.display = visible ? '' : 'none';
+  });
+
+  document.getElementById('no-s').style.display = visibleCount === 0 ? 'block' : 'none';
+  document.getElementById('all-count').textContent = visibleCount;
+}
+
+// REVEAL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
