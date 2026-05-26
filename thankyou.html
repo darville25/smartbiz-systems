@@ -3,180 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Confirmed! | SmartBizSystems</title>
-    <meta name="description" content="Your appointment with SmartBizSystems is confirmed. Check your email for details.">
+    <title>Booking Confirmed! | SmartBizSystems — AI & Growth Kenya</title>
+    <meta name="description" content="Your appointment with SmartBizSystems is confirmed. We look forward to scaling your business.">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Config -->
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        brand: {
-                            dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF',
-                            neonhover: '#14B8A6', purple: '#A78BFA', text: '#F3F4F6'
+                        brand: { 
+                            blue: '#2563EB', 
+                            bluehover: '#1D4ED8',
+                            navy: '#0F172A',
+                            body: '#475569',
+                            border: '#E2E8F0',
+                            bg: '#F8FAFC',
+                            whatsapp: '#25D366'
                         }
-                    },
-                    boxShadow: { 'neon': '0 0 20px rgba(45, 212, 191, 0.3)', 'card': '0 10px 30px -10px rgba(0, 0, 0, 0.5)' },
-                    animation: { 'bounce-slow': 'bounce 3s infinite' }
+                    }
                 }
             }
         }
     </script>
 
     <style>
-        body { background-color: #0B0F19; color: #F3F4F6; }
-        .glass-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .text-gradient { background: linear-gradient(to right, #2DD4BF, #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { background-color: #F8FAFC; color: #0F172A; }
+        
+        /* --- Navigation Styles --- */
+        nav { background: #fff; border-bottom: 1px solid #E2E8F0; position: sticky; top: 0; z-index: 1000; height: 80px; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 0 24px; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; text-decoration: none !important; color: #0F172A; }
+        .nav-logo-mark { width: 36px; height: 36px; background: #2563EB; color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .nav-logo em { font-style: normal; color: #2563EB; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { font-weight: 500; color: #475569; text-decoration: none; font-size: 15px; transition: 0.2s; }
+        .nav-links a:hover { color: #2563EB; }
+
+        /* Mobile Nav Toggle */
+        .nav-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; }
+        .nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
+        .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; background: #fff; padding: 24px; flex-direction: column; gap: 10px; border-bottom: 1px solid #E2E8F0; box-shadow: 0 10px 15px rgba(0,0,0,0.05); z-index: 1500; }
+        .mobile-menu a { text-decoration: none; color: #0F172A; font-weight: 600; padding: 14px 0; border-bottom: 1px solid #F1F5F9; display: flex; justify-content: space-between; }
+        .mobile-menu.open { display: flex; }
+        @media (max-width: 992px) { .nav-links { display: none; } .nav-toggle { display: flex; } }
+
+        .text-gradient { background: linear-gradient(to right, #2563EB, #60A5FA); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPRK4JYRR5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HPRK4JYRR5');
-    </script>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+<body class="antialiased">
 
     <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <span class="text-2xl font-bold tracking-tight text-white">
-                        SmartBiz<span class="text-brand-neon">Systems</span>
-                    </span>
-                </a>
-                <div class="flex items-center">
-                    <a href="index.html" class="text-sm font-bold text-gray-300 hover:text-white transition mr-4">
-                        <i class="fa-solid fa-home mr-2"></i> Home
-                    </a>
-                </div>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-mark">S</div>
+                <span>Smart<em>Biz</em>Systems</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="/services/index.html">Services</a></li>
+                <li><a href="/work/index.html">Work</a></li>
+                <li><a href="/pricing/index.html">Pricing</a></li>
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="/blog/index.html">Blog</a></li>
+            </ul>
+
+            <div class="hidden lg:block">
+                <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="bg-brand-blue text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-brand-bluehover transition shadow-lg shadow-blue-100">Schedule Another</a>
             </div>
+
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <!-- SUCCESS HERO -->
-    <section class="min-h-screen flex flex-col justify-center items-center pt-20 relative overflow-hidden">
-        <!-- Background Glows -->
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-neon/10 rounded-full blur-[100px]"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-purple/10 rounded-full blur-[100px]"></div>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/services/index.html">Services <span>→</span></a>
+        <a href="/work/index.html">Work <span>→</span></a>
+        <a href="/pricing/index.html">Pricing <span>→</span></a>
+        <a href="/about/index.html">About <span>→</span></a>
+        <a href="/blog/index.html">Blog <span>→</span></a>
+    </div>
 
-        <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+    <!-- SUCCESS HERO -->
+    <section class="py-20 lg:py-32 relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 -mr-48 -mt-48"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             
             <!-- Animated Icon -->
-            <div class="mb-8 animate-bounce-slow">
-                <div class="w-24 h-24 bg-brand-neon/20 rounded-full flex items-center justify-center mx-auto border-2 border-brand-neon shadow-neon">
-                    <i class="fa-solid fa-calendar-check text-5xl text-brand-neon"></i>
-                </div>
+            <div class="mb-10 inline-flex items-center justify-center w-24 h-24 bg-blue-50 rounded-full border-4 border-white shadow-xl shadow-blue-100">
+                <i class="fa-solid fa-calendar-check text-5xl text-brand-blue"></i>
             </div>
 
-            <!-- UPDATED HEADLINE -->
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-brand-navy mb-6 tracking-tight">
                 Booking <span class="text-gradient">Confirmed!</span>
             </h1>
             
-            <!-- UPDATED SUBTEXT -->
-            <p class="text-xl text-gray-300 mb-12 leading-relaxed font-medium">
-                We have locked in your time slot. Check your email for the Google Meet link and calendar invite.
+            <p class="text-xl text-brand-body mb-16 leading-relaxed max-w-2xl mx-auto font-medium">
+                We've locked in your time slot. Check your email for the Google Meet link and calendar invite. We look forward to helping you scale!
             </p>
 
             <!-- NEXT STEPS GRID -->
-            <div class="grid md:grid-cols-3 gap-6 text-left mb-16">
-                <div class="bg-brand-card border border-gray-800 p-6 rounded-xl relative overflow-hidden">
-                     <div class="absolute top-0 right-0 bg-green-500 text-brand-dark text-[10px] font-bold px-2 py-1 rounded-bl-lg">DONE</div>
-                    <div class="text-brand-neon font-bold text-lg mb-2">1. Scheduled</div>
-                    <p class="text-gray-400 text-sm">Your meeting is set. We are preparing your custom audit.</p>
+            <div class="grid md:grid-cols-3 gap-8 text-left mb-20">
+                <div class="bg-white border border-brand-border p-8 rounded-2xl shadow-sm relative">
+                    <div class="absolute top-4 right-4 text-emerald-500 bg-emerald-50 px-2 py-1 rounded text-[10px] font-bold">DONE</div>
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-clock text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-brand-navy font-bold text-lg mb-2">1. Scheduled</h3>
+                    <p class="text-brand-body text-sm leading-relaxed">Your meeting is officially on our calendar. Our team is already preparing your audit.</p>
                 </div>
-                <div class="bg-brand-card border border-gray-800 p-6 rounded-xl">
-                    <div class="text-white font-bold text-lg mb-2">2. Prepare</div>
-                    <p class="text-gray-400 text-sm">Please have your current website link or ad account ready to share.</p>
+
+                <div class="bg-white border border-brand-border p-8 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-list-check text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-brand-navy font-bold text-lg mb-2">2. Prepare</h3>
+                    <p class="text-brand-body text-sm leading-relaxed">Please have your current website link or ad account ready to share during the strategy session.</p>
                 </div>
-                <div class="bg-brand-card border border-gray-800 p-6 rounded-xl">
-                    <div class="text-white font-bold text-lg mb-2">3. The Call</div>
-                    <p class="text-gray-400 text-sm">We will meet on Google Meet/Zoom at the selected time.</p>
+
+                <div class="bg-white border border-brand-border p-8 rounded-2xl shadow-sm">
+                    <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-video text-brand-blue"></i>
+                    </div>
+                    <h3 class="text-brand-navy font-bold text-lg mb-2">3. The Call</h3>
+                    <p class="text-brand-body text-sm leading-relaxed">We will meet on Google Meet. Join using the link in your email at the scheduled time.</p>
                 </div>
             </div>
 
-            <!-- WHILE YOU WAIT CTA -->
-            <div class="bg-gradient-to-r from-gray-900 to-black border border-gray-700 rounded-2xl p-8 shadow-2xl">
-                <h3 class="text-2xl font-bold text-white mb-4">Want to start growing now?</h3>
-                <p class="text-gray-400 mb-6">
-                    While you wait for our call, use our <strong>AI Commander</strong> to generate ads, debt collection texts, and scripts for free.
-                </p>
-                <a href="smartbiztool.html" class="inline-flex items-center px-8 py-4 bg-brand-neon text-brand-dark font-bold rounded-lg hover:bg-brand-neonhover hover:shadow-neon transition-all">
-                    <i class="fa-solid fa-microchip mr-2"></i> Launch AI Tool
-                </a>
+            <!-- WHATSAPP AUTOMATION CTA -->
+            <div class="bg-white border-2 border-brand-blue rounded-3xl p-10 md:p-14 shadow-2xl relative overflow-hidden text-left">
+                <!-- Decoration -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full blur-3xl opacity-40 -mr-32 -mt-32"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-10">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <i class="fa-brands fa-whatsapp text-brand-whatsapp text-2xl"></i>
+                            <span class="text-brand-blue font-bold text-xs uppercase tracking-widest block">Immediate Growth Tip</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-brand-navy mb-4">Stop losing 30% of your leads.</h3>
+                        <p class="text-brand-body text-lg mb-0 leading-relaxed">
+                            Most Kenyan businesses lose sales because they reply to WhatsApp messages too slowly. See how our <strong>WhatsApp Automation</strong> closes deals for you 24/7, even while you sleep.
+                        </p>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-auto">
+                        <a href="/services/whatsapp-automation.html" class="inline-flex w-full md:w-auto items-center justify-center px-10 py-5 bg-brand-blue text-white font-bold rounded-xl hover:bg-brand-bluehover transition-all shadow-xl shadow-blue-200">
+                            Explore Automation <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
-   <!-- FOOTER -->
-    <footer class="bg-black border-t border-gray-900 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand & Socials -->
-                <div>
-                    <span class="text-2xl font-black tracking-tight text-white block mb-4">SmartBiz<span class="text-brand-neon">Systems</span></span>
-                    <p class="text-slate-300 text-sm mb-6 font-medium leading-relaxed">Kenya's premier digital growth agency.</p>
-                    <a href="login.html" class="text-xs font-bold text-slate-500 hover:text-white uppercase tracking-widest transition border border-gray-800 px-4 py-2 rounded">Client Login</a>
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="nav-logo text-white">
+                    <div class="nav-logo-mark">S</div>
+                    <span>Smart<em class="text-blue-400">Biz</em>Systems</span>
                 </div>
-
-                <!-- Services -->
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Solutions</h4>
-                    <ul class="space-y-2 text-sm text-slate-300 font-semibold">
-                        <li><a href="automation.html" class="hover:text-brand-neon transition">Marketing Automation</a></li>
-                        <li><a href="services.html" class="hover:text-brand-neon transition">SEO & Content Strategy</a></li>
-                        <li><a href="pricing.html" class="hover:text-brand-neon transition">Pricing</a></li>
-                    </ul>
-                </div>
-
-                <!-- Academy -->
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Tools</h4>
-                    <ul class="space-y-2 text-sm text-slate-300 font-semibold">
-                        <li><a href="smartbiztool.html" class="hover:text-brand-neon transition">AI Commander Tool</a></li>
-                        <li><a href="blog.html" class="hover:text-brand-neon transition">Blog & Insights</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Company</h4>
-                    <ul class="space-y-3 text-sm text-slate-300 font-medium">
-                        <li><a href="about.html" class="hover:text-brand-neon transition font-semibold">About Us</a></li>
-                        <li class="flex items-center"><i class="fa-solid fa-phone w-6 text-brand-neon"></i> +254 734230445</li>
-                    </ul>
+                
+                <div class="flex gap-8">
+                    <a href="/privacy" class="text-slate-500 hover:text-white text-xs font-bold uppercase tracking-widest transition">Privacy Policy</a>
+                    <a href="/terms" class="text-slate-500 hover:text-white text-xs font-bold uppercase tracking-widest transition">Terms of Service</a>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">&copy; 2026 SmartBizSystems. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="privacy.html" class="text-slate-500 hover:text-white text-xs font-bold uppercase transition">Privacy Policy</a>
-                    <a href="terms.html" class="text-slate-500 hover:text-white text-xs font-bold uppercase transition">Terms of Service</a>
-                </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center">
+                <p class="text-slate-500 text-xs font-bold uppercase tracking-widest">&copy; 2026 SmartBizSystems — Westlands, Nairobi. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>
