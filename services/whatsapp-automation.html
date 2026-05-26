@@ -595,7 +595,7 @@ footer{background:var(--grey-800);color:rgba(255,255,255,0.7);padding:56px 5% 32
   <a href="pricing/index.html">Pricing</a>
   <a href="about/index.html">About</a>
   <a href="blog/index.html">Blog</a>
-  <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="mob-cta">Book a free call</a>
+  
 </div>
 
 <!-- HERO -->
@@ -1116,6 +1116,36 @@ setTimeout(()=>{
     body.scrollTop=body.scrollHeight;
   },2000);
 },3500);
+
+
+
+ // Mobile menu
+const navToggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  navToggle.setAttribute('aria-label',
+    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
+  );
+});
+
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
+    navToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+});
 </script>
 
 
