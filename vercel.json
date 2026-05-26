@@ -4,22 +4,22 @@
   "redirects": [
     {
       "source": "/web-design-packages.html",
-      "destination": "/services/website-design-services-in-kenya",
+      "destination": "/services/website-design-services-in-kenya.html",
       "permanent": true
     },
     {
       "source": "/results.html",
-      "destination": "/work",
+      "destination": "/work.html",
       "permanent": true
     },
     {
       "source": "/automation.html",
-      "destination": "/services/whatsapp-automation",
+      "destination": "/services/whatsapp-automation.html",
       "permanent": true
     },
     {
       "source": "/about.html",
-      "destination": "/about",
+      "destination": "/about.html",
       "permanent": true
     },
     {
@@ -39,12 +39,12 @@
     },
     {
       "source": "/digital-marketing-course-kenya.html",
-      "destination": "/services",
+      "destination": "/services/digital-marketing-course-kenya",
       "permanent": true
     },
     {
       "source": "/digital-marketing-ebook-kenya.html",
-      "destination": "/services",
+      "destination": "/services/digital-marketing-ebook-kenya",
       "permanent": true
     },
     {
