@@ -258,42 +258,150 @@ footer{background:#0B0F19;padding:36px 24px;border-top:1px solid rgba(255,255,25
   .hero{padding:36px 20px 28px}
   .hero-actions,.cta-btns{flex-direction:column;align-items:stretch}
   .btn-wa,.btn-outline,.btn-wa-lg,.btn-ghost{justify-content:center;text-align:center}
+}/* --- Navigation Core --- */
+nav {
+  background: #ffffff;
+  border-bottom: 1px solid #E2E8F0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 24px;
 }
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 20px;
+  color: #0F172A;
+  text-decoration: none !important;
+}
+
+.nav-logo-mark {
+  width: 36px;
+  height: 36px;
+  background: #2563EB;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.nav-logo em { font-style: normal; color: #2563EB; }
+
+/* Desktop Links & Buttons */
+.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
+.nav-links a:hover { color: #2563EB; }
+
+.nav-cta-group { display: flex; align-items: center; gap: 16px; }
+.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
+.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
+
+/* --- Mobile Menu (Hidden on Desktop) --- */
+.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
+.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
+
+.mobile-menu {
+  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: white;
+  flex-direction: column;
+  padding: 24px;
+  gap: 8px;
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #0F172A;
+  font-weight: 600;
+  padding: 12px 0;
+  border-bottom: 1px solid #F1F5F9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mob-cta {
+  background: #2563EB;
+  color: white !important;
+  justify-content: center !important;
+  border-radius: 8px;
+  margin-top: 10px;
+  border-bottom: none !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .nav-links, .nav-cta-group { display: none; }
+  .nav-toggle { display: flex; }
+  .mobile-menu.open { display: flex; } /* Shows only when clicked */
+}
+
+/* Hamburger Animation */
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 </style>
 </head>
 <body>
 <nav id="nav">
-  <a href="#/" class="nav-logo">
-    <div class="nav-logo-mark">S</div>
-    Smart<em>Biz</em>Systems
-  </a>
-  <ul class="nav-links">
-    <li><a href="services/index.html">Services</a></li>
-    <li><a href="work/index.html">Work</a></li>
-    <li><a href="pricing/index.html">Pricing</a></li>
-    <li><a href="about/index.html">About</a></li>
-    <li><a href="blog/index.html">Blog</a></li>
-  </ul>
-  <div class="nav-cta">
-    <a href="work/index.html" class="btn-ghost">See our work</a>
-    <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">
-      Book a call
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">S</div>
+      <span>Smart<em>Biz</em>Systems</span>
     </a>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links">
+      <li><a href="/services/index.html">Services</a></li>
+      <li><a href="/work/index.html">Work</a></li>
+      <li><a href="/pricing/index.html">Pricing</a></li>
+      <li><a href="/about/index.html">About</a></li>
+      <li><a href="/blog/index.html">Blog</a></li>
+    </ul>
+
+    <!-- Desktop Buttons -->
+    <div class="nav-cta-group">
+      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
+      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
+        Book a call
+      </a>
+    </div>
+
+    <!-- Hamburger Button (Mobile Only) -->
+    <button class="nav-toggle" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="services/index.html">Services</a>
-  <a href="work/index.html">Work</a>
-  <a href="pricing/index.html">Pricing</a>
-  <a href="about/index.html">About</a>
-  <a href="blog/index.html">Blog</a>
-  <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="mob-cta">Book a free call</a>
+  <a href="/services/index.html">Services <span>→</span></a>
+  <a href="/work/index.html">Work <span>→</span></a>
+  <a href="/pricing/index.html">Pricing <span>→</span></a>
+  <a href="/about/index.html">About <span>→</span></a>
+  <a href="/blog/index.html">Blog <span>→</span></a>
+  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
 </div>
 
 
@@ -591,7 +699,23 @@ footer{background:#0B0F19;padding:36px 24px;border-top:1px solid rgba(255,255,25
     <div class="foot-copy">© 2026 SmartBizSystems — Westlands, Nairobi, Kenya &nbsp;|&nbsp; +254 734 230 445 &nbsp;|&nbsp; Built for Kenya.</div>
   </div>
 </footer>
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
 
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Closes menu if you click a link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>
