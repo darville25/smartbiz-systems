@@ -1,1343 +1,310 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog & Insights | SmartBizSystems — AI Automation Kenya</title>
-    <meta
-      name="description"
-      content="Expert insights on Digital Marketing, AI Automation, and Business Growth strategies for the Kenyan market."
-    />
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/blog/" />
-     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NHPX2K7F');</script>
-    <!-- End Google Tag Manager -->
-   
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | SmartBizSystems — AI & Digital Growth Kenya</title>
+    <meta name="description" content="50+ Actionable guides on WhatsApp Automation, SEO, and AI tools for the Kenyan business landscape.">
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom Config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-            colors: {
-              brand: {
-                bg:        "#F8FAFC",
-                card:      "#FFFFFF",
-                blue:      "#2563EB",
-                bluehover: "#1D4ED8",
-                dark:      "#0F172A",
-                body:      "#475569",
-                border:    "#E2E8F0",
-                neon:      "#2563EB",
-                neonhover: "#1D4ED8",
-                purple:    "#2563EB",
-              },
-            },
-            boxShadow: {
-              neon: "0 4px 20px rgba(37,99,235,0.25)",
-              card: "0 2px 16px rgba(15,23,42,0.07)",
-              "card-hover": "0 8px 32px rgba(37,99,235,0.15)",
-            },
-          },
-        },
-      };
-    </script>
-
     <style>
-      /* ── BASE ── */
-      body { background-color:#F8FAFC; color:#0F172A; font-family:'Inter',sans-serif; }
+        :root { --blue: #2563EB; --blue-hover: #1D4ED8; --navy: #0F172A; --border: #E2E8F0; --bg: #F8FAFC; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--navy); scroll-behavior: smooth; }
 
-      /* ── NAV ── */
-      .glass-nav {
-        background: rgba(255,255,255,0.97);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid #E2E8F0;
-        box-shadow: 0 1px 8px rgba(15,23,42,0.06);
-      }
-      .nav-link {
-        font-size: 0.875rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-        color: #475569;
-        transition: color 0.15s;
-      }
-      .nav-link:hover { color: #0F172A; }
-      .nav-link.active { color: #2563EB; }
-      .nav-logo {
-        font-size: 1.375rem;
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        color: #0F172A;
-        transition: color 0.15s;
-      }
-      .nav-logo span { color: #2563EB; }
-      .nav-logo:hover span { color: #1D4ED8; }
-      .nav-cta {
-        background: #2563EB;
-        color: #fff;
-        font-weight: 700;
-        font-size: 0.875rem;
-        letter-spacing: -0.01em;
-        padding: 0.5rem 1.25rem;
-        border-radius: 9999px;
-        transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
-      }
-      .nav-cta:hover {
-        background: #1D4ED8;
-        box-shadow: 0 4px 16px rgba(37,99,235,0.35);
-        transform: translateY(-1px);
-      }
-      .nav-playbook {
-        background: #F1F5F9;
-        color: #0F172A;
-        font-weight: 700;
-        font-size: 0.875rem;
-        border: 1px solid #E2E8F0;
-        padding: 0.5rem 1.125rem;
-        border-radius: 9999px;
-        transition: border-color 0.15s, background 0.15s;
-      }
-      .nav-playbook:hover { border-color: #2563EB; background:#EFF6FF; }
-      .nav-dropdown {
-        background: #fff;
-        border: 1px solid #E2E8F0;
-        border-radius: 0.875rem;
-        box-shadow: 0 8px 32px rgba(15,23,42,0.12);
-      }
-      .nav-dropdown a {
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: #475569;
-        padding: 0.625rem 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.625rem;
-        border-radius: 0.5rem;
-        transition: background 0.12s, color 0.12s;
-      }
-      .nav-dropdown a:hover { background:#EFF6FF; color:#2563EB; }
-      .nav-dropdown a i { color:#2563EB; width:1rem; }
-      .hiring-badge {
-        font-size:0.65rem; font-weight:700; letter-spacing:0.05em;
-        background:#DBEAFE; color:#1D4ED8; padding:1px 6px; border-radius:4px;
-      }
-      /* Divider inside dropdown */
-      .nav-dropdown .divider { height:1px; background:#F1F5F9; margin:4px 12px; }
+        /* --- Navigation --- */
+        nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; height: 80px; }
+        .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 100%; padding: 0 24px; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; text-decoration: none !important; color: var(--navy); }
+        .nav-logo-mark { width: 36px; height: 36px; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .nav-logo em { font-style: normal; color: var(--blue); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { font-weight: 500; color: #475569; text-decoration: none; font-size: 15px; transition: 0.2s; }
+        .nav-links a:hover { color: var(--blue); }
+        .btn-primary { background: var(--blue); color: #fff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px; transition: 0.2s; }
+        .btn-primary:hover { background: var(--blue-hover); transform: translateY(-1px); }
 
-      /* ── GRADIENT TEXT ── */
-      .text-gradient {
-        background: linear-gradient(135deg, #2563EB 0%, #60A5FA 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+        /* Mobile Nav */
+        .nav-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; background: none; border: none; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
+        .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; background: #fff; padding: 24px; flex-direction: column; gap: 8px; border-bottom: 1px solid var(--border); box-shadow: 0 10px 15px rgba(0,0,0,0.05); z-index: 999; }
+        .mobile-menu a { text-decoration: none; color: var(--navy); font-weight: 600; padding: 14px 0; border-bottom: 1px solid #F1F5F9; display: flex; justify-content: space-between; }
+        .mobile-menu.open { display: flex; }
+        @media (max-width: 992px) { .nav-links, .nav-cta-group { display: none; } .nav-toggle { display: flex; } }
 
-      /* ── BLOG CARDS ── */
-      .blog-card {
-        background:#fff;
-        border:1px solid #E2E8F0;
-        border-radius:1rem;
-        overflow:hidden;
-        transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-        box-shadow: 0 2px 8px rgba(15,23,42,0.05);
-      }
-      .blog-card:hover {
-        border-color:#BFDBFE;
-        box-shadow: 0 8px 32px rgba(37,99,235,0.12);
-        transform: translateY(-4px);
-      }
-      .blog-card .card-img { transition: transform 0.5s; }
-      .blog-card:hover .card-img { transform: scale(1.06); }
+        /* --- Blog Cards --- */
+        .filter-btn { padding: 8px 20px; border-radius: 999px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); background: #fff; transition: 0.2s; cursor: pointer; white-space: nowrap; }
+        .filter-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
+        .blog-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(15,23,42,0.08); border-color: #BFDBFE; }
+        .blog-card img { transition: 0.5s; }
+        .blog-card:hover img { transform: scale(1.05); }
 
-      /* ── CATEGORY PILLS ── */
-      .filter-btn {
-        font-weight:600; font-size:0.8125rem; letter-spacing:-0.01em;
-        padding: 0.375rem 1rem;
-        border-radius:9999px;
-        border: 1px solid transparent;
-        color:#475569;
-        background: transparent;
-        transition: all 0.15s;
-      }
-      .filter-btn:hover { background:#EFF6FF; color:#2563EB; border-color:#BFDBFE; }
-      .filter-btn.active {
-        background:#2563EB; color:#fff; border-color:#2563EB;
-        box-shadow: 0 2px 10px rgba(37,99,235,0.3);
-      }
-
-      /* ── HERO LABEL ── */
-      .hero-label {
-        display:inline-flex; align-items:center; gap:0.5rem;
-        background:#EFF6FF; color:#2563EB;
-        font-weight:700; font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase;
-        padding:0.375rem 1rem; border-radius:9999px; border:1px solid #BFDBFE;
-        margin-bottom:1.25rem;
-      }
-
-      /* ── SECTION DIVIDERS ── */
-      .section-bg-alt { background:#F1F5F9; }
-
-      /* ── LINE CLAMP ── */
-      .line-clamp-2 {
-        display:-webkit-box; -webkit-line-clamp:2; line-clamp:2;
-        -webkit-box-orient:vertical; overflow:hidden;
-      }
-      .line-clamp-3 {
-        display:-webkit-box; -webkit-line-clamp:3; line-clamp:3;
-        -webkit-box-orient:vertical; overflow:hidden;
-      }
-
-      /* ── MOBILE MENU ── */
-      .mobile-nav-link {
-        display:flex; align-items:center; gap:0.75rem;
-        padding:0.75rem 0.75rem; border-radius:0.625rem;
-        font-weight:600; font-size:0.9375rem; color:#475569;
-        transition: background 0.12s, color 0.12s;
-      }
-      .mobile-nav-link:hover { background:#EFF6FF; color:#2563EB; }
-      .mobile-nav-link i { color:#2563EB; width:1.125rem; }
-      .mobile-section-label {
-        padding:1rem 0.75rem 0.375rem;
-        font-size:0.7rem; font-weight:700; letter-spacing:0.1em;
-        color:#94A3B8; text-transform:uppercase;
-      }
+        /* Custom Scrollbar for Filter */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+</head>
+<body>
 
-
-  </head>
-  <body class="antialiased selection:bg-blue-100 selection:text-blue-900">
-     <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHPX2K7F"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) --> 
-    
-    
-    
-
-    <!-- HERO SECTION -->
-    <header
-      class="relative pt-36 pb-20 bg-white overflow-hidden border-b border-gray-100"
-    >
-      <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 opacity-30"
-      >
-        <div
-          class="absolute top-20 right-20 w-96 h-96 bg-blue-200 rounded-full filter blur-[120px]"
-        ></div>
-        <div
-          class="absolute bottom-0 left-20 w-72 h-72 bg-blue-100 rounded-full filter blur-[120px]"
-        ></div>
-      </div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
-        <div class="flex justify-center"><span class="hero-label"><i class="fa-solid fa-newspaper"></i> Knowledge Hub</span></div>
-        <h1 class="text-4xl lg:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
-          Insights for the <br />
-          <span class="text-gradient">Modern Kenyan Entrepreneur.</span>
-        </h1>
-        <p class="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
-          Actionable strategies on Automation, SEO, and Digital Growth. No
-          fluff, just what works in Nairobi today.
-        </p>
-
-        <!-- Search Bar -->
-        <div class="max-w-xl mx-auto relative">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search for 'WhatsApp', 'SEO', or 'Sales'..."
-            class="w-full bg-white border border-gray-200 rounded-full shadow-md py-4 px-6 pl-12 text-gray-900 placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none transition text-sm font-medium"
-          />
-          <i
-            class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"
-          ></i>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <div class="nav-logo-mark">S</div>
+                <span>Smart<em>Biz</em>Systems</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/services/index.html">Services</a></li>
+                <li><a href="/work/index.html">Work</a></li>
+                <li><a href="/pricing/index.html">Pricing</a></li>
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="/blog/index.html" class="text-blue-600 font-bold">Blog</a></li>
+            </ul>
+            <div class="nav-cta-group">
+                <a href="https://calendly.com/smartbizsystemske/30min" target="_blank" class="btn-primary">Book a call</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/services/index.html">Services <span>→</span></a>
+        <a href="/work/index.html">Work <span>→</span></a>
+        <a href="/pricing/index.html">Pricing <span>→</span></a>
+        <a href="/about/index.html">About <span>→</span></a>
+        <a href="/blog/index.html">Blog <span>→</span></a>
+        <a href="https://calendly.com/smartbizsystemske/30min" class="btn-primary text-center mt-4">Book a Free Call</a>
+    </div>
+
+    <!-- HERO -->
+    <header class="bg-white py-20 border-b border-gray-100 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-50/50 skew-x-12 translate-x-20 z-0"></div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100">Knowledge Hub</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-6 mb-6 tracking-tight text-slate-900 leading-tight">Insights for the <br><span class="text-blue-600">Modern Kenyan Entrepreneur.</span></h1>
+            <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto mb-12">Actionable strategies on Automation, SEO, and Digital Growth. No fluff, just what works in Nairobi today.</p>
+            
+            <!-- Search Bar -->
+            <div class="relative max-w-xl mx-auto group">
+                <input type="text" id="searchInput" placeholder="Search 50+ articles for 'WhatsApp', 'SEO', 'Ads'..." class="w-full py-5 px-6 pl-14 rounded-2xl border border-slate-200 focus:ring-4 focus:ring-blue-100 focus:border-blue-400 outline-none transition-all shadow-sm">
+                <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-500 transition-colors"></i>
+            </div>
+        </div>
     </header>
 
     <!-- CATEGORY FILTER -->
-    <section
-      class="py-5 bg-white/98 sticky z-40 backdrop-blur-md border-b border-gray-100 shadow-sm" style="top:4.5rem;"
-    >
-      <div class="max-w-7xl mx-auto px-4 overflow-x-auto">
-        <div
-          class="flex space-x-2 md:justify-center min-w-max"
-          id="categoryContainer"
-        >
-          <button
-            class="filter-btn active"
-            onclick="filterPosts('All', this)"
-          >
-            All Posts
-          </button>
-          <button
-            class="filter-btn"
-            onclick="filterPosts('Automation', this)"
-          >
-            Automation
-          </button>
-          <button
-            class="filter-btn"
-            onclick="filterPosts('Marketing', this)"
-          >
-            Marketing
-          </button>
-          <button
-            class="filter-btn"
-            onclick="filterPosts('SEO', this)"
-          >
-            SEO & Web
-          </button>
-          <button
-            class="filter-btn"
-            onclick="filterPosts('AI Tools', this)"
-          >
-            AI Tools
-          </button>
-          <button
-            class="filter-btn"
-            onclick="filterPosts('Case Studies', this)"
-          >
-            Case Studies
-          </button>
+    <div class="sticky top-[80px] bg-white/90 backdrop-blur-xl z-40 py-5 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 overflow-x-auto flex gap-3 no-scrollbar md:justify-center">
+            <button class="filter-btn active" onclick="filterCategory('All', this)">All Articles</button>
+            <button class="filter-btn" onclick="filterCategory('Automation', this)">Automation</button>
+            <button class="filter-btn" onclick="filterCategory('Marketing', this)">Marketing</button>
+            <button class="filter-btn" onclick="filterCategory('SEO', this)">SEO & Web</button>
+            <button class="filter-btn" onclick="filterCategory('AI Tools', this)">AI Tools</button>
+            <button class="filter-btn" onclick="filterCategory('Case Studies', this)">Case Studies</button>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- BLOG GRID SECTION -->
-    <section class="py-16 min-h-screen" style="background:#F8FAFC;">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Grid Container -->
-        <div
-          id="blogGrid"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <!-- Javascript will inject 50+ posts here -->
+    <!-- BLOG GRID -->
+    <main class="py-20 max-w-7xl mx-auto px-6">
+        <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- 50 Posts injected here -->
         </div>
+    </main>
 
-        <!-- Pagination (Visual) -->
-        <div class="mt-16 text-center">
-          <button
-            class="px-8 py-3 bg-white border border-gray-200 rounded-xl text-gray-600 font-semibold text-sm hover:border-blue-300 hover:text-blue-600 hover:shadow-md transition-all"
-            onclick="loadMore()"
-          >
-            <i class="fa-solid fa-spinner mr-2"></i> Load More Articles
-          </button>
+    <!-- NEWSLETTER -->
+    <section class="bg-blue-600 py-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Join 5,000+ Business Leaders</h2>
+            <p class="text-blue-100 text-lg mb-10">Get weekly growth tactics specifically for the Kenyan market. Zero spam, just value.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+                <input type="email" placeholder="Your business email" class="flex-1 px-6 py-4 rounded-xl outline-none focus:ring-4 focus:ring-blue-400 shadow-lg" required>
+                <button type="submit" class="bg-slate-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-black transition-all shadow-lg">Subscribe</button>
+            </form>
         </div>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER CTA -->
-    <section
-      class="py-20 border-t border-gray-100" style="background:linear-gradient(135deg,#1D4ED8 0%,#2563EB 50%,#3B82F6 100%);"
-    >
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <i class="fa-regular fa-paper-plane text-4xl text-white mb-4"></i>
-        <h2 class="text-3xl font-extrabold text-white mb-4 tracking-tight">
-          Join 5,000+ Nairobi CEOs
-        </h2>
-        <p class="text-blue-100 mb-8 text-lg max-w-lg mx-auto">
-          Get our weekly "Growth Hacking Kenya" email. Zero spam, just
-          high-value tactics sent every Tuesday.
-        </p>
-        <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-          <input
-            type="email"
-            placeholder="Enter your business email"
-            class="flex-1 bg-white/20 border border-white/30 rounded-lg px-6 py-3 text-white placeholder-white/60 focus:border-white outline-none"
-          />
-          <button
-            type="button"
-            class="px-8 py-3 bg-white text-blue-700 font-bold rounded-lg hover:bg-blue-50 transition shadow-md"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 border-t border-gray-800 pt-16 pb-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
-        >
-          <!-- Brand & Socials -->
-          <div>
-            <span
-              class="text-2xl font-black tracking-tight text-white block mb-4" style="letter-spacing:-0.03em;">SmartBiz<span style="color:#60A5FA;">Systems</span></span
-            >
-            <p class="text-slate-300 text-sm mb-6 font-medium leading-relaxed">
-              Kenya's premier digital growth agency. We build ecosystems that
-              help your business thrive automatically.
-            </p>
-            <div class="flex space-x-4 mb-6">
-              <a
-                href="#"
-                class="text-slate-400 hover:text-blue-300 transition"
-                ><i class="fa-brands fa-linkedin text-xl"></i
-              ></a>
-              <a
-                href="#"
-                class="text-slate-400 hover:text-blue-300 transition"
-                ><i class="fa-brands fa-instagram text-xl"></i
-              ></a>
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16 border-b border-slate-800 pb-16">
+            <div class="col-span-1 md:col-span-1">
+                <div class="nav-logo text-white mb-6">
+                    <div class="nav-logo-mark">S</div>
+                    <span>Smart<em class="text-blue-400">Biz</em>Systems</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Kenya's premier digital growth agency. We build high-conversion ecosystems that help businesses thrive automatically.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-brands fa-instagram"></i></a>
+                </div>
             </div>
-            <!-- Added Login Link -->
-            <a
-              href="../free-audit/"
-              class="text-xs font-bold text-slate-500 hover:text-white uppercase tracking-widest transition border border-gray-800 px-4 py-2 rounded"
-              >Client Login</a
-            >
-          </div>
-
-          <!-- Services -->
-          <div>
-            <h4
-              class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
-            >
-              Solutions
-            </h4>
-            <ul class="space-y-2 text-sm text-slate-300 font-semibold">
-              <li>
-                <a
-                  href="../services/whatsapp-automation"
-                  class="hover:text-blue-400 transition"
-                  >Marketing Automation</a
-                >
-              </li>
-              <li>
-                <a href="../services/" class="hover:text-blue-400 transition"
-                  >SEO & Content Strategy</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../services/"
-                  class="hover:text-blue-400 transition"
-                  >Paid Advertising (PPC)</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../pricing/"
-                  class="hover:text-blue-400 transition"
-                  >pricing</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../website-design-services-in-kenya"
-                  class="hover:text-blue-400 transition"
-                  >Website Design Services</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Academy & Resources -->
-          <div>
-            <h4
-              class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
-            >
-              Academy & Tools
-            </h4>
-            <ul class="space-y-2 text-sm text-slate-300 font-semibold">
-              <li>
-                <a
-                  href="../digital-marketing-ebook-kenya/"
-                  class="text-blue-600 hover:opacity-80 transition"
-                  >SME Marketing Playbook</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../digital-marketing-ebook-kenya/"
-                  class="hover:text-blue-400 transition"
-                  >Digital Marketing Course</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../tools/"
-                  class="hover:text-blue-400 transition"
-                  >AI Commander Tool</a
-                >
-              </li>
-              <li>
-                <a href="../blog/" class="hover:text-blue-400 transition"
-                  >Blog & Insights</a
-                >
-              </li>
-              <li>
-                <a href="../faq/" class="hover:text-blue-400 transition"
-                  >FAQs</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Company & Contact -->
-          <div>
-            <h4
-              class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
-            >
-              Company
-            </h4>
-            <ul class="space-y-3 text-sm text-slate-300 font-medium">
-              <li>
-                <a
-                  href="../about/"
-                  class="hover:text-blue-300 transition font-semibold"
-                  >About Our Agency</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../work/"
-                  class="hover:text-blue-300 transition font-semibold"
-                  >Case Studies / Results</a
-                >
-              </li>
-              <li>
-                <a
-                  href="../about/"
-                  class="hover:text-blue-300 transition font-semibold"
-                  >Careers
-                  <span
-                    class="ml-2 text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded"
-                    >Hiring</span
-                  ></a
-                >
-              </li>
-              <li class="pt-2 border-t border-gray-900 flex items-center">
-                <i class="fa-solid fa-location-dot w-6 text-blue-400"></i>
-                Westlands, Nairobi
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-phone w-6 text-blue-400"></i> +254
-                734230445
-              </li>
-              <li class="flex items-center">
-                <i class="fa-solid fa-envelope w-6 text-blue-400"></i>
-                smartbizsystemske@gmail.com
-              </li>
-            </ul>
-          </div>
+            <div>
+                <h4 class="font-bold mb-6 text-xs uppercase tracking-widest text-blue-400">Solutions</h4>
+                <ul class="text-slate-400 text-sm space-y-4">
+                    <li><a href="/services/whatsapp-automation.html" class="hover:text-white transition">WhatsApp Automation</a></li>
+                    <li><a href="/services/seo-services.html" class="hover:text-white transition">SEO Strategy</a></li>
+                    <li><a href="/website-design-services-in-kenya.html" class="hover:text-white transition">Web Development</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-xs uppercase tracking-widest text-blue-400">Company</h4>
+                <ul class="text-slate-400 text-sm space-y-4">
+                    <li><a href="/about/index.html" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="/work/index.html" class="hover:text-white transition">Case Studies</a></li>
+                    <li><a href="/pricing/index.html" class="hover:text-white transition">Pricing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-xs uppercase tracking-widest text-blue-400">Get In Touch</h4>
+                <p class="text-slate-400 text-sm mb-4"><i class="fa-solid fa-location-dot mr-3 text-blue-500"></i> Westlands, Nairobi, KE</p>
+                <p class="text-slate-400 text-sm mb-4"><i class="fa-solid fa-phone mr-3 text-blue-500"></i> +254 734 230 445</p>
+                <p class="text-slate-400 text-sm"><i class="fa-solid fa-envelope mr-3 text-blue-500"></i> hello@smartbizsystems.co.ke</p>
+            </div>
         </div>
-
-        <!-- Bottom Bar -->
-        <div
-          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">
-            &copy; 2026 SmartBizSystems. All rights reserved.
-          </p>
-          <div class="flex space-x-6">
-            <a
-              href="../privacy"
-              class="text-slate-500 hover:text-white text-xs font-bold uppercase transition"
-              >Privacy Policy</a
-            >
-            <a
-              href="../terms"
-              class="text-slate-500 hover:text-white text-xs font-bold uppercase transition"
-              >Terms of Service</a
-            >
-            <a
-              href="../sitemap"
-              class="text-slate-500 hover:text-white text-xs font-bold uppercase transition"
-              >Sitemap</a
-            >
-          </div>
+        <div class="max-w-7xl mx-auto px-6 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs font-bold uppercase tracking-widest">
+            <span>© 2026 SmartBizSystems. All rights reserved.</span>
+            <div class="flex gap-8">
+                <a href="/privacy" class="hover:text-white">Privacy</a>
+                <a href="/terms" class="hover:text-white">Terms</a>
+            </div>
         </div>
-      </div>
     </footer>
 
-    <!-- SCRIPT: 50+ UNIQUE BLOGS WITH UNIQUE IMAGES -->
+    <!-- BLOG DATABASE & LOGIC -->
     <script>
-      // THE CONTENT DATABASE (With Specific Images)
-      const blogPosts = [
-        // --- AUTOMATION & OPS ---
-        {
-          category: "Automation",
-          title: "Why Every Kenyan Business Needs WhatsApp Automation in 2025",
-          excerpt:
-            "Stop losing sales to slow replies. Learn how to automate your biashara with AI and M-Pesa integration.",
-          date: "Dec 20, 2025",
-          readTime: "8 min read",
-          link: "/blog/whatsapp-automation-kenya",
-          image:
-            "https://images.unsplash.com/photo-1611746347164-c23f4e73715b?auto=format&fit=crop&w=800&q=80", // WhatsApp/Phone
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title:
-            "How to Automate Debt Collection Without Ruining Relationships",
-          excerpt:
-            "Chasing payments is awkward. Here is the script and system to recover cash politely but firmly.",
-          date: "Jan 02, 2026",
-          readTime: "6 min read",
-          link: "/blog/debt-collection-automation",
-          image:
-            "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80", // Money/Calculator
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title:
-            "Connecting M-Pesa Daraja API to Your Website: A Non-Tech Guide",
-          excerpt:
-            "Stop asking customers to 'Send and forward message'. Automate STK Pushes for higher conversion.",
-          date: "Jan 05, 2026",
-          readTime: "10 min read",
-          link: "/blog/mpesa-api-guide",
-          image:
-            "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80", // Payment/Phone
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "5 CRM Tools That Actually Work for Kenyan SMEs",
-          excerpt:
-            "HubSpot vs. Zoho vs. Excel. Which one is worth the shillings for a Nairobi business?",
-          date: "Jan 08, 2026",
-          readTime: "7 min read",
-          link: "/blog/best-crm-kenya",
-          image:
-            "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80", // Team Dashboard
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "Automating Appointment Bookings for Clinics and Salons",
-          excerpt:
-            "Reduce no-shows by 40% with SMS reminders and automated calendar scheduling.",
-          date: "Jan 12, 2026",
-          readTime: "5 min read",
-          link: "/blog/appointment-automation",
-          image:
-            "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80", // Calendar/Schedule
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "Email Marketing in Kenya: Is It Dead or Just Done Wrong?",
-          excerpt:
-            "Why newsletters are the secret weapon for B2B companies in Westlands and Upper Hill.",
-          date: "Jan 15, 2026",
-          readTime: "6 min read",
-          link: "/blog/email-marketing-kenya",
-          image:
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80", // Email/Laptop
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "How to Build a 'Set and Forget' Sales Funnel",
-          excerpt:
-            "From Facebook Ad to WhatsApp Sale without lifting a finger. The blueprint.",
-          date: "Jan 18, 2026",
-          readTime: "9 min read",
-          link: "/blog/sales-funnel-blueprint",
-          image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", // Laptop working
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "SMS Marketing vs. WhatsApp: Which ROI is Higher?",
-          excerpt:
-            "Comparing Bulk SMS costs against WhatsApp Business API fees for local retailers.",
-          date: "Jan 22, 2026",
-          readTime: "5 min read",
-          link: "/blog/sms-vs-whatsapp",
-          image:
-            "https://images.unsplash.com/photo-1512428559087-560fa5ce7d02?auto=format&fit=crop&w=800&q=80", // Texting
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "Inventory Management: Stop Using Notebooks",
-          excerpt:
-            "Digital tools to track stock in real-time for hardware and retail shops.",
-          date: "Jan 25, 2026",
-          readTime: "7 min read",
-          link: "/blog/inventory-systems",
-          image:
-            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80", // Warehouse
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
-        {
-          category: "Automation",
-          title: "The Danger of 'GBWhatsApp' for Business",
-          excerpt:
-            "Why you will get banned and lose your customers. The safe API alternative.",
-          date: "Jan 28, 2026",
-          readTime: "4 min read",
-          link: "/blog/gbwhatsapp-risks",
-          image:
-            "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=800&q=80", // Warning/Lock
-          tagClass: "text-blue-700 bg-blue-50 border-blue-200",
-        },
+        const blogPosts = [
+            // --- AUTOMATION (10) ---
+            { category: "Automation", title: "Why Every Kenyan Business Needs WhatsApp Automation in 2025", excerpt: "Stop losing sales to slow replies. Learn how to automate your biashara with AI and M-Pesa integration.", date: "Dec 20, 2025", readTime: "8 min read", link: "/blog/whatsapp-automation-kenya.html", image: "https://images.unsplash.com/photo-1611746347164-c23f4e73715b?w=800&q=80" },
+            { category: "Automation", title: "How to Automate Debt Collection Without Ruining Relationships", excerpt: "Chasing payments is awkward. Systematize your follow-ups to recover cash politely but firmly.", date: "Jan 02, 2026", readTime: "6 min read", link: "/blog/debt-collection-automation.html", image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=800&q=80" },
+            { category: "Automation", title: "Connecting M-Pesa Daraja API to Your Website: A Guide", excerpt: "Stop asking for screenshots. Automate STK Pushes for higher conversion and seamless accounting.", date: "Jan 05, 2026", readTime: "10 min read", link: "/blog/mpesa-api-guide.html", image: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?w=800&q=80" },
+            { category: "Automation", title: "5 CRM Tools That Actually Work for Kenyan SMEs", excerpt: "HubSpot vs. Zoho vs. Excel. Which one is worth the investment for a Nairobi-based business?", date: "Jan 08, 2026", readTime: "7 min read", link: "/blog/best-crm-kenya.html", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" },
+            { category: "Automation", title: "Automating Appointment Bookings for Clinics and Salons", excerpt: "Reduce no-shows by 40% with automated SMS reminders and real-time calendar scheduling.", date: "Jan 12, 2026", readTime: "5 min read", link: "/blog/appointment-automation.html", image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&q=80" },
+            { category: "Automation", title: "Email Marketing in Kenya: Is It Dead or Just Done Wrong?", excerpt: "Why newsletters are the secret weapon for B2B companies in Westlands and Upper Hill.", date: "Jan 15, 2026", readTime: "6 min read", link: "/blog/email-marketing-kenya.html", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80" },
+            { category: "Automation", title: "How to Build a 'Set and Forget' Sales Funnel", excerpt: "From Facebook Ad to WhatsApp Sale without manual intervention. The complete blueprint.", date: "Jan 18, 2026", readTime: "9 min read", link: "/blog/sales-funnel-blueprint.html", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" },
+            { category: "Automation", title: "SMS Marketing vs. WhatsApp: Which ROI is Higher?", excerpt: "Comparing Bulk SMS costs against WhatsApp Business API fees for local retail brands.", date: "Jan 22, 2026", readTime: "5 min read", link: "/blog/sms-vs-whatsapp.html", image: "https://images.unsplash.com/photo-1512428559087-560fa5ce7d02?w=800&q=80" },
+            { category: "Automation", title: "Inventory Management: Stop Using Notebooks", excerpt: "Digital tools to track stock in real-time for hardware stores and retail distributors.", date: "Jan 25, 2026", readTime: "7 min read", link: "/blog/inventory-systems.html", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" },
+            { category: "Automation", title: "The Danger of 'GBWhatsApp' for Your Business", excerpt: "Why you will get banned and lose your customer database. The safe API alternative explained.", date: "Jan 28, 2026", readTime: "4 min read", link: "/blog/gbwhatsapp-risks.html", image: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80" },
 
-        // --- MARKETING & ADS ---
-        {
-          category: "Marketing",
-          title: "Facebook Ads in Kenya: Fixing the 'Payment Declined' Error",
-          excerpt:
-            "How to pay for Meta ads using M-Pesa or local bank cards without stress.",
-          date: "Feb 01, 2026",
-          readTime: "5 min read",
-          link: "/blog/facebook-ads-payment",
-          image:
-            "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80", // Facebook UI
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "TikTok for Business: Selling to Gen Z in Nairobi",
-          excerpt:
-            "You don't need to dance. How to create viral educational content that sells.",
-          date: "Feb 04, 2026",
-          readTime: "6 min read",
-          link: "/blog/tiktok-business-kenya",
-          image:
-            "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=800&q=80", // TikTok logo
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "The Ultimate Guide to Influencer Marketing Rates in Kenya",
-          excerpt:
-            "How much should you pay? Micro vs. Macro influencers and how to measure ROI.",
-          date: "Feb 07, 2026",
-          readTime: "8 min read",
-          link: "/blog/influencer-rates-kenya",
-          image:
-            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", // Influencer/Camera
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "Cold Calling is Not Dead: The 'Kenyan CEO' Script",
-          excerpt:
-            "How to bypass the secretary and get a meeting with decision-makers.",
-          date: "Feb 10, 2026",
-          readTime: "7 min read",
-          link: "/blog/cold-calling-scripts",
-          image:
-            "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80", // Phone call
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "Google Ads vs. Facebook Ads: Where to Spend Your First 10k",
-          excerpt:
-            "The definitive answer depending on whether you sell products or services.",
-          date: "Feb 14, 2026",
-          readTime: "6 min read",
-          link: "/blog/google-vs-facebook",
-          image:
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", // Analytics graph
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "How to create a 'Lead Magnet' for Kenyan Clients",
-          excerpt:
-            "Why PDF guides and free consultations work better than 'Buy Now' buttons.",
-          date: "Feb 18, 2026",
-          readTime: "5 min read",
-          link: "/blog/lead-magnets",
-          image:
-            "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=800&q=80", // Magnet/Book
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "Using 'Jiji' and 'Kilimall' vs Your Own Website",
-          excerpt:
-            "Should you build your own brand or rely on marketplaces? The pros and cons.",
-          date: "Feb 21, 2026",
-          readTime: "6 min read",
-          link: "/blog/jiji-vs-website",
-          image:
-            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80", // E-commerce
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "Real Estate Marketing: Selling Plots on Social Media",
-          excerpt:
-            "How to frame 'Title Deeds' and 'Site Visits' to build trust online.",
-          date: "Feb 25, 2026",
-          readTime: "7 min read",
-          link: "/blog/real-estate-marketing",
-          image:
-            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80", // House/Keys
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "The Psychology of Pricing: KES 999 vs KES 1000",
-          excerpt:
-            "Small tweaks in how you display price that increase sales by 15%.",
-          date: "Feb 28, 2026",
-          readTime: "4 min read",
-          link: "/blog/pricing-psychology",
-          image:
-            "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?auto=format&fit=crop&w=800&q=80", // Price tag
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
-        {
-          category: "Marketing",
-          title: "How to Handle Negative Comments on Social Media",
-          excerpt:
-            "Crisis management 101. Turning angry customers into loyal fans.",
-          date: "Mar 03, 2026",
-          readTime: "5 min read",
-          link: "/blog/crisis-management",
-          image:
-            "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80", // Meeting/Talking
-          tagClass: "text-emerald-700 bg-emerald-50 border-emerald-200",
-        },
+            // --- MARKETING (10) ---
+            { category: "Marketing", title: "Facebook Ads in Kenya: Fixing the 'Payment Declined' Error", excerpt: "How to pay for Meta ads using M-Pesa or local bank cards without common technical friction.", date: "Feb 01, 2026", readTime: "5 min read", link: "/blog/facebook-ads-payment.html", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80" },
+            { category: "Marketing", title: "TikTok for Business: Selling to Gen Z in Nairobi", excerpt: "You don't need to dance. How to create viral educational content that converts to cash.", date: "Feb 04, 2026", readTime: "6 min read", link: "/blog/tiktok-business-kenya.html", image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&q=80" },
+            { category: "Marketing", title: "Ultimate Guide to Influencer Marketing Rates in Kenya", excerpt: "How much should you pay? Micro vs. Macro influencers and how to measure real impact.", date: "Feb 07, 2026", readTime: "8 min read", link: "/blog/influencer-rates-kenya.html", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" },
+            { category: "Marketing", title: "Cold Calling is Not Dead: The 'Kenyan CEO' Script", excerpt: "How to bypass the gatekeeper and secure a meeting with top decision-makers.", date: "Feb 10, 2026", readTime: "7 min read", link: "/blog/cold-calling-scripts.html", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" },
+            { category: "Marketing", title: "Google Ads vs. Facebook Ads: Where to Spend First", excerpt: "The definitive answer for Kenyan startups based on search intent vs. discovery.", date: "Feb 14, 2026", readTime: "6 min read", link: "/blog/google-vs-facebook.html", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" },
+            { category: "Marketing", title: "How to Create a 'Lead Magnet' for Kenyan Clients", excerpt: "Why free guides and consultations work better than 'Buy Now' buttons for high-ticket items.", date: "Feb 18, 2026", readTime: "5 min read", link: "/blog/lead-magnets.html", image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80" },
+            { category: "Marketing", title: "Using 'Jiji' and 'Kilimall' vs Your Own Website", excerpt: "Should you build your own brand or rely on third-party marketplaces? A tactical comparison.", date: "Feb 21, 2026", readTime: "6 min read", link: "/blog/jiji-vs-website.html", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80" },
+            { category: "Marketing", title: "Real Estate Marketing: Selling Plots on Social Media", excerpt: "How to frame 'Title Deeds' and 'Site Visits' to build massive trust in a skeptical market.", date: "Feb 25, 2026", readTime: "7 min read", link: "/blog/real-estate-marketing.html", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" },
+            { category: "Marketing", title: "The Psychology of Pricing: KES 999 vs KES 1000", excerpt: "Small tweaks in how you display your prices that can increase sales by 15% overnight.", date: "Feb 28, 2026", readTime: "4 min read", link: "/blog/pricing-psychology.html", image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=800&q=80" },
+            { category: "Marketing", title: "How to Handle Negative Comments on Social Media", excerpt: "Crisis management 101. Turning angry customers into loyal brand advocates.", date: "Mar 03, 2026", readTime: "5 min read", link: "/blog/crisis-management.html", image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80" },
 
-        // --- SEO & WEB ---
-        {
-          category: "SEO",
-          title: "Ranking #1 for 'Best Hotel in Mombasa': A Case Study",
-          excerpt:
-            "How we used local keywords and backlinks to beat booking.com.",
-          date: "Mar 06, 2026",
-          readTime: "10 min read",
-          link: "/blog/seo-case-study-hotel",
-          image:
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80", // Hotel/Resort
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "Why Your Website is Slow (And How to Speed it Up)",
-          excerpt:
-            "Mobile data in Kenya is precious. If your site loads slow, you lose customers.",
-          date: "Mar 10, 2026",
-          readTime: "6 min read",
-          link: "/blog/fix-slow-website",
-          image:
-            "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?auto=format&fit=crop&w=800&q=80", // Code/Speed
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "Google My Business: The Most Underrated Tool in Kenya",
-          excerpt: "How to get on Google Maps and get reviews for free.",
-          date: "Mar 14, 2026",
-          readTime: "5 min read",
-          link: "/blog/google-my-business-guide",
-          image:
-            "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80", // Map
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "Keywords in Kenya: What are Locals Actually Searching?",
-          excerpt:
-            "Understanding the difference between 'Buy Shoes' and 'Bei ya Viatu'.",
-          date: "Mar 18, 2026",
-          readTime: "7 min read",
-          link: "/blog/kenyan-keyword-research",
-          image:
-            "https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=800&q=80", // Search magnifying glass
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "WordPress vs. Custom Code: Which is Better for SEO?",
-          excerpt:
-            "Why we prefer custom code for performance, but WordPress for CMS.",
-          date: "Mar 22, 2026",
-          readTime: "6 min read",
-          link: "/blog/wordpress-vs-code",
-          image:
-            "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80", // Web code
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "How to Write Blog Posts That Google actually Indexes",
-          excerpt: "Structure, Headers, and the importance of 'Search Intent'.",
-          date: "Mar 25, 2026",
-          readTime: "8 min read",
-          link: "/blog/writing-for-seo",
-          image:
-            "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80", // Writing
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "Backlinks 101: Getting Featured on Kenyan News Sites",
-          excerpt:
-            "Strategies to get links from Standard, Nation, and popular blogs.",
-          date: "Mar 29, 2026",
-          readTime: "7 min read",
-          link: "/blog/backlinks-strategy",
-          image:
-            "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80", // News/Paper
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "E-commerce SEO: Optimizing Product Pages",
-          excerpt:
-            "How to write descriptions that sell and rank at the same time.",
-          date: "Apr 02, 2026",
-          readTime: "6 min read",
-          link: "/blog/ecommerce-seo",
-          image:
-            "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80", // Shopping cart
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "Voice Search is Growing in Africa: Are You Ready?",
-          excerpt: "Optimizing for 'Ok Google' and voice queries in 2026.",
-          date: "Apr 05, 2026",
-          readTime: "5 min read",
-          link: "/blog/voice-search-africa",
-          image:
-            "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80", // Microphone
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
-        {
-          category: "SEO",
-          title: "Technical SEO Checklist for Kenyan Developers",
-          excerpt: "Sitemaps, Robots.txt, and Canonical tags explained simply.",
-          date: "Apr 09, 2026",
-          readTime: "9 min read",
-          link: "/blog/technical-seo-checklist",
-          image:
-            "https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?auto=format&fit=crop&w=800&q=80", // Code screen
-          tagClass: "text-violet-700 bg-violet-50 border-violet-200",
-        },
+            // --- SEO (10) ---
+            { category: "SEO", title: "Ranking #1 for 'Best Hotel in Mombasa': A Case Study", excerpt: "How we used local keywords and strategic backlinks to beat global booking giants.", date: "Mar 06, 2026", readTime: "10 min read", link: "/blog/seo-case-study-hotel.html", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" },
+            { category: "SEO", title: "Why Your Website is Slow (And How to Fix It)", excerpt: "Mobile data in Kenya is precious. If your site is slow, you are losing money every second.", date: "Mar 10, 2026", readTime: "6 min read", link: "/blog/fix-slow-website.html", image: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=800&q=80" },
+            { category: "SEO", title: "Google My Business: The Most Underrated Tool in KE", excerpt: "How to dominate local search on Google Maps without spending a single shilling on ads.", date: "Mar 14, 2026", readTime: "5 min read", link: "/blog/google-my-business-guide.html", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" },
+            { category: "SEO", title: "Keywords in Kenya: What are Locals Actually Searching?", excerpt: "Understanding the search behavior difference between 'Buy Shoes' and 'Bei ya Viatu'.", date: "Mar 18, 2026", readTime: "7 min read", link: "/blog/kenyan-keyword-research.html", image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&q=80" },
+            { category: "SEO", title: "WordPress vs. Custom Code: Which is Better for SEO?", excerpt: "The truth about performance, security, and ranking capabilities for business websites.", date: "Mar 22, 2026", readTime: "6 min read", link: "/blog/wordpress-vs-code.html", image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80" },
+            { category: "SEO", title: "How to Write Blog Posts That Google actually Indexes", excerpt: "Structure, Headers, and the absolute importance of satisfying 'Search Intent' properly.", date: "Mar 25, 2026", readTime: "8 min read", link: "/blog/writing-for-seo.html", image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80" },
+            { category: "SEO", title: "Backlinks 101: Getting Featured on Kenyan News Sites", excerpt: "Proven strategies to earn links from the major news outlets and popular local blogs.", date: "Mar 29, 2026", readTime: "7 min read", link: "/blog/backlinks-strategy.html", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80" },
+            { category: "SEO", title: "E-commerce SEO: Optimizing Product Pages", excerpt: "How to write descriptions that sell your products and rank in search engines simultaneously.", date: "Apr 02, 2026", readTime: "6 min read", link: "/blog/ecommerce-seo.html", image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&q=80" },
+            { category: "SEO", title: "Voice Search is Growing in Africa: Are You Ready?", excerpt: "Optimizing your content for 'Ok Google' and voice queries in the 2026 landscape.", date: "Apr 05, 2026", readTime: "5 min read", link: "/blog/voice-search-africa.html", image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?w=800&q=80" },
+            { category: "SEO", title: "Technical SEO Checklist for Kenyan Developers", excerpt: "Sitemaps, Robots.txt, and Canonical tags explained for non-SEO technical teams.", date: "Apr 09, 2026", readTime: "9 min read", link: "/blog/technical-seo-checklist.html", image: "https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?w=800&q=80" },
 
-        // --- AI TOOLS & FUTURE ---
-        {
-          category: "AI Tools",
-          title: "How SmartBiz AI Commander Writes Better Ads Than You",
-          excerpt:
-            "A deep dive into our fine-tuned model for the Kenyan market.",
-          date: "Apr 12, 2026",
-          readTime: "5 min read",
-          link: "../tools/",
-          image:
-            "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80", // Robot
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "5 AI Tools to Replace Your Virtual Assistant",
-          excerpt: "Transcription, Scheduling, and Data Entry on autopilot.",
-          date: "Apr 15, 2026",
-          readTime: "6 min read",
-          link: "/blog/ai-va-tools",
-          image:
-            "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80", // Assistant
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "ChatGPT Prompts for Kenyan Lawyers",
-          excerpt:
-            "How to draft contracts and legal letters 10x faster safely.",
-          date: "Apr 18, 2026",
-          readTime: "7 min read",
-          link: "/blog/chatgpt-for-lawyers",
-          image:
-            "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=800&q=80", // Law/Gavel
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "Using AI to Predict Sales Trends in Retail",
-          excerpt:
-            "How data analysis can tell you what to stock for Christmas.",
-          date: "Apr 22, 2026",
-          readTime: "8 min read",
-          link: "/blog/ai-retail-prediction",
-          image:
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", // Data chart
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "Deepfakes and Scams: Protecting Your Brand Identity",
-          excerpt:
-            "As AI grows, so does fraud. Here is how to verify your business online.",
-          date: "Apr 25, 2026",
-          readTime: "6 min read",
-          link: "/blog/ai-security-brand",
-          image:
-            "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80", // Cyber security
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "AI for Agriculture: The Next Frontier in Kenya",
-          excerpt: "How bots are helping farmers check prices and weather.",
-          date: "Apr 29, 2026",
-          readTime: "7 min read",
-          link: "/blog/ai-agriculture",
-          image:
-            "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80", // Farming
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "Content Creation at Scale: Generating 30 Posts in 1 Hour",
-          excerpt:
-            "Using SmartBiz Commander to fill your social calendar for the month.",
-          date: "May 02, 2026",
-          readTime: "5 min read",
-          link: "/blog/bulk-content-creation",
-          image:
-            "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80", // Social media apps
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "The Ethics of AI in Kenyan Schools",
-          excerpt: "Should students use ChatGPT for homework? A balanced view.",
-          date: "May 05, 2026",
-          readTime: "6 min read",
-          link: "/blog/ai-in-schools",
-          image:
-            "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80", // Education
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "Automating Customer Support with AI Voice Agents",
-          excerpt: "The future is voice. Can AI handle phone calls in Swahili?",
-          date: "May 09, 2026",
-          readTime: "8 min read",
-          link: "/blog/ai-voice-agents",
-          image:
-            "https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=800&q=80", // Headset
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
-        {
-          category: "AI Tools",
-          title: "Why 'Human in the Loop' is still necessary",
-          excerpt: "AI is a tool, not a master. Why you still need strategy.",
-          date: "May 12, 2026",
-          readTime: "5 min read",
-          link: "/blog/human-in-the-loop",
-          image:
-            "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80", // Humans working
-          tagClass: "text-amber-700 bg-amber-50 border-amber-200",
-        },
+            // --- AI TOOLS (10) ---
+            { category: "AI Tools", title: "How SmartBiz AI Commander Writes Better Ads Than You", excerpt: "A deep dive into our custom fine-tuned AI model built for the Kenyan buyer psyche.", date: "Apr 12, 2026", readTime: "5 min read", link: "/tools/index.html", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" },
+            { category: "AI Tools", title: "5 AI Tools to Replace Your Virtual Assistant", excerpt: "Automate transcription, scheduling, and data entry without hiring more staff.", date: "Apr 15, 2026", readTime: "6 min read", link: "/blog/ai-va-tools.html", image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80" },
+            { category: "AI Tools", title: "ChatGPT Prompts for Kenyan Lawyers", excerpt: "How to draft contracts and legal letters 10x faster while maintaining safety.", date: "Apr 18, 2026", readTime: "7 min read", link: "/blog/chatgpt-for-lawyers.html", image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&q=80" },
+            { category: "AI Tools", title: "Using AI to Predict Sales Trends in Retail", excerpt: "How predictive analysis helps you stock the right products before the holidays.", date: "Apr 22, 2026", readTime: "8 min read", link: "/blog/ai-retail-prediction.html", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" },
+            { category: "AI Tools", title: "Deepfakes and Scams: Protecting Your Brand Identity", excerpt: "As AI grows, so does fraud. Here is how to verify your business digital footprint.", date: "Apr 25, 2026", readTime: "6 min read", link: "/blog/ai-security-brand.html", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" },
+            { category: "AI Tools", title: "AI for Agriculture: The Next Frontier in Kenya", excerpt: "How intelligent bots are helping farmers monitor soil, weather, and market prices.", date: "Apr 29, 2026", readTime: "7 min read", link: "/blog/ai-agriculture.html", image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" },
+            { category: "AI Tools", title: "Content Creation at Scale: 30 Posts in 1 Hour", excerpt: "Using AI tools to fill your entire social media calendar in one sitting.", date: "May 02, 2026", readTime: "5 min read", link: "/blog/bulk-content-creation.html", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80" },
+            { category: "AI Tools", title: "The Ethics of AI in Kenyan Schools", excerpt: "Should students use AI tools for learning? A balanced view for parents and educators.", date: "May 05, 2026", readTime: "6 min read", link: "/blog/ai-in-schools.html", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" },
+            { category: "AI Tools", title: "Automating Support with AI Voice Agents", excerpt: "The future is voice. Can AI handle phone support calls in Swahili efficiently?", date: "May 09, 2026", readTime: "8 min read", link: "/blog/ai-voice-agents.html", image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=800&q=80" },
+            { category: "AI Tools", title: "Why 'Human in the Loop' is still necessary", excerpt: "AI is a tool, not a replacement for strategy. Why human oversight remains vital.", date: "May 12, 2026", readTime: "5 min read", link: "/blog/human-in-the-loop.html", image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80" },
 
-        // --- CASE STUDIES ---
-        {
-          category: "Case Studies",
-          title: "How We Helped a Logistics Company Save 40 Hours/Week",
-          excerpt: "By automating their dispatch notifications via WhatsApp.",
-          date: "May 15, 2026",
-          readTime: "6 min read",
-          link: "/blog/case-study-logistics",
-          image:
-            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80", // Logistics
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "Winning Tenders: How to Write Proposals that Stand Out",
-          excerpt:
-            "Government and Private tenders are competitive. Here is how to format for success.",
-          date: "May 19, 2026",
-          readTime: "9 min read",
-          link: "/blog/winning-tenders",
-          image:
-            "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80", // Papers/Signing
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "Hiring in Kenya: Red Flags to Look Out For",
-          excerpt:
-            "How to screen candidates effectively using automated forms.",
-          date: "May 22, 2026",
-          readTime: "7 min read",
-          link: "/blog/hiring-tips",
-          image:
-            "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80", // Handshake
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "Scaling from 1 to 10 Employees: The Systems You Need",
-          excerpt:
-            "You cannot manage 10 people with WhatsApp groups alone. You need structure.",
-          date: "May 26, 2026",
-          readTime: "8 min read",
-          link: "/blog/scaling-systems",
-          image:
-            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80", // Team
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title:
-            "Financial Discipline for SMEs: Separating Biz & Personal Cash",
-          excerpt:
-            "Why M-Pesa statements are not accounting. Introduction to QuickBooks/Xero.",
-          date: "May 29, 2026",
-          readTime: "6 min read",
-          link: "/blog/sme-finance-tips",
-          image:
-            "https://images.unsplash.com/photo-1579621970563-ebec7560eb3e?auto=format&fit=crop&w=800&q=80", // Money/Accounting
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "The Cost of 'Cheap' Websites",
-          excerpt:
-            "Why a KES 5,000 website will actually cost you millions in lost sales.",
-          date: "Jun 02, 2026",
-          readTime: "5 min read",
-          link: "/blog/cost-of-cheap-websites",
-          image:
-            "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80", // Broken code/web
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "Importing Goods from China: Digital Tools to Track Shipments",
-          excerpt: "How to stay updated without calling your agent every hour.",
-          date: "Jun 05, 2026",
-          readTime: "7 min read",
-          link: "/blog/import-tracking-tools",
-          image:
-            "https://images.unsplash.com/photo-1494412574643-35d3d4018519?auto=format&fit=crop&w=800&q=80", // Shipping container
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "Networking in Nairobi: Events vs. LinkedIn",
-          excerpt:
-            "Where the real deals happen. A guide to Nairobi's business scene.",
-          date: "Jun 09, 2026",
-          readTime: "5 min read",
-          link: "/blog/networking-nairobi",
-          image:
-            "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80", // Event
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "Registration: Sole Prop vs. Limited Company",
-          excerpt:
-            "When is the right time to upgrade your business legal status?",
-          date: "Jun 12, 2026",
-          readTime: "6 min read",
-          link: "/blog/company-registration",
-          image:
-            "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80", // Document
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-        {
-          category: "Case Studies",
-          title: "The Future of Work: Remote Teams in Africa",
-          excerpt:
-            "Why smart Kenyan companies are hiring talent from Lagos and Accra too.",
-          date: "Jun 16, 2026",
-          readTime: "7 min read",
-          link: "/blog/remote-work-africa",
-          image:
-            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80", // Remote work
-          tagClass: "text-rose-700 bg-rose-50 border-rose-200",
-        },
-      ];
+            // --- CASE STUDIES (10) ---
+            { category: "Case Studies", title: "How We Saved a Logistics Firm 40 Hours/Week", excerpt: "Automating dispatch notifications via WhatsApp for a regional transport company.", date: "May 15, 2026", readTime: "6 min read", link: "/blog/case-study-logistics.html", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" },
+            { category: "Case Studies", title: "Winning Tenders: Proposals that Stand Out", excerpt: "Secrets to formatting and writing tender proposals that win private and gov contracts.", date: "May 19, 2026", readTime: "9 min read", link: "/blog/winning-tenders.html", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" },
+            { category: "Case Studies", title: "Hiring in Kenya: Red Flags to Look Out For", excerpt: "How to screen candidates effectively using automated screening systems.", date: "May 22, 2026", readTime: "7 min read", link: "/blog/hiring-tips.html", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80" },
+            { category: "Case Studies", title: "Scaling from 1 to 10 Employees: Systems Needed", excerpt: "Why you can't manage a growing team with WhatsApp groups alone. The upgrade path.", date: "May 26, 2026", readTime: "8 min read", link: "/blog/scaling-systems.html", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" },
+            { category: "Case Studies", title: "Financial Discipline: Separating Biz & Personal Cash", excerpt: "Why M-Pesa statements are not accounting. Tools to professionalize your books.", date: "May 29, 2026", readTime: "6 min read", link: "/blog/sme-finance-tips.html", image: "https://images.unsplash.com/photo-1579621970563-ebec7560eb3e?w=800&q=80" },
+            { category: "Case Studies", title: "The Real Cost of 'Cheap' Websites", excerpt: "Why a KES 5,000 website actually costs you millions in lost trust and sales.", date: "Jun 02, 2026", readTime: "5 min read", link: "/blog/cost-of-cheap-websites.html", image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80" },
+            { category: "Case Studies", title: "Importing Goods: Tracking Shipments Digitally", excerpt: "Tools for importers to track logistics without calling agents every few hours.", date: "Jun 05, 2026", readTime: "7 min read", link: "/blog/import-tracking-tools.html", image: "https://images.unsplash.com/photo-1494412574643-35d3d4018519?w=800&q=80" },
+            { category: "Case Studies", title: "Networking in Nairobi: Events vs. LinkedIn", excerpt: "Where the real deals happen. A guide to navigating the local business ecosystem.", date: "Jun 09, 2026", readTime: "5 min read", link: "/blog/networking-nairobi.html", image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80" },
+            { category: "Case Studies", title: "Legal: Sole Prop vs. Limited Company Registration", excerpt: "When is the right time to transition your business status? A legal and financial look.", date: "Jun 12, 2026", readTime: "6 min read", link: "/blog/company-registration.html", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80" },
+            { category: "Case Studies", title: "The Future of Work: Remote Teams in East Africa", excerpt: "Why companies are hiring talent across borders and how to manage them via cloud tools.", date: "Jun 16, 2026", readTime: "7 min read", link: "/blog/remote-work-africa.html", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" }
+        ];
 
-      // 3. RENDER FUNCTION (Reads the 'image' property)
-      function renderPosts(filter = "All") {
-        const grid = document.getElementById("blogGrid");
-        grid.innerHTML = "";
+        const grid = document.getElementById('blogGrid');
+        const searchInput = document.getElementById('searchInput');
 
-        let filteredPosts = blogPosts;
-        if (filter !== "All") {
-          filteredPosts = blogPosts.filter((post) => post.category === filter);
+        function renderPosts(data) {
+            if (data.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-20 text-center"><i class="fa-solid fa-magnifying-glass text-4xl text-slate-200 mb-4 block"></i><p class="text-slate-500 font-medium">No articles found matching that search.</p></div>`;
+                return;
+            }
+            grid.innerHTML = data.map(post => `
+                <article class="blog-card">
+                    <div class="h-52 overflow-hidden">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[11px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">${post.category}</span>
+                            <span class="text-slate-400 text-[11px] font-bold uppercase tracking-tight">${post.date}</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 leading-snug hover:text-blue-600 transition-colors">
+                            <a href="${post.link}">${post.title}</a>
+                        </h3>
+                        <p class="text-slate-500 text-sm mb-8 line-clamp-3 leading-relaxed">${post.excerpt}</p>
+                        <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
+                            <a href="${post.link}" class="font-bold text-xs text-slate-900 hover:text-blue-600 transition-colors uppercase tracking-widest">Read More <i class="fa-solid fa-arrow-right-long ml-2"></i></a>
+                            <span class="text-slate-400 text-[10px] font-bold"><i class="fa-regular fa-clock mr-1"></i> ${post.readTime}</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
         }
 
-        filteredPosts.forEach((post) => {
-          // Derive accent color from category for hover border
-          const accentBorder = {
-            "Automation":   "hover:border-blue-300",
-            "Marketing":    "hover:border-emerald-300",
-            "SEO":          "hover:border-violet-300",
-            "AI Tools":     "hover:border-amber-300",
-            "Case Studies": "hover:border-rose-300",
-          }[post.category] || "hover:border-blue-300";
-
-          const readColor = {
-            "Automation":   "text-blue-600 hover:text-blue-800",
-            "Marketing":    "text-emerald-600 hover:text-emerald-800",
-            "SEO":          "text-violet-600 hover:text-violet-800",
-            "AI Tools":     "text-amber-600 hover:text-amber-800",
-            "Case Studies": "text-rose-600 hover:text-rose-800",
-          }[post.category] || "text-blue-600 hover:text-blue-800";
-
-          const card = `
-            <article class="blog-card flex flex-col group ${accentBorder}">
-              <div class="h-48 bg-gray-100 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent z-10"></div>
-                <img src="${post.image}" alt="${post.title}" class="card-img w-full h-full object-cover">
-                <span class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-sm ${post.tagClass}">
-                  ${post.category}
-                </span>
-              </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <div class="flex items-center gap-2 mb-3" style="font-size:0.72rem;font-weight:600;color:#94A3B8;letter-spacing:0.01em;">
-                  <i class="fa-regular fa-calendar"></i>
-                  <span>${post.date}</span>
-                  <span style="color:#CBD5E1;">•</span>
-                  <i class="fa-regular fa-clock"></i>
-                  <span>${post.readTime}</span>
-                </div>
-                <h3 style="font-size:1rem;font-weight:700;line-height:1.4;letter-spacing:-0.01em;color:#0F172A;margin-bottom:0.5rem;" class="group-hover:text-blue-600 transition-colors flex-shrink-0">
-                  <a href="${post.link}">${post.title}</a>
-                </h3>
-                <p style="font-size:0.8125rem;color:#64748B;line-height:1.6;font-weight:400;" class="line-clamp-2 mb-5 flex-1">
-                  ${post.excerpt}
-                </p>
-                <a href="${post.link}" class="inline-flex items-center gap-1.5 ${readColor} transition" style="font-size:0.8125rem;font-weight:700;letter-spacing:-0.01em;">
-                  Read Article <i class="fa-solid fa-arrow-right" style="font-size:0.65rem;"></i>
-                </a>
-              </div>
-            </article>
-          `;
-          grid.innerHTML += card;
-        });
-      }
-
-      // FILTER & SEARCH LOGIC
-      const categoryAccents = {
-        "All":          { bg:"#2563EB", shadow:"rgba(37,99,235,0.3)" },
-        "Automation":   { bg:"#2563EB", shadow:"rgba(37,99,235,0.3)" },
-        "Marketing":    { bg:"#059669", shadow:"rgba(5,150,105,0.3)" },
-        "SEO":          { bg:"#7C3AED", shadow:"rgba(124,58,237,0.3)" },
-        "AI Tools":     { bg:"#D97706", shadow:"rgba(217,119,6,0.3)" },
-        "Case Studies": { bg:"#E11D48", shadow:"rgba(225,29,72,0.3)" },
-      };
-
-      function filterPosts(category, btn) {
-        document.querySelectorAll(".filter-btn").forEach((b) => {
-          b.className = "filter-btn";
-          b.style.background = "";
-          b.style.color = "";
-          b.style.borderColor = "";
-          b.style.boxShadow = "";
-        });
-        btn.className = "filter-btn active";
-        const accent = categoryAccents[category] || categoryAccents["All"];
-        btn.style.background = accent.bg;
-        btn.style.color = "#fff";
-        btn.style.borderColor = accent.bg;
-        btn.style.boxShadow = "0 2px 10px " + accent.shadow;
-        renderPosts(category);
-      }
-
-      document
-        .getElementById("searchInput")
-        .addEventListener("keyup", function (e) {
-          const term = e.target.value.toLowerCase();
-          const grid = document.getElementById("blogGrid");
-          const matches = blogPosts.filter(
-            (post) =>
-              post.title.toLowerCase().includes(term) ||
-              post.excerpt.toLowerCase().includes(term)
-          );
-
-          grid.innerHTML = "";
-          if (matches.length === 0) {
-            grid.innerHTML = `<div class="col-span-3 text-center py-20"><i class="fa-solid fa-magnifying-glass text-3xl text-blue-200 mb-4 block"></i><p class="text-gray-400 font-medium">No articles found for "<span class='text-blue-600'>${term}</span>".</p></div>`;
-          } else {
-            matches.forEach((post) => {
-              grid.innerHTML += `
-                    <article class="flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-blue-400 transition shadow-card">
-                        <div class="h-40 bg-gray-800 relative overflow-hidden">
-                             <img src="${post.image}" class="w-full h-full object-cover opacity-80">
-                        </div>
-                        <div class="p-6">
-                            <span class="text-xs font-bold ${post.tagClass} px-2 py-1 rounded mb-2 inline-block">${post.category}</span>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2"><a href="${post.link}">${post.title}</a></h3>
-                            <p class="text-gray-500 text-sm">${post.excerpt}</p>
-                        </div>
-                    </article>`;
-            });
-          }
+        // Logic for Search
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = blogPosts.filter(p => 
+                p.title.toLowerCase().includes(term) || 
+                p.excerpt.toLowerCase().includes(term) ||
+                p.category.toLowerCase().includes(term)
+            );
+            renderPosts(filtered);
         });
 
-      // SIMULATED LOAD MORE
-      function loadMore() {
-        const btn = document.querySelector('button[onclick="loadMore()"]');
-        btn.innerHTML = "All Articles Loaded";
-        btn.disabled = true;
-        btn.classList.add("opacity-50");
-      }
-
-      // INITIAL LOAD
-      renderPosts();
-    </script>
-
-    <!-- NAVIGATION SCRIPT (Must be at the bottom of body) -->
-    <script>
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobile-menu");
-        const icon = document.getElementById("menu-icon");
-        menu.classList.toggle("hidden");
-
-        if (menu.classList.contains("hidden")) {
-          icon.classList.remove("fa-xmark");
-          icon.classList.add("fa-bars");
-        } else {
-          icon.classList.remove("fa-bars");
-          icon.classList.add("fa-xmark");
+        // Logic for Category Buttons
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (cat === 'All') return renderPosts(blogPosts);
+            const filtered = blogPosts.filter(p => p.category === cat);
+            renderPosts(filtered);
+            window.scrollTo({ top: document.querySelector('header').offsetHeight - 50, behavior: 'smooth' });
         }
-      }
+
+        // Mobile Nav Toggle
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Initial Page Load
+        renderPosts(blogPosts);
     </script>
 
-    <script
-      src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js"
-      async
-    ></script>
-  
-<script src="/components/nav.js"></script>
 </body>
 </html>
