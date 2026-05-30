@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/web-design-packages.html",
-      "destination": "../../services/website-design-services-in-kenya.html",
+      "destination": "/services",
       "permanent": true
     },
     {
@@ -14,12 +14,12 @@
     },
     {
       "source": "/automation.html",
-      "destination": "../../services/whatsapp-automation.html",
+      "destination": "/services",
       "permanent": true
     },
     {
       "source": "/about.html",
-      "destination": "/about.html",
+      "destination": "/about",
       "permanent": true
     },
     {
