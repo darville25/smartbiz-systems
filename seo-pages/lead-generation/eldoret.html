@@ -3,328 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Generation Eldoret | Advertising Funnels for Institutions & SMEs | SmartBizSystems</title>
-    <meta name="description" content="Scale your Eldoret business or institute with high-performance lead generation. Specialized Meta & Google Ads for Rupa's Mall area, CBD & institutional firms.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/lead-generation.html" />
+    <title>Lead Generation Eldoret | Marketing for Agribusiness & Medical Hubs | SmartBizSystems</title>
+    <meta name="description" content="Eldoret's commercial pulse is the heart of the North Rift. SmartBizSystems builds AI-powered lead generation funnels for Eldoret agribusiness, medical specialists, and real estate. Scale your North Rift business with WhatsApp & Google Ads.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/seo-pages/lead-generation/eldoret.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Lead Generation Eldoret",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Eldoret",
+        "description": "Eldoret City and the North Rift Economic Region"
+      },
+      "description": "Premium lead generation systems for Eldoret's agribusiness, medical, and athletics sectors. Featuring AI WhatsApp automation, CRM integration, and high-intent Google Ads.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Eldoret city growth funnel setup"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         :root {
-            --accent: #7c3aed; --accent-dark: #6d28d9; --accent-light: #f5f3ff;
-            --blue: #0d6efd; --white: #ffffff; --grey-50: #f8f9fb; --grey-100: #f1f3f6;
-            --grey-200: #e4e7ed; --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+            --accent:#7c3aed; --accent-dark:#6d28d9; --accent-light:#f5f3ff;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); overflow-x: auto; white-space: nowrap;}
+        .breadcrumb a{color:var(--blue);text-decoration:none;}
 
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
-
-        /* Hero */
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:#25D366;color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--blue)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--blue);}
         
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--grey-50);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--border);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);display:block; text-align: center;}
+        
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
 
-        /* Context Section */
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .context-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: center; }
-        .context-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .context-text p { margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 1.1rem; }
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
 
-        /* Industry Grid (Specific to Lead Gen) */
-        .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
-        .ind-card { background: white; padding: 2.5rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .ind-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .ind-card span { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .ind-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-        .ind-card p { font-size: 0.85rem; color: var(--text-secondary); }
+        /* RICH TEXT FOR WORD COUNT */
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
 
-        /* Push to Authority CTA */
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:flex-start;gap:1.25rem;}
+        .pain-icon{width:44px;height:44px;background:#FEF2F2;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#DC2626;flex-shrink:0;}
+        @media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; } }
 
-        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; text-align: center; }
+        /* SOLUTIONS */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        @media (max-width: 1000px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } .context-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; } .nav-links { display: none; } }
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2.5rem;}
+        .pricing-card.featured{border-color:var(--accent); box-shadow: 0 15px 40px rgba(124,58,237,0.15);}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;margin:1.5rem 0;}
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:15px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* RELATED REGIONS */
+        .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;text-align:center; transition: 0.3s;}
+        .related-card:hover{ border-color: var(--accent); }
+        .related-card i{color:var(--accent);margin-bottom:10px;}
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
 
-/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .cta-btns{display:flex;flex-direction: column; gap:15px; align-items: center; justify-content: center;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; width: 100%; max-width: 300px;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } .cta-btns { flex-direction: row; } .btn-white { width: auto; } }
 
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
+        /* FOOTER */
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        footer a{color:#93c5fd;text-decoration:none;}
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
 
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
+        /* FAQ */
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center; color:var(--text-primary);}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--blue); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px;">WhatsApp Us Now</a>
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">Lead Gen Hub</a> / 
-        Eldoret
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/seo-pages/lead-generation/index.html">Lead Gen Kenya</a><span>›</span>
+      Eldoret
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">North Rift ROI Specialists</span>
-            <h1>Dominating the Eldoret Market with High-Intent Leads</h1>
-            <p>From the institutional towers of Eldoret CBD to the regional distributors along Uganda Road, Eldoret is a massive commercial hub. We build ad funnels that find your North Rift customers and deliver them directly to your team 24/7.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/lead-generation.html" class="btn btn-accent">View North Rift Ad Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline" style="background: white; border: 1px solid var(--border); text-decoration: none; color: inherit;">WhatsApp Joseph</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">NORTH RIFT HUB | ELDORET</div>
+      <h1>Accelerate Sales for Your<br><em>Eldoret Agribusiness or Medical Hub</em></h1>
+      <p class="hero-intro">Eldoret is the undisputed commercial engine of the North Rift. From massive agricultural production to world-class medical specialists, we build AI-powered acquisition systems that capture high-intent leads across Uasin Gishu and beyond.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20lead%20gen%20for%20my%20Eldoret%20business" target="_blank" class="btn-wa">
+          <i data-lucide="message-circle"></i> Free North Rift Audit on WhatsApp
+        </a>
+        <a href="/free-audit" class="btn-audit">Request Free Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">Agri</span><div style="font-size:0.75rem; text-align:center;">Marketing Hub</div></div>
+        <div class="stat-item"><span class="stat-num">Medical</span><div style="font-size:0.75rem; text-align:center;">Regional Hub</div></div>
+        <div class="stat-item"><span class="stat-num">24/7</span><div style="font-size:0.75rem; text-align:center;">AI Lead Scoring</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP DIVE CONTENT (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">North Rift Market Intelligence</p>
+    <h2 class="section-title">Dominating Eldoret: Scaling Agribusiness, Health, and Real Estate</h2>
+    <div class="rich-text">
+        <p>Eldoret, the principal city of the North Rift region, is undergoing a transformation from a quiet agricultural center to a multifaceted metropolitan city. Known as the "Home of Champions" due to its legendary status in global athletics, Eldoret is equally the backbone of Kenya's food security. With its strategic location on the Northern Corridor, serving as a gateway to Uganda and the wider Great Lakes region, Eldoret's economic potential is staggering. For businesses in Eldoret—from the specialist clinics around MTRH to the agribusiness suppliers on Uganda Road—the digital frontier is where the next decade of growth will be won. <strong>SmartBizSystems builds the acquisition systems that turn Eldoret’s local reach into regional dominance.</strong></p>
+        
+        <h3>The Agribusiness Evolution: Dominating Maize, Wheat, and Dairy</h3>
+        <p>Eldoret is surrounded by Kenya's most productive agricultural land. From large-scale wheat and maize farming in Moiben to the intensive dairy clusters in Nandi and Uasin Gishu, the sector is hungry for modernization. We build <strong>Agri-B2B Funnels</strong>. If you sell high-yield seeds, machinery, or animal health products, your customers are increasingly searching online. We capture terms like <em>"best tractor dealers in Eldoret"</em> or <em>"wholesale animal feed suppliers North Rift."</em> Our AI-powered WhatsApp bots deliver product catalogs and pricing instantly, allowing your sales team to focus on closing orders while the bot handles the bulk of the repetitive inquiries.</p>
+
+        <h3>The Medical Hub Advantage: Specialized Patient Lead Generation</h3>
+        <p>With the presence of Moi Teaching and Referral Hospital (MTRH) and dozens of private specialty clinics, Eldoret has become the medical referral center for all of Western Kenya and Eastern Uganda. For specialists—from oncologists to fertility experts—the "Lead" is a patient searching for help. We build <strong>Patient-Intent Funnels</strong>. We target searches like <em>"best gynecologist in Eldoret"</em> or <em>"private MRI centers Eldoret."</em> Our funnels use automated triage bots to qualify patients based on insurance or symptoms, and then allow them to book consultations directly into your calendar, ensuring your clinic stays busy with high-priority cases.</p>
+
+        <h3>The Real Estate Boom: Selling the North Rift Dream</h3>
+        <p>The urban expansion of Eldoret is driving a massive real estate boom in areas like Elgon View, Kapsoya, and the outskirts towards the airport. Investors from the diaspora and Nairobi are looking for "Home of Champions" luxury. We build <strong>Property Sales Engines</strong>. Our systems target investors searching for <em>"land for sale in Elgon View Eldoret"</em> or <em>"secure gated communities Eldoret."</em> Our AI bots act as 24/7 property managers—delivering floor plans, answering questions about titles, and scheduling site visits automatically, ensuring your sales team only focuses on serious buyers with the capital to invest.</p>
+
+        <h3>Logistics & Education: The Highway and the Campus</h3>
+        <p>As a major logistics hub with an International Airport and a massive student population from Moi University and University of Eldoret, the city has a unique B2B and B2C mix. We build <strong>Logistics Quote Funnels</strong> for transporters and <strong>Student Housing Funnels</strong> for hostel developers. By automating the inquiry process for shipping rates or hostel availability via M-Pesa integrated WhatsApp bots, we help Eldoret businesses manage high-volume leads with zero manual overhead.</p>
+
+        <h3>SME and Professional Growth: Scaling Local Expertise</h3>
+        <p>From legal firms to accounting practices in the Eldoret CBD—around Zion Mall and Rupa’s Mall—the competition for professional services is rising. For local SMEs, the biggest revenue leak is "Response Decay." If a business owner in Eldoret messages your firm and you take 5 hours to reply, they have already moved to a competitor. <strong>SmartBizSystems seals these leaks.</strong> We implement instant AI-responders that qualify leads and set discovery calls, resulting in a significantly higher closing rate for local Eldoret service providers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Growth Constraints</p>
+      <h2 class="section-title">The Revenue Gaps We Seal for Eldoret Businesses</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="tractor"></i></div>
+            <div>
+                <h4>Agri-Sales Invisibility</h4>
+                <p>Eldoret agri-suppliers often rely on walk-ins. In the modern market, if you aren't visible on Google for B2B searches, you're losing high-value contracts to Nairobi-based firms who ship to Eldoret.</p>
             </div>
         </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md); text-align: center;">
-                <i data-lucide="graduation-cap" size="48" color="#7c3aed" style="margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Institutional Lead Flow</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">We target students, patients, and business owners across Uasin Gishu to ensure your Eldoret-based firm stays ahead of the competition.</p>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="stethoscope"></i></div>
+            <div>
+                <h4>Medical Patient Leakage</h4>
+                <p>Patients from neighboring counties search for specialists online. If your clinic isn't the first thing they see with a 5-star digital reputation and instant booking, they'll go to your competitor.</p>
             </div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="context-grid">
-            <div class="context-text reveal">
-                <h2>Lead Funnels for Eldoret's Growth</h2>
-                <p>Scaling a trading firm or an educational institute in Eldoret? Our systems are designed for the high-velocity trade cycles of the North Rift.</p>
-                <div class="industry-grid">
-                    <div class="ind-card"><span>🎓</span><h3>Schools</h3><p>Funnels for student recruitment and admissions.</p></div>
-                    <div class="ind-card"><span>🏥</span><h3>Clinics</h3><p>Patient intake funnels for Eldoret's med-district.</p></div>
-                    <div class="ind-card"><span>🚜</span><h3>Agri-SMEs</h3><p>B2B funnels for North Rift supply distributors.</p></div>
-                    <div class="ind-card"><span>🏛️</span><h3>SACCOs</h3><p>Digital member growth for regional finance groups.</p></div>
-                    <div class="ind-card"><span>🏠</span><h3>Real Estate</h3><p>Buyer funnels for Eldoret CBD & Milimani property.</p></div>
-                    <div class="ind-card"><span>🛒</span><h3>E-Commerce</h3><p>Direct sales funnels for Rupa's Mall area stores.</p></div>
-                    <div class="ind-card"><span>⚖️</span><h3>Law Firms</h3><p>Matter-specific intake for commercial legal firms.</p></div>
-                    <div class="ind-card"><span>🏢</span><h3>SMEs</h3><p>Full-stack growth systems for North Rift startups.</p></div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">The Eldoret Strategy</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Eldoret requires a focus on local authority and regional trust, combined with search-intent targeting for high-value services.</p>
-                    <ul style="list-style: none; font-weight: 600; font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> North Rift Geo-targeting</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> Multi-channel Lead Capture</li>
-                        <li><i data-lucide="check" size="16" color="#7c3aed"></i> M-Pesa Integrated Ad Funnels</li>
-                    </ul>
-                </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="clock"></i></div>
+            <div>
+                <h4>Slow Speed-to-Lead</h4>
+                <p>North Rift buyers value relationships, but they also value speed. If your sales team takes 24 hours to reply to a WhatsApp quote request, the buyer has already moved on. Our AI fixes this.</p>
             </div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to dominate the North Rift?</h2>
-            <p>All localized strategies in Eldoret refer to our core customer acquisition engine. Visit our official service page to view our KES pricing tiers and technical ad workflows.</p>
-            <a href="../../services/lead-generation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Official Service Page & Pricing</a>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="database"></i></div>
+            <div>
+                <h4>Scattered Lead Data</h4>
+                <p>Enquiries from agricultural fairs, calls, and Facebook are often lost. We centralize all Eldoret industrial and medical leads into a single, automated CRM dashboard.</p>
+            </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>© 2026 SmartBizSystems — Eldoret Lead Generation Hub.</p>
-    </footer>
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">The SmartBiz Method</p>
+      <h2 class="section-title">Your 6-Pillar North Rift Acquisition Engine</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>North Rift Search Dominance</h3>
+            <p>Google Ads & SEO targeted to Eldoret's specific commercial and medical clusters. We dominate the high-intent keywords that drive the regional economy.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>AI WhatsApp Agri-Bots</h3>
+            <p>Official WhatsApp Business API bots that qualify agri-leads, deliver catalogs, and route inquiries to the right department 24/7.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>Patient-Conversion Pages</h3>
+            <p>For Eldoret clinics, we build professional, HIPAA-compliant landing pages that allow for secure patient data capture and appointment booking.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>CRM Integration (HubSpot/Zoho)</h3>
+            <p>Every Eldoret inquiry is automatically pushed to your CRM. Tag leads by sector (Medical, Agri, Real Estate) for targeted regional follow-up.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>M-Pesa API Automation</h3>
+            <p>For clinic deposits and retail. Payments trigger automated invoices, receipts, and CRM status updates instantly, with no manual handling.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Diaspora & Regional Retargeting</h3>
+            <p>We keep your brand in front of prospects from Nairobi to Kampala. If they viewed your Eldoret real estate listing once, they will see you everywhere.</p>
+        </div>
+      </div>
+    </div>
+</section>
 
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+<!-- PRICING -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="reveal">
+        <p class="section-label">Transparent Packages</p>
+        <h2 class="section-title">Growth Funnels for Eldoret's Top Firms</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Champion Starter</h3>
+            <div class="pricing-price">KES 30,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 5k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Launch Funnel</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Regional Hub</h3>
+            <div class="pricing-price">KES 100,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 20k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--accent);">Most Recommended</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <div class="pricing-price">Custom</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Full Hospital & Agri-Corporation Solution</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Talk to Specialist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
-        // Mobile menu
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Eldoret Lead Gen — FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Does this work for Eldoret Medical Clinics? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. We build patient-acquisition funnels for Eldoret-based specialists. By targeting the entire Western/North Rift region, we ensure your clinic appears for high-intent medical searches and allows patients to book consultations directly on WhatsApp.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long to see results in Eldoret? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Our Eldoret funnels usually go live within 7 days. Because we combine SEO with high-intent Google Ads, you will typically see pre-qualified inquiries from farmers and medical patients within 48 to 72 hours of launch.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you handle cross-border trade leads? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Absolutely. We build funnels for Eldoret-based logistics and agribusiness firms looking to export or serve clients in Uganda and the Great Lakes region, ensuring your international visibility is high.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-label',
-    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
-  );
-});
+<!-- RELATED REGIONS -->
+<section style="background:var(--white); padding:3rem 20px; border-top: 1px solid var(--border);">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Regional Connectivity</p>
+        <div class="related-grid">
+            <a href="/seo-pages/lead-generation/nairobi.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nairobi CBD →</h4></a>
+            <a href="/seo-pages/lead-generation/nakuru.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nakuru →</h4></a>
+            <a href="/seo-pages/lead-generation/kisumu.html" class="related-card"><i data-lucide="map-pin"></i><h4>Kisumu →</h4></a>
+            <a href="/seo-pages/lead-generation/mombasa.html" class="related-card"><i data-lucide="map-pin"></i><h4>Mombasa →</h4></a>
+        </div>
+    </div>
+</section>
 
-// Close on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  });
-});
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Dominate the North Rift Hub Today</h2>
+  <p>Don't let your Eldoret business rely on walk-ins alone. Let us build an automated acquisition engine that captures every high-intent lead in Uasin Gishu and beyond while you focus on excellence. Most audits delivered in 24 hours.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20Eldoret%20lead%20audit" class="btn-white">Free North Rift Audit →</a>
+  </div>
+  <p style="margin-top:2.5rem; font-size:0.85rem; opacity:0.8; color:white;">M-Pesa accepted · 7-Day Funnel Launch · 34+ Brands Scaled</p>
+</div>
 
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Powering the Eldoret City Economy.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Eldoret CBD · +254 734 230 445</p>
+</footer>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  // 1. GUARANTEED HAMBURGER & MOBILE MENU LOGIC
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  // Professional state handler
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto"; // Re-enable scroll
+    }
   }
-});
-    </script>
 
+  // Toggle on click
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
+  });
 
+  // Close when link is clicked
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // 2. SCROLL REVEAL logic
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // 3. FAQ ACCORDION logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      // Close all open ones
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+
+      // Open selected if it wasn't open
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
+    });
+  });
+</script>
 </body>
 </html>

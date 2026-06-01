@@ -3,328 +3,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Generation Kisumu | Advertising Funnels for Western Kenya | SmartBizSystems</title>
-    <meta name="description" content="Scale your Kisumu business or NGO with high-performance lead generation. Specialized Meta & Google Ads for Milimani, Lake Basin Mall & CBD firms.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/lead-generation.html" />
+    <title>Lead Generation Kisumu | Marketing for Lakeside NGOs & Businesses | SmartBizSystems</title>
+    <meta name="description" content="Kisumu's lakeside economy is booming. SmartBizSystems builds AI-powered lead generation funnels for Kisumu NGOs, hospitality, real estate, and trade. Scale your lakeside business with WhatsApp & Google Ads.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/pseo/lead-generation/kisumu.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Lead Generation Kisumu",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Kisumu",
+        "description": "Kisumu City and the Lake Region Economic Bloc"
+      },
+      "description": "Bespoke lead generation systems for Kisumu's blue economy, non-profits, and hospitality sector. AI-driven WhatsApp automation and multi-channel growth funnels.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Lakeside business growth funnel setup"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         :root {
-            --accent: #7c3aed; --accent-dark: #6d28d9; --accent-light: #f5f3ff;
-            --blue: #0d6efd; --white: #ffffff; --grey-50: #f8f9fb; --grey-100: #f1f3f6;
-            --grey-200: #e4e7ed; --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+            --accent:#7c3aed; --accent-dark:#6d28d9; --accent-light:#f5f3ff;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        /* Fixed Hamburger Button Logic */
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); overflow-x: auto; white-space: nowrap;}
+        .breadcrumb a{color:var(--blue);text-decoration:none;}
 
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
-
-        /* Hero */
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:#25D366;color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--blue)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--blue);}
         
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--grey-50);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--border);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);display:block; text-align: center;}
+        
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
 
-        /* Context Section */
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .context-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: center; }
-        .context-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .context-text p { margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 1.1rem; }
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
 
-        /* Industry Grid (Specific to Lead Gen) */
-        .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
-        .ind-card { background: white; padding: 2.5rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .ind-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .ind-card span { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .ind-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-        .ind-card p { font-size: 0.85rem; color: var(--text-secondary); }
+        /* RICH TEXT FOR WORD COUNT */
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
 
-        /* Push to Authority CTA */
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:flex-start;gap:1.25rem;}
+        .pain-icon{width:44px;height:44px;background:#FEF2F2;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#DC2626;flex-shrink:0;}
+        @media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; } }
 
-        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; text-align: center; }
+        /* SOLUTIONS */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        @media (max-width: 1000px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } .context-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; } .nav-links { display: none; } }
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2.5rem;}
+        .pricing-card.featured{border-color:var(--accent); box-shadow: 0 15px 40px rgba(124,58,237,0.15);}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;margin:1.5rem 0;}
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:15px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* RELATED REGIONS */
+        .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;text-align:center; transition: 0.3s;}
+        .related-card:hover{ border-color: var(--accent); }
+        .related-card i{color:var(--accent);margin-bottom:10px;}
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
 
-/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .cta-btns{display:flex;flex-direction: column; gap:15px; align-items: center; justify-content: center;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; width: 100%; max-width: 300px;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } .cta-btns { flex-direction: row; } .btn-white { width: auto; } }
 
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
+        /* FOOTER */
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        footer a{color:#93c5fd;text-decoration:none;}
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
 
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
+        /* FAQ */
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center; color:var(--text-primary);}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--blue); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px;">WhatsApp Us Now</a>
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">Lead Gen Hub</a> / 
-        Kisumu
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/pseo/lead-generation/index.html">Lead Gen Kenya</a><span>›</span>
+      Kisumu
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Lakeside ROI Specialists</span>
-            <h1>Generating High-Intent Leads for the Kisumu Trade Hub</h1>
-            <p>From NGO hubs in Milimani seeking donor engagement to trade distributors at the Lake Basin Mall, generic ads don't work in Western Kenya. We build localized ad funnels that capture the Lakeside growth engine.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/lead-generation.html" class="btn btn-accent">View Western Lead Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline" style="background: white; border: 1px solid var(--border); text-decoration: none; color: inherit;">WhatsApp Joseph</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">LAKESIDE GROWTH | KISUMU</div>
+      <h1>Dominant Lead Generation for<br><em>Kisumu Businesses & NGOs</em></h1>
+      <p class="hero-intro">Kisumu is the economic gateway to the Great Lakes Region. We build AI-powered acquisition engines that capture high-intent lakeside trade, hospitality guests, and NGO donor visibility.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20lead%20gen%20for%20my%20Kisumu%20business" target="_blank" class="btn-wa">
+          <i data-lucide="message-circle"></i> Free Lakeside Audit on WhatsApp
+        </a>
+        <a href="/free-audit" class="btn-audit">Request Free Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">Blue</span><div style="font-size:0.75rem; text-align:center;">Economy Focus</div></div>
+        <div class="stat-item"><span class="stat-num">NGO</span><div style="font-size:0.75rem; text-align:center;">Visibility Hub</div></div>
+        <div class="stat-item"><span class="stat-num">24/7</span><div style="font-size:0.75rem; text-align:center;">AI Support</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP DIVE CONTENT (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Great Lakes Market Intelligence</p>
+    <h2 class="section-title">The Kisumu Blue Economy: Scaling Trade and Impact</h2>
+    <div class="rich-text">
+        <p>Kisumu, Kenya’s third-largest city, has undergone a massive infrastructural rebirth. With the revitalization of the Port of Kisumu and its status as the commercial hub for the Lake Region Economic Bloc (LREB), the city is no longer just a transit point—it is a destination for high-value investment. For businesses operating from Milimani to Kondele, or along the Kisumu-Kakamega highway, the digital landscape is the new front line. In a region where personal relationships have traditionally driven trade, <strong>Digital Authority</strong> is now the deciding factor for regional expansion.</p>
+        
+        <h3>The NGO and Impact Sector Challenge</h3>
+        <p>Kisumu is a global hub for non-governmental organizations (NGOs) and social enterprises. For these entities, "Lead Generation" is synonymous with donor visibility, volunteer recruitment, and community engagement. Most Kisumu-based non-profits suffer from "Invisible Impact"—they do incredible work but fail to appear when global donors search for <em>"social impact projects in Western Kenya"</em> or <em>"health initiatives Lake Victoria region."</em> We build <strong>Awareness-to-Advocacy Funnels</strong> that use Google Search Grants and professional landing pages to put your mission in front of the world's largest philanthropic decision-makers.</p>
+
+        <h3>Hospitality: Dominating the Western Circuit</h3>
+        <p>As the primary conferencing hub for Western Kenya, Kisumu hotels and resorts are in a constant battle for corporate bookings. Whether you are a boutique hotel in Milimani or a luxury resort on the shores of Lake Victoria, you are losing money to OTAs (Online Travel Agencies) like Booking.com. Our lead generation strategy focuses on <strong>Direct-Booking Funnels</strong>. We use geo-targeted Google Ads to capture travelers searching for <em>"best hotels in Kisumu for business"</em> or <em>"lakeside resorts for weddings."</em> By driving these leads to an automated WhatsApp booking bot, you bypass high commissions and build direct guest loyalty.</p>
+
+        <h3>Real Estate & Urban Expansion (Milimani & Riat Hills)</h3>
+        <p>The skyline of Kisumu is rising, specifically in the premium residential zones of Riat Hills and Milimani. Investors from the diaspora and Nairobi are looking for "Lakeside Luxury." We build <strong>Investor-Intent Funnels</strong>. These systems target search terms like <em>"luxury villas for sale Riat Hills"</em> or <em>"commercial land for development Kisumu."</em> Our AI funnels handle initial inquiries, send digital brochures, and qualify the investor's budget before your sales team ever picks up the phone, significantly reducing the "time-to-close" for multi-million shilling properties.</p>
+
+        <h3>Logistics & Trade: The Gateway to East Africa</h3>
+        <p>With the new port operations, logistics firms in Kisumu need to capture cross-border trade intent. We build <strong>B2B Logistics Funnels</strong>. Importers in Uganda and Tanzania searching for <em>"clearing agents Kisumu Port"</em> or <em>"warehouse space Kisumu"</em> are high-value leads. Our systems ensure your firm appears at the top of their search results and immediately offers a digital quote via WhatsApp, securing the contract before they can contact a competitor.</p>
+
+        <h3>Healthcare & Specialist Hubs</h3>
+        <p>Kisumu is the referral center for the entire Western region. Specialist clinics (Oncology, Cardiology, Fertility) need patients to find them through trust-based digital paths. We build <strong>Patient-Intent Funnels</strong>. By dominating keywords like <em>"best specialist hospital in Kisumu"</em> or <em>"fertility clinic Western Kenya,"</em> we capture patients at the point of need. Our AI triage bots handle initial screening—asking about insurance and symptoms—before booking the appointment directly into your practice software.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Market Barriers</p>
+      <h2 class="section-title">The Revenue Leaks Holding Kisumu Back</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="wind"></i></div>
+            <div>
+                <h4>The "Seasonal" Slump</h4>
+                <p>Kisumu businesses often depend on specific conferencing cycles or holidays. Our automated funnels create a consistent, year-round flow of pre-qualified leads, flattening the revenue curve.</p>
             </div>
         </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md); text-align: center;">
-                <i data-lucide="map" size="48" color="#7c3aed" style="margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Regional Western Reach</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">We target customers across Kisumu, Kakamega, and Busia to ensure your business dominates the entire Lake Basin region.</p>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="database"></i></div>
+            <div>
+                <h4>Lead Data Fragmentation</h4>
+                <p>Enquiries come via phone, walk-ins, and Facebook comments. In Kisumu, 60% of these are never tracked. We consolidate all lakeside leads into a single, automated CRM dashboard.</p>
             </div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="context-grid">
-            <div class="context-text reveal">
-                <h2>Lead Funnels for Kisumu's Growth</h2>
-                <p>Scaling a trading firm or a professional practice in the Lakeside City? Our systems are designed for the Western Kenyan sales cycle.</p>
-                <div class="industry-grid">
-                    <div class="ind-card"><span>🌍</span><h3>NGOs</h3><p>Funnels for volunteer intake & regional donor outreach.</p></div>
-                    <div class="ind-card"><span>🏥</span><h3>Clinics</h3><p>Patient intake funnels for private Milimani medical centers.</p></div>
-                    <div class="ind-card"><span>🏠</span><h3>Real Estate</h3><p>Buyer funnels for Milimani & Kisumu residential property.</p></div>
-                    <div class="ind-card"><span>🏛️</span><h3>SACCOs</h3><p>Digital member growth for Western finance groups.</p></div>
-                    <div class="ind-card"><span>🎓</span><h3>Schools</h3><p>Admission lead capture for Kisumu's private academies.</p></div>
-                    <div class="ind-card"><span>🛒</span><h3>E-Commerce</h3><p>Direct sales funnels for Lake Basin region stores.</p></div>
-                    <div class="ind-card"><span>⚖️</span><h3>Law Firms</h3><p>Matter-specific intake for Western Kenya legal practices.</p></div>
-                    <div class="ind-card"><span>🏢</span><h3>SMEs</h3><p>Full-stack growth systems for Lakeside trade firms.</p></div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">The Lakeside Strategy</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Kisumu requires a mix of search dominance (for trade) and social media engagement (for services and NGOs).</p>
-                    <ul style="list-style: none; font-weight: 600; font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> Regional Geo-targeting</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> Multi-channel Lead Nurture</li>
-                        <li><i data-lucide="check" size="16" color="#7c3aed"></i> M-Pesa Integrated Lead Capture</li>
-                    </ul>
-                </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="clock"></i></div>
+            <div>
+                <h4>Slow Response Decay</h4>
+                <p>Lakeside buyers expect a "pole pole" (slow) approach, but the digital buyer is fast. If you don't reply to a WhatsApp inquiry in 10 minutes, you lose the deal. We fix this with AI bots.</p>
             </div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to dominate the Western market?</h2>
-            <p>All localized strategies in Kisumu refer to our core customer acquisition engine. Visit our official service page to view our KES pricing tiers and technical ad workflows.</p>
-            <a href="../../services/lead-generation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Official Service Page & Pricing</a>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="search"></i></div>
+            <div>
+                <h4>The "Invisible" Competitor</h4>
+                <p>Your competitors in Nairobi are often bidding on Kisumu keywords and stealing your local leads. We use hyper-local Kisumu SEO to reclaim your territory.</p>
+            </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>© 2026 SmartBizSystems — Kisumu Lead Generation Hub.</p>
-    </footer>
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">The SmartBiz Method</p>
+      <h2 class="section-title">Your 6-Pillar Lakeside Acquisition Engine</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>Lakeside Search Dominance</h3>
+            <p>Google Ads and SEO targeted to the Lake Region Bloc. We ensure your Kisumu business is seen by everyone from Busia to Homa Bay.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>AI WhatsApp Lakeside Bots</h3>
+            <p>An official WhatsApp API bot configured with Pwani-style hospitality but digital-age speed. It qualifies leads and routes them 24/7.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>Conversion-Ready Microsites</h3>
+            <p>We build landing pages that load instantly on mobile networks across Western Kenya. Speed is the ultimate trust signal.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>HubSpot/Zoho Integration</h3>
+            <p>Every lakeside inquiry is automatically pushed to your CRM. We tag leads by region (Kisumu, Kericho, Eldoret) for targeted sales follow-up.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>M-Pesa API Automation</h3>
+            <p>Perfect for Kisumu hospitality and clinics. Deposits trigger automated confirmations, invoices, and CRM status updates instantly.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Diaspora Retargeting</h3>
+            <p>We target Kisumu natives living in Nairobi and overseas (Europe/USA) with high-value investment opportunities in Riat and Milimani.</p>
+        </div>
+      </div>
+    </div>
+</section>
 
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-   // Mobile menu
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
+<!-- PRICING -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="reveal">
+        <p class="section-label">Investment Tiers</p>
+        <h2 class="section-title">Growth Funnels Built for Kisumu Budgets</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Lakeside Starter</h3>
+            <div class="pricing-price">KES 30,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 5k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Launch Funnel</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Blue Economy Growth</h3>
+            <div class="pricing-price">KES 100,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 20k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--accent);">Most Recommended</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Institutional</h3>
+            <div class="pricing-price">Custom</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">NGO & Large Scale Enterprise</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Talk to Specialist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-label',
-    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
-  );
-});
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Kisumu Lead Gen — FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Does this work for Kisumu NGOs? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. We specialize in NGO donor visibility. We build funnels that capture international search intent, allowing Kisumu-based non-profits to showcase their impact directly to global partners and secure more grant opportunities.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long to see lakeside leads? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Our Kisumu funnels usually go live within 7 days. Because we combine SEO with high-intent Paid Ads (Google/Meta), you will typically see pre-qualified inquiries within 24-48 hours of the campaign launch.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you cover the wider Lake Region (LREB)? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. While we base our strategy in Kisumu, we geo-target the entire Western circuit including Kakamega, Eldoret, Busia, and Bungoma, ensuring your business dominates the regional hub.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
 
-// Close on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  });
-});
+<!-- RELATED REGIONS -->
+<section style="background:var(--white); padding:3rem 20px; border-top: 1px solid var(--border);">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Regional Growth Hubs</p>
+        <div class="related-grid">
+            <a href="/seo-pages/lead-generation/nairobi.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nairobi CBD →</h4></a>
+            <a href="/seo-pages/lead-generation/mombasa.html" class="related-card"><i data-lucide="map-pin"></i><h4>Mombasa →</h4></a>
+            <a href="/seo-pages/lead-generation/eldoret.html" class="related-card"><i data-lucide="map-pin"></i><h4>Eldoret →</h4></a>
+            <a href="/seo-pages/lead-generation/nakuru.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nakuru →</h4></a>
+        </div>
+    </div>
+</section>
 
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Dominate the Great Lakes Market</h2>
+  <p>Don't let your Kisumu business stay in the shadows. Let us build an automated acquisition engine that captures every high-intent lakeside lead while you focus on growth. Most audits delivered in 24 hours.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20Kisumu%20lead%20audit" class="btn-white">Free Lakeside Audit →</a>
+  </div>
+  <p style="margin-top:2.5rem; font-size:0.85rem; opacity:0.8; color:white;">M-Pesa accepted · 7-Day Funnel Launch · 34+ Brands Scaled</p>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Powering the Kisumu Blue Economy.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Milimani, Kisumu · +254 734 230 445</p>
+</footer>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  // 1. FIXED HAMBURGER & MOBILE MENU LOGIC
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  // Professional state handler
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto"; // Re-enable scroll
+    }
   }
-});
-   
-   </script>
 
+  // Toggle on click
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
+  });
 
+  // Close when link is clicked
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // 2. SCROLL REVEAL logic
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // 3. FAQ ACCORDION logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      // Close all open ones
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+
+      // Open selected if it wasn't open
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
+    });
+  });
+</script>
 </body>
 </html>

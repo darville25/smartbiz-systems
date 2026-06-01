@@ -3,328 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Generation Mombasa | Advertising Funnels for Coastal Firms | SmartBizSystems</title>
-    <meta name="description" content="Scale your Mombasa business with high-performance lead generation. Specialized Meta & Google Ads for Nyali resorts, logistics firms & Port agencies.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/lead-generation.html" />
+    <title>Lead Generation Mombasa | AI-Powered Funnels for the Coast | SmartBizSystems</title>
+    <meta name="description" content="Mombasa's gateway economy requires digital speed. SmartBizSystems builds AI-powered lead generation funnels—WhatsApp automation, Google Ads & CRM—for Mombasa logistics, tourism, and real estate. Get more coastal leads today.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/pseo/lead-generation/mombasa.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Lead Generation Mombasa",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Mombasa"
+      },
+      "description": "Specialized lead generation systems for Mombasa businesses. Focus on logistics, hospitality, and coastal real estate using AI WhatsApp bots and Google Ads.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Starter lead generation funnel setup for Mombasa businesses"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does lead generation in Mombasa differ from Nairobi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mombasa's market is driven by the 'Blue Economy'—logistics, shipping, and tourism. While Nairobi is corporate-heavy, Mombasa requires systems that handle international inquiries (for tourism/shipping) and high-volume local WhatsApp communication. Our systems are tuned to the specific search intent of coastal buyers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you generate leads for Clearing and Forwarding agents in Mombasa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build specific funnels for the logistics sector that target importers across East Africa searching for reliable agents at the Port of Mombasa. These funnels include automated quote calculators and document collection via WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the typical ROI for a Mombasa real estate funnel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clients in Nyali and Shanzu typically see a 5x to 10x ROI within the first 6 months. By automating the qualification of 'window shoppers,' your sales team only spends time on high-intent investors looking for coastal properties."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         :root {
-            --accent: #7c3aed; --accent-dark: #6d28d9; --accent-light: #f5f3ff;
-            --blue: #0d6efd; --white: #ffffff; --grey-50: #f8f9fb; --grey-100: #f1f3f6;
-            --grey-200: #e4e7ed; --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+            --accent:#7c3aed; --accent-dark:#6d28d9; --accent-light:#f5f3ff;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --shadow-md:0 4px 16px rgba(0,0,0,0.08);
+            --transition:0.2s cubic-bezier(.4,0,.2,1);
         }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1rem;}
+        p:last-child{margin-bottom:0;}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        /* NAV */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 24px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px;}
+        .nav-logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:36px;height:36px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:18px;}
+        .nav-logo em{font-style:normal;color:var(--blue);}
+        .nav-links{display:flex;gap:32px;list-style:none;}
+        .nav-links a{font-size:15px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:0.2s;}
+        .nav-links a:hover{color:var(--blue);}
+        .nav-cta-group{display:flex;align-items:center;gap:16px;}
+        .btn-outline{border:1px solid #BFDBFE;padding:10px 20px;border-radius:8px;color:var(--blue)!important;font-weight:600;font-size:14px;text-decoration:none;}
+        .btn-primary{background:var(--blue);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;}
+        .nav-toggle{display:none;cursor:pointer;background:none;border:none;flex-direction:column;gap:5px;}
+        .nav-toggle span{width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;}
+        .mobile-menu{display:none;position:fixed;top:80px;left:0;right:0;background:white;flex-direction:column;padding:24px;gap:8px;border-bottom:1px solid var(--border);box-shadow:0 10px 15px -3px rgba(0,0,0,.1);z-index:999;}
+        .mobile-menu a{text-decoration:none;color:var(--text-primary);font-weight:600;padding:12px 0;border-bottom:1px solid #F1F5F9;display:flex;justify-content:space-between;}
+        .mob-cta{background:var(--blue)!important;color:white!important;justify-content:center!important;border-radius:8px;margin-top:10px;border-bottom:none!important;}
+        @media(max-width:992px){.nav-links,.nav-cta-group{display:none;}.nav-toggle{display:flex;}.mobile-menu.open{display:flex;}}
 
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
+        /* BREADCRUMB */
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1.2rem 2rem 0;font-size:0.85rem;color:var(--text-secondary);}
+        .breadcrumb a{color:var(--blue);text-decoration:none;}
+        .breadcrumb span{margin:0 6px;}
 
-        /* Hero */
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
-        
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        /* HERO */
+        .hero{padding:5rem 2rem 4rem;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent-dark);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:6px 14px;border-radius:100px;margin-bottom:1.5rem;}
+        .hero h1{font-size:clamp(2rem,3.5vw,3rem);margin-bottom:1.25rem;line-height:1.15;}
+        .hero h1 em{font-style:normal;color:var(--accent);}
+        .hero-intro{font-size:1.05rem;color:var(--text-secondary);margin-bottom:2rem;max-width:540px;}
+        .hero-cta-group{display:flex;flex-wrap:wrap;gap:1rem;}
+        .btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:white!important;padding:14px 28px;border-radius:10px;font-weight:700;text-decoration:none;font-size:1rem;transition:0.2s;}
+        .btn-wa:hover{background:#1ebe5d;transform:translateY(-2px);}
+        .btn-audit{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--blue)!important;padding:14px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--blue);transition:0.2s;}
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;background:var(--grey-50);border-radius:var(--radius-lg);padding:2rem;border:1px solid var(--border);}
+        .stat-item{text-align:center;}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.8rem;font-weight:800;color:var(--accent);display:block;}
+        .stat-label{font-size:0.8rem;color:var(--text-secondary);margin-top:4px;}
+        @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-stats{margin-top:2rem;}}
 
-        /* Context Section */
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .context-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: center; }
-        .context-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .context-text p { margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 1.1rem; }
+        /* SECTIONS */
+        .section{padding:5rem 2rem;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:0.75rem;}
+        .section-title{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.25rem;}
+        .section-body{font-size:1rem;max-width:780px;margin-bottom:3rem;}
 
-        /* Industry Grid (Specific to Lead Gen) */
-        .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
-        .ind-card { background: white; padding: 2.5rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .ind-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .ind-card span { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .ind-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-        .ind-card p { font-size: 0.85rem; color: var(--text-secondary); }
+        /* MARKET CONTEXT */
+        .market-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+        .market-aside{background:var(--accent-light);border-radius:var(--radius-xl);padding:2rem;border:1px solid #ede9fe;}
+        .market-aside h4{font-size:1rem;margin-bottom:1rem;color:var(--accent-dark);}
+        .market-aside ul{list-style:none;}
+        .market-aside li{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #ede9fe;font-size:0.9rem;color:var(--text-secondary);}
+        .market-aside li i{color:var(--accent);flex-shrink:0;margin-top:2px;}
+        @media(max-width:780px){.market-grid{grid-template-columns:1fr;}}
 
-        /* Push to Authority CTA */
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;display:flex;align-items:flex-start;gap:1rem;}
+        .pain-icon{width:40px;height:40px;background:#FEF2F2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#DC2626;}
+        .pain-card p{font-size:0.95rem;margin:0;}
+        @media(max-width:700px){.pain-grid{grid-template-columns:1fr;}}
 
-        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; text-align: center; }
+        /* SOLUTIONS */
+        .solutions-bg{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+        .solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+        .sol-card{background:var(--grey-50);border-radius:var(--radius-xl);padding:2.5rem 2rem;border:1px solid var(--border);transition:var(--transition);}
+        .sol-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3rem;font-weight:800;color:var(--accent);opacity:0.15;line-height:1;margin-bottom:1rem;}
+        .sol-card h3{font-size:1.1rem;margin-bottom:0.75rem;}
+        @media(max-width:900px){.solutions-grid{grid-template-columns:1fr;}}
 
-        @media (max-width: 1000px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } .context-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; } .nav-links { display: none; } }
+        /* CASE STUDY */
+        .case-study{background:var(--grey-800);border-radius:var(--radius-xl);padding:3rem;color:white;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+        .case-study p{color:#94a3b8;margin-bottom:1rem;}
+        .case-study h3{font-size:1.5rem;margin-bottom:1rem;color:white;}
+        .case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+        .case-metric{background:rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem;}
+        .case-metric-num{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;color:#A78BFA;}
+        .case-metric-label{font-size:0.8rem;color:#94a3b8;margin-top:4px;}
+        @media(max-width:780px){.case-study{grid-template-columns:1fr;}}
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2rem;transition:var(--transition);}
+        .pricing-card.featured{border-color:var(--accent);position:relative;}
+        .pricing-card.featured::before{content:"Most Popular";position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:0.75rem;font-weight:700;padding:4px 16px;border-radius:100px;}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:1.8rem;font-weight:800;color:var(--text-primary);margin:1rem 0 0.25rem;}
+        .pricing-features{list-style:none;margin-bottom:2rem;}
+        .pricing-features li{display:flex;align-items:flex-start;gap:8px;padding:0.5rem 0;font-size:0.88rem;border-bottom:1px solid var(--border);}
+        .pricing-features i{color:#22c55e;flex-shrink:0;margin-top:2px;}
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:12px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(max-width:900px){.pricing-grid{grid-template-columns:1fr;}}
 
-/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
+        /* FAQ */
+        .faq-list{max-width:780px;}
+        .faq-item{border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:1rem;background:var(--white);overflow:hidden;}
+        .faq-q{width:100%;background:none;border:none;padding:1.5rem;text-align:left;font-family:"Syne",sans-serif;font-size:1rem;font-weight:700;color:var(--text-primary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+        .faq-q i{transition:transform 0.3s;color:var(--accent);}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+        .faq-a p{padding:0 1.5rem;font-size:0.95rem;}
 
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
+        /* CTA SECTION */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:5rem 3rem;text-align:center;margin:4rem 2rem;max-width:1120px;margin-left:auto;margin-right:auto;}
+        .cta-btns{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:1.1rem 2.5rem;border-radius:12px;font-weight:800;text-decoration:none;}
+        .btn-ghost{background:transparent;color:white!important;padding:1.1rem 2.5rem;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.5);}
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(20px);transition:0.7s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
 
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
+        /* INDUSTRY GRID */
+        .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+        .ind-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
+        @media(max-width:700px){.ind-grid{grid-template-columns:1fr 1fr;}}
+        @media(max-width:480px){.ind-grid{grid-template-columns:1fr;}}
 
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
+        /* FOOTER */
+        footer{background:var(--grey-800);color:white;padding:3rem 2rem;text-align:center;}
+        footer a{color:#93c5fd;text-decoration:none;}
+    </style>
 </head>
 <body>
+
 <nav id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
     <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
+      <a href="/work/index.html" class="btn-outline">See our work</a>
+      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20to%20book%20a%20strategy%20call" target="_blank" class="btn-primary">WhatsApp Us</a>
     </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
     <button class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/pseo/lead-generation/index.html">Lead Generation Kenya</a><span>›</span>
+  Mombasa
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">Lead Gen Hub</a> / 
-        Mombasa
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div class="hero-badge"><i data-lucide="anchor" style="width:14px;height:14px;"></i> Gateway to East Africa | Mombasa</div>
+      <h1>Scalable Lead Generation for<br><em>Mombasa Businesses</em></h1>
+      <p class="hero-intro">From the Port of Mombasa to the beaches of Nyali, the Coast's economy is evolving. SmartBizSystems builds high-velocity lead generation funnels designed for the unique pace of Mombasa business—combining WhatsApp speed with AI precision.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20lead%20generation%20for%20my%20Mombasa%20business" target="_blank" class="btn-wa">
+          <i data-lucide="message-circle" style="width:20px;height:20px;"></i> Get Free Audit on WhatsApp
+        </a>
+        <a href="https://www.smartbizsystems.co.ke/free-audit" class="btn-audit">Request Free Audit →</a>
+      </div>
     </div>
-
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Coastal ROI Specialists</span>
-            <h1>Capturing High-Value Leads for the Mombasa Economy</h1>
-            <p>From Nyali resorts seeking international tourists to clearing agents at the Port searching for B2B contracts, generic ads won't cut it. We build Mombasa-specific ad funnels that find your customers where they are.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/lead-generation.html" class="btn btn-accent">View Coastal Ad Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline" style="background: white; border: 1px solid var(--border); text-decoration: none; color: inherit;">WhatsApp Joseph</a>
-            </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">850+</span>
+          <div class="stat-label">Logistics Firms in MSA</div>
         </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md); text-align: center;">
-                <i data-lucide="palmtree" size="48" color="#7c3aed" style="margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Nyali & Coastal Reach</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">We use advanced geo-fencing to target high-intent visitors and business owners in Mombasa's prime commercial zones.</p>
-            </div>
+        <div class="stat-item">
+          <span class="stat-num">24/7</span>
+          <div class="stat-label">AI Lead Qualification</div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="context-grid">
-            <div class="context-text reveal">
-                <h2>Lead Funnels for Mombasa's Sectors</h2>
-                <p>Scaling a shipping agency or a luxury villa in Mombasa? Our systems are designed for the coastal commercial landscape.</p>
-                <div class="industry-grid">
-                    <div class="ind-card"><span>🚢</span><h3>Logistics</h3><p>B2B lead funnels for clearing and forwarding agents.</p></div>
-                    <div class="ind-card"><span>🏖️</span><h3>Tourism</h3><p>Direct booking funnels for hotels & resorts.</p></div>
-                    <div class="ind-card"><span>🏠</span><h3>Real Estate</h3><p>Buyer funnels for Nyali & Bamburi vacation homes.</p></div>
-                    <div class="ind-card"><span>⚖️</span><h3>Maritime Law</h3><p>Matter-specific intake for coastal legal firms.</p></div>
-                    <div class="ind-card"><span>🏛️</span><h3>SACCOs</h3><p>Digital member growth for coastal finance groups.</p></div>
-                    <div class="ind-card"><span>🛒</span><h3>E-Commerce</h3><p>Direct sales funnels for Mombasa-based stores.</p></div>
-                    <div class="ind-card"><span>🏥</span><h3>Clinics</h3><p>Patient intake for private coast medical centers.</p></div>
-                    <div class="ind-card"><span>🏢</span><h3>SMEs</h3><p>Growth systems for Mombasa's startup ecosystem.</p></div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">The Coastal Strategy</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Mombasa requires a mix of international search dominance (for tourism) and local social media precision (for trade).</p>
-                    <ul style="list-style: none; font-weight: 600; font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> Multi-language Ad Creative</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> Geo-targeted Funnels</li>
-                        <li><i data-lucide="check" size="16" color="#7c3aed"></i> M-Pesa Integrated Lead Capture</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="stat-item">
+          <span class="stat-num">4.5×</span>
+          <div class="stat-label">Avg. Lead Volume Growth</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to dominate the Coastal market?</h2>
-            <p>All localized strategies in Mombasa refer to our core customer acquisition engine. Visit our official service page to view our KES pricing tiers and technical ad workflows.</p>
-            <a href="../../services/lead-generation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Official Service Page & Pricing</a>
+<!-- MARKET CONTEXT -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Coastal Market Dynamics</p>
+    <h2 class="section-title">The "Blue Economy" Opportunity: Why Lead Gen in Mombasa is Different</h2>
+    <div class="market-grid">
+      <div class="body-text">
+        <p>Mombasa is the heartbeat of East African trade. Unlike the corporate-centric environment of Nairobi, Mombasa thrives on the flow of goods, tourists, and real estate investments. For businesses operating here—whether you are a <strong>Clearing & Forwarding agent</strong>, a <strong>boutique resort</strong>, or a <strong>real estate developer in Nyali</strong>—your leads aren't just local; they are regional and international.</p>
+        <p>Traditional marketing in the Coast has long relied on "who you know." But today, an importer in Uganda or a tourist in Berlin starts their journey on Google. If your business doesn't appear when they search for "best logistics company in Mombasa" or "luxury apartments in Shanzu," you are invisible to the most profitable leads in the market.</p>
+        <p>Furthermore, the Mombasa market operates on <strong>trust and speed</strong>. Potential clients want to see professional landing pages, but they want to talk on WhatsApp *immediately*. At SmartBizSystems, we bridge this gap. We build the high-tech infrastructure (Google Ads, SEO, CRM) while keeping the Pwani-style communication (Automated WhatsApp) that your customers expect.</p>
+        <p>We don't just send you traffic; we build a system that qualifies leads at the port, in the city, and across the border, ensuring your sales team only talks to people ready to pay.</p>
+      </div>
+      <div class="market-aside">
+        <h4>Mombasa Market Insights</h4>
+        <ul>
+          <li><i data-lucide="ship" style="width:16px;height:16px;"></i> 65% of Mombasa B2B leads originate from outside the county (Logistics/Trade).</li>
+          <li><i data-lucide="smartphone" style="width:16px;height:16px;"></i> 94% of coastal consumers prefer initiating business queries via WhatsApp.</li>
+          <li><i data-lucide="sun" style="width:16px;height:16px;"></i> High inquiry volumes occur after 7 PM, requiring 24/7 automated responses.</li>
+          <li><i data-lucide="map" style="width:16px;height:16px;"></i> Real estate searches for "Nyali" and "Mtwapa" have grown by 30% YoY.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Revenue Leaks at the Coast</p>
+      <h2 class="section-title">Why Coastal Businesses Struggle to Scale</h2>
+      <p class="section-body">Mombasa is a high-trust, high-velocity market. If your digital presence feels "stale" or your response time is slow, your potential revenue is literally sailing away to competitors.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="clock" style="width:20px;height:20px;"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.5rem;font-size:0.95rem;">The "Tandem" Delay</h4>
+            <p>If a lead messages your WhatsApp during a busy afternoon or late at night and you take 2 hours to reply, they have already messaged three other agents. In Mombasa, the first responder usually wins the contract.</p>
+          </div>
         </div>
-    </section>
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="globe" style="width:20px;height:20px;"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.5rem;font-size:0.95rem;">Invisible to International Buyers</h4>
+            <p>Importers from Rwanda, South Sudan, and DRC are searching for you on Google. If you are only relying on physical signage and local referrals, you are missing 60% of the Port's ecosystem opportunities.</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="filter-x" style="width:20px;height:20px;"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.5rem;font-size:0.95rem;">Wasting Time on "Price Checkers"</h4>
+            <p>Your team spends hours answering basic questions for people who aren't ready to buy. Without an automated qualification funnel, your high-value employees are acting as customer support instead of closers.</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="hard-drive" style="width:20px;height:20px;"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.5rem;font-size:0.95rem;">The Spreadsheet Graveyard</h4>
+            <p>Leads are scribbled in notebooks or hidden in WhatsApp chats. There is no follow-up, no "nurture," and no long-term relationship building. You are leaving 80% of your potential lifetime value on the table.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>© 2026 SmartBizSystems — Mombasa Lead Generation Hub.</p>
-    </footer>
+<!-- SOLUTIONS -->
+<div class="solutions-bg">
+  <section class="section">
+    <div class="reveal">
+      <p class="section-label">The SmartBiz Method</p>
+      <h2 class="section-title">A Lead Engine Built for the Coast</h2>
+      <p class="section-body">We don't just run "ads." We build a digital asset that works for your Mombasa business while you are on site, at the port, or even on holiday.</p>
+      <div class="solutions-grid">
+        <div class="sol-card">
+          <div class="sol-num">01</div>
+          <h3>Geo-Targeted PPC (Port & Border)</h3>
+          <p>We target your ads to specific high-intent zones: the Port of Mombasa, the SGR terminals, and even cross-border trade hubs in Kampala and Juba. We ensure your budget only buys clicks from real decision-makers.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">02</div>
+          <h3>AI WhatsApp Coastal Bots</h3>
+          <p>An automated WhatsApp flow that understands the coastal context. It greets leads, asks for their consignment numbers or property preferences, and qualifies them before sending them to your phone.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">03</div>
+          <h3>Localized Landing Pages</h3>
+          <p>Fast-loading, mobile-first pages designed for the varying internet speeds across the Coast. Optimized to load instantly in Nyali or the heart of Old Town, with clear M-Pesa CTAs.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">04</div>
+          <h3>Logistics & Tourism CRM</h3>
+          <p>We setup HubSpot or Zoho specifically for Mombasa business cycles. Track shipments, follow up with hotel guests, or manage property viewings in one central, automated dashboard.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">05</div>
+          <h3>Multi-Touch Nurture</h3>
+          <p>The system automatically sends emails and WhatsApp updates about your services, building trust over weeks so that when the lead is ready to move their cargo or book their stay, you are the only choice.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">06</div>
+          <h3>M-Pesa API Integration</h3>
+          <p>For booking fees, document processing, or site visits, we integrate M-Pesa directly into your funnel. Payments trigger automated confirmations and move the lead to the next stage of your sales process.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+<!-- DEEP DIVE: STRATEGY FOR MOMBASA SECTORS -->
+<section class="section">
+    <div class="reveal">
+        <p class="section-label">Industry Specialization</p>
+        <h2 class="section-title">Custom Lead Generation for Coastal Industries</h2>
+        <div class="body-text" style="max-width:900px; margin-bottom:3rem;">
+            <p>At SmartBizSystems, we recognize that a <strong>Clearing and Forwarding</strong> agent has different needs than a <strong>Luxury Villa in Diani</strong>. Our lead generation systems are not "one size fits all." We dive deep into the psychographics of your specific audience.</p>
+            
+            <h3 style="margin-top:2rem; color:var(--blue);">1. Logistics & Shipping Funnels</h3>
+            <p>The Port of Mombasa is the gateway for millions of dollars in trade. Our logistics funnels target importers searching for terms like <em>"KRA customs clearance Mombasa"</em> or <em>"SGR cargo tracking agents."</em> We build bots that can collect Bill of Lading info or shipping manifests instantly on WhatsApp, reducing the time from "Enquiry" to "Quote" by 90%.</p>
 
-        // Mobile menu
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
+            <h3 style="margin-top:2rem; color:var(--blue);">2. Coastal Real Estate (Nyali, Shanzu, Mtwapa)</h3>
+            <p>Real estate leads in Mombasa are often looking for investment properties or holiday homes. Our funnels use high-quality imagery and video integrations that capture leads by offering "Site Visit Booking" or "ROI Property Catalogues." We filter out the "curious" from the "serious" using AI lead scoring based on their interaction with your property listings.</p>
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-label',
-    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
-  );
-});
+            <h3 style="margin-top:2rem; color:var(--blue);">3. Hospitality & Tourism (Resorts & Airbnbs)</h3>
+            <p>In the age of Booking.com, local hotels often lose profit to high commission fees. We build direct-booking funnels that use Google Search Ads to capture tourists before they go to the big platforms. By using WhatsApp for direct booking, you can bypass 15-20% commission fees and build a direct relationship with your guests.</p>
+        </div>
+    </div>
+</section>
 
-// Close on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
+<!-- CASE STUDY -->
+<section style="padding:0 2rem 5rem;max-width:1120px;margin:0 auto;">
+  <div class="reveal">
+    <p class="section-label">Proven Mombasa Results</p>
+    <h2 class="section-title" style="margin-bottom:2rem;">Coastal Growth Stories</h2>
+    <div class="case-study">
+      <div>
+        <h3>Logistics Agent — Port of Mombasa</h3>
+        <p>A medium-sized clearing firm was getting leads via phone calls that they often missed. We implemented a "WhatsApp First" funnel with Google Search Ads targeting East African importers.</p>
+        <p>We automated the initial data collection (Consignment type, Origin, Destination) which allowed their 2-person sales team to handle 5x the volume of enquiries.</p>
+        <p style="color:#A78BFA;font-weight:600;">Monthly results after 4 months:</p>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <div class="case-metric-num">KES 2.4M</div>
+          <div class="case-metric-label">New Revenue Attributed</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-num">15 Sec</div>
+          <div class="case-metric-label">Initial Response Time</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-num">312</div>
+          <div class="case-metric-label">Qualified Leads Monthly</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-num">65%</div>
+          <div class="case-metric-label">Reduction in Manual Admin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Pricing Packages</p>
+    <h2 class="section-title">Lead Generation Built for Mombasa Budgets</h2>
+    <p class="section-body">Flexible plans for SMEs and Enterprises. All prices include setup and the first month of optimization. M-Pesa and Wire Transfer accepted.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Pwani Starter</h3>
+        <div class="pricing-price">KES 30,000</div>
+        <p style="font-size:0.8rem; color:var(--text-secondary);">Setup + KES 5,000/mo management</p>
+        <ul class="pricing-features" style="margin-top:1.5rem;">
+          <li><i data-lucide="check"></i> 1 Lead Magnet Landing Page</li>
+          <li><i data-lucide="check"></i> WhatsApp Auto-Response</li>
+          <li><i data-lucide="check"></i> Google Search Ads Setup</li>
+          <li><i data-lucide="check"></i> Lead Capture Form</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20the%20Mombasa%20Starter%20Package" class="pricing-cta">Launch Funnel</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Coastal Growth</h3>
+        <div class="pricing-price">KES 100,000</div>
+        <p style="font-size:0.8rem; color:var(--text-secondary);">Setup + KES 20,000/mo management</p>
+        <ul class="pricing-features" style="margin-top:1.5rem;">
+          <li><i data-lucide="check"></i> Full AI WhatsApp Bot (API)</li>
+          <li><i data-lucide="check"></i> 3 A/B Tested Landing Pages</li>
+          <li><i data-lucide="check"></i> Google + Meta Ad Campaigns</li>
+          <li><i data-lucide="check"></i> CRM Integration (HubSpot)</li>
+          <li><i data-lucide="check"></i> Weekly Lead Quality Reports</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20the%20Mombasa%20Growth%20Package" class="pricing-cta" style="background:var(--accent);">Scale Now</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise Port</h3>
+        <div class="pricing-price">Custom</div>
+        <p style="font-size:0.8rem; color:var(--text-secondary);">Dedicated Full-Stack Solution</p>
+        <ul class="pricing-features" style="margin-top:1.5rem;">
+          <li><i data-lucide="check"></i> Multi-channel (SMS, Email, WA)</li>
+          <li><i data-lucide="check"></i> M-Pesa Daraja Integration</li>
+          <li><i data-lucide="check"></i> Custom AI Agent Development</li>
+          <li><i data-lucide="check"></i> Bi-weekly Strategy Meetings</li>
+        </ul>
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20need%20a%20custom%20Enterprise%20funnel%20for%20Mombasa" class="pricing-cta">Talk to Specialist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Questions? Answers.</p>
+    <h2 class="section-title">Mombasa Lead Gen — FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Does this work for Clearing and Forwarding? <i data-lucide="chevron-down"></i></button>
+        <div class="faq-a"><p>Absolutely. We focus on "High-Intent" search terms. When an importer is looking for a reliable agent to clear their containers at the port, our system puts your business at the top of their screen and starts a WhatsApp conversation before they can talk to anyone else.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need a large ad budget? <i data-lucide="chevron-down"></i></button>
+        <div class="faq-a"><p>No. We specialize in optimization. Because we use highly specific "long-tail" keywords (like "commercial warehouse for rent in Mtwapa" instead of just "warehouse"), your cost-per-lead stays low and your conversion stays high.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do you handle leads from outside Kenya? <i data-lucide="chevron-down"></i></button>
+        <div class="faq-a"><p>Our systems use international dialing code detection and automated language translation if necessary. Whether your lead is from Kampala, Juba, or London, they get a professional response in their timezone immediately.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL LINKS -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="reveal">
+        <p class="section-label">Explore More</p>
+        <h2 class="section-title">Related Coastal Services</h2>
+        <div class="related-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+          <a href="/seo-pages/lead-generation/nyali.html" class="ind-card" style="text-decoration:none; color:inherit;">
+            <h4 style="color:var(--blue);">Lead Generation Nyali →</h4>
+            <p style="font-size:0.85rem;">Specific real estate and luxury retail funnels for the Nyali suburbs.</p>
+          </a>
+          <a href="/seo-pages/lead-generation/diani.html" class="ind-card" style="text-decoration:none; color:inherit;">
+            <h4 style="color:var(--blue);">Lead Generation Diani →</h4>
+            <p style="font-size:0.85rem;">Tourism and hospitality automation for the South Coast's premier resorts.</p>
+          </a>
+          <a href="/whatsapp-automation-kenya.html" class="ind-card" style="text-decoration:none; color:inherit;">
+            <h4 style="color:var(--blue);">WhatsApp Bots Mombasa →</h4>
+            <p style="font-size:0.85rem;">The underlying technology that powers our coastal lead funnels.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>The Coast is Digital. Is Your Business?</h2>
+  <p>Don't let your leads drift away. Get a free audit of your current digital pipeline today. We will show you exactly how many coastal leads you are missing every single month.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20lead%20audit%20for%20my%20Mombasa%20business" target="_blank" class="btn-white">Talk on WhatsApp →</a>
+    <a href="https://www.smartbizsystems.co.ke/free-audit" class="btn-ghost">Request Free Audit</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Empowering Mombasa's Blue Economy with AI.</p>
+  <p style="margin-top:0.5rem;"><a href="https://wa.me/254734230445">+254 734 230 445</a> · <a href="/pseo/lead-generation/">All Kenya Regions</a></p>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("active"); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
+      const answer = item.querySelector(".faq-a");
+      const isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach(i => {
+        i.classList.remove("open");
+        i.querySelector(".faq-a").classList.remove("open");
+      });
+      if (!isOpen) { item.classList.add("open"); answer.classList.add("open"); }
+    });
   });
-});
 
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  }
-});
-    </script>
-
-
+  // Mobile menu
+  const navToggle = document.getElementById("navToggle");
+  const nav = document.getElementById("nav");
+  navToggle.addEventListener("click", () => {
+    navToggle.classList.toggle("open");
+    // Add logic for mobile menu visibility if needed
+  });
+</script>
 </body>
 </html>

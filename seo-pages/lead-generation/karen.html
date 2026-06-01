@@ -3,326 +3,624 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lead Generation Karen | Premium Ad Funnels for Elite Firms | SmartBizSystems</title>
-    <meta name="description" content="Scale your Karen boutique firm or luxury real estate agency with high-performance lead generation. Specialized Meta & Google Ads for The Hub & Waterfront firms.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/lead-generation.html" />
+    <title>Lead Generation Karen Nairobi | Luxury Real Estate & HNWI Funnels | SmartBizSystems</title>
+    <meta name="description" content="Karen's elite market requires discretion and precision. SmartBizSystems builds premium lead generation funnels for Karen real estate, international schools, and boutique services. Capture high-net-worth clients with AI-powered automation.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/pseo/lead-generation/karen.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Lead Generation Karen Nairobi",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Nairobi",
+        "description": "Karen & Langata Upscale Suburbs"
+      },
+      "description": "Premium lead generation for Karen's luxury real estate, international schools, and high-end clinics. Featuring high-discretion AI bots, CRM integration, and luxury-market Google Ads.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Bespoke lead generation funnel for Karen businesses"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
         :root {
-            --accent: #7c3aed; --accent-dark: #6d28d9; --accent-light: #f5f3ff;
-            --blue: #0d6efd; --white: #ffffff; --grey-50: #f8f9fb; --grey-100: #f1f3f6;
-            --grey-200: #e4e7ed; --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+            --accent:#7c3aed; --accent-dark:#6d28d9; --accent-light:#f5f3ff;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --shadow-md:0 4px 16px rgba(0,0,0,0.08);
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+        p:last-child{margin-bottom:0;}
+
+        /* NAV & MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:16px;}
+        .nav-logo em{font-style:normal;color:var(--blue);}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:0.2s;}
+        .nav-links a:hover{color:var(--blue);}
+        .nav-cta-group{display:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px; z-index: 1001;}
+        .nav-toggle span{width:24px;height:2px;background:var(--text-primary);border-radius:2px; transition: 0.3s;}
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 85%; height: 100vh;
+            background: white; z-index: 1000; padding: 100px 40px;
+            display: flex; flex-direction: column; gap: 20px;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: var(--transition);
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 20px; font-weight: 600; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .mobile-menu .btn-primary { margin-top: 20px; text-align: center; border-bottom: none; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-cta-group{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        .btn-primary{background:var(--blue);color:#fff!important;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none; display: inline-block;}
 
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); white-space: nowrap; overflow-x: auto;}
+        .breadcrumb a{color:var(--blue);text-decoration:none;}
+        .breadcrumb span{margin:0 4px;}
 
-        /* Hero */
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);color:var(--accent-dark);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:6px 12px;border-radius:100px;margin-bottom:1rem;}
+        .hero h1{font-size:clamp(1.8rem, 8vw, 3.2rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent);}
+        .hero-intro{font-size:1rem;color:var(--text-secondary);margin-bottom:2rem;max-width:100%;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:#25D366;color:white!important;padding:16px 24px;border-radius:12px;font-weight:700;text-decoration:none;font-size:1rem; transition: 0.2s;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--blue)!important;padding:16px 24px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--blue); transition: 0.2s;}
         
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--grey-50);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--border);}
+        .stat-item{text-align:center;}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.2rem;font-weight:800;color:var(--accent);display:block;}
+        .stat-label{font-size:0.65rem;color:var(--text-secondary);margin-top:2px; line-height: 1.2;}
 
-        /* Context Section */
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .context-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: center; }
-        .context-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .context-text p { margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 1.1rem; }
+        @media(min-width:768px){
+            .hero-cta-group { flex-direction: row; }
+            .hero-stats { gap: 2rem; padding: 2rem; }
+            .stat-num { font-size: 1.8rem; }
+            .stat-label { font-size: 0.8rem; }
+        }
+        @media(min-width:992px){
+            .hero-inner { flex-direction: row; align-items: center; }
+            .hero-inner > div { flex: 1; }
+            .hero-intro { font-size: 1.1rem; }
+        }
 
-        /* Industry Grid (Specific to Lead Gen) */
-        .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
-        .ind-card { background: white; padding: 2.5rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .ind-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .ind-card span { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .ind-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-        .ind-card p { font-size: 0.85rem; color: var(--text-secondary); }
+        /* SECTIONS */
+        .section{padding:4rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:0.75rem;display:block;}
+        .section-title{font-size:clamp(1.5rem, 6vw, 2.4rem);margin-bottom:1.5rem;line-height:1.2;}
+        .section-body{font-size:1rem;margin-bottom:2rem;color:var(--text-secondary);}
 
-        /* Push to Authority CTA */
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+        @media(min-width:768px){
+            .section { padding: 6rem 20px; }
+            .section-body { font-size: 1.05rem; }
+        }
 
-        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; text-align: center; }
+        /* CONTENT BLOCK STYLES */
+        .content-rich-text h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+        .content-rich-text p { margin-bottom: 1.2rem; }
+        .content-rich-text ul { margin-bottom: 1.5rem; padding-left: 1.2rem; }
+        .content-rich-text li { margin-bottom: 0.5rem; color: var(--text-secondary); }
 
-        @media (max-width: 1000px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } .context-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; } .nav-links { display: none; } }
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;}
+        .pain-icon{width:40px;height:40px;background:#FEF2F2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#DC2626;}
+        
+        @media(min-width:768px){
+            .pain-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+            .pain-card { padding: 2rem; }
+        }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* SOLUTIONS */
+        .solutions-bg{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--grey-50);border-radius:var(--radius-xl);padding:2rem;border:1px solid var(--border);transition:var(--transition);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1;margin-bottom:0.5rem;}
+        
+        @media(min-width:768px){
+            .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(min-width:992px){
+            .solutions-grid { grid-template-columns: repeat(3, 1fr); }
+            .sol-card { padding: 2.5rem; }
+        }
 
-/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2rem; transition: 0.3s;}
+        .pricing-card.featured{border-color:var(--accent); position: relative;}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:1.8rem;font-weight:800;color:var(--text-primary);margin:1rem 0;}
+        .pricing-features { list-style: none; margin-bottom: 20px; font-size: 0.9rem; }
+        .pricing-features li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:14px;border-radius:10px;font-weight:700;text-decoration:none;}
 
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
+        @media(min-width:768px){
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(min-width:992px){
+            .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+            .pricing-card { padding: 2.5rem; }
+        }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
+        /* RELATED SERVICES GRID */
+        .related-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit; transition: 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center;}
+        .related-card i{color:var(--accent);margin-bottom:12px;}
+        .related-card h4{font-size:0.9rem; font-weight: 700; color:var(--text-primary);}
 
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
+        @media(min-width:480px){ .related-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
 
-.nav-logo em { font-style: normal; color: #2563EB; }
+        /* CTA SECTION */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:4rem 20px;text-align:center;max-width:1120px;margin:2rem 20px 4rem;}
+        .cta-section h2{font-size:clamp(1.8rem, 6vw, 2.8rem);margin-bottom:1rem;color:white;}
+        .cta-section p{font-size:1rem;margin-bottom:2.5rem;max-width:700px;margin-left:auto;margin-right:auto;opacity:0.9;color:white;}
+        .cta-btns{display:flex;flex-direction: column; gap:12px; align-items: center;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:16px 32px;border-radius:12px;font-weight:800;text-decoration:none; width: 100%; max-width: 300px;}
+        .btn-ghost{background:transparent;color:white!important;padding:16px 32px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.5); width: 100%; max-width: 300px;}
 
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
+        @media(min-width:768px){
+            .cta-section { margin: 4rem auto; padding: 6rem 40px; }
+            .cta-btns { flex-direction: row; justify-content: center; }
+            .btn-white, .btn-ghost { width: auto; }
+        }
 
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
+        /* FOOTER */
+        footer{background:var(--grey-800);color:white;padding:3rem 20px;text-align:center;}
+        footer p{ font-size: 0.85rem; opacity: 0.7; }
+        footer a{color:#93c5fd;text-decoration:none;}
 
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(20px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
 
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
+        /* FAQ */
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;}
+        .faq-q{width:100%;padding:1.2rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--text-primary);}
+        .faq-q i{color:var(--accent);transition:0.3s; flex-shrink: 0;}
+        .faq-a{max-height:0;overflow:hidden;transition:0.3s;padding:0 1.2rem;}
+        .faq-a.open{max-height:1000px;padding-bottom:1.2rem;}
+        .faq-a p { font-size: 0.9rem; margin: 0; }
+        
+        @media(min-width:768px){
+            .faq-q { padding: 1.5rem; font-size: 1.1rem; }
+            .faq-a { padding: 0 1.5rem; }
+            .faq-a.open { padding-bottom: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
     <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
+      <a href="https://wa.me/254734230445" class="btn-primary">WhatsApp Us</a>
     </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary">WhatsApp Us Now</a>
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">Lead Gen Hub</a> / 
-        Karen
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/pseo/lead-generation/index.html">Lead Gen Kenya</a><span>›</span>
+      Karen
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Luxury ROI Specialists</span>
-            <h1>High-Value Lead Generation for Exclusive Karen Firms</h1>
-            <p>High-end Karen businesses require a sophisticated ad strategy that preserves brand prestige while driving s. We build premium ad funnels that find your high-net-worth clients across Karen and Lang'ata 24/7.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/lead-generation.html" class="btn btn-accent">Explore Premium Ad Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline" style="background: white; border: 1px solid var(--border); text-decoration: none; color: inherit;">Consult with Joseph</a>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div class="hero-badge"><i data-lucide="gem" style="width:14px;height:14px;"></i> Luxury Marketing | Karen</div>
+      <h1>Elite Lead Generation for<br><em>Karen Luxury Brands</em></h1>
+      <p class="hero-intro">Karen is Nairobi's premier enclave of prestige. We build AI-powered acquisition systems tailored for high-net-worth individuals, luxury real estate, and elite private institutions. Discretion meets digital precision.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20premium%20lead%20generation%20for%20my%20Karen%20business" target="_blank" class="btn-wa">
+          <i data-lucide="message-circle" style="width:20px;height:20px;"></i> Get Free Premium Audit
+        </a>
+        <a href="https://www.smartbizsystems.co.ke/free-audit" class="btn-audit">Request Luxury Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">HNWI</span>
+          <div class="stat-label">Target Audience</div>
         </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md); text-align: center;">
-                <i data-lucide="crown" size="48" color="#7c3aed" style="margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Elite Client Acquisition</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">We use precision demographic targeting to reach individuals in Karen's most exclusive estates and lifestyle hubs.</p>
-            </div>
+        <div class="stat-item">
+          <span class="stat-num">Bespoke</span>
+          <div class="stat-label">Architecture</div>
         </div>
-    </section>
-
-    <section class="section">
-        <div class="context-grid">
-            <div class="context-text reveal">
-                <h2>Tailored for the Karen Market</h2>
-                <p>Scaling a boutique safari firm or a private wealth practice in Karen? Our systems are designed for high-trust, elite sales cycles where quality beats quantity.</p>
-                <div class="industry-grid">
-                    <div class="ind-card"><span>🦁</span><h3>Boutique Safari</h3><p>Acquisition funnels for luxury international travelers.</p></div>
-                    <div class="ind-card"><span>🏠</span><h3>Luxury Estate</h3><p>Buyer funnels for Karen's most exclusive mansions.</p></div>
-                    <div class="ind-card"><span>⚖️</span><h3>Wealth Law</h3><p>Matter-specific intake for private legal practices.</p></div>
-                    <div class="ind-card"><span>🏥</span><h3>Concierge Med</h3><p>Patient intake for private Karen clinics & specialists.</p></div>
-                    <div class="ind-card"><span>🎓</span><h3>Private Academies</h3><p>Student recruitment for elite international schools.</p></div>
-                    <div class="ind-card"><span>🏛️</span><h3>Family Offices</h3><p>Lead generation for private wealth & SACCO groups.</p></div>
-                    <div class="ind-card"><span>🛍️</span><h3>Luxury Retail</h3><p>Sales funnels for boutiques at The Hub & Waterfront.</p></div>
-                    <div class="ind-card"><span>🏢</span><h3>Boutique SMEs</h3><p>Premium growth systems for Karen-based agencies.</p></div>
-                </div>
-            </div>
-            <div class="reveal">
-                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">The Karen Strategy</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Karen requires a focus on professional brand authority and localized social media precision over aggressive sales tactics.</p>
-                    <ul style="list-style: none; font-weight: 600; font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> Brand-Preserving Creative</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#7c3aed"></i> HNW Interest Targeting</li>
-                        <li><i data-lucide="check" size="16" color="#7c3aed"></i> Secure & Private Data Intake</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="stat-item">
+          <span class="stat-num">Private</span>
+          <div class="stat-label">Qualification</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to see how we scale Karen firms?</h2>
-            <p>All localized strategies in Karen refer to our core customer acquisition engine. Visit our official service page to view our KES pricing tiers and technical ad workflows.</p>
-            <a href="../../services/lead-generation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Official Service Page & Pricing</a>
+<!-- MARKET CONTEXT: DEEP DIVE (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Luxury Market Intelligence</p>
+    <h2 class="section-title">The Karen Suburb Strategy: Why High-Value Brands Need Digital Precision</h2>
+    <div class="content-rich-text">
+        <p>Karen stands as Nairobi's most prestigious green suburb, a sprawling enclave defined by its colonial charm, lush landscapes, and exclusive high-end commerce. From the gated communities of Miotoni and Windy Ridge to the modern lifestyle hubs at The Hub Karen and Galleria Mall, this region is the residential choice for Kenya's most influential decision-makers, diplomats, and international expatriates. In such a refined market, "mass marketing" doesn't just fail—it often dilutes your brand's prestige.</p>
+        
+        <p>Lead generation in Karen is not a game of volume; it is a game of <strong>High-Intent Discovery</strong> and <strong>Referral-Grade Digital Trust</strong>. Whether you are marketing a KES 150 Million luxury villa, recruiting for a premier international school, or offering specialized wealth management, your digital presence must operate with the white-glove service found in Karen’s private country clubs. These prospects do not respond to generic ads; they respond to authority, discretion, and friction-free interaction.</p>
+
+        <h3>Understanding the Karen Buyer Psychology</h3>
+        <p>The Karen demographic is characterized by a high value on privacy and efficiency. When these individuals search for services, they avoid broad terms. Instead, they use hyper-specific, long-tail search queries. A prospect in Karen is not looking for a "cheap dentist." They are searching for <em>"specialist cosmetic dentist near Karen Crossroad"</em> or <em>"private British curriculum tutoring Karen Hardy."</em> Our pSEO (Programmatic SEO) strategy is built to dominate these exact, high-intent keywords, capturing the attention of HNWIs (High Net Worth Individuals) before your competitors even appear on their radar.</p>
+        
+        <p>Furthermore, the barrier to conversion in Karen is often "The Response Gap." For a high-net-worth individual, time is their most valuable asset. If they inquire about a luxury service and receive a delayed or unprofessional response, they interpret it as a lack of capability. This is why SmartBizSystems integrates <strong>High-Discretion AI Agents</strong>. These are not basic chatbots; they are sophisticated digital assistants trained in luxury brand etiquette that can qualify a lead, provide technical documentation, and schedule appointments 24/7 without being intrusive or repetitive.</p>
+
+        <h3>Strategic Digital Asset Positioning</h3>
+        <p>In Karen, your website and social profiles are your "Digital Lobby." If they don't look as professional as your physical office in Karen Triangle, the lead will bounce. We focus on <strong>Conversion-Optimized UX (User Experience)</strong> that prioritizes speed and security. Our landing pages are designed to load in under 2 seconds, even on mobile devices in areas with varying signal strength, ensuring that the luxury experience begins the moment a prospect clicks your link.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Avoiding Digital Mediocrity</p>
+      <h2 class="section-title">The Hidden Revenue Leaks in Karen Businesses</h2>
+      <p class="section-body">Even established firms in Karen often suffer from systemic marketing inefficiencies that cost millions in lost lifetime value. We identify and seal these leaks during our premium luxury audits.</p>
+      
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="shield-off"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.4rem; font-size: 1rem;">Privacy-Blind Lead Capture</h4>
+            <p style="font-size: 0.9rem;">Premium clients are wary of data exposure. If your site lacks secure bridges like the Official WhatsApp API, you are losing 40% of inquiries to "more private" competitors.</p>
+          </div>
         </div>
-    </section>
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="clock"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.4rem; font-size: 1rem;">The Late-Night Response Lag</h4>
+            <p style="font-size: 0.9rem;">Decision-makers often research services at 11 PM. No response until 9 AM? They've already found another provider. Our AI funnels eliminate this gap entirely.</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="filter-x"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.4rem; font-size: 1rem;">Poor Lead Qualification</h4>
+            <p style="font-size: 0.9rem;">Your sales team shouldn't waste time on "browsers" who can't afford Karen prices. We build smart filters that only pass pre-qualified buyers to your desk.</p>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon"><i data-lucide="search-x"></i></div>
+          <div>
+            <h4 style="margin-bottom:0.4rem; font-size: 1rem;">Invisible Long-Tail Ranking</h4>
+            <p style="font-size: 0.9rem;">Search terms like "luxury villas Karen" have massive ROI. If you aren't on Page 1 or running hyper-targeted Ads, you are effectively invisible to the market.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>© 2026 SmartBizSystems — Karen Lead Generation Hub.</p>
-    </footer>
+<!-- SECTOR SPECIFIC STRATEGIES (Extensive Content) -->
+<section class="section">
+    <div class="reveal">
+        <p class="section-label">Industry Sector Specialization</p>
+        <h2 class="section-title">Custom Lead Generation Architectures for Karen</h2>
+        <div class="content-rich-text">
+            
+            <h3>1. Luxury Real Estate & Property Development</h3>
+            <p>Real estate in Karen is the benchmark for Kenyan luxury living. For developers in areas like Bogani, Langata, and Miotoni, the sales cycle is long and requires constant nurturing. We build <strong>"Immersive Property Funnels"</strong>. Instead of a simple lead form, we use interactive landing pages offering "Bespoke Site Visits" and "Digital Project Portfolios." We use Google Retargeting to keep your development in front of the prospect as they browse the web, ensuring brand dominance. Our AI agents handle document requests (floor plans, compliance certs) instantly on WhatsApp, qualifying the lead's budget before your agents make the call.</p>
 
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    // Mobile menu
-const navToggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
+            <h3>2. International Schools & Elite Education</h3>
+            <p>Karen is home to world-class institutions like Brookhouse and Hillcrest. For schools in this category, the lead is a parent making a critical life decision. Our educational funnels focus on <strong>Trust & Direct Access</strong>. We create automated WhatsApp flows that allow parents to book tours or download fee structures instantly. By integrating with a CRM like HubSpot, we ensure every parent receives personalized follow-ups regarding extracurriculars and admission deadlines, leading to higher conversion from inquiry to enrollment.</p>
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  navToggle.setAttribute('aria-label',
-    mobileMenu.classList.contains('open') ? 'Close menu' : 'Open menu'
-  );
-});
+            <h3>3. High-End Medical Clinics & Specialist Care</h3>
+            <p>Specialists near Karen Hospital or boutique wellness centers require a pipeline of patients who prioritize quality. We build <strong>Intent-Based Patient Funnels</strong>. By targeting keywords like <em>"pediatrician in Karen"</em> or <em>"specialist cardiologist Nairobi,"</em> we capture patients at the point of need. Our AI triage bots handle initial screening—asking about insurance and symptoms—before booking the appointment directly into your practice software, freeing up your reception staff.</p>
 
-// Close on link click
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
+            <h3>4. Professional Services (Law, Wealth, Architecture)</h3>
+            <p>For Karen-based consultants, authority is your greatest asset. We build <strong>Thought-Leadership Funnels</strong> using LinkedIn and Google Search. We help you offer "Karen Market Outlooks" or "Bespoke Legal Guides" as lead magnets. Once a prospect downloads your insight, our system nurtures them over 6-12 months, ensuring that when they are ready for a high-value project, you are the only professional they trust.</p>
+
+            <h3>5. Luxury Retail & Boutique Hospitality</h3>
+            <p>Retailers at The Hub or boutique hotels in Karen need foot traffic and direct bookings. We use <strong>Geo-Fencing Technology</strong> to show ads to people currently physically located in Karen’s upscale shopping areas. Our direct-booking funnels bypass high OTA commissions, allowing hotels to own the customer relationship from day one via automated WhatsApp confirmations and concierge messaging.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOLUTIONS -->
+<div class="solutions-bg">
+  <section class="section">
+    <div class="reveal">
+      <p class="section-label">The SmartBiz System</p>
+      <h2 class="section-title">The 6 Pillars of Karen Lead Generation</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+          <div class="sol-num">01</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Precision PPC Targeting</h3>
+          <p style="font-size: 0.9rem;">We use hyper-local targeting to show your ads only to users in Karen. We focus on long-tail keywords that competitors miss, lowering your Cost-Per-Lead.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">02</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">AI WhatsApp Concierge</h3>
+          <p style="font-size: 0.9rem;">A white-glove bot on the official API. It handles inquiries with the sophistication of a PA, qualifying leads and syncing to your CRM 24/7.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">03</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">High-Trust UX Design</h3>
+          <p style="font-size: 0.9rem;">Luxury landing pages with mobile-first layouts. We focus on Syne typography and high-res imagery to match Karen's aesthetic standards.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">04</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Full CRM Integration</h3>
+          <p style="font-size: 0.9rem;">Every lead is pushed into HubSpot or Zoho with a detailed history of their interactions. No high-value inquiry ever goes ignored.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">05</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">M-Pesa API Flow</h3>
+          <p style="font-size: 0.9rem;">For retail or professional fees, we integrate M-Pesa Stk Push. Payments trigger automated onboarding and CRM status updates instantly.</p>
+        </div>
+        <div class="sol-card">
+          <div class="sol-num">06</div>
+          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Predictive Retargeting</h3>
+          <p style="font-size: 0.9rem;">We keep your brand in front of prospects across LinkedIn and Google. If they viewed your Karen villa once, they will see it until they book a tour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Investment Packages</p>
+    <h2 class="section-title">Scalable Solutions for Karen Brands</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Boutique</h3>
+        <div class="pricing-price">KES 30,000</div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> 1 Luxury Landing Page</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> Google Ads Setup</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> WhatsApp Auto-Reply</li>
+        </ul>
+        <a href="https://wa.me/254734230445" class="pricing-cta">Get Started</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Elite Growth</h3>
+        <div class="pricing-price">KES 100,000</div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> Full AI WhatsApp Bot</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> 3 A/B Landing Pages</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> HubSpot Integration</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> 12mo Nurture System</li>
+        </ul>
+        <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--accent);">Most Recommended</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Bespoke</h3>
+        <div class="pricing-price">Custom</div>
+        <ul class="pricing-features">
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> Multi-Channel AI Agents</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> Custom API Hooks</li>
+          <li><i data-lucide="check" style="width:14px; color:green;"></i> Account Manager</li>
+        </ul>
+        <a href="https://wa.me/254734230445" class="pricing-cta">Enquire Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Karen Lead Generation — FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">Which digital platform is most effective for Karen? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>For high-intent services like real estate and specialized medicine, Google Search is superior. For luxury lifestyle and retail, Instagram/Meta retargeting drives the best visual engagement. We usually deploy a mix based on your specific sector.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do you ensure discretion for high-profile clients? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>All our systems use encrypted CRM connections and the Official Meta API for WhatsApp. We do not use "grey market" tools that scrape data. Your leads' privacy is protected by enterprise-grade security protocols.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can your system handle international dialing codes? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. Many Karen residents are expats or investors. Our system automatically detects the country code and delivers the automated response correctly whether the lead is in Nairobi, London, or Dubai.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- RELATED REGIONS -->
+<section style="background:var(--white); padding:3rem 20px; border-top: 1px solid var(--border);">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Related Markets</p>
+        <h2 class="section-title" style="font-size:1.4rem;">Explore Other Growth Districts</h2>
+        <div class="related-grid">
+            <a href="/seo-pages/lead-generation/nairobi.html" class="related-card">
+                <i data-lucide="map-pin"></i>
+                <h4>Nairobi CBD →</h4>
+            </a>
+            <a href="/seo-pages/lead-generation/westlands.html" class="related-card">
+                <i data-lucide="map-pin"></i>
+                <h4>Westlands →</h4>
+            </a>
+            <a href="/seo-pages/lead-generation/upper-hill.html" class="related-card">
+                <i data-lucide="map-pin"></i>
+                <h4>Upper Hill →</h4>
+            </a>
+            <a href="/seo-pages/lead-generation/kilimani.html" class="related-card">
+                <i data-lucide="map-pin"></i>
+                <h4>Kilimani →</h4>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Evolve Your Karen Business</h2>
+  <p>Your brand deserves an elite digital engine. Let us audit your current acquisition strategy and identify exactly where you are losing premium clients. Most audits delivered within 24 hours.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20a%20free%20luxury%20lead%20audit" class="btn-white">Free Luxury Audit →</a>
+    <a href="/free-audit" class="btn-ghost">Request Case Studies</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Premium Automation for Kenya's Elite Brands.</p>
+  <p style="margin-top:1rem; font-size:0.8rem; opacity:0.6;">Karen, Nairobi · +254 734 230 445</p>
+</footer>
+
+<script>
+  // 1. Initialize Icons
+  lucide.createIcons();
+
+  // 2. Cache DOM Elements
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  // 3. Scroll Reveal Logic (Intersection Observer)
+  const revealOptions = { threshold: 0.1 };
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target); // Stop observing once revealed
+      }
+    });
+  }, revealOptions);
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // 4. FAQ Accordion Logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
+      const answer = item.querySelector(".faq-a");
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      // Close all other FAQ items
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => i.style.transform = "rotate(0deg)");
+
+      // Toggle current item
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
+    });
   });
-});
 
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (!nav.contains(e.target) && !mobileMenu.contains(e.target)) {
-    navToggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  }
-});
-    </script>
+  // 5. Improved Mobile Menu Logic
+  const toggleMenu = (forceClose = false) => {
+    const shouldOpen = forceClose ? false : !mobileMenu.classList.contains("open");
+    
+    navToggle.classList.toggle("open", shouldOpen);
+    mobileMenu.classList.toggle("open", shouldOpen);
+    body.style.overflow = shouldOpen ? "hidden" : "auto";
+  };
 
+  // Toggle on hamburger click
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevents document click from immediately closing it
+    toggleMenu();
+  });
+
+  // Close when a link inside is clicked
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => toggleMenu(true));
+  });
+
+  // Close when clicking anywhere outside the menu
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      toggleMenu(true);
+    }
+  });
+
+  // Close on Escape key press (Desktop friendly)
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+      toggleMenu(true);
+    }
+  });
+</script>
 </body>
 </html>
