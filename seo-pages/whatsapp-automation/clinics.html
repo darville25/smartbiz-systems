@@ -3,17 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Automation for Clinics & Hospitals Kenya | Appointment Bots | SmartBizSystems</title>
-    <meta name="description" content="Scale your Kenyan clinic or hospital with official WhatsApp automation. Automate appointment booking, patient reminders, and FAQ handling. Reduce no-shows by 60%.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/whatsapp-automation.html" />
+    <title>WhatsApp Automation for Clinics & Hospitals Kenya | Medical Bots | SmartBizSystems</title>
+    <meta name="description" content="Reduce no-shows and automate patient bookings with the official WhatsApp Business API for Kenyan clinics. AI-powered triage, M-Pesa deposits, and automated reminders.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/whatsapp-automation/clinics-hospitals.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Clinic WhatsApp Automation Kenya",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "description": "Official WhatsApp automation for Kenyan healthcare providers. Automate appointments, patient triage, and M-Pesa fee collection.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Medical WhatsApp Bot Setup"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent:#25d366; --accent-dark:#128c7e; --accent-light:#e9fbf0;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED HAMBURGER */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary);}
+        .breadcrumb a{color:var(--accent-dark);text-decoration:none;}
+
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent-dark);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:var(--accent);color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--accent-dark)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--accent-dark);}
+        
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--accent-light);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--accent);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent-dark);display:block; text-align: center;}
+        
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
+
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent-dark);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
+
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:flex-start;gap:1.25rem;}
+        .pain-icon{width:44px;height:44px;background:#FEF2F2;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#DC2626;flex-shrink:0;}
+        @media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; } }
+
+        /* SOLUTIONS */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* CASE STUDY */
+        .case-study{background:var(--grey-800);border-radius:var(--radius-xl);padding:3rem;color:white;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+        .case-metric{background:rgba(255,255,255,0.07);border-radius:12px;padding:1.25rem;}
+        .case-metric-num{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;color:var(--accent);}
+
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2.5rem;}
+        .pricing-card.featured{border-color:var(--accent); box-shadow: 0 15px 40px rgba(37,211,102,0.15);}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;margin:1.5rem 0;}
+        .pricing-cta{display:block;text-align:center;background:var(--accent-dark);color:white!important;padding:15px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; display: inline-block;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } }
+
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
+
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -28,288 +170,325 @@
 
       gtag("config", "G-HPRK4JYRR5");
     </script>
-    <style>
-        :root {
-            --accent: #25d366; --accent-dark: #128c7e; --accent-light: #e9fbf0;
-            --blue: #0d6efd; --blue-dark: #0a56c8; --white: #ffffff;
-            --grey-50: #f8f9fb; --grey-100: #f1f3f6; --grey-200: #e4e7ed;
-            --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
-
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
-        
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .workflow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
-        .workflow-card { background: white; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .workflow-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .workflow-card i { color: var(--accent); margin-bottom: 1.5rem; }
-
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .btn-white { background: white; color: var(--grey-800); padding: 1.2rem 3rem; border-radius: 12px; font-weight: 800; text-decoration: none; display: inline-block; }
-
-        @media (max-width: 768px) { .hero, .workflow-grid { grid-template-columns: 1fr; text-align: center; } }
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
-
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
-
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--accent); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px;">WhatsApp Joseph</a>
 </div>
-    
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">WhatsApp Hub</a> / 
-        Clinics & Hospitals
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/whatsapp-automation/index.html">WhatsApp Automation Kenya</a><span>›</span>
+      Clinics & Hospitals
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Healthcare Sector Solutions</span>
-            <h1>Clinic WhatsApp Automation: Reduce No-Shows by 60%</h1>
-            <p>Receptionists in Nairobi clinics spend 70% of their time on repetitive calls. Our AI-powered medical bots automate appointment booking, send multi-step reminders, and triage patient inquiries 24/7 — so your doctors can focus on care.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/whatsapp-automation.html" class="btn btn-accent">View Medical Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline" style="background: white; border: 1px solid var(--border); text-decoration: none; color: inherit;">Consult with Joseph</a>
-            </div>
-        </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
-                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;"><i data-lucide="stethoscope" size="20"></i></div>
-                    <strong>Practice Assistant</strong>
-                </div>
-                <div style="background: var(--grey-100); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 0.9rem;">
-                    "I need to book a dental checkup for tomorrow morning."
-                </div>
-                <div style="background: var(--accent-light); padding: 10px; border-radius: 8px; margin-left: 2rem; font-size: 0.9rem; color: var(--accent-dark);">
-                    "We have an opening at 10:00 AM. To confirm your slot, please pay the KES 1,000 consultation deposit via the M-Pesa prompt I'm sending now."
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">HEALTHCARE AUTOMATION</div>
+      <h1>Automate Appointments for Your<br><em>Kenyan Clinic or Hospital</em></h1>
+      <p class="hero-intro">Receptionists in Nairobi and Mombasa spend 70% of their time on repetitive calls. Our AI-powered medical bots automate booking, send reminders, and triage inquiries 24/7—so you can focus on patient care.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20WhatsApp%20automation%20for%20my%20clinic" target="_blank" class="btn-wa">
+          <i data-lucide="message-circle"></i> Setup My Medical Bot
+        </a>
+        <a href="/free-audit" class="btn-audit">Request Practice Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">-60%</span><div style="font-size:0.75rem; text-align:center;">No-Shows</div></div>
+        <div class="stat-item"><span class="stat-num">24/7</span><div style="font-size:0.75rem; text-align:center;">Triage</div></div>
+        <div class="stat-item"><span class="stat-num">+40%</span><div style="font-size:0.75rem; text-align:center;">Bookings</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="reveal">
-            <h2>Patient Workflows for High-Growth Practices</h2>
-            <p>We automate the administrative bottlenecks that cause revenue leakage in Kenyan healthcare.</p>
-        </div>
-        <div class="workflow-grid">
-            <div class="workflow-card reveal">
-                <i data-lucide="calendar-plus" size="32"></i>
-                <h3>24/7 Booking Engine</h3>
-                <p>Sync with your practice management software. Patients book slots directly in WhatsApp without a single phone call.</p>
-            </div>
-            <div class="workflow-card reveal">
-                <i data-lucide="alarm-clock" size="32"></i>
-                <h3>Automated Reminders</h3>
-                <p>Send multi-step reminders 24h and 2h before the appointment. Cut no-shows and keep your waiting room flowing.</p>
-            </div>
-            <div class="workflow-card reveal">
-                <i data-lucide="help-circle" size="32"></i>
-                <h3>Instant Patient Triage</h3>
-                <p>Answer FAQs about consultation fees, locations, and insurance partners. Escalate urgent cases to your medical team.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to modernize your medical practice?</h2>
-            <p>All industry referral strategies point to our core WhatsApp engine. Visit our official service page to view our KES pricing and medical integration technicals.</p>
-            <a href="../../services/whatsapp-automation.html" class="btn-white">View Official Service Page & Pricing</a>
-        </div>
-    </section>
-
-    <footer>
-        <p style="text-align: center; color: var(--grey-400); padding: 4rem;">© 2026 SmartBizSystems — Healthcare Automation Hub.</p>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+<!-- STRATEGY CONTENT -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Medical Practice Growth Intelligence</p>
+    <h2 class="section-title">Why Kenyan Healthcare Providers are Moving to WhatsApp First</h2>
+    <div class="rich-text">
+        <p>In the fast-paced urban centers of Kenya, patients no longer want to wait on hold to book a dental checkup or a consultation. Whether you are a specialist clinic in Upper Hill, a dental practice in Nyali, or a multi-wing hospital in Kisumu, your patients are already on WhatsApp. By providing an <strong>Automated Patient Concierge</strong>, you meet them where they are comfortable, resulting in higher trust and significantly lower administrative overhead.</p>
         
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+        <h3>Sealing the Revenue Leak: The No-Show Problem</h3>
+        <p>The biggest financial drain for private clinics in Kenya is the "No-Show." When a patient misses an appointment without notice, your facility loses the consultation fee and the doctor’s valuable time. Our <strong>Automated Multi-Step Reminders</strong> send personalized messages 24 hours and 2 hours before the appointment. If a patient can't make it, the bot offers an instant "Reschedule" button, immediately filling that empty slot with another waiting patient.</p>
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+        <h3>AI Triage: Answering FAQs Before They Hit the Reception</h3>
+        <p><em>"Do you accept NHIF?" "What are your consultation fees?" "Where are you located?"</em> These questions flood your reception desk every day. Our AI-powered bots are trained on your specific practice data. They answer these FAQs instantly, providing directions via Google Maps and list of accepted insurance partners. This frees your staff to handle complex patient needs and emergency escalations.</p>
+
+        <h3>M-Pesa Integration for Consultation Deposits</h3>
+        <p>One of the most effective ways to reduce "fake" bookings is to collect a commitment fee. We integrate the <strong>M-Pesa Daraja API</strong> directly into your WhatsApp flow. When a patient selects a slot, the bot triggers an STK push for the deposit. Once paid, the appointment is automatically confirmed in your system and the patient receives their digital receipt—zero manual work required.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Practice Bottlenecks</p>
+      <h2 class="section-title">The Administrative Challenges We Solve</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="phone-off"></i></div>
+            <div>
+                <h4>Missed After-Hours Inquiries</h4>
+                <p>Patients research healthcare at night. If they can't book at 10 PM, they'll message a competitor who has an automated system. We capture leads while you sleep.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="user-minus"></i></div>
+            <div>
+                <h4>High Appointment No-Shows</h4>
+                <p>Manual phone reminders are time-consuming and often ignored. WhatsApp reminders have a 98% open rate, ensuring patients actually show up.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="clipboard-list"></i></div>
+            <div>
+                <h4>Manual Data Entry Errors</h4>
+                <p>Translating phone notes to a digital calendar leads to double-bookings. Our bot syncs directly with your practice management software.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="alert-circle"></i></div>
+            <div>
+                <h4>Triage Overload</h4>
+                <p>Qualified medical staff shouldn't be answering "Where are you located?" 50 times a day. We automate 80% of routine inquiries.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">Medical System Architecture</p>
+      <h2 class="section-title">A 360-Degree Patient Management Engine</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>24/7 Booking Bot</h3>
+            <p>Syncs with your doctors' calendars. Patients view available slots and book instantly without human intervention.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>Multi-Step Reminders</h3>
+            <p>Automated sequences sent via the Official WhatsApp API to ensure high delivery rates and patient compliance.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>M-Pesa STK Push</h3>
+            <p>Integrated payment flow for consultation deposits, renewal fees, or lab result payments directly within the chat.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>Patient Triage AI</h3>
+            <p>Advanced natural language processing to understand patient symptoms and route urgent cases to the correct specialist.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>Post-Care Automation</h3>
+            <p>Automatically send prescriptions, follow-up instructions, and feedback surveys 24 hours after the visit.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Digital Records Sync</h3>
+            <p>Export chat data and patient preferences directly to your Hospital Management System (HMS) or CRM.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- CASE STUDY -->
+<section style="background:var(--white); padding:5rem 20px;">
+  <div class="section">
+    <div class="reveal">
+        <p class="section-label">Healthcare Results</p>
+        <h2 class="section-title" style="margin-bottom:2rem;">Case Study: Multi-Branch Dental Clinic</h2>
+        <div class="case-study">
+            <div>
+                <h3>Scaling Patient Care in Nairobi</h3>
+                <p>A dental practice with branches in Kilimani and Westlands was struggling with a 35% no-show rate and missed evening inquiries.</p>
+                <p>We implemented a full WhatsApp automation system: Booking bot, M-Pesa deposit trigger, and 2-step automated reminders.</p>
+                <p style="color:var(--accent); font-weight:600;">Impact achieved within 60 days:</p>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+                <div class="case-metric">
+                    <div class="case-metric-num">35%→8%</div>
+                    <div style="font-size:0.8rem; color:#94a3b8;">No-Show Reduction</div>
+                </div>
+                <div class="case-metric">
+                    <div class="case-metric-num">+112</div>
+                    <div style="font-size:0.8rem; color:#94a3b8;">Monthly Bookings</div>
+                </div>
+                <div class="case-metric">
+                    <div class="case-metric-num">40hrs</div>
+                    <div style="font-size:0.8rem; color:#94a3b8;">Staff Time Saved</div>
+                </div>
+                <div class="case-metric">
+                    <div class="case-metric-num">KES 0</div>
+                    <div style="font-size:0.8rem; color:#94a3b8;">Missed Enquiries</div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">Medical Packages</p>
+      <h2 class="section-title">Scalable Plans for Private Practices</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Single Specialist</h3>
+          <div class="pricing-price">KES 30,000</div>
+          <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 5k/mo mgmt</p>
+          <a href="https://wa.me/254734230445" class="pricing-cta">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Group Practice</h3>
+          <div class="pricing-price">KES 100,000</div>
+          <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 20k/mo mgmt</p>
+          <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--accent-dark);">Launch Growth Bot</a>
+        </div>
+        <div class="pricing-card">
+          <h3>Full Hospital</h3>
+          <div class="pricing-price">Custom</div>
+          <p style="font-size:0.85rem; margin-bottom:1.5rem;">HMS & API Integration</p>
+          <a href="https://wa.me/254734230445" class="pricing-cta">Talk to Specialist</a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Medical Automation FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Is this KMPDC Compliant? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. Our systems are designed to respect patient confidentiality and data privacy. We use official Meta APIs which provide end-to-end encryption for all communications between your practice and the patient.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can we accept NHIF info via the bot? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. The bot can collect insurance details, card numbers, and photos of ID cards, which are then securely pushed to your CRM or HMS for your staff to verify before the patient arrives.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Does the bot handle emergencies? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>We always configure a "Medical Emergency" keyword. If a patient types "Emergency" or "Urgent," the bot immediately provides your emergency phone number and can trigger an internal alert to your on-call medical team.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Modernize Your Medical Practice</h2>
+  <p>Don't let your waiting room be empty because of missed calls or no-shows. Let us build a professional WhatsApp concierge for your clinic. Most systems live within 7 days.</p>
+  <a href="https://wa.me/254734230445?text=Hi%20Joseph,%20I'd%20like%20a%20free%20audit%20for%20my%20medical%20practice" class="btn-white">Request Free Practice Audit →</a>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Kenya's #1 Medical Automation Partner.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Westlands, Nairobi · +254 734 230 445</p>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  // HAMBURGER & MOBILE MENU
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden";
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }
+  }
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
   });
 
-  // Closes menu if you click a link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target) && !navToggle.contains(e.target) && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // SCROLL REVEAL
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // FAQ
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
     });
   });
-
-    </script>
-
-
+</script>
 </body>
 </html>

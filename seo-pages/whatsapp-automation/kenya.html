@@ -3,19 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Automation Kenya | Official Meta API & M-Pesa | SmartBizSystems</title>
-    <meta name="description" content="Scale your Kenyan business with official WhatsApp automation. Bots for SACCOs, Real Estate, and Schools. Integrated with M-Pesa Daraja API.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/whatsapp-automation.html" />
+    <title>WhatsApp Automation Kenya | Official API & AI Sales Bots | SmartBizSystems</title>
+    <meta name="description" content="Scale your Kenyan business with the Official WhatsApp Business API. Automate sales, M-Pesa payments, and support for SMEs, Schools, and Clinics across Kenya.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/kenya.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "WhatsApp Automation Kenya",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Kenya"
+      },
+      "description": "Enterprise-grade WhatsApp automation for the Kenyan market. AI-driven chat funnels, M-Pesa Daraja API integration, and CRM synchronization for all sectors.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "National WhatsApp Automation Setup"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent:#25d366; --accent-dark:#128c7e; --accent-light:#e9fbf0;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); overflow-x: auto; white-space: nowrap;}
+        .breadcrumb a{color:var(--accent-dark);text-decoration:none;}
+
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent-dark);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:var(--accent);color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--accent-dark)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--accent-dark);}
+        
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--accent-light);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--accent);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent-dark);display:block; text-align: center;}
+        
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
+
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent-dark);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
+
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+        /* SOLUTIONS GRID */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* RELATED REGIONS & VERTICALS */
+        .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;text-align:center; transition: 0.3s;}
+        .related-card:hover{ border-color: var(--accent); }
+        .related-card i{color:var(--accent);margin-bottom:10px;}
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; display: inline-block;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } }
+
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
+
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center; color:var(--text-primary);}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -30,338 +162,308 @@
 
       gtag("config", "G-HPRK4JYRR5");
     </script>
-
-    <style>
-        :root {
-            --accent: #25d366; --accent-dark: #128c7e; --accent-light: #e9fbf0;
-            --blue: #0d6efd; --blue-dark: #0a56c8; --white: #ffffff;
-            --grey-50: #f8f9fb; --grey-100: #f1f3f6; --grey-200: #e4e7ed;
-            --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
-
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
-
-        /* Hero */
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
-        
-        .btn { padding: 1rem 2rem; border-radius: 10px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); }
-        .btn-outline { background: white; border: 1px solid var(--border); color: var(--text-primary); }
-
-        /* Content Sections */
-        .section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .feature-list { list-style: none; margin: 2rem 0; }
-        .feature-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; font-weight: 500; }
-        .feature-list i { color: var(--accent); }
-
-        /* Industry Specifics */
-        .industry-box { background: white; padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border); margin-top: 4rem; }
-        .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
-        .ind-card { text-align: center; }
-        .ind-card i { color: var(--accent); margin-bottom: 1rem; }
-
-        /* Final Push CTA */
-        .push-cta { background: var(--grey-800); color: white; padding: 5rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
-        .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-
-        @media (max-width: 768px) {
-            .hero, .grid-2, .industry-grid { grid-template-columns: 1fr; text-align: center; }
-            .nav-links { display: none; }
-        }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
-
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
-
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--accent); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px; text-decoration:none;">WhatsApp Joseph</a>
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">WhatsApp Hub</a> / 
-        Kenya
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      WhatsApp Automation Kenya
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Official Meta Business Partner</span>
-            <h1>WhatsApp Automation Kenya: The 24/7 Revenue Engine</h1>
-            <p>From Nairobi to Mombasa, Kenyan businesses are losing millions in sales due to slow responses. Our AI-powered bots qualify leads and collect M-Pesa payments instantly.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/whatsapp-automation.html" class="btn btn-accent">View Full Service & Pricing</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline">Free WhatsApp Audit</a>
-            </div>
-        </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
-                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%;"></div>
-                    <strong>Lead from Nairobi</strong>
-                </div>
-                <div style="background: var(--grey-100); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 0.9rem;">
-                    "Hi, do you have school bus services for your Kilimani branch?"
-                </div>
-                <div style="background: var(--accent-light); padding: 10px; border-radius: 8px; margin-left: 2rem; font-size: 0.9rem; color: var(--accent-dark);">
-                    "Yes! We cover Kilimani, Lavington, and Westlands. Would you like the fee structure?"
-                </div>
-                <p style="text-align: center; font-size: 0.7rem; color: var(--grey-400); margin-top: 1rem;">Reply time: 0.4 seconds</p>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">NATIONAL AUTOMATION HUB</div>
+      <h1>Official WhatsApp API & AI<br><em>Scaling Kenyan Businesses</em></h1>
+      <p class="hero-intro">Kenya is a WhatsApp-first economy. Stop losing 70% of your leads to slow manual replies. We build Official Meta API systems that automate sales, M-Pesa payments, and support 24/7 across Kenya.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20WhatsApp%20automation%20for%20my%20business%20in%20Kenya" target="_blank" class="btn-wa">
+          <i data-lucide="zap"></i> Build My Sales Bot
+        </a>
+        <a href="/free-audit" class="btn-audit">Free Business Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">95%</span><div style="font-size:0.75rem; text-align:center;">App Usage</div></div>
+        <div class="stat-item"><span class="stat-num">STK</span><div style="font-size:0.75rem; text-align:center;">M-Pesa Flow</div></div>
+        <div class="stat-item"><span class="stat-num">AI</span><div style="font-size:0.75rem; text-align:center;">24/7 Triage</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="grid-2">
-            <div class="reveal">
-                <h2>Why It Matters in the Kenyan Economy</h2>
-                <p>97% of Kenyan internet users are on WhatsApp. If your business isn't automating this channel, you are leaving the door open for your competitors to answer first.</p>
-                <ul class="feature-list">
-                    <li><i data-lucide="check-circle"></i> <strong>Zero Ban Risk:</strong> We build only on the official Meta API.</li>
-                    <li><i data-lucide="check-circle"></i> <strong>M-Pesa Daraja Sync:</strong> Automatic payment triggers.</li>
-                    <li><i data-lucide="check-circle"></i> <strong>24/7 Availability:</strong> Capture leads while you sleep.</li>
-                </ul>
-            </div>
-            <div class="reveal">
-                <div style="background: var(--grey-800); color: white; padding: 3rem; border-radius: var(--radius-xl);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--accent);">National Reach</h3>
-                    <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 2rem;">We support businesses across all major Kenyan hubs with full remote deployment and local support.</p>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Nairobi (Westlands)</div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Mombasa (Nyali)</div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Kisumu CBD</div>
-                        <div style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 6px; font-size: 0.8rem;">Thika / Kiambu</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="industry-box reveal">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Tailored for Local Industries</h2>
-            <div class="industry-grid">
-                <div class="ind-card">
-                    <i data-lucide="building-2" size="40"></i>
-                    <h3>Real Estate</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Automated floor plans & site visit booking.</p>
-                </div>
-                <div class="ind-card">
-                    <i data-lucide="graduation-cap" size="40"></i>
-                    <h3>Private Schools</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Admission inquiries & fee reminders.</p>
-                </div>
-                <div class="ind-card">
-                    <i data-lucide="landmark" size="40"></i>
-                    <h3>SACCOs</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Member balance & loan eligibility checks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to see the full system?</h2>
-            <p>Every localized solution is built on our core WhatsApp engine. Visit our official service page to view our KES pricing tiers and technical integration details.</p>
-            <a href="../../services/whatsapp-automation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Authority Service Page & Pricing</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-inner">
-            <a href="../../index.html" class="logo" style="color: white;">SmartBizSystems</a>
-            <p style="font-size: 0.85rem; color: var(--grey-400);">© 2026 SmartBizSystems — Nairobi, Kenya.</p>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-
+<!-- NATIONAL STRATEGY CONTENT (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Digital Transformation Kenya</p>
+    <h2 class="section-title">The "Silicon Savannah" Sales Engine: Why Manual Chat is Killing Your Growth</h2>
+    <div class="rich-text">
+        <p>Kenya has emerged as a global leader in mobile-first commerce. With over 95% of the adult internet population active on WhatsApp, the app has transcended being just a messaging tool—it is now the primary storefront for everything from multi-billion shilling real estate deals in Karen to retail shops in Kisumu. However, most Kenyan businesses still handle WhatsApp manually, relying on a single phone and a tired admin. This creates the "Response Gap"—the time between a customer asking a question and getting an answer. In Kenya's competitive market, a 10-minute delay is the difference between a sale and a lost customer. <strong>SmartBizSystems builds the automated infrastructure to bridge this gap.</strong></p>
         
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+        <h3>1. The M-Pesa Multiplier: Frictionless Payments</h3>
+        <p>Financial inclusion in Kenya is driven by M-Pesa. Any automation system that doesn't integrate the <strong>M-Pesa Daraja API</strong> is incomplete. We build bots that don't just "talk"—they sell. When a customer in Nakuru or Eldoret wants to book a medical consultation or pay a school deposit, our bot triggers an STK Push instantly. The customer enters their PIN, the payment is confirmed via the API, and the receipt is generated automatically within the chat. No manual checking of statements, no lost screenshots.</p>
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+        <h3>2. Solving the SACCO and Microfinance Challenge</h3>
+        <p>Kenyan <a href="saccos.html" style="color:var(--accent-dark); font-weight:700;">SACCOs</a> and financial institutions face massive support overhead. Members constantly inquire about loan balances, statement requests, and dividend payouts. We implement automated WhatsApp portals where members can authenticate their identity and pull real-time data from the SACCO’s core banking system. This reduces physical office traffic by 40% and ensures members get serviced instantly, even on weekends.</p>
+
+        <h3>3. Real Estate and Property Development Automation</h3>
+        <p>The <a href="real-estate.html" style="color:var(--accent-dark); font-weight:700;">real estate sector in Kenya</a> is high-ticket and high-intent. Investors from the diaspora and Nairobi want instant access to floor plans, title deed copies, and site visit schedules. Our WhatsApp funnels for developers in areas like Kilimani and Westlands provide a 24/7 property concierge. The bot qualifies the lead’s budget, shares high-res brochures, and books the site visit directly into your sales team’s CRM, ensuring zero lead leakage.</p>
+
+        <h3>4. Healthcare and Clinic Triage</h3>
+        <p>For <a href="clinics.html" style="color:var(--accent-dark); font-weight:700;">Kenyan Clinics and Hospitals</a>, WhatsApp automation is a life-saver. Patients can triage their symptoms, check doctor availability, and book appointments without talking to a receptionist. Our systems send automated reminders 2 hours before the appointment, reducing "No-Shows" by 60% and ensuring the waiting room flows efficiently.</p>
+
+        <h3>5. Educational Institutions and Schools</h3>
+        <p>From <a href="schools.html" style="color:var(--accent-dark); font-weight:700;">international schools in Karen</a> to local private academies, schools are overwhelmed with inquiries during intake seasons. Our educational bots handle the delivery of fee structures, application forms, and tour bookings. Parents get answers in seconds, and school admins only deal with serious applicants who have already been pre-qualified by the AI.</p>
+
+        <h3>6. The Manufacturing and B2B Industrial Sector</h3>
+        <p>In industrial hubs like <a href="thika.html" style="color:var(--accent-dark); font-weight:700;">Thika</a> and Nairobi's Industrial Area, B2B procurement is moving to WhatsApp. We build "Catalogue Bots" for manufacturers that allow wholesalers to view stock levels, request quotes, and track deliveries. By integrating with your ERP, the bot provides accurate data to your distributors, shortening the order cycle from days to minutes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">National Revenue Leaks</p>
+      <h2 class="section-title">Common Challenges for Kenyan Businesses</h2>
+      <div class="pain-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+        <div class="sol-card">
+            <h4 style="margin-bottom:0.5rem; color:var(--text-primary);">Manual DM Chaos</h4>
+            <p style="font-size:0.9rem;">Managing 500+ DMs on a single phone leads to lost leads and ignored customers. We scale your team with a centralized inbox.</p>
+        </div>
+        <div class="sol-card">
+            <h4 style="margin-bottom:0.5rem; color:var(--text-primary);">High Ad Drop-Off</h4>
+            <p style="font-size:0.9rem;">Running Facebook Ads that lead to a website where people bounce. Send them to WhatsApp for a 3x higher conversion rate.</p>
+        </div>
+        <div class="sol-card">
+            <h4 style="margin-bottom:0.5rem; color:var(--text-primary);">The Screenshot Trap</h4>
+            <p style="font-size:0.9rem;">Manually verifying M-Pesa screenshots is slow and prone to fraud. We automate the verification with the Daraja API.</p>
+        </div>
+        <div class="sol-card">
+            <h4 style="margin-bottom:0.5rem; color:var(--text-primary);">Grey-Market Bans</h4>
+            <p style="font-size:0.9rem;">Using unofficial "automation" apps that get your business number banned by Meta. We only use the <strong>Official API</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">The SmartBiz System</p>
+      <h2 class="section-title">A 360-Degree Growth Engine for Kenya</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>Official Meta API Approval</h3>
+            <p>We handle your Meta Business Verification and API approval, ensuring your number is safe, professional, and scalable.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>AI Triage & Qualification</h3>
+            <p>Bots that understand Kenyan context (Sheng/English/Swahili) to qualify leads and answer FAQs 24/7/365.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>M-Pesa Daraja Integration</h3>
+            <p>Seamless STK Push and automated reconciliation for deposits, school fees, and retail checkouts directly in the chat.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>CRM & ERP Synchronization</h3>
+            <p>Every WhatsApp lead is automatically pushed to HubSpot, Zoho, or your custom ERP for absolute data clarity.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>Automated Reminders</h3>
+            <p>Scheduled sequences for appointment reminders, insurance renewals, and abandoned cart recovery with 98% open rates.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Verified Green Tick Hub</h3>
+            <p>We help high-volume brands secure the Official Verified Green Tick from Meta, building instant trust with Kenyan consumers.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- INTERNAL LINKS - LOCATION PAGES -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:5rem 20px;">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Regional Hubs</p>
+        <h2 class="section-title" style="font-size:1.4rem;">Browse WhatsApp Automation by City</h2>
+        <div class="related-grid">
+            <a href="nairobi.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nairobi CBD</h4></a>
+            <a href="mombasa.html" class="related-card"><i data-lucide="map-pin"></i><h4>Mombasa</h4></a>
+            <a href="eldoret.html" class="related-card"><i data-lucide="map-pin"></i><h4>Eldoret</h4></a>
+            <a href="kisumu.html" class="related-card"><i data-lucide="map-pin"></i><h4>Kisumu</h4></a>
+            <a href="nakuru.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nakuru</h4></a>
+            <a href="thika.html" class="related-card"><i data-lucide="map-pin"></i><h4>Thika</h4></a>
+            <a href="karen.html" class="related-card"><i data-lucide="map-pin"></i><h4>Karen</h4></a>
+            <a href="kilimani.html" class="related-card"><i data-lucide="map-pin"></i><h4>Kilimani</h4></a>
+        </div>
+    </div>
+</section>
+
+<!-- INTERNAL LINKS - INDUSTRY PAGES -->
+<section class="section">
+    <div class="reveal">
+        <p class="section-label">Industry Specialization</p>
+        <h2 class="section-title" style="font-size:1.4rem;">WhatsApp Automation for Your Sector</h2>
+        <div class="related-grid">
+            <a href="clinics.html" class="related-card"><i data-lucide="stethoscope"></i><h4>Clinics & Hospitals</h4></a>
+            <a href="ecommerce.html" class="related-card"><i data-lucide="shopping-cart"></i><h4>Retail & E-commerce</h4></a>
+            <a href="insurance.html" class="related-card"><i data-lucide="shield"></i><h4>Insurance Firms</h4></a>
+            <a href="real-estate.html" class="related-card"><i data-lucide="home"></i><h4>Real Estate</h4></a>
+            <a href="schools.html" class="related-card"><i data-lucide="graduation-cap"></i><h4>Schools & Education</h4></a>
+            <a href="law-firms.html" class="related-card"><i data-lucide="scale"></i><h4>Legal Practices</h4></a>
+            <a href="saccos.html" class="related-card"><i data-lucide="users"></i><h4>SACCOs & MFIs</h4></a>
+            <a href="smes.html" class="related-card"><i data-lucide="zap"></i><h4>SMEs & Startups</h4></a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Kenya WhatsApp Automation — FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Will my business number get banned? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Not with SmartBizSystems. We use the <strong>Official Meta WhatsApp Business API</strong>. Unlike "grey-market" automation apps that simulate a phone, the API is approved by Meta for high-volume business use, ensuring your number stays safe and professional.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Does the M-Pesa integration support Paybills? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. We integrate with Paybill, Buy Goods, and Till numbers using the Daraja API. This allows for automated STK Push and instant reconciliation of payments directly within the bot flow.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does setup take in Kenya? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>For most Kenyan SMEs, we can have your official WhatsApp bot live with M-Pesa integration and CRM sync in 7 to 10 working days, including the Meta verification period.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>The Future of Business in Kenya is Conversational</h2>
+  <p>Don't let your business stay in the "manual" era. Let us build an automated sales and support engine that captures every high-intent lead in Kenya. Most audits delivered in 24 hours.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254734230445?text=Hi%20Joseph,%20I'd%20like%20a%20free%20WhatsApp%20automation%20audit%20for%20my%20Kenyan%20business" class="btn-white">Free National Audit →</a>
+  </div>
+  <p style="margin-top:2.5rem; font-size:0.85rem; opacity:0.8; color:white;">Official Meta Provider · M-Pesa integrated · 7-Day Launch</p>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Kenya's #1 WhatsApp Automation Partner.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Westlands, Nairobi · +254 734 230 445</p>
+</footer>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  /**
+   * GUARANTEED HAMBURGER & MOBILE MENU LOGIC
+   * Professional state handler for X-toggle
+   */
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }
+  }
+
+  // Toggle on click
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
   });
 
-  // Closes menu if you click a link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  // Close when link is clicked
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // SCROLL REVEAL logic
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // FAQ ACCORDION logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
     });
   });
-
-    </script>
-
-
+</script>
 </body>
 </html>

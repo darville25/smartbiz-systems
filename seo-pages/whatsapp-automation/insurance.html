@@ -3,17 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Automation for Insurance Kenya | Claims & Renewal Bots | SmartBizSystems</title>
-    <meta name="description" content="Scale your insurance agency with official WhatsApp automation. Automate policy renewals, claims intake, and quote requests. Built for Kenyan Insurance Brokers.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/whatsapp-automation.html" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>WhatsApp Automation for Insurance Kenya | AI Quotes & Claims | SmartBizSystems</title>
+    <meta name="description" content="Automate insurance quotes, claims, and renewals for your Kenyan insurance firm. Official WhatsApp Business API with M-Pesa integration. Scale your Upper Hill firm today.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/insurance.html" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -29,287 +21,483 @@
       gtag("config", "G-HPRK4JYRR5");
     </script>
 
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Insurance WhatsApp Automation Kenya",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "description": "Official WhatsApp API solutions for Kenyan insurance companies. Automate motor/health quotes, accident claim filing, and M-Pesa premium payments.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Insurance WhatsApp Bot Setup"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --accent: #25d366; --accent-dark: #128c7e; --accent-light: #e9fbf0;
-            --blue: #0d6efd; --blue-dark: #0a56c8; --white: #ffffff;
-            --grey-50: #f8f9fb; --grey-100: #f1f3f6; --grey-200: #e4e7ed;
-            --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
+            --accent:#25d366; --accent-dark:#128c7e; --accent-light:#e9fbf0;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); overflow-x: auto; white-space: nowrap;}
+        .breadcrumb a{color:var(--accent-dark);text-decoration:none;}
 
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent-dark);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:var(--accent);color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--accent-dark)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--accent-dark);}
         
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 12px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--accent-light);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--accent);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent-dark);display:block; text-align: center;}
         
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
 
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .workflow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
-        .workflow-card { background: white; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .workflow-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .workflow-card i { color: var(--accent); margin-bottom: 1.5rem; }
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent-dark);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
 
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .btn-white { background: white; color: var(--grey-800); padding: 1.2rem 3rem; border-radius: 12px; font-weight: 800; text-decoration: none; display: inline-block; }
+        /* RICH TEXT FOR WORD COUNT */
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
 
-        @media (max-width: 768px) { .hero, .workflow-grid { grid-template-columns: 1fr; text-align: center; } }
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:flex-start;gap:1.25rem;}
+        .pain-icon{width:44px;height:44px;background:#FEF2F2;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#DC2626;flex-shrink:0;}
+        @media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; } }
 
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
+        /* SOLUTIONS */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2.5rem;}
+        .pricing-card.featured{border-color:var(--accent); box-shadow: 0 15px 40px rgba(37,211,102,0.15);}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;margin:1.5rem 0;}
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:15px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
 
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
+        /* RELATED REGIONS */
+        .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;text-align:center; transition: 0.3s;}
+        .related-card:hover{ border-color: var(--accent); }
+        .related-card i{color:var(--accent);margin-bottom:10px;}
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
 
-.nav-logo em { font-style: normal; color: #2563EB; }
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .cta-btns{display:flex;flex-direction: column; gap:15px; align-items: center; justify-content: center;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; width: 100%; max-width: 300px;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } .cta-btns { flex-direction: row; } .btn-white { width: auto; } }
 
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
+        /* FOOTER */
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        footer a{color:#93c5fd;text-decoration:none;}
 
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
 
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
+        /* FAQ */
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center; color:var(--text-primary);}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--accent); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px; text-decoration:none;">WhatsApp Joseph</a>
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">WhatsApp Hub</a> / 
-        Insurance
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html">WhatsApp Automation</a><span>›</span>
+      Insurance
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Kenya Insurance Sector</span>
-            <h1>Insurance WhatsApp Automation: Protect Every Policy</h1>
-            <p>Don't lose clients to manual renewal oversight. Our AI-powered insurance bots handle policy renewal triggers, claims intake, and instant quote generation via WhatsApp — ensuring 24/7 engagement with your policyholders.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/whatsapp-automation.html" class="btn btn-accent">View Insurance Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline" style="background: white; border: 1px solid var(--border); text-decoration: none; color: inherit;">Consult with Joseph</a>
-            </div>
-        </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
-                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
-                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;"><i data-lucide="shield-check" size="20"></i></div>
-                    <strong>Claims & Renewals Bot</strong>
-                </div>
-                <div style="background: var(--grey-100); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 0.9rem;">
-                    "Hi, my motor insurance is expiring on Friday. How do I renew?"
-                </div>
-                <div style="background: var(--accent-light); padding: 10px; border-radius: 8px; margin-left: 2rem; font-size: 0.9rem; color: var(--accent-dark);">
-                    "Hi! Your renewal quote is KES 14,500. Would you like me to send an M-Pesa STK push to your number 07xx... to renew instantly?"
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">INSURTECH KENYA</div>
+      <h1>Automate Quotes & Claims for Your<br><em>Kenyan Insurance Company</em></h1>
+      <p class="hero-intro">Kenyan consumers want insurance that moves at the speed of WhatsApp. We build AI-powered insurance bots that handle instant motor quotes, accident claims, and M-Pesa premium collection 24/7.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20WhatsApp%20automation%20for%20my%20insurance%20firm" target="_blank" class="btn-wa">
+          <i data-lucide="zap"></i> Setup Insurance Bot
+        </a>
+        <a href="/free-audit" class="btn-audit">Request Sector Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">+35%</span><div style="font-size:0.75rem; text-align:center;">Renewals</div></div>
+        <div class="stat-item"><span class="stat-num">STK</span><div style="font-size:0.75rem; text-align:center;">M-Pesa Auto</div></div>
+        <div class="stat-item"><span class="stat-num">90%</span><div style="font-size:0.75rem; text-align:center;">Quote Speed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="reveal">
-            <h2>Workflows for the Modern Agency</h2>
-            <p>We automate the friction points in the Kenyan insurance life cycle.</p>
-        </div>
-        <div class="workflow-grid">
-            <div class="workflow-card reveal">
-                <i data-lucide="refresh-cw" size="32"></i>
-                <h3>Automated Renewals</h3>
-                <p>Bot automatically tracks expiry dates and sends renewal reminders via WhatsApp 30, 7, and 1 day before. No more lapsed policies.</p>
-            </div>
-            <div class="workflow-card reveal">
-                <i data-lucide="camera" size="32"></i>
-                <h3>Claims Intake Bot</h3>
-                <p>Let clients report accidents or losses instantly. Bot collects photos, locations, and descriptions, then logs the claim in your system.</p>
-            </div>
-            <div class="workflow-card reveal">
-                <i data-lucide="calculator" size="32"></i>
-                <h3>Instant Quotations</h3>
-                <p>Allow prospects to get motor, health, or life quotes in seconds by answering a few qualifying questions directly in chat.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to scale your insurance agency?</h2>
-            <p>All industry referral strategies point to our core WhatsApp engine. Visit our official service page to view our KES pricing and insurance integration technicals.</p>
-            <a href="../../services/whatsapp-automation.html" class="btn-white">View Official Service Page & Pricing</a>
-        </div>
-    </section>
-
-    <footer>
-        <p style="text-align: center; color: var(--grey-400); padding: 4rem;">© 2026 SmartBizSystems — Insurance Automation Hub.</p>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+<!-- DEEP DIVE CONTENT (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Insurance Sector Intelligence</p>
+    <h2 class="section-title">The Digital Transformation of Insurance: From Brokers to Bots</h2>
+    <div class="rich-text">
+        <p>The Kenyan insurance landscape is undergoing a massive shift. Traditionally centered in the high-rise towers of Upper Hill, the industry has relied on vast networks of human brokers and manual paperwork. However, the modern Kenyan consumer—whether they are looking for comprehensive motor cover, private health insurance, or life policies—prefers a frictionless digital experience. <strong>WhatsApp is now the primary gateway for insurance.</strong> With over 95% of Kenyan internet users active on the app, failing to automate your WhatsApp channel means losing millions in premiums to more agile "InsurTech" competitors.</p>
         
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+        <h3>1. Instant Quotes: Turning Browsers into Policyholders</h3>
+        <p>In insurance, the speed of the quote is directly linked to the conversion rate. If a prospect has to wait 4 hours for a broker to email a PDF, they have already messaged three other firms. Our <strong>Insurance WhatsApp Bots</strong> handle the heavy lifting. By asking a series of automated questions (Vehicle value, year of manufacture, previous claims), the bot can provide an instant comprehensive motor quote in under 30 seconds. This "Instant Gratification" model ensures you capture the lead while their intent is at its highest.</p>
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+        <h3>2. Frictionless Claims: Digital Evidence Collection</h3>
+        <p>Nothing frustrates a policyholder more than the claims process. In the event of a road accident, the client is already stressed. Our automated flows allow clients to file a "First Notice of Loss" (FNOL) directly on WhatsApp. They can upload photos of the vehicle damage, share their live GPS location, and upload a copy of their driver’s license—all within the chat. This data is automatically pushed into your claims management system, reducing the processing time by 50% and increasing customer loyalty.</p>
+
+        <h3>3. Renewal Automation: Sealing the Revenue Leak</h3>
+        <p>The biggest financial drain for insurance companies in Nairobi and Mombasa is "Renewal Lapse." Most firms lose 20-30% of their annual revenue simply because they didn't follow up effectively when a policy expired. Our system automates the <strong>Renewal Nurture Cycle</strong>. 30 days, 7 days, and 24 hours before a policy expires, the bot sends a personalized WhatsApp reminder with a direct "Renew Now" button. By making it easy to pay via M-Pesa in one click, we help firms see a massive jump in retention rates.</p>
+
+        <h3>4. M-Pesa Premium Collection (Daraja API)</h3>
+        <p>Collecting premiums manually is a logistical nightmare. We integrate the <strong>M-Pesa Daraja API</strong> directly into your insurance bot. When a client receives their quote or renewal notice, the bot triggers an STK Push on their phone. Once they enter their PIN, the payment is verified instantly, the digital insurance certificate is generated, and the order is updated in your CRM. This removes all human error from the payment reconciliation process.</p>
+
+        <h3>5. Policy Management & Support</h3>
+        <p><em>"Can I have a copy of my policy document?" "What is the status of my claim?" "Which hospitals are on my health panel?"</em> These queries dominate insurance customer support lines. Our AI-powered bots are trained on your specific policy wording and panel lists. They answer these FAQs instantly 24/7, providing hospital directions via Google Maps or PDF downloads of policy summaries, freeing your professional staff to handle complex underwriting and high-value corporate deals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Industry Bottlenecks</p>
+      <h2 class="section-title">Common Challenges We Solve for Kenyan Insurers</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="clock"></i></div>
+            <div>
+                <h4>Low Renewal Retention</h4>
+                <p>Most firms lose 30% of their books annually due to poor follow-up. Our automated WhatsApp drips keep your clients locked in before the expiry date.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="file-text"></i></div>
+            <div>
+                <h4>Manual Underwriting Delay</h4>
+                <p>Waiting for brokers to calculate premiums manually is a conversion killer. We automate the quote logic for standard motor and health covers.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="alert-triangle"></i></div>
+            <div>
+                <h4>Fraud & Payment Errors</h4>
+                <p>Manual payment verification is slow and prone to fraud. We use official M-Pesa STK Push for guaranteed, instant reconciliation.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="message-square"></i></div>
+            <div>
+                <h4>Support Overload</h4>
+                <p>Receptionists shouldn't be reading out panel hospital lists all day. Our bot handles 80% of support queries, reducing your overhead.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">The Insurance Stack</p>
+      <h2 class="section-title">A 360-Degree Acquisition & Support Engine</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>Instant Quote Bot</h3>
+            <p>Automated premium calculation for motor, health, and life insurance based on your underwriting rules.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>Digital Claims Filing</h3>
+            <p>Clients can upload accident photos and locations directly in WhatsApp for faster settlement.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>M-Pesa STK Push</h3>
+            <p>Instant premium collection and renewal payments directly within the chat interface.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>CRM/Core System Sync</h3>
+            <p>Every quote and payment is automatically pushed to your central insurance management software.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>Automated Renewals</h3>
+            <p>Scheduled sequences that nudge clients to renew their cover 30 days before expiry.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Panel & Policy Search</h3>
+            <p>Instant search for panel hospitals, mechanics, and policy benefit summaries via AI triage.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="reveal">
+        <p class="section-label">Scalable Investment</p>
+        <h2 class="section-title">Insurance Automation Packages</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Broker Starter</h3>
+            <div class="pricing-price">KES 30,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 5k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Launch Broker Bot</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Agency Growth</h3>
+            <div class="pricing-price">KES 100,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 20k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--blue);">Most Recommended</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Enterprise Underwriter</h3>
+            <div class="pricing-price">Custom</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Core Integration & Full Ecosystem</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Talk to Specialist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Insurance WhatsApp FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Is the WhatsApp API secure for insurance data? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. We use the <strong>Official Meta WhatsApp Business API</strong>, which provides end-to-end encryption. All client data and photos are transmitted securely between your firm and the policyholder.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can we automate complex corporate policies? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>While standard retail policies (Motor/Travel/Personal Health) are fully automated, for complex B2B policies, the bot handles the initial data collection and then seamlessly hands over the lead to your specialized commercial underwriter.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How does M-Pesa integration work? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>The bot triggers a Safaricom STK Push on the user's phone. Once the payment is confirmed via the Daraja API, the bot automatically sends the client their digital insurance cover note or payment receipt.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- RELATED REGIONS -->
+<section style="background:var(--white); padding:3rem 20px; border-top: 1px solid var(--border);">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Digital Connectivity</p>
+        <div class="related-grid">
+            <a href="nairobi.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nairobi Hub →</h4></a>
+            <a href="upper-hill.html" class="related-card"><i data-lucide="building-2"></i><h4>Upper Hill B2B →</h4></a>
+            <a href="clinics.html" class="related-card"><i data-lucide="stethoscope"></i><h4>Health Bot →</h4></a>
+            <a href="real-estate.html" class="related-card"><i data-lucide="home"></i><h4>Property Bot →</h4></a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Dominate the Kenyan Insurance Market</h2>
+  <p>Don't let your firm be left behind by the digital shift. Let us build an automated acquisition and retention engine that captures every high-intent insurance lead on WhatsApp. Most audits delivered in 24 hours.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254734230445?text=Hi%20Joseph,%20I'd%20like%20a%20free%20WhatsApp%20audit%20for%20my%20insurance%20firm" class="btn-white">Free Insurance Audit →</a>
+  </div>
+  <p style="margin-top:2.5rem; font-size:0.85rem; opacity:0.8; color:white;">M-Pesa integrated · 7-Day Launch · Official Meta API Provider</p>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Powering the Kenyan InsurTech Revolution.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Upper Hill, Nairobi · +254 734 230 445</p>
+</footer>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  /**
+   * GUARANTEED HAMBURGER & MOBILE MENU LOGIC
+   */
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto"; // Re-enable scroll
+    }
+  }
+
+  // Toggle on click
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
   });
 
-  // Closes menu if you click a link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  // Close when link is clicked
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // SCROLL REVEAL logic
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // FAQ ACCORDION logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      // Close all open answers
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+
+      // If it wasn't open, open it
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
     });
   });
-
-    </script>
-
-
+</script>
 </body>
 </html>

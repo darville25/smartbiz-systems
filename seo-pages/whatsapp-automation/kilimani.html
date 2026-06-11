@@ -1,13 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Development Kilimani | Professional Website Design Kilimani Kenya | SmartBizSystems</title>
-<meta name="description" content="Professional web development in Kilimani — fast, mobile-first websites with M-Pesa integration, WhatsApp CTAs, and built-in SEO. From KES 30,000. Live in 7 days. SmartBizSystems.">
-<meta name="keywords" content="web development Kilimani, website design Kilimani, web design Kilimani Nairobi, web development Kenya">
-<link rel="canonical" href="https://www.smartbizsystems.co.ke/seo-pages/web-development/kilimani/">
-<!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Automation Kilimani | AI Sales Bots for SMEs & Startups | SmartBizSystems</title>
+    <meta name="description" content="Dominate the Kilimani market with Official WhatsApp Automation. AI-powered sales bots for Kilimani tech startups, restaurants, and apartments. 24/7 M-Pesa integrated checkouts.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/kilimani.html" />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Kilimani WhatsApp Automation Systems",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "Neighborhood",
+        "name": "Kilimani"
+      },
+      "description": "High-conversion WhatsApp API solutions for Kilimani SMEs and tech hubs. Automated customer support, lead qualification, and M-Pesa payment integration.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Kilimani Startup WhatsApp Bot Setup"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent:#25d366; --accent-dark:#128c7e; --accent-light:#e9fbf0;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); overflow-x: auto; white-space: nowrap;}
+        .breadcrumb a{color:var(--accent-dark);text-decoration:none;}
+
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent-dark);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:var(--accent);color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--accent-dark)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--accent-dark);}
+        
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--accent-light);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--accent);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent-dark);display:block; text-align: center;}
+        
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
+
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent-dark);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
+
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:flex-start;gap:1.25rem;}
+        .pain-icon{width:44px;height:44px;background:#FEF2F2;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#DC2626;flex-shrink:0;}
+        @media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; } }
+
+        /* SOLUTIONS */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2.5rem;}
+        .pricing-card.featured{border-color:var(--accent); box-shadow: 0 15px 40px rgba(37,211,102,0.15);}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;margin:1.5rem 0;}
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:15px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* RELATED REGIONS */
+        .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;text-align:center; transition: 0.3s;}
+        .related-card:hover{ border-color: var(--accent); }
+        .related-card i{color:var(--accent);margin-bottom:10px;}
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; display: inline-block;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } }
+
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        footer a{color:#93c5fd;text-decoration:none;}
+
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
+
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center; color:var(--text-primary);}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
+    <!-- Google tag (gtag.js) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-HPRK4JYRR5"
@@ -21,713 +178,322 @@
 
       gtag("config", "G-HPRK4JYRR5");
     </script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Web Development Kilimani",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "SmartBizSystems",
-        "url": "https://www.smartbizsystems.co.ke",
-        "telephone": "+254734230445",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Westlands",
-          "addressRegion": "Nairobi",
-          "addressCountry": "KE"
-        }
-      },
-      "description": "Professional website design and development for Kilimani businesses — mobile-first, M-Pesa integrated, SEO-optimised, and built to convert visitors into customers.",
-      "areaServed": ["Kilimani", "Nairobi County", "Kenya"],
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "KES",
-        "price": "30000",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "30000",
-          "priceCurrency": "KES",
-          "description": "Startup website package starting from KES 30,000"
-        }
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.smartbizsystems.co.ke"},
-        {"@type": "ListItem", "position": 2, "name": "Web Development Kenya", "item": "https://www.smartbizsystems.co.ke/seo-pages/web-development/"},
-        {"@type": "ListItem", "position": 3, "name": "Web Development Kilimani", "item": "https://www.smartbizsystems.co.ke/seo-pages/web-development/kilimani/"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How much does a website cost in Kilimani Kenya?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Website packages for Kilimani businesses start from KES 30,000 for a 5-page startup site, KES 75,000 for a corporate site with CMS, and KES 150,000+ for ecommerce with M-Pesa and WooCommerce. All packages include mobile-first design, WhatsApp integration, and basic SEO setup."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to build a website in Kilimani?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Startup websites (5 pages) are delivered in 5–7 days. Corporate sites take 10–14 days. Ecommerce sites with M-Pesa integration take 3–4 weeks. Full remote delivery — no need to visit an office."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you integrate M-Pesa into websites for Kilimani businesses?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We integrate M-Pesa Daraja API into all ecommerce and service websites — payment confirmation, automated receipts, and order processing. This is built into our KES 150,000 ecommerce package and available as an add-on for other packages."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-:root{
-  --blue:#2563EB;--blue-hover:#1D4ED8;--blue-light:#EFF6FF;--blue-mid:#BFDBFE;
-  --navy:#0F172A;--body:#475569;--muted:#94A3B8;--border:#E2E8F0;
-  --bg:#F8FAFC;--card:#FFFFFF;--wa:#25D366;--wa-dark:#128C7E;
-  --radius:12px;--radius-sm:8px;
-  --shadow:0 1px 3px rgba(15,23,42,.08),0 1px 2px rgba(15,23,42,.04);
-  --shadow-md:0 4px 12px rgba(15,23,42,.10),0 2px 4px rgba(15,23,42,.06);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--navy);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-
-nav{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 24px}
-.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font-weight:800;font-size:18px;color:var(--navy);text-decoration:none;letter-spacing:-.02em}
-.logo span{color:var(--blue)}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:var(--body);text-decoration:none;transition:color .15s}
-.nav-links a:hover{color:var(--blue)}
-.nav-cta{background:var(--wa);color:#fff;padding:8px 18px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
-.nav-cta:hover{background:var(--wa-dark)}
-
-.bc{max-width:1120px;margin:0 auto;padding:14px 24px 0;display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
-.bc a{color:var(--muted);text-decoration:none}
-.bc a:hover{color:var(--blue)}
-
-.hero{max-width:1120px;margin:0 auto;padding:52px 24px 44px;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-light);color:var(--blue);font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;letter-spacing:.05em}
-h1{font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--navy);margin-bottom:18px}
-h1 .grad{background:linear-gradient(135deg,#2563EB,#1e40af);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:17px;color:var(--body);line-height:1.65;margin-bottom:28px;max-width:500px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
-.btn-wa{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:10px;text-decoration:none;transition:background .15s,transform .1s}
-.btn-wa:hover{background:var(--wa-dark);transform:translateY(-1px)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--blue);font-weight:600;font-size:15px;padding:12px 22px;border-radius:10px;border:1.5px solid var(--blue-mid);text-decoration:none;transition:background .15s}
-.btn-outline:hover{background:var(--blue-light)}
-.trust{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)}
-.trust-item{display:flex;align-items:center;gap:6px}
-.trust-item i{color:var(--wa);font-size:13px}
-
-/* WEBSITE MOCKUP */
-.site-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow-md);overflow:hidden}
-.browser-bar{background:#1e293b;padding:10px 14px;display:flex;align-items:center;gap:10px}
-.browser-dots{display:flex;gap:5px}
-.browser-dots span{width:10px;height:10px;border-radius:50%}
-.dot-r{background:#ef4444}
-.dot-y{background:#f59e0b}
-.dot-g{background:#22c55e}
-.url-bar{flex:1;background:rgba(255,255,255,.08);border-radius:5px;padding:5px 10px;font-size:11px;color:#94A3B8;font-family:'DM Sans',sans-serif}
-.site-hero-mock{background:linear-gradient(135deg,#0F172A 0%,#1e3a5f 100%);padding:22px 20px}
-.mock-badge{display:inline-block;background:rgba(37,99,235,.3);color:#93C5FD;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
-.mock-h1{font-size:16px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:8px}
-.mock-sub{font-size:11px;color:#94A3B8;margin-bottom:14px;line-height:1.5}
-.mock-btns{display:flex;gap:8px}
-.mock-btn{font-size:10px;font-weight:700;padding:6px 12px;border-radius:6px}
-.mock-btn.g{background:var(--wa);color:#fff}
-.mock-btn.o{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
-.site-body-mock{padding:14px 20px;display:flex;flex-direction:column;gap:10px}
-.mock-section-label{font-size:9px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em}
-.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-.mock-card{background:var(--bg);border-radius:6px;padding:10px 8px;border:1px solid var(--border)}
-.mock-card-icon{width:22px;height:22px;background:var(--blue-light);border-radius:5px;margin-bottom:6px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--blue)}
-.mock-card-title{font-size:9px;font-weight:700;color:var(--navy);margin-bottom:3px}
-.mock-card-bar{height:4px;background:var(--border);border-radius:2px;margin-bottom:2px}
-.mock-card-bar.short{width:60%}
-.mock-card-bar.med{width:80%}
-.mock-cta-strip{background:var(--blue);border-radius:7px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between}
-.mock-cta-text{font-size:9px;font-weight:700;color:#fff}
-.mock-cta-btn{font-size:9px;font-weight:700;background:#fff;color:var(--blue);padding:4px 10px;border-radius:4px}
-.mock-footer{background:#f1f5f9;padding:8px 12px;display:flex;justify-content:space-between;align-items:center}
-.mock-footer-brand{font-size:9px;font-weight:800;color:var(--navy)}
-.mock-footer-links{display:flex;gap:8px}
-.mock-footer-links span{font-size:8px;color:var(--muted)}
-
-.stats{background:var(--navy);padding:28px 24px}
-.stats-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{text-align:center;padding:10px 16px;border-right:1px solid rgba(255,255,255,.08)}
-.stat:last-child{border-right:none}
-.snum{font-size:34px;font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1;margin-bottom:5px}
-.snum span{color:var(--wa)}
-.slabel{font-size:12px;color:#94A3B8}
-
-.sec{padding:64px 24px}
-.sec-inner{max-width:1120px;margin:0 auto}
-.sec-label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-.sec-title{font-size:clamp(24px,3.5vw,36px);font-weight:800;letter-spacing:-.025em;color:var(--navy);margin-bottom:14px;line-height:1.15}
-.sec-sub{font-size:16px;color:var(--body);max-width:580px;line-height:1.7;margin-bottom:40px}
-
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.pkg{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:18px}
-.pkg.feat{border:2px solid var(--blue);box-shadow:0 8px 24px rgba(37,99,235,.15);position:relative}
-.feat-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
-.pname{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.pamount{display:flex;align-items:baseline;gap:3px}
-.pcur{font-size:15px;font-weight:700;color:var(--navy);margin-top:3px}
-.pnum{font-size:36px;font-weight:800;letter-spacing:-.04em;color:var(--navy);line-height:1}
-.pper{font-size:13px;color:var(--muted)}
-.pfeats{list-style:none;display:flex;flex-direction:column;gap:9px}
-.pfeats li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--body)}
-.pfeats li i{color:var(--wa);font-size:13px;margin-top:3px;flex-shrink:0}
-.pcta{display:block;text-align:center;padding:11px;border-radius:var(--radius-sm);font-weight:700;font-size:14px;text-decoration:none;transition:all .15s;margin-top:auto}
-.pcta.pri{background:var(--blue);color:#fff}
-.pcta.pri:hover{background:var(--blue-hover)}
-.pcta.sec{background:var(--bg);color:var(--navy);border:1px solid var(--border)}
-.pcta.sec:hover{background:var(--blue-light);border-color:var(--blue);color:var(--blue)}
-
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-.feat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:border-color .2s,box-shadow .2s}
-.feat-card:hover{border-color:var(--blue-mid);box-shadow:var(--shadow-md)}
-.ficon{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:13px;background:var(--blue-light);color:var(--blue)}
-.ficon.g{background:#ECFDF5;color:#059669}
-.ficon.o{background:#FFF7ED;color:#C2410C}
-.ficon.p{background:#F5F3FF;color:#7C3AED}
-.feat-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:7px}
-.feat-card p{font-size:14px;color:var(--body);line-height:1.6}
-
-.-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden;max-width:640px}
-.-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--wa))}
-.rstat{font-size:48px;font-weight:800;letter-spacing:-.04em;background:linear-gradient(135deg,var(--blue),#1e40af);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px}
-.-card h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
-.-card p{font-size:15px;color:var(--body);line-height:1.65}
-.rtag{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:12px;text-transform:uppercase;letter-spacing:.04em}
-
-.hub-link{background:var(--blue-light);border:1px solid var(--blue-mid);border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;text-decoration:none;gap:16px;transition:background .15s;margin-top:40px}
-.hub-link:hover{background:#DBEAFE}
-.hub-link .hl-text h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
-.hub-link .hl-text p{font-size:13px;color:var(--body)}
-.hub-link i{color:var(--blue);font-size:20px;flex-shrink:0}
-
-.faq-list{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--card)}
-details{border-bottom:1px solid var(--border)}
-details:last-child{border-bottom:none}
-summary{font-size:15px;font-weight:600;color:var(--navy);padding:20px 24px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .15s}
-summary:hover{background:var(--bg)}
-summary::after{content:'+';font-size:22px;font-weight:300;color:var(--muted);flex-shrink:0}
-details[open] summary::after{content:'−'}
-details p{padding:0 24px 20px;font-size:15px;color:var(--body);line-height:1.7}
-
-.cta-sec{background:linear-gradient(135deg,#0F172A,#1e293b);padding:64px 24px;text-align:center}
-.cta-inner{max-width:660px;margin:0 auto}
-.cta-sec h2{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.025em;color:#fff;margin-bottom:14px;line-height:1.15}
-.cta-sec p{font-size:16px;color:#94A3B8;margin-bottom:32px;line-height:1.6}
-.cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:20px}
-.btn-wa-lg{display:inline-flex;align-items:center;gap:9px;background:var(--wa);color:#fff;font-weight:700;font-size:16px;padding:14px 28px;border-radius:10px;text-decoration:none;transition:background .15s}
-.btn-wa-lg:hover{background:var(--wa-dark)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;border:1px solid rgba(255,255,255,.2);text-decoration:none;transition:background .15s}
-.btn-ghost:hover{background:rgba(255,255,255,.08)}
-.cta-note{font-size:13px;color:#64748B}
-.cta-note i{color:var(--wa);margin-right:3px}
-
-footer{background:#0B0F19;padding:36px 24px;border-top:1px solid rgba(255,255,255,.06)}
-.foot-inner{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
-.foot-brand{font-weight:800;font-size:16px;color:#fff}
-.foot-brand span{color:var(--blue)}
-.foot-links{display:flex;flex-wrap:wrap;gap:18px;list-style:none}
-.foot-links a{font-size:13px;color:#64748B;text-decoration:none}
-.foot-links a:hover{color:#fff}
-.foot-copy{font-size:12px;color:#475569;width:100%;text-align:center;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.06)}
-
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;gap:32px}
-  .stats-inner{grid-template-columns:repeat(2,1fr)}
-  .stat:nth-child(2){border-right:none}
-  .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid rgba(255,255,255,.08)}
-  .pkg-grid{grid-template-columns:1fr}
-}
-@media(max-width:600px){
-  .nav-links{display:none}
-  .hero{padding:36px 20px 28px}
-  .hero-actions,.cta-btns{flex-direction:column;align-items:stretch}
-  .btn-wa,.btn-outline,.btn-wa-lg,.btn-ghost{justify-content:center;text-align:center}
-}/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
-
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
-
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--accent); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px; text-decoration:none;">WhatsApp Joseph</a>
 </div>
 
-
-<div class="bc">
-  <a href="https://www.smartbizsystems.co.ke">Home</a>
-  <span>›</span>
-  <a href="../index.html">Web Development Kenya</a>
-  <span>›</span>
-  <span style="color:var(--navy);font-weight:500">Web Development Kilimani</span>
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html">WhatsApp Automation</a><span>›</span>
+      Kilimani
+    </div>
 </div>
 
-<section>
-  <div class="hero">
-    <div>
-      <div class="badge"><i class="fas fa-map-marker-alt"></i> Kilimani · Nairobi's Premium Commercial Suburb</div>
-      <h1>Web Development<br><span class="grad">for Kilimani Businesses</span></h1>
-      <p class="hero-sub">Kilimani's high-value market expects premium digital presence. Real estate agencies, specialist clinics, law firms, and professional services competing for Kilimani clients need websites that reflect the quality they deliver — not generic templates.</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20need%20a%20website%20for%20my%20Kilimani%20business" class="btn-wa">
-          <i class="fab fa-whatsapp"></i> Get a Free Quote
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">SME & TECH HUB | KILIMANI</div>
+      <h1>Automate Your Kilimani Business Sales with<br><em>Official WhatsApp AI Bots</em></h1>
+      <p class="hero-intro">Kilimani is Nairobi's dynamic heart for tech and SMEs. We build AI-powered acquisition engines that capture high-intent urban leads and automate M-Pesa checkouts 24/7. Speed is the only currency in Kilimani.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20WhatsApp%20automation%20for%20my%20Kilimani%20SME" target="_blank" class="btn-wa">
+          <i data-lucide="zap"></i> Setup My Kilimani Bot
         </a>
-        <a href="https://www.smartbizsystems.co.ke/services.html" class="btn-outline">
-          <i class="fas fa-arrow-right"></i> See Full Service
-        </a>
-      </div>
-      <div class="trust">
-        <div class="trust-item"><i class="fas fa-check-circle"></i><span>Mobile-first design</span></div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i><span>M-Pesa integrated</span></div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i><span>SEO built-in</span></div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i><span>From KES 30,000</span></div>
-        <div class="trust-item"><i class="fas fa-check-circle"></i><span>Live in 7 days</span></div>
+        <a href="/free-audit" class="btn-audit">Request SME Audit →</a>
       </div>
     </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">+55%</span><div style="font-size:0.75rem; text-align:center;">Response Speed</div></div>
+        <div class="stat-item"><span class="stat-num">STK</span><div style="font-size:0.75rem; text-align:center;">M-Pesa Flow</div></div>
+        <div class="stat-item"><span class="stat-num">AI</span><div style="font-size:0.75rem; text-align:center;">24/7 Sales</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- WEBSITE MOCKUP -->
-    <div class="site-card">
-      <div class="browser-bar">
-        <div class="browser-dots">
-          <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+<!-- STRATEGY CONTENT (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">Neighborhood Growth Intelligence</p>
+    <h2 class="section-title">Dominating the Kilimani Market: Why Startups are Moving to WhatsApp-First</h2>
+    <div class="rich-text">
+        <p>Kilimani has emerged as Nairobi's primary hub for Small and Medium Enterprises (SMEs), innovative tech startups, and cosmopolitan urban lifestyle brands. With a landscape dominated by the bustling Dennis Pritt Road, the corporate energy of Lenana Road, and the high-rise commercial blocks along Argwings Kodhek, Kilimani operates at a velocity unlike any other part of the city. For a Kilimani-based business, the greatest threat to revenue isn't just competition—it's the <strong>Response Gap</strong>. If a potential client messages you from a nearby co-working space and doesn't receive a reply within 2 minutes, they have already reached out to your competitor in Westlands. <strong>SmartBizSystems builds the automated acquisition engines that bridge this gap permanently.</strong></p>
+        
+        <h3>1. The Startup Accelerator: Automating Tech Support and Sales</h3>
+        <p>Kilimani is the nerve center of the "Silicon Savannah." Tech startups in this neighborhood are scaling rapidly, but their human teams are often overwhelmed by inquiry volume. We build <strong>SaaS-Native WhatsApp Bots</strong> that handle everything from user onboarding to technical support triage. Imagine a user inquiring about your app's subscription plan at 11:00 PM on a Sunday. Instead of waiting for Monday morning, our bot provides the pricing tiers, shares the demo video, and triggers an M-Pesa STK Push for the upgrade—all while your team sleeps. This is how Kilimani startups maintain a 24/7 global presence with a lean local team.</p>
+
+        <h3>2. Upscale Real Estate: High-Rise Inquiry Management</h3>
+        <p>The skyline of Kilimani is defined by luxury apartments and serviced suites. Property developers and agencies in this area are constantly bombarded with inquiries about floor plans, pricing, and site visits. We implement <a href="real-estate.html" style="color:var(--accent-dark); font-weight:700;">Real Estate WhatsApp Funnels</a> that act as a digital concierge. The bot can instantly share high-res brochures, verify the lead’s budget, and schedule a site visit directly into your sales team’s calendar. In a neighborhood where property deals happen fast, being the most responsive agent in the market is the ultimate competitive advantage.</p>
+
+        <h3>3. Hospitality & Lifestyle: Automating Direct Bookings</h3>
+        <p>From the trendy cafes near Yaya Centre to the boutique hotels in Hurlingham, the hospitality sector in Kilimani is thriving. However, many are losing 15-20% of their revenue to third-party booking platforms. Our <strong>Hospitality WhatsApp Bots</strong> enable direct bookings. Customers can check table availability, view menus, or book a room directly through the chat. By integrating M-Pesa STK Push for deposits, we ensure confirmed reservations and eliminate "No-Shows," all while building a direct database of Kilimani urbanites for future marketing broadcasts.</p>
+
+        <h3>4. Healthcare & Wellness: Triage for Kilimani Clinics</h3>
+        <p>With dozens of specialist clinics and wellness centers along Lenana Road, the demand for medical appointments is high. We build <a href="clinics.html" style="color:var(--accent-dark); font-weight:700;">Medical Triage Bots</a> that allow patients to book consultations, check specialist availability, and receive automated reminders. This ensures a zero-leakage pipeline and allows Kilimani doctors to focus on patient care rather than managing a ringing telephone.</p>
+
+        <h3>5. The M-Pesa Multiplier for Kilimani Retail</h3>
+        <p>For boutique retailers and e-commerce brands in Kilimani, payment friction is the biggest conversion killer. We integrate the <strong>M-Pesa Daraja API</strong> directly into your WhatsApp flow. Whether it's a delivery fee or a full product payment, the customer receives an automated STK Push on their phone. Once they enter their PIN, the bot instantly updates your CRM and triggers the dispatch notice. This eliminates the "send me the screenshot" era and ensures your cash flow is as fast as your sales bot.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">Conversion Killers</p>
+      <h2 class="section-title">Why Manual Sales are Failing Kilimani Firms</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="zap-off"></i></div>
+            <div>
+                <h4>The 10-Minute Response Drop</h4>
+                <p>Kilimani urbanites have no patience for "Polesana for the delay." A 10-minute wait results in a 40% drop in lead intent. Our AI replies in < 2 seconds.</p>
+            </div>
         </div>
-        <div class="url-bar">www.yourkilimanibusiness.co.ke</div>
-      </div>
-      <div class="site-hero-mock">
-        <div class="mock-badge">Built for Kilimani</div>
-        <div class="mock-h1">Your Business Name<br>— Kilimani's Best</div>
-        <div class="mock-sub">Professional services for Argwings Kodhek, Ngong Road & Valley Road. Get in touch today.</div>
-        <div class="mock-btns">
-          <div class="mock-btn g"><i class="fab fa-whatsapp"></i> WhatsApp Us</div>
-          <div class="mock-btn o">Our Services →</div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="user-x"></i></div>
+            <div>
+                <h4>Unqualified Lead Exhaustion</h4>
+                <p>SMEs waste hours on "browsers" who lack the budget for Kilimani premium services. We build smart gates that filter leads before they hit your desk.</p>
+            </div>
         </div>
-      </div>
-      <div class="site-body-mock">
-        <div class="mock-section-label">Our Services</div>
-        <div class="mock-cards">
-          <div class="mock-card">
-            <div class="mock-card-icon"><i class="fas fa-star"></i></div>
-            <div class="mock-card-title">Service One</div>
-            <div class="mock-card-bar"></div>
-            <div class="mock-card-bar short"></div>
-          </div>
-          <div class="mock-card">
-            <div class="mock-card-icon"><i class="fas fa-bolt"></i></div>
-            <div class="mock-card-title">Service Two</div>
-            <div class="mock-card-bar med"></div>
-            <div class="mock-card-bar short"></div>
-          </div>
-          <div class="mock-card">
-            <div class="mock-card-icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="mock-card-title">Service Three</div>
-            <div class="mock-card-bar"></div>
-            <div class="mock-card-bar short"></div>
-          </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="database"></i></div>
+            <div>
+                <h4>Manual Reconciliation Hell</h4>
+                <p>Matching manual M-Pesa messages to WhatsApp orders is the #1 productivity killer for Kilimani retailers. We automate the entire payment reconciliation.</p>
+            </div>
         </div>
-        <div class="mock-cta-strip">
-          <div class="mock-cta-text">Ready to get started? Talk to us today</div>
-          <div class="mock-cta-btn">WhatsApp →</div>
-        </div>
-      </div>
-      <div class="mock-footer">
-        <div class="mock-footer-brand">YourBusiness.co.ke</div>
-        <div class="mock-footer-links">
-          <span>Home</span><span>Services</span><span>Contact</span>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="alert-triangle"></i></div>
+            <div>
+                <h4>The "Unofficial" Bot Ban Risk</h4>
+                <p>Many Kilimani firms use "grey-market" apps that get their business number banned. We only use the <strong>Official Meta API</strong> for total safety and scale.</p>
+            </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat"><div class="snum">KES 30K</div><div class="slabel">Startup website from</div></div>
-    <div class="stat"><div class="snum">CMS</div><div class="slabel">Edit content yourself</div></div>
-    <div class="stat"><div class="snum">34<span>+</span></div><div class="slabel">Kenyan brands scaled</div></div>
-    <div class="stat"><div class="snum">100<span>%</span></div><div class="slabel">You own everything</div></div>
-  </div>
-</div>
-
-<!-- WHAT'S INCLUDED -->
-<section class="sec" style="background:var(--card);border-bottom:1px solid var(--border)">
-  <div class="sec-inner">
-    <div class="sec-label">What Every Website Includes</div>
-    <h2 class="sec-title">Built for Kilimani. Built to Convert.</h2>
-    <p class="sec-sub">Every website we build for Kilimani businesses is mobile-first, SEO-ready, and wired to turn visitors into WhatsApp enquiries and M-Pesa payments.</p>
-    <div class="features-grid">
-      <div class="feat-card">
-        <div class="ficon"><i class="fas fa-mobile-alt"></i></div>
-        <h3>Mobile-First Design</h3>
-        <p>Over 80% of Kenyan web traffic is mobile. Every site we build is designed for mobile first — then scaled up to desktop.</p>
-      </div>
-      <div class="feat-card">
-        <div class="ficon g"><i class="fab fa-whatsapp"></i></div>
-        <h3>WhatsApp CTA Integration</h3>
-        <p>Every page drives visitors to WhatsApp — the #1 conversion channel for Kenyan businesses. Pre-filled messages included.</p>
-      </div>
-      <div class="feat-card">
-        <div class="ficon o"><i class="fas fa-mobile-alt"></i></div>
-        <h3>M-Pesa Payment Integration</h3>
-        <p>Accept M-Pesa payments directly on your website via the official Daraja API — with automatic confirmation and receipts.</p>
-      </div>
-      <div class="feat-card">
-        <div class="ficon p"><i class="fas fa-search"></i></div>
-        <h3>SEO Built-In from Day One</h3>
-        <p>Every site ships with technical SEO, schema markup, and keyword-optimised copy targeting your Kilimani customers.</p>
-      </div>
-      <div class="feat-card">
-        <div class="ficon"><i class="fas fa-tachometer-alt"></i></div>
-        <h3>Fast Loading Speed</h3>
-        <p>Slow websites lose visitors in 3 seconds. We optimise every site for speed — especially on mobile data connections.</p>
-      </div>
-      <div class="feat-card">
-        <div class="ficon g"><i class="fas fa-edit"></i></div>
-        <h3>CMS — Edit It Yourself</h3>
-        <p>Corporate package includes a content management system so you can update text, images, and pages without a developer.</p>
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">The SmartBiz Method</p>
+      <h2 class="section-title">A 360-Degree Growth Engine for Kilimani</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>Official Meta API Verification</h3>
+            <p>We handle your brand's verification, securing the "Green Tick" and ensuring your number is trusted by Kilimani's elite client base.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>AI Triage & Qualification</h3>
+            <p>Bots trained on your Kilimani-specific business data. They handle objections, deliver brochures, and qualify intent 24/7/365.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>M-Pesa STK Integration</h3>
+            <p>Seamless checkout for retail, school fees, or medical deposits. Instant confirmation and automated digital receipts directly in-chat.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>Multi-Channel CRM Sync</h3>
+            <p>Every WhatsApp lead from your Kilimani operations is pushed to HubSpot, Zoho, or Salesforce for absolute data clarity.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>Automated Reminders</h3>
+            <p>Scheduled sequences for appointment reminders, site visits, or cart recovery with 98% open rates compared to ignored emails.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Verified Marketing Hub</h3>
+            <p>Send personalized offers to your Kilimani database without the risk of spam blocks. Scale your reach without losing the personal touch.</p>
+        </div>
       </div>
     </div>
-
-    <a href="https://www.smartbizsystems.co.ke/services.html" class="hub-link">
-      <div class="hl-text">
-        <h3>See Our Full Web Development Service Page</h3>
-        <p>Complete service breakdown, portfolio examples, process timeline, and everything included in each package.</p>
-      </div>
-      <i class="fas fa-arrow-right"></i>
-    </a>
-  </div>
 </section>
 
 <!-- PRICING -->
-<section class="sec">
-  <div class="sec-inner">
-    <div class="sec-label">Transparent Pricing</div>
-    <h2 class="sec-title">Website Packages for Kilimani Businesses</h2>
-    <p class="sec-sub">M-Pesa accepted. You own everything. Zero lock-in. No monthly fees on one-time packages.</p>
-    <div class="pkg-grid">
-      <div class="pkg">
-        <div>
-          <div class="pname">Startup</div>
-          <div class="pamount"><span class="pcur">KES</span><span class="pnum">30,000</span></div>
-          <div class="pper">one-time · 5 pages</div>
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="reveal">
+        <p class="section-label">Scalable Investment</p>
+        <h2 class="section-title">Automation Packages for Kilimani Brands</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Startup</h3>
+            <div class="pricing-price">KES 30,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 5k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Launch Local Bot</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3>SME Growth</h3>
+            <div class="pricing-price">KES 100,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 20k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--blue);">Most Recommended</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <div class="pricing-price">Custom</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Multi-branch & API Systems</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Talk to Specialist</a>
+          </div>
         </div>
-        <ul class="pfeats">
-          <li><i class="fas fa-check"></i>5-page professional website</li>
-          <li><i class="fas fa-check"></i>Mobile-first responsive design</li>
-          <li><i class="fas fa-check"></i>WhatsApp CTA integration</li>
-          <li><i class="fas fa-check"></i>Basic on-page SEO</li>
-          <li><i class="fas fa-check"></i>Contact form setup</li>
-          <li><i class="fas fa-check"></i>Google Maps integration</li>
-          <li><i class="fas fa-check"></i>Delivered in 5–7 days</li>
-        </ul>
-        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%27m%20in%20Kilimani%20and%20want%20the%20Startup%20website%20package" class="pcta sec">Get Started</a>
-      </div>
-      <div class="pkg feat">
-        <div class="feat-badge">Most Popular</div>
-        <div>
-          <div class="pname">Corporate</div>
-          <div class="pamount"><span class="pcur">KES</span><span class="pnum">75,000</span></div>
-          <div class="pper">one-time · 7 pages + CMS</div>
-        </div>
-        <ul class="pfeats">
-          <li><i class="fas fa-check"></i>7-page corporate website</li>
-          <li><i class="fas fa-check"></i>Full CMS — edit yourself</li>
-          <li><i class="fas fa-check"></i>WhatsApp + lead form integration</li>
-          <li><i class="fas fa-check"></i>Full SEO + schema markup</li>
-          <li><i class="fas fa-check"></i>Blog / news section</li>
-          <li><i class="fas fa-check"></i>Google Analytics setup</li>
-          <li><i class="fas fa-check"></i>Delivered in 10–14 days</li>
-        </ul>
-        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%27m%20in%20Kilimani%20and%20want%20the%20Corporate%20website%20package" class="pcta pri">Get Started</a>
-      </div>
-      <div class="pkg">
-        <div>
-          <div class="pname">E-Commerce</div>
-          <div class="pamount"><span class="pcur">KES</span><span class="pnum">150K<span style="font-size:18px">+</span></span></div>
-          <div class="pper">one-time · M-Pesa + WooCommerce</div>
-        </div>
-        <ul class="pfeats">
-          <li><i class="fas fa-check"></i>Full ecommerce store</li>
-          <li><i class="fas fa-check"></i>M-Pesa Daraja integration</li>
-          <li><i class="fas fa-check"></i>WooCommerce product management</li>
-          <li><i class="fas fa-check"></i>Order automation + confirmations</li>
-          <li><i class="fas fa-check"></i>WhatsApp order notifications</li>
-          <li><i class="fas fa-check"></i>Full SEO + product schema</li>
-          <li><i class="fas fa-check"></i>Delivered in 3–4 weeks</li>
-        </ul>
-        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%27m%20in%20Kilimani%20and%20want%20an%20ecommerce%20website%20with%20M-Pesa" class="pcta sec">Request Quote</a>
       </div>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:18px">
-      <i class="fas fa-info-circle"></i>&nbsp;
-      Bundle Website + SEO + WhatsApp Automation and save 20% on the total.
-      <a href="https://www.smartbizsystems.co.ke/pricing.html" style="color:var(--blue)">See all pricing →</a>
-    </p>
-  </div>
-</section>
-
-<!--  -->
-<section class="sec" style="background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-  <div class="sec-inner">
-    <div class="sec-label">Proven s</div>
-    <h2 class="sec-title">What Kilimani Businesses Achieve</h2>
-    <p class="sec-sub">Real outcomes from real Kenyan businesses after launching with SmartBizSystems.</p>
-    <div class="-card">
-      <div class="rstat">3×</div>
-      <h3>Law Firm, Kilimani</h3>
-      <p>Client enquiry volume tripled in 4 months after a new corporate website with contact forms, WhatsApp integration, and local SEO.</p>
-      <span class="rtag">Professional Services Website</span>
-    </div>
-    <a href="https://www.smartbizsystems.co.ke/s.html" style="display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:14px;font-weight:600;color:var(--blue);text-decoration:none">
-      View all case studies <i class="fas fa-arrow-right"></i>
-    </a>
-  </div>
 </section>
 
 <!-- FAQ -->
-<section class="sec">
-  <div class="sec-inner">
-    <div class="sec-label">Common Questions</div>
-    <h2 class="sec-title">Web Development FAQ — Kilimani</h2>
-    <p class="sec-sub" style="margin-bottom:32px">What Kilimani business owners ask before getting started.</p>
-    <div class="faq-list">
-      <details>
-        <summary>How much does a website cost in Kilimani?</summary>
-        <p>Website packages for Kilimani businesses start from KES 30,000 for a 5-page startup site, KES 75,000 for a corporate site with CMS, and KES 150,000+ for a full ecommerce store with M-Pesa and WooCommerce. All packages can be paid via M-Pesa and include mobile-first design, WhatsApp integration, and basic SEO.</p>
-      </details>
-      <details>
-        <summary>How long does it take to build a website?</summary>
-        <p>Startup websites (5 pages) are delivered in 5–7 days. Corporate sites with CMS take 10–14 days. Ecommerce sites with M-Pesa integration take 3–4 weeks. Everything is delivered remotely — no need to visit an office in Nairobi.</p>
-      </details>
-      <details>
-        <summary>Do I own the website after it's built?</summary>
-        <p>100%. You own the domain, the hosting account, and all website files. SmartBizSystems has zero lock-in — if you ever want to move to another provider, you take everything with you. We build it, you own it.</p>
-      </details>
-      <details>
-        <summary>Can my website accept M-Pesa payments?</summary>
-        <p>Yes. We integrate M-Pesa Daraja API into ecommerce and service websites — customers pay directly on your site and receive automatic confirmations. This is built into the KES 150,000 ecommerce package and available as an add-on for other packages.</p>
-      </details>
-      <details>
-        <summary>Will my website show up on Google?</summary>
-        <p>Every site we build ships with technical SEO foundations — proper meta tags, schema markup, mobile optimisation, and fast loading speed. For ongoing Google rankings, we recommend pairing your website with our SEO retainer packages starting from KES 40,000/mo.</p>
-      </details>
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Kilimani WhatsApp Automation FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Can we automate restaurant bookings in Kilimani? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Absolutely. We build bots that allow customers to view your menu, select a table time, and even pay a deposit via M-Pesa to confirm their booking, reducing no-shows significantly.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How does the M-Pesa integration handle refunds? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>The Daraja API integration is robust. While the bot handles automated collections, we build a dashboard for your finance team to initiate authorized refunds directly through the system if an order is cancelled.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will my number be blocked? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Not with SmartBizSystems. We use the <strong>Official Meta WhatsApp Business API</strong>, which is designed for high-volume business communication. This is a white-hat solution approved by Meta for long-term scale.</p></div>
+        </div>
+      </div>
     </div>
-  </div>
 </section>
 
-<section class="cta-sec">
-  <div class="cta-inner">
-    <h2>Ready for a Website That Works as Hard as You Do?</h2>
-    <p>Tell us about your Kilimani business on WhatsApp and we'll send you a free quote within 2 hours — no forms, no waiting, no obligation.</p>
-    <div class="cta-btns">
-      <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20need%20a%20website%20for%20my%20Kilimani%20business.%20Can%20I%20get%20a%20quote%3F" class="btn-wa-lg">
-        <i class="fab fa-whatsapp"></i> Get a Free Quote
-      </a>
-      <a href="https://www.smartbizsystems.co.ke/free-audit" class="btn-ghost">
-        <i class="fas fa-search"></i> Free Audit
-      </a>
+<!-- INTERNAL LINKS GRID -->
+<section style="background:var(--white); padding:4rem 20px; border-top: 1px solid var(--border);">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Regional Connectivity</p>
+        <h3 style="margin-bottom:2rem;">Explore Other Neighborhoods & Verticals</h3>
+        <div class="related-grid">
+            <a href="nairobi.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nairobi CBD →</h4></a>
+            <a href="westlands.html" class="related-card"><i data-lucide="map-pin"></i><h4>Westlands →</h4></a>
+            <a href="karen.html" class="related-card"><i data-lucide="map-pin"></i><h4>Karen →</h4></a>
+            <a href="clinics.html" class="related-card"><i data-lucide="stethoscope"></i><h4>Clinics Bot →</h4></a>
+            <a href="ecommerce.html" class="related-card"><i data-lucide="shopping-cart"></i><h4>Retail Bot →</h4></a>
+            <a href="real-estate.html" class="related-card"><i data-lucide="home"></i><h4>Real Estate →</h4></a>
+            <a href="upper-hill.html" class="related-card"><i data-lucide="building-2"></i><h4>Upper Hill →</h4></a>
+            <a href="smes.html" class="related-card"><i data-lucide="zap"></i><h4>SMEs Bot →</h4></a>
+        </div>
     </div>
-    <p class="cta-note">
-      <i class="fas fa-check-circle"></i> M-Pesa accepted &nbsp;·&nbsp;
-      <i class="fas fa-check-circle"></i> Quote in 2 hours &nbsp;·&nbsp;
-      <i class="fas fa-check-circle"></i> You own everything
-    </p>
-  </div>
 </section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Dominate the Kilimani Market Today</h2>
+  <p>Don't let your Kilimani business stay in the "manual" era. Let us build an automated acquisition engine that captures every high-intent lead on WhatsApp. Most audits delivered in 24 hours.</p>
+  <a href="https://wa.me/254734230445?text=Hi%20Joseph,%20I'd%20like%20a%20free%20WhatsApp%20automation%20audit%20for%20my%20Kilimani%20business" class="btn-white">Free Kilimani Audit →</a>
+</div>
 
 <footer>
-  <div class="foot-inner">
-    <div class="foot-brand">SmartBiz<span>Systems</span></div>
-    <ul class="foot-links">
-      <li><a href="https://www.smartbizsystems.co.ke">Home</a></li>
-      <li><a href="https://www.smartbizsystems.co.ke/services.html">Web Development</a></li>
-      <li><a href="../index.html">Web Dev Hub</a></li>
-      <li><a href="https://www.smartbizsystems.co.ke/pricing.html">Pricing</a></li>
-      <li><a href="https://www.smartbizsystems.co.ke/s.html">s</a></li>
-      <li><a href="https://wa.me/254734230445">WhatsApp</a></li>
-    </ul>
-    <div class="foot-copy">© 2026 SmartBizSystems — Westlands, Nairobi, Kenya &nbsp;|&nbsp; +254 734 230 445 &nbsp;|&nbsp; Built for Kenya.</div>
-  </div>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Powering Kilimani's Digital Startup Economy.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Argwings Kodhek, Kilimani · +254 734 230 445</p>
 </footer>
 
 <script>
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  // Initialize Lucide Icons
+  lucide.createIcons();
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+  /**
+   * REFACTORED MENU LOGIC
+   * Handles the Hamburger (X) and Mobile Slide-out
+   */
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }
+  }
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
   });
 
-  // Closes menu if you click a link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // SCROLL REVEAL logic
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // FAQ ACCORDION logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
     });
   });
 </script>

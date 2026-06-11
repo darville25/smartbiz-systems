@@ -3,19 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Automation Kiambu | Real Estate & Agri-Business AI Bots | SmartBizSystems</title>
-    <meta name="description" content="Scale your Kiambu real estate firm or agri-business with official WhatsApp automation. Custom bots for Ruaka, Thindigua & Kiambu Town. M-Pesa integrated.">
-    
-    <!-- CANONICAL: Points to the Authority Service Page -->
-    <link rel="canonical" href="https://www.smartbizsystems.co.ke/services/whatsapp-automation.html" />
+    <title>WhatsApp Automation Kiambu | AI Bots for Industry & Agribusiness | SmartBizSystems</title>
+    <meta name="description" content="Scale your Kiambu business with Official WhatsApp Business API. Automate Ruiru real estate inquiries, Thika manufacturing orders, and Limuru agribusiness sales.">
+    <link rel="canonical" href="https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/kiambu.html" />
 
-    <!-- Fonts -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "WhatsApp Automation Kiambu",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "SmartBizSystems",
+        "url": "https://www.smartbizsystems.co.ke",
+        "telephone": "+254734230445",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westlands",
+          "addressRegion": "Nairobi",
+          "addressCountry": "KE"
+        }
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Kiambu County"
+      },
+      "description": "Official WhatsApp API solutions for Kiambu's industrial, agricultural, and real estate sectors. Automate sales, triage, and M-Pesa payments.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "KES",
+        "price": "30000",
+        "description": "Kiambu WhatsApp Bot Setup"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent:#25d366; --accent-dark:#128c7e; --accent-light:#e9fbf0;
+            --blue:#2563EB; --blue-dark:#1D4ED8; --white:#ffffff;
+            --grey-50:#f8f9fb; --grey-100:#f1f3f6; --grey-200:#e4e7ed;
+            --grey-800:#151b27;
+            --text-primary:#0F172A; --text-secondary:#475569;
+            --border:#E2E8F0; --radius-lg:16px; --radius-xl:24px;
+            --transition:0.3s cubic-bezier(.4,0,.2,1);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html { scroll-behavior: smooth; }
+        body{font-family:"DM Sans",sans-serif;background:var(--grey-50);color:var(--text-primary);line-height:1.7; overflow-x: hidden;}
+        h1,h2,h3,h4{font-family:"Syne",sans-serif;font-weight:700;letter-spacing:-0.02em;}
+        p{color:var(--text-secondary);margin-bottom:1.2rem;}
+
+        /* NAV & FIXED MOBILE MENU */
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;padding:0 20px;}
+        .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:75px;}
+        .nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--text-primary);text-decoration:none;}
+        .nav-logo-mark{width:32px;height:32px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;border-radius:6px;}
+        .nav-links{display:none;gap:24px;list-style:none;}
+        .nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;}
+        
+        .nav-toggle{display:flex;flex-direction:column;justify-content:center;align-items:center;width:40px;height:40px;background:none;border:none;cursor:pointer;position:relative;z-index:1100;}
+        .nav-toggle span{width:26px;height:2px;background:var(--text-primary);border-radius:2px;transition:0.3s;position:absolute;}
+        .nav-toggle span:nth-child(1){transform:translateY(-8px);}
+        .nav-toggle span:nth-child(3){transform:translateY(8px);}
+        
+        .nav-toggle.open span:nth-child(1){transform:translateY(0) rotate(45deg);}
+        .nav-toggle.open span:nth-child(2){opacity:0;}
+        .nav-toggle.open span:nth-child(3){transform:translateY(0) rotate(-45deg);}
+
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: white; z-index: 1050; padding: 100px 30px;
+            display: flex; flex-direction: column; gap: 20px; transition: 0.4s ease-in-out;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a { font-size: 22px; font-weight: 700; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+
+        @media(min-width:992px){
+            .nav-links{display:flex;}
+            .nav-toggle{display:none;}
+            .mobile-menu{display:none;}
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb-wrapper { background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb{max-width:1120px;margin:0 auto;padding:1rem 20px;font-size:0.8rem;color:var(--text-secondary); overflow-x: auto; white-space: nowrap;}
+        .breadcrumb a{color:var(--accent-dark);text-decoration:none;}
+
+        /* HERO */
+        .hero{padding:4rem 20px;background:var(--white);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1120px;margin:0 auto;display:flex; flex-direction: column; gap:3rem;}
+        .hero h1{font-size:clamp(2.2rem, 8vw, 3.5rem);margin-bottom:1rem;line-height:1.1;}
+        .hero h1 em{font-style:normal;color:var(--accent-dark);}
+        .hero-intro{font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem;}
+        .hero-cta-group{display:flex;flex-direction: column; gap:12px;}
+        .btn-wa{display:flex;align-items:center;justify-content: center; gap:10px;background:var(--accent);color:white!important;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none;}
+        .btn-audit{display:flex;align-items:center;justify-content: center; gap:8px;background:transparent;color:var(--accent-dark)!important;padding:16px 30px;border-radius:12px;font-weight:600;text-decoration:none;border:2px solid var(--accent-dark);}
+        
+        .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--accent-light);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--accent);}
+        .stat-num{font-family:"Syne",sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent-dark);display:block; text-align: center;}
+        
+        @media(min-width:768px){ .hero-cta-group { flex-direction: row; } .stat-num { font-size: 1.8rem; } }
+        @media(min-width:992px){ .hero-inner { flex-direction: row; align-items: center; } .hero-inner > div { flex: 1; } }
+
+        /* SECTIONS */
+        .section{padding:5rem 20px;max-width:1120px;margin:0 auto;}
+        .section-label{font-size:0.85rem;font-weight:700;text-transform:uppercase;color:var(--accent-dark);margin-bottom:1rem;display:block;}
+        .section-title{font-size:clamp(1.8rem, 5vw, 2.6rem);margin-bottom:1.5rem;line-height:1.2;}
+
+        .rich-text h3 { font-size: 1.6rem; margin: 2.5rem 0 1.2rem; color: var(--text-primary); }
+        .rich-text p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+        /* PAIN POINTS */
+        .pain-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pain-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;display:flex;align-items:flex-start;gap:1.25rem;}
+        .pain-icon{width:44px;height:44px;background:#FEF2F2;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#DC2626;flex-shrink:0;}
+        @media(min-width:768px){ .pain-grid { grid-template-columns: 1fr 1fr; } }
+
+        /* SOLUTIONS */
+        .solutions-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .sol-card{background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;border:1px solid var(--border);transition:0.3s;}
+        .sol-card:hover{border-color:var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md);}
+        .sol-num{font-family:"Syne",sans-serif;font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.1;line-height:1; margin-bottom:1rem;}
+        @media(min-width:768px){ .solutions-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width:992px){ .solutions-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;}
+        .pricing-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-xl);padding:2.5rem;}
+        .pricing-card.featured{border-color:var(--accent); box-shadow: 0 15px 40px rgba(37,211,102,0.15);}
+        .pricing-price{font-family:"Syne",sans-serif;font-size:2rem;font-weight:800;margin:1.5rem 0;}
+        .pricing-cta{display:block;text-align:center;background:var(--blue);color:white!important;padding:15px;border-radius:10px;font-weight:700;text-decoration:none;}
+        @media(min-width:768px){ .pricing-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* RELATED REGIONS */
+        .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+        .related-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-decoration:none;color:inherit;text-align:center; transition: 0.3s;}
+        .related-card:hover{ border-color: var(--accent); }
+        .related-card i{color:var(--accent);margin-bottom:10px;}
+        @media(min-width:768px){ .related-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        /* CTA */
+        .cta-section{background:linear-gradient(135deg,var(--accent-dark) 0%,var(--accent) 100%);color:white;border-radius:var(--radius-xl);padding:6rem 20px;text-align:center;max-width:1120px;margin:4rem 20px;}
+        .cta-btns{display:flex;flex-direction: column; gap:15px; align-items: center; justify-content: center;}
+        .btn-white{background:white;color:var(--accent-dark)!important;padding:18px 40px;border-radius:12px;font-weight:800;text-decoration:none; width: 100%; max-width: 300px;}
+        @media(min-width:768px){ .cta-section { margin: 5rem auto; } .cta-btns { flex-direction: row; } .btn-white { width: auto; } }
+
+        /* FOOTER */
+        footer{background:var(--grey-800);color:white;padding:5rem 20px;text-align:center;}
+        footer a{color:#93c5fd;text-decoration:none;}
+
+        .reveal{opacity:0;transform:translateY(25px);transition:0.8s ease-out;}
+        .reveal.active{opacity:1;transform:translateY(0);}
+
+        /* FAQ */
+        .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:1rem;background:white;overflow:hidden;}
+        .faq-q{width:100%;padding:1.5rem;text-align:left;background:none;border:none;font-family:"Syne",sans-serif;font-weight:700;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center; color:var(--text-primary);}
+        .faq-a{max-height:0;padding:0 1.5rem;transition:0.3s ease-in-out; overflow: hidden;}
+        .faq-a.open{max-height:600px;padding-bottom:1.5rem;}
+    </style>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -30,305 +181,324 @@
 
       gtag("config", "G-HPRK4JYRR5");
     </script>
-
-    <style>
-        :root {
-            --accent: #25d366; --accent-dark: #128c7e; --accent-light: #e9fbf0;
-            --blue: #0d6efd; --blue-dark: #0a56c8; --white: #ffffff;
-            --grey-50: #f8f9fb; --grey-100: #f1f3f6; --grey-200: #e4e7ed;
-            --grey-700: #242b38; --grey-800: #151b27;
-            --text-primary: #151b27; --text-secondary: #3d4554;
-            --border: #e4e7ed; --radius-lg: 16px; --radius-xl: 24px;
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --transition: 0.2s cubic-bezier(.4,0,.2,1);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--grey-50); color: var(--text-primary); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
-
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--blue); text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; }
-
-        /* Hero */
-        .hero { padding: 9rem 2rem 5rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
-        .kicker { background: var(--accent-light); color: var(--accent-dark); padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem; display: inline-block; border: 1px solid var(--accent); text-transform: uppercase; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; }
-        
-        .btn { padding: 1.1rem 2.2rem; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
-        .btn-accent { background: var(--accent); color: white; }
-        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-
-        /* Context Section */
-        .section { padding: 6rem 2rem; max-width: 1300px; margin: 0 auto; }
-        .context-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-        .context-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .context-text p { margin-bottom: 1.5rem; color: var(--text-secondary); font-size: 1.1rem; }
-
-        /* Industry Grid (Specific to Kiambu) */
-        .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
-        .ind-card { background: white; padding: 2.5rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
-        .ind-card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .ind-card span { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .ind-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-        .ind-card p { font-size: 0.85rem; color: var(--text-secondary); }
-
-        /* Push to Authority CTA */
-        .push-cta { background: var(--grey-800); color: white; padding: 6rem 3rem; border-radius: var(--radius-xl); text-align: center; margin-top: 4rem; }
-        .push-cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .push-cta p { color: var(--grey-300); margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto; }
-
-        footer { background: var(--grey-800); color: white; padding: 4rem 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; text-align: center; }
-
-        @media (max-width: 1000px) { .industry-grid { grid-template-columns: repeat(2, 1fr); } .context-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; } .nav-links { display: none; } }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }/* --- Navigation Core --- */
-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #E2E8F0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 0 24px;
-}
-
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0F172A;
-  text-decoration: none !important;
-}
-
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: #2563EB;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 18px;
-}
-
-.nav-logo em { font-style: normal; color: #2563EB; }
-
-/* Desktop Links & Buttons */
-.nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font-size: 15px; font-weight: 500; color: #475569; text-decoration: none; transition: 0.2s; }
-.nav-links a:hover { color: #2563EB; }
-
-.nav-cta-group { display: flex; align-items: center; gap: 16px; }
-.btn-outline { border: 1px solid #BFDBFE; padding: 10px 20px; border-radius: 8px; color: #2563EB !important; font-weight: 600; font-size: 14px; text-decoration: none; }
-.btn-primary { background: #2563EB; color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; }
-
-/* --- Mobile Menu (Hidden on Desktop) --- */
-.nav-toggle { display: none; cursor: pointer; background: none; border: none; flex-direction: column; gap: 5px; }
-.nav-toggle span { width: 24px; height: 2px; background: #0F172A; border-radius: 2px; transition: 0.3s; }
-
-.mobile-menu {
-  display: none; /* <--- THIS HIDES THE BLUE LINKS ON DESKTOP */
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  background: white;
-  flex-direction: column;
-  padding: 24px;
-  gap: 8px;
-  border-bottom: 1px solid #E2E8F0;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  z-index: 999;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #0F172A;
-  font-weight: 600;
-  padding: 12px 0;
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mob-cta {
-  background: #2563EB;
-  color: white !important;
-  justify-content: center !important;
-  border-radius: 8px;
-  margin-top: 10px;
-  border-bottom: none !important;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .nav-links, .nav-cta-group { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu.open { display: flex; } /* Shows only when clicked */
-}
-
-/* Hamburger Animation */
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-</style>
 </head>
 <body>
-<nav id="nav">
+
+<nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="nav-logo-mark">S</div>
       <span>Smart<em>Biz</em>Systems</span>
     </a>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="/services/index.html">Services</a></li>
       <li><a href="/work/index.html">Work</a></li>
       <li><a href="/pricing/index.html">Pricing</a></li>
-      <li><a href="/about/index.html">About</a></li>
       <li><a href="/blog/index.html">Blog</a></li>
     </ul>
-
-    <!-- Desktop Buttons -->
-    <div class="nav-cta-group">
-      <a href="/work/index.html" class="btn-outline" style="padding: 8px 16px; font-size: 14px; text-decoration:none;">See our work</a>
-      <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="text-decoration:none;">
-        Book a call
-      </a>
-    </div>
-
-    <!-- Hamburger Button (Mobile Only) -->
-    <button class="nav-toggle" id="navToggle">
+    <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
-    </button>
+    </div>
   </div>
 </nav>
 
-<!-- Mobile Menu Container -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/services/index.html">Services <span>→</span></a>
-  <a href="/work/index.html">Work <span>→</span></a>
-  <a href="/pricing/index.html">Pricing <span>→</span></a>
-  <a href="/about/index.html">About <span>→</span></a>
-  <a href="/blog/index.html">Blog <span>→</span></a>
-  <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="mob-cta">Book a Call Now</a>
+    <a href="/services/index.html">Services</a>
+    <a href="/work/index.html">Work</a>
+    <a href="/pricing/index.html">Pricing</a>
+    <a href="/blog/index.html">Blog</a>
+    <a href="https://wa.me/254734230445" class="btn-primary" style="background:var(--accent); color:white; padding:15px; border-radius:10px; text-align:center; margin-top:20px; text-decoration:none;">WhatsApp Joseph</a>
 </div>
 
-    <div style="max-width: 1200px; margin: 100px auto 0; padding: 0 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="../../index.html" style="color: inherit; text-decoration: none;">Home</a> / 
-        <a href="index.html" style="color: inherit; text-decoration: none;">WhatsApp Hub</a> / 
-        Kiambu
+<div class="breadcrumb-wrapper">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="index.html">WhatsApp Automation</a><span>›</span>
+      Kiambu
     </div>
+</div>
 
-    <section class="hero">
-        <div class="reveal active">
-            <span class="kicker">Real Estate & Agri-Trade Hub</span>
-            <h1>WhatsApp Automation Kiambu: Capture the Commuter Economy</h1>
-            <p>From high-density residential towers in Ruaka to the tea and coffee heartlands of Kiambu County, we help local businesses automate their growth 24/7. Scale your sales where Nairobi meets the Rift.</p>
-            <div style="display: flex; gap: 1rem;">
-                <a href="../../services/whatsapp-automation.html" class="btn btn-accent">Explore Kiambu Packages →</a>
-                <a href="https://wa.me/254734230445" class="btn btn-outline">WhatsApp Joseph</a>
-            </div>
-        </div>
-        <div class="reveal active">
-            <div style="background: white; padding: 2.5rem; border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-md); text-align: center;">
-                <i data-lucide="home" size="48" color="#25d366" style="margin-bottom: 1.5rem;"></i>
-                <h3 style="margin-bottom: 1rem;">Real Estate Efficiency</h3>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">Automatically qualify Ruaka rental leads and schedule viewings for Thindigua apartments via WhatsApp.</p>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <div style="background:var(--accent-light); color:var(--accent-dark); padding:6px 15px; border-radius:100px; font-size:0.8rem; font-weight:700; display:inline-block; margin-bottom:1.5rem;">KIAMBU COUNTY AUTOMATION</div>
+      <h1>Official WhatsApp AI Bots for<br><em>Kiambu’s Industrial & Agri Sectors</em></h1>
+      <p class="hero-intro">From the factories of Ruiru to the tea estates of Limuru, Kiambu’s economy is moving to WhatsApp. We build automated acquisition engines that capture high-intent leads and close sales 24/7 across the county.</p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/254734230445?text=Hi%20SmartBiz,%20I%20want%20WhatsApp%20automation%20for%20my%20Kiambu%20business" target="_blank" class="btn-wa">
+          <i data-lucide="zap"></i> Setup Kiambu Bot
+        </a>
+        <a href="/free-audit" class="btn-audit">Request County Audit →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">+45%</span><div style="font-size:0.75rem; text-align:center;">Sales Lift</div></div>
+        <div class="stat-item"><span class="stat-num">STK</span><div style="font-size:0.75rem; text-align:center;">M-Pesa Auto</div></div>
+        <div class="stat-item"><span class="stat-num">24/7</span><div style="font-size:0.75rem; text-align:center;">AI Support</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="section">
-        <div class="context-grid">
-            <div class="reveal">
-                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-xl); border: 1px solid var(--border);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--blue);">The County of Opportunity</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem;">Kiambu's explosive growth in real estate and specialized agriculture requires systems that handle high volume without human error.</p>
-                    <ul style="list-style: none; font-weight: 600; font-size: 0.9rem;">
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#25d366"></i> Ruaka Property Lead Capture</li>
-                        <li style="margin-bottom: 10px;"><i data-lucide="check" size="16" color="#25d366"></i> Agri-Trade Payment Triggers</li>
-                        <li><i data-lucide="check" size="16" color="#25d366"></i> Official Meta API Integration</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="context-text reveal">
-                <h2>Tailored for Kiambu's Sectors</h2>
-                <p>Scaling a property firm or a commercial farm in Kiambu? Our systems are designed for the county's unique sales cycles.</p>
-                <div class="industry-grid">
-                    <div class="ind-card"><span>🏠</span><h3>Real Estate</h3><p>Automate listings for Ruaka, Thindigua & Kiambu Town.</p></div>
-                    <div class="ind-card"><span>🚜</span><h3>Agri-Business</h3><p>Manage supplier logistics for coffee and tea trade.</p></div>
-                    <div class="ind-card"><span>🎓</span><h3>Private Schools</h3><p>Admission bots for the Kiambu Road school belt.</p></div>
-                    <div class="ind-card"><span>🏛️</span><h3>SACCOs</h3><p>Secure balance checks for Kiambu's farming members.</p></div>
-                    <div class="ind-card"><span>🏥</span><h3>Clinics</h3><p>Automated booking for residential medical centers.</p></div>
-                    <div class="ind-card"><span>🛒</span><h3>E-Commerce</h3><p>M-Pesa order flows for commuter delivery services.</p></div>
-                    <div class="ind-card"><span>⚖️</span><h3>Law Firms</h3><p>Intake for Kiambu's conveyancing & commercial firms.</p></div>
-                    <div class="ind-card"><span>🛡️</span><h3>Insurance</h3><p>Property and agri-cover renewal and claim triggers.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="push-cta reveal">
-            <h2>Ready to see how we automate Kiambu firms?</h2>
-            <p>All localized strategies in Kiambu refer to our core WhatsApp engine. Visit our official service page to view our KES pricing tiers and real estate automation workflows.</p>
-            <a href="../../services/whatsapp-automation.html" class="btn btn-accent" style="padding: 1.2rem 3rem;">View Pricing & Property Solutions</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 SmartBizSystems — Kiambu, Kenya.</p>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-
+<!-- STRATEGY CONTENT (Over 2000 Words Strategy) -->
+<section class="section">
+  <div class="reveal">
+    <p class="section-label">County Growth Strategy</p>
+    <h2 class="section-title">The Kiambu Digital Corridor: Why Ruiru, Thika, and Limuru are Moving to WhatsApp</h2>
+    <div class="rich-text">
+        <p>Kiambu County is the economic powerhouse adjacent to Nairobi, acting as the primary industrial and agricultural engine of the region. As the population in satellite towns like Ruiru, Juja, and Thika explodes, the commercial pressure on local businesses to be "always-on" has reached a tipping point. For a Kiambu-based company, whether you are a manufacturer in Ruiru Industrial Area or a coffee processor in Kiambu Town, your customers are no longer waiting for office hours. They are on WhatsApp, and they expect instant answers. <strong>SmartBizSystems turns WhatsApp into a high-performance sales channel for Kiambu.</strong></p>
         
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+        <h3>1. The Industrial Engine: Ruiru and Thika B2B Automation</h3>
+        <p>Industrial hubs like <a href="thika.html" style="color:var(--accent-dark); font-weight:700;">Thika</a> and Ruiru are home to Kenya's largest factories. PROCUREMENT in 2026 is mobile-first. Wholesalers and distributors across East Africa want to check stock availability, request bulk quotes, and track delivery manifests without playing phone tag with a sales rep. We build <strong>Industrial WhatsApp Catalogue Bots</strong> that sync with your ERP. A distributor in Kisumu can message your Ruiru factory at midnight, view your latest price list, and request a proforma invoice—all handled by AI. This reduces the administrative burden on your sales team by 70%.</p>
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+        <h3>2. Agribusiness Excellence: Limuru and Kiambu Tea & Coffee</h3>
+        <p>Agribusiness in Kiambu is evolving from simple production to value-added retail and export. For Limuru-based tea packers or Kiambu coffee roasters, <a href="ecommerce.html" style="color:var(--accent-dark); font-weight:700;">WhatsApp E-commerce</a> is the fastest way to reach the Nairobi middle-class market. Our bots allow customers to browse different blends, select quantities, and pay via M-Pesa STK Push instantly. The bot then generates the delivery order and notifies your logistics team, ensuring a seamless farm-to-table supply chain handled entirely via WhatsApp.</p>
+
+        <h3>3. The Real Estate Boom: Ruiru and Juja Satellite Growth</h3>
+        <p>The "Thika Road Effect" has turned Ruiru and Juja into the fastest-growing real estate markets in Kenya. Property developers and land-selling companies in Kiambu are often overwhelmed with hundreds of repetitive inquiries daily. <em>"Is the title deed ready?" "What is the plot size?" "Can I see the site map?"</em> Our <a href="real-estate.html" style="color:var(--accent-dark); font-weight:700;">Real Estate WhatsApp Funnels</a> automate the delivery of these documents. The bot qualifies the lead based on their budget and location preference, shares high-res brochures, and books site visits directly into your agents' calendars, ensuring you never miss a high-value investor.</p>
+
+        <h3>4. Healthcare & Education: Triage for Kiambu’s Urban Centers</h3>
+        <p>With massive residential growth comes a demand for services. Private <a href="clinics.html" style="color:var(--accent-dark); font-weight:700;">clinics in Kiambu</a> and <a href="schools.html" style="color:var(--accent-dark); font-weight:700;">international schools</a> are using our WhatsApp bots to manage the influx of inquiries. Parents can check term dates and fees, while patients can triage symptoms and book appointments. By automating these routine administrative tasks, Kiambu service providers can maintain a lean staff while delivering a premium, responsive customer experience.</p>
+
+        <h3>5. M-Pesa Integration (Daraja API) for Kiambu Commerce</h3>
+        <p>The core of Kiambu's digital economy is M-Pesa. Any bot we deploy in Kiambu comes with optional <strong>Daraja API integration</strong>. Whether it's a deposit for a plot of land in Juja, a delivery fee for a factory order in Thika, or school fees in Karuri, the bot triggers an automated STK Push. This eliminates the "send me the screenshot" friction and ensures instant payment reconciliation for your accounting team.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section">
+    <div class="reveal">
+      <p class="section-label">County Bottlenecks</p>
+      <h2 class="section-title">Why Kiambu Businesses Lose Revenue Without Automation</h2>
+      <div class="pain-grid">
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="clock"></i></div>
+            <div>
+                <h4>The "Nairobi Speed" Expectation</h4>
+                <p>Kiambu clients often commute to Nairobi and expect city-level response speeds. If you take 3 hours to reply to a WhatsApp inquiry, they've already found a Nairobi-based competitor. AI fixes this.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="user-x"></i></div>
+            <div>
+                <h4>Manual Lead Leakage</h4>
+                <p>Factories and land firms often handle inquiries on personal phones. When a staff member leaves, the leads go with them. Our centralized API systems ensure you own your data.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="database"></i></div>
+            <div>
+                <h4>Reconciliation Nightmares</h4>
+                <p>Matching M-Pesa messages to manual orders is the #1 time-waster for Kiambu SMEs. We automate the entire payment-to-order-status flow.</p>
+            </div>
+        </div>
+        <div class="pain-card">
+            <div class="pain-icon"><i data-lucide="alert-triangle"></i></div>
+            <div>
+                <h4>Unofficial App Bans</h4>
+                <p>Many Thika and Ruiru firms use "WhatsApp GB" or unofficial automation apps. Meta is cracking down. We provide the <strong>Official API</strong> to keep your number safe forever.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="section">
+    <div class="reveal">
+      <p class="section-label">Our Architecture</p>
+      <h2 class="section-title">A 360-Degree Acquisition Engine for Kiambu</h2>
+      <div class="solutions-grid">
+        <div class="sol-card">
+            <div class="sol-num">01</div>
+            <h3>Official API Implementation</h3>
+            <p>We handle your Meta verification and WhatsApp Business API setup, ensuring your Kiambu brand carries the official "Green Tick" trust signal.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">02</div>
+            <h3>Industrial AI Triage</h3>
+            <p>Bots trained on your product specs, technical sheets, and inventory. They handle wholesale inquiries with professional precision 24/7.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">03</div>
+            <h3>M-Pesa STK Integration</h3>
+            <p>Seamless checkout for retail and B2B deposits. Instant confirmation and automated digital receipts directly in the chat.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">04</div>
+            <h3>Multi-Channel CRM Sync</h3>
+            <p>Every WhatsApp lead from your Kiambu operations is pushed to HubSpot or Zoho, ensuring your sales pipeline is always accurate.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">05</div>
+            <h3>Automated Reminders</h3>
+            <p>Perfect for real estate site visits, school fee deadlines, or service renewals. High open rates (98%) compared to ignored SMS.</p>
+        </div>
+        <div class="sol-card">
+            <div class="sol-num">06</div>
+            <h3>Broadcast Marketing</h3>
+            <p>Send personalized offers to your Kiambu database without the risk of spam blocks. Scale your reach without losing the personal touch.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section style="background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="section">
+      <div class="reveal">
+        <p class="section-label">Scalable Investment</p>
+        <h2 class="section-title">Automation Packages for Kiambu Firms</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>SME Starter</h3>
+            <div class="pricing-price">KES 30,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 5k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Launch Local Bot</a>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Growth Industrial</h3>
+            <div class="pricing-price">KES 100,000</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Setup + KES 20k/mo mgmt</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta" style="background:var(--blue);">Get Growth Engine</a>
+          </div>
+          <div class="pricing-card">
+            <h3>Enterprise Port</h3>
+            <div class="pricing-price">Custom</div>
+            <p style="font-size:0.85rem; margin-bottom:1.5rem;">Factory & Multi-Town Systems</p>
+            <a href="https://wa.me/254734230445" class="pricing-cta">Talk to Specialist</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="reveal">
+      <h2 class="section-title">Kiambu WhatsApp FAQ</h2>
+      <div class="faq-list" style="max-width:850px;">
+        <div class="faq-item">
+          <button class="faq-q">Does this work for land-selling companies? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Yes. We specialize in real estate funnels for Kiambu firms. The bot can handle hundreds of inquiries about Juja or Ruiru plots, share title deed verification steps, and book site visits automatically.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do you handle Sheng and local dialects? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Our AI engines are trained on Kenyan NLP (Natural Language Processing). They understand common Sheng, Swahili, and English variations used in Kiambu and Nairobi, ensuring a natural conversation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can we automate factory orders? <i data-lucide="chevron-down"></i></button>
+          <div class="faq-a"><p>Absolutely. We build B2B catalogues where distributors can select products, input volumes, and receive a calculated total instantly, shortening your order-to-cash cycle.</p></div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- INTERNAL LINKS GRID -->
+<section style="background:var(--white); padding:4rem 20px; border-top: 1px solid var(--border);">
+    <div class="section" style="padding:0;">
+        <p class="section-label">Regional Connectivity</p>
+        <h3 style="margin-bottom:2rem;">Explore Other Cities & Verticals</h3>
+        <div class="related-grid">
+            <a href="nairobi.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nairobi CBD →</h4></a>
+            <a href="thika.html" class="related-card"><i data-lucide="factory"></i><h4>Thika Industrial →</h4></a>
+            <a href="real-estate.html" class="related-card"><i data-lucide="home"></i><h4>Real Estate Bot →</h4></a>
+            <a href="clinics.html" class="related-card"><i data-lucide="stethoscope"></i><h4>Clinics Bot →</h4></a>
+            <a href="ecommerce.html" class="related-card"><i data-lucide="shopping-cart"></i><h4>Retail Bot →</h4></a>
+            <a href="nakuru.html" class="related-card"><i data-lucide="map-pin"></i><h4>Nakuru →</h4></a>
+            <a href="eldoret.html" class="related-card"><i data-lucide="map-pin"></i><h4>Eldoret →</h4></a>
+            <a href="schools.html" class="related-card"><i data-lucide="graduation-cap"></i><h4>Schools Bot →</h4></a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <h2>Dominate the Kiambu Commercial Corridor</h2>
+  <p>Don't let your Kiambu business stay in the "manual" era. Let us build an automated acquisition engine that captures every high-intent lead on WhatsApp. Most audits delivered in 24 hours.</p>
+  <a href="https://wa.me/254734230445?text=Hi%20Joseph,%20I'd%20like%20a%20free%20WhatsApp%20audit%20for%20my%20Kiambu%20business" class="btn-white">Free Local Audit →</a>
+</div>
+
+<footer>
+  <p>© 2026 <a href="https://www.smartbizsystems.co.ke">SmartBizSystems</a> — Powering Kiambu's Industrial Economy.</p>
+  <p style="margin-top:1rem; opacity:0.6; font-size:0.8rem;">Ruiru/Thika Road, Kiambu · +254 734 230 445</p>
+</footer>
+
+<script>
+  // Initialize Lucide Icons
+  lucide.createIcons();
+
+  /**
+   * REFACTORED MENU LOGIC
+   * Handles the Hamburger (X) and Mobile Slide-out
+   */
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const body = document.body;
+
+  function handleMenuState(open) {
+    if (open) {
+      navToggle.classList.add("open");
+      mobileMenu.classList.add("open");
+      body.style.overflow = "hidden"; // Prevent background scroll
+    } else {
+      navToggle.classList.remove("open");
+      mobileMenu.classList.remove("open");
+      body.style.overflow = "auto";
+    }
+  }
+
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isNowOpen = !mobileMenu.classList.contains("open");
+    handleMenuState(isNowOpen);
   });
 
-  // Closes menu if you click a link
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('open');
-      mobileMenu.classList.remove('open');
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => handleMenuState(false));
+  });
+
+  document.addEventListener("click", (e) => {
+    const isClickInsideMenu = mobileMenu.contains(e.target);
+    const isClickOnToggle = navToggle.contains(e.target);
+    if (!isClickInsideMenu && !isClickOnToggle && mobileMenu.classList.contains("open")) {
+      handleMenuState(false);
+    }
+  });
+
+  // SCROLL REVEAL logic
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+  // FAQ ACCORDION logic
+  document.querySelectorAll(".faq-q").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector("i");
+      const isOpen = answer.classList.contains("open");
+      
+      document.querySelectorAll(".faq-a").forEach(a => a.classList.remove("open"));
+      document.querySelectorAll(".faq-q i").forEach(i => { if(i) i.style.transform = "rotate(0deg)"; });
+
+      if (!isOpen) {
+        answer.classList.add("open");
+        if(icon) icon.style.transform = "rotate(180deg)";
+      }
     });
   });
-
-    </script>
-
-
+</script>
 </body>
 </html>
