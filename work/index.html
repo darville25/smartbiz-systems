@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Case studies and client s from SmartBizSystems — Kenya's AI marketing agency. Real businesses, verified outcomes across WhatsApp automation, SEO, lead generation and more."/>
-<title>Our Work — SmartBizSystems | Client s &amp; Case Studies</title>
+<meta name="description" content="Case studies and client results from SmartBizSystems — Kenya's AI marketing agency. Real businesses, verified outcomes across WhatsApp automation, SEO, lead generation and more."/>
+<title>Our Work — SmartBizSystems | Client Results &amp; Case Studies</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght=600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
 <link rel="canonical" href="https://www.smartbizsystems.co.ke/work/" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
@@ -69,8 +69,75 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .nav-right{display:flex;align-items:center;gap:8px}
 .btn-ghost{font-family:var(--ff-body);font-size:0.85rem;font-weight:500;color:var(--text-secondary);background:none;border:none;cursor:pointer;text-decoration:none;padding:8px 12px;border-radius:var(--radius-sm);transition:all var(--transition)}
 .btn-ghost:hover{color:var(--text-primary);background:var(--grey-100)}
-.btn-primary{font-family:var(--ff-body);font-weight:600;font-size:0.85rem;background:var(--blue);color:#fff;padding:9px 20px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background var(--transition),box-shadow var(--transition),transform var(--transition);white-space:nowrap}
+.btn-primary{font-family:var(--ff-body);font-weight:600;font-size:0.85rem;background:var(--blue);color:#fff;padding:12px 20px;border-radius:var(--radius-sm);border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background var(--transition),box-shadow var(--transition),transform var(--transition);white-space:nowrap}
 .btn-primary:hover{background:var(--blue-dark);box-shadow:0 4px 14px rgba(13,110,253,0.3);transform:translateY(-1px)}
+
+/* Navigation Menu Toggle Button */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+.nav-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all var(--transition);
+  transform-origin: left center;
+}
+
+/* Mobile Dropdown Menu */
+.mobile-menu {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 99;
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-menu a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--grey-100);
+}
+.mobile-menu a:last-of-type {
+  border-bottom: none;
+}
+.mobile-menu .mob-cta {
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  border-bottom: none;
+  margin-top: 5px;
+}
 
 /* ── PAGE HERO ── */
 .page-hero{
@@ -108,18 +175,27 @@ h1{font-family:var(--ff-display);font-weight:800;font-size:clamp(2rem,4vw,3.2rem
 /* Industry filter pills */
 .filter-row{
   display:flex;align-items:center;gap:8px;
-  flex-wrap:wrap;
-  padding:24px 5%;
+  padding:20px 5%;
   background:var(--white);
   border-bottom:1px solid var(--border);
   position:sticky;top:64px;z-index:90;
   backdrop-filter:blur(12px);
   background:rgba(255,255,255,0.95);
+  overflow-x:auto;
+  white-space:nowrap;
+  -webkit-overflow-scrolling:touch;
+}
+.filter-row::-webkit-scrollbar {
+  display:none; /* Hide scrollbars for cleaner mobile appearance */
+}
+.filter-row {
+  -ms-overflow-style:none;  
+  scrollbar-width:none;  
 }
 .filter-lbl{font-size:0.78rem;font-weight:600;color:var(--text-muted);margin-right:4px;flex-shrink:0}
 .pill{
   font-family:var(--ff-body);font-size:0.8rem;font-weight:600;
-  padding:6px 14px;border-radius:100px;
+  padding:10px 16px;border-radius:100px; /* Enhanced touch target */
   border:1.5px solid var(--border);
   background:var(--white);color:var(--text-muted);
   cursor:pointer;transition:all var(--transition);
@@ -441,10 +517,24 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
   nav{padding:0 4%}
   .nav-links{display:none}
   .btn-ghost{display:none}
+  .nav-toggle{display:flex}
+  
+  /* Hamburger State Animations */
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
   .page-hero{padding:84px 4% 48px}
   .featured-section,.cases-section{padding-left:4%;padding-right:4%}
   .cases-grid{grid-template-columns:1fr}
-  .filter-row{padding:16px 4%;gap:6px;top:64px}
+  .filter-row{padding:14px 4%;gap:6px;top:64px}
+  .filter-lbl{display:none} /* Save vertical/horizontal space on mobile */
   .stats-section,.testi-section,.industries-section,.cta-section{padding:56px 4%}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
   .ind-grid{grid-template-columns:1fr 1fr}
@@ -490,7 +580,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
   </button>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu (Fully functional now) -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="services/index.html">Services</a>
   <a href="work/index.html">Work</a>
@@ -508,7 +598,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
     </div>
     <div class="hero-layout reveal">
       <div>
-        <span class="page-kicker">Client s &amp; case studies</span>
+        <span class="page-kicker">Client results &amp; case studies</span>
         <h1>Real businesses.<br>Real numbers.</h1>
         <p class="hero-desc">We don't do vague promises. Every engagement is measured against <strong>clear KPIs</strong> — leads, revenue, traffic, conversions. Here's what we've delivered for 34+ Kenyan businesses.</p>
       </div>
@@ -524,7 +614,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
           </div>
           <div class="agg-item">
             <div class="agg-val">90<span>d</span></div>
-            <div class="agg-lbl">Avg to s</div>
+            <div class="agg-lbl">Avg to results</div>
           </div>
           <div class="agg-item">
             <div class="agg-val">2<span>×</span></div>
@@ -536,15 +626,15 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
   </div>
 </div>
 
-<!-- FILTER ROW -->
+<!-- FILTER ROW (Horizontally scrollable on mobile) -->
 <div class="filter-row" id="filterRow">
   <span class="filter-lbl">Filter by:</span>
   <button class="pill active" data-filter="all">All work</button>
   <button class="pill" data-filter="whatsapp">WhatsApp Automation</button>
   <button class="pill" data-filter="seo">SEO</button>
-  <button class="pill" data-filter="lead">Lead Generation</button>
+  <button class="pill" data-filter="lead">Lead Gen</button>
   <button class="pill" data-filter="ads">Paid Ads</button>
-  <button class="pill" data-filter="web">Web Development</button>
+  <button class="pill" data-filter="web">Web Dev</button>
 </div>
 
 <!-- FEATURED CASE STUDY -->
@@ -580,7 +670,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
       <div class="fc-body">The client was losing leads every night and weekend to <strong>slow WhatsApp response times</strong>. Competitors were responding faster. We deployed a 24/7 AI bot that qualified leads, provided instant quotes, booked pickups, and collected M-Pesa payments — automatically.</div>
       <div class="fc-metrics">
         <div class="fc-metric"><div class="fc-metric-val">2×</div><div class="fc-metric-lbl">Conversion rate</div></div>
-        <div class="fc-metric"><div class="fc-metric-val">90d</div><div class="fc-metric-lbl">Time to </div></div>
+        <div class="fc-metric"><div class="fc-metric-val">90d</div><div class="fc-metric-lbl">Time to results</div></div>
         <div class="fc-metric"><div class="fc-metric-val">40+h</div><div class="fc-metric-lbl">Saved/month</div></div>
         <div class="fc-metric"><div class="fc-metric-val">0</div><div class="fc-metric-lbl">Missed leads</div></div>
       </div>
@@ -745,7 +835,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
       </div>
       <div class="cc-body">
         <div class="cc-title">E-commerce brand — 4.2× ROAS on Facebook &amp; Google</div>
-        <div class="cc-desc">A Nairobi e-commerce brand was spending KES 80,000/month on ads with <strong>no tracking, no strategy, and no s</strong>. We rebuilt campaigns from scratch with full-funnel attribution.</div>
+        <div class="cc-desc">A Nairobi e-commerce brand was spending KES 80,000/month on ads with <strong>no tracking, no strategy, and no results</strong>. We rebuilt campaigns from scratch with full-funnel attribution.</div>
         <div class="cc-metrics">
           <div><div class="cc-m-val">4.2×</div><div class="cc-m-lbl">ROAS</div></div>
           <div><div class="cc-m-val">-45%</div><div class="cc-m-lbl">Cost per lead</div></div>
@@ -847,8 +937,8 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
     <!-- Empty state -->
     <div class="empty-state" id="emptyState">
       <div class="empty-ico">🔍</div>
-      <div class="empty-title">No s for this filter</div>
-      <div class="empty-desc">We're adding more case studies weekly. <a href="https://wa.me/254734230445" style="color:var(--blue)">WhatsApp us</a> to discuss your industry.</div>
+      <div class="empty-title">No results for this filter</div>
+      <div class="empty-desc">We're adding more case studies weekly. <a href="https://wa.me/254740239241" style="color:var(--blue)">WhatsApp us</a> to discuss your industry.</div>
     </div>
 
   </div>
@@ -859,7 +949,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
   <div class="stats-inner">
     <div class="stats-header reveal">
       <h2>The numbers behind the work.</h2>
-      <p>Aggregate s across all 34+ client engagements since 2022.</p>
+      <p>Aggregate results across all 34+ client engagements since 2022.</p>
     </div>
     <div class="stats-grid">
       <div class="stat-box reveal">
@@ -947,7 +1037,7 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
 <!-- CTA -->
 <div class="cta-section">
   <div class="cta-inner">
-    <span class="cta-kicker reveal">Your s could be next</span>
+    <span class="cta-kicker reveal">Your results could be next</span>
     <h2 class="reveal">Ready to build your<br>case study?</h2>
     <p class="cta-desc reveal">Book a free 30-minute strategy call. We'll identify your biggest revenue gap and map out exactly what system will close it.</p>
     <div class="cta-btns reveal">
@@ -968,8 +1058,8 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
       <div class="footer-logo-wrap"><div class="footer-logo-mark">S</div>Smart<em>Biz</em>Systems</div>
       <p class="footer-tagline">Kenya's AI-powered digital marketing agency. We build systems, not just campaigns.</p>
       <div class="footer-contact">
-        <a href="tel:+254734230445">📞 +254 734 230 445</a>
-        <a href="https://wa.me/254734230445" target="_blank">💬 WhatsApp us</a>
+        <a href="tel:+254740239241">📞 +254 734 230 445</a>
+        <a href="https://wa.me/254740239241" target="_blank">💬 WhatsApp us</a>
         <a href="mailto:hello@smartbizsystems.co.ke">✉️ hello@smartbizsystems.co.ke</a>
         <a href="#">📍 Westlands, Nairobi</a>
       </div>
@@ -1012,11 +1102,11 @@ footer{background:var(--grey-800);border-top:1px solid rgba(255,255,255,0.06);co
 </footer>
 
 <!-- WA FLOAT (desktop) -->
-<a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%20saw%20your%20work%20page%20and%20want%20to%20discuss%20a%20project." class="wa-float" target="_blank">💬 Chat on WhatsApp</a>
+<a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20saw%20your%20work%20page%20and%20want%20to%20discuss%20a%20project." class="wa-float" target="_blank">💬 Chat on WhatsApp</a>
 
 <!-- MOBILE STICKY BAR -->
 <div class="mobile-cta-bar">
-  <a href="https://wa.me/254734230445" target="_blank" class="btn-primary" style="flex:1;justify-content:center;font-size:0.88rem;padding:12px;background:#25d366">💬 WhatsApp us</a>
+  <a href="https://wa.me/254740239241" target="_blank" class="btn-primary" style="flex:1;justify-content:center;font-size:0.88rem;padding:12px;background:#25d366">💬 WhatsApp us</a>
   <a href="https://calendar.app.google/GdD8cNGzHa1LfJF87" target="_blank" class="btn-primary" style="flex:1;justify-content:center;font-size:0.88rem;padding:12px">Book a call</a>
 </div>
 
@@ -1085,9 +1175,10 @@ const sb=document.querySelector('.stats-section');
 if(sb)so.observe(sb);
 
 
- // Mobile menu
+// Mobile menu toggle functionality
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
+const nav = document.getElementById('nav');
 
 navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('open');
@@ -1113,7 +1204,6 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
-
 
 </body>
 </html>
