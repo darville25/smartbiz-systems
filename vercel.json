@@ -59,7 +59,7 @@
     },
     {
       "source": "/services/privacy.html",
-      "destination": "/privacy",
+      "destination": "/privacy.html",
       "permanent": true
     },
     {
