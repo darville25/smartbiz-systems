@@ -103,11 +103,6 @@
       "permanent": true
     },
     {
-      "source": "/(.*)\\.html",
-      "destination": "/$1",
-      "permanent": true
-    },
-    {
       "source": "/seo-pages/kiambu/index.html",
       "destination": "/seo-pages/lead-generation/kiambu.html",
       "permanent": true
@@ -121,6 +116,12 @@
       "source": "/seo-pages/mombasa/index.html",
       "destination": "/seo-pages/lead-generation/mombasa.html",
       "permanent": true
-   }
+   },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "permanent": true
+    }
+    
   ]
 }
