@@ -3,6 +3,21 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/pseo/lead-generation/nairobi.html",
+      "destination": "/seo-pages/lead-generation/nairobi.html",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-ebook-kenya",
+      "destination": "/services/paid-ads.html",
+      "permanent": true
+    },
+    {
+      "source": "/digital-marketing-ebook-kenya.html",
+      "destination": "/services/paid-ads.html",
+      "permanent": true
+    },
+    {
       "source": "/web-design-packages.html",
       "destination": "/services/website-design-services-in-kenya",
       "permanent": true
@@ -98,11 +113,6 @@
       "permanent": true
     },
     {
-      "source": "/digital-marketing-ebook-kenya.html",
-      "destination": "/services/digital-marketing-ebook-kenya",
-      "permanent": true
-    },
-    {
       "source": "/seo-pages/kiambu/index.html",
       "destination": "/seo-pages/lead-generation/kiambu.html",
       "permanent": true
@@ -116,12 +126,16 @@
       "source": "/seo-pages/mombasa/index.html",
       "destination": "/seo-pages/lead-generation/mombasa.html",
       "permanent": true
-   },
+    },
+    {
+      "source": "/pseo/lead-generation/nairobi.html",
+      "destination": "/seo-pages/lead-generation/nairobi.html",
+      "permanent": true
+    },
     {
       "source": "/(.*)\\.html",
       "destination": "/$1",
       "permanent": true
     }
-    
   ]
 }
