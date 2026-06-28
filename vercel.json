@@ -133,6 +133,11 @@
       "permanent": true
     },
     {
+      "source": "/seo-pages/web-development/real-estate-kilimani-not-mobile-friendly/",
+      "destination": "/services/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
       "source": "/(.*)\\.html",
       "destination": "/$1",
       "permanent": true
