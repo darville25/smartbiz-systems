@@ -138,6 +138,16 @@
       "permanent": true
     },
     {
+      "source": "/services/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-development/",
+      "destination": "/services/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
       "source": "/(.*)\\.html",
       "destination": "/$1",
       "permanent": true
