@@ -84,7 +84,7 @@
     },
     {
       "source": "/services/privacy.html",
-      "destination": "/privacy.html",
+      "destination": "/privacy",
       "permanent": true
     },
     {
@@ -181,6 +181,92 @@
     {
       "source": "/seo-pages/lead-generation/index.html",
       "destination": "/seo-pages/lead-generation",
+      "permanent": true
+    },
+
+    {
+      "source": "/pseo/lead-generation/index.html",
+      "destination": "/seo-pages/lead-generation",
+      "permanent": true
+    },
+    {
+      "source": "/pseo/lead-generation/upper-hill.html",
+      "destination": "/seo-pages/lead-generation",
+      "permanent": true
+    },
+    {
+      "source": "/pseo/lead-generation/westlands.html",
+      "destination": "/seo-pages/lead-generation",
+      "permanent": true
+    },
+    {
+      "source": "/pseo/lead-generation/mombasa.html",
+      "destination": "/seo-pages/lead-generation/mombasa",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pages/web-development/upper-hill-not-showing-on-google/",
+      "destination": "/services/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pages/web-development/thika-industrial-no-website-entry/",
+      "destination": "/services/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp-automation/clinics-hospitals.html",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp-automation/ecommerce.html",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pages/smes.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/free-audit",
+      "permanent": true
+    },
+    {
+      "source": "/process",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/process.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services/login.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/s/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pricing/index.html",
+      "destination": "/pricing",
       "permanent": true
     },
 
