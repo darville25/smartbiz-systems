@@ -4,21 +4,26 @@
   "redirects": [
     {
       "source": "/pseo/lead-generation/nairobi.html",
-      "destination": "/seo-pages/lead-generation/nairobi.html",
+      "destination": "/seo-pages/lead-generation/nairobi",
       "permanent": true
     },
     {
       "source": "/digital-marketing-ebook-kenya",
-      "destination": "/services/paid-ads.html",
+      "destination": "/services/paid-ads",
       "permanent": true
     },
     {
       "source": "/digital-marketing-ebook-kenya.html",
-      "destination": "/services/paid-ads.html",
+      "destination": "/services/paid-ads",
       "permanent": true
     },
     {
       "source": "/web-design-packages.html",
+      "destination": "/services/website-design-services-in-kenya",
+      "permanent": true
+    },
+    {
+      "source": "/website-design-services-in-kenya.html",
       "destination": "/services/website-design-services-in-kenya",
       "permanent": true
     },
@@ -49,6 +54,11 @@
     },
     {
       "source": "/automation",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/smartbiztool.html",
       "destination": "/services/whatsapp-automation",
       "permanent": true
     },
@@ -114,22 +124,17 @@
     },
     {
       "source": "/seo-pages/kiambu/index.html",
-      "destination": "/seo-pages/lead-generation/kiambu.html",
+      "destination": "/seo-pages/lead-generation/kiambu",
       "permanent": true
     },
     {
       "source": "/seo-pages/eldoret/index.html",
-      "destination": "/seo-pages/lead-generation/eldoret.html",
+      "destination": "/seo-pages/lead-generation/eldoret",
       "permanent": true
     },
     {
       "source": "/seo-pages/mombasa/index.html",
-      "destination": "/seo-pages/lead-generation/mombasa.html",
-      "permanent": true
-    },
-    {
-      "source": "/pseo/lead-generation/nairobi.html",
-      "destination": "/seo-pages/lead-generation/nairobi.html",
+      "destination": "/seo-pages/lead-generation/mombasa",
       "permanent": true
     },
     {
@@ -138,8 +143,13 @@
       "permanent": true
     },
     {
-      "source": "/services/services.html",
-      "destination": "/services",
+      "source": "/seo-pages/Web-Development/real-estate-kilimani-not-mobile-friendly-fix.html",
+      "destination": "/seo-pages/web-development/kilimani",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pages/Web-Development/upper-hill-finance-not-showing-on-google.html",
+      "destination": "/services/website-design-services-in-kenya",
       "permanent": true
     },
     {
@@ -147,6 +157,33 @@
       "destination": "/services/website-design-services-in-kenya",
       "permanent": true
     },
+
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/services/index.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/privacy/index.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pages/lead-generation/index.html",
+      "destination": "/seo-pages/lead-generation",
+      "permanent": true
+    },
+
     {
       "source": "/(.*)\\.html",
       "destination": "/$1",
