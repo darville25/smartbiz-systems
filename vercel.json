@@ -48,6 +48,11 @@
       "permanent": true
     },
     {
+      "source": "/results.html",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
       "source": "/automation.html",
       "destination": "/services/whatsapp-automation",
       "permanent": true
@@ -251,6 +256,11 @@
     },
     {
       "source": "/sitemap",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/careers.html",
       "destination": "/",
       "permanent": true
     },
