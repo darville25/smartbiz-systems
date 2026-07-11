@@ -44,7 +44,14 @@
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', purple: '#A78BFA', text: '#F3F4F6' }
+                        brand: { 
+                            dark: '#E2E8F0', 
+                            card: '#FFFFFF', 
+                            neon: '#2563EB', 
+                            neonhover: '#1D4ED8',
+                            purple: '#1D4ED8', 
+                            text: '#0F172A' 
+                        }
                     }
                 }
             }
@@ -54,19 +61,99 @@
      crossorigin="anonymous"></script>
 
     <style>
-        body { background-color: #0B0F19; color: #F3F4F6; }
-        .glass-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .blog-content h2 { font-size: 2.25rem; font-weight: 700; color: white; margin-top: 4rem; margin-bottom: 1.5rem; border-left: 4px solid #2DD4BF; padding-left: 1.2rem; }
-        .blog-content h3 { font-size: 1.6rem; font-weight: 600; color: #2DD4BF; margin-top: 2.5rem; margin-bottom: 1rem; }
-        .blog-content p { font-size: 1.15rem; line-height: 2; color: #D1D5DB; margin-bottom: 1.8rem; text-align: justify; }
-        .blog-content ul, .blog-content ol { list-style-position: outside; padding-left: 1.5rem; margin-bottom: 2rem; color: #D1D5DB; }
-        .blog-content ul { list-style-type: none; padding-left: 0; }
-        .blog-content li { margin-bottom: 1rem; line-height: 1.8; position: relative; padding-left: 2rem; font-size: 1.1rem; }
-        .blog-content li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #2DD4BF; }
-        .highlight-box { background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(45, 212, 191, 0.1) 100%); border: 1px solid rgba(255, 255, 255, 0.1); padding: 2.5rem; border-radius: 16px; margin: 3rem 0; }
-        .stat-card { background: #161E2E; border: 1px solid #374151; padding: 1.5rem; border-radius: 12px; text-align: center; }
-        .stat-val { font-size: 2.5rem; font-weight: 800; color: #2DD4BF; display: block; }
-        .stat-label { font-size: 0.875rem; color: #9CA3AF; text-transform: uppercase; letter-spacing: 0.1em; }
+        /* ── BLOG BRANDING OVERRIDE ── */
+        body { 
+            background-color: #E2E8F0; /* Brand Light Grey */
+            color: #0F172A; /* Brand Dark Text */
+            font-family: 'DM Sans', sans-serif; 
+        }
+        .glass-nav { 
+            background: rgba(248, 250, 252, 0.95); /* Brand Light Transparent */
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08); 
+        }
+        .shadow-neon {
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.35); /* Brand Blue glow */
+        }
+        .blog-content h2 { 
+            font-size: 2.25rem; 
+            font-weight: 800; 
+            color: #0F172A; 
+            margin-top: 4rem; 
+            margin-bottom: 1.5rem; 
+            border-left: 4px solid #2563EB; /* Brand Blue */
+            padding-left: 1.2rem; 
+            letter-spacing: -0.02em;
+        }
+        .blog-content h3 { 
+            font-size: 1.6rem; 
+            font-weight: 700; 
+            color: #2563EB; /* Brand Blue */
+            margin-top: 2.5rem; 
+            margin-bottom: 1rem; 
+            letter-spacing: -0.01em;
+        }
+        .blog-content p { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            color: #0F172A; 
+            margin-bottom: 1.8rem; 
+            text-align: left; 
+        }
+        .blog-content ul, .blog-content ol { 
+            list-style-position: outside; 
+            padding-left: 1.5rem; 
+            margin-bottom: 2rem; 
+            color: #0F172A; 
+        }
+        .blog-content ul { 
+            list-style-type: none; 
+            padding-left: 0; 
+        }
+        .blog-content li { 
+            margin-bottom: 1rem; 
+            line-height: 1.7; 
+            position: relative; 
+            padding-left: 2rem; 
+            font-size: 1.1rem; 
+        }
+        .blog-content li::before { 
+            content: "\f00c"; 
+            font-family: "Font Awesome 6 Free"; 
+            font-weight: 900; 
+            position: absolute; 
+            left: 0; 
+            color: #25D366; /* WhatsApp Green */
+        }
+        .highlight-box { 
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(15, 23, 42, 0.05) 100%); 
+            border: 1px solid #E2E8F0; 
+            padding: 2.5rem; 
+            border-radius: 16px; 
+            margin: 3rem 0; 
+        }
+        .stat-card { 
+            background: #FFFFFF; 
+            border: 1px solid #E2E8F0; 
+            padding: 1.5rem; 
+            border-radius: 12px; 
+            text-align: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .stat-val { 
+            font-size: 2.5rem; 
+            font-weight: 800; 
+            color: #2563EB; 
+            display: block; 
+            letter-spacing: -0.03em;
+        }
+        .stat-label { 
+            font-size: 0.875rem; 
+            color: #475569; 
+            text-transform: uppercase; 
+            letter-spacing: 0.12em; 
+            font-weight: 600;
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script
@@ -83,7 +170,7 @@
       gtag("config", "G-HPRK4JYRR5");
     </script>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+<body class="antialiased selection:bg-brand-neon selection:text-white">
 
     <!-- NAVIGATION -->
     
@@ -94,10 +181,10 @@
         <div class="relative z-10 max-w-4xl mx-auto px-4">
             <div class="flex justify-center items-center space-x-4 mb-6">
                 <span class="px-3 py-1 bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-xs font-bold rounded-full uppercase">Legal Tech 2026</span>
-                <span class="text-gray-500 text-sm"><i class="fa-regular fa-clock mr-1"></i> 18 min read</span>
+                <span class="text-gray-600 text-sm"><i class="fa-regular fa-clock mr-1"></i> 18 min read</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">ChatGPT for Lawyers Kenya: The 2026 Legal Revolution</h1>
-            <p class="text-gray-400 text-xl mb-8">Master the art of Legal AI. Discover how Nairobi's elite law firms are using ChatGPT to automate drafting, research, and client intake while staying ethically compliant.</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-black leading-tight mb-8">ChatGPT for Lawyers Kenya: The 2026 Legal Revolution</h1>
+            <p class="text-gray-700 text-xl mb-8">Master the art of Legal AI. Discover how Nairobi's elite law firms are using ChatGPT to automate drafting, research, and client intake while staying ethically compliant.</p>
         </div>
     </header>
 
@@ -146,26 +233,92 @@
 
                 <h3>Step 3: AI-Powered Client Onboarding</h3>
                 <p>Combine ChatGPT with your <strong>WhatsApp Business API</strong>. When a new lead asks about the process of registering a company or the cost of a title deed search, an AI-powered bot can provide accurate, polite, and instant answers based on your firm’s fee schedule and the Companies Act. This filters out the "tire kickers" and sends only qualified leads to your desk.</p>
-                     <!-- IN-CONTENT AUDIT TEASER -->
-                <div class="my-12 p-8 bg-gradient-to-r from-gray-900 to-[#0B0F19] border-l-4 border-brand-neon rounded-r-xl shadow-lg relative overflow-hidden">
-                <!-- Background Decor -->
-                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-neon/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
+                
+                <!-- IN-CONTENT AUDIT TEASER -->
+                <div class="my-12 p-8 bg-gradient-to-r from-white to-gray-50 border-l-4 border-brand-neon rounded-r-xl shadow-lg relative overflow-hidden border border-gray-200">
+                    <!-- Background Decor -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-neon/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
     
-                <div class="relative z-10">
-                <h4 class="text-2xl font-bold text-white mb-3 flex items-center">
-                <i class="fa-solid fa-rocket text-brand-neon mr-3"></i> 
-                  Want s like this?
-               </h4><p class="text-gray-300 mb-6 text-sm leading-relaxed">
-                 Don't let your competitors win. Let us audit your digital presence for free and show you exactly where you are losing customers.</p>
-                 <a href="../free-audit.html" class="inline-flex items-center px-6 py-3 border border-brand-neon text-brand-neon font-bold text-sm rounded-lg hover:bg-brand-neon hover:text-brand-dark transition-all">
-                 Claim Free Audit <i class="fa-solid fa-arrow-right ml-2"></i>
-                 </a>
+                    <div class="relative z-10">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-neon/30 bg-brand-neon/10 mb-4">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-neon"></span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-neon">Exclusive Law Resource</span>
+                        </div>
+
+                        <h4 class="text-xl font-bold text-black mb-2">Get our custom ChatGPT prompts pack designed specifically for Kenyan legal drafting</h4>
+                        <p class="text-gray-700 mb-6 text-sm leading-relaxed">
+                            Stop using generic AI outputs. Download our curated library of verified prompts built specifically for advocates in Kenya to draft contracts, NDAs, and summon papers in seconds under local laws.
+                        </p>
+
+                        <!-- WhatsApp CTA -->
+                        <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20read%20your%20ChatGPT%20for%20Lawyers%20guide%20and%20want%20to%20download%20the%20Kenyan%20Legal%20Drafting%20prompts%20pack."
+                           target="_blank"
+                           class="flex items-center justify-center gap-3 w-full px-5 py-4 bg-[#25D366] text-white font-bold text-sm rounded-xl hover:bg-[#1ea855] transition-all mb-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <div class="text-left">
+                                <div>Download via WhatsApp</div>
+                                <div class="text-xs font-normal opacity-80">Instant PDF download</div>
+                            </div>
+                        </a>
+
+                        <!-- Form toggle -->
+                        <div id="blog-cta-toggle-wrap">
+                            <button onclick="document.getElementById('blog-cta-toggle-wrap').style.display='none'; document.getElementById('blog-cta-form').style.display='block';"
+                              class="flex items-center justify-center gap-2 w-full px-5 py-3.5 border border-brand-neon/40 text-brand-neon font-bold text-sm rounded-xl hover:bg-brand-neon/5 transition-all">
+                              <i class="fa-solid fa-file-lines"></i> Or submit a quick form instead
+                            </button>
+                        </div>
+
+                        <!-- Inline form (hidden by default) -->
+                        <div id="blog-cta-form" style="display:none;" class="mt-3 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                            <div id="blog-cta-fields">
+                              <div class="mb-3">
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your name</label>
+                                <input type="text" id="bcf-name" placeholder="e.g. John Kamau"
+                                  class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm placeholder-gray-400 focus:border-brand-neon focus:outline-none transition">
+                              </div>
+                              <div class="mb-3">
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">WhatsApp / phone</label>
+                                <input type="tel" id="bcf-phone" placeholder="e.g. 0712 345 678"
+                                  class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm placeholder-gray-400 focus:border-brand-neon focus:outline-none transition">
+                              </div>
+                              <div class="mb-4">
+                                <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your primary legal specialty?</label>
+                                <select id="bcf-service"
+                                  class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm focus:border-brand-neon focus:outline-none transition">
+                                  <option value="" disabled selected>Pick one</option>
+                                  <option>Commercial Law &amp; Conveyancing</option>
+                                  <option>Litigation &amp; Dispute Resolution</option>
+                                  <option>Family &amp; Probate Law</option>
+                                  <option>Corporate Tech &amp; Intellectual Property</option>
+                                  <option>Other / Multiple Specialties</option>
+                                </select>
+                              </div>
+                              <button onclick="handleBlogCTA()"
+                                class="w-full py-3 bg-brand-neon text-white font-black text-sm uppercase tracking-wider rounded-lg hover:bg-brand-neonhover transition">
+                                Request Prompts Pack →
+                              </button>
+                              <p class="text-center text-[11px] text-gray-600 mt-2">
+                                <i class="fa-solid fa-lock text-brand-neon mr-1"></i>No spam. We'll reach out on WhatsApp only.
+                              </p>
+                            </div>
+
+                            <!-- Success state -->
+                            <div id="blog-cta-success" style="display:none;" class="text-center py-6">
+                              <div class="w-12 h-12 bg-brand-neon/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fa-solid fa-circle-check text-3xl text-brand-neon"></i>
+                              </div>
+                              <p class="text-black font-bold mb-1">Request sent!</p>
+                              <p class="text-gray-600 text-sm">We'll reach out on WhatsApp within 24 hours.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-               </div>
 
                 <div class="highlight-box">
-                    <h3 class="mt-0 text-white">EEAT Authority Warning</h3>
-                    <p class="text-white mb-0">Never cite a case provided by ChatGPT without verifying it on <strong>Kenya Law Reports</strong>. AI can "hallucinate" (make up) cases that sound real but don't exist. Your "Authoritativeness" as a lawyer depends on your final verification. Treat AI output as a draft, never as a finished filing.</p>
+                    <h3 class="mt-0 text-black">EEAT Authority Warning</h3>
+                    <p class="text-gray-700 mb-0">Never cite a case provided by ChatGPT without verifying it on <strong>Kenya Law Reports</strong>. AI can "hallucinate" (make up) cases that sound real but don't exist. Your "Authoritativeness" as a lawyer depends on your final verification. Treat AI output as a draft, never as a finished filing.</p>
                 </div>
 
                 <h2>4. Common Mistakes: Maintaining Ethics and Privacy</h2>
@@ -190,7 +343,7 @@
                 <p>Is your law firm buried in 1990s workflows? Are you ready to reclaim 10 hours of your week? At SmartBizSystems, we don't just recommend tools; we build the digital infrastructure for the modern Kenyan lawyer. We offer a <strong>Free 15-Minute Legal Tech Audit</strong> where we look at your current drafting and research process and show you exactly how AI can double your output.</p>
                 
                 <div class="mt-8 text-center">
-                    <a href="../index.html#contact" class="inline-block px-10 py-5 bg-brand-neon text-brand-dark font-bold rounded-full hover:shadow-neon transition-all text-lg uppercase tracking-wider">Book My Legal Tech Audit</a>
+                    <a href="../index.html#contact" class="inline-block px-10 py-5 bg-brand-neon text-white font-bold rounded-full hover:shadow-neon transition-all text-lg uppercase tracking-wider">Book My Legal Tech Audit</a>
                 </div>
 
                 <h2>Conclusion: The Future of the Kenyan Advocate</h2>
@@ -201,33 +354,36 @@
             <div class="lg:col-span-1 space-y-8">
                 
                 <!-- CTA Card -->
-                <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl text-center sticky top-24 shadow-2xl">
+                <div class="bg-white border border-gray-200 p-8 rounded-2xl text-center sticky top-24 shadow-xl">
                     <div class="w-20 h-20 bg-brand-neon/20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-neon border border-brand-neon/50">
                         <i class="fa-solid fa-scale-balanced text-4xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">Legal Bot Setup</h3>
-                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                    <h3 class="text-2xl font-bold text-black mb-4">Legal Bot Setup</h3>
+                    <p class="text-gray-700 text-sm mb-8 leading-relaxed">
                         Want an AI that knows the Kenyan Companies Act and your firm's specific templates? We build private, secure Legal AI systems for Nairobi's leading practitioners.
                     </p>
-                    <a href="../smartbiztool.html" class="block w-full py-4 bg-brand-neon text-brand-dark font-bold rounded-xl hover:bg-brand-neonhover transition shadow-neon uppercase tracking-wider text-xs">
+                    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20read%20your%20ChatGPT%20for%20Lawyers%20guide%20and%20want%20to%20discuss%20setting%20up%20a%20private%20Legal%20AI%20bot%20or%20automating%20drafting%20for%20our%20firm." 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="block w-full py-4 bg-brand-neon text-white font-bold rounded-xl hover:bg-brand-neonhover transition shadow-neon uppercase tracking-wider text-xs">
                         Audit My Practice
                     </a>
                 </div>
 
                 <!-- Local Insight Card -->
-                <div class="bg-brand-card border border-gray-800 rounded-2xl p-6">
-                    <h4 class="text-white font-bold mb-4 border-b border-gray-800 pb-2">Kenyan Legal AI Check</h4>
-                    <ul class="space-y-4 text-sm text-gray-400">
+                <div class="bg-brand-card border border-gray-200 rounded-2xl p-6">
+                    <h4 class="text-black font-bold mb-4 border-b border-gray-200 pb-2">Kenyan Legal AI Check</h4>
+                    <ul class="space-y-4 text-sm text-gray-700">
                         <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-purple mt-1 mr-3"></i>
+                            <i class="fa-solid fa-circle-check text-brand-neon mt-1 mr-3"></i>
                             <span>Reference the Constitution of Kenya 2010 in prompts.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-purple mt-1 mr-3"></i>
+                            <i class="fa-solid fa-circle-check text-brand-neon mt-1 mr-3"></i>
                             <span>Use GPT-4o for complex litigation summaries.</span>
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-brand-purple mt-1 mr-3"></i>
+                            <i class="fa-solid fa-circle-check text-brand-neon mt-1 mr-3"></i>
                             <span>Always cross-check with the Kenya Law Reports.</span>
                         </li>
                     </ul>
@@ -239,479 +395,404 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black border-t border-gray-900 pt-16 pb-12">
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <span class="text-3xl font-bold tracking-tight text-white block mb-6">SmartBiz<span class="text-brand-neon">Systems</span></span>
-            <p class="text-gray-500 text-sm max-w-lg mx-auto mb-8">Specializing in legal tech integration, law firm automation, and advanced SEO for Kenyan practitioners. Based in Nairobi, serving East Africa.</p>
-            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+            <span class="text-3xl font-bold tracking-tight text-black block mb-6">SmartBiz<span class="text-brand-neon">Systems</span></span>
+            <p class="text-gray-600 text-sm max-w-lg mx-auto mb-8">Specializing in legal tech integration, law firm automation, and advanced SEO for Kenyan practitioners. Based in Nairobi, serving East Africa.</p>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-500">
                 <a href="#" class="hover:text-brand-neon transition"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
                 <a href="#" class="hover:text-brand-neon transition"><i class="fa-brands fa-twitter text-xl"></i></a>
                 <a href="#" class="hover:text-brand-neon transition"><i class="fa-brands fa-whatsapp text-xl"></i></a>
             </div>
-            <p class="text-gray-700 text-xs">&copy; 2026 SmartBizSystems Kenya. All rights reserved. Professional Automation Agency.</p>
+            <p class="text-gray-500 text-xs">&copy; 2026 SmartBizSystems Kenya. All rights reserved. Professional Automation Agency.</p>
         </div>
     </footer>
-  <!--
-  ============================================================
-  SMARTBIZSYSTEMS — BLOG CONVERSION SYSTEM v1.1
-  Drop this snippet before 
 
-</body> on all 50 blog pages.
-  Activates 4 conversion triggers automatically.
-  Article selector: .blog-content (confirmed from live site)
-  WhatsApp: +254 734 230 445
-  ============================================================
--->
+    <!-- ============================================ -->
+    <!-- FLOATING WHATSAPP WIDGET                     -->
+    <!-- ============================================ -->
+    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20am%20interested%20in%20your%20services." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-[9999] group"
+       aria-label="Chat on WhatsApp">
+        
+        <!-- Tooltip (Appears on Hover) -->
+        <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1 bg-gray-900 text-white text-xs font-bold rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700">
+            Chat with Support
+        </span>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- The Button Container -->
+        <div class="relative flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-transform duration-300 group-hover:scale-110">
+            
+            <!-- Ping Animation (Ripples) -->
+            <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping"></span>
+            
+            <!-- Icon -->
+            <i class="fa-brands fa-whatsapp text-4xl text-white relative z-10"></i>
+        </div>
+    </a>
+<script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
 
-<style>
-  /* ── STICKY BOTTOM BAR (Trigger 1) ── */
-  #sbs-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: #111827;
-    border-top: 1px solid #2DD4BF33;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    z-index: 9000;
-    font-family: 'Inter', sans-serif;
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  #sbs-bar.visible { transform: translateY(0); }
-  #sbs-bar .bar-text {
-    color: #9CA3AF;
-    font-size: 13px;
-    flex: 1;
-    line-height: 1.4;
-  }
-  #sbs-bar .bar-text strong { color: #F3F4F6; font-weight: 600; }
-  #sbs-bar .bar-cta {
-    background: #25D366;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-  }
-  #sbs-bar .bar-close {
-    background: none;
-    border: none;
-    color: #9CA3AF;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 4px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-  #sbs-bar .bar-close:hover { color: #F3F4F6; }
+    <!--
+      ============================================================
+      SMARTBIZSYSTEMS — BLOG CONVERSION SYSTEM v1.1
+      WhatsApp: +254 740 239 241
+      ============================================================
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  /* ── INLINE CTA CARD (Trigger 2) ── */
-  .sbs-inline-cta {
-    background: #111827;
-    border: 1px solid #2DD4BF44;
-    border-left: 4px solid #2DD4BF;
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin: 2rem 0;
-    font-family: 'Inter', sans-serif;
-  }
-  .sbs-inline-cta .ic-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: #2DD4BF;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .sbs-inline-cta h3 {
-    color: #F3F4F6;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 8px;
-    line-height: 1.3;
-  }
-  .sbs-inline-cta p {
-    color: #9CA3AF;
-    font-size: 14px;
-    margin: 0 0 18px;
-    line-height: 1.6;
-  }
-  .sbs-inline-cta .ic-btns {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .sbs-inline-cta .ic-btn-primary {
-    background: #2DD4BF;
-    color: #0B0F19;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 11px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .sbs-inline-cta .ic-btn-secondary {
-    background: transparent;
-    color: #2DD4BF;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 11px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    border: 1px solid #2DD4BF55;
-  }
-  .sbs-inline-cta .ic-btn-secondary:hover { border-color: #2DD4BF; }
+    <style>
+      /* ── STICKY BOTTOM BAR (Trigger 1) ── */
+      #sbs-bar {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: #111827;
+        border-top: 1px solid #2563EB33;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        z-index: 9000;
+        font-family: 'Inter', sans-serif;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #sbs-bar.visible { transform: translateY(0); }
+      #sbs-bar .bar-text {
+        color: #9CA3AF;
+        font-size: 13px;
+        flex: 1;
+        line-height: 1.4;
+      }
+      #sbs-bar .bar-text strong { color: #F3F4F6; font-weight: 600; }
+      #sbs-bar .bar-cta {
+        background: #25D366;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      #sbs-bar .bar-close {
+        background: none;
+        border: none;
+        color: #9CA3AF;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 4px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      #sbs-bar .bar-close:hover { color: #F3F4F6; }
 
-  /* ── END-OF-ARTICLE CTA BLOCK (Trigger 3) ── */
-  #sbs-end-block {
-    background: linear-gradient(135deg, #111827 0%, #0B0F19 100%);
-    border: 1px solid #2DD4BF33;
-    border-radius: 16px;
-    padding: 40px 36px;
-    margin: 3rem 0 2rem;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-  }
-  #sbs-end-block .eb-tag {
-    display: inline-block;
-    background: #2DD4BF22;
-    color: #2DD4BF;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-  }
-  #sbs-end-block h2 {
-    color: #F3F4F6;
-    font-size: 26px;
-    font-weight: 800;
-    margin: 0 0 10px;
-    line-height: 1.25;
-  }
-  #sbs-end-block p {
-    color: #9CA3AF;
-    font-size: 15px;
-    margin: 0 0 28px;
-    line-height: 1.6;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #sbs-end-block .eb-btns {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  #sbs-end-block .eb-btn-wa {
-    background: #25D366;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 13px 26px;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 0 20px #25D36644;
-  }
-  #sbs-end-block .eb-btn-audit {
-    background: transparent;
-    color: #2DD4BF;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 13px 26px;
-    border-radius: 10px;
-    text-decoration: none;
-    border: 1px solid #2DD4BF55;
-  }
-  #sbs-end-block .eb-btn-call {
-    background: transparent;
-    color: #9CA3AF;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 13px 26px;
-    border-radius: 10px;
-    text-decoration: none;
-    border: 1px solid #ffffff22;
-  }
-  #sbs-end-block .eb-proof {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #6B7280;
-  }
+      /* ── INLINE CTA CARD (Trigger 2) ── */
+      .sbs-inline-cta {
+        background: #111827;
+        border: 1px solid #2563EB44;
+        border-left: 4px solid #2563EB;
+        border-radius: 12px;
+        padding: 24px 28px;
+        margin: 2rem 0;
+        font-family: 'Inter', sans-serif;
+      }
+      .sbs-inline-cta .ic-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: #2563EB;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .sbs-inline-cta h3 {
+        color: #F3F4F6;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        line-height: 1.3;
+      }
+      .sbs-inline-cta p {
+        color: #9CA3AF;
+        font-size: 14px;
+        margin: 0 0 18px;
+        line-height: 1.6;
+      }
+      .sbs-inline-cta .ic-btns {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .sbs-inline-cta .ic-btn-primary {
+        background: #2563EB;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 11px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .sbs-inline-cta .ic-btn-secondary {
+        background: transparent;
+        color: #2563EB;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 11px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        border: 1px solid #2563EB55;
+      }
+      .sbs-inline-cta .ic-btn-secondary:hover { border-color: #2563EB; }
 
-  /* ── EXIT POPUP (Trigger 4) ── */
-  #sbs-exit-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.75);
-    z-index: 10000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
-    padding: 20px;
-  }
-  #sbs-exit-overlay.show { display: flex; }
-  #sbs-exit-modal {
-    background: #111827;
-    border: 1px solid #2DD4BF44;
-    border-radius: 16px;
-    padding: 36px 32px;
-    max-width: 460px;
-    width: 100%;
-    position: relative;
-    animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  @keyframes popIn {
-    from { opacity: 0; transform: scale(0.92) translateY(12px); }
-    to   { opacity: 1; transform: scale(1)    translateY(0); }
-  }
-  #sbs-exit-close {
-    position: absolute;
-    top: 14px; right: 16px;
-    background: none; border: none;
-    color: #6B7280; font-size: 22px;
-    cursor: pointer; line-height: 1;
-  }
-  #sbs-exit-close:hover { color: #F3F4F6; }
-  #sbs-exit-modal .ep-emoji { font-size: 36px; margin-bottom: 12px; }
-  #sbs-exit-modal h3 {
-    color: #F3F4F6;
-    font-size: 22px;
-    font-weight: 800;
-    margin: 0 0 10px;
-    line-height: 1.3;
-  }
-  #sbs-exit-modal p {
-    color: #9CA3AF;
-    font-size: 14px;
-    margin: 0 0 24px;
-    line-height: 1.6;
-  }
-  #sbs-exit-modal .ep-cta {
-    display: block;
-    background: #25D366;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 14px;
-    border-radius: 10px;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 0 24px #25D36655;
-    margin-bottom: 10px;
-  }
-  #sbs-exit-modal .ep-skip {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: #6B7280;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-</style>
+      /* ── END-OF-ARTICLE CTA BLOCK (Trigger 3) ── */
+      #sbs-end-block {
+        background: linear-gradient(135deg, #111827 0%, #0B0F19 100%);
+        border: 1px solid #2563EB33;
+        border-radius: 16px;
+        padding: 40px 36px;
+        margin: 3rem 0 2rem;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+      }
+      #sbs-end-block .eb-tag {
+        display: inline-block;
+        background: #2563EB22;
+        color: #2563EB;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+      }
+      #sbs-end-block h2 {
+        color: #F3F4F6;
+        font-size: 26px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        line-height: 1.25;
+      }
+      #sbs-end-block p {
+        color: #9CA3AF;
+        font-size: 15px;
+        margin: 0 0 28px;
+        line-height: 1.6;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #sbs-end-block .eb-btns {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      #sbs-end-block .eb-btn-wa {
+        background: #25D366;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 13px 26px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 0 20px #25D36644;
+      }
+      #sbs-end-block .eb-btn-audit {
+        background: transparent;
+        color: #2563EB;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 13px 26px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #2563EB55;
+      }
+      #sbs-end-block .eb-btn-call {
+        background: transparent;
+        color: #9CA3AF;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 13px 26px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #ffffff22;
+      }
+      #sbs-end-block .eb-proof {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #6B7280;
+      }
 
+      /* ── EXIT POPUP (Trigger 4) ── */
+      #sbs-exit-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.75);
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Inter', sans-serif;
+        padding: 20px;
+      }
+      #sbs-exit-overlay.show { display: flex; }
+      #sbs-exit-modal {
+        background: #111827;
+        border: 1px solid #2563EB44;
+        border-radius: 16px;
+        padding: 36px 32px;
+        max-width: 460px;
+        width: 100%;
+        position: relative;
+        animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @keyframes popIn {
+        from { opacity: 0; transform: scale(0.92) translateY(12px); }
+        to   { opacity: 1; transform: scale(1)    translateY(0); }
+      }
+      #sbs-exit-close {
+        position: absolute;
+        top: 14px; right: 16px;
+        background: none; border: none;
+        color: #6B7280; font-size: 22px;
+        cursor: pointer; line-height: 1;
+      }
+      #sbs-exit-close:hover { color: #F3F4F6; }
+      #sbs-exit-modal .ep-emoji { font-size: 36px; margin-bottom: 12px; }
+      #sbs-exit-modal h3 {
+        color: #F3F4F6;
+        font-size: 22px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        line-height: 1.3;
+      }
+      #sbs-exit-modal p {
+        color: #9CA3AF;
+        font-size: 14px;
+        margin: 0 0 24px;
+        line-height: 1.6;
+      }
+      #sbs-exit-modal .ep-cta {
+        display: block;
+        background: #25D366;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0 0 24px #25D36655;
+        margin-bottom: 10px;
+      }
+      #sbs-exit-modal .ep-skip {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: #6B7280;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    </style>
 
-<!-- ── TRIGGER 1: STICKY BOTTOM BAR ── -->
-<div id="sbs-bar">
-  <div class="bar-text">
-    <strong>Still reading?</strong> Let's build this for your business. Free 30-min audit, no commitment.
-  </div>
-  <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%27m%20ready%20to%20automate%20my%20business.%20Let%27s%20talk."
-     class="bar-cta" target="_blank" rel="noopener">
-    💬 Chat on WhatsApp
-  </a>
-  <button class="bar-close" onclick="document.getElementById('sbs-bar').style.display='none'" aria-label="Close">×</button>
-</div>
+    <!-- ── MASTER CONTROL SCRIPT ── -->
+    <script>
+    (function() {
+      var exitShown = false;
+      var exitDismissed = false;
+      var barShown = false;
+      var inlineInserted = false;
 
-
-<!-- ── TRIGGER 2: INLINE CTA CARD ──
-     USAGE: Paste this div at the 50% scroll point of your article body.
-     Customise the headline per blog topic (see JS auto-insert below). -->
-<div class="sbs-inline-cta" id="sbs-inline-placeholder" style="display:none;">
-  <div class="ic-label">Free Offer</div>
-  <h3 id="sbs-inline-headline">Want us to set this up for your business?</h3>
-  <p>We build and launch AI automation systems for Kenyan businesses in 7 days. WhatsApp bots, M-Pesa triggers, CRM flows — all done for you. Starting at KES 30,000.</p>
-  <div class="ic-btns">
-    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%27m%20ready%20to%20automate%20my%20business.%20Let%27s%20talk."
-       class="ic-btn-primary" target="_blank" rel="noopener">💬 Talk on WhatsApp</a>
-    <a href="/free-audit.html" class="ic-btn-secondary">Get Free Audit →</a>
-  </div>
-</div>
-
-
-<!-- ── TRIGGER 3: END-OF-ARTICLE BLOCK ──
-     USAGE: Paste this div at the very end of every blog article body,
-     just before the closing </article> or </section> tag. -->
-<div id="sbs-end-block">
-  <div class="eb-tag">Ready to Automate?</div>
-  <h2>Stop Guessing. Start Growing.</h2>
-  <p>34+ Kenyan businesses are already saving 40+ hours a month with SmartBizSystems. Your system can be live in 7 days.</p>
-  <div class="eb-btns">
-    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%27m%20ready%20to%20automate%20my%20business.%20Let%27s%20talk."
-       class="eb-btn-wa" target="_blank" rel="noopener">💬 Talk on WhatsApp</a>
-    <a href="/free-audit.html" class="eb-btn-audit">Free Audit</a>
-    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%27d%20like%20to%20book%20a%20consultation" class="eb-btn-call" target="_blank" rel="noopener">Book a Call</a>
-  </div>
-  <p class="eb-proof">M-Pesa accepted · Live in 7 days · No lock-in contracts</p>
-</div>
-
-
-<!-- ── TRIGGER 4: EXIT INTENT POPUP ── -->
-<div id="sbs-exit-overlay" role="dialog" aria-modal="true" aria-label="Before you go">
-  <div id="sbs-exit-modal">
-    <button id="sbs-exit-close" onclick="closeSbsExit()" aria-label="Close popup">×</button>
-    <div class="ep-emoji">⚡</div>
-    <h3>Before you go — your competitor just responded to a lead you missed.</h3>
-    <p>Get a free audit and see exactly which parts of your business can be automated this week. Takes 30 minutes. Costs nothing.</p>
-    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20want%20a%20free%20automation%20audit"
-       class="ep-cta" target="_blank" rel="noopener">💬 Get My Free Audit on WhatsApp</a>
-    <span class="ep-skip" onclick="closeSbsExit()">No thanks, I'll figure it out myself</span>
-  </div>
-</div>
-
-
-<!-- ── MASTER CONTROL SCRIPT ── -->
-<script>
-(function() {
-  var exitShown = false;
-  var exitDismissed = false;
-  var barShown = false;
-  var inlineInserted = false;
-
-  // ── TRIGGER 1: Show sticky bar after 30s ──
-  setTimeout(function() {
-    var bar = document.getElementById('sbs-bar');
-    if (bar) { bar.classList.add('visible'); barShown = true; }
-  }, 30000);
-
-  // ── TRIGGER 2: Insert inline CTA at 50% scroll ──
-  function insertInlineCTA() {
-    if (inlineInserted) return;
-    var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPct < 45) return;
-    inlineInserted = true;
-
-    var articleBody = document.querySelector('.blog-content');
-    if (!articleBody) return;
-
-    var paragraphs = articleBody.querySelectorAll('p');
-    var midPoint = Math.floor(paragraphs.length / 2);
-    var insertAfter = paragraphs[midPoint];
-    if (!insertAfter) return;
-
-    var placeholder = document.getElementById('sbs-inline-placeholder');
-    if (placeholder) {
-      placeholder.style.display = 'block';
-      insertAfter.parentNode.insertBefore(placeholder, insertAfter.nextSibling);
-    }
-  }
-
-  // ── TRIGGER 4: Exit intent ──
-  document.addEventListener('mouseleave', function(e) {
-    if (e.clientY > 20) return;
-    if (exitShown || exitDismissed) return;
-    // Only show if user has scrolled at least 30%
-    var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPct < 30) return;
-    exitShown = true;
-    var overlay = document.getElementById('sbs-exit-overlay');
-    if (overlay) overlay.classList.add('show');
-  });
-
-  // Scroll listener
-  window.addEventListener('scroll', function() {
-    // Show bar earlier if user scrolls fast (40% scroll = show bar immediately)
-    if (!barShown) {
-      var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      if (pct > 40) {
+      // ── TRIGGER 1: Show sticky bar after 30s ──
+      setTimeout(function() {
         var bar = document.getElementById('sbs-bar');
         if (bar) { bar.classList.add('visible'); barShown = true; }
+      }, 30000);
+
+      // ── TRIGGER 2: Insert inline CTA at 50% scroll ──
+      function insertInlineCTA() {
+        if (inlineInserted) return;
+        var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPct < 45) return;
+        inlineInserted = true;
+
+        var articleBody = document.querySelector('.blog-content');
+        if (!articleBody) return;
+
+        var paragraphs = articleBody.querySelectorAll('p');
+        var midPoint = Math.floor(paragraphs.length / 2);
+        var insertAfter = paragraphs[midPoint];
+        if (!insertAfter) return;
+
+        var placeholder = document.getElementById('sbs-inline-placeholder');
+        if (placeholder) {
+          placeholder.style.display = 'block';
+          insertAfter.parentNode.insertBefore(placeholder, insertAfter.nextSibling);
+        }
       }
+
+      // ── TRIGGER 4: Exit intent ──
+      document.addEventListener('mouseleave', function(e) {
+        if (e.clientY > 20) return;
+        if (exitShown || exitDismissed) return;
+        var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPct < 30) return;
+        exitShown = true;
+        var overlay = document.getElementById('sbs-exit-overlay');
+        if (overlay) overlay.classList.add('show');
+      });
+
+      // Scroll listener
+      window.addEventListener('scroll', function() {
+        if (!barShown) {
+          var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+          if (pct > 40) {
+            var bar = document.getElementById('sbs-bar');
+            if (bar) { bar.classList.add('visible'); barShown = true; }
+          }
+        }
+        insertInlineCTA();
+      }, { passive: true });
+
+      // Close exit overlay on backdrop click
+      document.getElementById('sbs-exit-overlay').addEventListener('click', function(e) {
+        if (e.target === this) closeSbsExit();
+      });
+
+      // ESC key closes popup
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSbsExit();
+      });
+    })();
+
+    function closeSbsExit() {
+      var overlay = document.getElementById('sbs-exit-overlay');
+      if (overlay) overlay.classList.remove('show');
+      try { localStorage.setItem('sbs_exit_dismissed', Date.now()); } catch(e) {}
     }
-    insertInlineCTA();
-  }, { passive: true });
 
-  // Close exit overlay on backdrop click
-  document.getElementById('sbs-exit-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closeSbsExit();
-  });
-
-  // ESC key closes popup
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeSbsExit();
-  });
-})();
-
-function closeSbsExit() {
-  var overlay = document.getElementById('sbs-exit-overlay');
-  if (overlay) overlay.classList.remove('show');
-  // Don't show again for 24h
-  try { localStorage.setItem('sbs_exit_dismissed', Date.now()); } catch(e) {}
-}
-
-// Suppress exit popup if dismissed in last 24h
-(function() {
-  try {
-    var d = localStorage.getItem('sbs_exit_dismissed');
-    if (d && (Date.now() - parseInt(d)) < 86400000) {
-      document.getElementById('sbs-exit-overlay').remove();
-    }
-  } catch(e) {}
-})();
-</script>
-
-<!--
-  ============================================================
-  HOW TO CUSTOMISE PER BLOG TOPIC
-  ============================================================
-
-  INLINE CTA HEADLINE (#sbs-inline-headline) — swap per topic:
-  - WhatsApp automation blogs:  "Want us to automate your WhatsApp in 7 days?"
-  - M-Pesa blogs:               "Want M-Pesa payments to trigger instant responses?"
-  - Real estate blogs:          "Want every property enquiry handled automatically?"
-  - School/college blogs:       "Want to automate fee reminders and admissions comms?"
-  - Insurance blogs:            "Want to stop lapsed policies with automation?"
-  - CRM blogs:                  "Want a CRM that updates itself automatically?"
-
-  EXIT POPUP HEADLINE — swap for urgency relevant to the topic.
-
-  WhatsApp pre-filled messages — pre-fill per page using:
-  ?text=Hi%20SmartBiz%2C%20[URL-encoded+message]
-
-  ============================================================
-  IMPLEMENTATION — ADD TO ALL 50 BLOGS IN 3 STEPS
-  ============================================================
-  1. Paste this entire file's content before 
-
-</body> on every blog page
-  2. Selector already set to .blog-content — no changes needed
-  3. Customise inline CTA headline per blog topic (optional but +20% lift)
-  ============================================================
--->
-
-
+    (function() {
+      try {
+        var d = localStorage.getItem('sbs_exit_dismissed');
+        if (d && (Date.now() - parseInt(d)) < 86400000) {
+          document.getElementById('sbs-exit-overlay').remove();
+        }
+      } catch(e) {}
+    })();
+    </script>
 
 </body>
 </html>

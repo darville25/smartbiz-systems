@@ -45,7 +45,14 @@
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        brand: { dark: '#0B0F19', card: '#161E2E', neon: '#2DD4BF', purple: '#A78BFA', text: '#F3F4F6' }
+                        brand: { 
+                            dark: '#E2E8F0', 
+                            card: '#FFFFFF', 
+                            neon: '#2563EB', 
+                            neonhover: '#1D4ED8',
+                            purple: '#1D4ED8', 
+                            text: '#0F172A' 
+                        }
                     }
                 }
             }
@@ -55,19 +62,103 @@
      crossorigin="anonymous"></script>
 
     <style>
-        body { background-color: #0B0F19; color: #F3F4F6; }
-        .glass-nav { background: rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .blog-content h2 { font-size: 2.25rem; font-weight: 700; color: white; margin-top: 4rem; margin-bottom: 1.5rem; border-left: 4px solid #2DD4BF; padding-left: 1rem; }
-        .blog-content h3 { font-size: 1.75rem; font-weight: 600; color: #A78BFA; margin-top: 3rem; margin-bottom: 1rem; }
-        .blog-content p { font-size: 1.2rem; line-height: 2; color: #D1D5DB; margin-bottom: 1.75rem; text-align: justify; }
-        .blog-content ul, .blog-content ol { padding-left: 1.5rem; margin-bottom: 2rem; color: #D1D5DB; }
-        .blog-content li { margin-bottom: 1rem; line-height: 1.8; font-size: 1.15rem; }
-        .rate-card { background: linear-gradient(135deg, #161E2E 0%, #0B0F19 100%); border: 1px solid #374151; padding: 2.5rem; border-radius: 16px; margin: 3rem 0; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .warning-box { border-left: 5px solid #EF4444; background: rgba(239, 68, 68, 0.05); padding: 2rem; margin: 2.5rem 0; color: #FCA5A5; border-radius: 0 12px 12px 0; }
-        .highlight { color: #2DD4BF; font-weight: 800; }
-        .comparison-table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; background: #161E2E; border-radius: 12px; overflow: hidden; }
-        .comparison-table th, .comparison-table td { border: 1px solid #374151; padding: 1.25rem; text-align: left; }
-        .comparison-table th { background-color: #1F2937; color: #2DD4BF; }
+        /* ── BLOG BRANDING OVERRIDE ── */
+        body { 
+            background-color: #E2E8F0; /* Brand Light Grey */
+            color: #0F172A; /* Brand Dark Text */
+            font-family: 'DM Sans', sans-serif; 
+        }
+        .glass-nav { 
+            background: rgba(248, 250, 252, 0.95); /* Brand Light Transparent */
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08); 
+        }
+        .shadow-neon {
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.35); /* Brand Blue glow */
+        }
+        .blog-content h2 { 
+            font-size: 2.25rem; 
+            font-weight: 800; 
+            color: #0F172A; 
+            margin-top: 4rem; 
+            margin-bottom: 1.5rem; 
+            border-left: 4px solid #2563EB; /* Brand Blue */
+            padding-left: 1.2rem; 
+            letter-spacing: -0.02em;
+        }
+        .blog-content h3 { 
+            font-size: 1.75rem; 
+            font-weight: 700; 
+            color: #2563EB; /* Brand Blue */
+            margin-top: 3rem; 
+            margin-bottom: 1rem; 
+        }
+        .blog-content p { 
+            font-size: 1.15rem; 
+            line-height: 1.8; 
+            color: #0F172A; 
+            margin-bottom: 1.75rem; 
+            text-align: left; 
+        }
+        .blog-content ul, .blog-content ol { 
+            padding-left: 1.5rem; 
+            margin-bottom: 2rem; 
+            color: #0F172A; 
+        }
+        .blog-content li { 
+            margin-bottom: 1rem; 
+            line-height: 1.7; 
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem; 
+        }
+        .blog-content li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #25D366; /* WhatsApp Green */
+        }
+        .rate-card { 
+            background: #FFFFFF; 
+            border: 1px solid #E2E8F0; 
+            padding: 2.5rem; 
+            border-radius: 16px; 
+            margin: 3rem 0; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+        }
+        .warning-box { 
+            border-left: 5px solid #EF4444; 
+            background: rgba(239, 68, 68, 0.05); 
+            padding: 2rem; 
+            margin: 2.5rem 0; 
+            color: #991B1B; 
+            border-radius: 0 12px 12px 0; 
+        }
+        .highlight { 
+            color: #2563EB; 
+            font-weight: 800; 
+        }
+        .comparison-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 2.5rem 0; 
+            background: #FFFFFF; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid #E2E8F0;
+        }
+        .comparison-table th, .comparison-table td { 
+            border: 1px solid #E2E8F0; 
+            padding: 1.25rem; 
+            text-align: left; 
+            color: #0F172A;
+        }
+        .comparison-table th { 
+            background-color: #2563EB; 
+            color: #FFFFFF; 
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script
@@ -84,27 +175,27 @@
       gtag("config", "G-HPRK4JYRR5");
     </script>
 </head>
-<body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+<body class="antialiased selection:bg-brand-neon selection:text-white">
 
     <!-- NAVIGATION -->
     
 
     <!-- HEADER -->
-    <header class="relative pt-32 pb-12 bg-brand-dark overflow-hidden">
+    <header class="relative pt-32 pb-12 bg-brand-dark overflow-hidden text-center">
         <div class="absolute top-0 right-0 w-96 h-96 bg-brand-purple/10 rounded-full blur-[120px]"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4">
             <a href="../blog.html" class="text-brand-neon text-sm font-bold hover:underline mb-6 inline-block"><i class="fa-solid fa-arrow-left mr-2"></i> Back to Insights</a>
-            <div class="flex items-center space-x-4 mb-6">
+            <div class="flex justify-center items-center space-x-4 mb-6">
                 <span class="px-3 py-1 bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-xs font-bold rounded-full uppercase">Influencer Marketing</span>
-                <span class="text-gray-500 text-sm"><i class="fa-regular fa-clock mr-1"></i> 15 min read</span>
-                <span class="text-gray-500 text-sm"><i class="fa-regular fa-calendar mr-1"></i> Feb 07, 2026</span>
+                <span class="text-gray-600 text-sm"><i class="fa-regular fa-clock mr-1"></i> 15 min read</span>
+                <span class="text-gray-600 text-sm"><i class="fa-regular fa-calendar mr-1"></i> Feb 07, 2026</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8">The Ultimate Guide to Influencer Marketing Rates in Kenya (2026 Edition)</h1>
-            <div class="flex items-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-black leading-tight mb-8">The Ultimate Guide to Influencer Marketing Rates in Kenya (2026 Edition)</h1>
+            <div class="flex justify-center items-center">
                 <div class="w-12 h-12 bg-gradient-to-tr from-brand-purple to-brand-neon rounded-full flex items-center justify-center text-white font-bold text-lg">SB</div>
-                <div class="ml-4">
-                    <p class="text-white font-bold text-sm">SmartBiz Marketing Strategy Team</p>
-                    <p class="text-gray-500 text-xs">Analytics & Local Market Experts</p>
+                <div class="ml-4 text-left">
+                    <p class="text-black font-bold text-sm">SmartBiz Marketing Strategy Team</p>
+                    <p class="text-gray-600 text-xs">Analytics & Local Market Experts</p>
                 </div>
             </div>
         </div>
@@ -115,7 +206,7 @@
     <div class="max-w-4xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12">
         
         <div class="lg:col-span-2 blog-content">
-            <h1 class="text-3xl font-bold text-white mb-6">Influencer Marketing Rates in Kenya 2026: Why You’re Likely Overpaying</h1>
+            <h1 class="text-3xl font-bold text-black mb-6">Influencer Marketing Rates in Kenya 2026: Why You’re Likely Overpaying</h1>
             
             <p>The Kenyan digital landscape has undergone a seismic shift. In 2022, you could send a pair of designer thrift shoes to a creator in Nairobi, and they would gladly post a high-energy TikTok video in return. By 2026, the era of "barter trade" has largely vanished for professional creators. Influencing is no longer a hobby in Nairobi, Mombasa, or Eldoret; it is a full-fledged industry with talent managers, high production budgets, and rigorous rate cards.</p>
 
@@ -131,15 +222,15 @@
             <h2>2. Solution: Niche Authority and Performance-Based Hiring</h2>
             <p>The solution is to shift from "Celebrity" hiring to "Authority" hiring. The most successful brands in 2026 are moving toward <strong>micro-influencers</strong> and <strong>nano-influencers</strong> who dominate specific sub-cultures in Kenya. A creator who only talks about "Solar Installation in Kenya" to 5,000 followers is infinitely more valuable to an engineering firm than a lifestyle vlogger with 200,000 general followers. Authority implies trust, and in Kenya, trust is the engine of commerce.</p>
             
-            <p>Additionally, the 2026 solution involves <strong>Performance-Based Contracts</strong>. Instead of paying 100% upfront (which often leads to "ghosting" or late deliveries), savvy Kenyan businesses are proposing a "Base + Commission" model. You pay a base fee for the production effort and offer an M-Pesa commission for every sale tracked via a unique discount code or a WhatsApp lead. This aligns the creator's incentives with your business growth and ensures that your <strong>marketing ROI in Nairobi</strong> is measurable down to the last cent.</p>
+            <p>Additionally, the 2026 solution involves <strong>Performance-Based Contracts</strong>. Instead of paying 100% upfront (which often s in "ghosting" or late deliveries), savvy Kenyan businesses are proposing a "Base + Commission" model. You pay a base fee for the production effort and offer an M-Pesa commission for every sale tracked via a unique discount code or a WhatsApp lead. This aligns the creator's incentives with your business growth and ensures that your <strong>marketing ROI in Nairobi</strong> is measurable down to the last cent.</p>
 
             <h2>3. The 2026 Kenyan Influencer Rate Card (Standard Estimates)</h2>
             <p>Below is the data-driven breakdown of what you should expect to pay for <strong>influencer marketing rates in Kenya 2026</strong>. These figures represent averages based on creators with a minimum engagement rate of 3.5%.</p>
 
             <div class="rate-card mb-8">
-                <h3 class="mt-0 text-white">Tier 1: Nano-Influencers (1k - 10k Followers)</h3>
-                <p class="text-gray-400 text-sm mb-4">Ideal for: Hyper-local businesses, niche services, and high-conversion trials.</p>
-                <table class="comparison-table w-full">
+                <h3 class="mt-0 text-black">Tier 1: Nano-Influencers (1k - 10k Followers)</h3>
+                <p class="text-gray-600 text-sm mb-4">Ideal for: Hyper-local businesses, niche services, and high-conversion trials.</p>
+                <table class="comparison-table">
                     <thead>
                         <tr>
                             <th>Deliverable</th>
@@ -168,9 +259,9 @@
             </div>
 
             <div class="rate-card mb-8">
-                <h3 class="mt-0 text-white">Tier 2: Micro-Influencers (10k - 100k Followers)</h3>
-                <p class="text-gray-400 text-sm mb-4">Ideal for: Established SMEs, e-commerce brands, and professional clinics.</p>
-                <table class="comparison-table w-full">
+                <h3 class="mt-0 text-black">Tier 2: Micro-Influencers (10k - 100k Followers)</h3>
+                <p class="text-gray-600 text-sm mb-4">Ideal for: Established SMEs, e-commerce brands, and professional clinics.</p>
+                <table class="comparison-table">
                     <thead>
                         <tr>
                             <th>Deliverable</th>
@@ -213,27 +304,92 @@
                 <br>• Usage rights (You own the video to use in your Facebook Ads later).
             </p>
 
-            <div class="my-12 p-8 bg-gradient-to-r from-gray-900 to-[#0B0F19] border-l-4 border-brand-neon rounded-r-xl shadow-lg relative overflow-hidden">
+            <!-- IN-CONTENT AUDIT TEASER -->
+            <div class="my-12 p-8 bg-gradient-to-r from-white to-gray-50 border-l-4 border-brand-neon rounded-r-xl shadow-lg relative overflow-hidden border border-gray-200">
+                <!-- Background Decor -->
                 <div class="absolute top-0 right-0 w-32 h-32 bg-brand-neon/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
+    
                 <div class="relative z-10">
-                    <h4 class="text-2xl font-bold text-white mb-3 flex items-center">
-                        <i class="fa-solid fa-user-check text-brand-neon mr-3"></i> 
-                        Stop Wasting Marketing Shillings
-                    </h4>
-                    <p class="text-gray-300 mb-6 text-sm leading-relaxed">
-                        Don't let fake followers steal your budget. Let us vet your influencer list and design a performance-based campaign that actually moves stock off your shelves.
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-neon/30 bg-brand-neon/10 mb-4">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-neon"></span>
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-brand-neon">Exclusive Resource</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-black mb-2">Get the 2026 Kenyan Influencer Directory with Verified Pricing</h4>
+                    <p class="text-gray-700 mb-6 text-sm leading-relaxed">
+                        Stop blindly paying vanity metrics. Download our completely verified directory of local micro and nano-influencers categorized by niche, audience size, and actual performance metrics.
                     </p>
-                    <a href="https://wa.me/254740239241?text=I%20need%20an%20Influencer%20Audit" class="inline-flex items-center px-6 py-3 border border-brand-neon text-brand-neon font-bold text-sm rounded-lg hover:bg-brand-neon hover:text-brand-dark transition-all">
-                        Get a Marketing Audit <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20read%20your%20influencer%20pricing%20guide%20and%20would%20like%20to%20download%20the%202026%20Kenyan%20Influencer%20Directory."
+                       target="_blank"
+                       class="flex items-center justify-center gap-3 w-full px-5 py-4 bg-[#25D366] text-white font-bold text-sm rounded-xl hover:bg-[#1ea855] transition-all mb-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <div class="text-left">
+                            <div>Download via WhatsApp</div>
+                            <div class="text-xs font-normal opacity-80">Instant PDF download</div>
+                        </div>
                     </a>
+
+                    <!-- Form toggle -->
+                    <div id="blog-cta-toggle-wrap">
+                        <button onclick="document.getElementById('blog-cta-toggle-wrap').style.display='none'; document.getElementById('blog-cta-form').style.display='block';"
+                          class="flex items-center justify-center gap-2 w-full px-5 py-3.5 border border-brand-neon/40 text-brand-neon font-bold text-sm rounded-xl hover:bg-brand-neon/5 transition-all">
+                          <i class="fa-solid fa-file-lines"></i> Or submit a quick form instead
+                        </button>
+                    </div>
+
+                    <!-- Inline form (hidden by default) -->
+                    <div id="blog-cta-form" style="display:none;" class="mt-3 bg-gray-50 border border-gray-200 rounded-xl p-5">
+                        <div id="blog-cta-fields">
+                          <div class="mb-3">
+                            <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your name</label>
+                            <input type="text" id="bcf-name" placeholder="e.g. John Kamau"
+                              class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm placeholder-gray-400 focus:border-brand-neon focus:outline-none transition">
+                          </div>
+                          <div class="mb-3">
+                            <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">WhatsApp / phone</label>
+                            <input type="tel" id="bcf-phone" placeholder="e.g. 0712 345 678"
+                              class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm placeholder-gray-400 focus:border-brand-neon focus:outline-none transition">
+                          </div>
+                          <div class="mb-4">
+                            <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your primary target platform?</label>
+                            <select id="bcf-service"
+                              class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm focus:border-brand-neon focus:outline-none transition">
+                              <option value="" disabled selected>Pick one</option>
+                              <option>Instagram</option>
+                              <option>TikTok</option>
+                              <option>YouTube</option>
+                              <option>Multiple Platforms / Not Sure</option>
+                            </select>
+                          </div>
+                          <button onclick="handleBlogCTA()"
+                            class="w-full py-3 bg-brand-neon text-white font-black text-sm uppercase tracking-wider rounded-lg hover:bg-brand-neonhover transition">
+                            Request My Free Directory →
+                          </button>
+                          <p class="text-center text-[11px] text-gray-600 mt-2">
+                            <i class="fa-solid fa-lock text-brand-neon mr-1"></i>No spam. We'll reach out on WhatsApp only.
+                          </p>
+                        </div>
+
+                        <!-- Success state -->
+                        <div id="blog-cta-success" style="display:none;" class="text-center py-6">
+                          <div class="w-12 h-12 bg-brand-neon/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-circle-check text-3xl text-brand-neon"></i>
+                          </div>
+                          <p class="text-black font-bold mb-1">Request sent!</p>
+                          <p class="text-gray-600 text-sm">We'll reach out on WhatsApp within 24 hours.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <h2>5. Common Mistakes: How to Avoid the "Blacklist"</h2>
-            <div class="warning-box bg-gray-900 p-6 border-l-4 border-red-500 my-8">
-                <h4 class="text-white font-bold mb-4">The SME Profit Killers:</h4>
-                <ul class="text-gray-400 space-y-3">
-                    <li><strong>The 100% Upfront Trap:</strong> Never pay the full amount before the content is live. The standard in Nairobi is 50% commitment and 50% on delivery. Paying 100% upfront often s in "ghosting" or delayed posting.</li>
+            <div class="warning-box">
+                <h4 class="text-black font-bold mb-4">The SME Profit Killers:</h4>
+                <ul class="space-y-3">
+                    <li><strong>The 100% Upfront Trap:</strong> Never pay the full amount before the content is live. The standard in Nairobi is 50% commitment and 50% on delivery. Paying 100% upfront often results in "ghosting" or delayed posting.</li>
                     <li><strong>Corporate Scripting:</strong> If you force an influencer to use stiff, corporate language, their audience will ignore the post. Influence works because of <em>authenticity</em>. Give them the "Sheng" or tone that their audience loves.</li>
                     <li><strong>Ignoring the Comment Sentiment:</strong> If 100 comments are just "Nice," "Fire," or "Cool," it's likely a bot pod. Real influence looks like questions: "Where is this located?", "How much is the delivery?", "Do you have this in blue?"</li>
                 </ul>
@@ -241,21 +397,21 @@
 
             <h2>6. Frequently Asked Questions (FAQ)</h2>
             <div class="space-y-6 mt-8">
-                <div class="bg-brand-card p-6 rounded-xl border border-gray-800">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                     <h4 class="text-brand-neon font-bold">Why do TikTokers in Kenya charge differently than Instagrammers?</h4>
-                    <p class="text-gray-400 text-sm">TikTok is discovery-driven (algorithmic), meaning a creator with 5k followers can get 1M views. Instagram is relationship-driven, meaning views are more predictable but often lower. You pay for "reach" on TikTok and "trust/conversion" on Instagram.</p>
+                    <p class="text-gray-600 text-sm">TikTok is discovery-driven (algorithmic), meaning a creator with 5k followers can get 1M views. Instagram is relationship-driven, meaning views are more predictable but often lower. You pay for "reach" on TikTok and "trust/conversion" on Instagram.</p>
                 </div>
-                <div class="bg-brand-card p-6 rounded-xl border border-gray-800">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                     <h4 class="text-brand-neon font-bold">Is it better to hire one big celebrity or ten micro-influencers?</h4>
-                    <p class="text-gray-400 text-sm">For sales, ten micro-influencers almost always win. They provide "surround sound" marketing—when a customer sees three different people they trust talking about your brand, they are 4x more likely to buy than seeing one celebrity post.</p>
+                    <p class="text-gray-600 text-sm">For sales, ten micro-influencers almost always win. They provide "surround sound" marketing—when a customer sees three different people they trust talking about your brand, they are 4x more likely to buy than seeing one celebrity post.</p>
                 </div>
-                <div class="bg-brand-card p-6 rounded-xl border border-gray-800">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                     <h4 class="text-brand-neon font-bold">Do I have to pay taxes on influencer payments in Kenya?</h4>
-                    <p class="text-gray-400 text-sm">Yes. In 2026, the KRA requires businesses to withhold tax on professional services. Ensure your influencers provide an invoice or a KRA PIN for your accounting compliance to avoid penalties during audits.</p>
+                    <p class="text-gray-600 text-sm">Yes. In 2026, the KRA requires businesses to withhold tax on professional services. Ensure your influencers provide an invoice or a KRA PIN for your accounting compliance to avoid penalties during audits.</p>
                 </div>
-                <div class="bg-brand-card p-6 rounded-xl border border-gray-800">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                     <h4 class="text-brand-neon font-bold">What is 'UGC' and should I use it?</h4>
-                    <p class="text-gray-400 text-sm">User Generated Content (UGC) is content that looks like a regular recommendation rather than a polished ad. In 2026, UGC ads perform 60% better in the Kenyan market than high-production commercial videos.</p>
+                    <p class="text-gray-600 text-sm">User Generated Content (UGC) is content that looks like a regular recommendation rather than a polished ad. In 2026, UGC ads perform 60% better in the Kenyan market than high-production commercial videos.</p>
                 </div>
             </div>
 
@@ -265,32 +421,35 @@
             <h2>Conclusion: Trust is the New Currency</h2>
             <p>In 2026, <strong>influencer marketing rates in Kenya</strong> have stabilized, but the advantage still lies with the business owner who uses data over emotions. Stop chasing the "blue tick" celebrities and start building relationships with the niche creators who actually talk to your customers. Remember: In the 254, trust is the ultimate currency. If you hire based on authority and pay based on performance, your business will dominate the digital space while your competitors are still chasing empty likes. Start your professional influencer journey today.</p>
 
-            <div class="mt-12 p-10 bg-gray-900 border border-brand-neon/20 rounded-3xl text-center">
-                <h3 class="text-white text-2xl font-bold mb-4">Ready to Launch Your Campaign?</h3>
-                <p class="text-gray-400 mb-8 max-w-md mx-auto">We build the strategies that turn "likes" into "M-Pesa notifications." Let’s engineer your viral growth today.</p>
-                <a href="https://wa.me/254740239241?text=I%20want%20to%20start%20an%20influencer%20campaign" class="inline-flex items-center px-12 py-5 bg-brand-neon text-brand-dark font-black rounded-full hover:scale-105 transition-all text-lg uppercase tracking-wider">
+            <div class="mt-12 p-10 bg-white border border-gray-200 rounded-3xl text-center shadow-sm">
+                <h3 class="text-black text-2xl font-bold mb-4">Ready to Launch Your Campaign?</h3>
+                <p class="text-gray-600 mb-8 max-w-md mx-auto">We build the strategies that turn "likes" into "M-Pesa notifications." Let’s engineer your viral growth today.</p>
+                <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20read%20your%20influencer%20rates%20guide%20and%20want%20to%20get%20started%20with%20a%20performance-based%20campaign." class="inline-flex items-center px-12 py-5 bg-brand-neon text-white font-black rounded-full hover:scale-105 transition-all text-lg uppercase tracking-wider">
                     <i class="fa-solid fa-rocket mr-3 text-2xl"></i> Scale My Brand
                 </a>
             </div>
         </div>
 
         <div class="lg:col-span-1 space-y-8">
-            <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl text-center sticky top-24 shadow-2xl">
+            <div class="bg-white border border-gray-200 p-8 rounded-2xl text-center sticky top-24 shadow-xl">
                 <div class="w-20 h-20 bg-brand-neon/20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-neon border border-brand-neon/50">
                     <i class="fa-solid fa-users-viewfinder text-4xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4">Influencer Vetting</h3>
-                <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+                <h3 class="text-2xl font-bold text-black mb-4">Influencer Vetting</h3>
+                <p class="text-gray-700 text-sm mb-8 leading-relaxed">
                     Not sure if a creator is worth the money? Our AI can analyze any Kenyan handle and give you a "Conversion Score" before you send that M-Pesa.
                 </p>
-                <a href="../smartbiztool.html" class="block w-full py-4 bg-brand-neon text-brand-dark font-bold rounded-xl hover:bg-white transition shadow-neon uppercase tracking-wider text-xs">
+                <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%27d%20like%20to%20vet%20some%20local%20Kenyan%20influencers%20or%20get%20their%20conversion%20scores." 
+                   target="_blank" 
+                   rel="noopener" 
+                   class="block w-full py-4 bg-brand-neon text-white font-bold rounded-xl hover:bg-brand-neonhover transition shadow-neon uppercase tracking-wider text-xs">
                     Vet an Influencer
                 </a>
             </div>
 
-            <div class="bg-brand-card border border-gray-800 rounded-2xl p-6">
-                <h4 class="text-white font-bold mb-4 border-b border-gray-800 pb-2">2026 Trend Watch</h4>
-                <ul class="space-y-4 text-sm text-gray-400">
+            <div class="bg-brand-card border border-gray-200 rounded-2xl p-6">
+                <h4 class="text-black font-bold mb-4 border-b border-gray-200 pb-2">2026 Trend Watch</h4>
+                <ul class="space-y-4 text-sm text-gray-700">
                     <li class="flex items-start">
                         <i class="fa-solid fa-chart-line text-brand-neon mt-1 mr-3"></i>
                         <span>Rise of LinkedIn Micro-influencers for B2B Nairobi.</span>
@@ -301,7 +460,7 @@
                     </li>
                     <li class="flex items-start">
                         <i class="fa-solid fa-chart-line text-brand-neon mt-1 mr-3"></i>
-                        <span>M-Pesa Til integration directly in Influencer Bios.</span>
+                        <span>M-Pesa Till integration directly in Influencer Bios.</span>
                     </li>
                 </ul>
             </div>
@@ -310,16 +469,16 @@
 </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black border-t border-gray-900 pt-16 pb-12">
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <span class="text-3xl font-bold tracking-tight text-white block mb-6">SmartBiz<span class="text-brand-neon">Systems</span></span>
-            <p class="text-gray-500 text-sm max-w-lg mx-auto mb-8">Helping Kenyan businesses navigate the complex world of digital growth through automation, data, and world-class strategy. Based in Nairobi, serving East Africa.</p>
-            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+            <span class="text-3xl font-bold tracking-tight text-black block mb-6">SmartBiz<span class="text-brand-neon">Systems</span></span>
+            <p class="text-gray-600 text-sm max-w-lg mx-auto mb-8">Helping Kenyan businesses navigate the complex world of digital growth through automation, data, and world-class strategy. Based in Nairobi, serving East Africa.</p>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-500">
                 <a href="#" class="hover:text-brand-neon transition"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
                 <a href="#" class="hover:text-brand-neon transition"><i class="fa-brands fa-twitter text-xl"></i></a>
                 <a href="#" class="hover:text-brand-neon transition"><i class="fa-brands fa-instagram text-xl"></i></a>
             </div>
-            <p class="text-gray-700 text-xs">&copy; 2026 SmartBizSystems Kenya. All rights reserved.</p>
+            <p class="text-gray-500 text-xs">&copy; 2026 SmartBizSystems Kenya. All rights reserved. Specialized in Local Industry Automation.</p>
         </div>
     </footer>
     <!-- ============================================ -->
@@ -347,6 +506,366 @@
     </a>
 <script src="//code.tidio.co/7lgoi40q21ajgubbir7asvlsyx26ijfo.js" async></script>
 
+    <!--
+      ============================================================
+      SMARTBIZSYSTEMS — BLOG CONVERSION SYSTEM v1.1
+      WhatsApp: +254 740 239 241
+      ============================================================
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2 family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* ── STICKY BOTTOM BAR (Trigger 1) ── */
+      #sbs-bar {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: #111827;
+        border-top: 1px solid #2563EB33;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        z-index: 9000;
+        font-family: 'Inter', sans-serif;
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      #sbs-bar.visible { transform: translateY(0); }
+      #sbs-bar .bar-text {
+        color: #9CA3AF;
+        font-size: 13px;
+        flex: 1;
+        line-height: 1.4;
+      }
+      #sbs-bar .bar-text strong { color: #F3F4F6; font-weight: 600; }
+      #sbs-bar .bar-cta {
+        background: #25D366;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+      #sbs-bar .bar-close {
+        background: none;
+        border: none;
+        color: #9CA3AF;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 4px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      #sbs-bar .bar-close:hover { color: #F3F4F6; }
+
+      /* ── INLINE CTA CARD (Trigger 2) ── */
+      .sbs-inline-cta {
+        background: #111827;
+        border: 1px solid #2563EB44;
+        border-left: 4px solid #2563EB;
+        border-radius: 12px;
+        padding: 24px 28px;
+        margin: 2rem 0;
+        font-family: 'Inter', sans-serif;
+      }
+      .sbs-inline-cta .ic-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: #2563EB;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .sbs-inline-cta h3 {
+        color: #F3F4F6;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        line-height: 1.3;
+      }
+      .sbs-inline-cta p {
+        color: #9CA3AF;
+        font-size: 14px;
+        margin: 0 0 18px;
+        line-height: 1.6;
+      }
+      .sbs-inline-cta .ic-btns {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .sbs-inline-cta .ic-btn-primary {
+        background: #2563EB;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 11px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .sbs-inline-cta .ic-btn-secondary {
+        background: transparent;
+        color: #2563EB;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 11px 22px;
+        border-radius: 8px;
+        text-decoration: none;
+        border: 1px solid #2563EB55;
+      }
+      .sbs-inline-cta .ic-btn-secondary:hover { border-color: #2563EB; }
+
+      /* ── END-OF-ARTICLE CTA BLOCK (Trigger 3) ── */
+      #sbs-end-block {
+        background: linear-gradient(135deg, #111827 0%, #0B0F19 100%);
+        border: 1px solid #2563EB33;
+        border-radius: 16px;
+        padding: 40px 36px;
+        margin: 3rem 0 2rem;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+      }
+      #sbs-end-block .eb-tag {
+        display: inline-block;
+        background: #2563EB22;
+        color: #2563EB;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+      }
+      #sbs-end-block h2 {
+        color: #F3F4F6;
+        font-size: 26px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        line-height: 1.25;
+      }
+      #sbs-end-block p {
+        color: #9CA3AF;
+        font-size: 15px;
+        margin: 0 0 28px;
+        line-height: 1.6;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #sbs-end-block .eb-btns {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      #sbs-end-block .eb-btn-wa {
+        background: #25D366;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 13px 26px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 0 20px #25D36644;
+      }
+      #sbs-end-block .eb-btn-audit {
+        background: transparent;
+        color: #2563EB;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 13px 26px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #2563EB55;
+      }
+      #sbs-end-block .eb-btn-call {
+        background: transparent;
+        color: #9CA3AF;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 13px 26px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1px solid #ffffff22;
+      }
+      #sbs-end-block .eb-proof {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #6B7280;
+      }
+
+      /* ── EXIT POPUP (Trigger 4) ── */
+      #sbs-exit-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.75);
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Inter', sans-serif;
+        padding: 20px;
+      }
+      #sbs-exit-overlay.show { display: flex; }
+      #sbs-exit-modal {
+        background: #111827;
+        border: 1px solid #2563EB44;
+        border-radius: 16px;
+        padding: 36px 32px;
+        max-width: 460px;
+        width: 100%;
+        position: relative;
+        animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      @keyframes popIn {
+        from { opacity: 0; transform: scale(0.92) translateY(12px); }
+        to   { opacity: 1; transform: scale(1)    translateY(0); }
+      }
+      #sbs-exit-close {
+        position: absolute;
+        top: 14px; right: 16px;
+        background: none; border: none;
+        color: #6B7280; font-size: 22px;
+        cursor: pointer; line-height: 1;
+      }
+      #sbs-exit-close:hover { color: #F3F4F6; }
+      #sbs-exit-modal .ep-emoji { font-size: 36px; margin-bottom: 12px; }
+      #sbs-exit-modal h3 {
+        color: #F3F4F6;
+        font-size: 22px;
+        font-weight: 800;
+        margin: 0 0 10px;
+        line-height: 1.3;
+      }
+      #sbs-exit-modal p {
+        color: #9CA3AF;
+        font-size: 14px;
+        margin: 0 0 24px;
+        line-height: 1.6;
+      }
+      #sbs-exit-modal .ep-cta {
+        display: block;
+        background: #25D366;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        padding: 14px;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0 0 24px #25D36655;
+        margin-bottom: 10px;
+      }
+      #sbs-exit-modal .ep-skip {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        color: #6B7280;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- ── MASTER CONTROL SCRIPT ── -->
+    <script>
+    (function() {
+      var exitShown = false;
+      var exitDismissed = false;
+      var barShown = false;
+      var inlineInserted = false;
+
+      // ── TRIGGER 1: Show sticky bar after 30s ──
+      setTimeout(function() {
+        var bar = document.getElementById('sbs-bar');
+        if (bar) { bar.classList.add('visible'); barShown = true; }
+      }, 30000);
+
+      // ── TRIGGER 2: Insert inline CTA at 50% scroll ──
+      function insertInlineCTA() {
+        if (inlineInserted) return;
+        var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPct < 45) return;
+        inlineInserted = true;
+
+        var articleBody = document.querySelector('.blog-content');
+        if (!articleBody) return;
+
+        var paragraphs = articleBody.querySelectorAll('p');
+        var midPoint = Math.floor(paragraphs.length / 2);
+        var insertAfter = paragraphs[midPoint];
+        if (!insertAfter) return;
+
+        var placeholder = document.getElementById('sbs-inline-placeholder');
+        if (placeholder) {
+          placeholder.style.display = 'block';
+          insertAfter.parentNode.insertBefore(placeholder, insertAfter.nextSibling);
+        }
+      }
+
+      // ── TRIGGER 4: Exit intent ──
+      document.addEventListener('mouseleave', function(e) {
+        if (e.clientY > 20) return;
+        if (exitShown || exitDismissed) return;
+        var scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPct < 30) return;
+        exitShown = true;
+        var overlay = document.getElementById('sbs-exit-overlay');
+        if (overlay) overlay.classList.add('show');
+      });
+
+      // Scroll listener
+      window.addEventListener('scroll', function() {
+        if (!barShown) {
+          var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+          if (pct > 40) {
+            var bar = document.getElementById('sbs-bar');
+            if (bar) { bar.classList.add('visible'); barShown = true; }
+          }
+        }
+        insertInlineCTA();
+      }, { passive: true });
+
+      // Close exit overlay on backdrop click
+      document.getElementById('sbs-exit-overlay').addEventListener('click', function(e) {
+        if (e.target === this) closeSbsExit();
+      });
+
+      // ESC key closes popup
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSbsExit();
+      });
+    })();
+
+    function closeSbsExit() {
+      var overlay = document.getElementById('sbs-exit-overlay');
+      if (overlay) overlay.classList.remove('show');
+      try { localStorage.setItem('sbs_exit_dismissed', Date.now()); } catch(e) {}
+    }
+
+    (function() {
+      try {
+        var d = localStorage.getItem('sbs_exit_dismissed');
+        if (d && (Date.now() - parseInt(d)) < 86400000) {
+          document.getElementById('sbs-exit-overlay').remove();
+        }
+      } catch(e) {}
+    })();
+    </script>
 
 </body>
 </html>
