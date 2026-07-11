@@ -178,8 +178,8 @@
   }
   .tab-nav::-webkit-scrollbar { display: none; }
   .tab-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 16px 20px; font-size: 0.88rem; font-weight: 600;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 12px 20px; font-size: 0.88rem; font-weight: 600;
     color: var(--text-muted); background: none; border: none;
     border-bottom: 2px solid transparent;
     cursor: pointer; white-space: nowrap;
@@ -188,6 +188,7 @@
   .tab-btn:hover { color: var(--text-primary); }
   .tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); }
   .tab-btn .tab-icon { font-size: 1rem; }
+  .tab-btn small { display: block; font-size: 0.72rem; font-weight: 500; }
 
   /* ── PRICING SECTIONS ── */
   .pricing-section { display: none; }
@@ -360,12 +361,12 @@
     background: rgba(13,110,253,0.1);
   }
   .roi-field select option { background: var(--grey-800); }
-  .roi-s {
+  .roi-results {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius-xl); padding: 32px;
   }
-  .roi-s h3 {
+  .roi-results h3 {
     font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--grey-400); margin-bottom: 24px;
   }
@@ -711,19 +712,24 @@ nav {
 <div class="tab-nav-wrap">
   <div class="tab-nav" role="tablist">
     <button class="tab-btn active" onclick="switchTab('automation')" data-tab="automation">
-      <span class="tab-icon">🤖</span> AI Automation
+      <span><span class="tab-icon">🤖</span> AI Automation</span>
+      <small style="opacity:.65;">from KES 5,000</small>
     </button>
     <button class="tab-btn" onclick="switchTab('seo')" data-tab="seo">
-      <span class="tab-icon">📈</span> SEO
+      <span><span class="tab-icon">📈</span> SEO</span>
+      <small style="opacity:.65;">from KES 40,000/mo</small>
     </button>
     <button class="tab-btn" onclick="switchTab('websites')" data-tab="websites">
-      <span class="tab-icon">🌐</span> Websites
+      <span><span class="tab-icon">🌐</span> Websites</span>
+      <small style="opacity:.65;">from KES 30,000</small>
     </button>
     <button class="tab-btn" onclick="switchTab('ads')" data-tab="ads">
-      <span class="tab-icon">📣</span> Paid Ads
+      <span><span class="tab-icon">📣</span> Paid Ads</span>
+      <small style="opacity:.65;">from KES 30,000/mo</small>
     </button>
     <button class="tab-btn" onclick="switchTab('bundles')" data-tab="bundles">
-      <span class="tab-icon">⚡</span> Bundles
+      <span><span class="tab-icon">⚡</span> Bundles</span>
+      <small style="opacity:.65;">20% off</small>
     </button>
   </div>
 </div>
@@ -1186,7 +1192,7 @@ nav {
           </div>
         </div>
       </div>
-      <div class="roi-s">
+      <div class="roi-results">
         <h3>Your Estimated Monthly Return</h3>
         <div class="roi-metric">
           <div class="roi-metric-label">Current Monthly Revenue (from leads)</div>
@@ -1209,7 +1215,7 @@ nav {
         <a href="https://wa.me/254740239241?text=Hi%20SmartBiz,%20I%20ran%20the%20ROI%20calculator%20and%20I'm%20ready%20to%20talk" class="card-cta card-cta-primary" target="_blank" style="text-decoration:none; margin-top: 4px;">
           <i class="fa-brands fa-whatsapp"></i> Get my free audit
         </a>
-        <div class="roi-disclaimer">*Estimates based on average s across 34+ clients. Actual s vary. Book a free audit for a business-specific projection.</div>
+        <div class="roi-disclaimer">*Estimates based on average results across 34+ clients. Actual results vary. Book a free audit for a business-specific projection.</div>
       </div>
     </div>
   </div>
@@ -1269,7 +1275,7 @@ nav {
             <td><i class="fa-solid fa-check check"></i> Usually</td>
           </tr>
           <tr>
-            <td>s-backed with case studies</td>
+            <td>Results-backed with case studies</td>
             <td class="highlight"><i class="fa-solid fa-check check"></i> 34+ clients</td>
             <td><i class="fa-solid fa-check check"></i> Maybe</td>
             <td><i class="fa-solid fa-minus cross"></i> Rarely</td>
@@ -1388,7 +1394,7 @@ nav {
         <div class="footer-brand-name">SmartBiz<span>Systems</span></div>
         <div class="footer-tagline">Stop Guessing. Start Growing.</div>
         <div class="footer-contact">
-          <a href="https://wa.me/254740239241" target="_blank"><i class="fa-brands fa-whatsapp" style="color: var(--wa);"></i> +254 734 230 445</a>
+          <a href="https://wa.me/254740239241" target="_blank"><i class="fa-brands fa-whatsapp" style="color: var(--wa);"></i> +254 740 239 241</a>
           <a href="mailto:info@smartbizsystems.co.ke"><i class="fa-solid fa-envelope"></i> info@smartbizsystems.co.ke</a>
           <a href="#"><i class="fa-solid fa-location-dot"></i> Westlands, Nairobi, Kenya</a>
         </div>
@@ -1426,7 +1432,7 @@ nav {
     <hr class="footer-divider">
     <div class="footer-bottom">
       <span>© 2026 SmartBizSystems. Built for Kenya.</span>
-      <span>Westlands, Nairobi · +254 734 230 445</span>
+      <span>Westlands, Nairobi · +254 740 239 241</span>
     </div>
   </div>
 </footer>
