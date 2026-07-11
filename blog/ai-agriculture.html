@@ -87,11 +87,12 @@
             fontFamily: { sans: ["Inter", "sans-serif"] },
             colors: {
               brand: {
-                dark: "#0B0F19",
-                card: "#161E2E",
-                neon: "#2DD4BF",
-                purple: "#A78BFA",
-                text: "#F3F4F6",
+                dark: "#E2E8F0",
+                card: "#FFFFFF",
+                neon: "#2563EB",
+                neonhover: "#1D4ED8",
+                purple: "#1D4ED8",
+                text: "#0F172A",
               },
             },
           },
@@ -102,21 +103,25 @@
     <style>
   /* ── BLOG BRANDING OVERRIDE ── */
   body {
-    background-color: #0F172A; /* Brand Navy */
-    color: #F8FAFC; /* Brand Light BG color for text */
+    background-color: #E2E8F0; /* Brand Light Grey */
+    color: #0F172A; /* Brand Dark Text (near-black) */
     font-family: 'DM Sans', sans-serif;
   }
 
   .glass-nav {
-    background: rgba(15, 23, 42, 0.95); /* Brand Navy Transparent */
+    background: rgba(248, 250, 252, 0.95); /* Brand Light Transparent */
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .shadow-neon {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.35); /* Brand Blue glow */
   }
 
   .blog-content h2 {
     font-size: 2.25rem;
     font-weight: 800;
-    color: #FFFFFF;
+    color: #0F172A;
     margin-top: 4rem;
     margin-bottom: 1.5rem;
     border-left: 4px solid #2563EB; /* Brand Blue */
@@ -136,7 +141,7 @@
   .blog-content p {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #94A3B8; /* Brand Muted Text */
+    color: #0F172A; /* Brand Dark Text */
     margin-bottom: 1.8rem;
     text-align: left; /* Better readability than justify for mobile */
   }
@@ -146,7 +151,7 @@
     list-style-position: outside;
     padding-left: 1.5rem;
     margin-bottom: 2rem;
-    color: #94A3B8;
+    color: #0F172A;
   }
 
   .blog-content ul {
@@ -184,8 +189,8 @@
   }
 
   .stat-card {
-    background: #1E293B; /* Slightly lighter navy for depth */
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
@@ -202,7 +207,7 @@
 
   .stat-label {
     font-size: 0.875rem;
-    color: #94A3B8; /* Muted label */
+    color: #475569; /* Brand Body Text */
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: 600;
@@ -226,7 +231,7 @@
     
 
   </head>
-  <body class="antialiased selection:bg-brand-neon selection:text-brand-dark">
+  <body class="antialiased selection:bg-brand-neon selection:text-white">
     <!-- NAVIGATION -->
     
 
@@ -235,7 +240,7 @@
       class="relative pt-32 pb-12 bg-brand-dark overflow-hidden text-center"
     >
       <div
-        class="absolute top-0 right-0 w-96 h-96 bg-brand-purple/10 rounded-full blur-[120px]"
+        class="absolute top-0 right-0 w-96 h-96 bg-brand-neon/10 rounded-full blur-[120px]"
       ></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4">
         <div class="flex justify-center items-center space-x-4 mb-6">
@@ -243,16 +248,16 @@
             class="px-3 py-1 bg-brand-neon/10 border border-brand-neon/30 text-brand-neon text-xs font-bold rounded-full uppercase"
             >AgriTech Revolution</span
           >
-          <span class="text-gray-500 text-sm"
+          <span class="text-gray-600 text-sm"
             ><i class="fa-regular fa-clock mr-1"></i> 18 min read</span
           >
         </div>
         <h1
-          class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8"
+          class="text-4xl md:text-6xl font-extrabold text-black leading-tight mb-8"
         >
           AI in Agriculture Kenya: Scaling Your Farm in 2026
         </h1>
-        <p class="text-gray-400 text-xl mb-8">
+        <p class="text-gray-700 text-xl mb-8">
           Ditch the guesswork. Discover how Artificial Intelligence is enabling
           Kenyan farmers to predict harvests, optimize soil health, and bypass
           brokers for maximum profit.
@@ -288,7 +293,7 @@
             satellite-driven <strong>crop monitoring AI</strong> that predicts
             drought three months in advance, AI is the ultimate hedge against
             risk. If you are an agricultural business owner in Kenya, failing to
-            integrate automation isn't just inefficient—it’s a threat to your
+            integrate automation isn't just inefficient—it's a threat to your
             food security and financial viability. This guide provides the
             strategic roadmap for the "Smart Shamba" of 2026.
           </p>
@@ -304,7 +309,7 @@
             know the precise pH level of their soil, they can't accurately
             predict the next pest invasion (like the locust swarms of years
             past), and they have zero visibility into real-time market prices in
-            Nairobi’s Wakulima market. This lack of
+            Nairobi's Wakulima market. This lack of
             <strong>precision farming Kenya 2026</strong> tools leads to "Input
             Wastage." Farmers spend thousands on the wrong fertilizers or too
             much water, killing their ROI before the first harvest.
@@ -369,7 +374,7 @@
 
           <h3>Step 1: AI-Powered Soil and Health Diagnostics</h3>
           <!-- IN-CONTENT AUDIT TEASER -->
-         <div class="my-12 p-8 bg-gradient-to-r from-gray-900 to-[#0B0F19] border-l-4 border-brand-neon rounded-r-xl shadow-lg relative overflow-hidden">
+         <div class="my-12 p-8 bg-gradient-to-r from-white to-gray-50 border-l-4 border-brand-neon rounded-r-xl shadow-lg relative overflow-hidden border border-gray-200">
          <!-- Background Decor -->
          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-neon/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
     
@@ -382,13 +387,13 @@
     <span class="text-[10px] font-bold tracking-widest uppercase text-brand-neon">Free Audit</span>
   </div>
 
-  <h4 class="text-xl font-bold text-white mb-2">Want results like this for your business?</h4>
-  <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+  <h4 class="text-xl font-bold text-black mb-2">Want results like this for your business?</h4>
+  <p class="text-gray-700 mb-6 text-sm leading-relaxed">
     Don't let competitors win. Get a free audit of your digital presence — we'll show you exactly where you're losing customers and how to fix it.
   </p>
 
   <!-- WhatsApp CTA (primary) -->
-  <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20read%20your%20blog%20and%20want%20a%20free%20audit%20for%20my%20business."
+  <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%20read%20your%20blog%20and%20want%20a%20free%20audit%20for%20my%20business."
      target="_blank"
      class="flex items-center justify-center gap-3 w-full px-5 py-4 bg-[#25D366] text-white font-bold text-sm rounded-xl hover:bg-[#1ea855] transition-all mb-3">
     <i class="fa-brands fa-whatsapp text-xl"></i>
@@ -407,22 +412,22 @@
   </div>
 
   <!-- Inline form (hidden by default) -->
-  <div id="blog-cta-form" style="display:none;" class="mt-3 bg-black/25 border border-white/5 rounded-xl p-5">
+  <div id="blog-cta-form" style="display:none;" class="mt-3 bg-gray-50 border border-gray-200 rounded-xl p-5">
     <div id="blog-cta-fields">
       <div class="mb-3">
         <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">Your name</label>
         <input type="text" id="bcf-name" placeholder="e.g. John Kamau"
-          class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:border-brand-neon focus:outline-none transition">
+          class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm placeholder-gray-400 focus:border-brand-neon focus:outline-none transition">
       </div>
       <div class="mb-3">
         <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">WhatsApp / phone</label>
         <input type="tel" id="bcf-phone" placeholder="e.g. 0712 345 678"
-          class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-600 focus:border-brand-neon focus:outline-none transition">
+          class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm placeholder-gray-400 focus:border-brand-neon focus:outline-none transition">
       </div>
       <div class="mb-4">
         <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">What do you need help with?</label>
         <select id="bcf-service"
-          class="w-full bg-gray-900 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm focus:border-brand-neon focus:outline-none transition">
+          class="w-full bg-gray-50 border border-gray-300 rounded-lg px-3 py-2.5 text-black text-sm focus:border-brand-neon focus:outline-none transition">
           <option value="" disabled selected>Pick one</option>
           <option>SEO &amp; Content Marketing</option>
           <option>Paid Ads (Facebook / Google)</option>
@@ -433,7 +438,7 @@
         </select>
       </div>
       <button onclick="handleBlogCTA()"
-        class="w-full py-3 bg-brand-neon text-brand-dark font-black text-sm uppercase tracking-wider rounded-lg hover:bg-brand-neonhover transition">
+        class="w-full py-3 bg-brand-neon text-white font-black text-sm uppercase tracking-wider rounded-lg hover:bg-brand-neonhover transition">
         Send My Audit Request →
       </button>
       <p class="text-center text-[11px] text-gray-600 mt-2">
@@ -446,8 +451,8 @@
       <div class="w-12 h-12 bg-brand-neon/10 rounded-full flex items-center justify-center mx-auto mb-3">
         <i class="fa-solid fa-circle-check text-3xl text-brand-neon"></i>
       </div>
-      <p class="text-white font-bold mb-1">Request sent!</p>
-      <p class="text-gray-500 text-sm">We'll reach out on WhatsApp within 24 hours.</p>
+      <p class="text-black font-bold mb-1">Request sent!</p>
+      <p class="text-gray-600 text-sm">We'll reach out on WhatsApp within 24 hours.</p>
     </div>
   </div>
 
@@ -508,8 +513,8 @@
 
           
           <div class="highlight-box">
-            <h3 class="mt-0 text-white">Agri-Business Pro-Tip</h3>
-            <p class="text-white mb-0">
+            <h3 class="mt-0 text-black">Agri-Business Pro-Tip</h3>
+            <p class="text-black mb-0">
               In 2026, "Traceability" is everything. Use simple blockchain or
               AI-based logging to show exactly when your produce was harvested
               and what inputs were used. This allows you to charge a premium of
@@ -601,7 +606,7 @@
           <div class="mt-8 text-center">
             <a
               href="../index.html#contact"
-              class="inline-block px-10 py-5 bg-brand-neon text-brand-dark font-bold rounded-full hover:shadow-neon transition-all text-lg uppercase tracking-wider"
+              class="inline-block px-10 py-5 bg-brand-neon text-white font-bold rounded-full hover:shadow-neon transition-all text-lg uppercase tracking-wider"
               >Book My Agri-Tech Audit</a
             >
           </div>
@@ -625,45 +630,45 @@
         <div class="lg:col-span-1 space-y-8">
           <!-- CTA Card -->
           <div
-            class="bg-gray-900 border border-gray-700 p-8 rounded-2xl text-center sticky top-24 shadow-2xl"
+            class="bg-white border border-gray-200 p-8 rounded-2xl text-center sticky top-24 shadow-xl"
           >
             <div
               class="w-20 h-20 bg-brand-neon/20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-neon border border-brand-neon/50"
             >
               <i class="fa-solid fa-seedling text-4xl"></i>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-4">
+            <h3 class="text-2xl font-bold text-black mb-4">
               Smart Shamba Setup
             </h3>
-            <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+            <p class="text-gray-700 text-sm mb-8 leading-relaxed">
               Want a WhatsApp bot that diagnoses crop disease or an M-Pesa
               automated supply chain? We build custom AI solutions for Kenya's
               leading agriculturalists.
             </p>
             <a
               href="../smartbiztool.html"
-              class="block w-full py-4 bg-brand-neon text-brand-dark font-bold rounded-xl hover:bg-brand-neonhover transition shadow-neon uppercase tracking-wider text-xs"
+              class="block w-full py-4 bg-brand-neon text-white font-bold rounded-xl hover:bg-brand-neonhover transition shadow-neon uppercase tracking-wider text-xs"
             >
               Engineer My Farm
             </a>
           </div>
 
           <!-- Local Insight Card -->
-          <div class="bg-brand-card border border-gray-800 rounded-2xl p-6">
-            <h4 class="text-white font-bold mb-4 border-b border-gray-800 pb-2">
+          <div class="bg-brand-card border border-gray-200 rounded-2xl p-6">
+            <h4 class="text-black font-bold mb-4 border-b border-gray-200 pb-2">
               Kenya AgriTech Vitals
             </h4>
-            <ul class="space-y-4 text-sm text-gray-400">
+            <ul class="space-y-4 text-sm text-gray-700">
               <li class="flex items-start">
-                <i class="fa-solid fa-check text-brand-purple mt-1 mr-3"></i>
+                <i class="fa-solid fa-check text-brand-neon mt-1 mr-3"></i>
                 <span>Localized soil pH data for 47 counties.</span>
               </li>
               <li class="flex items-start">
-                <i class="fa-solid fa-check text-brand-purple mt-1 mr-3"></i>
+                <i class="fa-solid fa-check text-brand-neon mt-1 mr-3"></i>
                 <span>Real-time price index for Nairobi/Mombasa.</span>
               </li>
               <li class="flex items-start">
-                <i class="fa-solid fa-check text-brand-purple mt-1 mr-3"></i>
+                <i class="fa-solid fa-check text-brand-neon mt-1 mr-3"></i>
                 <span>Pest alert network via WhatsApp API.</span>
               </li>
             </ul>
@@ -673,17 +678,17 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black border-t border-gray-900 pt-16 pb-12">
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-12">
       <div class="max-w-7xl mx-auto px-4 text-center">
-        <span class="text-3xl font-bold tracking-tight text-white block mb-6"
+        <span class="text-3xl font-bold tracking-tight text-black block mb-6"
           >SmartBiz<span class="text-brand-neon">Systems</span></span
         >
-        <p class="text-gray-500 text-sm max-w-lg mx-auto mb-8">
+        <p class="text-gray-600 text-sm max-w-lg mx-auto mb-8">
           Specializing in AgriTech integration, technical SEO, and business
           automation for the Kenyan SME sector. Based in Nairobi, serving East
           Africa.
         </p>
-        <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+        <div class="flex justify-center space-x-6 mb-8 text-gray-500">
           <a href="#" class="hover:text-brand-neon transition"
             ><i class="fa-brands fa-linkedin-in text-xl"></i
           ></a>
@@ -694,7 +699,7 @@
             ><i class="fa-brands fa-whatsapp text-xl"></i
           ></a>
         </div>
-        <p class="text-gray-700 text-xs">
+        <p class="text-gray-500 text-xs">
           &copy; 2026 SmartBizSystems Kenya. All rights reserved. Specialized in
           Local Industry Automation.
         </p>
@@ -704,7 +709,7 @@
     <!-- ============================================ -->
     <!-- FLOATING WHATSAPP WIDGET                     -->
     <!-- ============================================ -->
-    <a href="https://wa.me/254740239241?text=Hi%20SmartBiz%2C%20I%20am%20interested%20in%20your%20services." 
+    <a href="https://wa.me/254734230445?text=Hi%20SmartBiz%2C%20I%20am%20interested%20in%20your%20services." 
        target="_blank" 
        class="fixed bottom-6 right-6 z-[9999] group"
        aria-label="Chat on WhatsApp">
