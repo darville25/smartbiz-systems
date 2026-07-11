@@ -281,6 +281,27 @@
     },
 
     {
+      "source": "/whatsapp-automation-kenya.html",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp-automation-kenya",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-automation-kenya.html",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-automation-kenya",
+      "destination": "/services/whatsapp-automation",
+      "permanent": true
+    },
+
+    {
       "source": "/(.*)\\.html",
       "destination": "/$1",
       "permanent": true
