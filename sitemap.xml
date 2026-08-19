@@ -7,15 +7,12 @@
   <url><loc>https://www.smartbizsystems.co.ke/pricing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/faq</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/free-audit</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/process</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/advertising</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/careers</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/thankyou</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
-
-  <!-- Tools -->
-  <url><loc>https://www.smartbizsystems.co.ke/tools/smartbiztool</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Removed: /process (redirects -> /about per vercel.json) -->
+  <!-- Removed: /careers (redirects -> / per vercel.json) -->
 
   <!-- Work / Case Studies -->
   <url><loc>https://www.smartbizsystems.co.ke/work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -31,7 +28,8 @@
   <url><loc>https://www.smartbizsystems.co.ke/services/email-marketing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/services/paid-ads</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/services/digital-marketing-course-kenya</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/services/digital-marketing-ebook-kenya</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Removed: /services/digital-marketing-ebook-kenya (ebook URL actually redirects -> /services/paid-ads, this destination doesn't exist) -->
+  <!-- Removed: Tools section /tools/smartbiztool -> real page is /services/whatsapp-automation, already listed above -->
 
   <!-- Blog -->
   <url><loc>https://www.smartbizsystems.co.ke/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -107,23 +105,22 @@
   <url><loc>https://www.smartbizsystems.co.ke/seo-pages/lead-generation/ecommerce</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/seo-pages/lead-generation/smes</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <!-- SEO Pages — Web Development -->
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/nairobi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/westlands</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/kilimani</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/karen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/karen-web-performance-not-getting-customers</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/kiambu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/thika</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/thika-industrial-no-website-digital-entry</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/upper-hill-finance-not-showing-on-google</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/mombasa</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/nyali-mombasa-slow-website-performance-fix</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/kisumu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/nakuru</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/eldoret</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/Web-Development/real-estate-kilimani-not-mobile-friendly-fix</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- SEO Pages — Web Development (FIXED: was capitalized "Web-Development", now matches real lowercase folder.
+       Also removed 5 entries that are redirect SOURCES per vercel.json, not real pages:
+       real-estate-kilimani-not-mobile-friendly-fix, upper-hill-finance-not-showing-on-google,
+       nyali-mombasa-slow-website-performance-fix, thika-industrial-no-website-digital-entry,
+       karen-web-performance-not-getting-customers -->
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/nairobi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/westlands</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/kilimani</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/karen</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/kiambu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/thika</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/mombasa</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/kisumu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/nakuru</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smartbizsystems.co.ke/seo-pages/web-development/eldoret</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- SEO Pages — WhatsApp Automation -->
   <url><loc>https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -147,7 +144,6 @@
   <url><loc>https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/law-firms</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/ecommerce</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.smartbizsystems.co.ke/seo-pages/whatsapp-automation/smes</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
 
   <!-- SEO Pages — SEO & Schema Markup -->
   <url><loc>https://www.smartbizsystems.co.ke/seo-schema-markup-kenya/nairobi</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
